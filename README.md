@@ -6,9 +6,8 @@
   <p align="center">
     <div>Full-Stack Web Application Project</div>
     <br />
-    <a href="https://github.com/UTSCCSCC01/finalprojectw22-gdscutm/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/UTSCCSCC01/finalprojectw22-gdscutm/issues">Request Feature</a>
+    <a href="https://github.com/utmgdsc/website/issues">Report Bug</a>
+    <a href="https://github.com/utmgdsc/website/issues">Request Feature</a>
     <br/>
     <br/>
     <div>This project is still <strong>In Progress</strong> and <strong>Not Deployed</strong>.</div>
@@ -112,8 +111,7 @@ Detailed instructions are in [docker-walkthrough.md](https://github.com/UTSCCSCC
   <summary><strong>Others</strong></summary>
   <ul>
     <li><a href="https://github.com/axios/axios">Axios</a> (Front-End Request Framework)</li>
-    <li><a href="https://getbootstrap.com">Bootstrap</a> (Front-End Styling Kit)</li>
-    <li><a href="https://react-bootstrap.github.io">React-Bootstrap</a> (Front-End Styling Kit Dedicated for React)</li>
+    <li><a href="https://mui.com">React-Bootstrap</a> (Front-end Styling Framework)</li>
     <li><a href="https://formik.org">Formik</a> (Front-End Form Shortcut)</li>
     <li><a href="https://github.com/auth0/node-jsonwebtoken">Node.js JWT</a> (Token Authentication)</li>
   </ul>
