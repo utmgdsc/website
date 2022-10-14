@@ -1,0 +1,12 @@
+.dark .card {
+    background: #333333;
+    color: #fff;
+}
+
+.dark .card-body h5 {
+    color: #fff;
+}
+
+.dark .btn-close {
+    color: #fff;
+}

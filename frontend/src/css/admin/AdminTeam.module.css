@@ -1,0 +1,8 @@
+.container_border{
+    border-radius: 0.5rem;
+    border: 0.1rem solid rgba(0,0,0,0.125);
+}
+
+.border_clr{
+    border-color: rgba(0,0,0,0.125);
+}

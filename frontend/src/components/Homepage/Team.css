@@ -1,0 +1,29 @@
+p.text {
+    color: darkslategrey;
+}
+
+.member {
+    display: inline-block;
+}
+
+.team {
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+img.member {
+    padding: 1rem;
+    border-radius: 100%;
+    width: 15rem;
+    height: 15rem;
+}
+
+.dark p.text {
+    color: #fff;
+}
+
+img {
+    max-width: 100%;
+}

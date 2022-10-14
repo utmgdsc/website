@@ -1,0 +1,14 @@
+.admin_logo_box{
+    text-align: center;
+    margin: 30vh auto 10vh auto;
+}
+.admin_logo{
+    width: 700px;
+    max-width: 85vw;
+}
+.input_box_length{
+    width:20rem;
+}
+.background_container{
+    height:100vh;
+}

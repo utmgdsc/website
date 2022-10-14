@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  mongo:
+    image: mongo:4.4.12
+    container_name: mongo
+    volumes:
+      - data:/data/db
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGODB_URL=mongodb+srv://group_user:hYBtFlnJJMAtHFoM@cluster0.sjlxj.mongodb.net/gdscutm?retryWrites=true&w=majority
+volumes:
+  data:

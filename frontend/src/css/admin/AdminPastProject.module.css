@@ -1,0 +1,20 @@
+.image_size{
+    width: 8rem;
+    height: 8rem;
+    object-fit: fill;
+}
+
+.button_size{
+    width: 3.5rem;
+    height:3.5rem;
+}
+
+.text_box_width{
+    max-width: 75%;
+    max-height: 8rem;
+}
+
+.text_box_overflow{
+    overflow: scroll;
+    max-height: 5rem;
+}
