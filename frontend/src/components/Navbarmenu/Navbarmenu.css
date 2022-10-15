@@ -1,7 +1,17 @@
 .dark {
-    background: #212121;
+	background: #212121;
 }
 
 .dark .nav-link {
-    color: #fff !important; 
+	color: #fff !important; 
 }
+
+#gdsc-home-btn {
+	background: white;
+	min-height: 30px;
+	min-width: 94px;
+}
+	#gdsc-home-btn img {
+		min-height: 24px;
+		min-width: 48px;
+	}

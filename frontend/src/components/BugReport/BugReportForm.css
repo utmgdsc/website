@@ -1,30 +1,30 @@
 .bugReportForm,::placeholder, input, select, textarea {
-  color: rgba(0, 0, 0, 0.55) !important;
+	color: rgba(0, 0, 0, 0.55) !important;
 }
 
 .bug-form-wrap {
-  border-radius: 10px;
-  box-shadow: 0 0 10px 10px #ddd;
-  /* box-shadow: 0px 10px 34px -15px rgb(0 0 0 / 24%); */
+	border-radius: 10px;
+	box-shadow: 0 0 10px 10px #ddd;
+	/* box-shadow: 0px 10px 34px -15px rgb(0 0 0 / 24%); */
 }
 .bug-form-wrap .form-group {
-  text-align: left !important;
+	text-align: left !important;
 }
 
 
 .dark .bug-form-wrap {
-  background: #333;
-  box-shadow: 0px 10px 34px -15px rgb(0 0 0 / 24%);
+	background: #333;
+	box-shadow: 0px 10px 34px -15px rgb(0 0 0 / 24%);
 }
 
 .dark .bug-form-wrap input {
-  background: #fff;
+	background: #fff;
 }
 
 .dark .bug-form-wrap p {
-  color: #fff;
+	color: #fff;
 }
 
 .dark .bug-form-wrap .form-check input {
-  border-width: medium;
+	border-width: medium;
 }

@@ -1,143 +1,253 @@
 import React, { useContext } from "react";
 import gdscbracket from "../../assets/gdscbracket.svg";
-// import { Nav, Navbar, Container } from "react-bootstrap";
 import DarkMode from "../DarkMode/DarkMode";
 import "../DarkMode/DarkMode.css";
 import DarkModeContext from "../../context/darkMode/DarkModeContext";
-import "./Navbarmenu.css";
+import "./NavbarMenu.css";
+import {
+	AppBar,
+	Toolbar,
+	Box,
+	ButtonGroup,
+	Container,
+	IconButton,
+	Fab,
+	Tabs,
+	Tab,
+	useScrollTrigger,
+} from "@mui/material";
+import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
+import { NavLink as RouterLink } from "react-router-dom";
 
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 
-// const Navbarmenu = () => {
-//   const { mode, toggleMode } = useContext(DarkModeContext);
-//   return (
-//     <Navbar
-//       className={mode === true ? "dark" : ""}
-//       collapseOnSelect
-//       expand="lg"
-//       top="fixed"
-//     >
-//       <Container>
-//           <img src={gdscbracket} alt="Google Developers Bracket Logo" height="30px" />
-//         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-//         <Navbar.Collapse id="responsive-navbar-nav">
-//           <Nav className="me-auto">
-//             {/* <Nav.Link href="/about">About</Nav.Link> */}
-//             <Nav.Link href="/resources">Resources</Nav.Link>
-//             <Nav.Link href="/events">Events</Nav.Link>
-//             <Nav.Link href="/pastProjects">Past Projects</Nav.Link>
-//             {/* <Nav.Link href="/admin/log">Admin</Nav.Link> */}
-//           </Nav>
-//           <DarkMode />
-//         </Navbar.Collapse>
-//       </Container>
-//     </Navbar>
-//   );
-// };
+import InstagramIcon from '@mui/icons-material/Instagram';
+import DiscordIcon from "./DiscordIcon";
+import GitHubIcon from '@mui/icons-material/GitHub';
+import GoogleIcon from '@mui/icons-material/Google';
+import Slide from '@mui/material/Slide';
 
-const Navbarmenu = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+const theme = createTheme({
+	typography: {
+		tab: {
+			textTransform: "none",
+			color: "black",
+		},
+	},
+	fab: {
+		backgroundColor: "white",
+		color: "black",
+	},
+});
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+function ElevationScroll(props) {
+	const { children } = props;
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+	const elevationTrigger = useScrollTrigger({
+		disableHysteresis: true,
+		threshold: 0,
+	});
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+	const slideTrigger = useScrollTrigger({});
 
-  return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <img sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} src={gdscbracket} alt="Google Developers Bracket Logo" height="30px" />
+	// return React.cloneElement(children, {
+	//  elevation: trigger ? 4 : 0,
+	//  sx: { background: trigger ? "white" : "transparent" },
+	// });
+	return (
+		<Slide
+			appear={false}
+			direction="down"
+			in={!slideTrigger}
+			elevation={elevationTrigger ? 4 : 0}
+			sx={{ background: elevationTrigger ? "white" : "transparent" }}
+		>
+			{children}
+		</Slide>
+	);
+}
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {/* {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))} */}
-            </Menu>
-          </Box>
-          {/* <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box> */}
+function ElevationScrollReverse(props) {
+	const { children } = props;
 
-          <Box sx={{ flexGrow: 0 }}>
-            {/* <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/assets/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip> */}
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-            </Menu>
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
-  );
+	const trigger = useScrollTrigger({
+		disableHysteresis: true,
+		threshold: 0,
+	});
+
+	return React.cloneElement(children, {
+		sx: { boxShadow: trigger ? 0 : 4 },
+	});
+}
+
+const StyledTabs = styled((props) => (
+	<Tabs
+		{...props}
+		TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
+	/>
+))({
+	'& .MuiTabs-flexContainer': {
+		display: 'block',
+	},
+	'& .MuiTabs-indicator': {
+		display: 'flex',
+		justifyContent: 'center',
+		backgroundColor: 'transparent',
+	},
+	'& .MuiTabs-indicatorSpan': {
+		maxWidth: 50,
+		width: '100%',
+		backgroundColor: '#4285f4',
+	},
+	// '&:hover .MuiTabs-indicatorSpan': {
+	//  maxWidth: 100,
+	// },
+});
+
+const LinkTab = styled((props) =>
+	<Tab component={RouterLink} {...props} />)(
+		({ theme }) => ({
+			color: "#5f6368",
+			// display: "inline-block !important",
+			fontFamily: "inherit",
+			fontSize: "1em",
+			fontWeight: "normal",
+			letterSpacing: "0 !important",
+			padding: "1.5em",
+			textTransform: 'none',
+			whiteSpace: "nowrap",
+			'&.Mui-selected': {
+				color: 'black',
+				fontWeight: 'bold',
+			},
+		}),
+	);
+
+// todo: dynamically generate this
+const pages = [["About", "/"],
+["Resources", "/resources"],
+["Past Projects", "/pastProjects"],
+["Events", "/events"]];
+
+const NavbarMenu = () => {
+	const [value, setValue] = React.useState('one');
+
+	const handleChange = (event, newValue) => {
+		setValue(newValue);
+	};
+
+	return (
+		<ThemeProvider theme={theme}>
+			<ElevationScroll>
+				<AppBar sx={{ bgcolor: "transparent !important" }}>
+					<Container maxWidth="xl">
+						<Toolbar disableGutters sx={{ minHeight: "auto !important" }}>
+							{/* gdsc button logo */}
+							<ElevationScrollReverse>
+								<Fab
+									variant="extended"
+									aria-label="Home"
+									component={RouterLink}
+									onClick={handleChange}
+									to="/"
+									id="gdsc-home-btn"
+								>
+									<img
+										src={gdscbracket}
+										alt="Google Developers Bracket Logo"
+										height="16px"
+										width="32px"
+										sx={{ userSelect: "none" }}
+									/>
+								</Fab>
+							</ElevationScrollReverse>
+
+							{/* tab navigation */}
+							<StyledTabs
+								aria-label="Main navigation"
+								centered
+								component="nav"
+								id="main-nav"
+								indicatorColor="#4285f4"
+								onChange={handleChange}
+								value={window.location.pathname.toLowerCase()} // fix this
+								variant="fullWidth"
+							>
+								{pages.map((page) => (
+									<LinkTab
+										to={page[1]}
+										value={page[1].toLowerCase()}
+										label={page[0]}
+										key={page[0]}
+									/>
+								))}
+							</StyledTabs>
+
+							{/* spacing */}
+							<Box sx={{ flexGrow: 1 }} />
+
+							{/* social media icons */}
+							<ButtonGroup sx={{ display: "flex" }}>
+								<Tooltip title="Google Developers Student Club page">
+									<IconButton
+										aria-label="Visit our official Google Developers Student Club page"
+										color="default"
+										href="https://gdsc.community.dev/university-of-toronto-mississauga/"
+										rel="noopener noreferrer"
+										size="large"
+										sx={{ marginLeft: ".5em" }}
+										target="_blank"
+									>
+										<GoogleIcon />
+									</IconButton>
+								</Tooltip>
+								<Tooltip title="Instagram">
+									<IconButton
+										aria-label="Visit our Instagram"
+										color="default"
+										href="https://instagram.com/gdscutm"
+										rel="noopener noreferrer"
+										size="large"
+										sx={{ marginLeft: ".5em" }}
+										target="_blank"
+									>
+										<InstagramIcon />
+									</IconButton>
+								</Tooltip>
+								<Tooltip title="GitHub organization">
+									<IconButton
+										aria-label="Visit our GitHub organization"
+										color="default"
+										href="https://github.com/utmgdsc"
+										rel="noopener noreferrer"
+										size="large"
+										sx={{ marginLeft: ".5em" }}
+										target="_blank"
+									>
+										<GitHubIcon />
+									</IconButton>
+								</Tooltip>
+								<Tooltip title="Discord Server">
+									<IconButton
+										aria-label="Join our Discord Server"
+										color="default"
+										href="https://discord.gg/AZyYSGbU68"
+										rel="noopener noreferrer"
+										size="large"
+										sx={{ marginLeft: ".5em" }}
+										target="_blank"
+									>
+										<DiscordIcon />
+									</IconButton>
+								</Tooltip>
+							</ButtonGroup>
+						</Toolbar>
+
+					</Container>
+				</AppBar>
+			</ElevationScroll>
+		</ThemeProvider>
+	);
 };
 
-export default Navbarmenu;
+export default NavbarMenu;

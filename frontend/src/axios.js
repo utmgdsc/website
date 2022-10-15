@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const instance = axios.create({
-    baseURL : "http://localhost:"+process.env.PORT
+	baseURL : "http://localhost:"+process.env.PORT
 })
 
 /**
@@ -9,8 +9,8 @@ const instance = axios.create({
  * @returns a list of applications (max 20) and total number of applications
  */
 export async function getApplications(){
-    const req = await instance.get("An endpoint which gets applications");
-    return req.data
+	const req = await instance.get("An endpoint which gets applications");
+	return req.data
 }
 
 /**
@@ -22,8 +22,8 @@ export async function getApplications(){
  * and a max_applications length of applications.
  */
 export async function postApplicationFilter(condtion = null, max_applications = 20, num_page = 1){
-    const req = await instance.post("An endpoint which gets applications");
-    return req.data;
+	const req = await instance.post("An endpoint which gets applications");
+	return req.data;
 }
 
 /**
@@ -37,11 +37,11 @@ export async function postApplicationFilter(condtion = null, max_applications = 
  * and a max_applications length of applications.
  */
 export async function acceptApplication(user_id,role,condtion=null,max_applications=20,num_page=1){
-    const req = await instance.post("An endpoint which gets applications");
-    if (req.data){
-        const req = await instance.post("An endpoint which gets applications");
-    }
-    return req.data;
+	const req = await instance.post("An endpoint which gets applications");
+	if (req.data){
+		const req = await instance.post("An endpoint which gets applications");
+	}
+	return req.data;
 }
 
 /**
@@ -55,19 +55,19 @@ export async function acceptApplication(user_id,role,condtion=null,max_applicati
  * and a max_applications length of applications.
  */
  export async function declineApplication(user_id,role,condition=null,max_applications=20,num_page=1){
-    const req = await instance.post("An endpoint which gets applications");
-    if (req.data){
-        const req = await instance.post("An endpoint which gets applications");
-    }
-    return req.data;
+	const req = await instance.post("An endpoint which gets applications");
+	if (req.data){
+		const req = await instance.post("An endpoint which gets applications");
+	}
+	return req.data;
  }
 
  export async function postStudentApplication(student){
-    console.log("SENDING STUDENT APPLICATION");
-    const req = await instance.post(
-        "http://localhost:5000/applications/studentSubmit", student).then((response) => {
-        console.log("STUDENT FORM SUBMITTED");
-    });
+	console.log("SENDING STUDENT APPLICATION");
+	const req = await instance.post(
+		"http://localhost:5000/applications/studentSubmit", student).then((response) => {
+		console.log("STUDENT FORM SUBMITTED");
+	});
  }
 
 export default instance

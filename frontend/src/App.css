@@ -1,26 +1,31 @@
+@import "fonts/GoogleSans-v1.27/stylesheet.css";
+@import "fonts/GoogleSansDisplay-v1.27/stylesheet.css";
+
 .main {
-    min-height: 93vh;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    background-image: url("./assets/banner.png");
-    background-position: center;
-    background-size: cover;
-}
-.dark {
-    background: #222;
-    color: #fff;
+	min-height: 93vh;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	background-image: url("./assets/banner.png");
+	background-position: center;
+	background-size: cover;
 }
 
-.bg_new{
-    min-height: 93vh;
-    display: flex;
-    background-image: url("./assets/newbanner.jpg");
-    background-position: center;
-    background-size: cover;
+.dark {
+	background: #222;
+	color: #fff;
 }
-.bg_img{
-    background-image: url("./assets/banner.png");
-    background-position: center;
-    background-size: cover;
+
+.bg_new {
+	min-height: 93vh;
+	display: flex;
+	background-image: url("./assets/newbanner.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+.bg_img {
+	background-image: url("./assets/banner.png");
+	background-position: center;
+	background-size: cover;
 }

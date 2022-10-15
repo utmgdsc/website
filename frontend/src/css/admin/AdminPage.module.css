@@ -1,37 +1,37 @@
 .admin_logo_box{
-    text-align: center;
-    margin: auto;
+	text-align: center;
+	margin: auto;
 }
 .admin_logo{
-    width: 700px;
-    max-width: 85vw;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+	width: 700px;
+	max-width: 85vw;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
 }
 .admin_nav{
-    min-width: 10rem;
-    position: relative;
-    left:0;
+	min-width: 10rem;
+	position: relative;
+	left:0;
 }
 a[class = "nav-link active"]{
-    border-color: #dee2e6 #dee2e6 #dee2e6 !important;
-    border-bottom-right-radius: .25rem;
-    border-top-right-radius: .25rem !important;
-    border-top-left-radius: 0 !important;
+	border-color: #dee2e6 #dee2e6 #dee2e6 !important;
+	border-bottom-right-radius: .25rem;
+	border-top-right-radius: .25rem !important;
+	border-top-left-radius: 0 !important;
 }
 a{
-    border-bottom-right-radius: .25rem;
-    border-top-right-radius: .25rem !important;
-    border-top-left-radius: 0 !important;
+	border-bottom-right-radius: .25rem;
+	border-top-right-radius: .25rem !important;
+	border-top-left-radius: 0 !important;
 }
 .nav_tabs{
-    border-bottom: none;
+	border-bottom: none;
 }
 .info_sec{
-    margin-left: 5vw;
-    margin-right: 5vw;
+	margin-left: 5vw;
+	margin-right: 5vw;
 }
 .container_width{
-    width: auto;
-    max-width: 75vw;
+	width: auto;
+	max-width: 75vw;
 }

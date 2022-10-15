@@ -1,29 +1,40 @@
 p.text {
-    color: darkslategrey;
+	color: darkslategrey;
 }
 
 .member {
-    display: inline-block;
+	display: inline-block;
 }
+
+	.member strong {
+		display: block;
+		font-size: 1.5em;
+		padding-bottom: 0.25em;
+	}
+
+	.member p {
+		margin-top: 0.25em;
+	}
+
+	.member img {
+		padding: 1.5rem 1.5rem 0 1.5rem;
+		border-radius: 100%;
+		width: 10rem;
+		height: 10rem;
+	}
 
 .team {
-    text-align: center;
-    left: 0;
-    right: 0;
-    margin: auto;
+	text-align: center;
+	left: 0;
+	right: 0;
+	margin: auto;
 }
 
-img.member {
-    padding: 1rem;
-    border-radius: 100%;
-    width: 15rem;
-    height: 15rem;
-}
 
 .dark p.text {
-    color: #fff;
+	color: #fff;
 }
 
 img {
-    max-width: 100%;
+	max-width: 100%;
 }

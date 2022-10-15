@@ -1,14 +1,14 @@
 {
-    "scripts": {
-        "start": "npm run client",
-        "client": "npm start --prefix ./frontend",
-        "server": "nodemon ./backend/server.js"
-    },
-    "devDependencies": {
-        "concurrently": "^7.0.0",
-        "dotenv": "^16.0.0"
-    },
-    "dependencies": {
-        "nodemon": "^2.0.15"
-    }
+	"scripts": {
+		"start": "npm run client",
+		"client": "npm start --prefix ./frontend",
+		"server": "nodemon ./backend/server.js"
+	},
+	"devDependencies": {
+		"concurrently": "^7.0.0",
+		"dotenv": "^16.0.0"
+	},
+	"dependencies": {
+		"nodemon": "^2.0.15"
+	}
 }

@@ -3,22 +3,22 @@ import {useContext} from "react"
 import {WbSunny, DarkMode as ModeNight} from '@mui/icons-material'
 
 const DarkMode = () => {
-    const {mode, toggleMode} = useContext(DarkModeContext)
+	const {mode, toggleMode} = useContext(DarkModeContext)
 
-    return (
-        <div className="dark-mode">
-            <label className='switch mr-5'>
-                <input
-                    type="checkbox"
-                    onChange={() => toggleMode()}
-                    checked={mode}
-                />
-                <span className="slider round"></span>
-            </label>
-            {mode === true ? <WbSunny /> : <ModeNight />}
+	return (
+		<div className="dark-mode">
+			<label className='switch mr-5'>
+				<input
+					type="checkbox"
+					onChange={() => toggleMode()}
+					checked={mode}
+				/>
+				<span className="slider round"></span>
+			</label>
+			{mode === true ? <WbSunny /> : <ModeNight />}
 
-        </div>
-    )
+		</div>
+	)
 }
 
 export default DarkMode
