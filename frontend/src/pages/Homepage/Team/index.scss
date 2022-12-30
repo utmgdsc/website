@@ -10,28 +10,27 @@ p.text {
 	margin: auto;
 	right: 0;
 	text-align: center;
-}
 
-	.team .member {
+	.member {
 		display: inline-block;
 		padding: 1em;
-	}
 
-		.team .member .introduction {
+		.introduction {
 			display: block;
 			font-size: 1.25rem;
 			padding-bottom: 0.25em;
 		}
-			.team .member .introduction strong {
-				font-size: 1.5rem;
-			}
 
-		.team .member p {
+		.introduction strong {
+			font-size: 1.5rem;
+		}
+
+		p {
 			margin-top: 0.25em;
 			margin-bottom: 0;
 		}
 
-		.team .member img, .team .member .MuiSkeleton-root {
+		img, .MuiSkeleton-root {
 			border-radius: 100%;
 			display: block;
 			height: 6.9rem;
@@ -40,7 +39,10 @@ p.text {
 			width: 6.9rem;
 		}
 
-		.team .member .role {
+
+		.team .role {
 			opacity: 0.75;
 			display: block;
 		}
+	}
+}

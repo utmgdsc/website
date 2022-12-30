@@ -1,6 +1,6 @@
 import { Typography, Container } from '@mui/material';
 import { Parallax } from 'react-parallax';
-import "./index.css";
+import "./index.scss";
 
 const BannerHeader = ({ text, picture }) => {
 	return (

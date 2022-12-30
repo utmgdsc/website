@@ -6,7 +6,7 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
-import './index.css';
+import './index.scss';
 
 import Description from '../Description';
 

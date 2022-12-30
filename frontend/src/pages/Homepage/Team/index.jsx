@@ -1,4 +1,4 @@
-import "./index.css";
+import "./index.scss";
 import { Typography } from "@mui/material";
 import SkeletonLoadedImage from "../../../components/SkeletonLoadedImage";
 

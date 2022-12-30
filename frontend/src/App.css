@@ -1,36 +1,19 @@
 @import "assets/fonts/GoogleSans-v1.27/stylesheet.css";
 @import "assets/fonts/GoogleSansDisplay-v1.27/stylesheet.css";
 
-.main {
-	min-height: 93vh;
-	display: flex;
-	text-align: center;
-	align-items: center;
-	background-image: url("./assets/banner.png");
-	background-position: center;
-	background-size: cover;
-}
-
-.dark {
-	background: #222;
-	color: #fff;
-}
-
-.bg_new {
-	min-height: 93vh;
-	display: flex;
-	background-image: url("./assets/newbanner.jpg");
-	background-position: center;
-	background-size: cover;
-}
-
-.bg_img {
-	background-image: url("./assets/banner.png");
-	background-position: center;
-	background-size: cover;
-}
-
 img {
-  max-width: 100%;
-  height: auto;
+	max-width: 100%;
+	height: auto;
+}
+
+body {
+	margin: 0;
+	font-family: "Google Sans Display", "Google Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
 }

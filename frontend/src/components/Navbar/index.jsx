@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink as RouterLink } from "react-router-dom";
-import "./index.css";
+import "./index.scss";
 import {
 	AppBar,
 	Box,
@@ -11,7 +11,7 @@ import {
 	Toolbar,
 } from "@mui/material";
 
-import { ThemeProvider, styled } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 
 import {
 	Instagram,
@@ -33,6 +33,8 @@ import ElevationScrollReverse from "./ElevationScroll/Reverse";
 import StyledTabs from "./NavTabs/StyledTabs";
 
 const Navbar = () => {
+	// value required for router but not used in this file
+	// eslint-disable-next-line no-unused-vars
 	const [value, setValue] = React.useState('one');
 
 	const handleChange = (event, newValue) => {
