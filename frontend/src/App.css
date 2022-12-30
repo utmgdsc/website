@@ -1,5 +1,5 @@
-@import "fonts/GoogleSans-v1.27/stylesheet.css";
-@import "fonts/GoogleSansDisplay-v1.27/stylesheet.css";
+@import "assets/fonts/GoogleSans-v1.27/stylesheet.css";
+@import "assets/fonts/GoogleSansDisplay-v1.27/stylesheet.css";
 
 .main {
 	min-height: 93vh;
@@ -28,4 +28,9 @@
 	background-image: url("./assets/banner.png");
 	background-position: center;
 	background-size: cover;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }

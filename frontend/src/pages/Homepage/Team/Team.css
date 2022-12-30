@@ -1,0 +1,39 @@
+p.text {
+	color: darkslategrey;
+}
+
+.team {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	left: 0;
+	margin: auto;
+	right: 0;
+	text-align: center;
+}
+
+	.team .member {
+		display: inline-block;
+		padding: 1em;
+	}
+
+		.team .member .introduction {
+			display: block;
+			font-size: 1.25rem;
+			padding-bottom: 0.25em;
+		}
+			.team .member .introduction strong {
+				font-size: 1.5rem;
+			}
+
+		.team .member p {
+			margin-top: 0.25em;
+			margin-bottom: 0;
+		}
+
+		.team .member img {
+			border-radius: 100%;
+			width: 6.9rem;
+			height: 6.9rem;
+			object-fit: cover;
+		}
