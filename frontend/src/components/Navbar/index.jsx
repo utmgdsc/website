@@ -7,14 +7,8 @@ import {
 	ButtonGroup,
 	Container,
 	Fab,
-	IconButton,
-	Slide,
 	SvgIcon,
-	Tab,
-	Tabs,
 	Toolbar,
-	Tooltip,
-	useScrollTrigger
 } from "@mui/material";
 
 import { ThemeProvider, styled } from "@mui/material/styles";
@@ -25,95 +19,20 @@ import {
 	Google,
 } from '@mui/icons-material';
 
-import {ReactComponent as DiscordIcon} from "../../assets/icons/discord.svg";
+import { ReactComponent as DiscordIcon } from "../../assets/icons/discord.svg";
 import gdscBracket from "../../assets/icons/gdscbracket.svg";
 
-import GoogleTheme from "../../components/Theme";
+import GoogleTheme from "../../theme";
 
-function ElevationScroll(props) {
-	const { children } = props;
+import pages from "../../pages/pages";
 
-	const elevationTrigger = useScrollTrigger({
-		disableHysteresis: true,
-		threshold: 0,
-	});
-
-	const slideTrigger = useScrollTrigger({});
-
-	return (
-		<Slide
-			appear={false}
-			direction="down"
-			in={!slideTrigger}
-			elevation={elevationTrigger ? 4 : 0}
-			sx={{ background: elevationTrigger ? "white" : "transparent" }}
-		>
-			{children}
-		</Slide>
-	);
-}
-
-function ElevationScrollReverse(props) {
-	const { children } = props;
-
-	const trigger = useScrollTrigger({
-		disableHysteresis: true,
-		threshold: 0,
-	});
-
-	return React.cloneElement(children, {
-		sx: { boxShadow: trigger ? 0 : 4 },
-	});
-}
-
-const StyledTabs = styled((props) => (
-	<Tabs
-		{...props}
-		TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
-	/>
-))({
-	'& .MuiTabs-flexContainer': {
-		display: 'block',
-	},
-	'& .MuiTabs-indicator': {
-		display: 'flex',
-		justifyContent: 'center',
-		backgroundColor: 'transparent',
-	},
-	'& .MuiTabs-indicatorSpan': {
-		maxWidth: 50,
-		width: '100%',
-		backgroundColor: '#4285f4',
-	},
-});
-
-const LinkTab = styled((props) =>
-	<Tab component={RouterLink} {...props} />)(
-		({ theme }) => ({
-			color: "#5f6368",
-			// display: "inline-block !important",
-			fontFamily: "inherit",
-			fontSize: "1em",
-			fontWeight: "normal",
-			letterSpacing: "0 !important",
-			padding: "1.5em",
-			textTransform: 'none',
-			whiteSpace: "nowrap",
-			'&.Mui-selected': {
-				color: 'black',
-				fontWeight: 'bold',
-			},
-		}),
-	);
-
+import LinkTab from "./NavTabs/LinkTab";
+import SocialButton from "../SocialButton";
+import ElevationScroll from "./ElevationScroll";
+import ElevationScrollReverse from "./ElevationScroll/Reverse";
+import StyledTabs from "./NavTabs/StyledTabs";
 
 const Navbar = () => {
-	// todo: dynamically generate this
-	const pages = [["About", "/"],
-	["Resources", "/resources"],
-	["Past Projects", "/past-projects"],
-	["Events", "/events"]];
-
 	const [value, setValue] = React.useState('one');
 
 	const handleChange = (event, newValue) => {
@@ -137,7 +56,7 @@ const Navbar = () => {
 									id="gdsc-home-btn"
 								>
 									<img
-										src={ gdscBracket }
+										src={gdscBracket}
 										alt="Google Developers Bracket Logo"
 										height="16px"
 										width="32px"
@@ -157,12 +76,12 @@ const Navbar = () => {
 								value={window.location.pathname.toLowerCase()} // fix this
 								variant="fullWidth"
 							>
-								{pages.map((page) => (
+								{pages.map((page, index) => (
 									<LinkTab
 										to={page[1]}
 										value={page[1].toLowerCase()}
 										label={page[0]}
-										key={page[0]}
+										key={index}
 									/>
 								))}
 							</StyledTabs>
@@ -172,58 +91,30 @@ const Navbar = () => {
 
 							{/* social media icons */}
 							<ButtonGroup sx={{ display: "flex" }}>
-								<Tooltip title="Google Developers Student Club page">
-									<IconButton
-										aria-label="Visit our official Google Developers Student Club page"
-										color="default"
-										href="https://gdsc.community.dev/university-of-toronto-mississauga/"
-										rel="noopener noreferrer"
-										size="large"
-										sx={{ marginLeft: ".5em" }}
-										target="_blank"
-									>
-										<Google />
-									</IconButton>
-								</Tooltip>
-								<Tooltip title="Instagram">
-									<IconButton
-										aria-label="Visit our Instagram"
-										color="default"
-										href="https://instagram.com/gdscutm"
-										rel="noopener noreferrer"
-										size="large"
-										sx={{ marginLeft: ".5em" }}
-										target="_blank"
-									>
-										<Instagram />
-									</IconButton>
-								</Tooltip>
-								<Tooltip title="GitHub organization">
-									<IconButton
-										aria-label="Visit our GitHub organization"
-										color="default"
-										href="https://github.com/utmgdsc"
-										rel="noopener noreferrer"
-										size="large"
-										sx={{ marginLeft: ".5em" }}
-										target="_blank"
-									>
-										<GitHub />
-									</IconButton>
-								</Tooltip>
-								<Tooltip title="Discord Server">
-									<IconButton
-										aria-label="Join our Discord Server"
-										color="default"
-										href="https://discord.gg/AZyYSGbU68"
-										rel="noopener noreferrer"
-										size="large"
-										sx={{ marginLeft: ".5em" }}
-										target="_blank"
-									>
-										<SvgIcon><DiscordIcon /></SvgIcon>
-									</IconButton>
-								</Tooltip>
+								<SocialButton
+									title="Google Developers Student Club page"
+									tooltip="Visit our official Google Developers Student Club page"
+									icon={<Google />}
+									href="https://gdsc.community.dev/university-of-toronto-mississauga/"
+								/>
+								<SocialButton
+									title="Instagram"
+									tooltip="Visit our Instagram"
+									icon={<Instagram />}
+									href="https://instagram.com/gdscutm"
+								/>
+								<SocialButton
+									title="Github organization"
+									tooltip="Visit our Github organization"
+									icon={<GitHub />}
+									href="https://github.com/utmgdsc"
+								/>
+								<SocialButton
+									title="Discord Server"
+									tooltip="Join our Discord Server"
+									icon={<SvgIcon><DiscordIcon /></SvgIcon>}
+									href="https://discord.gg/AZyYSGbU68"
+								/>
 							</ButtonGroup>
 						</Toolbar>
 

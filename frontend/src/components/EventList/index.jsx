@@ -11,34 +11,43 @@ import CustomCard from '../CustomCard';
  * @param {upcoming} upcoming whether to show upcoming events or not
  * @returns {object} event object
  */
-const EventList = ({limit, upcoming}) => {
+const EventList = ({ limit, upcoming }) => {
     const [events, setEvents] = useState([]);
 
     // load external json file from api
     const getEvents = async () => {
-        let response = await fetch(process.env.REACT_APP_CHAPTER_API_URL)
+        const abortController = new AbortController()
+
+        await fetch(process.env.REACT_APP_CHAPTER_API_URL, {
+            signal: abortController.signal
+        })
             .then(response => response.json())
             .then(data => {
-                if (limit === undefined) {
-                    return data["results"];
-                } else {
-                    return data["results"].slice(0, limit);
+                if (data["detail"] && data["detail"].includes("throttled")) {
+                    throw new Error(data["detail"]);
                 }
-            }).then(data => {
-                if (upcoming === true) {
-                    return data.filter(event => new Date(event.end_date) > new Date());
-                } else {
-                    return data;
+                let eventData = data["results"];
+                if (limit) {
+                    eventData = eventData.slice(0, limit);
                 }
+                if (upcoming) {
+                    eventData = eventData.filter(event => new Date(event.end_date) > new Date());
+                }
+                setEvents(eventData);
+            }).catch(error => {
+                if (error.name === 'AbortError') return;
+                // if the query has been aborted, do nothing
+                throw error;
             });
-        setEvents(response);
+        return () => {
+            abortController.abort();
+        }
     }
 
     // empty array means only run once to avoid ratelimit
     useEffect(() => {
         getEvents();
-        console.log(events);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     // if no events, show message rather than empty page
@@ -56,7 +65,7 @@ const EventList = ({limit, upcoming}) => {
     return (
         <Grid container spacing={2}>
             {events.map((event) => (
-                <CustomCard data={ event } key={ event.id } />
+                <CustomCard data={event} key={event.id} />
             ))}
         </Grid>
     );

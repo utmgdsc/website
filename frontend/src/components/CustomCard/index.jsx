@@ -16,7 +16,7 @@ import Description from '../Description';
  */
 const CustomCard = ({ data }) => {
   const colors = ["success", "error", "warning", "info"];
-  const { id, start_date, title, url, description } = data;
+  const { id, start_date, title, url, description, lines } = data;
 
   return (
     <Grid key={id} item xs={12} sm={6} md={4}>
@@ -44,7 +44,7 @@ const CustomCard = ({ data }) => {
               textOverflow: "ellipsis",
               maxWidth: "100%",
               display: "-webkit-box",
-              "WebkitLineClamp": "5",
+              "WebkitLineClamp": lines ? lines : 4,
               "WebkitBoxOrient": "vertical",
             }}
           >

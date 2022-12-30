@@ -1,7 +1,11 @@
+import { useEffect } from "react";
 import EventList from "../../components/EventList";
 import { Container, Typography } from "@mui/material";
 
 const Events = () => {
+    useEffect(() => {
+        document.title = 'GDSC UTM - Events';
+    }, []);
     return (
         <main>
             <Container sx={{ py: 8 }}>

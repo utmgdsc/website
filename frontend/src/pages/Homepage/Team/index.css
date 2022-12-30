@@ -31,9 +31,16 @@ p.text {
 			margin-bottom: 0;
 		}
 
-		.team .member img {
+		.team .member img, .team .member .MuiSkeleton-root {
 			border-radius: 100%;
-			width: 6.9rem;
+			display: block;
 			height: 6.9rem;
+			margin: auto;
 			object-fit: cover;
+			width: 6.9rem;
+		}
+
+		.team .member .role {
+			opacity: 0.75;
+			display: block;
 		}

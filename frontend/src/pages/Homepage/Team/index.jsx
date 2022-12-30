@@ -1,5 +1,6 @@
-import "./Team.css";
+import "./index.css";
 import { Typography } from "@mui/material";
+import SkeletonLoadedImage from "../../../components/SkeletonLoadedImage";
 
 /**
  * A single team member
@@ -12,12 +13,17 @@ import { Typography } from "@mui/material";
 const Person = ({ name, role, picture, pronouns }) => {
     return (
         <div className='member'>
-            <img src={picture} alt={"A head shot of " + name} />
+
+            <SkeletonLoadedImage
+                src={picture}
+                alt={"A head shot of " + name + ", " + role}
+            />
+
             <p className='text secondary'>
                 <span className='introduction'>
-                    <strong>{name} </strong> <em>{pronouns}</em>
+                    <strong>{name}</strong> <em>{pronouns}</em>
                 </span>
-                {role}
+                <span className='role'> {role}</span>
             </p>
         </div>
     )
@@ -27,31 +33,34 @@ const Person = ({ name, role, picture, pronouns }) => {
  * Filters team members by role
  * @param {*} data props.data from the json file
  * @param {string} subTeam substring to find in role
+ * @param {string} title title of the team
  */
-const getSubTeam = (data, subTeam, title) => {
+const Team = ({ data, subTeam, title }) => {
     // do not return anything if there are no team members in the subteam
     const team = data.filter(teamMember => teamMember.role.toLowerCase().includes(subTeam));
-    if ( team.length <= 0) {
+
+    if (team.length <= 0) {
         return null;
     }
 
     return (
-        [
+        <>
             <Typography
                 align="center"
                 component="h3"
                 fontWeight="bold"
-                variant="h4"
+                key={subTeam + title}
                 marginTop={8}
+                variant="h4"
             >
                 {title + (team.length > 1 ? "s" : "")}
-            </Typography>,
+            </Typography>
 
             <div className="team">
 
-                {team.map(teamMember => (
+                {team.map((teamMember, index) => (
                     <Person
-                        key={teamMember.name}
+                        key={index}
                         name={teamMember.name}
                         pronouns={teamMember.pronouns}
                         role={teamMember.role}
@@ -59,25 +68,9 @@ const getSubTeam = (data, subTeam, title) => {
                     />
                 ))}
 
-            </div>,
-        ]
+            </div>
+        </>
     );
 }
-
-/**
- * The team page. Note: everyone must have a unique name!
- * @param {*} props team.json from the data folder
- * @returns {object} the team page
- */
-const Team = (props) => {
-    return (
-        <div>
-            {getSubTeam(props.data, "pres", "President")}
-            {getSubTeam(props.data, "lead", "Team Lead")}
-            {getSubTeam(props.data, "associate", "Associate")}
-            {getSubTeam(props.data, "advisor", "Advisor")}
-        </div>
-    );
-};
 
 export default Team;

@@ -8,26 +8,36 @@ import { Skeleton } from '@mui/material';
  * @returns {string} description of the event as a raw string
  */
 const Description = ({ id }) => {
-  const [description, setDescription] = useState("");
+	const [description, setDescription] = useState("");
 
-  const getDescription = async () => {
-    await fetch( process.env.REACT_APP_EVENT_API_URL + id)
-      .then(response => response.json())
-      .then(data => {
-        setDescription(data["description_short"]);
-      })
-      .catch(error => {
-        console.error(error);
-      })
-  }
+	const getDescription = async () => {
+		const abortController = new AbortController()
 
-  // empty array means only run once to avoid ratelimit
-  useEffect(() => {
-    getDescription();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+		await fetch(process.env.REACT_APP_EVENT_API_URL + id, {
+			signal: abortController.signal
+		})
+			.then(response => response.json())
+			.then(data => {
+				setDescription(data["description_short"]);
+			})
+			.catch(error => {
+				if (error.name === 'AbortError') return;
+				// if the query has been aborted, do nothing
+				throw error;
+			})
 
-  return description ? description : <Skeleton variant="text" sx={{ fontSize: '5rem' }} />;
+		return () => {
+			abortController.abort();
+		}
+	}
+
+	// empty array means only run once to avoid ratelimit
+	useEffect(() => {
+		getDescription();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+
+	return description ? description : <Skeleton variant="text" sx={{ fontSize: '5rem' }} />;
 }
 
 export default Description;
