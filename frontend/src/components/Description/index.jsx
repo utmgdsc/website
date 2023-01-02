@@ -11,9 +11,9 @@ const Description = ({ id }) => {
 	const [description, setDescription] = useState("");
 
 	/**
-     * load external json file from api
-     * @returns {object} bevy event object
-     */
+	 * load external json file from api
+	 * @returns {object} bevy event object
+	 */
 	const getDescription = async () => {
 		const abortController = new AbortController()
 

@@ -1,4 +1,4 @@
-import { Suspense, useState } from "react";
+import { Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 
@@ -7,9 +7,6 @@ import GoogleTheme from "./theme";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import PageNotFound from "./pages/PageNotFound";
-
-import { useNavigate } from 'react-router'
-
 
 import { CssBaseline, ThemeProvider, LinearProgress } from "@mui/material";
 

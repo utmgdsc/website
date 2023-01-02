@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import EventList from "../../components/EventList";
 import { Container, Typography } from "@mui/material";
 import BannerHeader from "../../components/BannerHeader";
 import BannerImg from "../../assets/lena_giang.png"
@@ -19,15 +18,15 @@ const Events = () => {
 				<em>Last updated 2023-01-01</em>
 
 				<section>
-				<Typography
-					fontWeight="bold"
-					color="text.primary"
-					component="h2"
-					variant="h4"
-					lineHeight="2.5em"
-				>
-					Guidelines (tl;dr)
-				</Typography>
+					<Typography
+						fontWeight="bold"
+						color="text.primary"
+						component="h2"
+						variant="h4"
+						lineHeight="2.5em"
+					>
+						Guidelines (tl;dr)
+					</Typography>
 					<ul>
 						<li aria-level={1}>
 							Google colors (in the following order):{" "}
@@ -59,16 +58,16 @@ const Events = () => {
 				</section>
 
 				<section>
-				<Typography
-					fontWeight="bold"
-					color="text.primary"
-					component="h2"
-					variant="h4"
-					lineHeight="2.5em"
-				>
-					The goods
-				</Typography>
-				<pre>tbd - ask us on discord for now! </pre>
+					<Typography
+						fontWeight="bold"
+						color="text.primary"
+						component="h2"
+						variant="h4"
+						lineHeight="2.5em"
+					>
+						The goods
+					</Typography>
+					<pre>tbd - ask us on discord for now! </pre>
 				</section>
 			</Container>
 		</>

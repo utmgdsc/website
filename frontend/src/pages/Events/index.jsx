@@ -13,7 +13,7 @@ const Events = () => {
 	}, []);
 	return (
 		<>
-			<BannerHeader text="Events" picture={ BannerImg } />
+			<BannerHeader text="Events" picture={BannerImg} />
 
 			<Container sx={{ py: 4 }} component="main" id="events">
 				<Typography

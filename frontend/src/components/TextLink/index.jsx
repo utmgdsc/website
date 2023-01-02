@@ -33,7 +33,7 @@ const TextLink = ({ children, href, external, forwardedRef, noIcon, ...props }) 
 			// component={pages.find(el => el.includes(href)) ? RouterLink : "a"}
 			// href={pages.find(el => el.includes(href)) ? undefined : href}
 			href={href}
-			onClickCapture={ UpdateNavbar }
+			onClickCapture={UpdateNavbar}
 			ref={forwardedRef}
 			rel={external ? "noopener noreferrer" : ""}
 			target={external ? "_blank" : ""}
