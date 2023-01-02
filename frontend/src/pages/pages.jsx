@@ -1,6 +1,6 @@
 import React, { lazy } from 'react';
 const Homepage = lazy(() => import("./Homepage"));
-const ResourcePage = lazy(() => import("./Resources"));
+const ResourcesPage = lazy(() => import("./Resources"));
 const ProjectPage = lazy(() => import("./Projects"));
 const Events = lazy(() => import("./Events"));
 const BrandResources = lazy(() => import("./BrandResources"));
@@ -12,7 +12,7 @@ const BrandResources = lazy(() => import("./BrandResources"));
  *  and the third is the component that is rendered.
  */
 const pages = [["About", "/", <Homepage />],
-["Resources", "/resources", <ResourcePage />],
+["Resources", "/resources", <ResourcesPage />],
 ["Past Projects", "/past-projects", <ProjectPage />],
 ["Events", "/events", <Events />],
 ["", "/brand-resources", <BrandResources />]];

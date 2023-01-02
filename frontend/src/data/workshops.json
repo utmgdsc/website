@@ -1,0 +1,82 @@
+{
+	"Git": [
+		{
+			"date": "2021-09-16",
+			"host": ["Daniel Laufer"],
+			"detail": "Get an overview of Git and GitHub including what they are, their purpose, how they work, how they interact with each other, and much more.\n\nYou will learn about essential Git commands and concepts and go through several short demos using them.\n\nAdditionally, you will learn how to collaborate with others on a project using Git and GitHub, and learn how to contribute to open-source projects.\n\nAll of this combined will allow students to learn an essential skill that will follow them through their career in tech!",
+			"code": "https://github.com/utmgdsc/git-workshop",
+			"slide": "https://docs.google.com/presentation/d/1hdl4TNEK4gg4wnwN8six5xIM8vCS4xipD1DsY3rf-MM/edit#slide=id.gea706eb252_0_146"
+		},
+		{
+			"date": "2022-11-06",
+			"host": ["Manjoy Malhotra"],
+			"detail": "Have you been struggling to start contributing to our Open Source Initiative projects? Do you just need a refresher for CSC207?\n\nNo matter if you're from UTM, UTSG, or even high school, git a head start by attending our workshop, entirely online! 🐙\n\nYou'll be even more ready to win prizes (maybe from even GitHub 👀) by contributing to our open source projects 👀👀👀👀\n\nWe've be covering the basics of how git works, so that you'll be set up for contribution in no time.",
+			"slide": "https://www.slideshare.net/GDSCUofTMississauga/gitpptx-254336103",
+			"recording": "https://www.youtube.com/watch?v=K1V_xtcGCl4&t=3s"
+		}
+	],
+	"Front-end": [
+		{
+			"date": "2021-10-28",
+			"host": ["Jarrod Servilla", "Daniel Laufer", "Milind Vishnoi"],
+			"detail": "Learn the fundamentals of React!",
+			"code": "https://github.com/utmgdsc/react-workshop",
+			"slide": "https://docs.google.com/presentation/d/1B8LL6LJZrFeJm9vPrOhnilZmtF-RZ2n94ultI13z_sM/edit#slide=id.gf9a69aabcc_0_0"
+		},
+		{
+			"date": "2022-11-18",
+			"host": ["Giang Bui", "Brian Zhang"],
+			"detail": "We have teamed up with CSSC to bring you a workshop to get familiar with React AND UI/UX design! ",
+			"code": "https://github.com/utm-cssc/frontend-workshop-2022",
+			"slide": "https://docs.google.com/presentation/d/1m-nAIGf_7ZKnKxSDeV0x1kCGj7YeGSkBIG4exYKNpSQ/edit",
+			"recording": "https://www.youtube.com/watch?v=DYGzO8eYwT4"
+		}
+	],
+	"Back-end": [
+		{
+			"date": "2021-11-25",
+			"host": ["Daniel Laufer"],
+			"detail": "Learn about backend development through using Flask, a Python web framework, and Amazon Web Services (AWS), the leading cloud service provider in the world!",
+			"code": "https://github.com/utmgdsc/back-end-workshop",
+			"slide": "https://docs.google.com/presentation/d/1u0lOjvQeCHM8IaPHoUb6EpbC5hCHY9Cb6YfZYXOzC_U/edit#slide=id.gea706eb252_0_146"
+		},
+		{
+			"date": "2022-11-28",
+			"host": ["Manjoy Malhotra", "Manav Bhojak"],
+			"detail": "Learn how to utilize Express.js, a back end web application framework useful for Node.js",
+			"code": "https://github.com/utm-cssc/backend-express-workshop-2022"
+		}
+	],
+	"Database and DevOps": [
+		{
+			"date": "2022-01-20",
+			"host": ["Daniel Laufer"],
+			"detail": "Learn all about DevOps, and get the chance to set up automated deployment and testing of your applications using GitHub Actions and Firebase!",
+			"code": "https://github.com/utmgdsc/devops-part-1",
+			"slide": "https://docs.google.com/presentation/d/15gq9qibAPqK_-4rG68BTzmvzgonQBS0_7WKpJjrYFzs/edit#slide=id.gf9a69aabcc_0_0"
+		},
+		{
+			"date": "2022-03-11",
+			"host": ["Daniel Laufer", "Ritvik Bhardwaj"],
+			"detail": "Learn all about Docker and how to containerize your applications! ",
+			"code": "https://github.com/utmgdsc/docker-workshop",
+			"slide": "https://docs.google.com/presentation/d/1l2fDEpqCm6UxjjQk24Ood-V1KX8EIgw3-aSx9Mm-v50/edit"
+		}
+	],
+	"Game Development": [
+		{
+			"date": "2022-03-31",
+			"host": ["Manushree Saboo"],
+			"detail": "In this beginner-friendly workshop, we will go through what Unity is, some fundaments about C# for game development, and how do we use the two to create interactive games. ",
+			"code": "https://github.com/utmgdsc/Game-Dev-Workshop"
+		}
+	],
+	"Machine Learning": [
+		{
+			"date": "2021-11-10",
+			"host": ["Tanmay Bakshi"],
+			"detail": "Google Developer Experts - Speaker Series:\n\nTanmay Bakshi is a LinkedIn Top 25 Tech Influencer, a bestselling author, a TED & Keynote Speaker, GDE, IBM Advisory Software Engineer and more - all at 18 years old. Join our talk to hear more about Tanmay's journey and accomplishments in Machine Learning and Artificial Intelligence, highlighting some of his most recent projects and insightful advice - and ask him some questions of your own!",
+			"recording": "https://www.youtube.com/watch?v=UcpSXgnEW3w"
+		}
+	]
+}
