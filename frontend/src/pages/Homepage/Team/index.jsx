@@ -11,66 +11,77 @@ import SkeletonLoadedImage from "../../../components/SkeletonLoadedImage";
  * @returns {object} a single team member
  */
 const Person = ({ name, role, picture, pronouns }) => {
-    return (
-        <div className='member'>
+	return (
+		<div className='member'>
 
-            <SkeletonLoadedImage
-                src={picture}
-                alt={"A head shot of " + name + ", " + role}
-            />
+			<SkeletonLoadedImage
+				src={picture}
+				alt={"A head shot of " + name + ", " + role}
+				draggable="false"
+			/>
 
-            <p className='text secondary'>
-                <span className='introduction'>
-                    <strong>{name}</strong> <em>{pronouns}</em>
-                </span>
-                <span className='role'> {role}</span>
-            </p>
-        </div>
-    )
+			<p className='text secondary'>
+				<span className='introduction'>
+					<strong>{name}</strong> <em>{pronouns}</em>
+				</span>
+				<span className='role'> {role}</span>
+			</p>
+		</div>
+	)
 };
 
 /**
  * Filters team members by role
  * @param {*} data props.data from the json file
- * @param {string} subTeam substring to find in role
+ * @param {string} subTeam substring to find in role, comma separated
  * @param {string} title title of the team
  */
 const Team = ({ data, subTeam, title }) => {
-    // do not return anything if there are no team members in the subteam
-    const team = data.filter(teamMember => teamMember.role.toLowerCase().includes(subTeam));
+	// do not return anything if there are no team members in the subteam
+	const roles = subTeam.split(","); // roles to filter by
 
-    if (team.length <= 0) {
-        return null;
-    }
+	// filter team members by role
+	const team = data.filter((member) => {
+		for (let i = 0; i < roles.length; i++) {
+			if (member.role.toLowerCase().includes(roles[i].toLowerCase())) {
+				return true;
+			}
+		}
+		return false;
+	});
 
-    return (
-        <>
-            <Typography
-                align="center"
-                component="h3"
-                fontWeight="bold"
-                key={subTeam + title}
-                marginTop={8}
-                variant="h4"
-            >
-                {title + (team.length > 1 ? "s" : "")}
-            </Typography>
+	if (team.length <= 0) {
+		return null;
+	}
 
-            <div className="team">
+	return (
+		<>
+			<Typography
+				align="center"
+				component="h3"
+				fontWeight="bold"
+				key={subTeam + title}
+				marginTop={8}
+				variant="h4"
+			>
+				{title + (team.length > 1 ? "s" : "")}
+			</Typography>
 
-                {team.map((teamMember, index) => (
-                    <Person
-                        key={index}
-                        name={teamMember.name}
-                        pronouns={teamMember.pronouns}
-                        role={teamMember.role}
-                        picture={teamMember.picture === undefined ? require("../../../assets/default_user.png") : require("../../../assets/team/" + teamMember.picture)}
-                    />
-                ))}
+			<div className="team">
 
-            </div>
-        </>
-    );
+				{team.map((teamMember, index) => (
+					<Person
+						key={index}
+						name={teamMember.name}
+						pronouns={teamMember.pronouns}
+						role={teamMember.role}
+						picture={teamMember.picture === undefined ? require("../../../assets/default_user.png") : require("../../../assets/team/" + teamMember.picture)}
+					/>
+				))}
+
+			</div>
+		</>
+	);
 }
 
 export default Team;

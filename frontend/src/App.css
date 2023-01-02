@@ -17,3 +17,15 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
 }
+
+main {
+	/* footer ~200px */
+	min-height: calc(100vh - 200px);
+}
+
+.vox-only {
+	visibility: hidden;
+	display: block;
+	width: 0;
+	height: 0;
+}

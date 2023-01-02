@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 
@@ -8,17 +8,26 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import PageNotFound from "./pages/PageNotFound";
 
+import { useNavigate } from 'react-router'
 
-import { ThemeProvider, LinearProgress } from "@mui/material";
+
+import { CssBaseline, ThemeProvider, LinearProgress } from "@mui/material";
 
 import pages from "./pages/pages";
 
+// todo add skip to content button
 const App = () => {
+	// detect change of theme and update theme
+	window.matchMedia("(prefers-color-scheme: dark)").onchange = () => {
+		window.location.reload();
+	};
+
 	return (
 		<ThemeProvider theme={GoogleTheme}>
+			<CssBaseline enableColorScheme />
 			<Router>
 				<Navbar pages="pages" />
-				<Suspense fallback={<><LinearProgress /><div style={{height: "100vh"}}></div></>}>
+				<Suspense fallback={<><LinearProgress /><div style={{ height: "100vh" }}></div></>}>
 					<Routes>
 						{
 							pages.map((page, index) => {

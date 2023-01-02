@@ -1,47 +1,127 @@
 // import React, { useContext } from "react";
 import "./index.scss";
-import { Container, Typography } from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
+import bracket_colourless from "../../assets/icons/bracket_colourless.svg";
+import Link from "../TextLink";
+import footerLinks from "../../data/footer.json";
 
+import {
+	CommunityDevButton,
+	InstagramButton,
+	GitHubButton,
+	TwitterButton,
+	FacebookButton,
+	LinkedInButton,
+	YouTubeButton,
+	EmailButton,
+	DiscordButton
+} from "../SocialButton/buttons";
+
+import { styled } from "@mui/material/styles";
+
+/**
+ * A link for footer-flex. Takes the same props as "a".
+ * @param {Object} props - props to pass to the link, same as "a" element
+ * @return {JSX.Element} Footer link
+ */
+const FooterLink = styled((props) =>
+	<li><Link {...props} className={"link"} style={{ color: "inherit" }} {...props} /></li>)(
+		({ theme }) => ({
+			color: theme.palette.text.secondary,
+			opacity: 0.7,
+			'&:hover': {
+				opacity: 1,
+			},
+		}),
+	);
+
+/**
+ * iterate through top level keys in footerLinks
+ *   must only iterate through keys as forEach does not return anything
+ *   and thus cannot be used for react purposes
+ * key name is used as the header text
+ * @param {Object} data - footer links from footer.json
+ * @returns {JSX.Element} Footer links
+ */
+const FooterLinks = ({ data }) => {
+	return Object.keys(data).map(function (header) {
+		return (
+			<div className="flex-item links-flex" key={header} >
+				<Typography variant="h6" component="h6">{header}</Typography>
+				<ul>
+					{
+						// iterate through the links in each header
+						// using the keys as the link text
+						Object.keys(data[header]).map(function (link) {
+							return (
+								<FooterLink
+									key={link}
+									href={data[header][link].URL}
+									external={data[header][link].external}>
+									{link}
+								</FooterLink>
+							) // return
+						}) // map
+					}
+				</ul>
+			</div>
+		) // return
+	}) // map
+}
+
+/**
+ * @returns {JSX.Element} Footer component
+ */
 const Footer = () => {
 	return (
-		<footer>
-			<Container maxWidth="xl">
-				<div class="footer-flex">
-					<div class="logo-group flex-item">
-						<a href="/" class="ignore-jerry-mouse"><span class="vox-only">Home</span></a>
+		<Box
+			component="footer"
+			sx={{
+				backgroundColor: theme => theme.palette.action.hover,
+				borderColor: theme => theme.palette.divider,
+			}}
+		>
+			<Container
+				maxWidth="xl"
+			>
+				<div id="footer">
+					<div className="logo-group flex-item">
+						<a href="/">
+							<img
+								src={bracket_colourless}
+								className="logo"
+								height="64"
+								width="64"
+								alt="UTM GDSC logo" />
+						</a>
 					</div>
 
-					<div class="flex-item">
-						<Typography variant="h6">Contact</Typography>
-						<ul>
-							<li><a rel="noopener noreferrer" target="_blank" href="https://github.com/utmgdsc/PollVotingSystem">MCS PollVoting</a></li>
-							<li><a rel="noopener noreferrer" target="_blank" href="https://github.com/utmgdsc/PollVotingSystem">MCS PollVoting</a></li>
-							<li><a rel="noopener noreferrer" target="_blank" href="https://github.com/utmgdsc/PollVotingSystem">MCS PollVoting</a></li>
-							<li><a rel="noopener noreferrer" target="_blank" href="https://github.com/utmgdsc/">View all repos&hellip;</a></li>
-						</ul>
-					</div>
+					{/* just so that proper heading hierarchy is maintained */}
+					<Typography variant="h5" component="h5" className="vox-only">Footer</Typography>
 
-					<div class="flex-item">
-						<Typography variant="h6">Connect</Typography>
-						<ul>
-							<li><a rel="noopener noreferrer" target="_blank" href="https://discord.gg/FMJNvhXJAa">Discord</a></li>
-							<li><a rel="noopener noreferrer" target="_blank" href="https://instagram.com/gdscutm">Instagram</a></li>
-							<li><a rel="noopener noreferrer" target="_blank" href="https://twitter.com/gdscutm">Twitter</a></li>
-							<li><a rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/gdscuoftmississauga">Facebook</a></li>
-							<li><a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/company/google-developer-student-clubs-uoft-mississauga/">LinkedIn</a></li>
-							<li><a rel="noopener noreferrer" target="_blank" href="https://youtube.com/@gdscutm">YouTube</a></li>
-							<li><a rel="noopener noreferrer" target="_blank" href="mailto:utmdsc@gmail.com">Email</a></li>
-						</ul>
+					<div className="footer-flex">
+						<FooterLinks data={footerLinks} />
 					</div>
 				</div>
 
-				<div class="footer-text">
-					<p style={{ padding: 0 }}>
-						<a href="https://github.com/utmgdsc/website/issues/new/choose" target="_blank" rel="noopener noreferrer">Improve this page on GitHub</a>
-					</p>
+				<div className="footer-text">
+					<ul className="links-flex" style={{ paddingTop: "1em", flexGrow: 1 }}>
+						<FooterLink className="link" href="https://github.com/utmgdsc/website/issues/new/choose" external>Improve this page on GitHub</FooterLink>
+					</ul>
+					<div className="flex-item" id="social">
+						<CommunityDevButton />
+						<InstagramButton />
+						<GitHubButton />
+						<TwitterButton />
+						<FacebookButton />
+						<LinkedInButton />
+						<YouTubeButton />
+						<EmailButton />
+						<DiscordButton />
+					</div>
 				</div>
 			</Container>
-		</footer>
+		</Box >
 	);
 };
 

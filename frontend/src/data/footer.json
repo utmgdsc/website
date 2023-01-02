@@ -1,0 +1,26 @@
+{
+	"Club resources": {
+		"Contact us": {
+			"URL": "https://discord.gg/AZyYSGbU68",
+			"external": true
+		},
+		"Logo download": {
+			"URL": "/brand-resources",
+			"external": false
+		}
+	},
+	"Featured projects": {
+		"MCS PollVoting": {
+			"URL": "https://github.com/utmgdsc/PollVotingSystem",
+			"external": true
+		},
+		"SIGNify": {
+			"URL": "https://github.com/utmgdsc/SIGNify",
+			"external": true
+		},
+		"CourseOfAction": {
+			"URL": "https://github.com/utmgdsc/CourseOfAction",
+			"external": true
+		}
+	}
+}

@@ -2,7 +2,14 @@ import { Typography, Container } from '@mui/material';
 import { Parallax } from 'react-parallax';
 import "./index.scss";
 
-const BannerHeader = ({ text, picture }) => {
+/**
+ * Hero image style header component
+ * @param {string} text text to display on the header
+ * @param {string} picture image to display on the header
+ * @param {string} maxWidth max width of the header to pass to the container
+ * @returns {JSX.Element} hero image style header component
+ */
+const BannerHeader = ({ text, picture, maxWidth }) => {
 	return (
 		<Parallax
 			style={{
@@ -10,7 +17,6 @@ const BannerHeader = ({ text, picture }) => {
 				maxWidth: "unset !important",
 				px: "0"
 			}}
-			strength={-360}
 			className="hero-header-parallax"
 			bgImage={picture}
 			lazy
@@ -19,7 +25,7 @@ const BannerHeader = ({ text, picture }) => {
 				sx={{
 					height: "30rem",
 					display: "flex",
-				}} maxWidth="md">
+				}} maxWidth={maxWidth}>
 				<Typography
 					color="white"
 					component="h2"

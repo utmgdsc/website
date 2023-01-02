@@ -1,5 +1,7 @@
 {
-    "cSpell.words": [
-        "wordmark"
-    ]
+	"cSpell.words": [
+		"wordmark"
+	],
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false
 }

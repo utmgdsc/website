@@ -7,30 +7,35 @@ import {
 	ButtonGroup,
 	Container,
 	Fab,
-	SvgIcon,
 	Toolbar,
+	useTheme,
 } from "@mui/material";
 
-import { ThemeProvider } from "@mui/material/styles";
-
 import {
-	Instagram,
-	GitHub,
-	Google,
-} from '@mui/icons-material';
+	CommunityDevButton,
+	InstagramButton,
+	GitHubButton,
+	DiscordButton
+} from "../SocialButton/buttons";
 
-import { ReactComponent as DiscordIcon } from "../../assets/icons/discord.svg";
-import gdscBracket from "../../assets/icons/gdscbracket.svg";
-
-import GoogleTheme from "../../theme";
+import bracket from "../../assets/icons/bracket.svg";
+import bracketDark from "../../assets/icons/bracket_colourless.svg";
 
 import pages from "../../pages/pages";
 
+import { ElevationScroll, ElevationScrollReverse } from "./ElevationScroll";
 import LinkTab from "./NavTabs/LinkTab";
-import SocialButton from "../SocialButton";
-import ElevationScroll from "./ElevationScroll";
-import ElevationScrollReverse from "./ElevationScroll/Reverse";
 import StyledTabs from "./NavTabs/StyledTabs";
+
+/**
+ * TODO - add a way to programmatically change the tab outside of Navbar.jsx
+ * @param {int} newValue - the value of the tab to change to
+ */
+const changeTab = (newValue) => {
+	const value = newValue[1];
+	// call handleChange the same way as in Navbar.jsx
+	this.handleChange(null, value);
+};
 
 const Navbar = () => {
 	// value required for router but not used in this file
@@ -41,90 +46,95 @@ const Navbar = () => {
 		setValue(newValue);
 	};
 
+	const theme = useTheme();
+
 	return (
-		<ThemeProvider theme={GoogleTheme}>
-			<ElevationScroll>
-				<AppBar sx={{ bgcolor: "transparent !important" }}>
-					<Container maxWidth="xl">
-						<Toolbar disableGutters sx={{ minHeight: "auto !important" }}>
-							{/* gdsc button logo */}
-							<ElevationScrollReverse>
-								<Fab
-									variant="extended"
-									aria-label="Home"
-									component={RouterLink}
-									onClick={handleChange}
-									to="/"
-									id="gdsc-home-btn"
-								>
-									<img
-										src={gdscBracket}
-										alt="Google Developers Bracket Logo"
-										height="16px"
-										width="32px"
-										sx={{ userSelect: "none" }}
-									/>
-								</Fab>
-							</ElevationScrollReverse>
-
-							{/* tab navigation */}
-							<StyledTabs
-								aria-label="Main navigation"
-								centered
-								component="nav"
-								id="main-nav"
-								indicatorColor="#4285f4"
-								onChange={handleChange}
-								value={window.location.pathname.toLowerCase()} // fix this
-								variant="fullWidth"
+		<ElevationScroll>
+			<AppBar sx={{ bgcolor: "transparent !important" }}>
+				<Container maxWidth="xl">
+					<Toolbar
+						disableGutters
+						sx={{
+							minHeight: "auto !important",
+							flexWrap: "wrap",
+							paddingTop: {
+								xs: "1rem",
+								sm: "1rem",
+								md: "0",
+							}
+						}}
+					>
+						{/* gdsc button logo */}
+						<ElevationScrollReverse>
+							<Fab
+								variant="extended"
+								aria-label="Home"
+								style={{
+									background: theme.palette.background.paper
+								}}
+								component={RouterLink}
+								onClick={handleChange}
+								to="/"
+								id="gdsc-home-btn"
 							>
-								{pages.map((page, index) => (
-									<LinkTab
-										to={page[1]}
-										value={page[1].toLowerCase()}
-										label={page[0]}
-										key={index}
+								<picture id="nav-bracket-logo">
+									<source srcSet={bracketDark} media="(prefers-color-scheme: dark)" />
+									<img src={bracket} alt="Google Developers Bracket Logo"
+										height="48px"
+										width="48px"
+										style={{ userSelect: "none" }}
 									/>
-								))}
-							</StyledTabs>
+								</picture>
+							</Fab>
+						</ElevationScrollReverse>
 
-							{/* spacing */}
-							<Box sx={{ flexGrow: 1 }} />
+						{/* tab navigation */}
+						<StyledTabs
+							aria-label="Main navigation"
+							component="nav"
+							allowScrollButtonsMobile
+							id="main-nav"
+							indicatorColor={theme.palette.primary.main}
+							onChange={handleChange}
+							value={window.location.pathname.toLowerCase()} // fix this
+							variant="scrollable"
+						>
+							{pages.filter(
+								// filter out empty pages
+								(page) => page[0] !== ""
+							).map((page, index) => (
+								<LinkTab
+									to={page[1]}
+									value={page[1].toLowerCase()}
+									label={page[0]}
+									key={page[1]}
+								/>
+							))}
+						</StyledTabs>
 
-							{/* social media icons */}
-							<ButtonGroup sx={{ display: "flex" }}>
-								<SocialButton
-									title="Google Developers Student Club page"
-									tooltip="Visit our official Google Developers Student Club page"
-									icon={<Google />}
-									href="https://gdsc.community.dev/university-of-toronto-mississauga/"
-								/>
-								<SocialButton
-									title="Instagram"
-									tooltip="Visit our Instagram"
-									icon={<Instagram />}
-									href="https://instagram.com/gdscutm"
-								/>
-								<SocialButton
-									title="Github organization"
-									tooltip="Visit our Github organization"
-									icon={<GitHub />}
-									href="https://github.com/utmgdsc"
-								/>
-								<SocialButton
-									title="Discord Server"
-									tooltip="Join our Discord Server"
-									icon={<SvgIcon><DiscordIcon /></SvgIcon>}
-									href="https://discord.gg/AZyYSGbU68"
-								/>
-							</ButtonGroup>
-						</Toolbar>
+						{/* spacing */}
+						<Box sx={{ flexGrow: 1 }} />
 
-					</Container>
-				</AppBar>
-			</ElevationScroll>
-		</ThemeProvider>
+						{/* social media icons */}
+						<ButtonGroup
+							sx={{
+								display: {
+									// xs: "none",
+									sm: "flex",
+								}
+							}}>
+							<CommunityDevButton />
+							<InstagramButton />
+							<GitHubButton />
+							<DiscordButton />
+						</ButtonGroup>
+					</Toolbar>
+
+				</Container>
+			</AppBar>
+		</ElevationScroll>
 	);
 };
 
 export default Navbar;
+export { changeTab, Navbar };

@@ -1,29 +1,48 @@
 import {
-    Slide,
-    useScrollTrigger
+	Slide,
+	useScrollTrigger
 } from "@mui/material";
 
+import { useTheme } from '@mui/material/styles';
+
+import React from "react";
+
 const ElevationScroll = (props) => {
-    const { children } = props;
+	const { children } = props;
 
-    const elevationTrigger = useScrollTrigger({
-        disableHysteresis: true,
-        threshold: 0,
-    });
+	const elevationTrigger = useScrollTrigger({
+		disableHysteresis: true,
+		threshold: 0,
+	});
 
-    const slideTrigger = useScrollTrigger({});
+	const slideTrigger = useScrollTrigger({});
 
-    return (
-        <Slide
-            appear={false}
-            direction="down"
-            in={!slideTrigger}
-            elevation={elevationTrigger ? 4 : 0}
-            sx={{ background: elevationTrigger ? "white" : "transparent" }}
-        >
-            {children}
-        </Slide>
-    );
+	const theme = useTheme();
+
+	return (
+		<Slide
+			appear={false}
+			direction="down"
+			in={!slideTrigger}
+			elevation={elevationTrigger ? 4 : 0}
+			sx={{ background: elevationTrigger ? theme.palette.background.default : "transparent" }}
+		>
+			{children}
+		</Slide>
+	);
 }
 
-export default ElevationScroll;
+const ElevationScrollReverse = (props) => {
+	const { children } = props;
+
+	const trigger = useScrollTrigger({
+		disableHysteresis: true,
+		threshold: 0,
+	});
+
+	return React.cloneElement(children, {
+		sx: { boxShadow: trigger ? 0 : 4 },
+	});
+}
+
+export { ElevationScroll, ElevationScrollReverse }

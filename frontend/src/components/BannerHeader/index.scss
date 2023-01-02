@@ -1,22 +1,22 @@
 .hero-header-parallax {
-    &:after {
-        content: '';
-        display: block;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        background-image: linear-gradient(rgba(0, 0, 0, .6) 0%, rgba(0, 0, 0, 0.8) 100%);
-        z-index: 1;
-        background-size: 18px;
-    }
+	&:after {
+		content: '';
+		display: block;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		background-image: linear-gradient(rgba(0, 0, 0, .6) 0%, rgba(0, 0, 0, 0.8) 100%);
+		z-index: 1;
+		background-size: 18px;
+	}
 
-    .react-parallax-content {
-        z-index: 2;
-    }
+	.react-parallax-content {
+		z-index: 2;
+	}
 
-    img {
-        object-fit: cover;
-    }
+	img {
+		object-fit: cover;
+	}
 }

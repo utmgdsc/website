@@ -3,6 +3,7 @@ import "./index.css";
 import {
 	Typography,
 	Container,
+	alpha,
 	Box
 } from '@mui/material';
 
@@ -11,24 +12,33 @@ import teamMembers from "../../data/team.json";
 import HeroInfoSesh from "../../assets/infosession.jpg"
 import wordmark from "../../assets/icons/gdscwordmark.svg";
 import HeroImage from '../../assets/background.jpg';
+import HeroImageDark from '../../assets/background_dark.jpg';
 import HeroTeam from '../../assets/team.png';
+
+import { prefersDarkMode } from "../../theme";
 
 import Team from "./Team";
 import EventList from "../../components/EventList";
 import SkeletonLoadedImage from "../../components/SkeletonLoadedImage";
 import BannerHeader from "../../components/BannerHeader";
 
+import { useTheme } from '@mui/material/styles';
 
 const Homepage = () => {
 	useEffect(() => {
 		document.title = 'GDSC UTM';
 	}, []);
+
+	const theme = useTheme();
+
 	return (
-		<main>
+		<main id="home">
 			<section>
 				<Box
 					sx={{
-						background: 'linear-gradient(rgba(255,255,255,1) 0%, rgba(255,255,255,0.80) 69%, rgba(255,255,255,1) 100%), url("' + HeroImage + '") no-repeat',
+						background: 'linear-gradient(' + theme.palette.background.default + ' 0%,'
+							+ alpha(theme.palette.background.default, 0.8) + '69%,' + theme.palette.background.default + ' 100%), url("'
+							+ (prefersDarkMode() ? HeroImageDark : HeroImage) + '") no-repeat',
 						backgroundSize: 'cover',
 						marginBottom: "-15vh",
 						pb: 6,
@@ -79,7 +89,7 @@ const Homepage = () => {
 			</section>
 
 			<section id="who-are-we">
-				<BannerHeader text="Who are we?" picture={HeroInfoSesh} />
+				<BannerHeader text="Who are we?" picture={HeroInfoSesh} maxWidth="md" />
 				<Container sx={{ py: 8, lineHeight: "2em" }} maxWidth="md">
 					<div className='lead'>
 						Google Developer Student Clubs (GDSC) is a student-led community backed by Google Developers aimed at empowering undergraduate students from all disciplines to grow their knowledge in technology, build solutions for their local communities, and connect with other members from the Google community.
@@ -92,10 +102,10 @@ const Homepage = () => {
 			</section>
 
 			<section id="meet-the-team">
-				<BannerHeader text="Meet the team" picture={HeroTeam} />
+				<BannerHeader text="Meet the team" picture={HeroTeam} maxWidth="md" />
 				<Container sx={{ py: 8, px: 0 }} maxWidth="md">
 					<Team data={teamMembers} subTeam="pres" title="President" />
-					<Team data={teamMembers} subTeam="lead" title="Team Lead" />
+					<Team data={teamMembers} subTeam="lead,coordinator" title="Team Lead" />
 					<Team data={teamMembers} subTeam="associate" title="Associate" />
 					<Team data={teamMembers} subTeam="advisor" title="Advisor" />
 				</Container>
