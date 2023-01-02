@@ -15,6 +15,6 @@ const pages = [["About", "/", <Homepage />],
 ["Resources", "/resources", <ResourcesPage />],
 ["Past Projects", "/past-projects", <ProjectPage />],
 ["Events", "/events", <Events />],
-["", "/brand-resources", <BrandResources />]];
+["Logo Download", "/brand-resources", <BrandResources />]];
 
 export default pages;

@@ -13,7 +13,8 @@ import Description from '../Description';
 import TextLink from '../TextLink';
 
 /**
- * Gets the events from the GDSC (bevy) API
+ * Gets the events from the GDSC (bevy) API and displays them in a card format.
+ * The card has a clickable button that redirects to the event's page.
  * @param {event} event object
  */
 const CustomCard = ({ data }) => {

@@ -3,7 +3,8 @@ import { Parallax } from 'react-parallax';
 import "./index.scss";
 
 /**
- * Hero image style header component
+ * Hero image style header component, spanning the full width of the page/container.
+ * It is recommended to use this component in a container with a max width of 100%.
  * @param {string} text text to display on the header
  * @param {string} picture image to display on the header
  * @param {string} maxWidth max width of the header to pass to the container
@@ -27,7 +28,7 @@ const BannerHeader = ({ text, picture, maxWidth }) => {
 					display: "flex",
 				}} maxWidth={maxWidth}>
 				<Typography
-					color="white"
+					// color="white"
 					component="h2"
 					fontWeight="bold"
 					pb={4}

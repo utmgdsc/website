@@ -105,8 +105,8 @@ const Homepage = () => {
 				<BannerHeader text="Meet the team" picture={HeroTeam} maxWidth="md" />
 				<Container sx={{ py: 8, px: 0 }} maxWidth="md">
 					<Team data={teamMembers} subTeam="pres" title="President" />
-					<Team data={teamMembers} subTeam="lead,coordinator" title="Team Lead" />
-					<Team data={teamMembers} subTeam="associate" title="Associate" />
+					<Team data={teamMembers} subTeam="lead,coordinator" title="Team Lead" removeLast="1"/>
+					<Team data={teamMembers} subTeam="associate" title="Associate" removeLast="1"/>
 					<Team data={teamMembers} subTeam="advisor" title="Advisor" />
 				</Container>
 			</section>

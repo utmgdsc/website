@@ -14,17 +14,20 @@
 	{
 		"name": "Chris",
 		"role": "Advisor",
-		"pronouns": "he/him"
+		"pronouns": "he/him",
+		"picture": "Chris.png"
 	},
 	{
 		"name": "Nivy",
 		"role": "Advisor",
-		"pronouns": "she/her"
+		"pronouns": "she/her",
+		"picture": "Nivy.png"
 	},
 	{
 		"name": "Akshit",
 		"role": "Advisor",
-		"pronouns": "he/him"
+		"pronouns": "he/him",
+		"picture": "Akshit.png"
 	},
 	{
 		"name": "Jackson",
@@ -40,7 +43,8 @@
 	{
 		"name": "Hammad",
 		"role": "Outreach & Logistics Coordinator",
-		"pronouns": "he/him"
+		"pronouns": "he/him",
+		"picture": "hammad.jpg"
 	},
 	{
 		"name": "Roman",
@@ -81,7 +85,8 @@
 	{
 		"name": "Hamza",
 		"role": "Finance Coordinator",
-		"pronouns": "he/him"
+		"pronouns": "he/him",
+		"picture": "hamza.jpg"
 	},
 	{
 		"name": "Emma",

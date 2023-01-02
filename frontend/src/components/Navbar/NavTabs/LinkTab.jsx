@@ -5,6 +5,10 @@ import {
 import { NavLink as RouterLink } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 
+/**
+ * A styled version of the Tab component. It renders a <RouterLink /> component for the navbar.
+ * @returns {JSX.Element} a styled version of the Tab component
+ */
 const LinkTab = styled((props) =>
 	<Tab component={RouterLink} {...props} />)(
 		({ theme }) => ({

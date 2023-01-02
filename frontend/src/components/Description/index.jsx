@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Skeleton } from '@mui/material';
 
 /**
- * Gets the description given an event ID from the GDSC (bevy) API
+ * Gets the description given an event ID from the GDSC (bevy) API.
  * @param {string} id id of the event
  * @returns {string} description of the event as a raw string
  */

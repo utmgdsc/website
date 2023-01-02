@@ -17,9 +17,10 @@ import {
 
 import { ReactComponent as DiscordIcon } from "../../assets/icons/discord.svg";
 
+// self-explanatory social media button components
+
 const CommunityDevButton = (props) => (
 	<SocialButton
-		showTooltip
 		title="Google Developers Student Club page"
 		tooltip="Visit our official Google Developers Student Club page"
 		icon={<Google />}
@@ -29,7 +30,6 @@ const CommunityDevButton = (props) => (
 );
 
 const InstagramButton = (props) => (
-
 	<SocialButton
 		title="Instagram"
 		tooltip="Visit our Instagram"

@@ -6,7 +6,9 @@ import {
 import CustomCard from '../CustomCard';
 
 /**
- * Gets the events from the GDSC (bevy) API
+ * Gets the events from the GDSC (bevy) API.
+ * If limit is specified, it will only show that many events.
+ * If upcoming is specified, it will only show upcoming events. Otherwise, it will show all events.
  * @param {limit} limit the number of events to show
  * @param {upcoming} upcoming whether to show upcoming events or not
  * @returns {object} event object

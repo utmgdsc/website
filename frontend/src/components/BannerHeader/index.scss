@@ -19,4 +19,10 @@
 	img {
 		object-fit: cover;
 	}
+
+	@media (prefers-color-scheme: light) {
+		&:after {
+			background-image: linear-gradient(rgba(255, 255, 255, .6) 0%, rgba(255, 255, 255, 0.8) 100%);
+		}
+	}
 }

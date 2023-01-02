@@ -7,6 +7,8 @@ import { useTheme } from '@mui/material/styles';
 
 import React from "react";
 
+// roughly based on https://mui.com/material-ui/react-app-bar/#HideAppBar.js
+
 const ElevationScroll = (props) => {
 	const { children } = props;
 

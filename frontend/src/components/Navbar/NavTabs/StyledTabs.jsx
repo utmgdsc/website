@@ -2,6 +2,11 @@ import React from "react";
 import { Tabs } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
+/**
+ * A styled version of the Tabs component. It renders the tabs list for the navbar.
+ * It should be responsive to the screen size when used with the Navbar component.
+ * @returns {JSX.Element} a styled version of the Tabs component
+ */
 const StyledTabs = styled((props) => (
 	<Tabs
 		{...props}
@@ -24,10 +29,12 @@ const StyledTabs = styled((props) => (
 	'& .MuiTabs-scrollButtons.Mui-disabled': {
 		opacity: 0.3,
 	},
+	flexGrow: 1, // so that the arrows don't show up momentarily on page switch
 	[theme.breakpoints.down('md')]: {
 		'&': {
-			order: 3,
-			flexBasis: '100%',
+			// responsive 2 row layout when used with the Navbar component
+			order: 3, // after social buttons
+			flexBasis: '100%', // take up row
 		},
 	},
 }));

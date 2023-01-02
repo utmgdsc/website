@@ -4,9 +4,9 @@ import BannerHeader from "../../components/BannerHeader";
 import BannerImg from "../../assets/lena_giang.png"
 
 /**
- * @return {JSX.Element} Events page component using EventList
+ * @return {JSX.Element} Brand resources page component
  */
-const Events = () => {
+const BrandResources = () => {
 	useEffect(() => {
 		document.title = 'GDSC UTM - Logo Download';
 	}, []);
@@ -74,4 +74,4 @@ const Events = () => {
 	);
 }
 
-export default Events;
+export default BrandResources;

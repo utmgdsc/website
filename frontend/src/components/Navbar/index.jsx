@@ -37,6 +37,12 @@ const changeTab = (newValue) => {
 	this.handleChange(null, value);
 };
 
+/**
+ * Site navbar component. Contains the logo, social buttons, and navigation tabs.
+ * Responsive: 1 row on mobile, 2 rows on desktop. The tabs scroll when there are too many to fit.
+ * Navbar goes up and down on scroll.
+ * @returns {JSX.Element} the navbar component
+ */
 const Navbar = () => {
 	// value required for router but not used in this file
 	// eslint-disable-next-line no-unused-vars
@@ -58,6 +64,7 @@ const Navbar = () => {
 							minHeight: "auto !important",
 							flexWrap: "wrap",
 							paddingTop: {
+								// since two-row version lacks top padding, add it here
 								xs: "1rem",
 								sm: "1rem",
 								md: "0",
