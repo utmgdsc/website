@@ -15,7 +15,7 @@
 			"recording": "https://www.youtube.com/watch?v=K1V_xtcGCl4&t=3s"
 		}
 	],
-	"Front-end": [
+	"Frontend": [
 		{
 			"date": "2021-10-28",
 			"host": ["Jarrod Servilla", "Daniel Laufer", "Milind Vishnoi"],
@@ -26,13 +26,13 @@
 		{
 			"date": "2022-11-18",
 			"host": ["Giang Bui", "Brian Zhang"],
-			"detail": "We have teamed up with CSSC to bring you a workshop to get familiar with React AND UI/UX design! ",
+			"detail": "We have teamed up with CSSC to bring you a workshop to get familiar with React AND UI/UX design!",
 			"code": "https://github.com/utm-cssc/frontend-workshop-2022",
 			"slide": "https://docs.google.com/presentation/d/1m-nAIGf_7ZKnKxSDeV0x1kCGj7YeGSkBIG4exYKNpSQ/edit",
 			"recording": "https://www.youtube.com/watch?v=DYGzO8eYwT4"
 		}
 	],
-	"Back-end": [
+	"Backend": [
 		{
 			"date": "2021-11-25",
 			"host": ["Daniel Laufer"],
@@ -58,7 +58,7 @@
 		{
 			"date": "2022-03-11",
 			"host": ["Daniel Laufer", "Ritvik Bhardwaj"],
-			"detail": "Learn all about Docker and how to containerize your applications! ",
+			"detail": "Learn all about Docker and how to containerize your applications!",
 			"code": "https://github.com/utmgdsc/docker-workshop",
 			"slide": "https://docs.google.com/presentation/d/1l2fDEpqCm6UxjjQk24Ood-V1KX8EIgw3-aSx9Mm-v50/edit"
 		}
@@ -67,7 +67,7 @@
 		{
 			"date": "2022-03-31",
 			"host": ["Manushree Saboo"],
-			"detail": "In this beginner-friendly workshop, we will go through what Unity is, some fundaments about C# for game development, and how do we use the two to create interactive games. ",
+			"detail": "In this beginner-friendly workshop, we will go through what Unity is, some fundaments about C# for game development, and how do we use the two to create interactive games.",
 			"code": "https://github.com/utmgdsc/Game-Dev-Workshop"
 		}
 	],

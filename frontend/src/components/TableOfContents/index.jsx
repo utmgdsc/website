@@ -1,7 +1,8 @@
+/** @jsxImportSource @emotion/react */
 import React, { useState, useEffect, useRef } from "react";
 import "./index.scss";
 import { Typography } from "@mui/material";
-import { useTheme } from '@mui/material/styles';
+import { useTheme } from "@mui/material/styles";
 
 const Headings = ({ headings, activeId }) => {
 	const theme = useTheme();
@@ -10,7 +11,7 @@ const Headings = ({ headings, activeId }) => {
 			{headings.map((heading) => (
 				<li key={heading.id} className={heading.id === activeId ? "active" : ""}>
 					<a
-						style={{ color: theme.palette.text.secondary }}
+						css={{ color: theme.palette.text.secondary }}
 						href={`#${heading.id}`}
 						onClick={(e) => {
 							e.preventDefault();
@@ -26,7 +27,7 @@ const Headings = ({ headings, activeId }) => {
 							{heading.items.map((child) => (
 								<li key={child.id} className={child.id === activeId ? "active" : ""}>
 									<a
-										style={{ color: theme.palette.text.secondary }}
+										css={{ color: theme.palette.text.secondary }}
 										href={`#${child.id}`}
 										onClick={(e) => {
 											e.preventDefault();
@@ -133,7 +134,7 @@ const TableOfContents = () => {
 				variant="h5"
 				margin="0.83em 0"
 			>
-				Table of content
+				Table of contents
 			</Typography>
 			<nav aria-label="Table of contents">
 				<Headings headings={nestedHeadings} activeId={activeId} />

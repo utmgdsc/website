@@ -13,28 +13,28 @@ const StyledTabs = styled((props) => (
 		TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
 	/>
 ))(({ theme }) => ({
-	'& .MuiTabs-flexContainer': {
-		display: 'block',
+	"& .MuiTabs-flexContainer": {
+		display: "block",
 	},
-	'& .MuiTabs-indicator': {
-		display: 'flex',
-		justifyContent: 'center',
-		backgroundColor: 'transparent',
+	"& .MuiTabs-indicator": {
+		display: "flex",
+		justifyContent: "center",
+		backgroundColor: "transparent",
 	},
-	'& .MuiTabs-indicatorSpan': {
+	"& .MuiTabs-indicatorSpan": {
 		maxWidth: 50,
-		width: '100%',
+		width: "100%",
 		backgroundColor: theme.palette.primary.main,
 	},
-	'& .MuiTabs-scrollButtons.Mui-disabled': {
+	"& .MuiTabs-scrollButtons.Mui-disabled": {
 		opacity: 0.3,
 	},
 	flexGrow: 1, // so that the arrows don't show up momentarily on page switch
-	[theme.breakpoints.down('md')]: {
-		'&': {
+	[theme.breakpoints.down("md")]: {
+		"&": {
 			// responsive 2 row layout when used with the Navbar component
 			order: 3, // after social buttons
-			flexBasis: '100%', // take up row
+			flexBasis: "100%", // take up row
 		},
 	},
 }));

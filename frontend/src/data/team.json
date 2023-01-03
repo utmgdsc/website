@@ -12,6 +12,12 @@
 		"picture": "Shubh.png"
 	},
 	{
+		"name": "Andi",
+		"role": "Faculty Advisor",
+		"pronouns": "he/him",
+		"picture": "andi.png"
+	},
+	{
 		"name": "Chris",
 		"role": "Advisor",
 		"pronouns": "he/him",
@@ -32,7 +38,8 @@
 	{
 		"name": "Jackson",
 		"role": "Marketing Lead",
-		"pronouns": "he/him"
+		"pronouns": "he/him",
+		"picture": "jackson.jpg"
 	},
 	{
 		"name": "Estelle",
@@ -91,36 +98,43 @@
 	{
 		"name": "Emma",
 		"role": "Marketing Associate",
-		"pronouns": "she/her"
+		"pronouns": "she/her",
+		"picture": "zx.png"
 	},
 	{
 		"name": "Paris",
 		"role": "Marketing Associate",
-		"pronouns": "she/her"
+		"pronouns": "she/her",
+		"picture": "p22phan.png"
 	},
 	{
 		"name": "Deepasri",
 		"role": "Outreach & Logistics Associate",
-		"pronouns": "she/her"
+		"pronouns": "she/her",
+		"picture": "deepasri.png"
 	},
 	{
 		"name": "Annya",
 		"role": "Outreach & Logistics Associate",
-		"pronouns": "she/her"
+		"pronouns": "she/her",
+		"picture": "nyaa.png"
 	},
 	{
 		"name": "Ido",
 		"role": "Technical Associate",
-		"pronouns": "he/him"
+		"pronouns": "he/him",
+		"picture": "The-g.png"
 	},
 	{
 		"name": "Shaughn",
 		"role": "Technical Associate",
-		"pronouns": "he/him"
+		"pronouns": "he/him",
+		"picture": "cartoonraccoon.gif"
 	},
 	{
 		"name": "Daniyal",
 		"role": "Technical Associate",
-		"pronouns": "he/him"
+		"pronouns": "he/him",
+		"picture": "devls.png"
 	}
 ]

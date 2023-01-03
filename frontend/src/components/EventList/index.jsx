@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import {
 	Grid,
 	Typography,
-} from '@mui/material';
-import CustomCard from '../CustomCard';
+} from "@mui/material";
+import CustomCard from "../CustomCard";
 
 /**
  * Gets the events from the GDSC (bevy) API.
@@ -15,6 +15,13 @@ import CustomCard from '../CustomCard';
  */
 const EventList = ({ limit, upcoming }) => {
 	const [events, setEvents] = useState([]);
+	const [error, setError] = useState(false);
+
+	// i keep getting rate limited for 16+ hours so i disabled this component for development
+	// not needed for Description - halting here stops calls to description too
+	if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+		throw new Error("Disabled EventList component for development to prevent rate limit");
+	}
 
 	/**
 	 * load external json file from api
@@ -28,7 +35,7 @@ const EventList = ({ limit, upcoming }) => {
 		})
 			.then(response => response.json())
 			.then(data => {
-				if (data["detail"] && data["detail"].includes("throttled")) {
+				if (data["detail"] && (data["detail"].includes("throttled") || data["detail"].includes("error"))) {
 					throw new Error(data["detail"]);
 				}
 				let eventData = data["results"];
@@ -40,24 +47,29 @@ const EventList = ({ limit, upcoming }) => {
 				}
 				setEvents(eventData);
 			}).catch(error => {
-				if (error.name === 'AbortError') return;
 				// if the query has been aborted, do nothing
-				throw error;
+				if (error.name === "AbortError") return;
+				setError(error);
 			});
 		return () => {
 			abortController.abort();
 		}
 	}
 
-	// empty array means only run once to avoid ratelimit
+	// empty array means only run once to avoid rate limit
 	useEffect(() => {
 		getEvents();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
+	// if error, show error message
+	if (error) {
+		throw error;
+	}
+
 	// if no events, show message rather than empty page
 	// TODO: get Estelle to draw a cute image
-	if (events.length === 0) {
+	else if (events.length === 0) {
 		return (
 			<Grid item xs={12}>
 				<Typography variant="h5" component="h2">

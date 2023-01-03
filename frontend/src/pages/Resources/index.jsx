@@ -1,17 +1,35 @@
-import React, { useEffect } from 'react';
-import './index.css';
-import { Box, Container, Typography, Grid, Accordion, AccordionSummary, AccordionDetails, List, ListItem, ListItemButton, ListItemText, ListItemIcon } from "@mui/material";
-import { ExpandMore, Code, Slideshow, RadioButtonChecked } from '@mui/icons-material';
-import TableOfContents from '../../components/TableOfContents';
+import React, { useEffect } from "react";
+import "./index.css";
+import {
+	Accordion,
+	AccordionDetails,
+	AccordionSummary,
+	Box,
+	Container,
+	Grid,
+	List,
+	ListItem,
+	ListItemButton,
+	ListItemIcon,
+	ListItemText,
+	Typography,
+} from "@mui/material";
+import {
+	Code,
+	ExpandMore,
+	RadioButtonChecked,
+	Slideshow,
+} from "@mui/icons-material";
+import TableOfContents from "../../components/TableOfContents";
 
-import faq from '../../data/faq.json';
-import workshops from '../../data/workshops.json';
+import faq from "../../data/faq.json";
+import workshops from "../../data/workshops.json";
 import BannerHeader from "../../components/BannerHeader";
-import BannerImg from "../../assets/lena_giang.png"
+import BannerImg from "../../assets/heroes/IMG_3732.jpg"
 
 const ResourcesPage = () => {
 	useEffect(() => {
-		document.title = 'GDSC UTM - Resources';
+		document.title = "GDSC UTM - Resources";
 	}, []);
 
 	return (
@@ -27,11 +45,11 @@ const ResourcesPage = () => {
 						<TableOfContents />
 					</Grid>
 					<Grid item md={9}>
-						<h2 className='resources' id="workshop">GDSC Workshops</h2>
+						<h2 className="resources" id="workshop">GDSC Workshops</h2>
 						{Object.keys(workshops).map((category, index) => {
 							return (
 								<Box key={index}>
-									<h3 className='resources' id={category.replace(/\s/g, '')}>{category}</h3>
+									<h3 className="resources" id={category.replace(/\s/g, "")}>{category}</h3>
 									{workshops[category].map((item, index) => {
 										return (
 											<Accordion key={index}>
@@ -43,45 +61,45 @@ const ResourcesPage = () => {
 													<Typography>Workshop by {item.host.join(", ")} on {item.date}</Typography>
 												</AccordionSummary>
 												<AccordionDetails>
-													<Typography className='workshop-detail'>{item.detail}</Typography>
+													<Typography className="workshop-detail">{item.detail}</Typography>
 													<List>
 														{item.code
-															? <a target="_blank" rel="noreferrer" href={item.code}>
-																<ListItem>
-																	<ListItemButton>
-																		<ListItemIcon>
-																			<Code />
-																		</ListItemIcon>
+															? <ListItem>
+																<ListItemButton component="a" target="_blank" rel="noreferrer" href={item.code}>
+																	<ListItemIcon>
+																		<Code />
+																	</ListItemIcon>
+																	<ListItemText>
 																		<Typography color="text.primary">Starter code</Typography>
-																	</ListItemButton>
-																</ListItem>
-															</a>
+																	</ListItemText>
+																</ListItemButton>
+															</ListItem>
 															: null
 														}
 														{item.slide
-															? <a target="_blank" rel="noreferrer" href={item.slide}>
-																<ListItem>
-																	<ListItemButton>
-																		<ListItemIcon>
-																			<Slideshow />
-																		</ListItemIcon>
-																		<Typography color="text.primary">Slide</Typography>
-																	</ListItemButton>
-																</ListItem>
-															</a>
+															? <ListItem>
+																<ListItemButton component="a" target="_blank" rel="noreferrer" href={item.slide}>
+																	<ListItemIcon>
+																		<Slideshow />
+																	</ListItemIcon>
+																	<ListItemText>
+																		<Typography color="text.primary">Slides</Typography>
+																	</ListItemText>
+																</ListItemButton>
+															</ListItem>
 															: null
 														}
 														{item.recording
-															? <a target="_blank" rel="noreferrer" href={item.recording}>
-																<ListItem>
-																	<ListItemButton>
-																		<ListItemIcon>
-																			<RadioButtonChecked />
-																		</ListItemIcon>
+															? <ListItem>
+																<ListItemButton component="a" target="_blank" rel="noreferrer" href={item.recording}>
+																	<ListItemIcon>
+																		<RadioButtonChecked />
+																	</ListItemIcon>
+																	<ListItemText>
 																		<Typography color="text.primary">Recording</Typography>
-																	</ListItemButton>
-																</ListItem>
-															</a>
+																	</ListItemText>
+																</ListItemButton>
+															</ListItem>
 															: null
 														}
 													</List>
@@ -92,7 +110,7 @@ const ResourcesPage = () => {
 								</Box>
 							);
 						})}
-						<h2 className='resources' id="faq">GDSC FAQ</h2>
+						<h2 className="resources" id="faq">GDSC FAQ</h2>
 						{faq.map((item, index) => {
 							return (
 								<Accordion key={index}>
@@ -111,7 +129,7 @@ const ResourcesPage = () => {
 								</Accordion>
 							);
 						})}
-						<h2 className='resources' id="tips">GDSC Tech tips</h2>
+						<h2 className="resources" id="tips">GDSC Tech tips</h2>
 						{/* // TODO: Implement this when we have tech tip posts on IG */}
 						<Typography>Coming soon</Typography>
 					</Grid>

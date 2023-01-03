@@ -1,14 +1,16 @@
+/** @jsxImportSource @emotion/react */
+
 import { useEffect } from "react";
 import { Container, Typography } from "@mui/material";
 import BannerHeader from "../../components/BannerHeader";
-import BannerImg from "../../assets/lena_giang.png"
+import BannerImg from "../../assets/heroes/lena_giang.png"
 
 /**
  * @return {JSX.Element} Brand resources page component
  */
 const BrandResources = () => {
 	useEffect(() => {
-		document.title = 'GDSC UTM - Logo Download';
+		document.title = "GDSC UTM - Logo Download";
 	}, []);
 	return (
 		<>
@@ -19,31 +21,31 @@ const BrandResources = () => {
 
 				<section>
 					<Typography
-						fontWeight="bold"
 						color="text.primary"
 						component="h2"
-						variant="h4"
+						fontWeight="bold"
 						lineHeight="2.5em"
+						variant="h4"
 					>
 						Guidelines (tl;dr)
 					</Typography>
 					<ul>
 						<li aria-level={1}>
 							Google colors (in the following order):{" "}
-							<span style={{ color: "#4285F4", fontWeight: 700 }}> #4285F4 </span>
-							<span style={{ color: "#EA4335", fontWeight: 700 }}> #EA4335 </span>
-							<span style={{ color: "#FBBC04", fontWeight: 700 }}> #FBBC04 </span>
-							<span style={{ color: "#34A853", fontWeight: 700 }}> #34A853 </span>
+							<span css={{ color: "#4285F4", fontWeight: 700 }}> #4285F4 </span>
+							<span css={{ color: "#EA4335", fontWeight: 700 }}> #EA4335 </span>
+							<span css={{ color: "#FBBC04", fontWeight: 700 }}> #FBBC04 </span>
+							<span css={{ color: "#34A853", fontWeight: 700 }}> #34A853 </span>
 						</li>
 						<ul>
 							<li aria-level={2}>
 								Google Logo Grey
-								<span style={{ color: "#656c73", fontWeight: 700 }}> #656c73 </span>
+								<span css={{ color: "#656c73", fontWeight: 700 }}> #656c73 </span>
 							</li>
 						</ul>
 						<li aria-level={1}>
 							Logo guidelines:{" "}
-							<a href="https://goo.gle/gdsc-brand-guide" style={{ textDecorationLine: "none" }}>
+							<a href="https://goo.gle/gdsc-brand-guide" css={{ textDecorationLine: "none" }}>
 								https://goo.gle/gdsc-brand-guide
 							</a>, tl;dr:
 							<ul>
@@ -59,11 +61,11 @@ const BrandResources = () => {
 
 				<section>
 					<Typography
-						fontWeight="bold"
 						color="text.primary"
 						component="h2"
-						variant="h4"
+						fontWeight="bold"
 						lineHeight="2.5em"
+						variant="h4"
 					>
 						The goods
 					</Typography>

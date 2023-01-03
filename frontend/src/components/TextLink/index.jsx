@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-no-target-blank */
 import { Link } from "@mui/material";
-import { NavLink as RouterLink } from "react-router-dom";
+// import { NavLink as RouterLink } from "react-router-dom";
 import { OpenInNew } from "@mui/icons-material";
-import pages from "../../pages/pages";
+// import pages from "../../pages/pages";
 import React from "react";
 // import { changeTab } from "../Navbar";
 
@@ -42,6 +42,7 @@ const TextLink = ({ children, href, external, forwardedRef, noIcon, ...props }) 
 			{...props}>
 			{children}
 			{external && !noIcon &&
+				// https://www.w3.org/TR/WCAG20-TECHS/G201.html
 				<OpenInNew
 					fontSize="inherit"
 					color="inherit"

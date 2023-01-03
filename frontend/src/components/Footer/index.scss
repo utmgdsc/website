@@ -59,6 +59,7 @@ footer {
 
 	#social {
 		flex-grow: 1;
+		flex-flow: row-reverse wrap;
 		text-align: right;
 
 		li {

@@ -18,11 +18,11 @@ const LinkTab = styled((props) =>
 			fontWeight: "normal",
 			letterSpacing: "0 !important",
 			padding: "1.5em",
-			textTransform: 'none',
+			textTransform: "none",
 			whiteSpace: "nowrap",
-			'&.Mui-selected': {
+			"&.Mui-selected": {
 				color: theme.palette.text.primary,
-				fontWeight: 'bold',
+				fontWeight: "bold",
 			},
 		}),
 	);

@@ -5,12 +5,14 @@ import {
 	CardContent,
 	Grid,
 	Typography,
-} from '@mui/material';
-import './index.scss';
+} from "@mui/material";
+import "./index.scss";
 
-import Description from '../Description';
+import Description from "../Description";
 
-import TextLink from '../TextLink';
+import TextLink from "../TextLink";
+
+import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 
 /**
  * Gets the events from the GDSC (bevy) API and displays them in a card format.
@@ -25,10 +27,10 @@ const CustomCard = ({ data }) => {
 		<Grid key={id} item xs={12} sm={6} md={4}>
 			<Card
 				sx={{
-					height: '100%',
-					display: 'flex',
-					flexDirection: 'column',
 					borderRadius: "2em",
+					display: "flex",
+					flexDirection: "column",
+					height: "100%",
 				}}
 				className="shadow card-front"
 			>
@@ -43,15 +45,17 @@ const CustomCard = ({ data }) => {
 
 					<Typography
 						sx={{
+							display: "-webkit-box",
+							maxWidth: "100%",
 							overflow: "hidden",
 							textOverflow: "ellipsis",
-							maxWidth: "100%",
-							display: "-webkit-box",
-							"WebkitLineClamp": lines ? lines : 4,
 							"WebkitBoxOrient": "vertical",
+							"WebkitLineClamp": lines ? lines : 4,
 						}}
 					>
-						{id ? <Description id={id} /> : description}
+						<ErrorBoundary>
+							{id ? <Description id={id} /> : description}
+						</ErrorBoundary>
 					</Typography>
 
 				</CardContent>

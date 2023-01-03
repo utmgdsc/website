@@ -7,9 +7,9 @@ import {
 	LinkedIn,
 	Twitter,
 	YouTube,
-} from '@mui/icons-material';
+} from "@mui/icons-material";
 
-import SocialButton from './';
+import SocialButton from "./";
 
 import {
 	SvgIcon,

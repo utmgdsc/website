@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 import React from "react";
 import { NavLink as RouterLink } from "react-router-dom";
 import "./index.scss";
@@ -46,7 +47,7 @@ const changeTab = (newValue) => {
 const Navbar = () => {
 	// value required for router but not used in this file
 	// eslint-disable-next-line no-unused-vars
-	const [value, setValue] = React.useState('one');
+	const [value, setValue] = React.useState("one");
 
 	const handleChange = (event, newValue) => {
 		setValue(newValue);
@@ -61,8 +62,8 @@ const Navbar = () => {
 					<Toolbar
 						disableGutters
 						sx={{
-							minHeight: "auto !important",
 							flexWrap: "wrap",
+							minHeight: "auto !important",
 							paddingTop: {
 								// since two-row version lacks top padding, add it here
 								xs: "1rem",
@@ -89,7 +90,8 @@ const Navbar = () => {
 									<img src={bracket} alt="Google Developers Bracket Logo"
 										height="48px"
 										width="48px"
-										style={{ userSelect: "none" }}
+										draggable="false"
+										css={{ userSelect: "none" }}
 									/>
 								</picture>
 							</Fab>
@@ -103,7 +105,11 @@ const Navbar = () => {
 							id="main-nav"
 							indicatorColor={theme.palette.primary.main}
 							onChange={handleChange}
-							value={window.location.pathname.toLowerCase()} // fix this
+							value={
+								// use only the first part of the path to determine the tab
+								// so that sub pages are also highlighted in the navbar
+								window.location.pathname.toLowerCase().split("/")[1]
+							}
 							variant="scrollable"
 						>
 							{pages.filter(
@@ -112,7 +118,7 @@ const Navbar = () => {
 							).map((page, index) => (
 								<LinkTab
 									to={page[1]}
-									value={page[1].toLowerCase()}
+									value={page[1].toLowerCase().split("/")[1]}
 									label={page[0]}
 									key={page[1]}
 								/>

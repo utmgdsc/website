@@ -1,10 +1,10 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 
 /**
  * @return {boolean} true if the user has set their OS to dark mode
  */
 const prefersDarkMode = () => {
-	if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+	if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
 		return true;
 	}
 	return false;
@@ -14,24 +14,24 @@ const GoogleTheme = createTheme({
 	palette: {
 		mode: prefersDarkMode() ? "dark" : "light",
 		primary: {
-			main: '#4285f4',
+			main: "#4285f4",
 		},
 		error: {
-			main: '#ea4335',
+			main: "#ea4335",
 		},
 		warning: {
-			main: '#fbbc04',
+			main: "#fbbc04",
 		},
 		info: {
-			main: '#4285f4',
+			main: "#4285f4",
 		},
 		success: {
-			main: '#0f9d58',
+			main: "#0f9d58",
 		},
 		action: {
 			light: {
-				active: '#000',
-				disabled: '#5f6368',
+				active: "#000",
+				disabled: "#5f6368",
 			}
 		},
 		// Used by `getContrastText()` to maximize the contrast between
@@ -44,16 +44,16 @@ const GoogleTheme = createTheme({
 	},
 	typography: {
 		fontFamily: [
-			'Google Sans Display',
-			'Google Sans',
-			'-apple-system',
-			'BlinkMacSystemFont',
-			'"Segoe UI"',
-			'Roboto',
-			'"Helvetica Neue"',
-			'Arial',
-			'sans-serif'
-		].join(','),
+			"Google Sans Display",
+			"Google Sans",
+			"-apple-system",
+			"BlinkMacSystemFont",
+			"Segoe UI",
+			"Roboto",
+			"Helvetica Neue",
+			"Arial",
+			"sans-serif"
+		].join(","),
 	}
 });
 

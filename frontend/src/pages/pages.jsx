@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import React, { lazy } from "react";
 const Homepage = lazy(() => import("./Homepage"));
 const ResourcesPage = lazy(() => import("./Resources"));
 const ProjectPage = lazy(() => import("./Projects"));
@@ -15,6 +15,6 @@ const pages = [["About", "/", <Homepage />],
 ["Resources", "/resources", <ResourcesPage />],
 ["Past Projects", "/past-projects", <ProjectPage />],
 ["Events", "/events", <Events />],
-["Logo Download", "/brand-resources", <BrandResources />]];
+["", "/resources/logo-download", <BrandResources />]];
 
 export default pages;

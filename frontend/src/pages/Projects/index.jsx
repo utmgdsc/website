@@ -1,21 +1,21 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 import {
 	Container,
 	Grid,
 	Typography,
-} from '@mui/material';
-import CustomCard from '../../components/CustomCard';
-import projects from '../../data/projects.json';
+} from "@mui/material";
+import CustomCard from "../../components/CustomCard";
+import projects from "../../data/projects.json";
 import BannerHeader from "../../components/BannerHeader";
-import BannerImg from "../../assets/lena_giang.png"
+import BannerImg from "../../assets/heroes/IMG_4712.jpg"
 
 const ProjectPage = () => {
 	useEffect(() => {
-		document.title = 'GDSC UTM - Past Projects';
+		document.title = "GDSC UTM - Past Projects";
 	}, []);
 	return (
 		<>
-			<BannerHeader text="Past GDSC Projects" picture={BannerImg} />
+			<BannerHeader text="Past GDSC Projects" picture={BannerImg} position="bottom" />
 
 			<Container sx={{ py: 4 }} component="main" id="projects">
 				{projects.length === 0

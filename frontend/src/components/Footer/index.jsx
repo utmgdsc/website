@@ -1,6 +1,7 @@
+/** @jsxImportSource @emotion/react */
 // import React, { useContext } from "react";
 import "./index.scss";
-import { Container, Typography, Box } from "@mui/material";
+import { Container, Typography, Box, ButtonGroup } from "@mui/material";
 import bracket_colourless from "../../assets/icons/bracket_colourless.svg";
 import Link from "../TextLink";
 import footerLinks from "../../data/footer.json";
@@ -19,17 +20,19 @@ import {
 
 import { styled } from "@mui/material/styles";
 
+import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
+
 /**
  * A link for footer-flex. Takes the same props as "a".
  * @param {Object} props - props to pass to the link, same as "a" element
  * @return {JSX.Element} Footer link
  */
 const FooterLink = styled((props) =>
-	<li><Link {...props} className={"link"} style={{ color: "inherit" }} {...props} /></li>)(
+	<li><Link {...props} className={"link"} css={{ color: "inherit" }} {...props} /></li>)(
 		({ theme }) => ({
 			color: theme.palette.text.secondary,
 			opacity: 0.7,
-			'&:hover': {
+			"&:hover": {
 				opacity: 1,
 			},
 		}),
@@ -92,6 +95,7 @@ const Footer = () => {
 								className="logo"
 								height="64"
 								width="64"
+								draggable="false"
 								alt="UTM GDSC logo" />
 						</a>
 					</div>
@@ -100,15 +104,20 @@ const Footer = () => {
 					<Typography variant="h5" component="h5" className="vox-only">Footer</Typography>
 
 					<div className="footer-flex">
-						<FooterLinks data={footerLinks} />
+						<ErrorBoundary>
+							<FooterLinks data={footerLinks} />
+						</ErrorBoundary>
 					</div>
 				</div>
 
 				<div className="footer-text">
-					<ul className="links-flex" style={{ paddingTop: "1em", flexGrow: 1 }}>
+					<ul className="links-flex" css={{ paddingTop: "1em", flexGrow: 1 }}>
 						<FooterLink className="link" href="https://github.com/utmgdsc/website/issues/new/choose" external>Improve this page on GitHub</FooterLink>
 					</ul>
-					<div className="flex-item" id="social">
+					<ButtonGroup
+						className={"flex-item"}
+						id="social"
+					>
 						<CommunityDevButton />
 						<InstagramButton />
 						<GitHubButton />
@@ -118,7 +127,7 @@ const Footer = () => {
 						<YouTubeButton />
 						<EmailButton />
 						<DiscordButton />
-					</div>
+					</ButtonGroup>
 				</div>
 			</Container>
 		</Box >
