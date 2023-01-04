@@ -3,7 +3,7 @@ import { createTheme } from "@mui/material/styles";
 /**
  * @return {boolean} true if the user has set their OS to dark mode
  */
-const prefersDarkMode = () => {
+export const prefersDarkMode = () => {
 	if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
 		return true;
 	}
@@ -58,4 +58,3 @@ const GoogleTheme = createTheme({
 });
 
 export default GoogleTheme;
-export { prefersDarkMode };

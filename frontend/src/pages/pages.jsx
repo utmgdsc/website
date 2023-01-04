@@ -3,18 +3,45 @@ const Homepage = lazy(() => import("./Homepage"));
 const ResourcesPage = lazy(() => import("./Resources"));
 const ProjectPage = lazy(() => import("./Projects"));
 const Events = lazy(() => import("./Events"));
-const BrandResources = lazy(() => import("./BrandResources"));
+const BrandResources = lazy(() => import("./Resources/BrandResources"));
+const WorkshopArchive = lazy(() => import("./Resources/WorkshopArchive"));
 
 /**
- * This file contains the list of pages that are available on the website.
- *  The first element of each array is the name of the page,
- *  the second is the path to the page,
- *  and the third is the component that is rendered.
+ * The list of pages that are available on the website.
+ * Note the order of the pages is the order they will appear in the navbar.
+ * @type {Array<{name: string, path: string, component: JSX.Element}>}
  */
-const pages = [["About", "/", <Homepage />],
-["Resources", "/resources", <ResourcesPage />],
-["Past Projects", "/past-projects", <ProjectPage />],
-["Events", "/events", <Events />],
-["", "/resources/logo-download", <BrandResources />]];
+const pages = [
+	{
+		name: "About",
+		path: "/",
+		component: <Homepage />
+	},
+	{
+		name: "Resources",
+		path: "/resources",
+		component: <ResourcesPage />
+	},
+	{
+		name: "",
+		path: "/resources/logo-download",
+		component: <BrandResources />
+	},
+	{
+		name: "",
+		path: "/resources/workshops",
+		component: <WorkshopArchive />
+	},
+	{
+		name: "Projects",
+		path: "/projects",
+		component: <ProjectPage />
+	},
+	{
+		name: "Events",
+		path: "/events",
+		component: <Events />
+	}
+];
 
 export default pages;

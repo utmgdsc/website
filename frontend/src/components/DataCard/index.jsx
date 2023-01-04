@@ -18,7 +18,7 @@ import ErrorBoundary from "../ErrorBoundary";
  * The card has a clickable button that redirects to the event's page.
  * @param {event} event object
  */
-const CustomCard = ({ data }) => {
+const DataCard = ({ data }) => {
 	const { id, start_date, title, url, description, lines } = data;
 
 	return (
@@ -76,4 +76,4 @@ const CustomCard = ({ data }) => {
 	);
 }
 
-export default CustomCard;
+export default DataCard;

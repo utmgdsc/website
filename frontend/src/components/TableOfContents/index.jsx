@@ -4,50 +4,55 @@ import "./index.scss";
 import { Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
-const Headings = ({ headings, activeId }) => {
+/**
+ * Heading component in table of content
+ * @param {heading} heading to be shown
+ * @param {activeId} current heading id is displayed now
+ * @returns {JSX.Element} JSX elements of heading component
+ */
+const Heading = ({ heading, activeId }) => {
 	const theme = useTheme();
 	return (
-		<ul>
-			{headings.map((heading) => (
-				<li key={heading.id} className={heading.id === activeId ? "active" : ""}>
-					<a
-						css={{ color: theme.palette.text.secondary }}
-						href={`#${heading.id}`}
-						onClick={(e) => {
-							e.preventDefault();
-							document.querySelector(`#${heading.id}`).scrollIntoView({
-								behavior: "smooth"
-							});
-						}}
-					>
-						{heading.title}
-					</a>
-					{heading.items.length > 0 && (
-						<ul>
-							{heading.items.map((child) => (
-								<li key={child.id} className={child.id === activeId ? "active" : ""}>
-									<a
-										css={{ color: theme.palette.text.secondary }}
-										href={`#${child.id}`}
-										onClick={(e) => {
-											e.preventDefault();
-											document.querySelector(`#${child.id}`).scrollIntoView({
-												behavior: "smooth"
-											});
-										}}
-									>
-										{child.title}
-									</a>
-								</li>
-							))}
-						</ul>
-					)}
-				</li>
-			))}
-		</ul>
+		<li key={heading.id} className={heading.id === activeId ? "active" : ""}>
+			<a
+				css={{ color: theme.palette.text.secondary }}
+				href={`#${heading.id}`}
+				onClick={(e) => {
+					e.preventDefault();
+					document.querySelector(`#${heading.id}`).scrollIntoView({
+						behavior: "smooth"
+					});
+				}}
+			>
+				{heading.title}
+			</a>
+			{heading.items.length > 0 && (
+				<ul>
+					{heading.items.map((child) => (
+						<li key={child.id} className={child.id === activeId ? "active" : ""}>
+							<a
+								css={{ color: theme.palette.text.secondary }}
+								href={`#${child.id}`}
+								onClick={(e) => {
+									e.preventDefault();
+									document.querySelector(`#${child.id}`).scrollIntoView({
+										behavior: "smooth"
+									});
+								}}
+							>
+								{child.title}
+							</a>
+						</li>
+					))}
+				</ul>
+			)}
+		</li>
 	)
 };
 
+/**
+ * Get list of nested headings (h2 elements followed by h3 elements)
+ */
 const getNestedHeadings = (headingElements) => {
 	const nestedHeadings = [];
 
@@ -67,6 +72,9 @@ const getNestedHeadings = (headingElements) => {
 	return nestedHeadings;
 };
 
+/**
+ * Get all the h2 and h3 headings in resources page, and turn them into list of nested headings
+ */
 const useHeadingsData = () => {
 	const [nestedHeadings, setNestedHeadings] = useState([]);
 
@@ -82,6 +90,9 @@ const useHeadingsData = () => {
 	return { nestedHeadings };
 };
 
+/**
+ * Check what heading/section the user is browsing and set its id
+ */
 const useIntersectionObserver = (setActiveId) => {
 	const headingElementsRef = useRef({});
 	useEffect(() => {
@@ -122,24 +133,33 @@ const useIntersectionObserver = (setActiveId) => {
 	}, [setActiveId]);
 };
 
+/**
+ * @returns {JSX.Element} Table of content component
+ */
 const TableOfContents = () => {
 	const [activeId, setActiveId] = useState();
 	const { nestedHeadings } = useHeadingsData();
 	useIntersectionObserver(setActiveId);
 	return (
-		<>
+		<div id="table-of-contents">
 			<Typography
 				fontWeight="bold"
 				color="text.primary"
 				variant="h5"
 				margin="0.83em 0"
 			>
-				Table of contents
+				In this page
 			</Typography>
 			<nav aria-label="Table of contents">
-				<Headings headings={nestedHeadings} activeId={activeId} />
+				<ul>
+					{nestedHeadings.map((heading, index) => {
+						return (
+							<Heading heading={heading} activeId={activeId} />
+						);
+					})}
+				</ul>
 			</nav>
-		</>
+		</div>
 	);
 };
 

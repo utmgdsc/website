@@ -2,8 +2,8 @@
 
 import { useEffect } from "react";
 import { Container, Typography } from "@mui/material";
-import BannerHeader from "../../components/BannerHeader";
-import BannerImg from "../../assets/heroes/lena_giang.png"
+import BannerHeader from "../../../components/BannerHeader";
+import BannerImg from "../../../assets/heroes/lena_giang.png"
 
 /**
  * @return {JSX.Element} Brand resources page component

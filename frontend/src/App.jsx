@@ -2,19 +2,17 @@
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.scss";
-
-import Navbar from "./components/Navbar";
-import PageNotFound from "./pages/PageNotFound";
-
 import { CssBaseline, ThemeProvider, LinearProgress, Skeleton } from "@mui/material";
-
-import pages from "./pages/pages";
 
 import GoogleTheme from "./theme";
 
-const Footer = React.lazy(() => import("./components/Footer"));
+import pages from "./pages/pages";
+import PageNotFound from "./pages/PageNotFound";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import ErrorBoundary from "./components/ErrorBoundary";
 
-// todo add skip to content button
+// TODO add skip to content button
 const App = () => {
 	// detect change of theme and update theme
 	// a defense for this controversial feature - when the user changes the theme,
@@ -40,25 +38,27 @@ const App = () => {
 			<CssBaseline enableColorScheme />
 			<Router>
 				<Navbar pages="pages" />
-				<Suspense fallback={
-					<div css={{ height: "100vh" }}>
-						<LinearProgress title="Page loading" />
-						<div className="hero-header-parallax">
-							<Skeleton variant="rectangular" animation="wave" height="30rem" />
+				<ErrorBoundary fallback={<PageNotFound />} my="25vh">
+					<Suspense fallback={
+						<div css={{ height: "100vh" }}>
+							<LinearProgress title="Page loading" />
+							<div className="hero-header-parallax">
+								<Skeleton variant="rectangular" animation="wave" height="30rem" />
+							</div>
 						</div>
-					</div>
-				}>
-					<Routes>
-						{
-							pages.map((page, index) => {
-								return <Route path={page[1]} element={page[2]} key={index} />;
-							})
-						}
-						<Route path="*" element={<PageNotFound />} />
-					</Routes>
-				</Suspense>
+					}>
+						<Routes>
+							{
+								pages.map((page, index) => {
+									return <Route exact path={page.path} element={page.component} key={index} />;
+								})
+							}
+							<Route path="*" element={<PageNotFound />} />
+						</Routes>
+					</Suspense>
+				</ErrorBoundary>
+				<Footer />
 			</Router>
-			<Footer />
 		</ThemeProvider>
 	);
 };

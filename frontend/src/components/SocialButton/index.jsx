@@ -20,7 +20,6 @@ const SocialButton = ({ href, icon, tooltip, title }) => {
 				href={href}
 				rel="noopener noreferrer"
 				size="large"
-				// sx={{ marginLeft: ".5em" }}
 				target="_blank"
 			>
 				{icon}

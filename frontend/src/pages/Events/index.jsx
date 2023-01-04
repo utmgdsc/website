@@ -1,9 +1,10 @@
 import { useEffect } from "react";
-import EventList from "../../components/EventList";
 import { Container, Typography } from "@mui/material";
-import BannerHeader from "../../components/BannerHeader";
 import BannerImg from "../../assets/heroes/IMG_1045.png"
-import ErrorBoundary from "../../components/ErrorBoundary/ErrorBoundary";
+import EventList from "../../components/EventList";
+import BannerHeader from "../../components/BannerHeader";
+import ErrorBoundary from "../../components/ErrorBoundary";
+import { EventUpcomingStates } from "../../constants";
 
 /**
  * @return {JSX.Element} Events page component using EventList
@@ -17,18 +18,34 @@ const Events = () => {
 			<BannerHeader text="Events" picture={BannerImg} position="bottom" />
 
 			<Container sx={{ py: 4 }} component="main" id="events">
-				<Typography
-					color="text.primary"
-					component="h2"
-					fontWeight="bold"
-					lineHeight="2.5em"
-					variant="h4"
-				>
-					All Events
-				</Typography>
-				<ErrorBoundary>
-					<EventList />
-				</ErrorBoundary>
+				<section>
+					<Typography
+						color="text.primary"
+						component="h2"
+						fontWeight="bold"
+						lineHeight="2.5em"
+						variant="h4"
+					>
+						Upcoming Events
+					</Typography>
+					<ErrorBoundary>
+						<EventList upcoming={EventUpcomingStates.UPCOMING} />
+					</ErrorBoundary>
+				</section>
+				<section>
+					<Typography
+						color="text.primary"
+						component="h2"
+						fontWeight="bold"
+						lineHeight="2.5em"
+						variant="h4"
+					>
+						Past Events
+					</Typography>
+					<ErrorBoundary>
+						<EventList upcoming={EventUpcomingStates.PAST}/>
+					</ErrorBoundary>
+				</section>
 			</Container>
 		</>
 	);

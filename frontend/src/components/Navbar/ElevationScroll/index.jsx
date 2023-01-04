@@ -1,3 +1,4 @@
+import React from "react";
 import {
 	Slide,
 	useScrollTrigger
@@ -5,13 +6,9 @@ import {
 
 import { useTheme } from "@mui/material/styles";
 
-import React from "react";
-
 // roughly based on https://mui.com/material-ui/react-app-bar/#HideAppBar.js
 
-const ElevationScroll = (props) => {
-	const { children } = props;
-
+export const ElevationScroll = ({ children }) => {
 	const elevationTrigger = useScrollTrigger({
 		disableHysteresis: true,
 		threshold: 0,
@@ -34,9 +31,7 @@ const ElevationScroll = (props) => {
 	);
 }
 
-const ElevationScrollReverse = (props) => {
-	const { children } = props;
-
+export const ElevationScrollReverse = ({ children }) => {
 	const trigger = useScrollTrigger({
 		disableHysteresis: true,
 		threshold: 0,
@@ -46,5 +41,3 @@ const ElevationScrollReverse = (props) => {
 		sx: { boxShadow: trigger ? 0 : 4 },
 	});
 }
-
-export { ElevationScroll, ElevationScrollReverse }

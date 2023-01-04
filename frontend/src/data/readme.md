@@ -34,6 +34,6 @@ The `workshops.json` file contains the workshops. It is an object.
   - `detail`: The title of the workshop.
   - `date`: The date of the workshop.
   - `code`: The url to the starter code code of the workshop.
-  - `slide`: The url to the slides of the workshop.
+  - `slides`: The url to the slides of the workshop.
   - `recording`: The url to the recording of the workshop.
   - `host`: An array of the names of the hosts of the workshop.

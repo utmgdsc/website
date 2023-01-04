@@ -17,7 +17,6 @@ const Person = ({ name, role, picture, pronouns, removeLast }) => {
 		<figure className="member">
 			<SkeletonLoadedImage
 				src={picture}
-				// alt={"A head shot of " + name + ", " + role}
 				// no alt text needed - picture already sufficiently described by the paragraph,
 				// so there is no need to repeat the information
 				alt=""
@@ -44,10 +43,16 @@ const Person = ({ name, role, picture, pronouns, removeLast }) => {
  * @param {int} removeLast how many words to remove from the end of the role
  */
 const Team = ({ data, subTeam, title, removeLast }) => {
-	// do not return anything if there are no team members in the subteam
-	const roles = subTeam.split(","); // roles to filter by
+	/**
+	 * Roles to filter by
+	 * @type {string[]}
+	 */
+	const roles = subTeam.split(",");
 
-	// filter team members by role
+	/**
+	 * Filter team members by role
+	 * @type {boolean}
+	 */
 	const team = data.filter((member) => {
 		for (let i = 0; i < roles.length; i++) {
 			if (member.role.toLowerCase().includes(roles[i].toLowerCase())) {
@@ -57,7 +62,8 @@ const Team = ({ data, subTeam, title, removeLast }) => {
 		return false;
 	});
 
-	if (team.length <= 0) {
+	// do not return anything if there are no team members in the subteam
+	if (team.length === 0) {
 		return null;
 	}
 

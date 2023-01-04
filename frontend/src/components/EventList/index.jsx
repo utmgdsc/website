@@ -3,25 +3,22 @@ import {
 	Grid,
 	Typography,
 } from "@mui/material";
-import CustomCard from "../CustomCard";
+import DataCard from "../DataCard";
+import { EventUpcomingStates } from "../../constants";
 
 /**
  * Gets the events from the GDSC (bevy) API.
  * If limit is specified, it will only show that many events.
  * If upcoming is specified, it will only show upcoming events. Otherwise, it will show all events.
- * @param {limit} limit the number of events to show
- * @param {upcoming} upcoming whether to show upcoming events or not
- * @returns {object} event object
+ * @param {integer} limit the number of events to show
+ * @param {integer} upcoming: filter events: use the UpcomingStates enum to specify. default shows all
+ * @returns {JSX.Element} EventList component
  */
-const EventList = ({ limit, upcoming }) => {
+const EventList = ({ limit, upcoming = EventUpcomingStates.ALL }) => {
 	const [events, setEvents] = useState([]);
-	const [error, setError] = useState(false);
 
-	// i keep getting rate limited for 16+ hours so i disabled this component for development
-	// not needed for Description - halting here stops calls to description too
-	if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
-		throw new Error("Disabled EventList component for development to prevent rate limit");
-	}
+	// needed to show error message as getEvents does not throw error
+	const [error, setError] = useState(false);
 
 	/**
 	 * load external json file from api
@@ -38,13 +35,23 @@ const EventList = ({ limit, upcoming }) => {
 				if (data["detail"] && (data["detail"].includes("throttled") || data["detail"].includes("error"))) {
 					throw new Error(data["detail"]);
 				}
-				let eventData = data["results"];
+				// filter only published events
+				let eventData = data["results"].filter(event => event["status"] === "Published");
+
+				// slice to limit if specified
 				if (limit) {
 					eventData = eventData.slice(0, limit);
 				}
-				if (upcoming) {
-					eventData = eventData.filter(event => new Date(event.end_date) > new Date());
+
+				// filter only upcoming events if specified
+				if (upcoming === EventUpcomingStates.UPCOMING) {
+					// upcoming events
+					eventData = eventData.filter(event => new Date(event.end_date) >= new Date());
+				} else if (upcoming === EventUpcomingStates.PAST) {
+					// past events
+					eventData = eventData.filter(event => new Date(event.end_date) < new Date());
 				}
+				// finally set events to eventData
 				setEvents(eventData);
 			}).catch(error => {
 				// if the query has been aborted, do nothing
@@ -62,7 +69,7 @@ const EventList = ({ limit, upcoming }) => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	// if error, show error message
+	// if error, throw an error so that any prospective ErrorBoundary can catch it
 	if (error) {
 		throw error;
 	}
@@ -72,7 +79,7 @@ const EventList = ({ limit, upcoming }) => {
 	else if (events.length === 0) {
 		return (
 			<Grid item xs={12}>
-				<Typography variant="h5" component="h2">
+				<Typography variant="h5" component="p" gutterBottom>
 					None yet! Check back soon :)
 				</Typography>
 			</Grid>
@@ -82,7 +89,7 @@ const EventList = ({ limit, upcoming }) => {
 	return (
 		<Grid container spacing={2}>
 			{events.map((event) => (
-				<CustomCard data={event} key={event.id} />
+				<DataCard data={event} key={event.id} />
 			))}
 		</Grid>
 	);

@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-no-target-blank */
 import { Link } from "@mui/material";
-// import { NavLink as RouterLink } from "react-router-dom";
+import { NavLink as RouterLink } from "react-router-dom";
 import { OpenInNew } from "@mui/icons-material";
-// import pages from "../../pages/pages";
+import pages from "../../pages/pages";
 import React from "react";
 // import { changeTab } from "../Navbar";
 
@@ -18,26 +18,23 @@ import React from "react";
  * @returns {JSX.Element} A link
  */
 const TextLink = ({ children, href, external, forwardedRef, noIcon, ...props }) => {
-	const UpdateNavbar = () => {
-		// console.log(href);
+	// todo: figure out how to make this work with react-router-dom
+	// todo: and also update the navbar's underline thingy
 
-		/*if (pages.find(el => el.includes(href))) {
-			console.log("clicked");
-			changeTab(pages.find(el => el.includes(href)));
-		}*/
-	};
+	/**
+  * If the link is internal to the website or not, determined by whether the link is in the pages array
+	*/
+	const isInternalLink = pages.find(el => el["path"] === (href));
 
 	return (
-		// todo: figure out how to make this work with react-router-dom
+		// !!
 		<Link
-			// component={pages.find(el => el.includes(href)) ? RouterLink : "a"}
-			// href={pages.find(el => el.includes(href)) ? undefined : href}
-			href={href}
-			onClickCapture={UpdateNavbar}
+			component={isInternalLink ? RouterLink : "a"}
+			href={isInternalLink ? undefined : href}
 			ref={forwardedRef}
 			rel={external ? "noopener noreferrer" : ""}
 			target={external ? "_blank" : ""}
-			// to={pages.find(el => el.includes(href)) ? href : undefined}
+			to={isInternalLink ? href : undefined}
 
 			{...props}>
 			{children}

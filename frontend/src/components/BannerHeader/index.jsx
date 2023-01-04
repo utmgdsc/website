@@ -11,9 +11,10 @@ import "./index.scss";
  * @param {string} picture image to display on the header
  * @param {string} maxWidth max width of the header to pass to the container
  * @param {string} position position of the image, either "top" or "bottom"
+ * @param {string} height height of the header
  * @returns {JSX.Element} hero image style header component
  */
-const BannerHeader = ({ text, picture, maxWidth, position }) => {
+const BannerHeader = ({ text, picture, maxWidth, position, height = "30rem" }) => {
 	return (
 		<>
 			{/* skeleton animation bcs it looks cool */}
@@ -21,16 +22,15 @@ const BannerHeader = ({ text, picture, maxWidth, position }) => {
 				variant="rectangular"
 				animation="wave"
 				sx={{
-					height: "30rem",
+					height: height,
 					width: "100%",
 					position: "absolute",
 					zIndex: -1,
 				}}
 			/>
-
 			<Parallax
 				style={{
-					height: "30rem",
+					height: height,
 					maxWidth: "unset !important",
 					paddingLeft: 0,
 					paddingRight: 0,
@@ -43,15 +43,12 @@ const BannerHeader = ({ text, picture, maxWidth, position }) => {
 				}}
 				lazy
 			>
-
-
 				<Container
 					sx={{
 						display: "flex",
-						height: "30rem",
+						height: height,
 					}} maxWidth={maxWidth}>
 					<Typography
-						// color="white"
 						component="h2"
 						fontWeight="bold"
 						pb={4}

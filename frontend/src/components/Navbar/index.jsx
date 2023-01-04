@@ -29,16 +29,6 @@ import LinkTab from "./NavTabs/LinkTab";
 import StyledTabs from "./NavTabs/StyledTabs";
 
 /**
- * TODO - add a way to programmatically change the tab outside of Navbar.jsx
- * @param {int} newValue - the value of the tab to change to
- */
-const changeTab = (newValue) => {
-	const value = newValue[1];
-	// call handleChange the same way as in Navbar.jsx
-	this.handleChange(null, value);
-};
-
-/**
  * Site navbar component. Contains the logo, social buttons, and navigation tabs.
  * Responsive: 1 row on mobile, 2 rows on desktop. The tabs scroll when there are too many to fit.
  * Navbar goes up and down on scroll.
@@ -114,13 +104,13 @@ const Navbar = () => {
 						>
 							{pages.filter(
 								// filter out empty pages
-								(page) => page[0] !== ""
+								(page) => page.name !== ""
 							).map((page, index) => (
 								<LinkTab
-									to={page[1]}
-									value={page[1].toLowerCase().split("/")[1]}
-									label={page[0]}
-									key={page[1]}
+									to={page.path}
+									value={page.path.toLowerCase().split("/")[1]}
+									label={page.name}
+									key={page.path}
 								/>
 							))}
 						</StyledTabs>
@@ -150,4 +140,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-export { changeTab, Navbar };

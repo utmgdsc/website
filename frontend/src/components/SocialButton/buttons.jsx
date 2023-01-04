@@ -19,7 +19,7 @@ import { ReactComponent as DiscordIcon } from "../../assets/icons/discord.svg";
 
 // self-explanatory social media button components
 
-const CommunityDevButton = (props) => (
+export const CommunityDevButton = (props) => (
 	<SocialButton
 		title="Google Developers Student Club page"
 		tooltip="Visit our official Google Developers Student Club page"
@@ -29,7 +29,7 @@ const CommunityDevButton = (props) => (
 	/>
 );
 
-const InstagramButton = (props) => (
+export const InstagramButton = (props) => (
 	<SocialButton
 		title="Instagram"
 		tooltip="Visit our Instagram"
@@ -38,7 +38,7 @@ const InstagramButton = (props) => (
 		{...props}
 	/>);
 
-const GitHubButton = (props) => (
+export const GitHubButton = (props) => (
 	<SocialButton
 		title="Github"
 		tooltip="Visit our Github organization"
@@ -47,7 +47,7 @@ const GitHubButton = (props) => (
 		{...props}
 	/>);
 
-const TwitterButton = (props) => (
+export const TwitterButton = (props) => (
 	<SocialButton
 		title="Twitter"
 		tooltip="Visit our Twitter"
@@ -56,7 +56,7 @@ const TwitterButton = (props) => (
 		{...props}
 	/>);
 
-const FacebookButton = (props) => (
+export const FacebookButton = (props) => (
 	<SocialButton
 		title="Facebook"
 		tooltip="Visit our Facebook"
@@ -65,7 +65,7 @@ const FacebookButton = (props) => (
 		{...props}
 	/>);
 
-const LinkedInButton = (props) => (
+export const LinkedInButton = (props) => (
 	<SocialButton
 		title="LinkedIn"
 		tooltip="Visit our LinkedIn"
@@ -74,7 +74,7 @@ const LinkedInButton = (props) => (
 		{...props}
 	/>);
 
-const YouTubeButton = (props) => (
+export const YouTubeButton = (props) => (
 	<SocialButton
 		title="YouTube"
 		tooltip="Visit our YouTube"
@@ -83,7 +83,7 @@ const YouTubeButton = (props) => (
 		{...props}
 	/>);
 
-const EmailButton = (props) => (
+export const EmailButton = (props) => (
 	<SocialButton
 		title="Email"
 		tooltip="Email us"
@@ -92,7 +92,7 @@ const EmailButton = (props) => (
 		{...props}
 	/>);
 
-const DiscordButton = (props) => (
+export const DiscordButton = (props) => (
 	<SocialButton
 		title="Discord Server"
 		tooltip="Join our Discord Server"
@@ -100,15 +100,3 @@ const DiscordButton = (props) => (
 		href="https://discord.gg/AZyYSGbU68"
 		{...props}
 	/>);
-
-export {
-	CommunityDevButton,
-	InstagramButton,
-	GitHubButton,
-	TwitterButton,
-	FacebookButton,
-	LinkedInButton,
-	YouTubeButton,
-	EmailButton,
-	DiscordButton
-};

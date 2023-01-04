@@ -2,10 +2,10 @@
 // import React, { useContext } from "react";
 import "./index.scss";
 import { Container, Typography, Box, ButtonGroup } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import bracket_colourless from "../../assets/icons/bracket_colourless.svg";
-import Link from "../TextLink";
-import footerLinks from "../../data/footer.json";
 
+import footerLinks from "../../data/footer.json";
 import {
 	CommunityDevButton,
 	InstagramButton,
@@ -17,10 +17,8 @@ import {
 	EmailButton,
 	DiscordButton
 } from "../SocialButton/buttons";
-
-import { styled } from "@mui/material/styles";
-
-import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
+import Link from "../TextLink";
+import ErrorBoundary from "../ErrorBoundary";
 
 /**
  * A link for footer-flex. Takes the same props as "a".
@@ -53,8 +51,6 @@ const FooterLinks = ({ data }) => {
 				<Typography variant="h6" component="h6">{header}</Typography>
 				<ul>
 					{
-						// iterate through the links in each header
-						// using the keys as the link text
 						Object.keys(data[header]).map(function (link) {
 							return (
 								<FooterLink
@@ -63,8 +59,8 @@ const FooterLinks = ({ data }) => {
 									external={data[header][link].external}>
 									{link}
 								</FooterLink>
-							) // return
-						}) // map
+							)
+						})
 					}
 				</ul>
 			</div>
@@ -112,7 +108,9 @@ const Footer = () => {
 
 				<div className="footer-text">
 					<ul className="links-flex" css={{ paddingTop: "1em", flexGrow: 1 }}>
-						<FooterLink className="link" href="https://github.com/utmgdsc/website/issues/new/choose" external>Improve this page on GitHub</FooterLink>
+						<FooterLink className="link" href="https://github.com/utmgdsc/website/issues/new/choose" external>
+							Improve this page on GitHub
+						</FooterLink>
 					</ul>
 					<ButtonGroup
 						className={"flex-item"}
