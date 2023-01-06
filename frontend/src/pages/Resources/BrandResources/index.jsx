@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Container, Typography } from "@mui/material";
 import BannerHeader from "../../../components/BannerHeader";
 import BannerImg from "../../../assets/heroes/lena_giang.png"
+import RouterBreadcrumb from "../../../components/RouterBreadcrumb";
 
 /**
  * @return {JSX.Element} Brand resources page component
@@ -17,6 +18,10 @@ const BrandResources = () => {
 			<BannerHeader text="Logo download" picture={BannerImg} />
 
 			<Container sx={{ py: 4 }} component="main" id="events">
+				<RouterBreadcrumb/>
+
+				<br/>
+
 				<em>Last updated 2023-01-01</em>
 
 				<section>

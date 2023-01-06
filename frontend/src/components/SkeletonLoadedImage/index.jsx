@@ -16,9 +16,9 @@ const SkeletonLoadedImage = (props) => {
 				loading="lazy"
 				// hide the image until it's loaded and load other style props
 				style={{
-					visibility: loaded ? props?.visibility : 'hidden',
-					width: loaded ? props?.width : '0',
-					height: loaded ? props?.height : '0',
+					visibility: loaded ? undefined : 'hidden',
+					width: loaded ? undefined : '0',
+					height: loaded ? undefined : '0',
 					...props?.style,
 				}}
 				onLoad={() => { setLoaded(true) }}

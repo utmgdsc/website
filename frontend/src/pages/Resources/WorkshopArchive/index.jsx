@@ -15,6 +15,7 @@ import WorkshopWidget from "./Workshop";
 
 import workshops from "../../../data/workshops.json";
 import BannerImg from "../../../assets/heroes/IMG_3732.jpg"
+import RouterBreadcrumb from "../../../components/RouterBreadcrumb";
 
 /**
  * @return {JSX.Element} Workshop page component
@@ -28,6 +29,7 @@ const WorkshopArchive = () => {
 		<>
 			<BannerHeader text="Workshop Archive" picture={BannerImg} />
 			<Container sx={{ py: 4 }} component="main" id="workshop">
+				<RouterBreadcrumb/>
 				<Grid
 					container
 					spacing={2}

@@ -1,18 +1,13 @@
 import React, { useEffect } from "react";
 import "./index.css";
 import {
-	Box,
 	Container,
 	Grid,
 } from "@mui/material";
 
-import TableOfContents from "../../components/TableOfContents";
-
-import WorkshopWidget from "./WorkshopArchive/Workshop";
 import FAQWidget from "./FAQ";
 
 import faq from "../../data/faq.json";
-import workshops from "../../data/workshops.json";
 import BannerHeader from "../../components/BannerHeader";
 import BannerImg from "../../assets/heroes/IMG_3732.jpg"
 import ImageLinkCard from "../../components/ImageLinkCard";
@@ -29,16 +24,25 @@ const ResourcesPage = () => {
 	return (
 		<>
 			<BannerHeader text="Resources" picture={BannerImg} height="15rem" />
-			<Container sx={{ py: 4 }} component="main" id="resources">
+			<Container
+				sx={{
+					py: 4,
+				}}
+				component="main"
+				id="resources"
+			>
 				<Grid
 					container
+					justifyContent="space-between"
 					spacing={2}
+					alignItems="flex-start"
 				>
 					<Grid item>
 						<ImageLinkCard
 							title="Workshop Archive"
 							description="Check out our past workshops!"
-							link="/resources/workshops"
+							alt="" // todo
+							href="/resources/workshops"
 							image={BannerImg}
 						/>
 					</Grid>
@@ -46,7 +50,8 @@ const ResourcesPage = () => {
 						<ImageLinkCard
 							title="Logo Download"
 							description="Download our bracket logo in crisp quality!"
-							link="/resources/logo-download"
+							alt="" // todo
+							href="/resources/logo-download"
 							image={BannerImg}
 						/>
 					</Grid>
@@ -54,7 +59,8 @@ const ResourcesPage = () => {
 						<ImageLinkCard
 							title="Tech tips"
 							description="Linus from Linus Tech Tips is a GDSC UTM member! :) Check out his tips here!"
-							link="/resources/tips"
+							alt="" // todo
+							href="/resources/tips"
 							image={BannerImg}
 						/>
 					</Grid>

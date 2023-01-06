@@ -148,13 +148,13 @@ const TableOfContents = () => {
 				variant="h5"
 				margin="0.83em 0"
 			>
-				In this page
+				On this page
 			</Typography>
 			<nav aria-label="Table of contents">
 				<ul>
 					{nestedHeadings.map((heading, index) => {
 						return (
-							<Heading heading={heading} activeId={activeId} />
+							<Heading heading={heading} activeId={activeId} key={index} />
 						);
 					})}
 				</ul>

@@ -10,7 +10,8 @@ import { styled } from "@mui/material/styles";
 const StyledTabs = styled((props) => (
 	<Tabs
 		{...props}
-		TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
+		TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" />
+	}}
 	/>
 ))(({ theme }) => ({
 	"& .MuiTabs-flexContainer": {

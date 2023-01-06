@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink as RouterLink } from "react-router-dom";
 import "./index.scss";
 import {
@@ -28,6 +28,8 @@ import { ElevationScroll, ElevationScrollReverse } from "./ElevationScroll";
 import LinkTab from "./NavTabs/LinkTab";
 import StyledTabs from "./NavTabs/StyledTabs";
 
+import { useLocation } from 'react-router-dom';
+
 /**
  * Site navbar component. Contains the logo, social buttons, and navigation tabs.
  * Responsive: 1 row on mobile, 2 rows on desktop. The tabs scroll when there are too many to fit.
@@ -44,6 +46,13 @@ const Navbar = () => {
 	};
 
 	const theme = useTheme();
+
+	/* update navbar tabs on path change */
+	const location = useLocation();
+
+	useEffect(() => {
+		setValue(location.pathname);
+	}, [location]);
 
 	return (
 		<ElevationScroll>
@@ -103,8 +112,8 @@ const Navbar = () => {
 							variant="scrollable"
 						>
 							{pages.filter(
-								// filter out empty pages
-								(page) => page.name !== ""
+								// filter out pages that should not be in the navbar
+								(page) => page["includeInNavbar"]
 							).map((page, index) => (
 								<LinkTab
 									to={page.path}

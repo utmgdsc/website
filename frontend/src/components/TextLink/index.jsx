@@ -18,18 +18,13 @@ import React from "react";
  * @returns {JSX.Element} A link
  */
 const TextLink = ({ children, href, external, forwardedRef, noIcon, ...props }) => {
-	// todo: figure out how to make this work with react-router-dom
-	// todo: and also update the navbar's underline thingy
-
-	/**
-  * If the link is internal to the website or not, determined by whether the link is in the pages array
-	*/
+	/** If the link is internal to the website or not, determined by whether the link is in the pages array */
 	const isInternalLink = pages.find(el => el["path"] === (href));
 
 	return (
 		// !!
 		<Link
-			component={isInternalLink ? RouterLink : "a"}
+			component={isInternalLink ? RouterLink : undefined}
 			href={isInternalLink ? undefined : href}
 			ref={forwardedRef}
 			rel={external ? "noopener noreferrer" : ""}
@@ -39,6 +34,7 @@ const TextLink = ({ children, href, external, forwardedRef, noIcon, ...props }) 
 			{...props}>
 			{children}
 			{external && !noIcon &&
+				// give warning if link is external
 				// https://www.w3.org/TR/WCAG20-TECHS/G201.html
 				<OpenInNew
 					fontSize="inherit"

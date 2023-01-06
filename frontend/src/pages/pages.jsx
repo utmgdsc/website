@@ -9,38 +9,44 @@ const WorkshopArchive = lazy(() => import("./Resources/WorkshopArchive"));
 /**
  * The list of pages that are available on the website.
  * Note the order of the pages is the order they will appear in the navbar.
- * @type {Array<{name: string, path: string, component: JSX.Element}>}
+ * @type {Array<{name: string, path: string, component: JSX.Element, includeInNavbar: boolean}>}
  */
 const pages = [
 	{
 		name: "About",
 		path: "/",
-		component: <Homepage />
+		component: <Homepage />,
+		includeInNavbar: true
 	},
 	{
 		name: "Resources",
 		path: "/resources",
-		component: <ResourcesPage />
+		component: <ResourcesPage />,
+		includeInNavbar: true
 	},
 	{
-		name: "",
+		name: "Logo Download",
 		path: "/resources/logo-download",
-		component: <BrandResources />
+		component: <BrandResources />,
+		includeInNavbar: false
 	},
 	{
-		name: "",
+		name: "Workshop Archive",
 		path: "/resources/workshops",
-		component: <WorkshopArchive />
+		component: <WorkshopArchive />,
+		includeInNavbar: false
 	},
 	{
 		name: "Projects",
 		path: "/projects",
-		component: <ProjectPage />
+		component: <ProjectPage />,
+		includeInNavbar: true
 	},
 	{
 		name: "Events",
 		path: "/events",
-		component: <Events />
+		component: <Events />,
+		includeInNavbar: true
 	}
 ];
 

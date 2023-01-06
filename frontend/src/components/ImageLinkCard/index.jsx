@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 import React from 'react';
 import SkeletonLoadedImage from '../SkeletonLoadedImage';
 import TextLink from '../TextLink';
@@ -12,44 +13,42 @@ import {
 
 /**
  * Given a link, this component will render an image and a title in a card format
- * @param {link} link object
- * @param {title} title of the link
- * @param {image} image of the link
- * @param {description} description of the link if applicable
- * @param {alt} alt text for the image
+ * @param {string} link href of the link
+ * @param {string} title of the card
+ * @param {string} image of the card
+ * @param {string} description of the card if applicable
+ * @param {string} alt text for the image
+ * @param {string} height of the image
  */
-const ImageLinkCard = ({ link, title, image, description, alt }) => {
-	/**
-	 * Unfortunately needed as a separate component to pass props to the skeleton
-	 * @returns {JSX.Element} The skeleton loaded image
-	 */
-	const SkeletonLoadedImageLinkCard = () => {
-		return (
-			<SkeletonLoadedImage
-				src={image}
-				alt={alt}
-			/>
-		);
-	};
-
+const ImageLinkCard = ({ href, title, image, description, alt, height = 140 }) => {
 	// todo for UX add an arrow
 
 	return (
 		<Card
 			sx={{
-				maxWidth: 345,
 				borderRadius: 1,
 				boxShadow: 1,
 				transition: '0.3s',
 				'&:hover': {
 					boxShadow: 3,
 				},
+				maxWidth:  345,
 			}}
 		>
-			<CardActionArea component={TextLink} href={link}>
+			<CardActionArea
+				component={TextLink}
+				href={href}
+			>
 				<CardMedia
-					component={SkeletonLoadedImageLinkCard}
-					height="140"
+					component={() =>
+						<SkeletonLoadedImage
+							height={height}
+							src={image}
+							alt={alt}
+							className="MuiCardMedia-img MuiCardMedia-media"
+						/>
+					}
+					height={height}
 					image={image}
 					alt={title}
 				/>

@@ -76,7 +76,7 @@ const AboutUsWidget = () => {
 			<BannerHeader text="Who are we?" picture={HeroInfoSesh} maxWidth="md" />
 			<Container sx={{ py: 8, lineHeight: "2em" }} maxWidth="md">
 				<div className="lead">
-					<defn id="gsdc">Google Developer Student Clubs</defn> (<abbr>GDSC</abbr>) is a student-led community backed by Google
+					<dfn id="gsdc">Google Developer Student Clubs</dfn> (<abbr>GDSC</abbr>) is a student-led community backed by Google
 					Developers aimed at empowering undergraduate students from all disciplines to grow
 					their knowledge in technology, build solutions for their local communities, and
 					connect with other members from the Google community.

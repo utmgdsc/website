@@ -1,5 +1,8 @@
 import React from "react";
 import { Container } from "@mui/material";
+import {
+	ErrorOutline
+} from "@mui/icons-material";
 
 const PageNotFound = () => {
 	return (
@@ -16,7 +19,8 @@ const PageNotFound = () => {
 				textAlign: "center",
 			}}
 		>
-			<div>404 ERROR PAGE NOT FOUND {">:("}</div>
+			<ErrorOutline fontSize="large"/>
+			404 ERROR PAGE NOT FOUND {">:("}
 		</Container>
 	);
 };
