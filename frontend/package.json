@@ -3,6 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"proxy": "http://127.0.0.1:5000",
+	"license": "LGPL-2.0-or-later",
 	"dependencies": {
 		"@emotion/react": "^11.10.5",
 		"@emotion/styled": "^11.10.5",
