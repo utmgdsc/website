@@ -1,10 +1,8 @@
 <h1>
-	<a href="https://gdscutm.com">
-		<picture>
-			<source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/HhQ33N2.png">
-			<img alt="Attachment" src="https://i.imgur.com/pi6MIGO.png" height="48">
-		</picture>
-	</a>
+	<picture>
+		<img alt="Google Developers Bracket" src="./frontend/src/assets/icons/bracket.svg" height="34">
+	</picture>
+	GDSC Website
 </h1>
 
 Google Developer Student Clubs (GDSC) is a student-led community backed by Google Developers aimed at empowering undergraduate students from all disciplines to grow their knowledge in technology, build solutions for their local communities, and connect with other members from the Google community.
