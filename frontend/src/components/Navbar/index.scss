@@ -1,0 +1,15 @@
+#gdsc-home-btn {
+	min-height: 30px;
+	min-width: 94px;
+
+	#nav-bracket-logo {
+		height: 24px;
+		width: 48px;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	#nav-bracket-logo {
+		filter: invert(1);
+	}
+}

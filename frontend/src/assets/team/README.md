@@ -1,0 +1,1 @@
+This folder is intentionally empty and its contents are not tracked by git. This is to prevent members of our team's personal images from being uploaded to GitHub and licensed under the GPL license, which is not intended, as we do not own the rights to these images.
