@@ -1,0 +1,22 @@
+[
+	{
+		"question": "When we will get 246 marks back",
+		"answer": "Never"
+	},
+	{
+		"question": "What is the probability Arnold will give marks back",
+		"answer": "P(Arnold gives marks back | he is alive) = 0"
+	},
+	{
+		"question": "Null hypothesis: arnold gives us marks back",
+		"answer": "p < .001"
+	},
+	{
+		"question": "Do GDSC execs ever touch grass or see the light of day",
+		"answer": "No! They are kept in the secret Hacklab backrooms, where they are fed only on the tears of the poor souls who have to do their work for them."
+	},
+	{
+		"question": "What do gdsc execs do on holidays",
+		"answer": "work on website :worryweird:"
+	}
+]
