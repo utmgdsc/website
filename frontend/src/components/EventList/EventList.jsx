@@ -3,6 +3,8 @@ import {
   useState,
 } from 'react';
 
+import { Link } from 'react-router-dom';
+
 import {
   Grid,
   Skeleton,
@@ -91,12 +93,11 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE }) => {
 	}
 
 	// if no events, show message rather than empty page
-	// TODO: get Estelle to draw a cute image
 	else if (events.length === 0) {
 		return (
 			<Grid item xs={12}>
 				<Typography variant="h5" component="p" gutterBottom>
-					None yet! Check back soon :)
+					None yet! Check back soon, or check out our <Link to="/events#past-events">past events</Link>! 🤗
 				</Typography>
 			</Grid>
 		);
@@ -110,7 +111,7 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE }) => {
 						subtitle={<ConvertDate date={event["start_date"]} />}
 						title={event["title"]}
 						description={<Description id={event["id"]} />}
-						link={event["url"]}
+						url={event["url"]}
 					/>
 				</Grid>
 			))}

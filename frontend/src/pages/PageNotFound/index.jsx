@@ -1,7 +1,12 @@
 import React from 'react';
 
-import { ErrorOutline } from '@mui/icons-material';
-import { Container } from '@mui/material';
+import {
+  Container,
+  Typography,
+} from '@mui/material';
+
+import estelle from '../../assets/graphics/sad_mascot.png';
+import estelle_dark from '../../assets/graphics/sad_mascot_dark.png';
 
 const PageNotFound = () => {
 	return (
@@ -18,8 +23,16 @@ const PageNotFound = () => {
 				textAlign: "center",
 			}}
 		>
-			<ErrorOutline fontSize="large"/>
-			404 ERROR PAGE NOT FOUND {">:("}
+			<picture>
+				<source srcSet={estelle_dark} media="(prefers-color-scheme: dark)" />
+				<img src={estelle} alt="404 Mascot" height="600" width="600" />
+			</picture>
+			<Typography variant="h1" component="h1" gutterBottom>
+				404
+			</Typography>
+			<Typography variant="h4" component="p" gutterBottom>
+				We couldn't find the page you were looking for.
+			</Typography>
 		</Container>
 	);
 };

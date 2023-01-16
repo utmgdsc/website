@@ -31,6 +31,7 @@ const Events = () => {
 						fontWeight="bold"
 						lineHeight="2.5em"
 						variant="h4"
+						id="upcoming-events"
 					>
 						Upcoming Events
 					</Typography>
@@ -45,6 +46,7 @@ const Events = () => {
 						fontWeight="bold"
 						lineHeight="2.5em"
 						variant="h4"
+						id="past-events"
 					>
 						Past Events
 					</Typography>
