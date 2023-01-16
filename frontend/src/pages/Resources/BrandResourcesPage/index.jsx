@@ -7,7 +7,8 @@ import {
   Typography,
 } from '@mui/material';
 
-import BannerImg from '../../../assets/heroes/lena_giang.png';
+import BannerImg
+  from '../../../assets/webiste_proprietary/heroes/lena_giang.png';
 import {
   HeroHeader,
   RouterBreadcrumb,

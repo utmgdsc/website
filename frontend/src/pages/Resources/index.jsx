@@ -5,7 +5,7 @@ import {
   Grid,
 } from '@mui/material';
 
-import BannerImg from '../../assets/heroes/IMG_3732.jpg';
+import BannerImg from '../../assets/webiste_proprietary/heroes/IMG_3732.jpg';
 import {
   FAQ,
   HeroHeader,

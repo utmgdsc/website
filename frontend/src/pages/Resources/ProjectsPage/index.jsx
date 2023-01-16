@@ -6,7 +6,7 @@ import {
   Typography,
 } from '@mui/material';
 
-import BannerImg from '../../../assets/heroes/IMG_4712.jpg';
+import BannerImg from '../../../assets/webiste_proprietary/heroes/IMG_4712.jpg';
 import {
   HeroHeader,
   InfoCard,

@@ -9,8 +9,9 @@ import {
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
-import HeroInfoSesh from '../../assets/heroes/infosession.jpg';
-import HeroTeam from '../../assets/heroes/team.png';
+import HeroInfoSesh
+  from '../../assets/webiste_proprietary/heroes/infosession.jpg';
+import HeroTeam from '../../assets/webiste_proprietary/heroes/team.png';
 import {
   ErrorBoundary,
   EventList,
