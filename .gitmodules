@@ -1,0 +1,3 @@
+[submodule "frontend/src/assets/webiste_proprietary"]
+	path = frontend/src/assets/webiste_proprietary
+	url = git@github.com:utmgdsc/webiste_proprietary.git
