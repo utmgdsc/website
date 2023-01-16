@@ -1,10 +1,16 @@
-import { useEffect } from "react";
-import { Container, Typography } from "@mui/material";
-import BannerImg from "../../assets/heroes/IMG_1045.png"
-import EventList from "../../components/EventList";
-import BannerHeader from "../../components/BannerHeader";
-import ErrorBoundary from "../../components/ErrorBoundary";
-import { EventUpcomingStates } from "../../constants";
+import { useEffect } from 'react';
+
+import {
+  Container,
+  Typography,
+} from '@mui/material';
+
+import BannerImg from '../../assets/heroes/IMG_1045.png';
+import {
+  ErrorBoundary,
+  EventList,
+  HeroHeader,
+} from '../../components';
 
 /**
  * @return {JSX.Element} Events page component using EventList
@@ -15,7 +21,7 @@ const Events = () => {
 	}, []);
 	return (
 		<>
-			<BannerHeader text="Events" picture={BannerImg} position="bottom" />
+			<HeroHeader text="Events" picture={BannerImg} position="bottom" />
 
 			<Container sx={{ py: 4 }} component="main" id="events">
 				<section>
@@ -29,7 +35,7 @@ const Events = () => {
 						Upcoming Events
 					</Typography>
 					<ErrorBoundary>
-						<EventList upcoming={EventUpcomingStates.UPCOMING} />
+						<EventList from={new Date()} />
 					</ErrorBoundary>
 				</section>
 				<section>
@@ -43,7 +49,7 @@ const Events = () => {
 						Past Events
 					</Typography>
 					<ErrorBoundary>
-						<EventList upcoming={EventUpcomingStates.PAST}/>
+						<EventList to={new Date()}/>
 					</ErrorBoundary>
 				</section>
 			</Container>

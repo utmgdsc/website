@@ -9,9 +9,8 @@ import {
   Typography,
 } from '@mui/material';
 
-import { EventUpcomingStates } from '../../constants';
 import { ConvertDate } from '../ConvertDate/ConvertDate';
-import { InfoCard } from '../InfoCard';
+import { InfoCard } from '../InfoCard/InfoCard';
 import {
   getDescriptionFromStorage,
   useLocalStorage,
@@ -20,15 +19,20 @@ import {
 const CHAPTER_API_URL = "https://gdsc.community.dev/api/chapter/615/event";
 const EVENT_API_URL = "https://gdsc.community.dev/api/event/";
 
+// https://262.ecma-international.org/5.1/#sec-15.9.1.1
+const MIN_DATE = new Date(-8640000000000000);
+const MAX_DATE = new Date(8640000000000000);
+
 /**
  * Gets the events from the GDSC (bevy) API.
  * If limit is specified, it will only show that many events.
  * If upcoming is specified, it will only show upcoming events. Otherwise, it will show all events.
  * @param {integer} limit the number of events to show
- * @param {integer} upcoming: filter events: use the UpcomingStates enum to specify. default shows all
+ * @param {Date} from the date to start showing events from (inclusive), based on end_date
+ * @param {Date} to the date to stop showing events at (non-inclusive), based on end_date
  * @returns {JSX.Element} EventList component
  */
-export const EventList = ({ limit, upcoming = EventUpcomingStates.ALL }) => {
+export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE }) => {
 	const [events, setEvents] = useState([]);
 
 	// needed to show error message as getEvents does not throw error
@@ -58,13 +62,11 @@ export const EventList = ({ limit, upcoming = EventUpcomingStates.ALL }) => {
 				}
 
 				// filter only upcoming events if specified
-				if (upcoming === EventUpcomingStates.UPCOMING) {
-					// upcoming events
-					eventData = eventData.filter(event => new Date(event.end_date) >= new Date());
-				} else if (upcoming === EventUpcomingStates.PAST) {
-					// past events
-					eventData = eventData.filter(event => new Date(event.end_date) < new Date());
-				}
+				eventData = eventData.filter(event => {
+					const endDate = new Date(event["end_date"]);
+					return endDate >= from && endDate < to;
+				});
+
 				// finally set events to eventData
 				setEvents(eventData);
 			}).catch(error => {

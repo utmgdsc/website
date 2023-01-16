@@ -1,17 +1,17 @@
-import React, { useEffect } from "react";
-import "./index.css";
+import React, { useEffect } from 'react';
+
 import {
-	Container,
-	Grid,
-} from "@mui/material";
+  Container,
+  Grid,
+} from '@mui/material';
 
-import FAQWidget from "./FAQ";
-
-import faq from "../../data/faq.json";
-import BannerHeader from "../../components/BannerHeader";
-import BannerImg from "../../assets/heroes/IMG_3732.jpg"
-import ImageLinkCard from "../../components/ImageLinkCard";
-
+import BannerImg from '../../assets/heroes/IMG_3732.jpg';
+import {
+  FAQ,
+  HeroHeader,
+  ImageLinkCard,
+} from '../../components';
+import faq from '../../data/faq.json';
 
 /**
  * @returns {JSX.Element} The resources page
@@ -23,7 +23,7 @@ const ResourcesPage = () => {
 
 	return (
 		<>
-			<BannerHeader text="Resources" picture={BannerImg} height="15rem" />
+			<HeroHeader text="Resources" picture={BannerImg} height="15rem" />
 			<Container
 				sx={{
 					py: 4,
@@ -68,9 +68,9 @@ const ResourcesPage = () => {
 
 				{/* opting to keep FAQ in this page to keep it more accessible */}
 				<h2 className="resources" id="faq">Frequently Asked Questions</h2>
-				{faq.map((item, index) => {
+				{faq.map((faq, index) => {
 					return (
-						<FAQWidget key={index} item={item} />
+						<FAQ key={index} faq={faq} />
 					);
 				})}
 
@@ -78,5 +78,6 @@ const ResourcesPage = () => {
 		</>
 	)
 }
+
 
 export default ResourcesPage;

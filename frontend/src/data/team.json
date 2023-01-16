@@ -1,140 +1,148 @@
-[
-	{
-		"name": "Lena",
-		"role": "Co-President",
-		"pronouns": "she/her",
-		"picture": "lena.jpeg"
-	},
-	{
-		"name": "Shubh",
-		"role": "Co-president",
-		"pronouns": "he/him",
-		"picture": "Shubh.png"
-	},
-	{
-		"name": "Andi",
-		"role": "Faculty Advisor",
-		"pronouns": "he/him",
-		"picture": "andi.png"
-	},
-	{
-		"name": "Chris",
-		"role": "Advisor",
-		"pronouns": "he/him",
-		"picture": "Chris.png"
-	},
-	{
-		"name": "Nivy",
-		"role": "Advisor",
-		"pronouns": "she/her",
-		"picture": "Nivy.png"
-	},
-	{
-		"name": "Akshit",
-		"role": "Advisor",
-		"pronouns": "he/him",
-		"picture": "Akshit.png"
-	},
-	{
-		"name": "Jackson",
-		"role": "Marketing Lead",
-		"pronouns": "he/him",
-		"picture": "jackson.jpg"
-	},
-	{
-		"name": "Estelle",
-		"role": "Marketing Lead",
-		"pronouns": "she/her",
-		"picture": "estelle.jpg"
-	},
-	{
-		"name": "Hammad",
-		"role": "Outreach & Logistics Coordinator",
-		"pronouns": "he/him",
-		"picture": "hammad.jpg"
-	},
-	{
-		"name": "Roman",
-		"role": "Outreach & Logistics Coordinator",
-		"pronouns": "he/him",
-		"picture": "roman.jpg"
-	},
-	{
-		"name": "Leanne",
-		"role": "Outreach & Logistics Coordinator",
-		"pronouns": "she/her",
-		"picture": "leanne.JPG"
-	},
-	{
-		"name": "Riddhesh",
-		"role": "Technical Lead",
-		"pronouns": "he/him",
-		"picture": "riddhesh.jpg"
-	},
-	{
-		"name": "Giang",
-		"role": "Technical Lead",
-		"pronouns": "she/her",
-		"picture": "giang.JPG"
-	},
-	{
-		"name": "Michael",
-		"role": "Technical Lead",
-		"pronouns": "he/him",
-		"picture": "michael.jpg"
-	},
-	{
-		"name": "Joy",
-		"role": "Technical Lead",
-		"pronouns": "she/her",
-		"picture": "joy.jpg"
-	},
-	{
-		"name": "Hamza",
-		"role": "Finance Coordinator",
-		"pronouns": "he/him",
-		"picture": "hamza.jpg"
-	},
-	{
-		"name": "Emma",
-		"role": "Marketing Associate",
-		"pronouns": "she/her",
-		"picture": "zx.png"
-	},
-	{
-		"name": "Paris",
-		"role": "Marketing Associate",
-		"pronouns": "she/her",
-		"picture": "p22phan.png"
-	},
-	{
-		"name": "Deepasri",
-		"role": "Outreach & Logistics Associate",
-		"pronouns": "she/her",
-		"picture": "deepasri.png"
-	},
-	{
-		"name": "Annya",
-		"role": "Outreach & Logistics Associate",
-		"pronouns": "she/her",
-		"picture": "nyaa.png"
-	},
-	{
-		"name": "Ido",
-		"role": "Technical Associate",
-		"pronouns": "he/him",
-		"picture": "The-g.png"
-	},
-	{
-		"name": "Shaughn",
-		"role": "Technical Associate",
-		"pronouns": "he/him",
-		"picture": "cartoonraccoon.gif"
-	},
-	{
-		"name": "Daniyal",
-		"role": "Technical Associate",
-		"pronouns": "he/him",
-		"picture": "devls.png"
-	}
-]
+{
+	"President": [
+		{
+			"name": "Lena",
+			"role": "Co-president",
+			"pronouns": "she/her",
+			"picture": "lena.jpeg"
+		},
+		{
+			"name": "Shubh",
+			"role": "Co-president",
+			"pronouns": "he/him",
+			"picture": "Shubh.png"
+		}
+	],
+	"Team Lead": [
+		{
+			"name": "Jackson",
+			"role": "Marketing",
+			"pronouns": "he/him",
+			"picture": "jackson.jpg"
+		},
+		{
+			"name": "Estelle",
+			"role": "Marketing",
+			"pronouns": "she/her",
+			"picture": "estelle.jpg"
+		},
+		{
+			"name": "Hammad",
+			"role": "Outreach & Logistics",
+			"pronouns": "he/him",
+			"picture": "hammad.jpg"
+		},
+		{
+			"name": "Roman",
+			"role": "Outreach & Logistics",
+			"pronouns": "he/him",
+			"picture": "roman.jpg"
+		},
+		{
+			"name": "Leanne",
+			"role": "Outreach & Logistics",
+			"pronouns": "she/her",
+			"picture": "leanne.JPG"
+		},
+		{
+			"name": "Riddhesh",
+			"role": "Technical",
+			"pronouns": "he/him",
+			"picture": "riddhesh.jpg"
+		},
+		{
+			"name": "Giang",
+			"role": "Technical",
+			"pronouns": "she/her",
+			"picture": "giang.JPG"
+		},
+		{
+			"name": "Michael",
+			"role": "Technical",
+			"pronouns": "he/him",
+			"picture": "michael.jpg"
+		},
+		{
+			"name": "Joy",
+			"role": "Technical",
+			"pronouns": "she/her",
+			"picture": "joy.jpg"
+		},
+		{
+			"name": "Hamza",
+			"role": "Finance",
+			"pronouns": "he/him",
+			"picture": "hamza.jpg"
+		}
+	],
+	"Associate": [
+		{
+			"name": "Emma",
+			"role": "Marketing",
+			"pronouns": "she/her",
+			"picture": "zx.png"
+		},
+		{
+			"name": "Paris",
+			"role": "Marketing",
+			"pronouns": "she/her",
+			"picture": "p22phan.png"
+		},
+		{
+			"name": "Deepasri",
+			"role": "Outreach & Logistics",
+			"pronouns": "she/her",
+			"picture": "deepasri.png"
+		},
+		{
+			"name": "Annya",
+			"role": "Outreach & Logistics",
+			"pronouns": "she/her",
+			"picture": "nyaa.png"
+		},
+		{
+			"name": "Ido",
+			"role": "Technical",
+			"pronouns": "he/him",
+			"picture": "The-g.png"
+		},
+		{
+			"name": "Shaughn",
+			"role": "Technical",
+			"pronouns": "he/him",
+			"picture": "cartoonraccoon.gif"
+		},
+		{
+			"name": "Daniyal",
+			"role": "Technical",
+			"pronouns": "he/him",
+			"picture": "devls.png"
+		}
+	],
+	"Advisor": [
+		{
+			"name": "Andi",
+			"role": "Faculty Advisor",
+			"pronouns": "he/him",
+			"picture": "andi.png"
+		},
+		{
+			"name": "Chris",
+			"role": "Advisor",
+			"pronouns": "he/him",
+			"picture": "Chris.png"
+		},
+		{
+			"name": "Nivy",
+			"role": "Advisor",
+			"pronouns": "she/her",
+			"picture": "Nivy.png"
+		},
+		{
+			"name": "Akshit",
+			"role": "Advisor",
+			"pronouns": "he/him",
+			"picture": "Akshit.png"
+		}
+	]
+}

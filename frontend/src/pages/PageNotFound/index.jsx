@@ -1,8 +1,7 @@
-import React from "react";
-import { Container } from "@mui/material";
-import {
-	ErrorOutline
-} from "@mui/icons-material";
+import React from 'react';
+
+import { ErrorOutline } from '@mui/icons-material';
+import { Container } from '@mui/material';
 
 const PageNotFound = () => {
 	return (

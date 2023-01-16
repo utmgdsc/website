@@ -14,8 +14,8 @@ The `footer.json` file contains the footer links. It is an object, each object r
   - `URL`: The URL of the link.
   - `external`: Whether the link is external or not. If `true`, the link will open in a new tab.
 
-## `projects.json`
-The `projects.json` file contains the projects. It is an array of objects, each object representing a single project. The object has the following properties:
+## `projects.js`
+The `projects.js` file contains the projects. It is an array of objects, each object representing a single project. The object has the following properties:
 - `title`: The name of the project.
 - `url`: The URL of the project.
 - `description`: The description of the project.

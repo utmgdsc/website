@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme } from '@mui/material/styles';
 
 /**
  * @return {boolean} true if the user has set their OS to dark mode
@@ -10,7 +10,7 @@ export const prefersDarkMode = () => {
 	return false;
 }
 
-const GoogleTheme = createTheme({
+export const GoogleTheme = createTheme({
 	palette: {
 		mode: prefersDarkMode() ? "dark" : "light",
 		primary: {
@@ -46,6 +46,7 @@ const GoogleTheme = createTheme({
 		fontFamily: [
 			"Google Sans Display",
 			"Google Sans",
+			"Product Sans",
 			"-apple-system",
 			"BlinkMacSystemFont",
 			"Segoe UI",
@@ -56,5 +57,3 @@ const GoogleTheme = createTheme({
 		].join(","),
 	}
 });
-
-export default GoogleTheme;
