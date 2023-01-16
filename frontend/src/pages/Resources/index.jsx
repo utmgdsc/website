@@ -5,7 +5,9 @@ import {
   Grid,
 } from '@mui/material';
 
-import BannerImg from '../../assets/webiste_proprietary/heroes/IMG_3732.jpg';
+import Brand from '../../assets/graphics/logo_clouds.png';
+import Workshop from '../../assets/website_proprietary/heroes/IMG_2746.jpg';
+import BannerImg from '../../assets/website_proprietary/heroes/IMG_3732.jpg';
 import {
   FAQ,
   HeroHeader,
@@ -41,21 +43,21 @@ const ResourcesPage = () => {
 						<ImageLinkCard
 							title="Workshop Archive"
 							description="Check out our past workshops!"
-							alt="" // todo
+							alt="A man (Alexander Dean Cybulski) speaks at an event with a projector in the background."
 							href="/resources/workshops"
-							image={BannerImg}
+							image={Workshop}
 						/>
 					</Grid>
 					<Grid item>
 						<ImageLinkCard
 							title="Logo Download"
 							description="Download our bracket logo in crisp quality!"
-							alt="" // todo
+							alt="Google Developer Student Clubs UTM logo over a blue background with clouds"
 							href="/resources/logo-download"
-							image={BannerImg}
+							image={Brand}
 						/>
 					</Grid>
-					<Grid item>
+					{/* <Grid item>
 						<ImageLinkCard
 							title="Tech tips"
 							description="Linus from Linus Tech Tips is a GDSC UTM member! :) Check out his tips here!"
@@ -63,7 +65,7 @@ const ResourcesPage = () => {
 							href="/resources/tips"
 							image={BannerImg}
 						/>
-					</Grid>
+					</Grid> */}
 				</Grid>
 
 				{/* opting to keep FAQ in this page to keep it more accessible */}

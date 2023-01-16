@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 
 import BannerImg
-  from '../../../assets/webiste_proprietary/heroes/lena_giang.png';
+  from '../../../assets/website_proprietary/heroes/lena_giang.png';
 import {
   HeroHeader,
   RouterBreadcrumb,

@@ -89,7 +89,6 @@ export const EventList = ({ limit, upcoming = EventUpcomingStates.ALL }) => {
 	}
 
 	// if no events, show message rather than empty page
-	// TODO: get Estelle to draw a cute image
 	else if (events.length === 0) {
 		return (
 			<Grid item xs={12}>
