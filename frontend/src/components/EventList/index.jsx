@@ -107,7 +107,7 @@ export const EventList = ({ limit, upcoming = EventUpcomingStates.ALL }) => {
 						subtitle={<ConvertDate date={event["start_date"]} />}
 						title={event["title"]}
 						description={<Description id={event["id"]} />}
-						link={event["url"]}
+						href={event["url"]}
 					/>
 				</Grid>
 			))}

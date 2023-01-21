@@ -64,7 +64,7 @@ const Homepage = () => {
 					</div>
 					<h3>Creating impact and empowering students through technology</h3>
 					<div className="lead">
-						Whether you are new to software development or you"ve been developing for quite a while,
+						Whether you are new to software development or you&CloseCurlyQuote;ve been developing for quite a while,
 						GDSC is a place where you can learn new technologies, make your ideas a reality, and
 						collaborate to solve real-world problems. In addition to solving problems, GDSC will
 						allow you to connect with other technology enthusiasts from other GDSC chapters and the

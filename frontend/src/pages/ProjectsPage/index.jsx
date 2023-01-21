@@ -39,7 +39,7 @@ const ProjectPage = () => {
 							<InfoCard
 								title={project.title}
 								description={project.description}
-								link={project.url}
+								href={project.url}
 							/>
 						</Grid>
 					))}

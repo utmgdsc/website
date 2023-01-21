@@ -111,7 +111,7 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE }) => {
 						subtitle={<ConvertDate date={event["start_date"]} />}
 						title={event["title"]}
 						description={<Description id={event["id"]} />}
-						url={event["url"]}
+						href={event["url"]}
 					/>
 				</Grid>
 			))}
