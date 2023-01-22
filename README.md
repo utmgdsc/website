@@ -38,5 +38,10 @@ git submodule sync
 git submodule update --init
 ```
 
+To update the submodule, run the following commands:
+```sh
+git submodule -q foreach git pull -q origin main
+```
+
 ## Contact
 You can contact us via [Discord](https://discord.gg/FMJNvhXJAa) or by [GitHub Issues](https://github.com/utmgdsc/website/issues/new/choose)
