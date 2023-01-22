@@ -56,21 +56,21 @@ const Homepage = () => {
 			<section id="who-are-we">
 				<HeroHeader text="Who are we?" picture={HeroInfoSesh} maxWidth="md" />
 				<Container sx={{ py: 8, lineHeight: "2em" }} maxWidth="md">
-					<div className="lead">
-						<dfn id="gsdc">Google Developer Student Clubs</dfn> (<abbr>GDSC</abbr>) is a student-led
+					<p>
+						<dfn id="gsdc-defn">Google Developer Student Clubs</dfn> (<abbr>GDSC</abbr>) is a student-led
 						community backed by Google Developers aimed at empowering undergraduate students from all
 						disciplines to grow their knowledge in technology, build solutions for their local communities,
 						and connect with other members from the Google community.
-					</div>
+					</p>
 					<h3>Creating impact and empowering students through technology</h3>
-					<div className="lead">
-						Whether you are new to software development or you&CloseCurlyQuote;ve been developing for quite a while,
+					<p>
+						Whether you are new to software development or you&rsquo;ve been developing for quite a while,
 						GDSC is a place where you can learn new technologies, make your ideas a reality, and
 						collaborate to solve real-world problems. In addition to solving problems, GDSC will
 						allow you to connect with other technology enthusiasts from other GDSC chapters and the
 						Google Developer Community. We will be hosting events and activities for all students
 						throughout the academic year. We hope to see you there!
-					</div>
+					</p>
 				</Container>
 			</section>
 			{/* team list */}

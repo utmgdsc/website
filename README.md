@@ -30,5 +30,13 @@ Except where otherwise noted, the is project is licensed under the [LGPL 2.0 or 
 	> npm start
 	```
 
+
+## Access proprietary files
+We use a submodule to access files not licensed under an open source license. To access these files, run the following commands:
+```sh
+git submodule sync
+git submodule update --init
+```
+
 ## Contact
 You can contact us via [Discord](https://discord.gg/FMJNvhXJAa) or by [GitHub Issues](https://github.com/utmgdsc/website/issues/new/choose)
