@@ -9,11 +9,11 @@ import Brand from '../../assets/graphics/logo_clouds.png';
 import Workshop from '../../assets/website_proprietary/heroes/IMG_2746.jpg';
 import BannerImg from '../../assets/website_proprietary/heroes/IMG_3721.png';
 import {
-  FAQ,
+//   FAQ,
   HeroHeader,
   ImageLinkCard,
 } from '../../components';
-import faq from '../../data/faq.json';
+// import faq from '../../data/faq.json';
 
 /**
  * @returns {JSX.Element} The resources page
