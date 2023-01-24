@@ -7,7 +7,7 @@ import {
   Typography,
 } from '@mui/material';
 
-import BannerImg from '../../../assets/graphics/logo_clouds.png';
+import BannerImg from '../../../assets/graphics/sky.png';
 import {
   HeroHeader,
   RouterBreadcrumb,
