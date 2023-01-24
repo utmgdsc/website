@@ -7,7 +7,7 @@ import {
 
 import Brand from '../../assets/graphics/logo_clouds.png';
 import Workshop from '../../assets/website_proprietary/heroes/IMG_2746.jpg';
-import BannerImg from '../../assets/website_proprietary/heroes/IMG_3732.jpg';
+import BannerImg from '../../assets/website_proprietary/heroes/IMG_3721.png';
 import {
   FAQ,
   HeroHeader,
@@ -69,12 +69,12 @@ const ResourcesPage = () => {
 				</Grid>
 
 				{/* opting to keep FAQ in this page to keep it more accessible */}
-				<h2 className="resources" id="faq">Frequently Asked Questions</h2>
+				{/* <h2 className="resources" id="faq">Frequently Asked Questions</h2>
 				{faq.map((faq, index) => {
 					return (
 						<FAQ key={index} faq={faq} />
 					);
-				})}
+				})} */}
 
 			</Container>
 		</>
