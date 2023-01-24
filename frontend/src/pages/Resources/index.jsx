@@ -25,7 +25,7 @@ const ResourcesPage = () => {
 
 	return (
 		<>
-			<HeroHeader text="Resources" picture={BannerImg} height="15rem" />
+			<HeroHeader text="Resources" picture={BannerImg} height="15rem" position="bottom" />
 			<Container
 				sx={{
 					py: 4,
