@@ -17,9 +17,20 @@
 		"@testing-library/jest-dom": "^5.16.1",
 		"@testing-library/react": "^13.4.0",
 		"@testing-library/user-event": "^14.4.3",
+		"@typescript-eslint/eslint-plugin": "^5.49.0",
+		"eslint": "^8.32.0",
+		"eslint-config-standard-with-typescript": "^32.0.0",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-n": "^15.6.1",
+		"eslint-plugin-promise": "^6.1.1",
+		"eslint-plugin-react": "^7.32.1",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.1.0",
+		"prettier": "^2.8.3",
 		"react-scripts": "5.0.1",
 		"sass": "^1.57.1",
 		"standardx": "^7.0.0",
+		"typescript": "^4.9.4",
 		"web-vitals": "^3.1.0"
 	},
 	"scripts": {
@@ -45,5 +56,21 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
-	}
+	},
+	"husky": {
+		"hooks": {
+		  "pre-commit": "lint-staged"
+		}
+	  },
+	  "lint-staged": {
+		"*.{js,jsx}": [
+		  "prettier --write",
+		  "eslint --fix",
+		  "git add"
+		],
+		"*.{html,css,less,ejs}": [
+		  "prettier --write",
+		  "git add"
+		]
+	  }
 }
