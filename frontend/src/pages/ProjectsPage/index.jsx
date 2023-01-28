@@ -9,8 +9,8 @@ import {
 import {
   HeroHeader,
   InfoCard,
-} from '../../../components';
-import { projects } from '../../../data/projects.js';
+} from '../../components';
+import { projects } from '../../data/projects.js';
 import BannerImg from '../../assets/website_proprietary/heroes/IMG_4712.jpg';
 
 const ProjectPage = () => {
