@@ -2,7 +2,7 @@ import React, { lazy } from 'react';
 
 const Homepage = lazy(() => import("./Homepage"));
 const ResourcesPage = lazy(() => import("./Resources"));
-const ProjectPage = lazy(() => import("./Resources/ProjectsPage"));
+const ProjectPage = lazy(() => import("./ProjectsPage"));
 const Events = lazy(() => import("./Events"));
 const BrandResources = lazy(() => import("./Resources/BrandResourcesPage"));
 const WorkshopArchive = lazy(() => import("./Resources/WorkshopsPage"));

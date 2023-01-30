@@ -34,6 +34,13 @@
 			"code": "https://github.com/utm-cssc/frontend-workshop-2022",
 			"slides": "https://docs.google.com/presentation/d/1m-nAIGf_7ZKnKxSDeV0x1kCGj7YeGSkBIG4exYKNpSQ/edit",
 			"recording": "https://www.youtube.com/watch?v=DYGzO8eYwT4"
+		},
+		{
+			"name": "UX/UI Workshop",
+			"date": "2023-01-28",
+			"host": ["Jackson Lee", "Paris Phan", "Ido Ben Haim"],
+			"description": "Unlock the power of design thinking to create meaningful connections between people and products.",
+			"slides": "https://www.slideshare.net/GDSCUofTMississauga/uxui-workshop-slides-255561605"
 		}
 	],
 	"Backend": [
@@ -108,6 +115,15 @@
 			"host": ["Riddhesh Shah"],
 			"description": "This workshop will include learning about convolutional neural networks and taking a look at neuron activations to understand the feature extraction process during a simple image classification task. We will build our own convnets on Kaggle to continue our machine learning certification!",
 			"code": "https://www.kaggle.com/learn/computer-vision"
+		}
+	],
+	"Cybersecurity": [
+		{
+			"name": "U of T CTF Competition",
+			"date": "2023-01-14",
+			"host": ["Alex Dean Cybulski", "GDSC UTM", "GDSC UTSG", "MCSS", "U of T CTF Team"],
+			"description": "Slides from Alex's talk at the CTF.\n\nJoin us in-person or online for our multi-club CTF (Capture-The-Flag) competition, taking place this January 14th and 15th. All beginner, intermediate, and skilled U of T students are welcome to participate in our security-oriented challenges and talks!",
+			"slides": "https://www.slideshare.net/GDSCUofTMississauga/uoft-ctf-club-talk"
 		}
 	]
 }
