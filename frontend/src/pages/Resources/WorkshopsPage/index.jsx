@@ -4,18 +4,17 @@ import { useEffect } from 'react';
 
 import {
 	Box,
-	Container,
 	Grid,
 } from '@mui/material';
 
 import BannerImg from '../../../assets/website_proprietary/heroes/IMG_2746.jpg';
 import {
-	HeroHeader,
-	RouterBreadcrumb,
 	TableOfContents,
 } from '../../../components';
 import workshops from '../../../data/workshops.json';
 import { WorkshopWidget } from './Workshop';
+
+import { ResourceLayout } from '../../../layouts/ResourceLayout';
 
 /**
  * @return {JSX.Element} Workshop page component
@@ -26,37 +25,33 @@ const WorkshopArchive = () => {
 	}, []);
 	return (
 		// todo a search bar would be cool
-		<>
-			<HeroHeader text="Workshop Archive" picture={BannerImg} />
-			<Container sx={{ py: 4 }} component="main" id="workshop">
-				<RouterBreadcrumb />
-				<Grid
-					container
-					spacing={2}
-				>
-					<Grid item md={3}>
-						<TableOfContents />
-					</Grid>
-					<Grid item md={9}>
-						<h2 className="resources" id="gdsc-workshops">GDSC Workshops</h2>
-						{Object.keys(workshops).map((category, index) => {
-							return (
-								<Box key={index}>
-									<h3 className="resources" id={category.replace(/\s/g, "")}>{category}</h3>
-									{workshops[category].sort((function (a, b) {
-										return new Date(b.date) - new Date(a.date);
-									})).map((item, index) => {
-										return (
-											<WorkshopWidget key={index} item={item} />
-										);
-									})}
-								</Box>
-							);
-						})}
-					</Grid>
+		<ResourceLayout title="Workshop Archive" picture={BannerImg} id="workshop-archive">
+			<Grid
+				container
+				spacing={2}
+			>
+				<Grid item md={3}>
+					<TableOfContents />
 				</Grid>
-			</Container>
-		</>
+				<Grid item md={9}>
+					<h2 className="resources" id="gdsc-workshops">GDSC Workshops</h2>
+					{Object.keys(workshops).map((category, index) => {
+						return (
+							<Box key={index}>
+								<h3 className="resources" id={category.replace(/\s/g, "")}>{category}</h3>
+								{workshops[category].sort((function (a, b) {
+									return new Date(b.date) - new Date(a.date);
+								})).map((item, index) => {
+									return (
+										<WorkshopWidget key={index} item={item} />
+									);
+								})}
+							</Box>
+						);
+					})}
+				</Grid>
+			</Grid>
+		</ResourceLayout>
 	);
 }
 

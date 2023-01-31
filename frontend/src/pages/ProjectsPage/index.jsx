@@ -1,17 +1,17 @@
 import { useEffect } from 'react';
 
 import {
-  Container,
-  Grid,
-  Typography,
+	Grid,
+	Typography,
 } from '@mui/material';
 
 import {
-  HeroHeader,
-  InfoCard,
+	InfoCard,
 } from '../../components';
 import { projects } from '../../data/projects.js';
 import BannerImg from '../../assets/website_proprietary/heroes/IMG_4712.jpg';
+
+import { HeroLayout } from '../../layouts/HeroLayout';
 
 const ProjectPage = () => {
 	useEffect(() => {
@@ -29,23 +29,19 @@ const ProjectPage = () => {
 	}
 
 	return (
-		<>
-			<HeroHeader text="GDSC Projects" picture={BannerImg} position="bottom" />
-
-			<Container sx={{ py: 4 }} component="main" id="projects">
-				<Grid container spacing={2}>
-					{projects.map((project, id) => (
-						<Grid key={id} item xs={12} sm={6} md={4}>
-							<InfoCard
-								title={project.title}
-								description={project.description}
-								href={project.url}
-							/>
-						</Grid>
-					))}
-				</Grid>
-			</Container>
-		</>
+		<HeroLayout title="GDSC Projects" picture={BannerImg} position="bottom" id="projects">
+			<Grid container spacing={2}>
+				{projects.map((project, id) => (
+					<Grid key={id} item xs={12} sm={6} md={4}>
+						<InfoCard
+							title={project.title}
+							description={project.description}
+							href={project.url}
+						/>
+					</Grid>
+				))}
+			</Grid>
+		</HeroLayout>
 	);
 }
 
