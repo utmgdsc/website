@@ -17,11 +17,11 @@
 		"@testing-library/jest-dom": "^5.16.1",
 		"@testing-library/react": "^13.4.0",
 		"@testing-library/user-event": "^14.4.3",
-		"eslint": "^8.32.0",
 		"eslint-plugin-import": "^2.27.5",
 		"eslint-plugin-n": "^15.6.1",
 		"eslint-plugin-promise": "^6.1.1",
 		"eslint-plugin-react": "^7.32.1",
+		"eslint": "^8.32.0",
 		"husky": "^8.0.3",
 		"lint-staged": "^13.1.0",
 		"prettier": "^2.8.3",
@@ -35,12 +35,6 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
-	},
-	"eslintConfig": {
-		"extends": [
-			"react-app",
-			"react-app/jest"
-		]
 	},
 	"browserslist": {
 		"production": [
@@ -56,18 +50,18 @@
 	},
 	"husky": {
 		"hooks": {
-		  "pre-commit": "lint-staged"
+			"pre-commit": "lint-staged"
 		}
-	  },
-	  "lint-staged": {
+	},
+	"lint-staged": {
 		"*.{js,jsx}": [
-		  "prettier --write",
-		  "eslint --fix",
-		  "git add"
+			"prettier --write",
+			"eslint --fix",
+			"git add"
 		],
 		"*.{html,css,less,ejs}": [
-		  "prettier --write",
-		  "git add"
+			"prettier --write",
+			"git add"
 		]
-	  }
+	}
 }
