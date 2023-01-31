@@ -1,11 +1,17 @@
 import { Typography } from '@mui/material';
 
+import { ResourceLayout } from '../../../layouts/ResourceLayout';
+
 /**
  * @returns {JSX.Element} The tech tips widget
  */
 const TechTips = () => {
 	return (
-		<Typography>Coming soon</Typography>
+		<ResourceLayout title="Tech Tips" id="tech-tips">
+			<Typography variant="h2" component="h2" gutterBottom>
+				Coming Soon!
+			</Typography>
+		</ResourceLayout>
 	);
 }
 

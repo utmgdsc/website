@@ -4,9 +4,8 @@ module.exports = {
     es2021: true
   },
   extends: [
-    'plugin:react/recommended',
-    'standard',
-    'prettier'
+    'plugin:react/jsx-runtime',
+    'react-app'
   ],
   overrides: [
   ],
@@ -21,8 +20,8 @@ module.exports = {
     'react'
   ],
   rules: {
-    'no-use-before-define': 'off',
+    'no-console': 'off',
     'no-unused-vars': 'warn',
-    'no-console': 'error'
+    'no-use-before-define': 'off'
   }
 }
