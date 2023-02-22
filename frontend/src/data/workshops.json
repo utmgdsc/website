@@ -42,6 +42,13 @@
 			"description": "Unlock the power of design thinking to create meaningful connections between people and products.",
 			"code": "https://www.figma.com/proto/lXoTOFqVH34ua9J9kWpKLj/Basic-E-Commerce-Website?node-id=2%3A3&scaling=scale-down&page-id=0%3A1&starting-point-node-id=2%3A3",
 			"slides": "https://www.slideshare.net/GDSCUofTMississauga/uxui-workshop-slides-255561605"
+		},
+		{
+			"name": "CSSC x GDSC: Frontend Workshop",
+			"date": "2023-02-02",
+			"host": ["Brian Zhang"],
+			"description": "Are you looking to break into the world of frontend web development but don't know where to start? Look no further!",
+			"slides": "https://docs.google.com/presentation/d/1wEZJsGLTnsUHn0i55tekLrKEfA6Ff_4vDuCJ5w6ErFo/edit?usp=sharing"
 		}
 	],
 	"Backend": [
@@ -59,6 +66,13 @@
 			"host": ["Manjoy Malhotra", "Manav Bhojak"],
 			"description": "Learn how to utilize Express.js, a back end web application framework useful for Node.js",
 			"code": "https://github.com/utm-cssc/backend-express-workshop-2022"
+		},
+		{
+			"name": "CSSC × GDSC: Backend Workshop",
+			"date": "2023-02-17",
+			"host": ["Giang Bui", "Daksh Malhotra"],
+			"description": "Get hands-on experience 😋 and learn how to create fast, secure, and scalable backend systems that drive your websites and applications.",
+			"slides": "https://www.slideshare.net/GDSCUofTMississauga/backend-workshop-gdsc-x-cssc-2023pptx"
 		}
 	],
 	"Database and DevOps": [
@@ -77,6 +91,23 @@
 			"description": "Learn all about Docker and how to containerize your applications!",
 			"code": "https://github.com/utmgdsc/docker-workshop",
 			"slides": "https://docs.google.com/presentation/d/1l2fDEpqCm6UxjjQk24Ood-V1KX8EIgw3-aSx9Mm-v50/edit"
+		},
+		{
+			"name": "Database Workshop",
+			"date": "2023-02-20",
+			"host": ["Ido Ben Haim", "Daniyal Bokhari"],
+			"description": "Learn how to use MongoDB, a NoSQL database, to store and retrieve data in your applications!",
+			"code": "https://github.com/utmgdsc/database-demo",
+			"slides": "https://www.slideshare.net/GDSCUofTMississauga/database-workshop-slides",
+			"recording": "https://youtu.be/6oZ5z0OTbTA"
+		},
+		{
+			"name": "DevOps Workshop",
+			"date": "2023-02-21",
+			"host": ["Daksh Malhotra"],
+			"description": "Learn how to use Docker and Github Actions to deploy your applications!",
+			"slides": "https://www.slideshare.net/GDSCUofTMississauga/devops-workshoppdf",
+			"recording": "https://youtu.be/Fg59YTotccY"
 		}
 	],
 	"Game Development": [
