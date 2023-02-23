@@ -97,7 +97,7 @@
 			"date": "2023-02-20",
 			"host": ["Ido Ben Haim", "Daniyal Bokhari"],
 			"description": "Learn how to use MongoDB, a NoSQL database, to store and retrieve data in your applications!",
-			"code": "https://github.com/utmgdsc/database-demo",
+			"code": "https://github.com/utmgdsc/2023-database-demo",
 			"slides": "https://www.slideshare.net/GDSCUofTMississauga/database-workshop-slides",
 			"recording": "https://youtu.be/6oZ5z0OTbTA"
 		},
@@ -110,14 +110,23 @@
 			"recording": "https://youtu.be/Fg59YTotccY"
 		}
 	],
-	"Game Development": [
+	"Miscellaneous": [
 		{
 			"name": "Game Development Workshop",
 			"date": "2022-03-31",
 			"host": ["Manushree Saboo"],
 			"description": "In this beginner-friendly workshop, we will go through what Unity is, some fundaments about C# for game development, and how do we use the two to create interactive games.",
 			"code": "https://github.com/utmgdsc/Game-Dev-Workshop"
-		}
+		},
+		{
+			"name": "Make your own Discord Bot",
+			"date": "2023-02-23",
+			"host": ["Ido Ben Haim"],
+			"description": "Learn how to code your own Discord bot, and learn about the Discord.js API. Learn how to make buttons, dropdown selections, add commands and event listeners, and even make a Discord game!",
+			"code": "https://gist.github.com/gdscbot/bf0d416b7651655ff49c8a922c002503",
+			"slides": "https://www.slideshare.net/GDSCUofTMississauga/discord-bot-workshop-slides",
+			"recording": "https://youtu.be/mVHen_IKykk"
+		},
 	],
 	"Machine Learning": [
 		{
