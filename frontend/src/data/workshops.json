@@ -126,6 +126,15 @@
 			"code": "https://gist.github.com/gdscbot/bf0d416b7651655ff49c8a922c002503",
 			"slides": "https://www.slideshare.net/GDSCUofTMississauga/discord-bot-workshop-slides",
 			"recording": "https://youtu.be/mVHen_IKykk"
+		},
+		{
+			"name": "C Workshop",
+			"date": "2023-02-24",
+			"host": ["Sam Chan"],
+			"description": "Learn C concepts such as: structs, typedefs and pointers, manual memory management, stack and heap!",
+			"code": "https://github.com/utmgdsc/2023-c-workshop",
+			"slides": "",
+			"recording": ""
 		}
 	],
 	"Machine Learning": [
