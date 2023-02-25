@@ -15,6 +15,7 @@ import HeroTeam from '../../assets/website_proprietary/heroes/team.png';
 import {
   ErrorBoundary,
   EventList,
+  ExpiryContainer,
   HeroHeader,
 } from '../../components';
 import teamMembers from '../../data/team.json';
@@ -75,16 +76,18 @@ const Homepage = () => {
 			</section>
 			{/* team list */}
 			<section id="meet-the-team">
-				<HeroHeader text="Meet the team" picture={HeroTeam} maxWidth="md" />
-				<Container sx={{ py: 8, px: 0 }} maxWidth="md">
-					<ErrorBoundary>
-						{Object.keys(teamMembers).map((subteam, index) => {
-							return (
-								<Team key={index} teamInfo={teamMembers[subteam]} title={subteam} />
-							);
-						})}
-					</ErrorBoundary>
-				</Container>
+				<ExpiryContainer date={"2023-06-30"}>
+					<HeroHeader text="Meet the team" picture={HeroTeam} maxWidth="md" />
+					<Container sx={{ py: 8, px: 0 }} maxWidth="md">
+						<ErrorBoundary>
+							{Object.keys(teamMembers).map((subteam, index) => {
+								return (
+									<Team key={index} teamInfo={teamMembers[subteam]} title={subteam} />
+								);
+							})}
+						</ErrorBoundary>
+					</Container>
+				</ExpiryContainer>
 			</section>
 		</main>
 	);

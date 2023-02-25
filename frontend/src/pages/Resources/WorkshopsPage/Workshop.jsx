@@ -39,10 +39,10 @@ export const WorkshopWidget = ({ item }) => {
 
 					}}
 				>
-					<Typography component="div" variant="h6">
+					<Typography component="div" variant="h6" sx={{maxWidth: "60vw"}}>
 						{item.name ? item.name : "Workshop"}
 					</Typography>
-					<Typography variant="subtitle1" color="text.secondary" component="div">
+					<Typography variant="subtitle1" color="text.secondary" component="div" sx={{maxWidth: "60vw"}}>
 						<JoinAnd items={item.host} /> on <ConvertDate date={item.date} />
 					</Typography>
 				</CardContent>
