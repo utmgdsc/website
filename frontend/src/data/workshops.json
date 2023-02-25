@@ -133,8 +133,8 @@
 			"host": ["Sam Chan"],
 			"description": "Learn C concepts such as: structs, typedefs and pointers, manual memory management, stack and heap!",
 			"code": "https://github.com/utmgdsc/2023-c-workshop",
-			"slides": "",
-			"recording": ""
+			"slides": "https://www.slideshare.net/GDSCUofTMississauga/basics-of-c-256105071",
+			"recording": "https://youtu.be/rT7qVmQpfJg"
 		}
 	],
 	"Machine Learning": [
