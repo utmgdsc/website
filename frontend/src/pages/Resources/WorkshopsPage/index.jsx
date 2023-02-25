@@ -14,7 +14,7 @@ import {
 import workshops from '../../../data/workshops.json';
 import { WorkshopWidget } from './Workshop';
 
-import { ResourceLayout } from '../../../layouts/ResourceLayout';
+import { ResourceLayout } from '../../../layouts/ResourcesSubPageLayout';
 
 /**
  * @return {JSX.Element} Workshop page component

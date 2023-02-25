@@ -73,5 +73,15 @@ export const projects = [
 		"title": "GDSC Website",
 		"url": "/",
 		"description": "Yes. This website."
+	},
+	{
+		"title": "Hacklab Booking",
+		"url": "https://github.com/utmgdsc/hacklab-booking",
+		"description": "A web application that allows students to book the UTM Hacklab."
+	},
+	{
+		"title": "CSC209 Website Extension",
+		"url": "https://github.com/utmgdsc/2023-csc209h5s-extension",
+		"description": "A Chrome extension that enhances CSC209's web interface."
 	}
 ]

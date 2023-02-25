@@ -6,7 +6,7 @@
 			"host": ["Daniel Laufer"],
 			"description": "Get an overview of Git and GitHub including what they are, their purpose, how they work, how they interact with each other, and much more.\n\nYou will learn about essential Git commands and concepts and go through several short demos using them.\n\nAdditionally, you will learn how to collaborate with others on a project using Git and GitHub, and learn how to contribute to open-source projects.\n\nAll of this combined will allow students to learn an essential skill that will follow them through their career in tech!",
 			"code": "https://github.com/utmgdsc/git-workshop",
-			"slides": "https://docs.google.com/presentation/d/1hdl4TNEK4gg4wnwN8six5xIM8vCS4xipD1DsY3rf-MM/edit#slide=id.gea706eb252_0_146"
+			"slides": "https://www.slideshare.net/GDSCUofTMississauga/git-init-introduction-to-gitpdf"
 		},
 		{
 			"name": "Git Workshop",
@@ -24,7 +24,7 @@
 			"host": ["Jarrod Servilla", "Daniel Laufer", "Milind Vishnoi"],
 			"description": "Learn the fundamentals of React!",
 			"code": "https://github.com/utmgdsc/react-workshop",
-			"slides": "https://docs.google.com/presentation/d/1B8LL6LJZrFeJm9vPrOhnilZmtF-RZ2n94ultI13z_sM/edit#slide=id.gf9a69aabcc_0_0"
+			"slides": "https://www.slideshare.net/GDSCUofTMississauga/full-stack-react-workshop-cssc-x-gdscpdf"
 		},
 		{
 			"name": "CSSC × GDSC: Frontend Workshop",
@@ -32,7 +32,7 @@
 			"host": ["Giang Bui", "Brian Zhang"],
 			"description": "We have teamed up with CSSC to bring you a workshop to get familiar with React AND UI/UX design!",
 			"code": "https://github.com/utm-cssc/frontend-workshop-2022",
-			"slides": "https://docs.google.com/presentation/d/1m-nAIGf_7ZKnKxSDeV0x1kCGj7YeGSkBIG4exYKNpSQ/edit",
+			"slides": "https://www.slideshare.net/GDSCUofTMississauga/react-workshoppptx",
 			"recording": "https://www.youtube.com/watch?v=DYGzO8eYwT4"
 		},
 		{
@@ -42,6 +42,13 @@
 			"description": "Unlock the power of design thinking to create meaningful connections between people and products.",
 			"code": "https://www.figma.com/proto/lXoTOFqVH34ua9J9kWpKLj/Basic-E-Commerce-Website?node-id=2%3A3&scaling=scale-down&page-id=0%3A1&starting-point-node-id=2%3A3",
 			"slides": "https://www.slideshare.net/GDSCUofTMississauga/uxui-workshop-slides-255561605"
+		},
+		{
+			"name": "CSSC x GDSC: Frontend Workshop",
+			"date": "2023-02-02",
+			"host": ["Brian Zhang"],
+			"description": "Are you looking to break into the world of frontend web development but don't know where to start? Look no further!",
+			"slides": "https://www.slideshare.net/GDSCUofTMississauga/htmlcssjs-workshop"
 		}
 	],
 	"Backend": [
@@ -51,7 +58,7 @@
 			"host": ["Daniel Laufer"],
 			"description": "Learn about backend development through using Flask, a Python web framework, and Amazon Web Services (AWS), the leading cloud service provider in the world!",
 			"code": "https://github.com/utmgdsc/back-end-workshop",
-			"slides": "https://docs.google.com/presentation/d/1u0lOjvQeCHM8IaPHoUb6EpbC5hCHY9Cb6YfZYXOzC_U/edit#slide=id.gea706eb252_0_146"
+			"slides": "https://www.slideshare.net/GDSCUofTMississauga/backend-flaskaws"
 		},
 		{
 			"name": "CSSC × GDSC: Backend Workshop",
@@ -59,6 +66,13 @@
 			"host": ["Manjoy Malhotra", "Manav Bhojak"],
 			"description": "Learn how to utilize Express.js, a back end web application framework useful for Node.js",
 			"code": "https://github.com/utm-cssc/backend-express-workshop-2022"
+		},
+		{
+			"name": "CSSC × GDSC: Backend Workshop",
+			"date": "2023-02-17",
+			"host": ["Giang Bui", "Daksh Malhotra"],
+			"description": "Get hands-on experience 😋 and learn how to create fast, secure, and scalable backend systems that drive your websites and applications.",
+			"slides": "https://www.slideshare.net/GDSCUofTMississauga/backend-workshop-gdsc-x-cssc-2023pptx"
 		}
 	],
 	"Database and DevOps": [
@@ -68,7 +82,7 @@
 			"host": ["Daniel Laufer"],
 			"description": "Learn all about DevOps, and get the chance to set up automated deployment and testing of your applications using GitHub Actions and Firebase!",
 			"code": "https://github.com/utmgdsc/devops-part-1",
-			"slides": "https://docs.google.com/presentation/d/15gq9qibAPqK_-4rG68BTzmvzgonQBS0_7WKpJjrYFzs/edit#slide=id.gf9a69aabcc_0_0"
+			"slides": "https://www.slideshare.net/GDSCUofTMississauga/devops-255958478"
 		},
 		{
 			"name": "Docker Workshop",
@@ -76,16 +90,51 @@
 			"host": ["Daniel Laufer", "Ritvik Bhardwaj"],
 			"description": "Learn all about Docker and how to containerize your applications!",
 			"code": "https://github.com/utmgdsc/docker-workshop",
-			"slides": "https://docs.google.com/presentation/d/1l2fDEpqCm6UxjjQk24Ood-V1KX8EIgw3-aSx9Mm-v50/edit"
+			"slides": "https://www.slideshare.net/GDSCUofTMississauga/docker-workshop-gdsccssc"
+		},
+		{
+			"name": "Database Workshop",
+			"date": "2023-02-20",
+			"host": ["Ido Ben Haim", "Daniyal Bokhari"],
+			"description": "Learn how to use MongoDB, a NoSQL database, to store and retrieve data in your applications!",
+			"code": "https://github.com/utmgdsc/2023-database-demo",
+			"slides": "https://www.slideshare.net/GDSCUofTMississauga/database-workshop-slides",
+			"recording": "https://youtu.be/6oZ5z0OTbTA"
+		},
+		{
+			"name": "DevOps Workshop",
+			"date": "2023-02-21",
+			"host": ["Daksh Malhotra"],
+			"description": "Learn how to use Docker and Github Actions to deploy your applications!",
+			"slides": "https://www.slideshare.net/GDSCUofTMississauga/devops-workshoppdf",
+			"recording": "https://youtu.be/Fg59YTotccY"
 		}
 	],
-	"Game Development": [
+	"Miscellaneous": [
 		{
 			"name": "Game Development Workshop",
 			"date": "2022-03-31",
 			"host": ["Manushree Saboo"],
 			"description": "In this beginner-friendly workshop, we will go through what Unity is, some fundaments about C# for game development, and how do we use the two to create interactive games.",
 			"code": "https://github.com/utmgdsc/Game-Dev-Workshop"
+		},
+		{
+			"name": "Make your own Discord Bot",
+			"date": "2023-02-23",
+			"host": ["Ido Ben Haim"],
+			"description": "Learn how to code your own Discord bot, and learn about the Discord.js API. Learn how to make buttons, dropdown selections, add commands and event listeners, and even make a Discord game!",
+			"code": "https://gist.github.com/gdscbot/bf0d416b7651655ff49c8a922c002503",
+			"slides": "https://www.slideshare.net/GDSCUofTMississauga/discord-bot-workshop-slides",
+			"recording": "https://youtu.be/mVHen_IKykk"
+		},
+		{
+			"name": "C Workshop",
+			"date": "2023-02-24",
+			"host": ["Sam Chan"],
+			"description": "Learn C concepts such as: structs, typedefs and pointers, manual memory management, stack and heap!",
+			"code": "https://github.com/utmgdsc/2023-c-workshop",
+			"slides": "https://www.slideshare.net/GDSCUofTMississauga/basics-of-c-256105071",
+			"recording": "https://youtu.be/rT7qVmQpfJg"
 		}
 	],
 	"Machine Learning": [
@@ -125,6 +174,15 @@
 			"host": ["Alex Dean Cybulski", "GDSC UTM", "GDSC UTSG", "MCSS", "U of T CTF Team"],
 			"description": "Slides from Alex's talk at the CTF.\n\nJoin us in-person or online for our multi-club CTF (Capture-The-Flag) competition, taking place this January 14th and 15th. All beginner, intermediate, and skilled U of T students are welcome to participate in our security-oriented challenges and talks!",
 			"slides": "https://www.slideshare.net/GDSCUofTMississauga/uoft-ctf-club-talk"
+		},
+		{
+			"name": "Web Scraping",
+			"date": "2023-02-22",
+			"host": ["Daniyal Bokhari"],
+			"description": "Learn how to use Python requests, data structures, and BS4 to parse through HTML and find+manage info!",
+			"slides": "https://www.slideshare.net/GDSCUofTMississauga/web-scraping-workshop/",
+			"recording": "https://youtu.be/zMWYC2ai91w",
+			"code": "https://gist.github.com/daniyalb/42106c74afe20f2c442b796dba727d28"
 		}
 	]
 }

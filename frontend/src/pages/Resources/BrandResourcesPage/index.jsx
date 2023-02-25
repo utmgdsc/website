@@ -7,7 +7,7 @@ import {
 } from '@mui/material';
 
 import BannerImg from '../../../assets/graphics/sky.png';
-import { ResourceLayout } from '../../../layouts/ResourceLayout';
+import { ResourceLayout } from '../../../layouts/ResourcesSubPageLayout';
 
 /**
  * @return {JSX.Element} Brand resources page component
