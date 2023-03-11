@@ -4,68 +4,61 @@ description: Template for creating a new issue that will trigger a GitHub Action
 labels: ["workshop"]
 
 body:
-  - type: dropdown
-    attributes:
-      label: Category
-      description: Select the category for the workshop.
-    options:
-      - Git
-      - Frontend
-      - Backend
-      - Database and DevOps
-      - Machine Learning
-      - Cybersecurity
-      - Miscellaneous
-    validations:
-      required: true
+- type: dropdown
+  attributes:
+    label: Category
+    description: Select the category for the workshop.
+  options:
+    - Git
+    - Frontend
+    - Backend
+    - Database and DevOps
+    - Machine Learning
+    - Cybersecurity
+    - Miscellaneous
+  validations:
+    required: true
 
-  - type: input
-    attributes:
-      label: Workshop Name
-      description: The name of the workshop.
+- type: input
+  attributes:
+    label: Workshop Name
+    description: The name of the workshop.
+  validations:
+    required: true
 
-    validations:
-      required: true
+- type: input
+  attributes:
+    label: Date of Workshop
+    description: The date of the workshop in YYYY-MM-DD format.
+  validations:
+    required: true
 
-  - type: input
-    attributes:
-      label: Date of Workshop
-      description: The date of the workshop in YYYY-MM-DD format.
+- type: input
+  attributes:
+    label: Host Name
+    description: A list of workshop hosts (in json format!). For example, ["John Doe", "Jane Doe"], or ["John Doe"] if there is only one host.
+    type: array
+  validations:
+    required: true
 
-    validations:
-      required: true
+- type: textarea
+  attributes:
+    label: Workshop Description
+    description: A brief description of the workshop.
+  validations:
+    required: true
 
-  - type: input
-    attributes:
-      label: Host Name
-      description: A list of workshop hosts (in json format!). For example, ["John Doe", "Jane Doe"], or ["John Doe"] if there is only one host.
-      type: array
-    items:
+- type: input
+  attributes:
+    label: Link to starter code
 
-    validations:
-      required: true
+    description: The URL of the workshop's code repository (optional).
+- type: input
+  attributes:
+    label: Link to slides
+    description: The URL of the workshop's slides (optional).
 
-  - type: textarea
-    attributes:
-      label: Workshop Description
-      description: A brief description of the workshop.
-
-    validations:
-      required: true
-
-  - type: input
-    attributes:
-      label: Link to starter code
-      description: The URL of the workshop's code repository (optional).
-
-
-  - type: input
-    attributes:
-      label: Link to slides
-      description: The URL of the workshop's slides (optional).
-
-
-  - type: input
-    attributes:
-      label: Link to recording
-      description: The URL of the workshop's recording.
+- type: input
+  attributes:
+    label: Link to recording
+    description: The URL of the workshop's recording.
