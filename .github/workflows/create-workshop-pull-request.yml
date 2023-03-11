@@ -57,3 +57,7 @@ jobs:
         run: |
           npm install @actions/core
           node script.js
+      - name: Testing test
+        run: |
+          export input=${{ inputs }} 
+          echo $input
