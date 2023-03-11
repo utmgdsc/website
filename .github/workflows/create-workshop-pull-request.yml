@@ -63,7 +63,7 @@ jobs:
           ls
           ls ..
           ls dist
-          node dist/script.js
+          node dist/index.js
       - name: Clean up
         run: |
           rm -rf dist
