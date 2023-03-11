@@ -3,6 +3,18 @@ name: Create Workshop Pull Request
 on:
   workflow_dispatch:
     inputs:
+      category:
+        type: choice
+        description: Select the category for the workshop.
+        options:
+        - Git
+        - Frontend
+        - Backend
+        - Database and DevOps
+        - Machine Learning
+        - Cybersecurity
+        - Miscellaneous
+        required: true
       workshop_name:
         description: 'Workshop name'
         required: true
