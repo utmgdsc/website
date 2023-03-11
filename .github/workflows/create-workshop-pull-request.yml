@@ -45,17 +45,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up Git
-        uses: actions/setup-python@v2
+        uses: actions/checkout@v3
+        
+      - name: Set up node
+        uses: actions/setup-node@v3
         with:
-          python-version: '3.x'
+            node-version: 16
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install PyGithub
-
-      - name: Create pull request
-        run: python create_workshop_pr.py
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run script
+        uses: ggggg/GDSC-website-workshop-action@main
