@@ -7,13 +7,14 @@ from github import Github
 FILE_PATH = "./frontend/src/data/workshops.json"
 
 # Get the workshop data from the environment variables
-workshop_name = os.environ["INPUT_WORKSHOP_NAME"]
-workshop_date = os.environ["INPUT_WORKSHOP_DATE"]
-workshop_host = os.environ["INPUT_WORKSHOP_HOST"]
-workshop_description = os.environ["INPUT_WORKSHOP_DESCRIPTION"]
-workshop_slides = os.environ.get("INPUT_WORKSHOP_SLIDES")
-workshop_recording = os.environ.get("INPUT_WORKSHOP_RECORDING")
-workshop_code = os.environ.get("INPUT_WORKSHOP_CODE")
+workshop_name = os.environ["workshop_name"]
+workshop_date = os.environ["workshop_date"]
+workshop_host = os.environ["workshop_host"]
+workshop_description = os.environ["workshop_description"]
+workshop_slides = os.environ.get("workshop_slides")
+workshop_recording = os.environ.get("workshop_recording")
+workshop_code = os.environ.get("workshop_code")
+workshop_category = os.environ.get("category")
 
 # Create the workshop object
 workshop = {
@@ -38,10 +39,7 @@ else:
     workshops = {}
 
 # Add the new workshop to the appropriate category
-category = workshop_name.split(" - ")[0].strip()
-if category not in workshops:
-    workshops[category] = []
-workshops[category].append(workshop)
+workshops[workshop_category].append(workshop)
 
 # Write the updated workshops JSON file
 with open(FILE_PATH, "w") as file:
@@ -50,28 +48,32 @@ with open(FILE_PATH, "w") as file:
 # Get the GitHub client and create the pull request
 g = Github(os.environ["GITHUB_TOKEN"])
 repo = g.get_repo(os.environ["GITHUB_REPOSITORY"])
-BASe_BRANCH = "main"
+BASE_BRANCH = "main"
 new_branch = f"add-workshop-{workshop_name.lower().replace(' ', '-')}"
 title = f"Add {workshop_name} workshop"
 body = f"Add information for {workshop_name} workshop\n\n{workshop_description}"
 
 try:
-    branch = repo.get_branch(BASe_BRANCH)
+    branch = repo.get_branch(BASE_BRANCH)
     base = branch.commit.sha
 
     # Create a new branch from main
     repo.create_git_ref(f"refs/heads/{new_branch}", base)
 
     # Create the file with the workshop information
-    content = {
-        category: []
-    }
+    content = workshops.copy()
+
+    # Add the new workshop to the appropriate category
+    if workshop_category not in content:
+        content[workshop_category] = []
+    content[workshop_category].append(workshop)
+
     # Load the existing workshops JSON file
+    workshops = {}
     if os.path.exists(FILE_PATH):
         with open(FILE_PATH, "r") as file:
             workshops = json.load(file)
-    else:
-        workshops = {}
+
 
     # Check if the new workshop already exists
     category = workshop_name.split(" - ")[0].strip()
@@ -90,7 +92,6 @@ try:
     # Write the updated workshops JSON file
     with open(FILE_PATH, "w") as file:
         json.dump(workshops, file, indent=4)
-
 
     # Commit the file to the new branch
     repo.create_file(
