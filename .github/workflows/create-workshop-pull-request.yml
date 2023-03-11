@@ -57,7 +57,6 @@ jobs:
         run: |
           npm install @actions/core vercel/ncc
           ncc build script.js --license licenses.txt
-          rm -rf node_modules/*
       - name: Run script
         runs:
           using: 'node16'
