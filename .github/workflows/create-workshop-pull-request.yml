@@ -44,6 +44,6 @@ jobs:
           pip install PyGithub
 
       - name: Create pull request
-        run: python create_pull_request.py
+        run: python create_workshop_pr.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
