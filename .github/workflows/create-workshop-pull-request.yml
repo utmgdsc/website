@@ -58,7 +58,7 @@ jobs:
           npm install @actions/core vercel/ncc
           ncc build script.js --license licenses.txt
       - name: Run script
-        runs:
+        run:
           using: 'node16'
           main: 'dist/script.js'
       - name: Clean up
