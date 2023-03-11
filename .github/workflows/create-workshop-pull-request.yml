@@ -58,9 +58,12 @@ jobs:
           npm install @actions/core
           npm install -g @vercel/ncc
       - name: Build
-        run: ncc build script.js --license licenses.txt
-      - name: Run script
-        run: node dist/script.js
+        run: |
+          ncc build script.js --license licenses.txt
+          ls
+          ls ..
+          ls dist
+          node dist/script.js
       - name: Clean up
         run: |
           rm -rf dist
