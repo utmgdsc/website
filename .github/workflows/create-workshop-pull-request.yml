@@ -7,13 +7,13 @@ on:
         type: choice
         description: Select the category for the workshop.
         options:
-        - Git
-        - Frontend
-        - Backend
-        - Database and DevOps
-        - Machine Learning
-        - Cybersecurity
-        - Miscellaneous
+          - Git
+          - Frontend
+          - Backend
+          - Database and DevOps
+          - Machine Learning
+          - Cybersecurity
+          - Miscellaneous
         required: true
       workshop_name:
         description: 'Workshop name'
@@ -46,12 +46,22 @@ jobs:
 
       - name: Set up Git
         uses: actions/checkout@v3
-        
+
       - name: Set up node
         uses: actions/setup-node@v3
         with:
-            node-version: 16
+          node-version: 16
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup script
+        run: |
+          npm install @actions/core vercel/ncc
+          ncc build script.js --license licenses.txt
+          rm -rf node_modules/*
       - name: Run script
-        uses: ggggg/GDSC-website-workshop-action@main
+        runs:
+          using: 'node16'
+          main: 'dist/script.js'
+      - name: Clean up
+        run: |
+          rm -rf dist
