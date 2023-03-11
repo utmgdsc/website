@@ -1,0 +1,61 @@
+name: Create Workshop Pull Request
+
+on:
+  workflow_dispatch:
+    inputs:
+      category:
+        type: choice
+        description: Select the category for the workshop.
+        options:
+        - Git
+        - Frontend
+        - Backend
+        - Database and DevOps
+        - Machine Learning
+        - Cybersecurity
+        - Miscellaneous
+        required: true
+      workshop_name:
+        description: 'Workshop name'
+        required: true
+      workshop_date:
+        description: 'Workshop date'
+        required: true
+      workshop_host:
+        description: 'Workshop host(s)'
+        required: true
+      workshop_description:
+        description: 'Workshop description'
+        required: true
+      workshop_slides:
+        description: 'Workshop slides URL'
+        required: false
+      workshop_recording:
+        description: 'Workshop recording URL'
+        required: false
+      workshop_code:
+        description: 'Workshop code URL'
+        required: false
+
+jobs:
+  create_pull_request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Git
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install PyGithub
+
+      - name: Create pull request
+        run: python create_workshop_pr.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
