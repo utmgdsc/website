@@ -5,21 +5,23 @@ labels: ["workshop"]
 
 body:
 - type: dropdown
+  id: category
   attributes:
     label: Category
     description: Select the category for the workshop.
-  options:
-    - Git
-    - Frontend
-    - Backend
-    - Database and DevOps
-    - Machine Learning
-    - Cybersecurity
-    - Miscellaneous
+    options:
+      - Git
+      - Frontend
+      - Backend
+      - Database and DevOps
+      - Machine Learning
+      - Cybersecurity
+      - Miscellaneous
   validations:
     required: true
 
 - type: input
+  id: name
   attributes:
     label: Workshop Name
     description: The name of the workshop.
@@ -27,6 +29,7 @@ body:
     required: true
 
 - type: input
+  id: date
   attributes:
     label: Date of Workshop
     description: The date of the workshop in YYYY-MM-DD format.
@@ -34,14 +37,15 @@ body:
     required: true
 
 - type: input
+  id: hosts
   attributes:
     label: Host Name
     description: A list of workshop hosts (in json format!). For example, ["John Doe", "Jane Doe"], or ["John Doe"] if there is only one host.
-    type: array
   validations:
     required: true
 
 - type: textarea
+  id: description
   attributes:
     label: Workshop Description
     description: A brief description of the workshop.
@@ -49,16 +53,19 @@ body:
     required: true
 
 - type: input
+  id: code
   attributes:
     label: Link to starter code
-
     description: The URL of the workshop's code repository (optional).
+
 - type: input
+  id: slides
   attributes:
     label: Link to slides
     description: The URL of the workshop's slides (optional).
 
 - type: input
+  id: recording
   attributes:
     label: Link to recording
     description: The URL of the workshop's recording.
