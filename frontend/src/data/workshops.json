@@ -208,6 +208,13 @@
 			"slides": "https://www.slideshare.net/GDSCUofTMississauga/web-scraping-workshop/",
 			"recording": "https://youtu.be/zMWYC2ai91w",
 			"code": "https://gist.github.com/daniyalb/42106c74afe20f2c442b796dba727d28"
+		},
+		{
+			"name": "MCSS × GDSC: Intro to Cybersecurity Workshop",
+			"date": "2023-03-10",
+			"host": ["Michael Pavle", "Ido Ben Haim", "Shrey Vakil", "Sam Chan"],
+			"description": "In this workshop, we will be covering a broad overview of cybersecurity with a hands-on web app challenge for you to get some experience with web vulnerabilities; particularly, OS command injection. This workshop will be beginner-friendly, although if you have JavaScript experience you will better understand some of the code that we present.",
+			"slides": "https://www.slideshare.net/GDSCUofTMississauga/mcss-gdsc-intro-to-cybersecurity-workshop"
 		}
 	],
 	"Miscellaneous": [
