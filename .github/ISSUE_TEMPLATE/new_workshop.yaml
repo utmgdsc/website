@@ -68,4 +68,4 @@ body:
   id: recording
   attributes:
     label: Link to recording
-    description: The URL of the workshop's recording.
+    description: The URL of the workshop's recording (optional).
