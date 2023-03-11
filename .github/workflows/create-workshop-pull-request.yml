@@ -55,8 +55,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup script
         run: |
-          npm install @actions/core vercel/ncc
-          npm run ncc build script.js --license licenses.txt
+          npm install @actions/core
+          npm install -g vercel/ncc
+          ncc build script.js --license licenses.txt
       - name: Run script
         run: node dist/script.js
       - name: Clean up
