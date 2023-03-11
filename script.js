@@ -16,7 +16,7 @@ async function run() {
         };
 
         core.debug(workshop); // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
-        core.info(workshop);
+        core.info(JSON.stringify(workshop));
 
 
         core.setOutput('workshop', workshop);
