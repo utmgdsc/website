@@ -1,0 +1,56 @@
+name: New Workshop
+title: "[New Workshop]: "
+description: Template for creating a new issue that will trigger a GitHub Action to insert a workshop object into workshops.json
+labels: ["workshop"]
+
+category:
+  description: Select the category for the workshop.
+  type: string
+  enum:
+    - Git
+    - Frontend
+    - Backend
+    - Database and DevOps
+    - Machine Learning
+    - Cybersecurity
+    - Miscellaneous
+  validations:
+    required: true
+
+name:
+  description: The name of the workshop.
+  type: string
+  validations:
+    required: true
+
+date:
+  description: The date of the workshop in YYYY-MM-DD format.
+  type: string
+  validations:
+    required: true
+
+host:
+  description: A list of workshop hosts.
+  type: array
+  items:
+    type: string
+  validations:
+    required: true
+
+description:
+  description: A brief description of the workshop.
+  type: string
+  validations:
+    required: true
+
+code:
+  description: The URL of the workshop's code repository (optional).
+  type: string
+
+slides:
+  description: The URL of the workshop's slides (optional).
+  type: string
+  
+recorrding:
+  description: The URL of the workshop's recording.
+  type: string
