@@ -21,8 +21,7 @@ on:
         description: Workshop date
         required: true
       workshop_host:
-        description: 'Workshop Hosts in JS array format, example: ["Ido Ben Haim", "Sam Chan"]. An example for one host: ["Shubh Bapna"]'
-        default: "[]"
+        description: 'Workshop Hosts in comma-seperated format. No comma is needed for one host.'
         required: true
       workshop_description:
         description: Workshop description
