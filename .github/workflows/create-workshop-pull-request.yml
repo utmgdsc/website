@@ -75,4 +75,4 @@ jobs:
       - name: Commit
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-            file_pattern: 'workshop.json'
+            file_pattern: 'workshops.json'
