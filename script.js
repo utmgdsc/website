@@ -13,9 +13,9 @@ async function run() {
             recording: process.env['workshop_recording'],
             code: process.env['workshop_code'],
         };
-        const temp = require('frontend/src/data/workshops.json')
+        const temp = JSON.parse(fs.readFileSync('./frontend/src/data/workshops.json'))
         temp[process.env['category']].push(workshop)
-        fs.writeFileSync('frontend/src/data/workshops.json', JSON.stringify(temp))
+        fs.writeFileSync('./frontend/src/data/workshops.json', JSON.stringify(temp))
 
     } catch (error) {
         core.setFailed(error.message);
