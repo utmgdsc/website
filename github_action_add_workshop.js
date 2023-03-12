@@ -10,9 +10,9 @@ async function run() {
             host: process.env['workshop_host'].split(","),
             description: process.env['workshop_description']
         };
-        if (process.env['workshop_slides']) { workshop.slides: process.env['workshop_slides']; }
-        if (process.env['workshop_recording']) { workshop.recording: process.env['workshop_recording']; }
-        if (process.env['workshop_code']) { workshop.code: process.env['workshop_code']; }
+        if (process.env['workshop_slides']) { workshop.slides = process.env['workshop_slides']; }
+        if (process.env['workshop_recording']) { workshop.recording = process.env['workshop_recording']; }
+        if (process.env['workshop_code']) { workshop.code = process.env['workshop_code']; }
         workshop.host = workshop.host.map(s => s.trim());
         workshop.host = workshop.host.filter(s => s.trim()); // removes empty strings
 
