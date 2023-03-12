@@ -69,9 +69,4 @@ jobs:
           node script.js
           cat ./frontend/src/data/workshops.json
       - name: Commit
-        run: |
-          git config --global user.name 'Workshop Committer'
-          git config --global user.email 'bottybot@users.noreply.github.com'
-          git add frontend/src/data/workshops.json
-          git commit -m "Automated: Update workshop"
-          git push
+        uses: stefanzweifel/git-auto-commit-action@v4
