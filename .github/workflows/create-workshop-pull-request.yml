@@ -1,5 +1,5 @@
+---
 name: Create Workshop Pull Request
-
 on:
   workflow_dispatch:
     inputs:
@@ -16,41 +16,38 @@ on:
           - Miscellaneous
         required: true
       workshop_name:
-        description: 'Workshop name'
+        description: Workshop name
         required: true
       workshop_date:
-        description: 'Workshop date'
+        description: Workshop date
         required: true
       workshop_host:
-        description: 'Workshop host(s)'
+        description: 'Workshop Hosts in JS array format, example: ["Ido Ben Haim", "Sam
+          Chan"]. An example for one host: ["Shubh Bapna"]'
+        default: "[]"
         required: true
       workshop_description:
-        description: 'Workshop description'
+        description: Workshop description
         required: true
       workshop_slides:
-        description: 'Workshop slides URL'
+        description: Workshop slides URL
         required: false
       workshop_recording:
-        description: 'Workshop recording URL'
+        description: Workshop recording URL
         required: false
       workshop_code:
-        description: 'Workshop code URL'
+        description: Workshop code URL
         required: false
-
 jobs:
   create_pull_request:
     permissions:
-      # Give the default GITHUB_TOKEN write permission to commit and push the
-      # added or changed files to the repository.
       contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
       - name: Set up Git
         uses: actions/checkout@v3
-
       - name: Set up node
         uses: actions/setup-node@v3
         with:
@@ -75,4 +72,4 @@ jobs:
       - name: Commit
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-            file_pattern: '*/workshops.json'
+          file_pattern: "*/workshops.json"
