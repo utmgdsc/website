@@ -18,7 +18,7 @@ on:
         description: Workshop name
         required: true
       workshop_date:
-        description: Workshop date
+        description: Workshop date in YYYY-MM-DD (or ISO 8601) format.
         required: true
       workshop_host:
         description: 'Workshop Hosts in comma-seperated format. No comma is needed for one host.'
