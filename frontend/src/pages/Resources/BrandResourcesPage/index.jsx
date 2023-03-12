@@ -73,7 +73,7 @@ const BrandResources = () => {
 				>
 					The goods
 				</Typography>
-				<Link external href="https://drive.google.com/drive/u/0/folders/1EWVUqcPmW71SMhxuO4HpwtGL01-oxLvk>Access the SVG versions of the logo</Link>
+				<Link external href="https://drive.google.com/drive/u/0/folders/1EWVUqcPmW71SMhxuO4HpwtGL01-oxLvk">Access the SVG versions of the logo</Link>
 			</section>
 		</ResourceLayout>
 	);
