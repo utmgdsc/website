@@ -1,4 +1,3 @@
----
 name: Create Workshop Pull Request
 on:
   workflow_dispatch:
@@ -65,7 +64,7 @@ jobs:
           export workshop_description="${{ inputs.workshop_description }}"
           export workshop_slides="${{ inputs.workshop_slides }}"
           export workshop_recording="${{ inputs.workshop_recording }}"
-          export workshop_code="${{ inputs.workshop_code }}" 
+          export workshop_code="${{ inputs.workshop_code }}"
           node github_action_add_workshop
           cat ./frontend/src/data/workshops.json
       - name: Commit
