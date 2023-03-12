@@ -22,7 +22,7 @@ on:
         description: 'Workshop date'
         required: true
       workshop_host:
-        description: 'Workshop host(s)'
+        description: 'Workshop hosts'
         required: true
       workshop_description:
         description: 'Workshop description'
