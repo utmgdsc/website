@@ -15,7 +15,7 @@ async function run() {
         };
         const temp = JSON.parse(fs.readFileSync('./frontend/src/data/workshops.json'))
         temp[process.env['category']].push(workshop)
-        fs.writeFileSync('./frontend/src/data/workshops.json', JSON.stringify(temp))
+        fs.writeFileSync('./frontend/src/data/workshops.json', JSON.stringify(temp, null, 2))
 
     } catch (error) {
         core.setFailed(error.message);
