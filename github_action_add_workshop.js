@@ -7,7 +7,7 @@ async function run() {
         const workshop = {
             name: process.env['workshop_name'],
             date: process.env['workshop_date'],
-            host: process.env['workshop_host'].split("\n"),
+            host: JSON.parse(process.env['workshop_host']),
             description: process.env['workshop_description'],
             slides: process.env['workshop_slides'],
             recording: process.env['workshop_recording'],
