@@ -74,5 +74,5 @@ jobs:
           cat ./frontend/src/data/workshops.json
       - name: Commit
         uses: stefanzweifel/git-auto-commit-action@v4
-          with:
+        with:
             file_pattern: 'workshop.json'
