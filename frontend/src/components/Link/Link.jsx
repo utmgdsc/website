@@ -18,7 +18,7 @@ import { pages } from '../../pages';
  * @param {Object} props.props Any other props
  * @returns {JSX.Element} A link
  */
-const NonForwardLink = ({ children, href, external, forwardedRef, noIcon, ...props }) => {
+const NonForwardLink = ({ children, href, external, forwardedRef, noIcon = false, ...props }) => {
 	/** If the link is internal to the website or not, determined by whether the link is in the pages array */
 	const isInternalLink = pages.find(el => el["path"] === (href));
 

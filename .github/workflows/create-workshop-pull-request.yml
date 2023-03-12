@@ -1,0 +1,78 @@
+name: Create Workshop Pull Request
+
+on:
+  workflow_dispatch:
+    inputs:
+      category:
+        type: choice
+        description: Select the category for the workshop.
+        options:
+          - Git
+          - Frontend
+          - Backend
+          - Database and DevOps
+          - Machine Learning
+          - Cybersecurity
+          - Miscellaneous
+        required: true
+      workshop_name:
+        description: 'Workshop name'
+        required: true
+      workshop_date:
+        description: 'Workshop date'
+        required: true
+      workshop_host:
+        description: 'Workshop host(s)'
+        required: true
+      workshop_description:
+        description: 'Workshop description'
+        required: true
+      workshop_slides:
+        description: 'Workshop slides URL'
+        required: false
+      workshop_recording:
+        description: 'Workshop recording URL'
+        required: false
+      workshop_code:
+        description: 'Workshop code URL'
+        required: false
+
+jobs:
+  create_pull_request:
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Git
+        uses: actions/checkout@v3
+
+      - name: Set up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup script
+        run: |
+          npm install @actions/core
+      - name: Testing test
+        run: |
+          export category="${{ inputs.category }}"
+          export workshop_name="${{ inputs.workshop_name }}"
+          export workshop_date="${{ inputs.workshop_date }}"
+          export workshop_host="${{ inputs.workshop_host }}"
+          export workshop_description="${{ inputs.workshop_description }}"
+          export workshop_slides="${{ inputs.workshop_slides }}"
+          export workshop_recording="${{ inputs.workshop_recording }}"
+          export workshop_code="${{ inputs.workshop_code }}" 
+          node script.js
+          cat ./frontend/src/data/workshops.json
+      - name: Commit
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+            file_pattern: '*/workshops.json'

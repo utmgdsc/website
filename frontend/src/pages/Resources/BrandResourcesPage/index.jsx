@@ -8,6 +8,9 @@ import {
 
 import BannerImg from '../../../assets/graphics/sky.png';
 import { ResourceLayout } from '../../../layouts/ResourcesSubPageLayout';
+import {
+	Link,
+} from '../../../components';
 
 /**
  * @return {JSX.Element} Brand resources page component
@@ -70,7 +73,7 @@ const BrandResources = () => {
 				>
 					The goods
 				</Typography>
-				<pre>tbd - ask us on discord for now! </pre>
+				<Link external href="https://drive.google.com/drive/u/0/folders/1EWVUqcPmW71SMhxuO4HpwtGL01-oxLvk>Access the SVG versions of the logo</Link>
 			</section>
 		</ResourceLayout>
 	);
