@@ -5,14 +5,14 @@ const core = require('@actions/core');
 async function run() {
     try {
         const workshop = {
-            category: core.getInput('category'),
-            name: core.getInput('workshop_name'),
-            date: core.getInput('workshop_date'),
-            host: core.getInput('workshop_host'),
-            description: core.getInput('workshop_description'),
-            slides: core.getInput('workshop_slides'),
-            recording: core.getInput('workshop_recording'),
-            code: core.getInput('workshop_code'),
+            category: process.env['category'],
+            name: process.env['workshop_name'],
+            date: process.env['workshop_date'],
+            host: process.env['workshop_host'],
+            description: process.env['workshop_description'],
+            slides: process.env['workshop_slides'],
+            recording: process.env['workshop_recording'],
+            code: process.env['workshop_code'],
         };
 
         core.debug(workshop); // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true

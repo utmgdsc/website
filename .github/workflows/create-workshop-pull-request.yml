@@ -22,7 +22,7 @@ on:
         description: 'Workshop date'
         required: true
       workshop_host:
-        description: 'Workshop hosts'
+        description: 'Workshop host(s)'
         required: true
       workshop_description:
         description: 'Workshop description'
@@ -56,7 +56,6 @@ jobs:
       - name: Setup script
         run: |
           npm install @actions/core
-          node script.js
       - name: Testing test
         run: |
           export category=${{ inputs.category }} 
@@ -67,4 +66,4 @@ jobs:
           export workshop_slides=${{ inputs.workshop_slides }} 
           export workshop_recording=${{ inputs.workshop_recording }} 
           export workshop_code=${{ inputs.workshop_code }} 
-          echo $category
+          node script.js
