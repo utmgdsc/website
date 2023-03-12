@@ -1,11 +1,10 @@
 const core = require('@actions/core');
-
+const fs = require('fs')
 
 // most @actions toolkit packages have async methods
 async function run() {
     try {
         const workshop = {
-            category: process.env['category'],
             name: process.env['workshop_name'],
             date: process.env['workshop_date'],
             host: process.env['workshop_host'],
@@ -14,12 +13,10 @@ async function run() {
             recording: process.env['workshop_recording'],
             code: process.env['workshop_code'],
         };
+        const temp = require('frontend/src/data/workshops.json')
+        temp[process.env['category']].push(workshop)
+        fs.writeFileSync('frontend/src/data/workshops.json', JSON.stringify(temp))
 
-        core.debug(workshop); // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
-        core.info(JSON.stringify(workshop));
-
-
-        core.setOutput('workshop', workshop);
     } catch (error) {
         core.setFailed(error.message);
     }
