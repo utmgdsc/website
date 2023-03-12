@@ -59,5 +59,12 @@ jobs:
           node script.js
       - name: Testing test
         run: |
-          export input=${{ JSON.stringify(inputs) }} 
-          echo $input
+          export category=${{ inputs.category }} 
+          export workshop_name=${{ inputs.workshop_name }} 
+          export workshop_date=${{ inputs.workshop_date }} 
+          export workshop_host=${{ inputs.workshop_host }} 
+          export workshop_description=${{ inputs.workshop_description }} 
+          export workshop_slides=${{ inputs.workshop_slides }} 
+          export workshop_recording=${{ inputs.workshop_recording }} 
+          export workshop_code=${{ inputs.workshop_code }} 
+          echo $category
