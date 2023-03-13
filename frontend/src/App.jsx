@@ -25,6 +25,12 @@ import { pages } from './pages';
 import PageNotFound from './pages/PageNotFound';
 import { GoogleTheme } from './theme';
 
+import TagManager from 'react-gtm-module'
+
+const tagManagerArgs = { gtmId: process.env.REACT_APP_GTM_ID }
+
+TagManager.initialize(tagManagerArgs)
+
 // TODO add skip to content button
 export const App = () => {
 	// HACK: detect change of theme and update theme by reloading the page
