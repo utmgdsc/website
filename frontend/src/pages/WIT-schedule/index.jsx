@@ -17,11 +17,11 @@ import faq from '../../data/wit-faq.json';
  */
 const WitSchedule = () => {
     useEffect(() => {
-        document.title = 'GDSC UTM - Events';
+        document.title = 'GDSC UTM - 2023 Women in Tech Conference';
     }, []);
     return (
         <HeroLayout
-            title="GDSC x Microsoft Women in Tech Conference"
+            title="Women in Tech Conference"
             picture={WitBackground}
             position="bottom"
             id="wit-2023"
