@@ -24,7 +24,7 @@ const WitSchedule = () => {
             title="GDSC x Microsoft Women in Tech Conference"
             picture={WitBackground}
             position="bottom"
-            id="events"
+            id="wit-2023"
         >
             <section>
                 <Typography
