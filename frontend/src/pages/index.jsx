@@ -59,7 +59,7 @@ export const pages = [
 	},
 	{
 		name: "Women In Tech Conference",
-		path: "/events/wit/schedule",
+		path: "/wit",
 		component: <WitSchedule />,
 		includeInNavbar: true
 	}
