@@ -1,5 +1,4 @@
 import React, { lazy } from 'react';
-import WitSchedule from './WIT-schedule';
 
 const Homepage = lazy(() => import("./Homepage"));
 const ResourcesPage = lazy(() => import("./Resources"));
@@ -55,12 +54,6 @@ export const pages = [
 		name: "Events",
 		path: "/events",
 		component: <Events />,
-		includeInNavbar: true
-	},
-	{
-		name: "Women In Tech Conference",
-		path: "/wit",
-		component: <WitSchedule />,
 		includeInNavbar: true
 	}
 ];
