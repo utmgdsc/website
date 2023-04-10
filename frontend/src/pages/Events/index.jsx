@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 import {
 	Typography,
 } from '@mui/material';
@@ -16,9 +14,6 @@ import { HeroLayout } from '../../layouts/HeroLayout';
  * @return {JSX.Element} Events page component using EventList
  */
 const Events = () => {
-	useEffect(() => {
-		document.title = "GDSC UTM - Events";
-	}, []);
 	return (
 		<HeroLayout title="Events" picture={BannerImg} position="bottom" id="events">
 			<section>

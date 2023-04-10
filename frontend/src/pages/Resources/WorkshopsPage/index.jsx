@@ -1,7 +1,5 @@
 /** @jsxImportSource @emotion/react */
 
-import { useEffect } from 'react';
-
 import {
 	Box,
 	Grid,
@@ -20,9 +18,6 @@ import { ResourceLayout } from '../../../layouts/ResourcesSubPageLayout';
  * @return {JSX.Element} Workshop page component
  */
 const WorkshopArchive = () => {
-	useEffect(() => {
-		document.title = "GDSC UTM - Workshops";
-	}, []);
 	return (
 		// todo a search bar would be cool
 		<ResourceLayout title="Workshop Archive" picture={BannerImg} id="workshop-archive">

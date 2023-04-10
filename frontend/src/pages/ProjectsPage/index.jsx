@@ -20,11 +20,13 @@ const ProjectPage = () => {
 
 	if (projects.length === 0) {
 		return (
-			<Grid item xs={12}>
-				<Typography variant="h5" component="h2">
-					None yet! Check back soon :)
-				</Typography>
-			</Grid>
+			<HeroLayout title="GDSC Projects" picture={BannerImg} position="bottom" id="projects">
+				<Grid item xs={12}>
+					<Typography variant="h5" component="h2">
+						None yet! Check back soon :)
+					</Typography>
+				</Grid>
+			</HeroLayout>
 		);
 	}
 

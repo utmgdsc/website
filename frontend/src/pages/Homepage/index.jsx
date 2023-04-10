@@ -28,12 +28,10 @@ const Homepage = () => {
 		document.title = "GDSC UTM";
 	}, []);
 
-	const theme = useTheme();
-
 	return (
 		<main id="home">
 			{/* hero */}
-			<HomepageHero theme={theme} />
+			<HomepageHero />
 
 			{/* upcoming events */}
 			<section id="upcoming-events">

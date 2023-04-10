@@ -19,10 +19,6 @@ import { HeroLayout } from '../../layouts/HeroLayout';
  * @returns {JSX.Element} The resources page
  */
 const ResourcesPage = () => {
-	useEffect(() => {
-		document.title = "GDSC UTM - Resources";
-	}, []);
-
 	return (
 		<HeroLayout title="Resources" picture={BannerImg} height="15rem" position="bottom" id="resources">
 			<Grid

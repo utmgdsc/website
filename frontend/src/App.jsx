@@ -1,29 +1,31 @@
 import './App.scss';
 
 /** @jsxImportSource @emotion/react */
-import React, { Suspense } from 'react';
+import React, { Suspense, useMemo } from 'react';
 
 import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
+	BrowserRouter as Router,
+	Route,
+	Routes,
 } from 'react-router-dom';
 
 import {
-  CssBaseline,
-  LinearProgress,
-  Skeleton,
-  ThemeProvider,
+	createTheme,
+	CssBaseline,
+	LinearProgress,
+	Skeleton,
+	ThemeProvider,
+	useMediaQuery,
 } from '@mui/material';
 
 import {
-  ErrorBoundary,
-  Footer,
-  Navbar,
+	ErrorBoundary,
+	Footer,
+	Navbar,
 } from './components';
 import { pages } from './pages';
 import PageNotFound from './pages/PageNotFound';
-import { GoogleTheme } from './theme';
+import { GoogleTheme, THEME } from "./theme";
 
 import TagManager from 'react-gtm-module'
 
@@ -33,15 +35,18 @@ TagManager.initialize(tagManagerArgs)
 
 // TODO add skip to content button
 export const App = () => {
-	// HACK: detect change of theme and update theme by reloading the page
-	// will be replaced using the following when it is released
-	// https://mui.com/material-ui/experimental-api/css-theme-variables/overview/
-	window.matchMedia("(prefers-color-scheme: dark)").onchange = () => {
-		window.location.reload();
-	};
+	const systemTheme = useMediaQuery('(prefers-color-scheme: dark)');
+
+	const theme = useMemo(
+		() =>
+			createTheme(GoogleTheme({
+				mode: systemTheme ? THEME.DARK : THEME.LIGHT,
+			})),
+		[systemTheme],
+	);
 
 	return (
-		<ThemeProvider theme={GoogleTheme}>
+		<ThemeProvider theme={theme}>
 			<CssBaseline enableColorScheme />
 			<Router>
 				<Navbar pages="pages" />

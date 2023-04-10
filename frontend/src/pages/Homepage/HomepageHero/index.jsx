@@ -6,15 +6,18 @@ import {
   Box,
   Container,
   Typography,
+  useTheme
 } from '@mui/material';
 
 import HeroImage from '../../../assets/backgrounds/background.jpg';
 import HeroImageDark from '../../../assets/backgrounds/background_dark.jpg';
 import wordmark from '../../../assets/graphics/gdscwordmark.svg';
 import { SkeletonLoadedImage } from '../../../components';
-import { prefersDarkMode } from '../../../theme';
+import { THEME } from '../../../theme';
 
-export const HomepageHero = ({ theme }) => {
+export const HomepageHero = () => {
+    const theme = useTheme();
+
     return (
         <section>
             <Box
@@ -22,7 +25,7 @@ export const HomepageHero = ({ theme }) => {
                     background: "linear-gradient(" + theme.palette.background.default + " 0%,"
                         + alpha(theme.palette.background.default, 0.8) + "69%,"
                         + theme.palette.background.default + " 100%), url("
-                        + (prefersDarkMode() ? HeroImageDark : HeroImage) + ") no-repeat",
+                        + (theme.palette.mode === THEME.DARK ? HeroImageDark : HeroImage) + ") no-repeat",
                     backgroundSize: "cover",
                     marginBottom: "-15vh",
                     pb: 6,

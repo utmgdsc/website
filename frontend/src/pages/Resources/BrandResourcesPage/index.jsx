@@ -1,7 +1,5 @@
 /** @jsxImportSource @emotion/react */
 
-import { useEffect } from 'react';
-
 import {
 	Typography,
 } from '@mui/material';
@@ -16,9 +14,6 @@ import {
  * @return {JSX.Element} Brand resources page component
  */
 const BrandResources = () => {
-	useEffect(() => {
-		document.title = "GDSC UTM - Logo Download";
-	}, []);
 	return (
 		<ResourceLayout id="events" title="Logo download" picture={BannerImg}>
 			<em>Last updated 2023-01-01</em>

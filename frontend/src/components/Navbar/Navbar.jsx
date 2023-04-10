@@ -139,13 +139,14 @@ export const Navbar = () => {
 						>
 							{pages.filter(
 								// filter out pages that should not be in the navbar
-								(page) => page["includeInNavbar"]
+								// i.e., only one slash, or includeInNavbar is true
+								(page) => ((page["path"].split("/").length === 2 && page["includeInNavbar"] !== false) || (page["includeInNavbar"] === true))
 							).map((page, index) => (
 								<LinkTab
 									to={page.path}
 									value={page.path.toLowerCase().split("/")[1]}
 									label={page.name}
-									key={page.path}
+									key={index}
 								/>
 							))}
 						</Tabs>
