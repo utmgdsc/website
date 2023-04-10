@@ -1,5 +1,3 @@
-import { createTheme } from "@mui/material/styles";
-
 /**
  * enum for theme types
  * @readonly
