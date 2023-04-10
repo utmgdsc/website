@@ -7,7 +7,6 @@ import {
   Container,
   Typography,
 } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
 
 import HeroInfoSesh
   from '../../assets/website_proprietary/heroes/infosession.jpg';
