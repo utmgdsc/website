@@ -231,6 +231,16 @@
       "slides": "https://www.slideshare.net/GDSCUofTMississauga/web-security-256821435/",
       "recording": "https://youtu.be/8GUwXpUDWhs",
       "code": "https://github.com/juice-shop/juice-shop"
+    },
+    {
+      "name": "Reverse Engineering 101",
+      "date": "2023-04-29",
+      "host": [
+        "Michael Pavle"
+      ],
+      "description": "Learn the fundamental tools and skills to take a look under the hood of your favourite programs; we'll be covering compilers, assembly language, and software used to disassemble and analyze executables.",
+      "slides": "https://www.slideshare.net/GDSCUofTMississauga/reverse-engineering-101",
+      "code": "https://github.com/utmgdsc/GDSC_Reversing_Workshop"
     }
   ],
   "Miscellaneous": [
@@ -264,6 +274,17 @@
       "code": "https://github.com/utmgdsc/2023-c-workshop",
       "slides": "https://www.slideshare.net/GDSCUofTMississauga/basics-of-c-256105071",
       "recording": "https://youtu.be/rT7qVmQpfJg"
+    },
+    {
+      "name": "Origami",
+      "date": "2023-04-29",
+      "host": [
+        "Estelle Foo-Fat",
+        "Leanne Tran"
+      ],
+      "description": "Origami is a proven tool to help reduce stress and anxiety levels, by engaging the mind in a calming and meditative activity. Folding intricate paper designs can also help improve focus and concentration, allowing you to feel more present and mindful in the moment.",
+      "slides": "https://www.slideshare.net/GDSCUofTMississauga/gdsc-x-deerhacks-origami-workshop",
+      "code": "https://www.thesprucecrafts.com/origami-ninja-star-tutorial-4034142"
     }
   ]
 }
