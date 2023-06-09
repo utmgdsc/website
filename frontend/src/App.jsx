@@ -44,7 +44,7 @@ export const App = () => {
 			})),
 		[systemTheme],
 	);
-
+	console.log(systemTheme)
 	return (
 		<ThemeProvider theme={theme}>
 			<CssBaseline enableColorScheme />

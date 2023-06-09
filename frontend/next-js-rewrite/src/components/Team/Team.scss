@@ -1,0 +1,53 @@
+.team {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	left: 0;
+	margin: auto;
+	right: 0;
+	text-align: center;
+
+	figure {
+		margin: 0;
+	}
+
+	.member {
+		display: inline-block;
+		padding: 1em;
+
+		.introduction {
+			display: block;
+			font-size: 1.25rem;
+			padding-bottom: 0.25em;
+		}
+
+		.introduction strong {
+			font-size: 1.5rem;
+		}
+
+		p {
+			margin-top: 0.25em;
+			margin-bottom: 0;
+		}
+
+		img, .MuiSkeleton-root {
+			border-radius: 100%;
+			display: block;
+			height: 6.9rem;
+			margin: auto;
+			object-fit: cover;
+			pointer-events: none;
+			width: 6.9rem;
+			-webkit-user-drag: none;
+			// non-prefixed version doesn't exist, replaced by draggable in html
+			-webkit-user-select: none;
+			user-select: none;
+		}
+
+
+		.team .role {
+			opacity: 0.75;
+			display: block;
+		}
+	}
+}
