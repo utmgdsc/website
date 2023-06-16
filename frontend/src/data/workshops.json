@@ -241,6 +241,17 @@
       "description": "Learn the fundamental tools and skills to take a look under the hood of your favourite programs; we'll be covering compilers, assembly language, and software used to disassemble and analyze executables.",
       "slides": "https://www.slideshare.net/GDSCUofTMississauga/reverse-engineering-101",
       "code": "https://github.com/utmgdsc/GDSC_Reversing_Workshop"
+    },
+    {
+      "name": "2023 DeerHacks CTF (solutions)",
+      "date": "2023-04-29",
+      "host": [
+        "Michael Pavle",
+        "Sam Chan",
+        "Ido Ben Haim"
+      ],
+      "description": "Join the DeerHacks CTF and solve cybersecurity puzzles with the opportunity to win a Google Home Mini! Are you ready to test your skills as a computer whiz?",
+      "code": "https://github.com/utmgdsc/deerhacks-2023-ctf"
     }
   ],
   "Miscellaneous": [
