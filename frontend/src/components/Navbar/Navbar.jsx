@@ -1,13 +1,11 @@
+'use client'
 import './Navbar.scss';
 
 /** @jsxImportSource @emotion/react */
-import { useState } from 'react';
 
-import {
-  NavLink as RouterLink,
-  useLocation,
-} from 'react-router-dom';
-
+import NextLink from "next/link"
+import {usePathname} from "next/navigation"
+import {useState} from "react"
 import {
   AppBar,
   Box,
@@ -27,7 +25,7 @@ import {
   GitHubButton,
   InstagramButton,
 } from '../../data/SocialButton';
-import { pages } from '../../pages';
+import { pages } from '../../app/index';
 import {
   ElevationScroll,
   HideOnScroll,
@@ -42,17 +40,15 @@ import { LinkTab } from './LinkTab';
  */
 export const Navbar = () => {
 	/* update navbar tabs on path change */
-	const location = useLocation();
 
 	// eslint-disable-next-line no-unused-vars
-	const [currentTab, setCurrentTab] = useState(location.pathname);
+	const [currentTab, setCurrentTab] = useState(usePathname());
 
 	const handleChange = (event, newValue) => {
 		setCurrentTab(newValue);
 	};
-
+	
 	const theme = useTheme();
-
 	return (
 		<HideOnScroll>
 			<AppBar sx={{ bgcolor: "transparent !important" }}>
@@ -78,9 +74,9 @@ export const Navbar = () => {
 								style={{
 									background: theme.palette.background.paper
 								}}
-								component={RouterLink}
+								href="/"
+								component={NextLink}
 								onClick={handleChange}
-								to="/"
 								id="gdsc-home-btn"
 							>
 								<picture id="nav-bracket-logo">
@@ -107,7 +103,7 @@ export const Navbar = () => {
 							value={
 								// use only the first part of the path to determine the tab
 								// so that sub pages are also highlighted in the navbar
-								window.location.pathname.toLowerCase().split("/")[1]
+								usePathname().toLowerCase().split("/")[1]
 							}
 							variant="scrollable"
 							sx={{
@@ -141,14 +137,14 @@ export const Navbar = () => {
 								// filter out pages that should not be in the navbar
 								// i.e., only one slash, or includeInNavbar is true
 								(page) => ((page["path"].split("/").length === 2 && page["includeInNavbar"] !== false) || (page["includeInNavbar"] === true))
-							).map((page, index) => (
+							).map((page, index) => {return (
 								<LinkTab
-									to={page.path}
+									href={page.path}
 									value={page.path.toLowerCase().split("/")[1]}
 									label={page.name}
 									key={index}
 								/>
-							))}
+							)})}
 						</Tabs>
 
 						{/* spacing */}
@@ -173,4 +169,4 @@ export const Navbar = () => {
 			</AppBar>
 		</HideOnScroll>
 	);
-};
+}

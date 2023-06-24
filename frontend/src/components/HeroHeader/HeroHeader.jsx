@@ -1,7 +1,5 @@
 import './HeroHeader.scss';
 
-import { Parallax } from 'react-parallax';
-
 /** @jsxImportSource @emotion/react */
 import {
   Container,
@@ -9,6 +7,7 @@ import {
   Typography,
 } from '@mui/material';
 
+import Image  from "next/image"
 /**
  * A banner with header text and a background image. It is a hero image style header
  * component, spanning the full width of the page/container.
@@ -21,6 +20,11 @@ import {
  * @returns {JSX.Element} hero image style header component
  */
 export const HeroHeader = ({ text, picture, maxWidth, position, height = "30rem" }) => {
+	console.log(text)
+	console.log(picture)
+	console.log(maxWidth)
+	console.log(position)
+	console.log(height)
 	return (
 		<>
 			<Skeleton
@@ -33,21 +37,15 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = "30rem"
 					zIndex: -1,
 				}}
 			/>
-			<Parallax
-				style={{
-					height: height,
-					maxWidth: "unset !important",
-					paddingLeft: 0,
-					paddingRight: 0,
-				}}
-				className="hero-header-parallax"
-				bgImage={picture}
-				bgImageStyle={{
-					bottom: position === "bottom" ? 0 : "unset",
-					top: position === "top" ? 0 : "unset",
-				}}
-				lazy
-			>
+			<div 
+			style={{height: height,
+			maxWidth: "unset !important",
+			paddingLeft: 0,
+			position:"relative",
+			paddingRight: 0}} 
+			className="hero-header-parallax">
+				<Image src={picture} fill style={{objectFit:"cover", 
+				objectPosition:position}} loading="lazy"/>
 				<Container
 					sx={{
 						display: "flex",
@@ -59,13 +57,16 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = "30rem"
 						pb={4}
 						variant="h2"
 						sx={{
+							zIndex:2,
 							alignSelf: "flex-end",
 						}}
 					>
 						{text}
 					</Typography>
 				</Container>
-			</Parallax>
+			</div>
 		</>
 	)
 };
+
+

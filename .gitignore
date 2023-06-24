@@ -10,6 +10,9 @@ frontend/node_modules
 node_modules/
 *.env
 
+# development
+.next
+
 # testing
 /coverage
 
