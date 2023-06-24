@@ -7,7 +7,7 @@ import {
   Typography,
 } from '@mui/material';
 
-import Image  from "next/image"
+import Image from "next/image"
 /**
  * A banner with header text and a background image. It is a hero image style header
  * component, spanning the full width of the page/container.
