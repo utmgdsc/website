@@ -25,7 +25,7 @@ export const HomepageHero = () => {
                     background: "linear-gradient(" + theme.palette.background.default + " 0%,"
                         + alpha(theme.palette.background.default, 0.8) + "69%,"
                         + theme.palette.background.default + " 100%), url("
-                        + (theme.palette.mode === THEME.DARK ? HeroImageDark : HeroImage) + ") no-repeat",
+                        + (theme.palette.mode === THEME.DARK ? HeroImageDark.src: HeroImage.src) + ") no-repeat",
                     backgroundSize: "cover",
                     marginBottom: "-15vh",
                     pb: 6,

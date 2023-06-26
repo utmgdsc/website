@@ -20,9 +20,8 @@ import { HeroLayout } from '../../layouts/HeroLayout';
  * @returns {JSX.Element} The resources page
  */
 const ResourcesPage = () => {
-	console.log(BannerImg)
 	return (
-		<HeroLayout title="Resources" picture={BannerImg?.src} height="15rem" position="bottom" id="resources">
+		<HeroLayout title="Resources" picture={BannerImg} height="15rem" position="bottom" id="resources">
 			<Grid
 				container
 				justifyContent="space-between"

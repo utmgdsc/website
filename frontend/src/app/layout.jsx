@@ -18,7 +18,6 @@ import {
 	Footer,
 	Navbar,
 } from '../components';
-//import PageNotFound from './pages/PageNotFound';
 import { GoogleTheme, THEME } from "./theme";
 
 import TagManager from 'react-gtm-module'
@@ -40,9 +39,8 @@ export default function RootLayout({
 			})),
 		[systemTheme],
 	);
-	console.log(systemTheme)
 	return (
-		<html>
+		<html lang="en">
 			<body>
 				<ThemeProvider theme={theme}>
 					<CssBaseline enableColorScheme />

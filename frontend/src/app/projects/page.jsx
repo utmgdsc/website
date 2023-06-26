@@ -21,7 +21,7 @@ const ProjectPage = () => {
 
 	if (projects.length === 0) {
 		return (
-			<HeroLayout title="GDSC Projects" picture={BannerImg.src} position="bottom" id="projects">
+			<HeroLayout title="GDSC Projects" picture={BannerImg} position="bottom" id="projects">
 				<Grid item xs={12}>
 					<Typography variant="h5" component="h2">
 						None yet! Check back soon :)
@@ -32,7 +32,7 @@ const ProjectPage = () => {
 	}
 
 	return (
-		<HeroLayout title="GDSC Projects" picture={BannerImg.src} position="bottom" id="projects">
+		<HeroLayout title="GDSC Projects" picture={BannerImg} position="bottom" id="projects">
 			<Grid container spacing={2}>
 				{projects.map((project, id) => (
 					<Grid key={id} item xs={12} sm={6} md={4}>

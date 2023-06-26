@@ -32,7 +32,7 @@ yarn-debug.log*
 yarn-error.log*
 
 **/build/
-**/.vscode
+**/.vscode/
 
 **/firebase-debug.log*
 **/firebase-debug.*.log*

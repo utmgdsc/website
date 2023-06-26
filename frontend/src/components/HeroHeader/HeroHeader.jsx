@@ -1,5 +1,5 @@
 import './HeroHeader.scss';
-
+import React, {useState, useEffect, useRef} from "react"
 /** @jsxImportSource @emotion/react */
 import {
   Container,
@@ -19,12 +19,36 @@ import Image from "next/image"
  * @param {string} height height of the header
  * @returns {JSX.Element} hero image style header component
  */
+
 export const HeroHeader = ({ text, picture, maxWidth, position, height = "30rem" }) => {
-	console.log(text)
-	console.log(picture)
-	console.log(maxWidth)
-	console.log(position)
-	console.log(height)
+	const [imgOffset, setImgOffset] = useState(0);
+	
+	const[isLoaded, setIsLoaded] = useState(false)
+
+	const [imgHeight, setImgHeight] = useState(0)
+
+	const handleScroll = () => setImgOffset(window.scrollY);
+	
+	useEffect(() => {
+		window.addEventListener("scroll", handleScroll);
+		const containerHeight = containerRef.current.clientHeight
+		
+		setImgHeight(containerHeight*1.4)
+		setIsLoaded(true)
+
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
+	const containerRef = useRef(null)
+	
+	const accelSpeedCalc = ()=> {
+		if(position === "bottom"){
+			return 0.1
+		}
+		else{
+			return -0.1
+		}
+	}
 	return (
 		<>
 			<Skeleton
@@ -38,32 +62,58 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = "30rem"
 				}}
 			/>
 			<div 
-			style={{height: height,
-			maxWidth: "unset !important",
-			paddingLeft: 0,
-			position:"relative",
-			paddingRight: 0}} 
-			className="hero-header-parallax">
-				<Image src={picture} fill style={{objectFit:"cover", 
-				objectPosition:position}} loading="lazy"/>
-				<Container
-					sx={{
-						display: "flex",
-						height: height,
-					}} maxWidth={maxWidth}>
-					<Typography
-						component="h2"
-						fontWeight="bold"
-						pb={4}
-						variant="h2"
+				ref={containerRef}
+				style={{
+					height: height,
+					maxWidth: "unset !important",
+					position:"relative",
+					width:"100%",
+					overflowY:"hidden",
+					overflowX:"hidden",
+				}} 
+				className="hero-header-parallax"
+			>
+				{isLoaded ?
+				<>
+					<Image src={picture} 
+						sizes='100vw'
+						style={{
+							height:"auto",
+							minHeight:imgHeight,
+							width:"100%",
+							transform: `translateY(${imgOffset * accelSpeedCalc()}px)`,
+							position:"absolute",
+							bottom: position === "bottom" ? 0: undefined,
+							top: position === "top" ? 0: undefined,
+						}} 
+						loading="lazy"
+					/>
+					<Container
+						maxWidth="unset !important"
 						sx={{
+							height: height,
+							position:"absolute",
+							top:0,
+							display:"flex",
+							alignItems:"flex-end",
 							zIndex:2,
-							alignSelf: "flex-end",
-						}}
-					>
-						{text}
-					</Typography>
-				</Container>
+							width:"100vw",
+						}}>
+						<Container maxWidth={maxWidth}>
+							<Typography
+								component="h2"
+								fontWeight="bold"
+								variant="h2"
+								style={{alignSelf:"center"}}
+							>
+								{text}
+							</Typography>
+						</Container>
+					</Container>
+				</>
+				:
+				null
+				 }
 			</div>
 		</>
 	)

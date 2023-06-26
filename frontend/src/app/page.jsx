@@ -53,7 +53,7 @@ const Homepage = () => {
 
 			{/* about / who are we */}
 			<section id="who-are-we">
-				<HeroHeader text="Who are we?" picture={HeroInfoSesh.src} maxWidth="md" position="top"/>
+				<HeroHeader text="Who are we?" picture={HeroInfoSesh} maxWidth="md" position="top"/>
 				<Container sx={{ py: 8, lineHeight: "2em" }} maxWidth="md">
 					<p>
 						<dfn id="gsdc-defn">Google Developer Student Clubs</dfn> (<abbr>GDSC</abbr>) is a student-led

@@ -1,5 +1,4 @@
 'use client'
-import { useState } from 'react';
 
 import { Skeleton } from '@mui/material';
 import Image from "next/image"
@@ -9,21 +8,25 @@ import Image from "next/image"
  * @return {JSX.Element} image with a skeleton placeholder
  */
 export const SkeletonLoadedImage = (props) => {
-	const [loaded, setLoaded] = useState(false);
 	return (
-		<>
+		<div style={{position:"relative"}}>
 			<Image
 				loading="lazy"
 				alt={props?.alt}
 				style={{
-					visibility: loaded ? undefined : 'hidden',
 					...props?.style,
 				}}
-				onLoad={() => { setLoaded(true) }}
 				{...props}
 			/>
-
-			{!loaded && <Skeleton variant="rectangular" {...props} />}
-		</>
+			<Skeleton variant="rectangular" {...props} style={{
+				zIndex:-1,
+				position:"absolute",
+				top:0,
+				...props?.style,
+				left: 0,
+				right: 0,
+				margin: "0 auto"
+			}}/>
+		</div>
 	)
 }
