@@ -4,13 +4,13 @@
 			"name": "Lena",
 			"role": "Co-president",
 			"pronouns": "she/her",
-			"picture": "lena.webp"
+			"picture": "lena.jpeg"
 		},
 		{
 			"name": "Shubh",
 			"role": "Co-president",
 			"pronouns": "he/him",
-			"picture": "Shubh.webp"
+			"picture": "Shubh.png"
 		}
 	],
 	"Team Lead": [
@@ -18,61 +18,61 @@
 			"name": "Jackson",
 			"role": "Marketing",
 			"pronouns": "he/him",
-			"picture": "jackson.webp"
+			"picture": "jackson.jpg"
 		},
 		{
 			"name": "Estelle",
 			"role": "Marketing",
 			"pronouns": "she/her",
-			"picture": "estelle.webp"
+			"picture": "estelle.jpg"
 		},
 		{
 			"name": "Hammad",
 			"role": "Outreach & Logistics",
 			"pronouns": "he/him",
-			"picture": "hammad.webp"
+			"picture": "hammad.jpg"
 		},
 		{
 			"name": "Roman",
 			"role": "Outreach & Logistics",
 			"pronouns": "he/him",
-			"picture": "roman.webp"
+			"picture": "roman.jpg"
 		},
 		{
 			"name": "Leanne",
 			"role": "Outreach & Logistics",
 			"pronouns": "she/her",
-			"picture": "leanne.webp"
+			"picture": "leanne.JPG"
 		},
 		{
 			"name": "Riddhesh",
 			"role": "Technical",
 			"pronouns": "he/him",
-			"picture": "riddhesh.webp"
+			"picture": "riddhesh.jpg"
 		},
 		{
 			"name": "Giang",
 			"role": "Technical",
 			"pronouns": "she/her",
-			"picture": "giang.webp"
+			"picture": "giang.JPG"
 		},
 		{
 			"name": "Michael",
 			"role": "Technical",
 			"pronouns": "he/him",
-			"picture": "michael.webp"
+			"picture": "michael.jpg"
 		},
 		{
 			"name": "Joy",
 			"role": "Technical",
 			"pronouns": "she/her",
-			"picture": "joy.webp"
+			"picture": "joy.jpg"
 		},
 		{
 			"name": "Hamza",
 			"role": "Finance",
 			"pronouns": "he/him",
-			"picture": "hamza.webp"
+			"picture": "hamza.jpg"
 		}
 	],
 	"Associate": [
@@ -80,31 +80,31 @@
 			"name": "Emma",
 			"role": "Marketing",
 			"pronouns": "she/her",
-			"picture": "emma.webp"
+			"picture": "emma.png"
 		},
 		{
 			"name": "Paris",
 			"role": "Marketing",
 			"pronouns": "she/her",
-			"picture": "Paris_Phan.webp"
+			"picture": "Paris_Phan.jpg"
 		},
 		{
 			"name": "Deepasri",
 			"role": "Outreach & Logistics",
 			"pronouns": "she/her",
-			"picture": "deepasri.webp"
+			"picture": "deepasri.jpg"
 		},
 		{
 			"name": "Annya",
 			"role": "Outreach & Logistics",
 			"pronouns": "she/her",
-			"picture": "annya.webp"
+			"picture": "annya.jpg"
 		},
 		{
 			"name": "Ido",
 			"role": "Technical",
 			"pronouns": "he/him",
-			"picture": "The-g.webp"
+			"picture": "The-g.png"
 		},
 		{
 			"name": "Sam",
