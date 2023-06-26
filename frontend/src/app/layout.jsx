@@ -29,7 +29,7 @@ TagManager.initialize(tagManagerArgs)
 // TODO add skip to content button
 export default function RootLayout({
 	children,
-  }) {
+}) {
 	const systemTheme = useMediaQuery('(prefers-color-scheme: dark)');
 
 	const theme = useMemo(
@@ -44,22 +44,23 @@ export default function RootLayout({
 			<body>
 				<ThemeProvider theme={theme}>
 					<CssBaseline enableColorScheme />
-						<Navbar pages="pages"/>
-						<ErrorBoundary fallback={<div></div>} my="25vh">
-							<Suspense fallback={
-								<div css={{ height: "100vh" }}>
-									<LinearProgress title="Page loading" />
-									<div className="hero-header-parallax">
-										<Skeleton variant="rectangular" animation="wave" height="30rem" />
-									</div>
+					<Navbar pages="pages"/>
+					<ErrorBoundary fallback={<div></div>} my="25vh">
+						<Suspense fallback={
+							<div css={{ height: "100vh" }}>
+								<LinearProgress title="Page loading" />
+								<div className="hero-header-parallax">
+									<Skeleton variant="rectangular" animation="wave" height="30rem" />
 								</div>
-							}>
-								{children}
-							</Suspense>
-						</ErrorBoundary>
-						<Footer />
+							</div>
+						}>
+							{children}
+						</Suspense>
+					</ErrorBoundary>
+					<Footer />
 				</ThemeProvider>
 			</body>
 		</html>
 	);
-  }
+}
+  

@@ -9,7 +9,11 @@ import Image from "next/image"
  */
 export const SkeletonLoadedImage = (props) => {
 	return (
-		<div style={{position:"relative"}}>
+		<div style={{
+			position:"relative",
+			width: props?.fill ? "100%": undefined,
+			height: props?.fill ? "100%": undefined,
+		}}>
 			<Image
 				loading="lazy"
 				alt={props?.alt}

@@ -104,6 +104,7 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = "30rem"
 								component="h2"
 								fontWeight="bold"
 								variant="h2"
+								pb={4}
 								style={{alignSelf:"center"}}
 							>
 								{text}
