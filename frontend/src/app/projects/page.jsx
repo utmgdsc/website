@@ -1,5 +1,4 @@
 'use client'
-import { useEffect } from 'react';
 
 import {
 	Grid,
@@ -15,10 +14,6 @@ import BannerImg from '../../assets/website_proprietary/heroes/IMG_4712.jpg';
 import { HeroLayout } from '../../layouts/HeroLayout';
 
 const ProjectPage = () => {
-	useEffect(() => {
-		document.title = "GDSC UTM - Projects";
-	}, []);
-
 	if (projects.length === 0) {
 		return (
 			<HeroLayout title="GDSC Projects" picture={BannerImg} position="bottom" id="projects">

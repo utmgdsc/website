@@ -2,7 +2,7 @@
 import './index.css';
 
 /** @jsxImportSource @emotion/react */
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import {
   Container,
@@ -24,9 +24,6 @@ import { HomepageHero } from './HomepageHero';
 const Team = React.lazy(() => import("../components/Team/Team"));
 
 const Homepage = () => {
-	useEffect(() => {
-		document.title = "GDSC UTM";
-	}, []);
 
 	return (
 		<main id="home">
