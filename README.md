@@ -41,6 +41,7 @@ git submodule update --init
 To update the submodule, run the following commands:
 ```sh
 git submodule -q foreach git pull -q origin main
+git submodule update --remote --merge
 ```
 
 ## Contact
