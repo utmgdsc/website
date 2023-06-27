@@ -7,7 +7,7 @@ import {
     HeroHeader,
 } from '../components';
 
-import { useEffect } from 'react';
+import Head from 'next/head'
 
 /**
  * Layout for pages with a hero header (home, about, etc.)
@@ -20,12 +20,11 @@ import { useEffect } from 'react';
  * @return {JSX.Element} Resource layout component
  */
 export const HeroLayout = ({ children, title, picture, id, position, height }) => {
-    useEffect(() => {
-        document.title = "GDSC UTM - " + title;
-    }, [title]);
-
     return (
         <>
+            <Head>
+                <title>GDSC UTM - {title}</title>
+            </Head>
             <HeroHeader text={title} picture={picture} position={position} height={height} />
             <Container sx={{ py: 4 }} component="main" id={id}>
                 {children}

@@ -5,7 +5,7 @@ import {
 
 import { HeroLayout } from './HeroLayout';
 
-import { useEffect } from 'react';
+import Head from 'next/head'
 
 /**
  * Layout for resources pages (workshops, projects, etc.)
@@ -18,15 +18,16 @@ import { useEffect } from 'react';
  * @return {JSX.Element} Resource layout component
  */
 export const ResourceLayout = ({ children, title, picture, id, position, height }) => {
-    useEffect(() => {
-        document.title = title;
-    }, [title]);
-
     return (
-        <HeroLayout title={title} picture={picture} id={id} position={position} height={height}>
-            <RouterBreadcrumb />
-            <br />
-            {children}
-        </HeroLayout>
+        <>
+            <Head>
+                <title>GDSC UTM - {title}</title>
+            </Head>
+            <HeroLayout title={title} picture={picture} id={id} position={position} height={height}>
+                <RouterBreadcrumb />
+                <br />
+                {children}
+            </HeroLayout>
+        </>
     );
 }
