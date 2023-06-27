@@ -5,8 +5,6 @@ import {
 
 import { HeroLayout } from './HeroLayout';
 
-import Head from 'next/head'
-
 /**
  * Layout for resources pages (workshops, projects, etc.)
  * @param {Object} children - Children components
@@ -19,15 +17,10 @@ import Head from 'next/head'
  */
 export const ResourceLayout = ({ children, title, picture, id, position, height }) => {
     return (
-        <>
-            <Head>
-                <title>GDSC UTM - {title}</title>
-            </Head>
-            <HeroLayout title={title} picture={picture} id={id} position={position} height={height}>
-                <RouterBreadcrumb />
-                <br />
-                {children}
-            </HeroLayout>
-        </>
+        <HeroLayout title={title} picture={picture} id={id} position={position} height={height}>
+            <RouterBreadcrumb />
+            <br />
+            {children}
+        </HeroLayout>
     );
 }
