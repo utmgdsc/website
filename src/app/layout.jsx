@@ -37,11 +37,11 @@ export default function RootLayout({
 	);
 
 	useEffect(()=>{
-		const tagManagerArgs = { gtmId: process.env.REACT_APP_GTM_ID }
+		const tagManagerArgs = { gtmId: process.env.NEXT_PUBLIC_GTM_ID }
 
 		TagManager.initialize(tagManagerArgs)
 	},[])
-	
+
 	return (
 		<html lang="en">
 			<body>
@@ -66,4 +66,3 @@ export default function RootLayout({
 		</html>
 	);
 }
-  
