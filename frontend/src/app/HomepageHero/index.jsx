@@ -9,11 +9,11 @@ import {
   useTheme
 } from '@mui/material';
 
-import HeroImage from '../../../assets/backgrounds/background.jpg';
-import HeroImageDark from '../../../assets/backgrounds/background_dark.jpg';
-import wordmark from '../../../assets/graphics/gdscwordmark.svg';
-import { SkeletonLoadedImage } from '../../../components';
-import { THEME } from '../../../theme';
+import HeroImage from '../../assets/backgrounds/background.jpg';
+import HeroImageDark from '../../assets/backgrounds/background_dark.jpg';
+import wordmark from '../../assets/graphics/gdscwordmark.svg';
+import { SkeletonLoadedImage } from '../../components';
+import { THEME } from '../theme';
 
 export const HomepageHero = () => {
     const theme = useTheme();
@@ -25,14 +25,14 @@ export const HomepageHero = () => {
                     background: "linear-gradient(" + theme.palette.background.default + " 0%,"
                         + alpha(theme.palette.background.default, 0.8) + "69%,"
                         + theme.palette.background.default + " 100%), url("
-                        + (theme.palette.mode === THEME.DARK ? HeroImageDark : HeroImage) + ") no-repeat",
+                        + (theme.palette.mode === THEME.DARK ? HeroImageDark.src: HeroImage.src) + ") no-repeat",
                     backgroundSize: "cover",
                     marginBottom: "-15vh",
                     pb: 6,
                     pt: 8,
                 }}
             >
-                <Container maxWidth="sm" sx={{ height: "50vh" }}>
+                <Container maxWidth="sm" sx={{ height: "50vh", position:"relative" }}>
                     <Typography
                         align="center"
                         color="text.primary"
@@ -53,7 +53,8 @@ export const HomepageHero = () => {
                             alt="Google Developer Student Clubs University of Toronto Mississauga"
                             id="gdsc-wordmark"
                             src={wordmark}
-                            css={{ textAlign: "center", width: "100%" }}
+                            css={{objectFit:"contain"}}
+                            fill
                         />
                     </Typography>
                 </Container>

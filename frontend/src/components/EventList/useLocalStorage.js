@@ -1,3 +1,4 @@
+'use client'
 import { useState } from "react";
 
 // AO from https://usehooks.com/useLocalStorage/
@@ -39,7 +40,7 @@ export function useLocalStorage(key) {
 			}
 		} catch (error) {
 			// A more advanced implementation would handle the error case
-			console.error(error);
+			error(error);
 		}
 	};
 	return [storedValue, setValue];

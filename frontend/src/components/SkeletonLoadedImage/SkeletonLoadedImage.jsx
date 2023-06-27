@@ -1,34 +1,36 @@
-import { useState } from 'react';
+'use client'
 
 import { Skeleton } from '@mui/material';
-
+import Image from "next/image"
 /**
- * Loads an image from the given URL with a skeleton placeholder
- * @param {string} src URL of the image
- * @param {string} alt alt text of the image
+ * Loads an image from a given URL or NextJS ImageProps object with a skeleton placeholder. 
+ * Extends the NextJS {@link https://nextjs.org/docs/app/api-reference/components/image | Image} component and uses all the same props.
  * @return {JSX.Element} image with a skeleton placeholder
  */
 export const SkeletonLoadedImage = (props) => {
-	const [loaded, setLoaded] = useState(false);
-
 	return (
-		<>
-			<img
+		<div style={{
+			position:"relative",
+			width: props?.fill ? "100%": undefined,
+			height: props?.fill ? "100%": undefined,
+		}}>
+			<Image
 				loading="lazy"
-				// hide the image until it's loaded and load other style props
+				alt={props?.alt}
 				style={{
-					visibility: loaded ? undefined : 'hidden',
-					width: loaded ? undefined : '0',
-					height: loaded ? undefined : '0',
 					...props?.style,
 				}}
-				onLoad={() => { setLoaded(true) }}
-				src={props?.src}
-				alt={props?.alt}
 				{...props}
 			/>
-
-			{!loaded && <Skeleton variant="rectangular" {...props} />}
-		</>
+			<Skeleton variant="rectangular" {...props} style={{
+				zIndex:-1,
+				position:"absolute",
+				top:0,
+				...props?.style,
+				left: 0,
+				right: 0,
+				margin: "0 auto"
+			}}/>
+		</div>
 	)
 }

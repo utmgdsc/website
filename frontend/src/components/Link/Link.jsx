@@ -1,11 +1,8 @@
+'use client'
 import React from 'react';
-
-import { NavLink as RouterLink } from 'react-router-dom';
-
+import NextLink from "next/link"
 import { OpenInNew } from '@mui/icons-material';
 import { Link as MaterialLink } from '@mui/material';
-
-import { pages } from '../../pages';
 
 /**
  * A link
@@ -19,19 +16,14 @@ import { pages } from '../../pages';
  * @returns {JSX.Element} A link
  */
 const NonForwardLink = ({ children, href, external, forwardedRef, noIcon = false, ...props }) => {
-	/** If the link is internal to the website or not, determined by whether the link is in the pages array */
-	const isInternalLink = pages.find(el => el["path"] === (href));
-
 	return (
 		// !!
 		<MaterialLink
-			component={isInternalLink ? RouterLink : undefined}
-			href={isInternalLink ? undefined : href}
+			component={NextLink}
+			href={href}
 			ref={forwardedRef}
 			rel={external ? "noopener noreferrer" : ""}
 			target={external ? "_blank" : ""}
-			to={isInternalLink ? href : undefined}
-
 			style={{color: "red !important" }}
 
 			{...props}>

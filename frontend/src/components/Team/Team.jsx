@@ -4,7 +4,7 @@ import { Typography } from '@mui/material';
 
 import DefaultUser from '../../assets/graphics/default_user.svg';
 import {
-  SkeletonLoadedImage,
+	SkeletonLoadedImage,
 } from '../SkeletonLoadedImage/SkeletonLoadedImage';
 
 /**
@@ -35,11 +35,11 @@ const Team = ({ teamInfo, title }) => {
 			<div className="team">
 				{teamInfo.map((teamMember, index) => (
 					<Person
-					key={index}
-					name={teamMember.name}
-					pronouns={teamMember.pronouns}
+						key={index}
+						name={teamMember.name}
+						pronouns={teamMember.pronouns}
 						role={teamMember.role}
-						picture={teamMember.picture === undefined ? DefaultUser : require("../../assets/website_proprietary/team/" + teamMember.picture)}
+						picture={teamMember.picture === undefined ? DefaultUser : require(`../../assets/website_proprietary/team/${teamMember.picture}`)}
 					/>
 					))}
 			</div>

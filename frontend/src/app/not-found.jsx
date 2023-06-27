@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 
 import {
@@ -5,10 +6,13 @@ import {
   Typography,
 } from '@mui/material';
 
-import estelle from '../../assets/graphics/sad_mascot.png';
-import estelle_dark from '../../assets/graphics/sad_mascot_dark.png';
+import {useMediaQuery} from '@mui/material';
+import estelle from '../assets/graphics/sad_mascot.png';
+import estelle_dark from '../assets/graphics/sad_mascot_dark.png';
 
+import Image from "next/image"
 const PageNotFound = () => {
+	const systemTheme = useMediaQuery('(prefers-color-scheme: dark)');
 	return (
 		<Container
 			component="main"
@@ -23,10 +27,7 @@ const PageNotFound = () => {
 				textAlign: "center",
 			}}
 		>
-			<picture>
-				<source srcSet={estelle_dark} media="(prefers-color-scheme: dark)" />
-				<img src={estelle} alt="404 Mascot" height="600" width="600" />
-			</picture>
+			<Image src={systemTheme ? estelle_dark.src : estelle.src} height={600} width={600}/>
 			<Typography variant="h1" component="h1" gutterBottom>
 				404
 			</Typography>

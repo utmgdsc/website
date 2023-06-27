@@ -15,7 +15,7 @@ import {
 } from '@mui/icons-material';
 import { SvgIcon } from '@mui/material';
 
-import { ReactComponent as DiscordIcon } from '../assets/graphics/discord.svg';
+import {ReactComponent as DiscordIcon} from '../assets/graphics/discord.svg';
 import { NamedIconButton } from '../components/NamedIconButton/NamedIconButton';
 
 export const CommunityDevButton = (props) => (

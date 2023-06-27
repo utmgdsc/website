@@ -1,3 +1,4 @@
+'use client'
 import './TableOfContents.scss';
 
 /** @jsxImportSource @emotion/react */

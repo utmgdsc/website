@@ -1,14 +1,13 @@
-import { NavLink as RouterLink } from 'react-router-dom';
-
+import NextLink from 'next/link'
 import { Tab } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 /**
- * A styled version of the Tab component. It renders a <RouterLink /> component for the navbar.
+ * A styled version of the Tab component. It renders a NextJS {@link https://nextjs.org/docs/app/api-reference/components/link | Link} component for the navbar.
  * @returns {JSX.Element} a styled version of the Tab component
  */
 export const LinkTab = styled((props) =>
-	<Tab component={RouterLink} {...props} />)(
+	<Tab component={NextLink} {...props} />)(
 		({ theme }) => ({
 			color: theme.palette.text.secondary,
 			fontFamily: "inherit",

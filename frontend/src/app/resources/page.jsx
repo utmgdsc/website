@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 
 import {
@@ -33,6 +34,7 @@ const ResourcesPage = () => {
 						description="Check out our past workshops!"
 						alt="A man (Alexander Dean Cybulski) speaks at an event with a projector in the background."
 						href="/resources/workshops"
+						height="auto"
 						image={Workshop}
 					/>
 				</Grid>
@@ -42,6 +44,7 @@ const ResourcesPage = () => {
 						description="Download our bracket logo in crisp quality!"
 						alt="Google Developer Student Clubs UTM logo over a blue background with clouds"
 						href="/resources/logo-download"
+						height="auto"
 						image={Brand}
 					/>
 				</Grid>

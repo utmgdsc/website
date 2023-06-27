@@ -1,3 +1,4 @@
+'use client'
 import './index.css';
 
 /** @jsxImportSource @emotion/react */
@@ -9,18 +10,18 @@ import {
 } from '@mui/material';
 
 import HeroInfoSesh
-  from '../../assets/website_proprietary/heroes/infosession.jpg';
-import HeroTeam from '../../assets/website_proprietary/heroes/team.png';
+  from '../assets/website_proprietary/heroes/infosession.jpg';
+import HeroTeam from '../assets/website_proprietary/heroes/team.png';
 import {
   ErrorBoundary,
   EventList,
   ExpiryContainer,
   HeroHeader,
-} from '../../components';
-import teamMembers from '../../data/team.json';
+} from '../components';
+import teamMembers from '../data/team.json';
 import { HomepageHero } from './HomepageHero';
 
-const Team = React.lazy(() => import("../../components/Team/Team"));
+const Team = React.lazy(() => import("../components/Team/Team"));
 
 const Homepage = () => {
 	useEffect(() => {
@@ -52,7 +53,7 @@ const Homepage = () => {
 
 			{/* about / who are we */}
 			<section id="who-are-we">
-				<HeroHeader text="Who are we?" picture={HeroInfoSesh} maxWidth="md" />
+				<HeroHeader text="Who are we?" picture={HeroInfoSesh} maxWidth="md" position="top"/>
 				<Container sx={{ py: 8, lineHeight: "2em" }} maxWidth="md">
 					<p>
 						<dfn id="gsdc-defn">Google Developer Student Clubs</dfn> (<abbr>GDSC</abbr>) is a student-led
@@ -74,7 +75,7 @@ const Homepage = () => {
 			{/* team list */}
 			<section id="meet-the-team">
 				<ExpiryContainer date={"2023-06-30"}>
-					<HeroHeader text="Meet the team" picture={HeroTeam} maxWidth="md" />
+					<HeroHeader text="Meet the team" picture={HeroTeam} maxWidth="md"/>
 					<Container sx={{ py: 8, px: 0 }} maxWidth="md">
 						<ErrorBoundary>
 							{Object.keys(teamMembers).map((subteam, index) => {
