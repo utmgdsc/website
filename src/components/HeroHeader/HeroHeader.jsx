@@ -22,17 +22,17 @@ import Image from "next/image"
 
 export const HeroHeader = ({ text, picture, maxWidth, position, height = "30rem" }) => {
 	const [imgOffset, setImgOffset] = useState(0);
-	
+
 	const[isLoaded, setIsLoaded] = useState(false)
 
 	const [imgHeight, setImgHeight] = useState(0)
 
 	const handleScroll = () => setImgOffset(window.scrollY);
-	
+
 	useEffect(() => {
 		window.addEventListener("scroll", handleScroll);
 		const containerHeight = containerRef.current.clientHeight
-		
+
 		setImgHeight(containerHeight*1.4)
 		setIsLoaded(true)
 
@@ -40,7 +40,7 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = "30rem"
 	}, []);
 
 	const containerRef = useRef(null)
-	
+
 	const accelSpeedCalc = ()=> {
 		if(position === "bottom"){
 			return 0.1
@@ -61,7 +61,7 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = "30rem"
 					zIndex: -1,
 				}}
 			/>
-			<div 
+			<div
 				ref={containerRef}
 				style={{
 					height: height,
@@ -70,12 +70,12 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = "30rem"
 					width:"100%",
 					overflowY:"hidden",
 					overflowX:"hidden",
-				}} 
+				}}
 				className="hero-header-parallax"
 			>
 				{isLoaded ?
 				<>
-					<Image src={picture} 
+					<Image src={picture}
 						sizes='100vw'
 						style={{
 							height:"auto",
@@ -85,8 +85,9 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = "30rem"
 							position:"absolute",
 							bottom: position === "bottom" ? 0: undefined,
 							top: position === "top" ? 0: undefined,
-						}} 
+						}}
 						loading="lazy"
+						alt
 					/>
 					<Container
 						maxWidth="unset !important"
@@ -119,5 +120,3 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = "30rem"
 		</>
 	)
 };
-
-
