@@ -3,9 +3,7 @@ import './Team.scss';
 import { Typography } from '@mui/material';
 
 import DefaultUser from '../../assets/graphics/default_user.svg';
-import {
-	SkeletonLoadedImage,
-} from '../SkeletonLoadedImage/SkeletonLoadedImage';
+import { SkeletonLoadedImage } from '../SkeletonLoadedImage/SkeletonLoadedImage';
 
 /**
  * Team component. Displays a team with a title and a list of team members

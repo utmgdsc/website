@@ -7,9 +7,9 @@ import {
 } from '@mui/material';
 
 import BannerImg from '../../../assets/website_proprietary/heroes/IMG_2746.jpg';
-// import {
-	// TableOfContents,
-// } from '../../../components';
+import {
+	TableOfContents,
+} from '../../../components';
 import workshops from '../../../data/workshops.json';
 import { WorkshopWidget } from './Workshop';
 
@@ -27,7 +27,7 @@ const WorkshopArchive = () => {
 				spacing={2}
 			>
 				<Grid item md={3}>
-					{/* <TableOfContents /> */}
+					<TableOfContents />
 				</Grid>
 				<Grid item md={9}>
 					<h2 className="resources" id="gdsc-workshops">GDSC Workshops</h2>

@@ -17,5 +17,5 @@ export { NamedIconButton } from './NamedIconButton/NamedIconButton';
 export { Navbar } from './Navbar/Navbar';
 export { RouterBreadcrumb } from './RouterBreadcrumb/RouterBreadcrumb';
 export { SkeletonLoadedImage } from './SkeletonLoadedImage/SkeletonLoadedImage';
-// export { TableOfContents } from './TableOfContents/TableOfContents';
+export { TableOfContents } from './TableOfContents/TableOfContents';
 export { WorkshopButton } from './WorkshopButton/WorkshopButton';
