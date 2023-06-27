@@ -143,6 +143,12 @@
 			"role": "Advisor",
 			"pronouns": "he/him",
 			"picture": "Akshit.png"
+		},
+		{
+			"name": "Daksh",
+			"role": "Advisor",
+			"pronouns": "he/him",
+			"picture": "daksh.png"
 		}
 	]
 }
