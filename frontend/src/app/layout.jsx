@@ -20,11 +20,11 @@ import {
 } from '../components';
 import { GoogleTheme, THEME } from "./theme";
 
-import TagManager from 'react-gtm-module'
+// import TagManager from 'react-gtm-module'
 
-const tagManagerArgs = { gtmId: process.env.REACT_APP_GTM_ID }
+// const tagManagerArgs = { gtmId: process.env.REACT_APP_GTM_ID }
 
-TagManager.initialize(tagManagerArgs)
+// TagManager.initialize(tagManagerArgs)
 
 // TODO add skip to content button
 export default function RootLayout({
