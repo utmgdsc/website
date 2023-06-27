@@ -5,5 +5,8 @@ module.exports = {
             use: ['@svgr/webpack', 'url-loader'],
           })
       return config;
-    }
+    },
+    experimental: {
+      appDir: true,
+    },
   }
