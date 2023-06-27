@@ -24,8 +24,6 @@ const NonForwardLink = ({ children, href, external, forwardedRef, noIcon = false
 			ref={forwardedRef}
 			rel={external ? "noopener noreferrer" : ""}
 			target={external ? "_blank" : ""}
-			style={{color: "red !important" }}
-
 			{...props}>
 			{children}
 			{external && !noIcon &&
