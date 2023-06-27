@@ -21,7 +21,6 @@ Except where otherwise noted, the is project is licensed under the [LGPL 2.0 or 
 
 * install dependencies:
 	```sh
-	> cd frontend
 	> npm install
 	```
 
