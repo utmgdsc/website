@@ -1,5 +1,0 @@
-@media (prefers-color-scheme: dark) {
-	#gdsc-wordmark {
-		filter: grayscale(1)invert(1)brightness(1.5);
-	}
-}
