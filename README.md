@@ -1,6 +1,6 @@
 <h1>
 	<picture>
-		<img alt="Google Developers Bracket" src="./frontend/src/assets/graphics/bracket.svg" height="34">
+		<img alt="Google Developers Bracket" src="./src/assets/graphics/bracket.svg" height="34">
 	</picture>
 	GDSC Website
 </h1>
