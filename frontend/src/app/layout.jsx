@@ -2,7 +2,7 @@
 /** @jsxImportSource @emotion/react */
 import './App.scss';
 
-import React, { Suspense, useMemo } from 'react';
+import React, { Suspense, useMemo, useEffect } from 'react';
 
 import {
 	createTheme,
@@ -22,10 +22,6 @@ import { GoogleTheme, THEME } from "./theme";
 
 // import TagManager from 'react-gtm-module'
 
-// const tagManagerArgs = { gtmId: process.env.REACT_APP_GTM_ID }
-
-// TagManager.initialize(tagManagerArgs)
-
 // TODO add skip to content button
 export default function RootLayout({
 	children,
@@ -39,6 +35,13 @@ export default function RootLayout({
 			})),
 		[systemTheme],
 	);
+
+	useEffect(()=>{
+		const tagManagerArgs = { gtmId: process.env.REACT_APP_GTM_ID }
+
+		TagManager.initialize(tagManagerArgs)
+	},[])
+	
 	return (
 		<html lang="en">
 			<body>
