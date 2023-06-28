@@ -20,7 +20,7 @@ import {
 } from '../components';
 import { GoogleTheme, THEME } from "./theme";
 
-// import TagManager from 'react-gtm-module'
+import TagManager from 'react-gtm-module'
 
 // TODO add skip to content button
 export default function RootLayout({
