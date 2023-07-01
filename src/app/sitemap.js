@@ -11,6 +11,7 @@ const BASEURL = "https://gdscutm.com"
  * @returns {Array<{url: string, lastModified: Date}} The sitemap
  */
 export default function sitemap() {
+    /** accumulator for the sites defined in NavbarTabData.pages */
     let acc = [];
     pages.forEach((item) => {
         acc.push({

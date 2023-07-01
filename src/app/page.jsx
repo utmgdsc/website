@@ -28,6 +28,10 @@ export const metadata = {
 }
 
 const Homepage = () => {
+	React.useEffect(() => {
+		document.title = "GDSC UTM - Home";
+	}, []);
+
 	return (
 		<>
 			<main id="home">
