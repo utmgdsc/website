@@ -10,7 +10,7 @@ import { SkeletonLoadedImage } from '../SkeletonLoadedImage/SkeletonLoadedImage'
  * @param {Object} teamInfo members data from the json file
  * @param {string} title title of the team
  */
-const Team = ({ teamInfo, title }) => {
+export const Team = ({ teamInfo, title }) => {
 	// do not return anything if there are no team members in the team
 	if (teamInfo.length === 0) {
 		return null;

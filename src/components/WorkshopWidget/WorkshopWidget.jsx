@@ -18,7 +18,7 @@ import {
   ConvertDate,
   JoinAnd,
   WorkshopButton,
-} from '../../../components';
+} from '..';
 
 /**
  * @param {Object} item The workshop item from the workshops.json JSON file
