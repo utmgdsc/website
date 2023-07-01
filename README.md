@@ -9,11 +9,12 @@ Google Developer Student Clubs (GDSC) is a student-led community backed by Googl
 
 ## About The Project
 
-This is the official website for the University of Toronto Mississauga Google Developer Student Club (UTM GDSC). The frontend is built with React and MUI.
+This is the official website for the University of Toronto Mississauga Google Developer Student Club (UTM GDSC). The frontend is built with [Next.js](https://nextjs.org/), React, and MUI.
 
 Except where otherwise noted, the is project is licensed under the [LGPL 2.0 or later](https://www.gnu.org/licenses/gpl-2.0.html) license.
 
-## npm installation
+##  Getting Started
+
 * install npm:
 	```sh
 	> npm install npm@latest -g
@@ -29,6 +30,8 @@ Except where otherwise noted, the is project is licensed under the [LGPL 2.0 or 
 	> npm start
 	```
 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
 
 ## Access proprietary files
 We use a submodule to access files not licensed under an open source license. To access these files, run the following commands:
@@ -42,6 +45,15 @@ To update the submodule, run the following commands:
 git submodule -q foreach git pull -q origin main
 git submodule update --remote --merge
 ```
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ## Contact
 You can contact us via [Discord](https://discord.gg/FMJNvhXJAa) or by [GitHub Issues](https://github.com/utmgdsc/website/issues/new/choose)
