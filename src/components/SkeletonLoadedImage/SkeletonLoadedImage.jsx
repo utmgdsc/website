@@ -2,17 +2,19 @@
 
 import { Skeleton } from '@mui/material';
 import Image from "next/image"
+import { Box } from '@mui/material';
+
 /**
- * Loads an image from a given URL or NextJS ImageProps object with a skeleton placeholder. 
+ * Loads an image from a given URL or NextJS ImageProps object with a skeleton placeholder.
  * Extends the NextJS {@link https://nextjs.org/docs/app/api-reference/components/image | Image} component and uses all the same props.
  * @return {JSX.Element} image with a skeleton placeholder
  */
 export const SkeletonLoadedImage = (props) => {
 	return (
-		<div style={{
+		<Box sx={{
 			position:"relative",
-			width: props?.fill ? "100%": undefined,
-			height: props?.fill ? "100%": undefined,
+			width: props?.dimensions,
+			height: props?.dimensions,
 		}}>
 			<Image
 				loading="lazy"
@@ -22,7 +24,7 @@ export const SkeletonLoadedImage = (props) => {
 				}}
 				{...props}
 			/>
-			<Skeleton variant="rectangular" {...props} style={{
+			<Skeleton variant="rectangular" {...props} sx={{
 				zIndex:-1,
 				position:"absolute",
 				top:0,
@@ -31,6 +33,6 @@ export const SkeletonLoadedImage = (props) => {
 				right: 0,
 				margin: "0 auto"
 			}}/>
-		</div>
+		</Box>
 	)
 }
