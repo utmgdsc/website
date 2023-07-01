@@ -5,7 +5,7 @@
  * The page will only be included in the navbar by default if there is only one slash in the path.
  * includeInNavbar serves as an override for this.
  *
- * @type {Array<{name: string, path: string, component: JSX.Element}>}
+ * @type {Array<{name: string, path: string, includeInNavbar?: boolean}>}
  */
 export const pages = [
 	{
@@ -19,17 +19,14 @@ export const pages = [
 	{
 		name: "Logo Download",
 		path: "/resources/logo-download",
-		includeInNavbar: false,
 	},
 	{
 		name: "Workshop Archive",
 		path: "/resources/workshops",
-		includeInNavbar: false,
 	},
 	{
 		name: "Tech Tips",
 		path: "/resources/tips",
-		includeInNavbar: false,
 	},
 	{
 		name: "Projects",

@@ -26,7 +26,6 @@ import Head from 'next/head'
 const Team = React.lazy(() => import("../components/Team/Team"));
 
 const Homepage = () => {
-
 	return (
 		<>
 			<Head>
