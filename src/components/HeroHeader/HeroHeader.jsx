@@ -87,7 +87,7 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = "30rem"
 							top: position === "top" ? 0: undefined,
 						}}
 						loading="lazy"
-						alt
+						alt=""
 					/>
 					<Container
 						maxWidth="unset !important"

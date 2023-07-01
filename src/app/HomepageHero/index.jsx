@@ -54,7 +54,7 @@ export const HomepageHero = () => {
                             id="gdsc-wordmark"
                             src={wordmark}
                             css={{objectFit:"contain"}}
-                            dimensions="100%"
+                            fill="100%"
                         />
                     </Typography>
                 </Container>
