@@ -2,7 +2,7 @@
 /** @jsxImportSource @emotion/react */
 import './App.scss';
 
-import React, { Suspense, useMemo, useEffect } from 'react';
+import React, { Suspense, useEffect, useMemo } from 'react';
 
 import {
 	createTheme,
@@ -20,7 +20,15 @@ import {
 } from '../components';
 import { GoogleTheme, THEME } from "./theme";
 
-import TagManager from 'react-gtm-module'
+import TagManager from 'react-gtm-module';
+
+export const metadata = {
+	title: {
+		template: "GDSC UTM - %s",
+		default: "GDSC UTM",
+	},
+	description: "GDSC is a student-led community backed by Google Developers aimed at empowering undergraduate students from all disciplines to grow their knowledge in technology, build solutions for their local communities, and connect with other members from the Google community.",
+}
 
 // TODO add skip to content button
 export default function RootLayout({
@@ -36,18 +44,18 @@ export default function RootLayout({
 		[systemTheme],
 	);
 
-	useEffect(()=>{
+	useEffect(() => {
 		const tagManagerArgs = { gtmId: process.env.NEXT_PUBLIC_GTM_ID }
 
 		TagManager.initialize(tagManagerArgs)
-	},[])
+	}, [])
 
 	return (
 		<html lang="en">
 			<body>
 				<ThemeProvider theme={theme}>
 					<CssBaseline enableColorScheme />
-					<Navbar pages="pages"/>
+					<Navbar pages="pages" />
 					<ErrorBoundary fallback={<div></div>} my="25vh">
 						<Suspense fallback={
 							<div css={{ height: "100vh" }}>

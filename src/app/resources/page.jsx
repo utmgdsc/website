@@ -16,6 +16,10 @@ import faq from '../../data/faq.json';
 
 import { HeroLayout } from '../../layouts/HeroLayout';
 
+export const metadata = {
+	title: 'Resources',
+}
+
 /**
  * @returns {JSX.Element} The resources page
  */

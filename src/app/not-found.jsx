@@ -11,6 +11,7 @@ import estelle from '../assets/graphics/sad_mascot.png';
 import estelle_dark from '../assets/graphics/sad_mascot_dark.png';
 
 import Image from "next/image"
+
 const PageNotFound = () => {
 	const systemTheme = useMediaQuery('(prefers-color-scheme: dark)');
 	return (

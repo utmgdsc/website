@@ -3,6 +3,10 @@ import { Typography } from '@mui/material';
 
 import { ResourceLayout } from '../../../layouts/ResourcesSubPageLayout';
 
+export const metadata = {
+	title: 'Tech Tips',
+}
+
 /**
  * @returns {JSX.Element} The tech tips widget
  */
