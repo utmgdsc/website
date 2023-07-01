@@ -11,9 +11,9 @@ import {
 
 import { HeroLayout } from '../../layouts/HeroLayout';
 
-export const metadata = {
-	title: 'Events',
-}
+// export const metadata = {
+//  title: 'Events',
+// }
 
 /**
  * @return {JSX.Element} Events page component using EventList

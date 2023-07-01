@@ -23,9 +23,9 @@ import teamMembers from '../data/team.json';
 
 const Team = React.lazy(() => import("../components/Team/Team"));
 
-export const metadata = {
-	title: "GDSC UTM - Home",
-}
+// export const metadata = {
+//  title: "GDSC UTM - Home",
+// }
 
 const Homepage = () => {
 	React.useEffect(() => {

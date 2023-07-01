@@ -15,9 +15,9 @@ import workshops from '../../../data/workshops.json';
 
 import { ResourceLayout } from '../../../layouts/ResourcesSubPageLayout';
 
-export const metadata = {
-	title: 'Workshop Archive',
-}
+// export const metadata = {
+//  title: 'Workshop Archive',
+// }
 
 /**
  * @return {JSX.Element} Workshop page component

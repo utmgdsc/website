@@ -13,9 +13,9 @@ import BannerImg from '../../assets/website_proprietary/heroes/IMG_4712.jpg';
 
 import { HeroLayout } from '../../layouts/HeroLayout';
 
-export const metadata = {
-	title: 'Projects',
-}
+// export const metadata = {
+//  title: 'Projects',
+// }
 
 const ProjectPage = () => {
 	if (projects.length === 0) {
