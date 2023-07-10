@@ -11,6 +11,7 @@ import estelle from '../assets/graphics/sad_mascot.png';
 import estelle_dark from '../assets/graphics/sad_mascot_dark.png';
 
 import Image from "next/image"
+
 const PageNotFound = () => {
 	const systemTheme = useMediaQuery('(prefers-color-scheme: dark)');
 	return (
@@ -27,7 +28,7 @@ const PageNotFound = () => {
 				textAlign: "center",
 			}}
 		>
-			<Image src={systemTheme ? estelle_dark.src : estelle.src} height={600} width={600}/>
+			<Image alt="Sad GDSC Mascot" src={systemTheme ? estelle_dark.src : estelle.src} height={600} width={600}/>
 			<Typography variant="h1" component="h1" gutterBottom>
 				404
 			</Typography>

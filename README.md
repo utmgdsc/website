@@ -9,11 +9,12 @@ Google Developer Student Clubs (GDSC) is a student-led community backed by Googl
 
 ## About The Project
 
-This is the official website for the University of Toronto Mississauga Google Developer Student Club (UTM GDSC). The frontend is built with React and MUI.
+This is the official website for the University of Toronto Mississauga Google Developer Student Club (UTM GDSC). The frontend is built with [Next.js](https://nextjs.org/), React, and MUI.
 
 Except where otherwise noted, the is project is licensed under the [LGPL 2.0 or later](https://www.gnu.org/licenses/gpl-2.0.html) license.
 
-## npm installation
+##  Getting Started
+
 * install npm:
 	```sh
 	> npm install npm@latest -g
@@ -29,6 +30,8 @@ Except where otherwise noted, the is project is licensed under the [LGPL 2.0 or 
 	> npm start
 	```
 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
 
 ## Access proprietary files
 We use a submodule to access files not licensed under an open source license. To access these files, run the following commands:
@@ -42,6 +45,49 @@ To update the submodule, run the following commands:
 git submodule -q foreach git pull -q origin main
 git submodule update --remote --merge
 ```
+
+## Maintenance
+### Adding Google Tag Manager (GTM) ID
+To add the GTM ID, create a `.env.local` file or set the `NEXT_PUBLIC_GTM_ID` environment variable to the GTM ID.
+
+For example, if the GTM ID is `GTM-XXXXXXX`, then the `.env.local` file should contain the following:
+```sh
+NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
+```
+
+### Updating the Navbar
+As of commit [a414b04](https://github.com/utmgdsc/website/commit/a414b0440bb11440ceb96d05d8d7da0d856da6cd), the navbar is generated from a JS object. To update the navbar, edit [NavbarTabData.jsx](https://github.com/utmgdsc/website/blob/main/src/data/NavbarTabData.jsx).
+
+
+### Adding a new Workshop
+> Note: You must have GitHub action permissions to add a new workshop.
+
+1. Navigate to the [Create Workshop](https://github.com/utmgdsc/website/actions/workflows/create-workshop-pull-request.yml) GitHub action.
+2. Click the `Run workflow` button.
+3. Select the `develop` branch. (Make sure the `develop` branch is up to date with the `main` branch first.)
+4. Fill in the prompts as needed.
+5. Click the `Run workflow` button.
+6. [Create a pull request from the `develop` branch to the `main` branch](https://github.com/utmgdsc/website/compare/main...develop).
+7. Merge, and you're done!
+
+### Updating the Team List
+> Note: You must have push access to [our private submodule](https://github.com/utmgdsc/website_proprietary) to update the team list.
+
+1. Navigate to the private team list image repository and remove all images from the `team` folder.
+2. Add the new team member images to the `team` folder.
+3. Open your favourite text editor and navigate to the [`src/data/team.json`](https://github.com/utmgdsc/website/blob/main/src/data/team.json) file.
+4. Follow the schema to replace the file with the new team members to the JSON file.
+	- Note that the `image` field is the name of the image file in the private team list image repository.
+5. Commit and push the changes to the `develop` branch, then PR and merge! ^-^
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ## Contact
 You can contact us via [Discord](https://discord.gg/FMJNvhXJAa) or by [GitHub Issues](https://github.com/utmgdsc/website/issues/new/choose)

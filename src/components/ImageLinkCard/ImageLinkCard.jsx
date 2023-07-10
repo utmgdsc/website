@@ -53,7 +53,6 @@ export const ImageLinkCard = ({ href, title, image, description, alt, height = 1
 						/>
 					}
 					height={height}
-					image={image}
 					alt={title}
 				/>
 				<CardContent>

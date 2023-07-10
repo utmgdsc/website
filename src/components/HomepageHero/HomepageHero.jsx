@@ -12,8 +12,8 @@ import {
 import HeroImage from '../../assets/backgrounds/background.jpg';
 import HeroImageDark from '../../assets/backgrounds/background_dark.jpg';
 import wordmark from '../../assets/graphics/gdscwordmark.svg';
-import { SkeletonLoadedImage } from '../../components';
-import { THEME } from '../theme';
+import { SkeletonLoadedImage } from '..';
+import { THEME } from '../../app/theme';
 
 export const HomepageHero = () => {
     const theme = useTheme();
@@ -54,7 +54,7 @@ export const HomepageHero = () => {
                             id="gdsc-wordmark"
                             src={wordmark}
                             css={{objectFit:"contain"}}
-                            fill
+                            fill="100%"
                         />
                     </Typography>
                 </Container>

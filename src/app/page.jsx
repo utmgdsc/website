@@ -17,21 +17,23 @@ import {
 	EventList,
 	ExpiryContainer,
 	HeroHeader,
+	HomepageHero
 } from '../components';
 import teamMembers from '../data/team.json';
-import { HomepageHero } from './HomepageHero';
-
-import Head from 'next/head'
 
 const Team = React.lazy(() => import("../components/Team/Team"));
 
+// export const metadata = {
+//  title: "GDSC UTM - Home",
+// }
+
 const Homepage = () => {
+	React.useEffect(() => {
+		document.title = "GDSC UTM - Home";
+	}, []);
 
 	return (
 		<>
-			<Head>
-				<title>GDSC UTM - Home</title>
-			</Head>
 			<main id="home">
 				{/* hero */}
 				<HomepageHero />

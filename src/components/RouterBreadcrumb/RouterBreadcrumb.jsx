@@ -4,7 +4,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Typography from '@mui/material/Typography';
 
-import { pages } from '../../app/index.jsx';
+import { pages } from '../../data/NavbarTabData';
 import { Link } from '../Link/Link';
 
 // AO from https://mui.com/material-ui/react-breadcrumbs/#RouterBreadcrumbs.js

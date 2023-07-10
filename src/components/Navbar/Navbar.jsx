@@ -25,7 +25,7 @@ import {
   GitHubButton,
   InstagramButton,
 } from '../../data/SocialButton';
-import { pages } from '../../app/index';
+import { pages } from '../../data/NavbarTabData';
 import {
   ElevationScroll,
   HideOnScroll,
@@ -47,7 +47,7 @@ export const Navbar = () => {
 	const handleChange = (event, newValue) => {
 		setCurrentTab(newValue);
 	};
-	
+
 	const theme = useTheme();
 	return (
 		<HideOnScroll>
@@ -136,7 +136,7 @@ export const Navbar = () => {
 							{pages.filter(
 								// filter out pages that should not be in the navbar
 								// i.e., only one slash, or includeInNavbar is true
-								(page) => ((page["path"].split("/").length === 2 && page["includeInNavbar"] !== false) || (page["includeInNavbar"] === true))
+								(page) => ((page["path"].split("/").length === 2 && !page["includeInNavbar"] !== false) || (page["includeInNavbar"] === true))
 							).map((page, index) => {return (
 								<LinkTab
 									href={page.path}

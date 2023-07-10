@@ -1,9 +1,10 @@
-'use client'
 import {
     RouterBreadcrumb,
 } from '../components';
 
 import { HeroLayout } from './HeroLayout';
+
+import { useEffect } from 'react';
 
 /**
  * Layout for resources pages (workshops, projects, etc.)
@@ -16,6 +17,10 @@ import { HeroLayout } from './HeroLayout';
  * @return {JSX.Element} Resource layout component
  */
 export const ResourceLayout = ({ children, title, picture, id, position, height }) => {
+    useEffect(() => {
+        document.title = `GDSC UTM - ${title}`;
+    }, [title]);
+
     return (
         <HeroLayout title={title} picture={picture} id={id} position={position} height={height}>
             <RouterBreadcrumb />

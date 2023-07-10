@@ -9,11 +9,15 @@ import {
 import BannerImg from '../../../assets/website_proprietary/heroes/IMG_2746.jpg';
 import {
 	TableOfContents,
+	WorkshopWidget
 } from '../../../components';
 import workshops from '../../../data/workshops.json';
-import { WorkshopWidget } from './Workshop';
 
 import { ResourceLayout } from '../../../layouts/ResourcesSubPageLayout';
+
+// export const metadata = {
+//  title: 'Workshop Archive',
+// }
 
 /**
  * @return {JSX.Element} Workshop page component

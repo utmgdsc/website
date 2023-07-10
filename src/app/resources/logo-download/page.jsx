@@ -11,6 +11,10 @@ import {
 	Link,
 } from '../../../components';
 
+// export const metadata = {
+//  title: 'Logo Download',
+// }
+
 /**
  * @return {JSX.Element} Brand resources page component
  */
