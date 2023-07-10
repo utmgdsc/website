@@ -34,7 +34,7 @@
 		"lint-staged": "^13.1.0",
 		"prettier": "^3.0.0",
 		"react-scripts": "5.0.1",
-		"sass": "^1.62.1",
+		"sass": "^1.63.6",
 		"standardx": "^7.0.0",
 		"url-loader": "^4.1.1",
 		"web-vitals": "^3.3.1"
