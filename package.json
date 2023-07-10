@@ -32,7 +32,7 @@
 		"eslint-plugin-react": "^7.32.1",
 		"husky": "^8.0.3",
 		"lint-staged": "^13.1.0",
-		"prettier": "^2.8.8",
+		"prettier": "^3.0.0",
 		"react-scripts": "5.0.1",
 		"sass": "^1.62.1",
 		"standardx": "^7.0.0",
