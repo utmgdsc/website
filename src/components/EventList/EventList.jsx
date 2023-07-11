@@ -1,21 +1,22 @@
 'use client'
 import {
-  useEffect,
-  useState,
+	useEffect,
+	useState,
 } from 'react';
 import NextLink from "next/link"
 
 import {
-  Grid,
-  Skeleton,
-  Typography,
+	Grid,
+	Skeleton,
+	Typography,
+	Pagination
 } from '@mui/material';
 
 import { ConvertDate } from '../ConvertDate/ConvertDate';
 import { InfoCard } from '../InfoCard/InfoCard';
 import {
-  getDescriptionFromStorage,
-  useLocalStorage,
+	getDescriptionFromStorage,
+	useLocalStorage,
 } from './useLocalStorage';
 
 const CHAPTER_API_URL = "https://gdsc.community.dev/api/chapter/615/event";
@@ -36,14 +37,26 @@ const MAX_DATE = new Date(8640000000000000);
  */
 export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE }) => {
 	const [events, setEvents] = useState([]);
-
 	// needed to show error message as getEvents does not throw error
 	const [error, setError] = useState(false);
 
+	//filters items by year for each page
+	const currYear = parseInt(new Date().getFullYear())
+	const [page, setPage] = useState(currYear)
+	const filteredEvents = events.filter(event => {
+		if (page) {
+			return (
+				event.start_date.slice(0, 4) == page
+			);
+		}
+		return true;
+	});
+	
 	/**
 	 * load external json file from api
 	 * @returns {object} bevy chapter object
 	 */
+
 	const getEvents = async () => {
 		const abortController = new AbortController()
 
@@ -71,6 +84,8 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE }) => {
 
 				// finally set events to eventData
 				setEvents(eventData);
+
+
 			}).catch(error => {
 				// if the query has been aborted, do nothing
 				if (error.name === "AbortError") return;
@@ -102,21 +117,37 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE }) => {
 			</Grid>
 		);
 	}
+	// if no events for specific year, it will display that
+	else if (filteredEvents.length === 0) {
+		return (
+			<div>
+				<Pagination count={currYear - 2019} onChange={(e, val) => { setPage(currYear + 1 - val) }} />
+				<Grid item xs={12}>
+					<Typography variant="h5" component="p" gutterBottom>
+						There were no past events for the year of {page}
+					</Typography>
+				</Grid></div>
+		);
+	}
 
 	return (
-		<Grid container spacing={2}>
-			{events.map((event) => (
-				<Grid key={event["id"]} item xs={12} sm={6} md={4}>
-					<InfoCard
-						subtitle={<ConvertDate date={event["start_date"]} />}
-						title={event["title"]}
-						description={<Description id={event["id"]} />}
-						href={event["url"]}
-					/>
-				</Grid>
-			))}
-		</Grid>
+		<div>
+			<Pagination count={currYear - 2019} onChange={(e, val) => { setPage(currYear + 1 - val) }} />
+			<Grid container spacing={2}>
+				{filteredEvents.map((event) => (
+					<Grid key={event["id"]} item xs={12} sm={6} md={4}>
+						<InfoCard
+							subtitle={<ConvertDate date={event["start_date"]} />}
+							title={event["title"]}
+							description={<Description id={event["id"]} />}
+							href={event["url"]}
+						/>
+					</Grid>
+				))}
+			</Grid></div>
 	);
+
+
 }
 
 /**

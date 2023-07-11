@@ -10,7 +10,7 @@ export const projects = [
 		"description": "QuickTA is a web application designed to give students direct, automated assistance."
 	},
 	{
-		"title": "<br> Schedulr.",
+		"title": "Schedulr",
 		"url": "https://github.com/utmgdsc/schedulr",
 		"description": "Schedulr is a project that creates periods of time to study based on your courses for the semester. Based off of UTM Computer Science Courses."
 	},
@@ -39,11 +39,12 @@ export const projects = [
 		"url": "https://github.com/utmgdsc/UTimeManager",
 		"description": "Plan, Record and Review your weekly schedule"
 	},
-	{
+	/*{
 		"title": "Sustainazon",
 		"url": "https://github.com/utmgdsc/Sustainazon",
 		"description": "Buy what you need at the click of a button, while knowing you're supporting small, environmentally-friendly businesses."
 	},
+	*/
 	{
 		"title": "ActNow",
 		"url": "https://github.com/utmgdsc/ActNow",
@@ -71,7 +72,7 @@ export const projects = [
 	},
 	{
 		"title": "GDSC Website",
-		"url": "/",
+		"url": "https://github.com/utmgdsc/website",
 		"description": "Yes. This website."
 	},
 	{
