@@ -115,7 +115,7 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = "30rem"
 				</>
 				:
 				null
-				 }
+				}
 			</div>
 		</>
 	)
