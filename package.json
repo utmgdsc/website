@@ -21,6 +21,7 @@
 	},
 	"devDependencies": {
 		"@babel/preset-typescript": "^7.22.5",
+		"@next/eslint-plugin-next": "^13.4.10",
 		"@svgr/webpack": "^8.0.1",
 		"@testing-library/jest-dom": "^5.16.1",
 		"@testing-library/react": "^14.0.0",
@@ -43,7 +44,8 @@
 		"start": "next start",
 		"build": "next build",
 		"dev": "next dev",
-		"lint": "next lint"
+		"lint": "next lint",
+		"pretty": "prettier --write \"./**/*.{js,jsx,ts,tsx,json}\""
 	},
 	"browserslist": {
 		"production": [
@@ -62,15 +64,10 @@
 			"pre-commit": "lint-staged"
 		}
 	},
-	"lint-staged": {
-		"*.{js,jsx}": [
-			"prettier --write",
-			"eslint --fix",
-			"git add"
-		],
-		"*.{html,css,less,ejs}": [
-			"prettier --write",
-			"git add"
-		]
+	"prettier": {
+		"tabWidth": 4,
+		"useTabs": true,
+		"singleQuote": true,
+		"printWidth": 120
 	}
 }
