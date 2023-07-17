@@ -26,8 +26,9 @@ Except where otherwise noted, the is project is licensed under the [LGPL 2.0 or 
 	```
 
 * initialize the pre-commit hook:
+	> **Note**: Husky will error if you are using GitHub Desktop on Windows. If this is the case, skip this step.
 	```sh
-	> npx husky install # note this leave you with issues when committing with GitHub desktop on Windows
+	> npx husky install
 	```
 
 * start the app:
@@ -65,7 +66,7 @@ As of commit [a414b04](https://github.com/utmgdsc/website/commit/a414b0440bb1144
 
 
 ### Adding a new Workshop
-> Note: You must have GitHub action permissions to add a new workshop.
+> **Note**: You must have GitHub action permissions to add a new workshop.
 
 1. Navigate to the [Create Workshop](https://github.com/utmgdsc/website/actions/workflows/create-workshop-pull-request.yml) GitHub action.
 2. Click the `Run workflow` button.
