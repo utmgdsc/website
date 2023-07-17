@@ -82,13 +82,12 @@ As of commit [a414b04](https://github.com/utmgdsc/website/commit/a414b0440bb1144
 5. Commit and push the changes to the `develop` branch, then PR and merge! ^-^
 
 ## Learn More
-
 To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 - [Customizing Material UI](https://mui.com/material-ui/customization/how-to-customize/) - approaches to customizing Material UI.
--
+
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ## Contact
