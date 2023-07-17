@@ -15,18 +15,13 @@ Except where otherwise noted, the is project is licensed under the [LGPL 2.0 or 
 
 ## Getting Started
 
-* install npm:
-	```sh
-	> npm install npm@latest -g
-	```
-
 * install dependencies:
 	```sh
 	> npm install
 	```
 
 * initialize the pre-commit hook:
-	> **Note**: Husky will error if you are using GitHub Desktop on Windows. If this is the case, skip this step.
+	> **Note**: Husky will error if you are using GitHub Desktop on Windows. If this is the case, skip this step or uninstall the hook by running `npx husky uninstall` in the root project directory.
 	```sh
 	> npx husky install
 	```
@@ -77,7 +72,7 @@ As of commit [a414b04](https://github.com/utmgdsc/website/commit/a414b0440bb1144
 7. Merge, and you're done!
 
 ### Updating the Team List
-> Note: You must have push access to [our private submodule](https://github.com/utmgdsc/website_proprietary) to update the team list.
+> **Note**: You must have push access to [our private submodule](https://github.com/utmgdsc/website_proprietary) to update the team list.
 
 1. Navigate to the private team list image repository and remove all images from the `team` folder.
 2. Add the new team member images to the `team` folder.
