@@ -39,12 +39,12 @@ export const projects = [
 		"url": "https://github.com/utmgdsc/UTimeManager",
 		"description": "Plan, Record and Review your weekly schedule"
 	},
-	/*{
+	{
 		"title": "Sustainazon",
 		"url": "https://github.com/utmgdsc/Sustainazon",
 		"description": "Buy what you need at the click of a button, while knowing you're supporting small, environmentally-friendly businesses."
 	},
-	*/
+
 	{
 		"title": "ActNow",
 		"url": "https://github.com/utmgdsc/ActNow",
@@ -84,5 +84,5 @@ export const projects = [
 		"title": "CSC209 Website Extension",
 		"url": "https://github.com/utmgdsc/2023-csc209h5s-extension",
 		"description": "A Chrome extension that enhances CSC209's web interface."
-	}
+	},
 ]

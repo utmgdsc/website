@@ -2,6 +2,7 @@
 import {
 	useEffect,
 	useState,
+	Fragment
 } from 'react';
 import NextLink from "next/link"
 
@@ -9,7 +10,8 @@ import {
 	Grid,
 	Skeleton,
 	Typography,
-	Pagination
+	Tab,
+	Tabs
 } from '@mui/material';
 
 import { ConvertDate } from '../ConvertDate/ConvertDate';
@@ -40,18 +42,19 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE }) => {
 	// needed to show error message as getEvents does not throw error
 	const [error, setError] = useState(false);
 
-	//filters items by year for each page
-	const currYear = parseInt(new Date().getFullYear())
-	const [page, setPage] = useState(currYear)
+	// stores information used in MUI tabs
+	const [page, setPage] = useState(0)
+	const [yearList, setYearList] = useState()
+
+	// Represents a list of filtered events based on the current MUI tab (year) selected
 	const filteredEvents = events.filter(event => {
-		if (page) {
+		if (yearList) {
 			return (
-				event.start_date.slice(0, 4) == page
+				event.start_date.slice(0, 4) == yearList[page]
 			);
 		}
 		return true;
 	});
-	
 	/**
 	 * load external json file from api
 	 * @returns {object} bevy chapter object
@@ -82,9 +85,9 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE }) => {
 					return endDate >= from && endDate < to;
 				});
 
-				// finally set events to eventData
+				// finally set events to eventData, and set yearList to the sorted list of unique years in eventData
 				setEvents(eventData);
-
+				setYearList(eventData.map(event => new Date(event["start_date"]).getFullYear()).filter((value, index, self) => self.indexOf(value) === index))
 
 			}).catch(error => {
 				// if the query has been aborted, do nothing
@@ -117,22 +120,14 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE }) => {
 			</Grid>
 		);
 	}
-	// if no events for specific year, it will display that
-	else if (filteredEvents.length === 0) {
-		return (
-			<div>
-				<Pagination count={currYear - 2019} onChange={(e, val) => { setPage(currYear + 1 - val) }} />
-				<Grid item xs={12}>
-					<Typography variant="h5" component="p" gutterBottom>
-						There were no past events for the year of {page}
-					</Typography>
-				</Grid></div>
-		);
-	}
 
 	return (
-		<div>
-			<Pagination count={currYear - 2019} onChange={(e, val) => { setPage(currYear + 1 - val) }} />
+		<Fragment>
+			<Tabs value={page} onChange={(e, index) => { setPage(index)}}>
+					{yearList.map((year) => (
+						<Tab label={year} />
+					))}
+				</Tabs>
 			<Grid container spacing={2}>
 				{filteredEvents.map((event) => (
 					<Grid key={event["id"]} item xs={12} sm={6} md={4}>
@@ -144,7 +139,7 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE }) => {
 						/>
 					</Grid>
 				))}
-			</Grid></div>
+			</Grid></Fragment>
 	);
 
 

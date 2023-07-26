@@ -3,7 +3,8 @@
 import {
 	Grid,
 	Typography,
-	Pagination
+	Tab,
+	Tabs
 } from '@mui/material';
 
 import {
@@ -13,56 +14,71 @@ import { projects } from '../../data/projects.js';
 import BannerImg from '../../assets/website_proprietary/heroes/IMG_4712.jpg';
 import { useEffect, useState } from 'react';
 import { HeroLayout } from '../../layouts/HeroLayout';
-import { ConvertDate } from '../../components/ConvertDate/ConvertDate';
 
 const ProjectPage = () => {
-	
+	const [page, setPage] = useState(0)
+	const [yearList, setYearList] = useState()
 	const [projectList, setProjectList] = useState()
-	const currYear = parseInt(new Date().getFullYear())
-	const [page, setPage] = useState(currYear)
+
+	// Represents a list of filtered projects based on the current MUI tab selected
 	const filteredProjects = (
 		projectList ? projectList.filter(project => {
-			if (page) {
+			if (yearList) {
 				return (
-					project.date.getFullYear() == page
+					project.date.getFullYear() == yearList[page]
 				);
 			}
 			return true;
 		}) : []
 	)
-
+	
+	// fetch data from API and cache in localstorage
 	const getProjectInfo = async () => {
-			//check if the localstorage cache exists
+		// if the localstorage cache doesn't already exist, or the github API was called over an hour ago, fetch the data from API
+		// because time is measured in milliseconds, I divide the difference in time from last call time and current time by 3600000 to convert to hours
 		if ((!localStorage.getItem('time_stamp')) || (((localStorage.getItem('time_stamp') - new Date()) / 3600000) > 1)) {
 			localStorage.setItem('time_stamp', new Date())
 			var projectResults = {}
-
-
 			for (const project of projects) {
-				await fetch('https://api.github.com/repos/utmgdsc/' + project.url.slice(27) + '/commits')
+				if (!project.date) {
+					await fetch('https://api.github.com/repos/' + project.url.slice(19) + '/commits')
 					.then(response => response.json())
 					.then(response => projectResults[project.title] = response[0].commit.committer.date)
-					.then(localStorage.setItem('projects', JSON.stringify(projectResults)))
+				}
+				
 			}
+
+			// store API data in a dictionary in localstorage
+			localStorage.setItem('projects', JSON.stringify(projectResults))
 
 
 		}
 		var fetchedProjects = JSON.parse(localStorage.getItem('projects'))
 
-		//join results from api with hardcoded projects list
-		setProjectList(projects.map((project) => ({
-			title: project.title,
-			url: project.url,
-			description: project.description,
-			date: new Date(fetchedProjects[project.title])
+		// join results from api with hardcoded projects list
+		if (fetchedProjects) {
+			setProjectList(projects.map((project) => ({
+				title: project.title,
+				url: project.url,
+				description: project.description,
+				date: project.date ? new Date(project.date) : new Date(fetchedProjects[project.title])
+			})).sort((e1, e2) => {
+				return e2.date - e1.date
+			}))
+
+			// get all unique years in projects list
+			setYearList(projects.map(project => (new Date(fetchedProjects[project.title])).getFullYear()).filter((value, index, self) => self.indexOf(value) === index).sort((e1, e2) => {
+				return e2 - e1
+			}))
 		}
-		)).sort((e1, e2) => {
-			return e2.date - e1.date
-		}))
 
 	}
 
-
+	/**
+	 * Returns the term given a date object
+	 * @param {Date} date to convert
+	 * @returns {string} the term as a string
+	 */
 	function getTerm(date) {
 		if (date.getMonth() < 4) {
 			return ("Winter")
@@ -92,7 +108,11 @@ const ProjectPage = () => {
 
 	return (
 		<HeroLayout title="GDSC Projects" picture={BannerImg} position="bottom" id="projects">
-			<Pagination count={currYear - 2020} onChange={(e, val) => { setPage(currYear + 1 - val) }} />
+			<Tabs value={page} onChange={(e, index) => { setPage(index) }}>
+				{yearList.map((year) => (
+					<Tab label={year} />
+				))}
+			</Tabs>
 			<Grid container spacing={2}>
 				{filteredProjects.map((project, id) => (
 					<Grid key={id} item xs={12} sm={6} md={4}>
