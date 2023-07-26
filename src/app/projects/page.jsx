@@ -36,6 +36,8 @@ const ProjectPage = () => {
 	const getProjectInfo = async () => {
 		// if the localstorage cache doesn't already exist, or the github API was called over an hour ago, fetch the data from API
 		// because time is measured in milliseconds, I divide the difference in time from last call time and current time by 3600000 to convert to hours
+
+		// Added date property to projects.js, if there is no github link, a hardcoded date will be used instead
 		if ((!localStorage.getItem('time_stamp')) || (((localStorage.getItem('time_stamp') - new Date()) / 3600000) > 1)) {
 			localStorage.setItem('time_stamp', new Date())
 			var projectResults = {}
