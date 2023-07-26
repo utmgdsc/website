@@ -37,7 +37,7 @@ export const Team = ({ teamInfo, title }) => {
 						name={teamMember.name}
 						pronouns={teamMember.pronouns}
 						role={teamMember.role}
-						picture={teamMember.picture === undefined ? DefaultUser : require(`../../assets/website_proprietary/team/${teamMember.picture}`)}
+						picture={DefaultUser}
 					/>
 					))}
 			</div>

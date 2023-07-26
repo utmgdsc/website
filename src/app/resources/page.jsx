@@ -66,11 +66,11 @@ const ResourcesPage = () => {
 			{/* opting to keep FAQ in this page to keep it more visible */}
 			<h2 className="resources" id="faq">Frequently Asked Questions</h2>
 			{
-				faq.map((faq, index) => {
-					return (
-						<FAQ key={index} faq={faq} />
-					);
-				})
+				// faq.map((faq, index) => {
+				// 	return (
+				// 		<FAQ key={index} faq={faq} />
+				// 	);
+				// })
 			}
 		</HeroLayout>
 	)
