@@ -141,8 +141,6 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE }) => {
 				))}
 			</Grid></Fragment>
 	);
-
-
 }
 
 /**
