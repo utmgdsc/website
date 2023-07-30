@@ -1,3 +1,4 @@
+'use client'
 /** @jsxImportSource @emotion/react */
 import React from 'react';
 
@@ -13,7 +14,7 @@ import HeroImage from '../../assets/backgrounds/background.jpg';
 import HeroImageDark from '../../assets/backgrounds/background_dark.jpg';
 import wordmark from '../../assets/graphics/gdscwordmark.svg';
 import { SkeletonLoadedImage } from '..';
-import { THEME } from '../../app/theme';
+import { THEME } from '../../components';
 
 export const HomepageHero = () => {
     const theme = useTheme();

@@ -2,23 +2,19 @@
 /** @jsxImportSource @emotion/react */
 import './App.scss';
 
-import React, { Suspense, useEffect, useMemo } from 'react';
+import React, { Suspense, useEffect } from 'react';
 
 import {
-	createTheme,
-	CssBaseline,
 	LinearProgress,
-	Skeleton,
-	ThemeProvider,
-	useMediaQuery,
+	Skeleton
 } from '@mui/material';
 
 import {
 	ErrorBoundary,
 	Footer,
 	Navbar,
+	ThemeRegistry
 } from '../components';
-import { GoogleTheme, THEME } from "./theme";
 
 import TagManager from 'react-gtm-module';
 
@@ -34,16 +30,6 @@ import TagManager from 'react-gtm-module';
 export default function RootLayout({
 	children,
 }) {
-	const systemTheme = useMediaQuery('(prefers-color-scheme: dark)');
-
-	const theme = useMemo(
-		() =>
-			createTheme(GoogleTheme({
-				mode: systemTheme ? THEME.DARK : THEME.LIGHT,
-			})),
-		[systemTheme],
-	);
-
 	useEffect(() => {
 		const tagManagerArgs = { gtmId: process.env.NEXT_PUBLIC_GTM_ID }
 
@@ -53,8 +39,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body>
-				<ThemeProvider theme={theme}>
-					<CssBaseline enableColorScheme />
+				<ThemeRegistry>
 					<Navbar pages="pages" />
 					<ErrorBoundary fallback={<div></div>} my="25vh">
 						<Suspense fallback={
@@ -69,7 +54,7 @@ export default function RootLayout({
 						</Suspense>
 					</ErrorBoundary>
 					<Footer />
-				</ThemeProvider>
+				</ThemeRegistry>
 			</body>
 		</html>
 	);

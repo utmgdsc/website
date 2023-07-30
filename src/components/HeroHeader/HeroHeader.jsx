@@ -1,3 +1,5 @@
+'use client'
+
 import './HeroHeader.scss';
 import React, {useState, useEffect, useRef} from "react"
 /** @jsxImportSource @emotion/react */
@@ -115,7 +117,7 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = "30rem"
 				</>
 				:
 				null
-				 }
+				}
 			</div>
 		</>
 	)

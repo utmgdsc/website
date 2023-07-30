@@ -1,5 +1,6 @@
+'use client'
+
 /** @jsxImportSource @emotion/react */
-// import React, { useContext } from "react";
 import './Footer.scss';
 
 import {
@@ -25,6 +26,7 @@ import {
 } from '../../data/SocialButton';
 import { ErrorBoundary } from '../ErrorBoundary/ErrorBoundary';
 import { Link } from '../Link/Link';
+import Image from 'next/image';
 
 /**
  * A link for footer-flex. Takes the same props as "a".
@@ -59,7 +61,7 @@ export const Footer = () => {
 				<div id="footer">
 					<div className="logo-group flex-item">
 						<a href="/">
-							<img
+							<Image
 								src={bracket_colourless}
 								className="logo"
 								height="64"

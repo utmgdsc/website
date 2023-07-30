@@ -9,25 +9,26 @@ Google Developer Student Clubs (GDSC) is a student-led community backed by Googl
 
 ## About The Project
 
-This is the official website for the University of Toronto Mississauga Google Developer Student Club (UTM GDSC). The frontend is built with [Next.js](https://nextjs.org/), React, and MUI.
+This is the official website for the University of Toronto Mississauga Google Developer Student Club (UTM GDSC). The frontend is built with [Next.js](https://nextjs.org) with Material UI installed.
 
 Except where otherwise noted, the is project is licensed under the [LGPL 2.0 or later](https://www.gnu.org/licenses/gpl-2.0.html) license.
 
-##  Getting Started
-
-* install npm:
-	```sh
-	> npm install npm@latest -g
-	```
+## Getting Started
 
 * install dependencies:
 	```sh
 	> npm install
 	```
 
+* initialize the pre-commit hook:
+	> **Note**: Husky will error if you are using GitHub Desktop on Windows. If this is the case, skip this step or uninstall the hook by running `npx husky uninstall` in the root project directory.
+	```sh
+	> npx husky install
+	```
+
 * start the app:
 	```sh
-	> npm start
+	> npm run dev
 	```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -60,7 +61,7 @@ As of commit [a414b04](https://github.com/utmgdsc/website/commit/a414b0440bb1144
 
 
 ### Adding a new Workshop
-> Note: You must have GitHub action permissions to add a new workshop.
+> **Note**: You must have GitHub action permissions to add a new workshop.
 
 1. Navigate to the [Create Workshop](https://github.com/utmgdsc/website/actions/workflows/create-workshop-pull-request.yml) GitHub action.
 2. Click the `Run workflow` button.
@@ -71,7 +72,7 @@ As of commit [a414b04](https://github.com/utmgdsc/website/commit/a414b0440bb1144
 7. Merge, and you're done!
 
 ### Updating the Team List
-> Note: You must have push access to [our private submodule](https://github.com/utmgdsc/website_proprietary) to update the team list.
+> **Note**: You must have push access to [our private submodule](https://github.com/utmgdsc/website_proprietary) to update the team list.
 
 1. Navigate to the private team list image repository and remove all images from the `team` folder.
 2. Add the new team member images to the `team` folder.
@@ -81,11 +82,11 @@ As of commit [a414b04](https://github.com/utmgdsc/website/commit/a414b0440bb1144
 5. Commit and push the changes to the `develop` branch, then PR and merge! ^-^
 
 ## Learn More
-
 To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Customizing Material UI](https://mui.com/material-ui/customization/how-to-customize/) - approaches to customizing Material UI.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 

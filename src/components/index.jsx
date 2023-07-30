@@ -2,7 +2,6 @@
  * @fileoverview This file exports all the components in the components folder
  */
 export { ConvertDate } from './ConvertDate/ConvertDate';
-export { Team } from './Team/Team';
 export { ErrorBoundary } from './ErrorBoundary/ErrorBoundary';
 export { EventList } from './EventList/EventList';
 export { ExpiryContainer } from './ExpiryContainer/ExpiryContainer';
@@ -19,5 +18,8 @@ export { Navbar } from './Navbar/Navbar';
 export { RouterBreadcrumb } from './RouterBreadcrumb/RouterBreadcrumb';
 export { SkeletonLoadedImage } from './SkeletonLoadedImage/SkeletonLoadedImage';
 export { TableOfContents } from './TableOfContents/TableOfContents';
+export { Team } from './Team/Team';
+export { THEME } from './ThemeRegistry/theme';
+export { ThemeRegistry } from './ThemeRegistry/ThemeRegistry';
 export { WorkshopButton } from './WorkshopButton/WorkshopButton';
 export { WorkshopWidget } from './WorkshopWidget/WorkshopWidget';

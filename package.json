@@ -13,7 +13,7 @@
 		"@emotion/styled": "^11.10.5",
 		"@mui/icons-material": "^5.14.0",
 		"@mui/material": "^5.14.0",
-		"next": "^13.4.10",
+		"next": "^13.4.12",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-gtm-module": "^2.0.11",
@@ -21,6 +21,7 @@
 	},
 	"devDependencies": {
 		"@babel/preset-typescript": "^7.22.5",
+		"@next/eslint-plugin-next": "^13.4.12",
 		"@svgr/webpack": "^8.0.1",
 		"@testing-library/jest-dom": "^5.16.1",
 		"@testing-library/react": "^14.0.0",
@@ -29,12 +30,12 @@
 		"eslint-plugin-import": "^2.27.5",
 		"eslint-plugin-n": "^16.0.1",
 		"eslint-plugin-promise": "^6.1.1",
-		"eslint-plugin-react": "^7.32.1",
+		"eslint-plugin-react": "^7.33.0",
 		"husky": "^8.0.3",
-		"lint-staged": "^13.1.0",
+		"lint-staged": "^13.2.3",
 		"prettier": "^3.0.0",
 		"react-scripts": "5.0.1",
-		"sass": "^1.63.6",
+		"sass": "^1.64.1",
 		"standardx": "^7.0.0",
 		"url-loader": "^4.1.1",
 		"web-vitals": "^3.4.0"
@@ -43,7 +44,8 @@
 		"start": "next start",
 		"build": "next build",
 		"dev": "next dev",
-		"lint": "next lint"
+		"lint": "next lint",
+		"pretty": "prettier --write \"./**/*.{js,jsx,ts,tsx,json}\""
 	},
 	"browserslist": {
 		"production": [
@@ -62,15 +64,10 @@
 			"pre-commit": "lint-staged"
 		}
 	},
-	"lint-staged": {
-		"*.{js,jsx}": [
-			"prettier --write",
-			"eslint --fix",
-			"git add"
-		],
-		"*.{html,css,less,ejs}": [
-			"prettier --write",
-			"git add"
-		]
+	"prettier": {
+		"tabWidth": 4,
+		"useTabs": true,
+		"singleQuote": true,
+		"printWidth": 120
 	}
 }
