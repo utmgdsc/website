@@ -57,7 +57,7 @@ NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
 ```
 
 ### Updating the Navbar
-As of commit [a414b04](https://github.com/utmgdsc/website/commit/a414b0440bb11440ceb96d05d8d7da0d856da6cd), the navbar is generated from a JS object. To update the navbar, edit [NavbarTabData.jsx](https://github.com/utmgdsc/website/blob/main/src/data/NavbarTabData.jsx).
+As of commit [a414b04](https://github.com/utmgdsc/website/commit/a414b0440bb11440ceb96d05d8d7da0d856da6cd), the navbar is generated from a JS object. To update the navbar, edit [NavbarTabData.js](https://github.com/utmgdsc/website/blob/main/src/data/NavbarTabData.js).
 
 
 ### Adding a new Workshop
