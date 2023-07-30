@@ -9,6 +9,7 @@ import { Analytics, ErrorBoundary, Footer, Navbar, ThemeRegistry } from '../comp
 export const metadata = {
 	title: {
 		default: "GDSC UTM",
+		template: "%s - GDSC UTM",
 	},
 	description: "GDSC is a student-led community backed by Google Developers aimed at empowering undergraduate students from all disciplines to grow their knowledge in technology, build solutions for their local communities, and connect with other members from the Google community.",
 }

@@ -7,7 +7,7 @@ import estelle from '../assets/graphics/sad_mascot.png';
 import estelle_dark from '../assets/graphics/sad_mascot_dark.png';
 
 export const metadata = {
-	title: "GDSC UTM - 404",
+	title: "404 - GDSC UTM",
 };
 
 const PageNotFound = () => {

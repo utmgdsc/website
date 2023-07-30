@@ -1,8 +1,8 @@
 'use client';
 
 /**
- * `use client` directive placed as all MUI components are client-side only and
- * thus should be client components
+ * `use client` directive placed here to avoid weird Emotion errors (when placing
+ * them in each component) and to avoid typing it in each component.
  *
  * @see https://nextjs.org/docs/getting-started/react-essentials#client-components
  * @fileoverview This file exports all the components in the components folder

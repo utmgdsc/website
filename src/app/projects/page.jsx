@@ -12,13 +12,13 @@ import BannerImg from '../../assets/website_proprietary/heroes/IMG_4712.jpg';
 import { HeroLayout } from '../../layouts/HeroLayout';
 
 export const metadata = {
-	title: 'GDSC UTM - Projects',
+	title: 'Projects',
 }
 
 const ProjectPage = () => {
 	if (projects.length === 0) {
 		return (
-			<HeroLayout title="GDSC Projects" picture={BannerImg} position="bottom" id="projects">
+			<HeroLayout title={metadata.title} picture={BannerImg} position="bottom" id="projects">
 				<Grid item xs={12}>
 					<Typography variant="h5" component="h2">
 						None yet! Check back soon :)

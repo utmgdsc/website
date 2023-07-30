@@ -10,7 +10,7 @@ import { ErrorBoundary, EventList, ExpiryContainer, HeroHeader, HomepageHero, Te
 import teamMembers from '../data/team.json';
 
 export const metadata = {
-	title: "GDSC UTM - Home",
+	title: "Home - GDSC UTM",
 };
 
 const Homepage = () => {

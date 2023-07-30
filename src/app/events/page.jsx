@@ -6,7 +6,7 @@ import { ErrorBoundary, EventList } from '../../components';
 import { HeroLayout } from '../../layouts/HeroLayout';
 
 export const metadata = {
-	title: 'GDSC UTM - Events',
+	title: 'Events',
 }
 
 /**
@@ -14,7 +14,7 @@ export const metadata = {
  */
 const Events = () => {
 	return (
-		<HeroLayout title="Events" picture={BannerImg} position="bottom" id="events">
+		<HeroLayout title={metadata.title} picture={BannerImg} position="bottom" id="events">
 			<section>
 				<Typography
 					color="text.primary"

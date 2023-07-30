@@ -5,7 +5,7 @@ import { Link } from '../../../components';
 import { ResourceLayout } from '../../../layouts/ResourcesSubPageLayout';
 
 export const metadata = {
-	title: 'GDSC UTM - Logo Download',
+	title: 'Logo Download',
 }
 
 /**
@@ -13,7 +13,7 @@ export const metadata = {
  */
 const BrandResources = () => {
 	return (
-		<ResourceLayout id="events" title="Logo download" picture={BannerImg}>
+		<ResourceLayout id="logo-download" title={metadata.title} picture={BannerImg}>
 			<em>Last updated 2023-01-01</em>
 
 			<section>
