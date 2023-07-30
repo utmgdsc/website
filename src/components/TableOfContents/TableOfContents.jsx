@@ -1,10 +1,8 @@
 import './TableOfContents.scss';
 
-/** @jsxImportSource @emotion/react */
 import { useEffect, useRef, useState } from 'react';
-
-import { Typography } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import { Link } from "../"
+import { Typography, useTheme } from '@mui/material';
 
 /**
  * @returns {JSX.Element} Table of content component
@@ -39,8 +37,8 @@ const TOCHeading = ({ heading, activeId }) => {
 	const theme = useTheme();
 	return (
 		<li key={heading.id} className={heading.id === activeId ? 'active' : ''}>
-			<a
-				css={{ color: theme.palette.text.secondary }}
+			<Link
+				sx={{ color: theme.palette.text.secondary }}
 				href={`#${heading.id}`}
 				onClick={(e) => {
 					e.preventDefault();
@@ -50,13 +48,13 @@ const TOCHeading = ({ heading, activeId }) => {
 				}}
 			>
 				{heading.title}
-			</a>
+			</Link>
 			{heading.items.length > 0 && (
 				<ul>
 					{heading.items.map((child) => (
 						<li key={child.id} className={child.id === activeId ? 'active' : ''}>
-							<a
-								css={{ color: theme.palette.text.secondary }}
+							<Link
+								sx={{ color: theme.palette.text.secondary }}
 								href={`#${child.id}`}
 								onClick={(e) => {
 									e.preventDefault();
@@ -66,7 +64,7 @@ const TOCHeading = ({ heading, activeId }) => {
 								}}
 							>
 								{child.title}
-							</a>
+							</Link>
 						</li>
 					))}
 				</ul>

@@ -36,9 +36,9 @@ const BrandResources = () => {
 					</ul>
 					<li aria-level={1}>
 						Logo guidelines:{' '}
-						<a href="https://goo.gle/gdsc-brand-guide" css={{ textDecorationLine: 'none' }}>
+						<Link external href="https://goo.gle/gdsc-brand-guide" sx={{ textDecorationLine: 'none' }}>
 							https://goo.gle/gdsc-brand-guide
-						</a>
+						</Link>
 						, tl;dr:
 						<ul>
 							<li>use the entirely white logo on coloured backgrounds and not too busy backgrounds</li>

@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import React from 'react';
 
 import Alert from '@mui/material/Alert';
@@ -36,7 +35,7 @@ export class ErrorBoundary extends React.Component {
 			return (
 				<Alert
 					severity="error"
-					css={{
+					sx={{
 						marginTop: this.props.my ? this.props.my : null,
 						marginBottom: this.props.my ? this.props.my : null,
 					}}
@@ -46,7 +45,7 @@ export class ErrorBoundary extends React.Component {
 							? this.state.error.toString()
 							: 'Something went wrong :('}
 					</AlertTitle>
-					<details css={{ whiteSpace: 'pre-wrap' }}>
+					<details style={{ whiteSpace: 'pre-wrap' }}>
 						<summary>See stack trace</summary>
 						<pre>{this.state.errorInfo.componentStack}</pre>
 					</details>

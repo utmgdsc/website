@@ -18,6 +18,7 @@ export const SkeletonLoadedImage = (props) => {
 				position: 'relative',
 				width: props?.fill ? '100%' : undefined,
 				height: props?.fill ? '100%' : undefined,
+				...props?.sx,
 			}}
 		>
 			<Image

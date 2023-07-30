@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import React from 'react';
 
 import { alpha, Box, Container, Typography, useTheme } from '@mui/material';
@@ -53,7 +52,7 @@ export const HomepageHero = () => {
 							alt="Google Developer Student Clubs University of Toronto Mississauga"
 							id="gdsc-wordmark"
 							src={wordmark}
-							css={{ objectFit: 'contain' }}
+							sx={{ objectFit: 'contain' }}
 							fill="100%"
 						/>
 					</Typography>

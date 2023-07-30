@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import './Footer.scss';
 
 import { Box, ButtonGroup, Container, Typography } from '@mui/material';
@@ -17,8 +16,7 @@ import {
 	TwitterButton,
 	YouTubeButton,
 } from '../../data/SocialButton';
-import { ErrorBoundary } from '../ErrorBoundary/ErrorBoundary';
-import { Link } from '../Link/Link';
+import { ErrorBoundary, Link } from '../';
 import Image from 'next/image';
 
 /**
@@ -28,7 +26,7 @@ import Image from 'next/image';
  */
 const FooterLink = styled((props) => (
 	<li>
-		<Link className={'link'} css={{ color: 'inherit' }} {...props} />
+		<Link className={'link'} sx={{ color: 'inherit' }} {...props} />
 	</li>
 ))(({ theme }) => ({
 	color: theme.palette.text.secondary,
@@ -53,7 +51,7 @@ export const Footer = () => {
 			<Container maxWidth="xl">
 				<div id="footer">
 					<div className="logo-group flex-item">
-						<a href="/">
+						<Link href="/">
 							<Image
 								src={bracket_colourless}
 								className="logo"
@@ -62,7 +60,7 @@ export const Footer = () => {
 								draggable="false"
 								alt="UTM GDSC logo"
 							/>
-						</a>
+						</Link>
 					</div>
 
 					{/* just so that proper heading hierarchy is maintained */}
@@ -105,7 +103,7 @@ export const Footer = () => {
 				</div>
 
 				<div className="footer-text">
-					<ul className="links-flex" css={{ paddingTop: '1em', flexGrow: 1 }}>
+					<ul className="links-flex" style={{ paddingTop: '1em', flexGrow: 1 }}>
 						<FooterLink
 							className="link"
 							href="https://github.com/utmgdsc/website/issues/new/choose"

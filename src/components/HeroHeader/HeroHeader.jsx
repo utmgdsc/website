@@ -1,6 +1,5 @@
 import './HeroHeader.scss';
 import React, { useState, useEffect, useRef } from 'react';
-/** @jsxImportSource @emotion/react */
 import { Container, Skeleton, Typography } from '@mui/material';
 
 import Image from 'next/image';

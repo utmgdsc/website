@@ -1,7 +1,5 @@
 import './Navbar.scss';
 
-/** @jsxImportSource @emotion/react */
-
 import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
@@ -69,7 +67,7 @@ export const Navbar = () => {
 										height="48px"
 										width="48px"
 										draggable="false"
-										css={{ userSelect: 'none' }}
+										style={{ userSelect: 'none' }}
 									/>
 								</picture>
 							</Fab>

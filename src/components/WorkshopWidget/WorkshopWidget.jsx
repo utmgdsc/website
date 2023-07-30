@@ -1,5 +1,4 @@
 import { Code, ExpandMore, RadioButtonChecked, Slideshow } from '@mui/icons-material';
-/** @jsxImportSource @emotion/react */
 import { Accordion, AccordionDetails, AccordionSummary, CardContent, List, Typography } from '@mui/material';
 
 import { ConvertDate, JoinAnd, WorkshopButton } from '..';
