@@ -52,7 +52,7 @@ export const HomepageHero = () => {
 							alt="Google Developer Student Clubs University of Toronto Mississauga"
 							id="gdsc-wordmark"
 							src={wordmark}
-							sx={{ objectFit: 'contain' }}
+							style={{ objectFit: 'contain' }}
 							fill="100%"
 						/>
 					</Typography>
