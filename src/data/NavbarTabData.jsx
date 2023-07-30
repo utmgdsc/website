@@ -9,31 +9,31 @@
  */
 export const pages = [
 	{
-		name: "About",
-		path: "/"
+		name: 'About',
+		path: '/',
 	},
 	{
-		name: "Resources",
-		path: "/resources"
+		name: 'Resources',
+		path: '/resources',
 	},
 	{
-		name: "Logo Download",
-		path: "/resources/logo-download",
+		name: 'Logo Download',
+		path: '/resources/logo-download',
 	},
 	{
-		name: "Workshop Archive",
-		path: "/resources/workshops",
+		name: 'Workshop Archive',
+		path: '/resources/workshops',
 	},
 	{
-		name: "Tech Tips",
-		path: "/resources/tips",
+		name: 'Tech Tips',
+		path: '/resources/tips',
 	},
 	{
-		name: "Projects",
-		path: "/projects",
+		name: 'Projects',
+		path: '/projects',
 	},
 	{
-		name: "Events",
-		path: "/events",
-	}
+		name: 'Events',
+		path: '/events',
+	},
 ];

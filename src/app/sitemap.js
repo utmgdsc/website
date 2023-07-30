@@ -1,6 +1,6 @@
-import { pages } from "../data/NavbarTabData"
+import { pages } from '../data/NavbarTabData';
 
-const BASEURL = "https://gdscutm.com"
+const BASEURL = 'https://gdscutm.com';
 
 /**
  * Generates the sitemap for the website. Note that a
@@ -11,13 +11,13 @@ const BASEURL = "https://gdscutm.com"
  * @returns {Array<{url: string, lastModified: Date}} The sitemap
  */
 export default function sitemap() {
-    /** accumulator for the sites defined in NavbarTabData.pages */
-    let acc = [];
-    pages.forEach((item) => {
-        acc.push({
-            url: `${BASEURL}${item.path}`,
-            lastModified: new Date(),
-        })
-    })
-    return acc;
+	/** accumulator for the sites defined in NavbarTabData.pages */
+	let acc = [];
+	pages.forEach((item) => {
+		acc.push({
+			url: `${BASEURL}${item.path}`,
+			lastModified: new Date(),
+		});
+	});
+	return acc;
 }

@@ -1,6 +1,13 @@
+'use client';
+
 /**
+ * `use client` directive placed as all MUI components are client-side only and
+ * thus should be client components
+ *
+ * @see https://nextjs.org/docs/getting-started/react-essentials#client-components
  * @fileoverview This file exports all the components in the components folder
  */
+export { Analytics } from './Analytics/Analytics';
 export { ConvertDate } from './ConvertDate/ConvertDate';
 export { ErrorBoundary } from './ErrorBoundary/ErrorBoundary';
 export { EventList } from './EventList/EventList';
@@ -20,6 +27,7 @@ export { SkeletonLoadedImage } from './SkeletonLoadedImage/SkeletonLoadedImage';
 export { TableOfContents } from './TableOfContents/TableOfContents';
 export { Team } from './Team/Team';
 export { THEME } from './ThemeRegistry/theme';
+export { ThemedImage } from './ThemedImage/ThemedImage';
 export { ThemeRegistry } from './ThemeRegistry/ThemeRegistry';
 export { WorkshopButton } from './WorkshopButton/WorkshopButton';
 export { WorkshopWidget } from './WorkshopWidget/WorkshopWidget';

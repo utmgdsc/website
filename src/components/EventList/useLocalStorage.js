@@ -1,9 +1,8 @@
-'use client'
-import { useState } from "react";
+import { useState } from 'react';
 
 // AO from https://usehooks.com/useLocalStorage/
 export function getDescriptionFromStorage(id) {
-	let events = window.localStorage.getItem("events") || JSON.stringify({});
+	let events = window.localStorage.getItem('events') || JSON.stringify({});
 	if (!JSON.parse(events)[id]) return;
 	return JSON.parse(events)[id];
 }
@@ -12,7 +11,7 @@ export function useLocalStorage(key) {
 	// State to store our value
 	// Pass initial state function to useState so logic is only executed once
 	const [storedValue, setStoredValue] = useState(() => {
-		if (typeof window === "undefined") {
+		if (typeof window === 'undefined') {
 			return;
 		}
 		try {
@@ -28,15 +27,14 @@ export function useLocalStorage(key) {
 	const setValue = (value) => {
 		try {
 			// Allow value to be a function so we have same API as useState
-			const valueToStore =
-				value instanceof Function ? value(storedValue) : value;
+			const valueToStore = value instanceof Function ? value(storedValue) : value;
 			// Save state
 			setStoredValue(valueToStore);
-			const events = JSON.parse(window.localStorage.getItem("events")) || {};
+			const events = JSON.parse(window.localStorage.getItem('events')) || {};
 			// Save to local storage
-			if (typeof window !== "undefined") {
+			if (typeof window !== 'undefined') {
 				events[key] = valueToStore;
-				window.localStorage.setItem("events", JSON.stringify(events));
+				window.localStorage.setItem('events', JSON.stringify(events));
 			}
 		} catch (error) {
 			// A more advanced implementation would handle the error case

@@ -1,5 +1,3 @@
-'use client'
-
 /**
  * returns nothing when expiryDate is in the past
  *

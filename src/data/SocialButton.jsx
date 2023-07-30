@@ -3,19 +3,10 @@
  * Update as needed when adding new social media or removing old ones
  * There is probably a better way to do this but this works for now :)
  */
-import {
-  Email,
-  Facebook,
-  GitHub,
-  Google,
-  Instagram,
-  LinkedIn,
-  Twitter,
-  YouTube,
-} from '@mui/icons-material';
+import { Email, Facebook, GitHub, Google, Instagram, LinkedIn, Twitter, YouTube } from '@mui/icons-material';
 import { SvgIcon } from '@mui/material';
 
-import {ReactComponent as DiscordIcon} from '../assets/graphics/discord.svg';
+import { ReactComponent as DiscordIcon } from '../assets/graphics/discord.svg';
 import { NamedIconButton } from '../components/NamedIconButton/NamedIconButton';
 
 export const CommunityDevButton = (props) => (
@@ -35,7 +26,8 @@ export const InstagramButton = (props) => (
 		icon={<Instagram />}
 		href="https://instagram.com/gdscutm"
 		{...props}
-	/>);
+	/>
+);
 
 export const GitHubButton = (props) => (
 	<NamedIconButton
@@ -44,7 +36,8 @@ export const GitHubButton = (props) => (
 		icon={<GitHub />}
 		href="https://github.com/utmgdsc"
 		{...props}
-	/>);
+	/>
+);
 
 export const TwitterButton = (props) => (
 	<NamedIconButton
@@ -53,7 +46,8 @@ export const TwitterButton = (props) => (
 		icon={<Twitter />}
 		href="https://twitter.com/gdscutm"
 		{...props}
-	/>);
+	/>
+);
 
 export const FacebookButton = (props) => (
 	<NamedIconButton
@@ -62,7 +56,8 @@ export const FacebookButton = (props) => (
 		icon={<Facebook />}
 		href="https://www.facebook.com/gdscuoftmississauga"
 		{...props}
-	/>);
+	/>
+);
 
 export const LinkedInButton = (props) => (
 	<NamedIconButton
@@ -71,7 +66,8 @@ export const LinkedInButton = (props) => (
 		icon={<LinkedIn />}
 		href="https://www.linkedin.com/company/google-developer-student-clubs-uoft-mississauga/"
 		{...props}
-	/>);
+	/>
+);
 
 export const YouTubeButton = (props) => (
 	<NamedIconButton
@@ -80,22 +76,23 @@ export const YouTubeButton = (props) => (
 		icon={<YouTube />}
 		href="https://youtube.com/@gdscutm"
 		{...props}
-	/>);
+	/>
+);
 
 export const EmailButton = (props) => (
-	<NamedIconButton
-		title="Email"
-		tooltip="Email us"
-		icon={<Email />}
-		href="mailto:utmdsc@gmail.com"
-		{...props}
-	/>);
+	<NamedIconButton title="Email" tooltip="Email us" icon={<Email />} href="mailto:utmdsc@gmail.com" {...props} />
+);
 
 export const DiscordButton = (props) => (
 	<NamedIconButton
 		title="Discord Server"
 		tooltip="Join our Discord Server"
-		icon={<SvgIcon><DiscordIcon /></SvgIcon>}
+		icon={
+			<SvgIcon>
+				<DiscordIcon />
+			</SvgIcon>
+		}
 		href="https://discord.gg/AZyYSGbU68"
 		{...props}
-	/>);
+	/>
+);

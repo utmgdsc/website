@@ -18,16 +18,9 @@ export const Team = ({ teamInfo, title }) => {
 
 	return (
 		<>
-			<Typography
-				align="center"
-				component="h3"
-				fontWeight="bold"
-				key={title}
-				marginTop={8}
-				variant="h4"
-				>
+			<Typography align="center" component="h3" fontWeight="bold" key={title} marginTop={8} variant="h4">
 				{/* auto pluralize the title */}
-				{title + (teamInfo.length > 1 ? "s" : "")}
+				{title + (teamInfo.length > 1 ? 's' : '')}
 			</Typography>
 
 			<div className="team">
@@ -37,13 +30,17 @@ export const Team = ({ teamInfo, title }) => {
 						name={teamMember.name}
 						pronouns={teamMember.pronouns}
 						role={teamMember.role}
-						picture={teamMember.picture === undefined ? DefaultUser : require(`../../assets/website_proprietary/team/${teamMember.picture}`)}
+						picture={
+							teamMember.picture === undefined
+								? DefaultUser
+								: require(`../../assets/website_proprietary/team/${teamMember.picture}`)
+						}
 					/>
-					))}
+				))}
 			</div>
 		</>
 	);
-}
+};
 
 /**
  * A single team member
@@ -71,7 +68,7 @@ const Person = ({ name, role, picture, pronouns }) => {
 				<span className="role"> {role}</span>
 			</figcaption>
 		</figure>
-	)
+	);
 };
 
 export default Team;
