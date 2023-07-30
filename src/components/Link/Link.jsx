@@ -1,6 +1,6 @@
-'use client'
+'use client';
 import React from 'react';
-import NextLink from "next/link"
+import NextLink from 'next/link';
 import { OpenInNew } from '@mui/icons-material';
 import { Link as MaterialLink } from '@mui/material';
 
@@ -22,11 +22,12 @@ const NonForwardLink = ({ children, href, external, forwardedRef, noIcon = false
 			component={NextLink}
 			href={href}
 			ref={forwardedRef}
-			rel={external ? "noopener noreferrer" : ""}
-			target={external ? "_blank" : ""}
-			{...props}>
+			rel={external ? 'noopener noreferrer' : ''}
+			target={external ? '_blank' : ''}
+			{...props}
+		>
 			{children}
-			{external && !noIcon &&
+			{external && !noIcon && (
 				// give warning if link is external
 				// https://www.w3.org/TR/WCAG20-TECHS/G201.html
 				<OpenInNew
@@ -34,16 +35,17 @@ const NonForwardLink = ({ children, href, external, forwardedRef, noIcon = false
 					color="inherit"
 					titleAccess="Opens in new tab"
 					sx={{
-						height: "0.8em",
-						marginLeft: "0.3em",
+						height: '0.8em',
+						marginLeft: '0.3em',
 						opacity: 0.8,
-						width: "0.8em",
+						width: '0.8em',
 
-						"&:hover": {
+						'&:hover': {
 							opacity: 1,
 						},
 					}}
-				/>}
+				/>
+			)}
 		</MaterialLink>
 	);
 };

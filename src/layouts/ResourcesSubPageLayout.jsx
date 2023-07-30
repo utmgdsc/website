@@ -1,6 +1,4 @@
-import {
-    RouterBreadcrumb,
-} from '../components';
+import { RouterBreadcrumb } from '../components';
 
 import { HeroLayout } from './HeroLayout';
 
@@ -17,15 +15,15 @@ import { useEffect } from 'react';
  * @return {JSX.Element} Resource layout component
  */
 export const ResourceLayout = ({ children, title, picture, id, position, height }) => {
-    useEffect(() => {
-        document.title = `GDSC UTM - ${title}`;
-    }, [title]);
+	useEffect(() => {
+		document.title = `GDSC UTM - ${title}`;
+	}, [title]);
 
-    return (
-        <HeroLayout title={title} picture={picture} id={id} position={position} height={height}>
-            <RouterBreadcrumb />
-            <br />
-            {children}
-        </HeroLayout>
-    );
-}
+	return (
+		<HeroLayout title={title} picture={picture} id={id} position={position} height={height}>
+			<RouterBreadcrumb />
+			<br />
+			{children}
+		</HeroLayout>
+	);
+};

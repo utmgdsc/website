@@ -1,12 +1,8 @@
-'use client'
+'use client';
 import './TableOfContents.scss';
 
 /** @jsxImportSource @emotion/react */
-import {
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
@@ -20,20 +16,13 @@ export const TableOfContents = () => {
 	useIntersectionObserver(setActiveId);
 	return (
 		<div id="table-of-contents">
-			<Typography
-				fontWeight="bold"
-				color="text.primary"
-				variant="h5"
-				margin="0.83em 0"
-			>
+			<Typography fontWeight="bold" color="text.primary" variant="h5" margin="0.83em 0">
 				On this page
 			</Typography>
 			<nav aria-label="Table of contents">
 				<ul>
 					{nestedHeadings.map((heading, index) => {
-						return (
-							<TOCHeading heading={heading} activeId={activeId} key={index} />
-						);
+						return <TOCHeading heading={heading} activeId={activeId} key={index} />;
 					})}
 				</ul>
 			</nav>
@@ -50,14 +39,14 @@ export const TableOfContents = () => {
 const TOCHeading = ({ heading, activeId }) => {
 	const theme = useTheme();
 	return (
-		<li key={heading.id} className={heading.id === activeId ? "active" : ""}>
+		<li key={heading.id} className={heading.id === activeId ? 'active' : ''}>
 			<a
 				css={{ color: theme.palette.text.secondary }}
 				href={`#${heading.id}`}
 				onClick={(e) => {
 					e.preventDefault();
 					document.querySelector(`#${heading.id}`).scrollIntoView({
-						behavior: "smooth"
+						behavior: 'smooth',
 					});
 				}}
 			>
@@ -66,14 +55,14 @@ const TOCHeading = ({ heading, activeId }) => {
 			{heading.items.length > 0 && (
 				<ul>
 					{heading.items.map((child) => (
-						<li key={child.id} className={child.id === activeId ? "active" : ""}>
+						<li key={child.id} className={child.id === activeId ? 'active' : ''}>
 							<a
 								css={{ color: theme.palette.text.secondary }}
 								href={`#${child.id}`}
 								onClick={(e) => {
 									e.preventDefault();
 									document.querySelector(`#${child.id}`).scrollIntoView({
-										behavior: "smooth"
+										behavior: 'smooth',
 									});
 								}}
 							>
@@ -84,7 +73,7 @@ const TOCHeading = ({ heading, activeId }) => {
 				</ul>
 			)}
 		</li>
-	)
+	);
 };
 
 /**
@@ -96,9 +85,9 @@ const getNestedHeadings = (headingElements) => {
 	headingElements.forEach((heading, index) => {
 		const { innerText: title, id } = heading;
 
-		if (heading.nodeName === "H2") {
+		if (heading.nodeName === 'H2') {
 			nestedHeadings.push({ id, title, items: [] });
-		} else if (heading.nodeName === "H3" && nestedHeadings.length > 0) {
+		} else if (heading.nodeName === 'H3' && nestedHeadings.length > 0) {
 			nestedHeadings[nestedHeadings.length - 1].items.push({
 				id,
 				title,
@@ -116,9 +105,7 @@ const useHeadingsData = () => {
 	const [nestedHeadings, setNestedHeadings] = useState([]);
 
 	useEffect(() => {
-		const headingElements = Array.from(
-			document.querySelectorAll("h2.resources, h3.resources")
-		);
+		const headingElements = Array.from(document.querySelectorAll('h2.resources, h3.resources'));
 
 		const newNestedHeadings = getNestedHeadings(headingElements);
 		setNestedHeadings(newNestedHeadings);
@@ -145,24 +132,23 @@ const useIntersectionObserver = (setActiveId) => {
 				if (headingElement.isIntersecting) visibleHeadings.push(headingElement);
 			});
 
-			const getIndexFromId = (id) =>
-				headingElements.findIndex((heading) => heading.id === id);
+			const getIndexFromId = (id) => headingElements.findIndex((heading) => heading.id === id);
 
 			if (visibleHeadings.length === 1) {
 				setActiveId(visibleHeadings[0].target.id);
 			} else if (visibleHeadings.length > 1) {
 				const sortedVisibleHeadings = visibleHeadings.sort(
-					(a, b) => getIndexFromId(a.target.id) > getIndexFromId(b.target.id)
+					(a, b) => getIndexFromId(a.target.id) > getIndexFromId(b.target.id),
 				);
 				setActiveId(sortedVisibleHeadings[0].target.id);
 			}
 		};
 
 		const observer = new IntersectionObserver(callback, {
-			rootMargin: "0px 0px -40% 0px"
+			rootMargin: '0px 0px -40% 0px',
 		});
 
-		const headingElements = Array.from(document.querySelectorAll("h2.resources, h3.resources"));
+		const headingElements = Array.from(document.querySelectorAll('h2.resources, h3.resources'));
 
 		headingElements.forEach((element) => observer.observe(element));
 

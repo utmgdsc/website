@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
 import { Skeleton } from '@mui/material';
-import Image from "next/image"
+import Image from 'next/image';
 import { Box } from '@mui/material';
 
 /**
@@ -15,11 +15,13 @@ import { Box } from '@mui/material';
  */
 export const SkeletonLoadedImage = (props) => {
 	return (
-		<Box sx={{
-			position:"relative",
-			width: props?.fill ? "100%": undefined,
-			height: props?.fill ? "100%": undefined,
-		}}>
+		<Box
+			sx={{
+				position: 'relative',
+				width: props?.fill ? '100%' : undefined,
+				height: props?.fill ? '100%' : undefined,
+			}}
+		>
 			<Image
 				loading="lazy"
 				alt={props?.alt}
@@ -28,15 +30,19 @@ export const SkeletonLoadedImage = (props) => {
 				}}
 				{...props}
 			/>
-			<Skeleton variant="rectangular" {...props} sx={{
-				zIndex:-1,
-				position:"absolute",
-				top:0,
-				...props?.style,
-				left: 0,
-				right: 0,
-				margin: "0 auto"
-			}}/>
+			<Skeleton
+				variant="rectangular"
+				{...props}
+				sx={{
+					zIndex: -1,
+					position: 'absolute',
+					top: 0,
+					...props?.style,
+					left: 0,
+					right: 0,
+					margin: '0 auto',
+				}}
+			/>
 		</Box>
-	)
-}
+	);
+};

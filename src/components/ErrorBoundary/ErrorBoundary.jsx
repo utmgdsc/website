@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 /** @jsxImportSource @emotion/react */
 import React from 'react';
@@ -27,8 +27,8 @@ export class ErrorBoundary extends React.Component {
 		// Catch errors in any components below and re-render with error message
 		this.setState({
 			error: error,
-			errorInfo: errorInfo
-		})
+			errorInfo: errorInfo,
+		});
 		// You can also log error messages to an error reporting service here
 	}
 
@@ -36,20 +36,21 @@ export class ErrorBoundary extends React.Component {
 		if (this.state.errorInfo) {
 			// Error path
 			return (
-				<Alert severity="error" css={{
-					marginTop: this.props.my ? this.props.my : null,
-					marginBottom: this.props.my ? this.props.my : null,
-				}}>
+				<Alert
+					severity="error"
+					css={{
+						marginTop: this.props.my ? this.props.my : null,
+						marginBottom: this.props.my ? this.props.my : null,
+					}}
+				>
 					<AlertTitle>
-						{
-							this.state.error && this.state.error.toString() ? this.state.error.toString() : "Something went wrong :("
-						}
+						{this.state.error && this.state.error.toString()
+							? this.state.error.toString()
+							: 'Something went wrong :('}
 					</AlertTitle>
-					<details css={{ whiteSpace: "pre-wrap" }}>
+					<details css={{ whiteSpace: 'pre-wrap' }}>
 						<summary>See stack trace</summary>
-						<pre>
-							{this.state.errorInfo.componentStack}
-						</pre>
+						<pre>{this.state.errorInfo.componentStack}</pre>
 					</details>
 				</Alert>
 			);

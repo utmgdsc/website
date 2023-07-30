@@ -7,41 +7,41 @@ export const THEME = {
 	/** Light theme
 	 * @type {string}
 	 */
-	LIGHT: "light",
+	LIGHT: 'light',
 	/** Dark theme
 	 * @type {string}
 	 */
-	DARK: "dark",
+	DARK: 'dark',
 	/** System default theme
 	 * @type {string}
 	 */
-	DEFAULT: "default",
-}
+	DEFAULT: 'default',
+};
 
-export const GoogleTheme = ({mode}) => {
-	return ({
+export const GoogleTheme = ({ mode }) => {
+	return {
 		palette: {
 			mode: mode,
 			primary: {
-				main: "#4285f4",
+				main: '#4285f4',
 			},
 			error: {
-				main: "#ea4335",
+				main: '#ea4335',
 			},
 			warning: {
-				main: "#fbbc04",
+				main: '#fbbc04',
 			},
 			info: {
-				main: "#4285f4",
+				main: '#4285f4',
 			},
 			success: {
-				main: "#0f9d58",
+				main: '#0f9d58',
 			},
 			action: {
 				light: {
-					active: "#000",
-					disabled: "#5f6368",
-				}
+					active: '#000',
+					disabled: '#5f6368',
+				},
 			},
 			// Used by `getContrastText()` to maximize the contrast between
 			// the background and the text.
@@ -53,17 +53,17 @@ export const GoogleTheme = ({mode}) => {
 		},
 		typography: {
 			fontFamily: [
-				"Google Sans Display",
-				"Google Sans",
-				"Product Sans",
-				"-apple-system",
-				"BlinkMacSystemFont",
-				"Segoe UI",
-				"Roboto",
-				"Helvetica Neue",
-				"Arial",
-				"sans-serif"
-			].join(","),
-		}
-	})
+				'Google Sans Display',
+				'Google Sans',
+				'Product Sans',
+				'-apple-system',
+				'BlinkMacSystemFont',
+				'Segoe UI',
+				'Roboto',
+				'Helvetica Neue',
+				'Arial',
+				'sans-serif',
+			].join(','),
+		},
+	};
 };

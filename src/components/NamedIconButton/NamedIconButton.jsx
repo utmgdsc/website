@@ -1,7 +1,4 @@
-import {
-  IconButton,
-  Tooltip,
-} from '@mui/material';
+import { IconButton, Tooltip } from '@mui/material';
 
 /**
  * A icon button with a named label and tooltip.

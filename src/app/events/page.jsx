@@ -1,13 +1,8 @@
-'use client'
-import {
-	Typography,
-} from '@mui/material';
+'use client';
+import { Typography } from '@mui/material';
 
 import BannerImg from '../../assets/website_proprietary/heroes/IMG_1045.png';
-import {
-	ErrorBoundary,
-	EventList,
-} from '../../components';
+import { ErrorBoundary, EventList } from '../../components';
 
 import { HeroLayout } from '../../layouts/HeroLayout';
 
@@ -53,6 +48,6 @@ const Events = () => {
 			</section>
 		</HeroLayout>
 	);
-}
+};
 
 export default Events;

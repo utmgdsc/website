@@ -4,17 +4,17 @@
  * @returns {string} The localized date string
  */
 export const ConvertDate = ({ date }) => {
-    // parse the date string into a date object
-    const dateObj = Date.parse(date);
+	// parse the date string into a date object
+	const dateObj = Date.parse(date);
 
-    // convert the date object into a string with the desired format
-    // undefined to use the browser's locale
-    const dateStr = new Date(dateObj).toLocaleDateString(undefined, {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-    });
+	// convert the date object into a string with the desired format
+	// undefined to use the browser's locale
+	const dateStr = new Date(dateObj).toLocaleDateString(undefined, {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+	});
 
-    // return the date string
-    return dateStr;
-}
+	// return the date string
+	return dateStr;
+};

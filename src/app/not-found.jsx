@@ -1,16 +1,13 @@
-'use client'
+'use client';
 import React from 'react';
 
-import {
-  Container,
-  Typography,
-} from '@mui/material';
+import { Container, Typography } from '@mui/material';
 
-import {useMediaQuery} from '@mui/material';
+import { useMediaQuery } from '@mui/material';
 import estelle from '../assets/graphics/sad_mascot.png';
 import estelle_dark from '../assets/graphics/sad_mascot_dark.png';
 
-import Image from "next/image"
+import Image from 'next/image';
 
 const PageNotFound = () => {
 	const systemTheme = useMediaQuery('(prefers-color-scheme: dark)');
@@ -19,16 +16,16 @@ const PageNotFound = () => {
 			component="main"
 			id="404"
 			sx={{
-				alignItems: "center",
-				display: "flex",
-				flexDirection: "column",
-				fontSize: "50px",
-				height: "100vh",
-				justifyContent: "center",
-				textAlign: "center",
+				alignItems: 'center',
+				display: 'flex',
+				flexDirection: 'column',
+				fontSize: '50px',
+				height: '100vh',
+				justifyContent: 'center',
+				textAlign: 'center',
 			}}
 		>
-			<Image alt="Sad GDSC Mascot" src={systemTheme ? estelle_dark.src : estelle.src} height={600} width={600}/>
+			<Image alt="Sad GDSC Mascot" src={systemTheme ? estelle_dark.src : estelle.src} height={600} width={600} />
 			<Typography variant="h1" component="h1" gutterBottom>
 				404
 			</Typography>

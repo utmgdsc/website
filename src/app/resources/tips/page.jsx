@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { Typography } from '@mui/material';
 
 import { ResourceLayout } from '../../../layouts/ResourcesSubPageLayout';
@@ -18,6 +18,6 @@ const TechTips = () => {
 			</Typography>
 		</ResourceLayout>
 	);
-}
+};
 
 export default TechTips;
