@@ -1,27 +1,19 @@
-'use client';
 import './index.css';
 
-/** @jsxImportSource @emotion/react */
 import React from 'react';
 
 import { Container, Typography } from '@mui/material';
 
 import HeroInfoSesh from '../assets/website_proprietary/heroes/infosession.jpg';
 import HeroTeam from '../assets/website_proprietary/heroes/team.png';
-import { ErrorBoundary, EventList, ExpiryContainer, HeroHeader, HomepageHero } from '../components';
+import { ErrorBoundary, EventList, ExpiryContainer, HeroHeader, HomepageHero, Team } from '../components';
 import teamMembers from '../data/team.json';
 
-const Team = React.lazy(() => import('../components/Team/Team'));
-
-// export const metadata = {
-//  title: "GDSC UTM - Home",
-// }
+export const metadata = {
+	title: "GDSC UTM - Home",
+};
 
 const Homepage = () => {
-	React.useEffect(() => {
-		document.title = 'GDSC UTM - Home';
-	}, []);
-
 	return (
 		<>
 			<main id="home">

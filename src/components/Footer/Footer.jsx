@@ -1,5 +1,3 @@
-'use client';
-
 /** @jsxImportSource @emotion/react */
 import './Footer.scss';
 

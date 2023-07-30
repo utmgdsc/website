@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 
 import { Grid } from '@mui/material';
@@ -11,9 +10,9 @@ import faq from '../../data/faq.json';
 
 import { HeroLayout } from '../../layouts/HeroLayout';
 
-// export const metadata = {
-//  title: 'Resources',
-// }
+export const metadata = {
+	title: 'GDSC UTM - Resources',
+}
 
 /**
  * @returns {JSX.Element} The resources page

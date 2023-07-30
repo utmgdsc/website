@@ -1,9 +1,6 @@
-'use client';
 import { Container } from '@mui/material';
 
 import { HeroHeader } from '../components';
-
-import { useEffect } from 'react';
 
 /**
  * Layout for pages with a hero header (home, about, etc.)
@@ -16,10 +13,6 @@ import { useEffect } from 'react';
  * @return {JSX.Element} Resource layout component
  */
 export const HeroLayout = ({ children, title, picture, id, position, height }) => {
-	useEffect(() => {
-		document.title = `GDSC UTM - ${title}`;
-	}, [title]);
-
 	return (
 		<>
 			<HeroHeader text={title} picture={picture} position={position} height={height} />

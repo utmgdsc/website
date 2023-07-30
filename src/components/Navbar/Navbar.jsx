@@ -1,4 +1,3 @@
-'use client';
 import './Navbar.scss';
 
 /** @jsxImportSource @emotion/react */

@@ -1,15 +1,12 @@
-'use client';
-/** @jsxImportSource @emotion/react */
-
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 import BannerImg from '../../../assets/graphics/sky.png';
-import { ResourceLayout } from '../../../layouts/ResourcesSubPageLayout';
 import { Link } from '../../../components';
+import { ResourceLayout } from '../../../layouts/ResourcesSubPageLayout';
 
-// export const metadata = {
-//  title: 'Logo Download',
-// }
+export const metadata = {
+	title: 'GDSC UTM - Logo Download',
+}
 
 /**
  * @return {JSX.Element} Brand resources page component
@@ -26,15 +23,15 @@ const BrandResources = () => {
 				<ul>
 					<li aria-level={1}>
 						Google colors (in the following order):{' '}
-						<span css={{ color: '#4285F4', fontWeight: 700 }}> #4285F4 </span>
-						<span css={{ color: '#EA4335', fontWeight: 700 }}> #EA4335 </span>
-						<span css={{ color: '#FBBC04', fontWeight: 700 }}> #FBBC04 </span>
-						<span css={{ color: '#34A853', fontWeight: 700 }}> #34A853 </span>
+						<Box component="span" sx={{ color: '#4285F4', fontWeight: 700 }}> #4285F4 </Box>
+						<Box component="span" sx={{ color: '#EA4335', fontWeight: 700 }}> #EA4335 </Box>
+						<Box component="span" sx={{ color: '#FBBC04', fontWeight: 700 }}> #FBBC04 </Box>
+						<Box component="span" sx={{ color: '#34A853', fontWeight: 700 }}> #34A853 </Box>
 					</li>
 					<ul>
 						<li aria-level={2}>
 							Google Logo Grey
-							<span css={{ color: '#656c73', fontWeight: 700 }}> #656c73 </span>
+							<Box component="span" sx={{ color: '#656c73', fontWeight: 700 }}> #656c73 </Box>
 						</li>
 					</ul>
 					<li aria-level={1}>

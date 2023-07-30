@@ -1,16 +1,16 @@
-'use client';
 import React from 'react';
 
 import { Container, Typography } from '@mui/material';
+import { ThemedImage } from '../components';
 
-import { useMediaQuery } from '@mui/material';
 import estelle from '../assets/graphics/sad_mascot.png';
 import estelle_dark from '../assets/graphics/sad_mascot_dark.png';
 
-import Image from 'next/image';
+export const metadata = {
+	title: "GDSC UTM - 404",
+};
 
 const PageNotFound = () => {
-	const systemTheme = useMediaQuery('(prefers-color-scheme: dark)');
 	return (
 		<Container
 			component="main"
@@ -25,7 +25,7 @@ const PageNotFound = () => {
 				textAlign: 'center',
 			}}
 		>
-			<Image alt="Sad GDSC Mascot" src={systemTheme ? estelle_dark.src : estelle.src} height={600} width={600} />
+			<ThemedImage alt="Sad GDSC Mascot" srcLight={estelle.src} srcDark={estelle_dark.src} height={600} width={600} />
 			<Typography variant="h1" component="h1" gutterBottom>
 				404
 			</Typography>

@@ -1,4 +1,3 @@
-'use client';
 import { Typography } from '@mui/material';
 
 import BannerImg from '../../assets/website_proprietary/heroes/IMG_1045.png';
@@ -6,9 +5,9 @@ import { ErrorBoundary, EventList } from '../../components';
 
 import { HeroLayout } from '../../layouts/HeroLayout';
 
-// export const metadata = {
-//  title: 'Events',
-// }
+export const metadata = {
+	title: 'GDSC UTM - Events',
+}
 
 /**
  * @return {JSX.Element} Events page component using EventList

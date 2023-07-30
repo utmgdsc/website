@@ -1,6 +1,3 @@
-'use client';
-/** @jsxImportSource @emotion/react */
-
 import { Box, Grid } from '@mui/material';
 
 import BannerImg from '../../../assets/website_proprietary/heroes/IMG_2746.jpg';
@@ -9,9 +6,9 @@ import workshops from '../../../data/workshops.json';
 
 import { ResourceLayout } from '../../../layouts/ResourcesSubPageLayout';
 
-// export const metadata = {
-//  title: 'Workshop Archive',
-// }
+export const metadata = {
+	title: 'GDSC UTM - Workshop Archive',
+}
 
 /**
  * @return {JSX.Element} Workshop page component
