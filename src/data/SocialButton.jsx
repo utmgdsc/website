@@ -31,8 +31,8 @@ export const InstagramButton = (props) => (
 
 export const GitHubButton = (props) => (
 	<NamedIconButton
-		title="Github"
-		tooltip="Visit our Github organization"
+		title="GitHub"
+		tooltip="Visit our GitHub organization"
 		icon={<GitHub />}
 		href="https://github.com/utmgdsc"
 		{...props}
