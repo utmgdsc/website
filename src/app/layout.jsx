@@ -1,10 +1,9 @@
-'use client';
 import './App.scss';
 
 import React, { Suspense } from 'react';
 
 import { LinearProgress, Skeleton } from '@mui/material';
-
+z
 import { Analytics, ErrorBoundary, Footer, Navbar, ThemeRegistry } from '../components';
 
 export const metadata = {

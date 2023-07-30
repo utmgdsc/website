@@ -1,4 +1,3 @@
-'use client';
 import { useState } from 'react';
 
 // AO from https://usehooks.com/useLocalStorage/
