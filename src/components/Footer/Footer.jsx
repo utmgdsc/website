@@ -1,5 +1,6 @@
+'use client'
+
 /** @jsxImportSource @emotion/react */
-// import React, { useContext } from "react";
 import './Footer.scss';
 
 import {

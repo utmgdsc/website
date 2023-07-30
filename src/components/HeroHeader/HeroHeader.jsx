@@ -1,3 +1,5 @@
+'use client'
+
 import './HeroHeader.scss';
 import React, {useState, useEffect, useRef} from "react"
 /** @jsxImportSource @emotion/react */
