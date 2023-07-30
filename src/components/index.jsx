@@ -1,8 +1,10 @@
 'use client';
 
 /**
- * `use client` directive placed here to prevent weird Emotion error.
+ * `use client` directive placed as all MUI components are client-side only and
+ * thus should be client components
  *
+ * @see https://nextjs.org/docs/getting-started/react-essentials#client-components
  * @fileoverview This file exports all the components in the components folder
  */
 export { Analytics } from './Analytics/Analytics';
