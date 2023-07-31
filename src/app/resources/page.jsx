@@ -1,37 +1,26 @@
-'use client'
 import React from 'react';
 
-import {
-	Grid,
-} from '@mui/material';
+import { Grid } from '@mui/material';
 
 import Brand from '../../assets/graphics/logo_clouds.png';
 import Workshop from '../../assets/website_proprietary/heroes/IMG_2746.jpg';
 import BannerImg from '../../assets/website_proprietary/heroes/IMG_3721.png';
-import {
-	FAQ,
-	ImageLinkCard,
-} from '../../components';
+import { FAQ, ImageLinkCard } from '../../components';
 import faq from '../../data/faq.json';
 
 import { HeroLayout } from '../../layouts/HeroLayout';
 
-// export const metadata = {
-//  title: 'Resources',
-// }
+export const metadata = {
+	title: 'Resources',
+}
 
 /**
  * @returns {JSX.Element} The resources page
  */
 const ResourcesPage = () => {
 	return (
-		<HeroLayout title="Resources" picture={BannerImg} height="15rem" position="bottom" id="resources">
-			<Grid
-				container
-				justifyContent="space-between"
-				spacing={2}
-				alignItems="flex-start"
-			>
+		<HeroLayout title={metadata.title} picture={BannerImg} height="15rem" position="bottom" id="resources">
+			<Grid container justifyContent="space-between" spacing={2} alignItems="flex-start">
 				<Grid item>
 					<ImageLinkCard
 						title="Workshop Archive"
@@ -64,16 +53,14 @@ const ResourcesPage = () => {
 			</Grid>
 
 			{/* opting to keep FAQ in this page to keep it more visible */}
-			<h2 className="resources" id="faq">Frequently Asked Questions</h2>
-			{
-				// faq.map((faq, index) => {
-				// 	return (
-				// 		<FAQ key={index} faq={faq} />
-				// 	);
-				// })
-			}
+			<h2 className="resources" id="faq">
+				Frequently Asked Questions
+			</h2>
+			{faq.map((faq, index) => {
+				return <FAQ key={index} faq={faq} />;
+			})}
 		</HeroLayout>
-	)
-}
+	);
+};
 
 export default ResourcesPage;

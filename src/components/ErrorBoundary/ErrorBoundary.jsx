@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import React from 'react';
 
 import Alert from '@mui/material/Alert';
@@ -10,10 +9,8 @@ import AlertTitle from '@mui/material/AlertTitle';
  *
  * AO from https://reactjs.org/docs/error-boundaries.html
  *
- * @typedef {Object} ErrorBoundaryProps
- * @property {string} [my] margin-top and margin-bottom
- *
- * @extends {React.Component<ErrorBoundaryProps>}
+ * @param {string} my margin-top and margin-bottom
+ * @param {React.ReactNode} children The children to render
  */
 export class ErrorBoundary extends React.Component {
 	constructor(props) {
@@ -25,8 +22,8 @@ export class ErrorBoundary extends React.Component {
 		// Catch errors in any components below and re-render with error message
 		this.setState({
 			error: error,
-			errorInfo: errorInfo
-		})
+			errorInfo: errorInfo,
+		});
 		// You can also log error messages to an error reporting service here
 	}
 
@@ -34,20 +31,21 @@ export class ErrorBoundary extends React.Component {
 		if (this.state.errorInfo) {
 			// Error path
 			return (
-				<Alert severity="error" css={{
-					marginTop: this.props.my ? this.props.my : null,
-					marginBottom: this.props.my ? this.props.my : null,
-				}}>
+				<Alert
+					severity="error"
+					sx={{
+						marginTop: this.props.my ? this.props.my : null,
+						marginBottom: this.props.my ? this.props.my : null,
+					}}
+				>
 					<AlertTitle>
-						{
-							this.state.error && this.state.error.toString() ? this.state.error.toString() : "Something went wrong :("
-						}
+						{this.state.error && this.state.error.toString()
+							? this.state.error.toString()
+							: 'Something went wrong :('}
 					</AlertTitle>
-					<details css={{ whiteSpace: "pre-wrap" }}>
+					<details style={{ whiteSpace: 'pre-wrap' }}>
 						<summary>See stack trace</summary>
-						<pre>
-							{this.state.errorInfo.componentStack}
-						</pre>
+						<pre>{this.state.errorInfo.componentStack}</pre>
 					</details>
 				</Alert>
 			);

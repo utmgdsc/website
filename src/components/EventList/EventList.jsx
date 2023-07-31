@@ -1,4 +1,3 @@
-'use client'
 import {
   useEffect,
   useState,
@@ -21,8 +20,18 @@ import {
 const CHAPTER_API_URL = "https://gdsc.community.dev/api/chapter/615/event";
 const EVENT_API_URL = "https://gdsc.community.dev/api/event/";
 
-// https://262.ecma-international.org/5.1/#sec-15.9.1.1
+/**
+ * Minimum date allowed by JavaScript Date object.
+ * @type {Date}
+ * @see https://262.ecma-international.org/5.1/#sec-15.9.1.1
+ */
 const MIN_DATE = new Date(-8640000000000000);
+
+/**
+ * Maximum date allowed by JavaScript Date object.
+ * @type {Date}
+ * @see https://262.ecma-international.org/5.1/#sec-15.9.1.1
+ */
 const MAX_DATE = new Date(8640000000000000);
 
 /**

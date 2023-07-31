@@ -1,26 +1,20 @@
-'use client'
-import {
-	Typography,
-} from '@mui/material';
+import { Typography } from '@mui/material';
 
 import BannerImg from '../../assets/website_proprietary/heroes/IMG_1045.png';
-import {
-	ErrorBoundary,
-	EventList,
-} from '../../components';
+import { ErrorBoundary, EventList } from '../../components';
 
 import { HeroLayout } from '../../layouts/HeroLayout';
 
-// export const metadata = {
-//  title: 'Events',
-// }
+export const metadata = {
+	title: 'Events',
+}
 
 /**
  * @return {JSX.Element} Events page component using EventList
  */
 const Events = () => {
 	return (
-		<HeroLayout title="Events" picture={BannerImg} position="bottom" id="events">
+		<HeroLayout title={metadata.title} picture={BannerImg} position="bottom" id="events">
 			<section>
 				<Typography
 					color="text.primary"
@@ -53,6 +47,6 @@ const Events = () => {
 			</section>
 		</HeroLayout>
 	);
-}
+};
 
 export default Events;

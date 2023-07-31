@@ -7,8 +7,9 @@ import { SkeletonLoadedImage } from '../SkeletonLoadedImage/SkeletonLoadedImage'
 
 /**
  * Team component. Displays a team with a title and a list of team members
- * @param {Object} teamInfo members data from the json file
+ * @param {{"key": {"name": string; "role": string; "pronouns": string; "picture": string;}}[]} teamInfo members data from the json file
  * @param {string} title title of the team
+ * @returns {JSX.Element} A collection of Person components representing a team
  */
 export const Team = ({ teamInfo, title }) => {
 	// do not return anything if there are no team members in the team
@@ -18,16 +19,9 @@ export const Team = ({ teamInfo, title }) => {
 
 	return (
 		<>
-			<Typography
-				align="center"
-				component="h3"
-				fontWeight="bold"
-				key={title}
-				marginTop={8}
-				variant="h4"
-				>
+			<Typography align="center" component="h3" fontWeight="bold" key={title} marginTop={8} variant="h4">
 				{/* auto pluralize the title */}
-				{title + (teamInfo.length > 1 ? "s" : "")}
+				{title + (teamInfo.length > 1 ? 's' : '')}
 			</Typography>
 
 			<div className="team">
@@ -37,21 +31,25 @@ export const Team = ({ teamInfo, title }) => {
 						name={teamMember.name}
 						pronouns={teamMember.pronouns}
 						role={teamMember.role}
-						picture={DefaultUser}
+						picture={
+							teamMember.picture === undefined
+								? DefaultUser
+								: require(`../../assets/website_proprietary/team/${teamMember.picture}`)
+						}
 					/>
-					))}
+				))}
 			</div>
 		</>
 	);
-}
+};
 
 /**
  * A single team member
  * @param {string} name name of the team member
- * @param {string} pronouns pronouns of the team member
  * @param {string} role role of the team member
  * @param {string} picture picture of the team member
- * @returns {object} a single team member
+ * @param {string} pronouns pronouns of the team member
+ * @returns {JSX.Element} a single team member
  */
 const Person = ({ name, role, picture, pronouns }) => {
 	return (
@@ -71,7 +69,7 @@ const Person = ({ name, role, picture, pronouns }) => {
 				<span className="role"> {role}</span>
 			</figcaption>
 		</figure>
-	)
+	);
 };
 
 export default Team;
