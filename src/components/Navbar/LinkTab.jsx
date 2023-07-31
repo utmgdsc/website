@@ -4,6 +4,7 @@ import { Link } from '../Link/Link';
 
 /**
  * A styled version of the Tab component. It renders a NextJS {@link https://nextjs.org/docs/app/api-reference/components/link | Link} component for the navbar.
+ * @param {TabProps} props - props to pass to the Tab component
  * @returns {JSX.Element} a styled version of the Tab component
  */
 export const LinkTab = styled((props) => <Tab component={Link} {...props} />)(({ theme }) => ({

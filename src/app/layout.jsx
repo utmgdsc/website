@@ -4,11 +4,12 @@ import React, { Suspense } from 'react';
 
 import { LinearProgress, Skeleton } from '@mui/material';
 
-import { Analytics, ErrorBoundary, Footer, Navbar, ThemeRegistry } from '../components';
+import { TagManager, ErrorBoundary, Footer, Navbar, ThemeRegistry } from '../components';
 
 export const metadata = {
 	title: {
 		default: "GDSC UTM",
+		template: "%s - GDSC UTM",
 	},
 	description: "GDSC is a student-led community backed by Google Developers aimed at empowering undergraduate students from all disciplines to grow their knowledge in technology, build solutions for their local communities, and connect with other members from the Google community.",
 }
@@ -18,7 +19,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<body>
-				<Analytics>
+				<TagManager>
 					<ThemeRegistry>
 						<Navbar pages="pages" />
 						<ErrorBoundary fallback={<div></div>} my="25vh">
@@ -37,7 +38,7 @@ export default function RootLayout({ children }) {
 						</ErrorBoundary>
 						<Footer />
 					</ThemeRegistry>
-				</Analytics>
+				</TagManager>
 			</body>
 		</html>
 	);

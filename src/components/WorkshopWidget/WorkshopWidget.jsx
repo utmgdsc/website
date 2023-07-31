@@ -4,7 +4,7 @@ import { Accordion, AccordionDetails, AccordionSummary, CardContent, List, Typog
 import { ConvertDate, JoinAnd, WorkshopButton } from '..';
 
 /**
- * @param {Object} item The workshop item from the workshops.json JSON file
+ * @param {{"key": {name: string; date: Date; host: string[]; description: string; code?: string; slides?: string; recording?: string;}[]}[]} item The workshop item from the workshops.json JSON file
  * @returns {JSX.Element} The workshop widget
  */
 export const WorkshopWidget = ({ item }) => {

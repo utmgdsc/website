@@ -7,7 +7,7 @@ import workshops from '../../../data/workshops.json';
 import { ResourceLayout } from '../../../layouts/ResourcesSubPageLayout';
 
 export const metadata = {
-	title: 'GDSC UTM - Workshop Archive',
+	title: 'Workshop Archive',
 }
 
 /**
@@ -16,7 +16,7 @@ export const metadata = {
 const WorkshopArchive = () => {
 	return (
 		// todo a search bar would be cool
-		<ResourceLayout title="Workshop Archive" picture={BannerImg} id="workshop-archive">
+		<ResourceLayout title={metadata.title} picture={BannerImg} id="workshop-archive">
 			<Grid container spacing={2}>
 				<Grid item md={3}>
 					<TableOfContents />

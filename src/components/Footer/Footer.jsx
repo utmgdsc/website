@@ -22,6 +22,7 @@ import Image from 'next/image';
 /**
  * A link for footer-flex. Takes the same props as "a".
  * @param {Object} props - props to pass to the link, same as "a" element
+ *
  * @return {JSX.Element} Footer link
  */
 const FooterLink = styled((props) => (
@@ -50,7 +51,7 @@ export const Footer = () => {
 		>
 			<Container maxWidth="xl">
 				<div id="footer">
-					<div className="logo-group flex-item">
+					<h2 className="logo-group flex-item">
 						<Link href="/">
 							<Image
 								src={bracket_colourless}
@@ -58,15 +59,10 @@ export const Footer = () => {
 								height="64"
 								width="64"
 								draggable="false"
-								alt="UTM GDSC logo"
+								alt="Footer"
 							/>
 						</Link>
-					</div>
-
-					{/* just so that proper heading hierarchy is maintained */}
-					<Typography variant="h5" component="h5" className="vox-only">
-						Footer
-					</Typography>
+					</h2>
 
 					<div className="footer-flex">
 						<ErrorBoundary>
@@ -78,7 +74,7 @@ export const Footer = () => {
 								Object.keys(footerLinks).map(function (header) {
 									return (
 										<div className="flex-item links-flex" key={header}>
-											<Typography variant="h6" component="h6">
+											<Typography variant="h6" component="h2">
 												{header}
 											</Typography>
 											<ul>

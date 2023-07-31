@@ -1,13 +1,15 @@
+import "./HomepageHero.scss";
 import React from 'react';
-
 import { alpha, Box, Container, Typography, useTheme } from '@mui/material';
-
+import { SkeletonLoadedImage } from '..';
 import HeroImage from '../../assets/backgrounds/background.jpg';
 import HeroImageDark from '../../assets/backgrounds/background_dark.jpg';
 import wordmark from '../../assets/graphics/gdscwordmark.svg';
-import { SkeletonLoadedImage } from '..';
 import { THEME } from '../../components';
 
+/**
+ * @returns {JSX.Element} Hero header for the homepage.
+ */
 export const HomepageHero = () => {
 	const theme = useTheme();
 
@@ -50,10 +52,10 @@ export const HomepageHero = () => {
 					>
 						<SkeletonLoadedImage
 							alt="Google Developer Student Clubs University of Toronto Mississauga"
+							fill="100%"
 							id="gdsc-wordmark"
 							src={wordmark}
 							style={{ objectFit: 'contain' }}
-							fill="100%"
 						/>
 					</Typography>
 				</Container>

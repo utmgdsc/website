@@ -11,7 +11,7 @@ import faq from '../../data/faq.json';
 import { HeroLayout } from '../../layouts/HeroLayout';
 
 export const metadata = {
-	title: 'GDSC UTM - Resources',
+	title: 'Resources',
 }
 
 /**
@@ -19,7 +19,7 @@ export const metadata = {
  */
 const ResourcesPage = () => {
 	return (
-		<HeroLayout title="Resources" picture={BannerImg} height="15rem" position="bottom" id="resources">
+		<HeroLayout title={metadata.title} picture={BannerImg} height="15rem" position="bottom" id="resources">
 			<Grid container justifyContent="space-between" spacing={2} alignItems="flex-start">
 				<Grid item>
 					<ImageLinkCard

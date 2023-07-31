@@ -5,6 +5,7 @@ import { Link } from "../"
 import { Typography, useTheme } from '@mui/material';
 
 /**
+ * Generates a table of contents based on the headings in the page
  * @returns {JSX.Element} Table of content component
  */
 export const TableOfContents = () => {
@@ -29,8 +30,8 @@ export const TableOfContents = () => {
 
 /**
  * TOCHeading component in table of content
- * @param {heading} heading to be shown
- * @param {activeId} current heading id is displayed now
+ * @param {string} heading to be shown
+ * @param {string} activeId current heading id is displayed now
  * @returns {JSX.Element} JSX elements of heading component
  */
 const TOCHeading = ({ heading, activeId }) => {
@@ -75,6 +76,7 @@ const TOCHeading = ({ heading, activeId }) => {
 
 /**
  * Get list of nested headings (h2 elements followed by h3 elements)
+ * @param {HTMLHeadingElement[]} headingElements - list of h2 and h3 elements
  */
 const getNestedHeadings = (headingElements) => {
 	const nestedHeadings = [];
@@ -113,6 +115,7 @@ const useHeadingsData = () => {
 
 /**
  * Check what heading/section the user is browsing and set its id
+ * @param {(activeId: string) => void} setActiveId - function to set the active id
  */
 const useIntersectionObserver = (setActiveId) => {
 	const headingElementsRef = useRef({});

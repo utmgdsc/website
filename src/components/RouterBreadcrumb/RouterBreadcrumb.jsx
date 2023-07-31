@@ -6,12 +6,16 @@ import Typography from '@mui/material/Typography';
 import { pages } from '../../data/NavbarTabData';
 import { Link } from '../Link/Link';
 
-// AO from https://mui.com/material-ui/react-breadcrumbs/#RouterBreadcrumbs.js
+/**
+ * @see https://mui.com/material-ui/react-breadcrumbs/#RouterBreadcrumbs.js
+ * @returns Breadcrumb component based on current URL
+ */
 export const RouterBreadcrumb = () => {
 	/** Split the pathname into an array of strings */
 	const pathnames = usePathname()
 		.split('/')
 		.filter((x) => x);
+
 	return (
 		<Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
 			<Link underline="hover" color="inherit" href={pages[0]['path']}>
