@@ -45,16 +45,18 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 	};
 	return (
 		<>
-			<Skeleton
-				variant="rectangular"
-				animation="wave"
-				sx={{
-					height: height,
-					width: '100%',
-					position: 'absolute',
-					zIndex: -1,
-				}}
-			/>
+			{isLoaded ? null :
+				<Skeleton
+					variant="rectangular"
+					animation="wave"
+					sx={{
+						height: height,
+						width: '100%',
+						position: 'absolute',
+						zIndex: -1,
+					}}
+				/>
+			}
 			<div
 				ref={containerRef}
 				style={{
@@ -82,6 +84,7 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 								top: position === 'top' ? 0 : undefined,
 							}}
 							loading="lazy"
+							onLoadingComplete={() => setIsLoaded(true)}
 							alt=""
 						/>
 						<Container
