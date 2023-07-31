@@ -7,12 +7,12 @@ import { SkeletonLoadedImage } from '../SkeletonLoadedImage/SkeletonLoadedImage'
 
 /**
  * Given a link, this component will render an image and a title in a card format
- * @param {string} link href of the link
- * @param {string} title of the card
- * @param {string} image of the card
- * @param {string} description of the card if applicable
- * @param {string} alt text for the image
- * @param {string} height of the image
+ * @param {string} href href of the link
+ * @param {string} title title of the card
+ * @param {string} image image of the card
+ * @param {string} description description of the card if applicable
+ * @param {string} alt alt text for the image
+ * @param {number} height height of the image
  */
 export const ImageLinkCard = ({ href, title, image, description, alt, height = 140 }) => {
 	// todo for UX add an arrow

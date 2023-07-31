@@ -8,7 +8,7 @@ import { Box } from '@mui/material';
  * @param {boolean} fill - if true, the image will fill the parent container
  * @param {string} alt - alt text for the image
  * @param {string} src - URL of the image
- * @param {Object} style - style object for the image
+ * @param {import('react').CSSProperties} style - style object for the image
  * @return {JSX.Element} image with a skeleton placeholder
  */
 export const SkeletonLoadedImage = (props) => {

@@ -5,6 +5,9 @@ import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/
 
 /**
  * A frequently asked question. Used in the Resources page.
+ *
+ * @param {{question: string, answer: string}[]} faq The frequently asked question
+ *
  * @returns {JSX.Element} The faq widget
  */
 export const FAQ = ({ faq }) => {

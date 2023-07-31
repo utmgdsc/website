@@ -7,6 +7,9 @@ import HeroImageDark from '../../assets/backgrounds/background_dark.jpg';
 import wordmark from '../../assets/graphics/gdscwordmark.svg';
 import { THEME } from '../../components';
 
+/**
+ * @returns {JSX.Element} Hero header for the homepage.
+ */
 export const HomepageHero = () => {
 	const theme = useTheme();
 

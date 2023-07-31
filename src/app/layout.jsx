@@ -4,7 +4,7 @@ import React, { Suspense } from 'react';
 
 import { LinearProgress, Skeleton } from '@mui/material';
 
-import { Analytics, ErrorBoundary, Footer, Navbar, ThemeRegistry } from '../components';
+import { TagManager, ErrorBoundary, Footer, Navbar, ThemeRegistry } from '../components';
 
 export const metadata = {
 	title: {
@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<body>
-				<Analytics>
+				<TagManager>
 					<ThemeRegistry>
 						<Navbar pages="pages" />
 						<ErrorBoundary fallback={<div></div>} my="25vh">
@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
 						</ErrorBoundary>
 						<Footer />
 					</ThemeRegistry>
-				</Analytics>
+				</TagManager>
 			</body>
 		</html>
 	);

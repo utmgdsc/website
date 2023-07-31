@@ -7,7 +7,7 @@
  * @see https://nextjs.org/docs/getting-started/react-essentials#client-components
  * @fileoverview This file exports all the components in the components folder
  */
-export { Analytics } from './Analytics/Analytics';
+export { TagManager } from './TagManager/TagManager';
 export { ConvertDate } from './ConvertDate/ConvertDate';
 export { ErrorBoundary } from './ErrorBoundary/ErrorBoundary';
 export { EventList } from './EventList/EventList';
