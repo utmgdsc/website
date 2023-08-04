@@ -53,9 +53,9 @@ const ResourcesPage = () => {
 			</Grid>
 
 			{/* opting to keep FAQ in this page to keep it more visible */}
-			<h1 className="resources" id="faq">
+			<h2 className="resources" id="faq">
 				Frequently Asked Questions
-			</h1>
+			</h2>
 			{Object.keys(faq).map((category, index) => {
 				return (
 					<Box
@@ -64,9 +64,9 @@ const ResourcesPage = () => {
 						}}
 						key={index}
 					>
-						<Typography color="text.primary" component="h2" variant="h6" marginBottom={2} id={category}>
+						<h3 marginBottom={2} id={category}>
 							{category}
-						</Typography>
+						</h3>
 						{faq[category].map((faq, index) => {
 							return <FAQ key={index} faq={faq} />;
 						})}
