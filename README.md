@@ -81,6 +81,11 @@ As of commit [a414b04](https://github.com/utmgdsc/website/commit/a414b0440bb1144
 	- Note that the `image` field is the name of the image file in the private team list image repository.
 5. Commit and push the changes to the `develop` branch, then PR and merge! ^-^
 
+### Updating the FAQ
+1. Open your favourite text editor and navigate to the [`src/data/faq.json`](https://github.com/utmgdsc/website/blob/main/src/data/faq.json) file.
+2. Follow the schema to update the categories and/or the questions and answers within them.
+3. Commit and push the changes to the `develop` branch, then open a PR and merge! :yum:
+
 ## Learn More
 To learn more about Next.js, take a look at the following resources:
 
