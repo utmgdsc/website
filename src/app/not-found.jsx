@@ -10,7 +10,11 @@ export const metadata = {
 	title: "404 - GDSC UTM",
 };
 
-const PageNotFound = () => {
+/**
+ * 404 page
+ * @see https://nextjs.org/docs/app/api-reference/file-conventions/not-found
+ */
+export default function NotFound() {
 	return (
 		<Container
 			component="main"
@@ -35,5 +39,3 @@ const PageNotFound = () => {
 		</Container>
 	);
 };
-
-export default PageNotFound;

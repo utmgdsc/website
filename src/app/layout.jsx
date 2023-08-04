@@ -1,10 +1,8 @@
 import './App.scss';
 
-import React, { Suspense } from 'react';
+import React from 'react';
 
-import { LinearProgress, Skeleton } from '@mui/material';
-
-import { TagManager, ErrorBoundary, Footer, Navbar, ThemeRegistry } from '../components';
+import { ErrorBoundary, Footer, Navbar, TagManager, ThemeRegistry } from '../components';
 
 export const metadata = {
 	title: {
@@ -23,18 +21,7 @@ export default function RootLayout({ children }) {
 					<ThemeRegistry>
 						<Navbar pages="pages" />
 						<ErrorBoundary fallback={<div></div>} my="25vh">
-							<Suspense
-								fallback={
-									<div css={{ height: '100vh' }}>
-										<LinearProgress title="Page loading" />
-										<div className="hero-header-parallax">
-											<Skeleton variant="rectangular" animation="wave" height="30rem" />
-										</div>
-									</div>
-								}
-							>
-								{children}
-							</Suspense>
+							{children}
 						</ErrorBoundary>
 						<Footer />
 					</ThemeRegistry>
