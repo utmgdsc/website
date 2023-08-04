@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Grid } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 
 import Brand from '../../assets/graphics/logo_clouds.png';
 import Workshop from '../../assets/website_proprietary/heroes/IMG_2746.jpg';
@@ -12,7 +12,7 @@ import { HeroLayout } from '../../layouts/HeroLayout';
 
 export const metadata = {
 	title: 'Resources',
-}
+};
 
 /**
  * @returns {JSX.Element} The resources page
@@ -56,8 +56,22 @@ const ResourcesPage = () => {
 			<h2 className="resources" id="faq">
 				Frequently Asked Questions
 			</h2>
-			{faq.map((faq, index) => {
-				return <FAQ key={index} faq={faq} />;
+			{Object.keys(faq).map((category, index) => {
+				return (
+					<Box
+						sx={{
+							mt: 2,
+						}}
+						key={index}
+					>
+						<h3 marginBottom={2} id={category}>
+							{category}
+						</h3>
+						{faq[category].map((faq, index) => {
+							return <FAQ key={index} faq={faq} />;
+						})}
+					</Box>
+				);
 			})}
 		</HeroLayout>
 	);
