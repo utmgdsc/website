@@ -59,10 +59,10 @@ export const GitHubButton = (props) => (
 
 export const TwitterButton = (props) => (
 	<NamedIconButton
-		title="Twitter"
-		tooltip="Visit our Twitter"
+		title="X"
+		tooltip="Visit our X account"
 		icon={<Twitter />}
-		href="https://twitter.com/gdscutm"
+		href="https://x.com/gdscutm"
 		{...props}
 	/>
 );
