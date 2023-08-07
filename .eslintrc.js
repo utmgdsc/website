@@ -3,7 +3,7 @@ module.exports = {
 		browser: true,
 		es2021: true,
 	},
-	extends: ['eslint:recommended', 'plugin:react/jsx-runtime', 'react-app', 'plugin:@next/next/recommended'],
+	extends: ['eslint:recommended', 'plugin:react/jsx-runtime', 'plugin:@next/next/recommended'],
 	overrides: [],
 	parserOptions: {
 		ecmaFeatures: {
