@@ -4,7 +4,6 @@
  * There is probably a better way to do this but this works for now :)
  */
 import { Email, Facebook, GitHub, Google, Instagram, LinkedIn, YouTube } from '@mui/icons-material';
-import { Twitter } from '../assets/graphics/x.png';
 import { createSvgIcon } from '@mui/material';
 
 import { NamedIconButton } from '../components/NamedIconButton/NamedIconButton';
@@ -20,6 +19,13 @@ export const DiscordIcon = createSvgIcon(
 	c2.1-0.6,3.9-1.5,5.7-2.8l0,0C23.5,12.8,22.3,8.7,19.7,4.9z M8.3,15c-1.1,0-2.1-1-2.1-2.3s0.9-2.3,2-2.3s2.1,1,2.1,2.3
 	S9.4,15,8.3,15z M15.7,15c-1.1,0-2-1-2-2.3s0.9-2.3,2-2.3s2.1,1,2,2.3S16.8,15,15.7,15z"/>
 , 'Discord');
+
+export const Twitter = createSvgIcon(
+	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" width="24px" height="24px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+	  <path d="M14.095479,10.316482L22.286354,1h-1.940718l-7.115352,8.087682L7.551414,1H1l8.589488,12.231093L1,23h1.940717  l7.509372-8.542861L16.448587,23H23L14.095479,10.316482z M11.436522,13.338465l-0.871624-1.218704l-6.924311-9.68815h2.981339  l5.58978,7.82155l0.867949,1.218704l7.26506,10.166271h-2.981339L11.436522,13.338465z" fill="#ffffff"/>
+	</svg>,
+	'Twitter'
+  );
 
 export const CommunityDevButton = (props) => (
 	<NamedIconButton
