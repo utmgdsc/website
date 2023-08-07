@@ -16,7 +16,7 @@
 		"@emotion/styled": "^11.10.5",
 		"@mui/icons-material": "^5.14.1",
 		"@mui/material": "^5.14.2",
-		"next": "^13.4.12",
+		"next": "^13.4.13",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-gtm-module": "^2.0.11",
