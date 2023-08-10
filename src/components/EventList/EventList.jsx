@@ -1,4 +1,3 @@
-import NextLink from "next/link";
 import {
 	useEffect,
 	useState,
@@ -10,8 +9,8 @@ import {
 	Typography,
 } from '@mui/material';
 
-import { ConvertDate } from '../ConvertDate/ConvertDate';
-import { InfoCard, SkeletonInfoCard } from '../InfoCard/InfoCard';
+import { Link, InfoCard, SkeletonInfoCard, ConvertDate } from '../';
+
 import {
 	getDescriptionFromStorage,
 	useLocalStorage,
@@ -120,7 +119,7 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE, skeleton = 0 
 		return (
 			<Grid item xs={12}>
 				<Typography variant="h5" component="p" gutterBottom>
-					None yet! Check back soon, or check out our <NextLink href="/events#past-events">past events</NextLink>! 🤗
+					None yet! Check back soon, or check out our <Link href="/events#past-events">past events</Link>! 🤗
 				</Typography>
 			</Grid>
 		);

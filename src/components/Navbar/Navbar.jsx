@@ -69,7 +69,7 @@ export const Navbar = () => {
 									draggable="false"
 									style={{ userSelect: 'none' }}
 									srcDark={bracketDark}
-									id="nav-bracket-logo"
+									id="gdsc-home-btn-bracket-logo"
 								/>
 							</Fab>
 						</ElevationScroll>
