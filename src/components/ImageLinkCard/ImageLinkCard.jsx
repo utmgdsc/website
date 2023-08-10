@@ -3,7 +3,7 @@ import React from 'react';
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
 
 import { Link } from '../Link/Link';
-import { SkeletonLoadedImage } from '../SkeletonLoadedImage/SkeletonLoadedImage';
+import Image from 'next/image'
 
 /**
  * Given a link, this component will render an image and a title in a card format
@@ -32,8 +32,9 @@ export const ImageLinkCard = ({ href, title, image, description, alt, height = 1
 			<CardActionArea component={Link} href={href}>
 				<CardMedia
 					component={() => (
-						<SkeletonLoadedImage
+						<Image
 							height={height}
+							placeholder="blur"
 							src={image}
 							alt={alt}
 							className="MuiCardMedia-img MuiCardMedia-media"

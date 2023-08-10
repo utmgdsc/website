@@ -18,8 +18,6 @@ import Image from 'next/image';
 export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem' }) => {
 	const [imgOffset, setImgOffset] = useState(0);
 
-	const [isLoaded, setIsLoaded] = useState(false);
-
 	const [imgHeight, setImgHeight] = useState(0);
 
 	const handleScroll = () => setImgOffset(window.scrollY);
@@ -29,7 +27,6 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 		const containerHeight = containerRef.current.clientHeight;
 
 		setImgHeight(containerHeight * 1.4);
-		setIsLoaded(true);
 
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
@@ -44,19 +41,6 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 		}
 	};
 	return (
-		<>
-			{isLoaded ? null :
-				<Skeleton
-					variant="rectangular"
-					animation="wave"
-					sx={{
-						height: height,
-						width: '100%',
-						position: 'absolute',
-						zIndex: -1,
-					}}
-				/>
-			}
 			<div
 				ref={containerRef}
 				style={{
@@ -69,9 +53,8 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 				}}
 				className="hero-header-parallax"
 			>
-				{isLoaded ? (
-					<>
 						<Image
+							placeholder="blur"
 							src={picture}
 							sizes="100vw"
 							style={{
@@ -84,7 +67,6 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 								top: position === 'top' ? 0 : undefined,
 							}}
 							loading="lazy"
-							onLoadingComplete={() => setIsLoaded(true)}
 							alt=""
 						/>
 						<Container
@@ -111,9 +93,6 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 								</Typography>
 							</Container>
 						</Container>
-					</>
-				) : null}
 			</div>
-		</>
 	);
 };
