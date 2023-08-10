@@ -24,6 +24,12 @@ export const ThemeRegistry = ({ children }) => {
 		[systemTheme],
 	);
 
+	React.useEffect(() => {
+		document.body.classList.remove("dark");
+		document.body.classList.remove("light");
+		document.body.classList.add(theme.palette.mode);
+	}, [theme.palette.mode]);
+
 	return (
 		<NextAppDirEmotionCacheProvider options={{ key: 'mui' }}>
 			<ThemeProvider theme={theme}>

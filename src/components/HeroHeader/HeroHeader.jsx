@@ -40,6 +40,7 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 			return -0.1;
 		}
 	};
+
 	return (
 		<div
 			ref={containerRef}

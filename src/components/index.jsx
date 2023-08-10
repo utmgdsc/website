@@ -24,6 +24,7 @@ export { NamedIconButton } from './NamedIconButton/NamedIconButton';
 export { Navbar } from './Navbar/Navbar';
 export { RouterBreadcrumb } from './RouterBreadcrumb/RouterBreadcrumb';
 export { SkeletonLoadedImage } from './SkeletonLoadedImage/SkeletonLoadedImage';
+export { SkeletonInfoCard } from './InfoCard/InfoCard';
 export { TableOfContents } from './TableOfContents/TableOfContents';
 export { Team } from './Team/Team';
 export { THEME } from './ThemeRegistry/theme';

@@ -1,6 +1,6 @@
 import './InfoCard.scss';
 
-import { Button, Card, CardActions, CardContent, Typography } from '@mui/material';
+import { Button, Card, CardActions, CardContent, Typography, Skeleton } from '@mui/material';
 
 import { Link } from '../Link/Link';
 
@@ -62,6 +62,43 @@ export const InfoCard = ({ subtitle, title, href, description, lines = 4, linkTe
 				>
 					{linkText}
 				</Button>
+			</CardActions>
+		</Card>
+	);
+};
+
+/**
+ * A skeleton loading variant of the InfoCard component.
+ */
+export const SkeletonInfoCard = () => {
+	return (
+		<Card
+			sx={{
+				borderRadius: '2em',
+				display: 'flex',
+				flexDirection: 'column',
+				height: '100%',
+			}}
+			className="shadow card-front"
+		>
+			<CardContent sx={{ flexGrow: 1, paddingBottom: '0' }}>
+				<Skeleton variant="text" sx={{ fontSize: '1.25rem' }} />
+
+				<Skeleton variant="text" sx={{ fontSize: '3rem' }} />
+
+				<Skeleton variant="text" sx={{ fontSize: '1rem' }} />
+				<Skeleton variant="text" sx={{ fontSize: '1rem' }} />
+				<Skeleton variant="text" sx={{ fontSize: '1rem' }} />
+			</CardContent>
+
+			<CardActions sx={{ padding: '16px' }}>
+				<Skeleton
+					sx={{
+						height: '4em',
+						width: '9em',
+						maxWidth: '100%',
+					}}
+				/>
 			</CardActions>
 		</Card>
 	);
