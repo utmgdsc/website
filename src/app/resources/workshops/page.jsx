@@ -4,7 +4,7 @@ import BannerImg from '@/assets/website_proprietary/heroes/IMG_2746.jpg';
 import { TableOfContents, WorkshopWidget } from '@/components';
 import workshops from '@/data/workshops.json';
 
-import { ResourceLayout } from '@/layouts/ResourcesSubPageLayout';
+import { ResourceLayout } from '@/layouts/ResourceLayout';
 
 export const metadata = {
 	title: 'Workshop Archive',

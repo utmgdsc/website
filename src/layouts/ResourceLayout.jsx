@@ -1,6 +1,6 @@
 import { RouterBreadcrumb } from '@/components';
 
-import { HeroLayout } from './HeroLayout';
+import { HeroLayout } from '@/layouts/HeroLayout';
 
 /**
  * Layout for resources pages (workshops, projects, etc.)
