@@ -16,7 +16,7 @@ import {
 	TwitterButton,
 	YouTubeButton,
 } from '@/data/SocialButton';
-import { ErrorBoundary, Link } from '../';
+import { ErrorBoundary, Link } from '@/components';
 import Image from 'next/image';
 
 /**

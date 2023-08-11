@@ -1,11 +1,9 @@
-import "./HomepageHero.scss";
-import React from 'react';
-import { alpha, Box, Container, Typography, useTheme } from '@mui/material';
-import { SkeletonLoadedImage } from '..';
 import HeroImage from '@/assets/backgrounds/background.jpg';
 import HeroImageDark from '@/assets/backgrounds/background_dark.jpg';
 import wordmark from '@/assets/graphics/gdscwordmark.svg';
-import { THEME } from '@/components';
+import { SkeletonLoadedImage, THEME } from '@/components';
+import { alpha, Box, Container, Typography, useTheme } from '@mui/material';
+import "./HomepageHero.scss";
 
 /**
  * @returns {JSX.Element} Hero header for the homepage.
