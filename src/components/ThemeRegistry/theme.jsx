@@ -55,6 +55,16 @@ export const GoogleTheme = ({ mode }) => {
 			// E.g., shift from Red 500 to Red 300 or Red 700.
 			tonalOffset: 0.2,
 		},
-		typography: { fontFamily: `var(--google-sans)` },
+		typography: {
+			fontFamily: `var(--google-sans)`,
+			h1: { fontFamily: `var(--google-sans-display)` },
+			h2: { fontFamily: `var(--google-sans-display)` },
+			h3: { fontFamily: `var(--google-sans-display)` },
+			h4: { fontFamily: `var(--google-sans-display)` },
+			h5: { fontFamily: `var(--google-sans-display)` },
+			h6: { fontFamily: `var(--google-sans-display)` },
+			subtitle1: { fontFamily: `var(--google-sans-display)` },
+			subtitle2: { fontFamily: `var(--google-sans-display)` },
+		},
 	};
 };

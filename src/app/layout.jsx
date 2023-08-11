@@ -2,7 +2,7 @@ import './App.scss';
 
 import { ErrorBoundary, Footer, Navbar, TagManager, ThemeRegistry } from '@/components';
 
-import { GoogleSans } from '@/assets/fonts/fonts';
+import { GoogleSans, GoogleSansDisplay } from '@/assets/fonts/fonts';
 
 export const metadata = {
 	title: {
@@ -15,7 +15,7 @@ export const metadata = {
 // TODO add skip to content button
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en" className={GoogleSans.variable}>
+		<html lang="en" className={`${GoogleSans.variable} ${GoogleSansDisplay.variable}`}>
 			<body>
 				<TagManager>
 					<ThemeRegistry>

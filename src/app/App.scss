@@ -13,6 +13,11 @@ code {
 	font-family: "JetBrains Mono", source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--google-sans-display);
+	font-weight: 600;
+}
+
 main {
 	/* footer is ~200px tall */
 	min-height: calc(100vh - 200px);
