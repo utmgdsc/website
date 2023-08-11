@@ -37,6 +37,7 @@ export const GoogleSansDisplay = localFont({
             style: 'italic'
         },
     ],
+    variable: '--google-sans-display',
 })
 
 /**
@@ -75,4 +76,5 @@ export const GoogleSans = localFont({
             style: 'italic'
         },
     ],
+    variable: '--google-sans',
 })

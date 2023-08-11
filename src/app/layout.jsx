@@ -15,10 +15,10 @@ export const metadata = {
 // TODO add skip to content button
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en" className={GoogleSans.className}>
+		<html lang="en" className={GoogleSans.variable}>
 			<body>
 				<TagManager>
-					<ThemeRegistry fontFamily={`${GoogleSans.style.fontFamily}, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;`}>
+					<ThemeRegistry>
 						<Navbar pages="pages" />
 						<ErrorBoundary fallback={<div></div>} my="25vh">
 							{children}

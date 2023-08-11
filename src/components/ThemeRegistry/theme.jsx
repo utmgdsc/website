@@ -21,9 +21,8 @@ export const THEME = {
 /**
  * Generates a GoogleTheme
  * @param {string} mode the theme mode
- * @param {string} fontFamily the font family CSS as formatted by next/font
  */
-export const GoogleTheme = ({ mode, fontFamily }) => {
+export const GoogleTheme = ({ mode }) => {
 	return {
 		palette: {
 			mode: mode,
@@ -56,6 +55,6 @@ export const GoogleTheme = ({ mode, fontFamily }) => {
 			// E.g., shift from Red 500 to Red 300 or Red 700.
 			tonalOffset: 0.2,
 		},
-		typography: { fontFamily },
+		typography: { fontFamily: `var(--google-sans)` },
 	};
 };
