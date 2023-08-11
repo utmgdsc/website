@@ -1,6 +1,6 @@
+import { ConvertDate, JoinAnd, WorkshopButton } from '@/components';
 import { Code, ExpandMore, RadioButtonChecked, Slideshow } from '@mui/icons-material';
 import { Accordion, AccordionDetails, AccordionSummary, CardContent, List, Typography } from '@mui/material';
-import { ConvertDate, JoinAnd, WorkshopButton } from '@/components';
 
 /**
  * @param {{"key": {name: string; date: Date; host: string[]; description: string; code?: string; slides?: string; recording?: string;}[]}[]} item The workshop item from the workshops.json JSON file

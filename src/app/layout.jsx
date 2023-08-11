@@ -1,8 +1,8 @@
 import './App.scss';
 
-import React from 'react';
-
 import { ErrorBoundary, Footer, Navbar, TagManager, ThemeRegistry } from '@/components';
+
+import { GoogleSans } from '@/assets/fonts/fonts';
 
 export const metadata = {
 	title: {
@@ -15,7 +15,7 @@ export const metadata = {
 // TODO add skip to content button
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en">
+		<html lang="en" className={GoogleSans.className}>
 			<body>
 				<TagManager>
 					<ThemeRegistry>

@@ -53,8 +53,8 @@ export const GoogleTheme = ({ mode }) => {
 		},
 		typography: {
 			fontFamily: [
-				'Google Sans Display',
 				'Google Sans',
+				'Google Sans Display',
 				'Product Sans',
 				'-apple-system',
 				'BlinkMacSystemFont',
