@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Container, Typography } from '@mui/material';
 import { ThemedImage } from '@/components';
 

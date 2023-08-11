@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
 		<html lang="en" className={GoogleSans.className}>
 			<body>
 				<TagManager>
-					<ThemeRegistry>
+					<ThemeRegistry fontFamily={GoogleSans.style.fontFamily}>
 						<Navbar pages="pages" />
 						<ErrorBoundary fallback={<div></div>} my="25vh">
 							{children}

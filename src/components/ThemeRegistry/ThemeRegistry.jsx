@@ -7,11 +7,12 @@ import { GoogleTheme, THEME } from './theme';
 
 /**
  * From MUI Starter Code
+ * @param {string} fontFamily the font family as formatted by next/font
  * @param {React.ReactNode} children
  *
  * @see https://github.com/mui/material-ui/blob/master/examples/material-next-app-router-ts/src/components/ThemeRegistry/ThemeRegistry.tsx
  */
-export const ThemeRegistry = ({ children }) => {
+export const ThemeRegistry = ({ fontFamily, children }) => {
 	const systemTheme = useMediaQuery('(prefers-color-scheme: dark)');
 
 	const theme = React.useMemo(
@@ -19,6 +20,7 @@ export const ThemeRegistry = ({ children }) => {
 			createTheme(
 				GoogleTheme({
 					mode: systemTheme ? THEME.DARK : THEME.LIGHT,
+					fontFamily
 				}),
 			),
 		[systemTheme],

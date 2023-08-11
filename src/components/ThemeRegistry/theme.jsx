@@ -18,7 +18,12 @@ export const THEME = {
 	DEFAULT: 'default',
 };
 
-export const GoogleTheme = ({ mode }) => {
+/**
+ * Generates a GoogleTheme
+ * @param {string} mode the theme mode
+ * @param {string} fontFamily the font family CSS as formatted by next/font
+ */
+export const GoogleTheme = ({ mode, fontFamily }) => {
 	return {
 		palette: {
 			mode: mode,
@@ -51,19 +56,6 @@ export const GoogleTheme = ({ mode }) => {
 			// E.g., shift from Red 500 to Red 300 or Red 700.
 			tonalOffset: 0.2,
 		},
-		typography: {
-			fontFamily: [
-				'Google Sans',
-				'Google Sans Display',
-				'Product Sans',
-				'-apple-system',
-				'BlinkMacSystemFont',
-				'Segoe UI',
-				'Roboto',
-				'Helvetica Neue',
-				'Arial',
-				'sans-serif',
-			].join(','),
-		},
+		typography: { fontFamily },
 	};
 };

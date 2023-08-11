@@ -1,7 +1,4 @@
-import React from 'react';
-
 import { Container, Typography } from '@mui/material';
-
 import HeroInfoSesh from '@/assets/website_proprietary/heroes/infosession.jpg';
 import HeroTeam from '@/assets/website_proprietary/heroes/team.png';
 import { ErrorBoundary, EventList, ExpiryContainer, HeroHeader, HomepageHero, Team } from '@/components';
