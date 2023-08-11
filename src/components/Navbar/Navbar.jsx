@@ -5,13 +5,13 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { AppBar, Box, ButtonGroup, Container, Fab, Tabs, Toolbar, useTheme } from '@mui/material';
 
-import bracket from '../../assets/graphics/bracket.svg';
-import bracketDark from '../../assets/graphics/bracket_colourless.svg';
-import { CommunityDevButton, DiscordButton, GitHubButton, InstagramButton } from '../../data/SocialButton';
-import { pages } from '../../data/NavbarTabData';
+import bracket from '@/assets/graphics/bracket.svg';
+import bracketDark from '@/assets/graphics/bracket_colourless.svg';
+import { CommunityDevButton, DiscordButton, GitHubButton, InstagramButton } from '@/data/SocialButton';
+import { pages } from '@/data/NavbarTabData';
 import { ElevationScroll, HideOnScroll } from './ElevationScroll';
 import { LinkTab } from './LinkTab';
-import { ThemedImage } from '../ThemedImage/ThemedImage';
+import { ThemedImage } from '@/components';
 
 /**
  * Site navbar component. Contains the logo, social buttons, and navigation tabs.

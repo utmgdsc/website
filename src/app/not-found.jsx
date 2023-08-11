@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { Container, Typography } from '@mui/material';
-import { ThemedImage } from '../components';
+import { ThemedImage } from '@/components';
 
-import estelle from '../assets/graphics/sad_mascot.png';
-import estelle_dark from '../assets/graphics/sad_mascot_dark.png';
+import estelle from '@/assets/graphics/sad_mascot.png';
+import estelle_dark from '@/assets/graphics/sad_mascot_dark.png';
 
 export const metadata = {
 	title: "404 - GDSC UTM",

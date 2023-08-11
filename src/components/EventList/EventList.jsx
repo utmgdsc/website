@@ -9,7 +9,7 @@ import {
 	Typography,
 } from '@mui/material';
 
-import { Link, InfoCard, SkeletonInfoCard, ConvertDate } from '../';
+import { Link, InfoCard, SkeletonInfoCard, ConvertDate } from '@/components';
 
 import {
 	getDescriptionFromStorage,
@@ -110,7 +110,7 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE, skeleton = 0 
 			return (
 				<Grid container spacing={2}>
 					{skeletonEvents.map((event) => (
-						<Grid key={event["id"]} item xs={12} sm={6} md={4}>
+						<Grid key={event} item xs={12} sm={6} md={4}>
 							<SkeletonInfoCard />
 						</Grid>
 					))}

@@ -2,7 +2,7 @@ import './App.scss';
 
 import React from 'react';
 
-import { ErrorBoundary, Footer, Navbar, TagManager, ThemeRegistry } from '../components';
+import { ErrorBoundary, Footer, Navbar, TagManager, ThemeRegistry } from '@/components';
 
 export const metadata = {
 	title: {

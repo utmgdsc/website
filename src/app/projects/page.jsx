@@ -5,11 +5,11 @@ import {
 
 import {
 	InfoCard,
-} from '../../components';
-import { projects } from '../../data/projects.js';
-import BannerImg from '../../assets/website_proprietary/heroes/IMG_4712.jpg';
+} from '@/components';
+import { projects } from '@/data/projects.js';
+import BannerImg from '@/assets/website_proprietary/heroes/IMG_4712.jpg';
 
-import { HeroLayout } from '../../layouts/HeroLayout';
+import { HeroLayout } from '@/layouts/HeroLayout';
 
 export const metadata = {
 	title: 'Projects',

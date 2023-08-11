@@ -3,8 +3,8 @@ import './Footer.scss';
 import { Box, ButtonGroup, Container, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-import bracket_colourless from '../../assets/graphics/bracket_colourless.svg';
-import footerLinks from '../../data/footer.json';
+import bracket_colourless from '@/assets/graphics/bracket_colourless.svg';
+import footerLinks from '@/data/footer.json';
 import {
 	CommunityDevButton,
 	DiscordButton,
@@ -15,7 +15,7 @@ import {
 	LinkedInButton,
 	TwitterButton,
 	YouTubeButton,
-} from '../../data/SocialButton';
+} from '@/data/SocialButton';
 import { ErrorBoundary, Link } from '../';
 import Image from 'next/image';
 

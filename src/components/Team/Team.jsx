@@ -2,8 +2,8 @@ import './Team.scss';
 
 import { Typography } from '@mui/material';
 
-import DefaultUser from '../../assets/graphics/default_user.svg';
-import { SkeletonLoadedImage } from '../SkeletonLoadedImage/SkeletonLoadedImage';
+import DefaultUser from '@/assets/graphics/default_user.svg';
+import { SkeletonLoadedImage } from '@/components';
 
 /**
  * Team component. Displays a team with a title and a list of team members
@@ -34,7 +34,7 @@ export const Team = ({ teamInfo, title }) => {
 						picture={
 							teamMember.picture === undefined
 								? DefaultUser
-								: require(`../../assets/website_proprietary/team/${teamMember.picture}`)
+								: require(`@/assets/website_proprietary/team/${teamMember.picture}`)
 						}
 					/>
 				))}

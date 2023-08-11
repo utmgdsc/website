@@ -1,4 +1,4 @@
-import { pages } from '../data/NavbarTabData';
+import { pages } from '@/data/NavbarTabData';
 
 const BASE_URL = 'https://gdscutm.com';
 

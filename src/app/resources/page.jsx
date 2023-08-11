@@ -1,12 +1,12 @@
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 
-import Brand from '../../assets/graphics/logo_clouds.png';
-import Workshop from '../../assets/website_proprietary/heroes/IMG_2746.jpg';
-import BannerImg from '../../assets/website_proprietary/heroes/IMG_3721.png';
-import { FAQ, ImageLinkCard } from '../../components';
-import faq from '../../data/faq.json';
+import Brand from '@/assets/graphics/logo_clouds.png';
+import Workshop from '@/assets/website_proprietary/heroes/IMG_2746.jpg';
+import BannerImg from '@/assets/website_proprietary/heroes/IMG_3721.png';
+import { FAQ, ImageLinkCard } from '@/components';
+import faq from '@/data/faq.json';
 
-import { HeroLayout } from '../../layouts/HeroLayout';
+import { HeroLayout } from '@/layouts/HeroLayout';
 
 export const metadata = {
 	title: 'Resources',
@@ -62,9 +62,10 @@ const ResourcesPage = () => {
 						}}
 						key={index}
 					>
-						<h3 marginBottom={2} id={category}>
+						<Typography sx={{"marginBottom": 2}} id={category}>
 							{category}
-						</h3>
+						</Typography>
+
 						{faq[category].map((faq, index) => {
 							return <FAQ key={index} faq={faq} />;
 						})}

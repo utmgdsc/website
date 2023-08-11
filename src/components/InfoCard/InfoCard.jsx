@@ -2,7 +2,7 @@ import './InfoCard.scss';
 
 import { Button, Card, CardActions, CardContent, Typography, Skeleton } from '@mui/material';
 
-import { Link } from '../Link/Link';
+import { Link } from '@/components';
 
 const CardColors = ['success', 'error', 'warning', 'info'];
 

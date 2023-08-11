@@ -2,10 +2,10 @@ import React from 'react';
 
 import { Container, Typography } from '@mui/material';
 
-import HeroInfoSesh from '../assets/website_proprietary/heroes/infosession.jpg';
-import HeroTeam from '../assets/website_proprietary/heroes/team.png';
-import { ErrorBoundary, EventList, ExpiryContainer, HeroHeader, HomepageHero, Team } from '../components';
-import teamMembers from '../data/team.json';
+import HeroInfoSesh from '@/assets/website_proprietary/heroes/infosession.jpg';
+import HeroTeam from '@/assets/website_proprietary/heroes/team.png';
+import { ErrorBoundary, EventList, ExpiryContainer, HeroHeader, HomepageHero, Team } from '@/components';
+import teamMembers from '@/data/team.json';
 
 export const metadata = {
 	title: "Home - GDSC UTM",
@@ -58,7 +58,7 @@ const Homepage = () => {
 			</section>
 			{/* team list */}
 			<section id="meet-the-team">
-				<ExpiryContainer date={'2023-06-30'}>
+				<ExpiryContainer date={'2024-06-30'}>
 					<HeroHeader text="Meet the team" picture={HeroTeam} maxWidth="md" />
 					<Container sx={{ py: 8, px: 0 }} maxWidth="md">
 						<ErrorBoundary>

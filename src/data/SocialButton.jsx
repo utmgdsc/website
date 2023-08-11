@@ -6,7 +6,7 @@
 import { Email, Facebook, GitHub, Google, Instagram, LinkedIn, Twitter, YouTube } from '@mui/icons-material';
 import { createSvgIcon } from '@mui/material';
 
-import { NamedIconButton } from '../components/NamedIconButton/NamedIconButton';
+import { NamedIconButton } from '@/components/NamedIconButton/NamedIconButton';
 
 /**
  * Discord icon

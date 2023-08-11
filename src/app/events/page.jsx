@@ -1,9 +1,9 @@
 import { Alert, Typography } from '@mui/material';
 
-import BannerImg from '../../assets/website_proprietary/heroes/IMG_1045.png';
-import { ErrorBoundary, EventList, Link } from '../../components';
+import BannerImg from '@/assets/website_proprietary/heroes/IMG_1045.png';
+import { ErrorBoundary, EventList, Link } from '@/components';
 
-import { HeroLayout } from '../../layouts/HeroLayout';
+import { HeroLayout } from '@/layouts/HeroLayout';
 
 export const metadata = {
 	title: 'Events',

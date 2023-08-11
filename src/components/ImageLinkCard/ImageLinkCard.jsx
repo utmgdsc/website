@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
 
-import { Link } from '../Link/Link';
+import { Link } from '@/components';
 import Image from 'next/image'
 
 /**

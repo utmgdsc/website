@@ -1,10 +1,10 @@
 import { Box, Grid } from '@mui/material';
 
-import BannerImg from '../../../assets/website_proprietary/heroes/IMG_2746.jpg';
-import { TableOfContents, WorkshopWidget } from '../../../components';
-import workshops from '../../../data/workshops.json';
+import BannerImg from '@/assets/website_proprietary/heroes/IMG_2746.jpg';
+import { TableOfContents, WorkshopWidget } from '@/components';
+import workshops from '@/data/workshops.json';
 
-import { ResourceLayout } from '../../../layouts/ResourcesSubPageLayout';
+import { ResourceLayout } from '@/layouts/ResourcesSubPageLayout';
 
 export const metadata = {
 	title: 'Workshop Archive',

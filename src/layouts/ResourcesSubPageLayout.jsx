@@ -1,4 +1,4 @@
-import { RouterBreadcrumb } from '../components';
+import { RouterBreadcrumb } from '@/components';
 
 import { HeroLayout } from './HeroLayout';
 

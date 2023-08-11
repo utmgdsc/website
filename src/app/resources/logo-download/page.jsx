@@ -1,8 +1,8 @@
 import { Box, Typography } from '@mui/material';
 
-import BannerImg from '../../../assets/graphics/sky.png';
-import { Link } from '../../../components';
-import { ResourceLayout } from '../../../layouts/ResourcesSubPageLayout';
+import BannerImg from '@/assets/graphics/sky.png';
+import { Link } from '@/components';
+import { ResourceLayout } from '@/layouts/ResourcesSubPageLayout';
 
 export const metadata = {
 	title: 'Logo Download',

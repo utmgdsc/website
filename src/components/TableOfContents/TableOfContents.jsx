@@ -1,7 +1,7 @@
 import './TableOfContents.scss';
 
 import { useEffect, useRef, useState } from 'react';
-import { Link } from "../"
+import { Link } from "@/components"
 import { Typography, useTheme } from '@mui/material';
 
 /**
