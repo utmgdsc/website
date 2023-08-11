@@ -11,6 +11,7 @@ import { CommunityDevButton, DiscordButton, GitHubButton, InstagramButton } from
 import { pages } from '../../data/NavbarTabData';
 import { ElevationScroll, HideOnScroll } from './ElevationScroll';
 import { LinkTab } from './LinkTab';
+import { ThemedImage } from '../ThemedImage/ThemedImage';
 
 /**
  * Site navbar component. Contains the logo, social buttons, and navigation tabs.
@@ -29,6 +30,7 @@ export const Navbar = () => {
 	};
 
 	const theme = useTheme();
+
 	return (
 		<HideOnScroll>
 			<AppBar sx={{ bgcolor: 'transparent !important' }}>
@@ -59,17 +61,16 @@ export const Navbar = () => {
 								onClick={handleChange}
 								id="gdsc-home-btn"
 							>
-								<picture id="nav-bracket-logo">
-									<source srcSet={bracketDark} media="(prefers-color-scheme: dark)" />
-									<img
-										src={bracket}
-										alt="Google Developers Bracket Logo"
-										height="48px"
-										width="48px"
-										draggable="false"
-										style={{ userSelect: 'none' }}
-									/>
-								</picture>
+								<ThemedImage
+									srcLight={bracket}
+									alt="Google Developers Bracket Logo"
+									height={48}
+									width={48}
+									draggable="false"
+									style={{ userSelect: 'none' }}
+									srcDark={bracketDark}
+									id="gdsc-home-btn-bracket-logo"
+								/>
 							</Fab>
 						</ElevationScroll>
 

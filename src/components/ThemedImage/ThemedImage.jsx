@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 /**
  * An image that changes based on the system theme
@@ -8,7 +8,8 @@ import { useMediaQuery } from '@mui/material';
  * @param {import('next/image').ImageProps} props The props to pass to the Image component
  */
 export const ThemedImage = ({ srcLight, srcDark, ...props }) => {
-    const systemTheme = useMediaQuery('(prefers-color-scheme: dark)');
+    const theme = useTheme();
+    const systemTheme = theme.palette.mode === 'dark';
 
     return <Image src={systemTheme ? srcDark : srcLight} {...props} />;
 }

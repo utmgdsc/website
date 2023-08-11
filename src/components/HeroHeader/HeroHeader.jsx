@@ -18,8 +18,6 @@ import Image from 'next/image';
 export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem' }) => {
 	const [imgOffset, setImgOffset] = useState(0);
 
-	const [isLoaded, setIsLoaded] = useState(false);
-
 	const [imgHeight, setImgHeight] = useState(0);
 
 	const handleScroll = () => setImgOffset(window.scrollY);
@@ -29,7 +27,6 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 		const containerHeight = containerRef.current.clientHeight;
 
 		setImgHeight(containerHeight * 1.4);
-		setIsLoaded(true);
 
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
@@ -43,77 +40,60 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 			return -0.1;
 		}
 	};
+
 	return (
-		<>
-			{isLoaded ? null :
-				<Skeleton
-					variant="rectangular"
-					animation="wave"
-					sx={{
-						height: height,
-						width: '100%',
-						position: 'absolute',
-						zIndex: -1,
-					}}
-				/>
-			}
-			<div
-				ref={containerRef}
+		<div
+			ref={containerRef}
+			style={{
+				height: height,
+				maxWidth: 'unset !important',
+				position: 'relative',
+				width: '100%',
+				overflowY: 'hidden',
+				overflowX: 'hidden',
+			}}
+			className="hero-header-parallax"
+		>
+			<Image
+				placeholder="blur"
+				src={picture}
+				sizes="100vw"
 				style={{
-					height: height,
-					maxWidth: 'unset !important',
-					position: 'relative',
+					height: 'auto',
+					minHeight: imgHeight,
 					width: '100%',
-					overflowY: 'hidden',
-					overflowX: 'hidden',
+					transform: `translateY(${imgOffset * accelSpeedCalc()}px)`,
+					position: 'absolute',
+					bottom: position === 'bottom' ? 0 : undefined,
+					top: position === 'top' ? 0 : undefined,
 				}}
-				className="hero-header-parallax"
+				loading="lazy"
+				alt=""
+			/>
+			<Container
+				maxWidth="unset !important"
+				sx={{
+					height: height,
+					position: 'absolute',
+					top: 0,
+					display: 'flex',
+					alignItems: 'flex-end',
+					zIndex: 2,
+					width: '100vw',
+				}}
 			>
-				{isLoaded ? (
-					<>
-						<Image
-							src={picture}
-							sizes="100vw"
-							style={{
-								height: 'auto',
-								minHeight: imgHeight,
-								width: '100%',
-								transform: `translateY(${imgOffset * accelSpeedCalc()}px)`,
-								position: 'absolute',
-								bottom: position === 'bottom' ? 0 : undefined,
-								top: position === 'top' ? 0 : undefined,
-							}}
-							loading="lazy"
-							onLoadingComplete={() => setIsLoaded(true)}
-							alt=""
-						/>
-						<Container
-							maxWidth="unset !important"
-							sx={{
-								height: height,
-								position: 'absolute',
-								top: 0,
-								display: 'flex',
-								alignItems: 'flex-end',
-								zIndex: 2,
-								width: '100vw',
-							}}
-						>
-							<Container maxWidth={maxWidth}>
-								<Typography
-									component="h1"
-									fontWeight="bold"
-									variant="h2"
-									pb={4}
-									style={{ alignSelf: 'center' }}
-								>
-									{text}
-								</Typography>
-							</Container>
-						</Container>
-					</>
-				) : null}
-			</div>
-		</>
+				<Container maxWidth={maxWidth}>
+					<Typography
+						component="h1"
+						fontWeight="bold"
+						variant="h2"
+						pb={4}
+						style={{ alignSelf: 'center' }}
+					>
+						{text}
+					</Typography>
+				</Container>
+			</Container>
+		</div>
 	);
 };

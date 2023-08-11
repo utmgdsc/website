@@ -1,15 +1,15 @@
 .hero-header-parallax {
 	&:after {
 		content: "";
+		background-image: linear-gradient(rgba(255, 255, 255, .6) 0%, rgba(255, 255, 255, 0.8) 100%);
+		background-size: 18px;
+		bottom: 0;
 		display: block;
 		height: 100%;
-		width: 100%;
 		position: absolute;
-		bottom: 0;
 		right: 0;
-		background-image: linear-gradient(rgba(0, 0, 0, .6) 0%, rgba(0, 0, 0, 0.8) 100%);
+		width: 100%;
 		z-index: 1;
-		background-size: 18px;
 	}
 
 	.react-parallax-content {
@@ -19,10 +19,12 @@
 	img {
 		object-fit: cover;
 	}
+}
 
-	@media (prefers-color-scheme: light) {
+.dark {
+	.hero-header-parallax {
 		&:after {
-			background-image: linear-gradient(rgba(255, 255, 255, .6) 0%, rgba(255, 255, 255, 0.8) 100%);
+			background-image: linear-gradient(rgba(0, 0, 0, .6) 0%, rgba(0, 0, 0, 0.8) 100%);
 		}
 	}
 }

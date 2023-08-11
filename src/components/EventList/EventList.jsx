@@ -1,20 +1,19 @@
 import {
-  useEffect,
-  useState,
+	useEffect,
+	useState,
 } from 'react';
-import NextLink from "next/link"
 
 import {
-  Grid,
-  Skeleton,
-  Typography,
+	Grid,
+	Skeleton,
+	Typography,
 } from '@mui/material';
 
-import { ConvertDate } from '../ConvertDate/ConvertDate';
-import { InfoCard } from '../InfoCard/InfoCard';
+import { Link, InfoCard, SkeletonInfoCard, ConvertDate } from '../';
+
 import {
-  getDescriptionFromStorage,
-  useLocalStorage,
+	getDescriptionFromStorage,
+	useLocalStorage,
 } from './useLocalStorage';
 
 const CHAPTER_API_URL = "https://gdsc.community.dev/api/chapter/615/event";
@@ -41,9 +40,10 @@ const MAX_DATE = new Date(8640000000000000);
  * @param {integer} limit the number of events to show
  * @param {Date} from the date to start showing events from (inclusive), based on end_date
  * @param {Date} to the date to stop showing events at (non-inclusive), based on end_date
+ * @param {number} skeleton number of skeleton cards to show when loading
  * @returns {JSX.Element} EventList component
  */
-export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE }) => {
+export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE, skeleton = 0 }) => {
 	const [events, setEvents] = useState([]);
 
 	// needed to show error message as getEvents does not throw error
@@ -103,10 +103,23 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE }) => {
 
 	// if no events, show message rather than empty page
 	else if (events.length === 0) {
+		if (skeleton) {
+			const skeletonEvents = [...Array(skeleton).keys()];
+			return (
+				<Grid container spacing={2}>
+					{skeletonEvents.map((event) => (
+						<Grid key={event["id"]} item xs={12} sm={6} md={4}>
+							<SkeletonInfoCard />
+						</Grid>
+					))}
+				</Grid>
+			);
+		};
+
 		return (
 			<Grid item xs={12}>
 				<Typography variant="h5" component="p" gutterBottom>
-					None yet! Check back soon, or check out our <NextLink href="/events#past-events">past events</NextLink>! 🤗
+					None yet! Check back soon, or check out our <Link href="/events#past-events">past events</Link>! 🤗
 				</Typography>
 			</Grid>
 		);
