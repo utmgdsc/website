@@ -5,30 +5,6 @@ import { Link } from "../"
 import { Typography, useTheme } from '@mui/material';
 
 /**
- * Generates a table of contents based on the headings in the page
- * @returns {JSX.Element} Table of content component
- */
-export const TableOfContents = () => {
-	const [activeId, setActiveId] = useState();
-	const { nestedHeadings } = useHeadingsData();
-	useIntersectionObserver(setActiveId);
-	return (
-		<div id="table-of-contents">
-			<Typography fontWeight="bold" color="text.primary" variant="h5" margin="0.83em 0">
-				On this page
-			</Typography>
-			<nav aria-label="Table of contents">
-				<ul>
-					{nestedHeadings.map((heading, index) => {
-						return <TOCHeading heading={heading} activeId={activeId} key={index} />;
-					})}
-				</ul>
-			</nav>
-		</div>
-	);
-};
-
-/**
  * TOCHeading component in table of content
  * @param {string} heading to be shown
  * @param {string} activeId current heading id is displayed now
@@ -81,7 +57,7 @@ const TOCHeading = ({ heading, activeId }) => {
 const getNestedHeadings = (headingElements) => {
 	const nestedHeadings = [];
 
-	headingElements.forEach((heading, index) => {
+	headingElements.forEach((heading) => {
 		const { innerText: title, id } = heading;
 
 		if (heading.nodeName === 'H2') {
@@ -120,6 +96,8 @@ const useHeadingsData = () => {
 const useIntersectionObserver = (setActiveId) => {
 	const headingElementsRef = useRef({});
 	useEffect(() => {
+		const headingElements = Array.from(document.querySelectorAll('h2.resources, h3.resources'));
+
 		const callback = (headings) => {
 			headingElementsRef.current = headings.reduce((map, headingElement) => {
 				map[headingElement.target.id] = headingElement;
@@ -148,10 +126,32 @@ const useIntersectionObserver = (setActiveId) => {
 			rootMargin: '0px 0px -40% 0px',
 		});
 
-		const headingElements = Array.from(document.querySelectorAll('h2.resources, h3.resources'));
-
 		headingElements.forEach((element) => observer.observe(element));
 
 		return () => observer.disconnect();
 	}, [setActiveId]);
+};
+
+/**
+ * Generates a table of contents based on the headings in the page
+ * @returns {JSX.Element} Table of content component
+ */
+export const TableOfContents = () => {
+	const [activeId, setActiveId] = useState();
+	const { nestedHeadings } = useHeadingsData();
+	useIntersectionObserver(setActiveId);
+	return (
+		<div id="table-of-contents">
+			<Typography fontWeight="bold" color="text.primary" variant="h5" margin="0.83em 0">
+				On this page
+			</Typography>
+			<nav aria-label="Table of contents">
+				<ul>
+					{nestedHeadings.map((heading, index) => {
+						return <TOCHeading heading={heading} activeId={activeId} key={index} />;
+					})}
+				</ul>
+			</nav>
+		</div>
+	);
 };

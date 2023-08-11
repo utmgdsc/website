@@ -1,6 +1,4 @@
-import React from 'react';
-
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 
 import Brand from '../../assets/graphics/logo_clouds.png';
 import Workshop from '../../assets/website_proprietary/heroes/IMG_2746.jpg';

@@ -1,4 +1,5 @@
 'use client';
+/* eslint-disable import/export */
 
 /**
  * `use client` directive placed here to avoid weird Emotion errors (when placing

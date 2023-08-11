@@ -34,8 +34,8 @@ export default function NotFound() {
 				404
 			</Typography>
 			<Typography variant="h4" component="p" gutterBottom>
-				We couldn't find the page you were looking for.
+				We couldn&apos;t find the page you were looking for.
 			</Typography>
 		</Container>
 	);
-};
+}

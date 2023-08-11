@@ -18,7 +18,7 @@ export function useLocalStorage(key) {
 			return getDescriptionFromStorage(key);
 		} catch (error) {
 			// If error also return initialValue
-			console.log(error);
+			console.error(error);
 			return;
 		}
 	});

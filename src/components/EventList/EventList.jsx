@@ -80,6 +80,8 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE, skeleton = 0 
 
 				// finally set events to eventData
 				setEvents(eventData);
+
+				return;
 			}).catch(error => {
 				// if the query has been aborted, do nothing
 				if (error.name === "AbortError") return;
@@ -114,7 +116,7 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE, skeleton = 0 
 					))}
 				</Grid>
 			);
-		};
+		}
 
 		return (
 			<Grid item xs={12}>
@@ -166,6 +168,7 @@ const Description = ({ id }) => {
 				.then(response => response.json())
 				.then(data => {
 					setDescription(data["description_short"]);
+					return;
 				})
 				.catch(error => {
 					if (error.name === "AbortError") return;

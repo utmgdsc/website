@@ -1,6 +1,5 @@
-import { Skeleton } from '@mui/material';
+import { Box, Skeleton } from '@mui/material';
 import Image from 'next/image';
-import { Box } from '@mui/material';
 import { useState } from 'react';
 
 /**

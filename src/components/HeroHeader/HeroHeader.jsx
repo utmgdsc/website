@@ -1,6 +1,6 @@
 import './HeroHeader.scss';
 import React, { useState, useEffect, useRef } from 'react';
-import { Container, Skeleton, Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 
 import Image from 'next/image';
 /**
@@ -22,6 +22,8 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 
 	const handleScroll = () => setImgOffset(window.scrollY);
 
+	const containerRef = useRef(null);
+
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll);
 		const containerHeight = containerRef.current.clientHeight;
@@ -30,8 +32,6 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
-
-	const containerRef = useRef(null);
 
 	const accelSpeedCalc = () => {
 		if (position === 'bottom') {
