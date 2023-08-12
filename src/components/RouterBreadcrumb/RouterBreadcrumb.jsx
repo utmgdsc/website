@@ -1,23 +1,25 @@
-'use client'
-import {usePathname} from "next/navigation"
+import { usePathname } from 'next/navigation';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Typography from '@mui/material/Typography';
 
-import { pages } from '../../app/index.jsx';
-import { Link } from '../Link/Link';
+import { pages } from '@/data/NavbarTabData';
+import { Link } from '@/components';
 
-// AO from https://mui.com/material-ui/react-breadcrumbs/#RouterBreadcrumbs.js
+/**
+ * @see https://mui.com/material-ui/react-breadcrumbs/#RouterBreadcrumbs.js
+ * @returns Breadcrumb component based on current URL
+ */
 export const RouterBreadcrumb = () => {
 	/** Split the pathname into an array of strings */
-	const pathnames = usePathname().split('/').filter((x) => x);
+	const pathnames = usePathname()
+		.split('/')
+		.filter((x) => x);
+
 	return (
-		<Breadcrumbs
-			separator={<NavigateNextIcon fontSize="small" />}
-			aria-label="breadcrumb"
-		>
-			<Link underline="hover" color="inherit" href={pages[0]["path"]}>
-				{pages[0]["name"]}
+		<Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
+			<Link underline="hover" color="inherit" href={pages[0]['path']}>
+				{pages[0]['name']}
 			</Link>
 			{pathnames.map((value, index) => {
 				/** if it is the last link in the map */
@@ -30,14 +32,14 @@ export const RouterBreadcrumb = () => {
 
 				return last ? (
 					<Typography color="text.primary" key={to}>
-						{pages[pageIndex]["name"]}
+						{pages[pageIndex]['name']}
 					</Typography>
 				) : (
 					<Link underline="hover" color="inherit" href={to} key={to}>
-						{pages[pageIndex]["name"]}
+						{pages[pageIndex]['name']}
 					</Link>
 				);
 			})}
 		</Breadcrumbs>
 	);
-}
+};

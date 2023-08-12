@@ -2,9 +2,11 @@
 For a more thorough explanation of the data files, please refer to the actual files in the `src/data` folder. This file is meant to be a quick reference for the schema of the data files. The data files are in JSON format. The following is a list of the data files and their schema.
 
 ## `faq.json`
-The `faq.json` file contains the FAQ entries. It is an array of objects, each object representing a single FAQ entry. The object has the following properties:
-- `question`: The question of the FAQ entry.
-- `answer`: The answer of the FAQ entry.
+The `faq.json` file contains the FAQ entries. It is an object.
+- The name of each object is a category of questions.
+- Each object contains an array of objects, which each represent a question with the following properties:
+  - `question`: The question of the FAQ entry.
+  - `answer`: The answer of the FAQ entry.
 
 ## `footer.json`
 The `footer.json` file contains the footer links. It is an object, each object representing a section.

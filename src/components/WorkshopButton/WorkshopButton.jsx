@@ -1,10 +1,4 @@
-import {
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  Typography,
-} from '@mui/material';
+import { ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material';
 
 /**
  * A button that is used in the FAQ section
@@ -14,17 +8,14 @@ import {
  * @return {JSX.Element} The button
  */
 export const WorkshopButton = ({ href, icon, text }) => {
-    return (
-        <ListItem>
-            <ListItemButton component="a" target="_blank" rel="noreferrer" href={href}>
-                <ListItemIcon>
-                    {icon}
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography color="text.primary">{text}</Typography>
-                </ListItemText>
-            </ListItemButton>
-        </ListItem>
-
-    );
-}
+	return (
+		<ListItem>
+			<ListItemButton component="a" target="_blank" rel="noreferrer" href={href}>
+				<ListItemIcon>{icon}</ListItemIcon>
+				<ListItemText>
+					<Typography color="text.primary">{text}</Typography>
+				</ListItemText>
+			</ListItemButton>
+		</ListItem>
+	);
+};

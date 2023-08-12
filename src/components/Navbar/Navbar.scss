@@ -8,8 +8,10 @@
 	}
 }
 
-@media (prefers-color-scheme: dark) {
-	#nav-bracket-logo {
-		filter: invert(1);
+.dark {
+	#gdsc-home-btn {
+		#gdsc-home-btn-bracket-logo {
+			filter: invert(1);
+		}
 	}
 }

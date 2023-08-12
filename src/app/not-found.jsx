@@ -1,41 +1,39 @@
-'use client'
-import React from 'react';
+import { Container, Typography } from '@mui/material';
+import { ThemedImage } from '@/components';
 
-import {
-  Container,
-  Typography,
-} from '@mui/material';
+import estelle from '@/assets/graphics/sad_mascot.png';
+import estelle_dark from '@/assets/graphics/sad_mascot_dark.png';
 
-import {useMediaQuery} from '@mui/material';
-import estelle from '../assets/graphics/sad_mascot.png';
-import estelle_dark from '../assets/graphics/sad_mascot_dark.png';
+export const metadata = {
+	title: "404 - GDSC UTM",
+};
 
-import Image from "next/image"
-const PageNotFound = () => {
-	const systemTheme = useMediaQuery('(prefers-color-scheme: dark)');
+/**
+ * 404 page
+ * @see https://nextjs.org/docs/app/api-reference/file-conventions/not-found
+ */
+export default function NotFound() {
 	return (
 		<Container
 			component="main"
 			id="404"
 			sx={{
-				alignItems: "center",
-				display: "flex",
-				flexDirection: "column",
-				fontSize: "50px",
-				height: "100vh",
-				justifyContent: "center",
-				textAlign: "center",
+				alignItems: 'center',
+				display: 'flex',
+				flexDirection: 'column',
+				fontSize: '50px',
+				height: '100vh',
+				justifyContent: 'center',
+				textAlign: 'center',
 			}}
 		>
-			<Image src={systemTheme ? estelle_dark.src : estelle.src} height={600} width={600}/>
+			<ThemedImage alt="Sad GDSC Mascot" srcLight={estelle.src} srcDark={estelle_dark.src} height={600} width={600} />
 			<Typography variant="h1" component="h1" gutterBottom>
 				404
 			</Typography>
 			<Typography variant="h4" component="p" gutterBottom>
-				We couldn't find the page you were looking for.
+				We couldn&apos;t find the page you were looking for.
 			</Typography>
 		</Container>
 	);
-};
-
-export default PageNotFound;
+}

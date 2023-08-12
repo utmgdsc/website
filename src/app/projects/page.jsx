@@ -1,5 +1,3 @@
-'use client'
-
 import {
 	Grid,
 	Typography,
@@ -12,7 +10,7 @@ import {
 } from '../../components';
 import { projects } from '../../data/projects.js';
 import BannerImg from '../../assets/website_proprietary/heroes/IMG_4712.jpg';
-import { useEffect, useState } from 'react';
+
 import { HeroLayout } from '../../layouts/HeroLayout';
 
 const ProjectPage = () => {
@@ -98,7 +96,7 @@ const ProjectPage = () => {
 
 	if (filteredProjects.length === 0) {
 		return (
-			<HeroLayout title="GDSC Projects" picture={BannerImg} position="bottom" id="projects">
+			<HeroLayout title={metadata.title} picture={BannerImg} position="bottom" id="projects">
 				<Grid item xs={12}>
 					<Typography variant="h5" component="h2">
 						None yet! Check back soon :)
