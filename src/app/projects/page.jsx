@@ -10,7 +10,7 @@ import {
 } from '../../components';
 import { projects } from '../../data/projects.js';
 import BannerImg from '../../assets/website_proprietary/heroes/IMG_4712.jpg';
-
+import { useEffect, useState } from 'react';
 import { HeroLayout } from '../../layouts/HeroLayout';
 
 const ProjectPage = () => {
