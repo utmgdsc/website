@@ -1,12 +1,15 @@
 import {
 	useEffect,
 	useState,
+	Fragment
 } from 'react';
 
 import {
 	Grid,
 	Skeleton,
 	Typography,
+	Tab,
+	Tabs
 } from '@mui/material';
 
 import { Link, InfoCard, SkeletonInfoCard, ConvertDate } from '@/components';
@@ -45,14 +48,27 @@ const MAX_DATE = new Date(8640000000000000);
  */
 export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE, skeleton = 0 }) => {
 	const [events, setEvents] = useState([]);
-
 	// needed to show error message as getEvents does not throw error
 	const [error, setError] = useState(false);
 
+	// stores information used in MUI tabs
+	const [page, setPage] = useState(0)
+	const [yearList, setYearList] = useState()
+
+	// Represents a list of filtered events based on the current MUI tab (year) selected
+	const filteredEvents = events.filter(event => {
+		if (yearList) {
+			return (
+				event.start_date.slice(0, 4) == yearList[page]
+			);
+		}
+		return true;
+	});
 	/**
 	 * load external json file from api
 	 * @returns {object} bevy chapter object
 	 */
+
 	const getEvents = async () => {
 		const abortController = new AbortController()
 
@@ -78,8 +94,9 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE, skeleton = 0 
 					return endDate >= from && endDate < to;
 				});
 
-				// finally set events to eventData
+				// finally set events to eventData, and set yearList to the sorted list of unique years in eventData
 				setEvents(eventData);
+				setYearList(eventData.map(event => new Date(event["start_date"]).getFullYear()).filter((value, index, self) => self.indexOf(value) === index))
 
 				return;
 			}).catch(error => {
@@ -128,18 +145,24 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE, skeleton = 0 
 	}
 
 	return (
-		<Grid container spacing={2}>
-			{events.map((event) => (
-				<Grid key={event["id"]} item xs={12} sm={6} md={4}>
-					<InfoCard
-						subtitle={<ConvertDate date={event["start_date"]} />}
-						title={event["title"]}
-						description={<Description id={event["id"]} />}
-						href={event["url"]}
-					/>
-				</Grid>
-			))}
-		</Grid>
+		<Fragment>
+			<Tabs value={page} onChange={(e, index) => { setPage(index)}}>
+					{yearList.map((year, id) => (
+						<Tab key={id} label={year} />
+					))}
+				</Tabs>
+			<Grid container spacing={2}>
+				{filteredEvents.map((event) => (
+					<Grid key={event["id"]} item xs={12} sm={6} md={4}>
+						<InfoCard
+							subtitle={<ConvertDate date={event["start_date"]} />}
+							title={event["title"]}
+							description={<Description id={event["id"]} />}
+							href={event["url"]}
+						/>
+					</Grid>
+				))}
+			</Grid></Fragment>
 	);
 }
 
