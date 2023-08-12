@@ -98,6 +98,7 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE, skeleton = 0 
 				setEvents(eventData);
 				setYearList(eventData.map(event => new Date(event["start_date"]).getFullYear()).filter((value, index, self) => self.indexOf(value) === index))
 
+				return;
 			}).catch(error => {
 				// if the query has been aborted, do nothing
 				if (error.name === "AbortError") return;
@@ -146,8 +147,8 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE, skeleton = 0 
 	return (
 		<Fragment>
 			<Tabs value={page} onChange={(e, index) => { setPage(index)}}>
-					{yearList.map((year) => (
-						<Tab label={year} />
+					{yearList.map((year, id) => (
+						<Tab key={id} label={year} />
 					))}
 				</Tabs>
 			<Grid container spacing={2}>

@@ -9,7 +9,6 @@ import {
 	InfoCard,
 } from '@/components';
 import { projects } from '../../data/projects.js';
-import BannerImg from '../../assets/website_proprietary/heroes/IMG_4712.jpg';
 import { useEffect, useState, Fragment } from 'react';
 
 
@@ -97,7 +96,7 @@ export const ProjectList = () => {
 	if (filteredProjects.length === 0) {
 		return (
 			<Fragment>
-				<Grid item xs={12}>
+				<Grid item xs={12} >
 					<Typography variant="h5" component="h2">
 						None yet! Check back soon :)
 					</Typography>
@@ -109,8 +108,8 @@ export const ProjectList = () => {
 	return (
 		<Fragment>
 			<Tabs value={page} onChange={(e, index) => { setPage(index) }}>
-				{yearList.map((year) => (
-					<Tab label={year} />
+				{yearList.map((year, id) => (
+					<Tab key={id} label={year} />
 				))}
 			</Tabs>
 			<Grid container spacing={2}>
