@@ -11,7 +11,7 @@ import { useState } from 'react';
  * @param {import('react').CSSProperties} style - style object for the image
  * @return {JSX.Element} image with a skeleton placeholder
  */
-export const SkeletonLoadedImage = (props) => {
+export const SkeletonLoadedImage = props => {
 	const [loaded, setLoaded] = useState(false);
 
 	return (

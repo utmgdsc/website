@@ -19,14 +19,14 @@ export const ThemeRegistry = ({ children }) => {
 			createTheme(
 				GoogleTheme({
 					mode: systemTheme ? THEME.DARK : THEME.LIGHT,
-				}),
+				})
 			),
-		[systemTheme],
+		[systemTheme]
 	);
 
 	React.useEffect(() => {
-		document.body.classList.remove("dark");
-		document.body.classList.remove("light");
+		document.body.classList.remove('dark');
+		document.body.classList.remove('light');
 		document.body.classList.add(theme.palette.mode);
 	}, [theme.palette.mode]);
 

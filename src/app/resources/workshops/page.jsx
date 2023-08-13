@@ -8,7 +8,7 @@ import { ResourceLayout } from '@/layouts/ResourceLayout';
 
 export const metadata = {
 	title: 'Workshop Archive',
-}
+};
 
 /**
  * @return {JSX.Element} Workshop page component

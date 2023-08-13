@@ -7,7 +7,7 @@ import { HeroLayout } from '@/layouts/HeroLayout';
 
 export const metadata = {
 	title: 'Events',
-}
+};
 
 /**
  * @return {JSX.Element} Events page component using EventList
@@ -17,7 +17,8 @@ const Events = () => {
 		<HeroLayout title={metadata.title} picture={BannerImg} position="bottom" id="events">
 			<noscript>
 				<Alert severity="warning">
-					You need JavaScript to view events. You may view previous events at the <Link external href="https://gdsc.community.dev/university-of-toronto-mississauga/">
+					You need JavaScript to view events. You may view previous events at the{' '}
+					<Link external href="https://gdsc.community.dev/university-of-toronto-mississauga/">
 						GDSC UTM Community page
 					</Link>
 				</Alert>

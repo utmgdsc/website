@@ -62,7 +62,7 @@ const ResourcesPage = () => {
 						}}
 						key={index}
 					>
-						<Typography sx={{"marginBottom": 2}} id={category}>
+						<Typography sx={{ marginBottom: 2 }} id={category}>
 							{category}
 						</Typography>
 

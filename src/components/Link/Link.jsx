@@ -13,14 +13,7 @@ import { Link as MaterialLink } from '@mui/material';
  * @param {Object} props Any other props
  * @returns {JSX.Element} A link
  */
-const NonForwardLink = ({
-	children,
-	href,
-	forwardedRef,
-	external,
-	openInNewTab = external,
-	...props
-}) => {
+const NonForwardLink = ({ children, href, forwardedRef, external, openInNewTab = external, ...props }) => {
 	return (
 		<MaterialLink
 			component={NextLink}
@@ -59,6 +52,4 @@ const NonForwardLink = ({
  * @param {boolean} openInNewTab If true, the link will open in a new tab
  * @param {Object} props Any other props
  */
-export const Link = React.forwardRef((props, ref) => (
-	<NonForwardLink {...props} forwardedRef={ref} />
-));
+export const Link = React.forwardRef((props, ref) => <NonForwardLink {...props} forwardedRef={ref} />);

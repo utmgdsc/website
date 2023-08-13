@@ -14,7 +14,7 @@ export const RouterBreadcrumb = () => {
 	/** Split the pathname into an array of strings */
 	const pathnames = usePathname()
 		.split('/')
-		.filter((x) => x);
+		.filter(x => x);
 
 	return (
 		<Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
@@ -28,7 +28,7 @@ export const RouterBreadcrumb = () => {
 				/** the url of the current link */
 				const to = `/${pathnames.slice(0, index + 1).join('/')}`;
 				/** index of pages.jsx to refer to */
-				const pageIndex = pages.findIndex((page) => page.path === to);
+				const pageIndex = pages.findIndex(page => page.path === to);
 
 				return last ? (
 					<Typography color="text.primary" key={to}>

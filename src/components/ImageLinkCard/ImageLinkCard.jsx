@@ -1,7 +1,7 @@
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
 
 import { Link } from '@/components';
-import Image from 'next/image'
+import Image from 'next/image';
 
 /**
  * Given a link, this component will render an image and a title in a card format

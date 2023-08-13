@@ -62,7 +62,7 @@ export const NextAppDirEmotionCacheProvider = ({ options, CacheProvider = Defaul
 		});
 
 		return (
-			<React.Fragment>
+			<>
 				{globals.map(({ name, style }) => (
 					<style
 						key={name}
@@ -78,7 +78,7 @@ export const NextAppDirEmotionCacheProvider = ({ options, CacheProvider = Defaul
 						dangerouslySetInnerHTML={{ __html: styles }}
 					/>
 				)}
-			</React.Fragment>
+			</>
 		);
 	});
 

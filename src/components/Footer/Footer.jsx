@@ -25,7 +25,7 @@ import Image from 'next/image';
  *
  * @return {JSX.Element} Footer link
  */
-const FooterLink = styled((props) => (
+const FooterLink = styled(props => (
 	<li>
 		<Link className={'link'} sx={{ color: 'inherit' }} {...props} />
 	</li>
@@ -45,8 +45,8 @@ export const Footer = () => {
 		<Box
 			component="footer"
 			sx={{
-				backgroundColor: (theme) => theme.palette.action.hover,
-				borderColor: (theme) => theme.palette.divider,
+				backgroundColor: theme => theme.palette.action.hover,
+				borderColor: theme => theme.palette.divider,
 			}}
 		>
 			<Container maxWidth="xl">
