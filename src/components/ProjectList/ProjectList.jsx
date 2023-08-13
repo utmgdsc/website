@@ -20,6 +20,9 @@ const getTerm = date => {
 	return ''; // should never happen but you never know ;)
 };
 
+/**
+ * A list of all the community projects filtered by year with tabs
+ */
 export const ProjectList = () => {
 	/** @type {number} current tab */
 	const [page, setPage] = useState(0);
