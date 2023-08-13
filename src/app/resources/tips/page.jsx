@@ -4,7 +4,7 @@ import { ResourceLayout } from '@/layouts/ResourceLayout';
 
 export const metadata = {
 	title: 'Tech Tips',
-}
+};
 
 /**
  * @returns {JSX.Element} The tech tips widget

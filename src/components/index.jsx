@@ -23,6 +23,7 @@ export { JoinAnd } from './JoinAnd/JoinAnd';
 export { Link } from './Link/Link';
 export { NamedIconButton } from './NamedIconButton/NamedIconButton';
 export { Navbar } from './Navbar/Navbar';
+export { ProjectList } from './ProjectList/ProjectList';
 export { RouterBreadcrumb } from './RouterBreadcrumb/RouterBreadcrumb';
 export { SkeletonLoadedImage } from './SkeletonLoadedImage/SkeletonLoadedImage';
 export { SkeletonInfoCard } from './InfoCard/InfoCard';

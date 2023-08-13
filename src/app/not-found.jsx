@@ -5,7 +5,7 @@ import estelle from '@/assets/graphics/sad_mascot.png';
 import estelle_dark from '@/assets/graphics/sad_mascot_dark.png';
 
 export const metadata = {
-	title: "404 - GDSC UTM",
+	title: '404 - GDSC UTM',
 };
 
 /**
@@ -27,7 +27,13 @@ export default function NotFound() {
 				textAlign: 'center',
 			}}
 		>
-			<ThemedImage alt="Sad GDSC Mascot" srcLight={estelle.src} srcDark={estelle_dark.src} height={600} width={600} />
+			<ThemedImage
+				alt="Sad GDSC Mascot"
+				srcLight={estelle.src}
+				srcDark={estelle_dark.src}
+				height={600}
+				width={600}
+			/>
 			<Typography variant="h1" component="h1" gutterBottom>
 				404
 			</Typography>

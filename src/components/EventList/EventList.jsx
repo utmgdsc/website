@@ -1,23 +1,13 @@
-import {
-	useEffect,
-	useState,
-} from 'react';
+import { useEffect, useState } from 'react';
 
-import {
-	Grid,
-	Skeleton,
-	Typography,
-} from '@mui/material';
+import { Grid, Skeleton, Typography, Tab, Tabs } from '@mui/material';
 
 import { Link, InfoCard, SkeletonInfoCard, ConvertDate } from '@/components';
 
-import {
-	getDescriptionFromStorage,
-	useLocalStorage,
-} from './useLocalStorage';
+import { getDescriptionFromStorage, useLocalStorage } from './useLocalStorage';
 
-const CHAPTER_API_URL = "https://gdsc.community.dev/api/chapter/615/event";
-const EVENT_API_URL = "https://gdsc.community.dev/api/event/";
+const CHAPTER_API_URL = 'https://gdsc.community.dev/api/chapter/615/event';
+const EVENT_API_URL = 'https://gdsc.community.dev/api/event/';
 
 /**
  * Minimum date allowed by JavaScript Date object.
@@ -45,27 +35,38 @@ const MAX_DATE = new Date(8640000000000000);
  */
 export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE, skeleton = 0 }) => {
 	const [events, setEvents] = useState([]);
-
 	// needed to show error message as getEvents does not throw error
 	const [error, setError] = useState(false);
 
+	// stores information used in MUI tabs
+	const [page, setPage] = useState(0);
+	const [yearList, setYearList] = useState();
+
+	// Represents a list of filtered events based on the current MUI tab (year) selected
+	const filteredEvents = events.filter(event => {
+		if (yearList) {
+			return event.start_date.slice(0, 4) == yearList[page];
+		}
+		return true;
+	});
 	/**
 	 * load external json file from api
 	 * @returns {object} bevy chapter object
 	 */
+
 	const getEvents = async () => {
-		const abortController = new AbortController()
+		const abortController = new AbortController();
 
 		await fetch(CHAPTER_API_URL, {
-			signal: abortController.signal
+			signal: abortController.signal,
 		})
 			.then(response => response.json())
 			.then(data => {
-				if (data["detail"] && (data["detail"].includes("throttled") || data["detail"].includes("error"))) {
-					throw new Error(data["detail"]);
+				if (data['detail'] && (data['detail'].includes('throttled') || data['detail'].includes('error'))) {
+					throw new Error(data['detail']);
 				}
 				// filter only published events
-				let eventData = data["results"].filter(event => event["status"] === "Published");
+				let eventData = data['results'].filter(event => event['status'] === 'Published');
 
 				// slice to limit if specified
 				if (limit) {
@@ -74,23 +75,29 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE, skeleton = 0 
 
 				// filter only upcoming events if specified
 				eventData = eventData.filter(event => {
-					const endDate = new Date(event["end_date"]);
+					const endDate = new Date(event['end_date']);
 					return endDate >= from && endDate < to;
 				});
 
-				// finally set events to eventData
+				// finally set events to eventData, and set yearList to the sorted list of unique years in eventData
 				setEvents(eventData);
+				setYearList(
+					eventData
+						.map(event => new Date(event['start_date']).getFullYear())
+						.filter((value, index, self) => self.indexOf(value) === index)
+				);
 
 				return;
-			}).catch(error => {
+			})
+			.catch(error => {
 				// if the query has been aborted, do nothing
-				if (error.name === "AbortError") return;
+				if (error.name === 'AbortError') return;
 				setError(error);
 			});
 		return () => {
 			abortController.abort();
-		}
-	}
+		};
+	};
 
 	// empty array means only run once to avoid rate limit
 	useEffect(() => {
@@ -109,7 +116,7 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE, skeleton = 0 
 			const skeletonEvents = [...Array(skeleton).keys()];
 			return (
 				<Grid container spacing={2}>
-					{skeletonEvents.map((event) => (
+					{skeletonEvents.map(event => (
 						<Grid key={event} item xs={12} sm={6} md={4}>
 							<SkeletonInfoCard />
 						</Grid>
@@ -128,20 +135,32 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE, skeleton = 0 
 	}
 
 	return (
-		<Grid container spacing={2}>
-			{events.map((event) => (
-				<Grid key={event["id"]} item xs={12} sm={6} md={4}>
-					<InfoCard
-						subtitle={<ConvertDate date={event["start_date"]} />}
-						title={event["title"]}
-						description={<Description id={event["id"]} />}
-						href={event["url"]}
-					/>
-				</Grid>
-			))}
-		</Grid>
+		<>
+			<Tabs
+				value={page}
+				onChange={(e, index) => {
+					setPage(index);
+				}}
+			>
+				{yearList.map((year, id) => (
+					<Tab key={id} label={year} />
+				))}
+			</Tabs>
+			<Grid container spacing={2}>
+				{filteredEvents.map(event => (
+					<Grid key={event['id']} item xs={12} sm={6} md={4}>
+						<InfoCard
+							subtitle={<ConvertDate date={event['start_date']} />}
+							title={event['title']}
+							description={<Description id={event['id']} />}
+							href={event['url']}
+						/>
+					</Grid>
+				))}
+			</Grid>
+		</>
 	);
-}
+};
 
 /**
  * Gets the description given an event ID from the GDSC (bevy) API.
@@ -160,27 +179,27 @@ const Description = ({ id }) => {
 		// check if the event is in local storage
 		if (!getDescriptionFromStorage(id)) {
 			// if not, fetch from api
-			const abortController = new AbortController()
+			const abortController = new AbortController();
 
 			await fetch(EVENT_API_URL + id, {
-				signal: abortController.signal
+				signal: abortController.signal,
 			})
 				.then(response => response.json())
 				.then(data => {
-					setDescription(data["description_short"]);
+					setDescription(data['description_short']);
 					return;
 				})
 				.catch(error => {
-					if (error.name === "AbortError") return;
+					if (error.name === 'AbortError') return;
 					// if the query has been aborted, do nothing
-					setError(error)
-				})
+					setError(error);
+				});
 
 			return () => {
 				abortController.abort();
-			}
+			};
 		}
-	}
+	};
 
 	// empty array means only run once to avoid rate limit
 	useEffect(() => {
@@ -195,6 +214,6 @@ const Description = ({ id }) => {
 	if (error) {
 		throw error;
 	} else {
-		return description ? description : <Skeleton variant="text" sx={{ fontSize: "5rem" }} />;
+		return description ? description : <Skeleton variant="text" sx={{ fontSize: '5rem' }} />;
 	}
-}
+};

@@ -120,9 +120,9 @@ export const Navbar = () => {
 								.filter(
 									// filter out pages that should not be in the navbar
 									// i.e., only one slash, or includeInNavbar is true
-									(page) =>
+									page =>
 										(page['path'].split('/').length === 2 && !page['includeInNavbar'] !== false) ||
-										page['includeInNavbar'] === true,
+										page['includeInNavbar'] === true
 								)
 								.map((page, index) => {
 									return (

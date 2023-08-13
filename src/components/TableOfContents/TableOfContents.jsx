@@ -1,7 +1,7 @@
 import './TableOfContents.scss';
 
 import { useEffect, useRef, useState } from 'react';
-import { Link } from "@/components"
+import { Link } from '@/components';
 import { Typography, useTheme } from '@mui/material';
 
 /**
@@ -17,7 +17,7 @@ const TOCHeading = ({ heading, activeId }) => {
 			<Link
 				sx={{ color: theme.palette.text.secondary }}
 				href={`#${heading.id}`}
-				onClick={(e) => {
+				onClick={e => {
 					e.preventDefault();
 					document.querySelector(`#${heading.id}`).scrollIntoView({
 						behavior: 'smooth',
@@ -28,12 +28,12 @@ const TOCHeading = ({ heading, activeId }) => {
 			</Link>
 			{heading.items.length > 0 && (
 				<ul>
-					{heading.items.map((child) => (
+					{heading.items.map(child => (
 						<li key={child.id} className={child.id === activeId ? 'active' : ''}>
 							<Link
 								sx={{ color: theme.palette.text.secondary }}
 								href={`#${child.id}`}
-								onClick={(e) => {
+								onClick={e => {
 									e.preventDefault();
 									document.querySelector(`#${child.id}`).scrollIntoView({
 										behavior: 'smooth',
@@ -54,10 +54,10 @@ const TOCHeading = ({ heading, activeId }) => {
  * Get list of nested headings (h2 elements followed by h3 elements)
  * @param {HTMLHeadingElement[]} headingElements - list of h2 and h3 elements
  */
-const getNestedHeadings = (headingElements) => {
+const getNestedHeadings = headingElements => {
 	const nestedHeadings = [];
 
-	headingElements.forEach((heading) => {
+	headingElements.forEach(heading => {
 		const { innerText: title, id } = heading;
 
 		if (heading.nodeName === 'H2') {
@@ -93,30 +93,30 @@ const useHeadingsData = () => {
  * Check what heading/section the user is browsing and set its id
  * @param {(activeId: string) => void} setActiveId - function to set the active id
  */
-const useIntersectionObserver = (setActiveId) => {
+const useIntersectionObserver = setActiveId => {
 	const headingElementsRef = useRef({});
 	useEffect(() => {
 		const headingElements = Array.from(document.querySelectorAll('h2.resources, h3.resources'));
 
-		const callback = (headings) => {
+		const callback = headings => {
 			headingElementsRef.current = headings.reduce((map, headingElement) => {
 				map[headingElement.target.id] = headingElement;
 				return map;
 			}, headingElementsRef.current);
 
 			const visibleHeadings = [];
-			Object.keys(headingElementsRef.current).forEach((key) => {
+			Object.keys(headingElementsRef.current).forEach(key => {
 				const headingElement = headingElementsRef.current[key];
 				if (headingElement.isIntersecting) visibleHeadings.push(headingElement);
 			});
 
-			const getIndexFromId = (id) => headingElements.findIndex((heading) => heading.id === id);
+			const getIndexFromId = id => headingElements.findIndex(heading => heading.id === id);
 
 			if (visibleHeadings.length === 1) {
 				setActiveId(visibleHeadings[0].target.id);
 			} else if (visibleHeadings.length > 1) {
 				const sortedVisibleHeadings = visibleHeadings.sort(
-					(a, b) => getIndexFromId(a.target.id) > getIndexFromId(b.target.id),
+					(a, b) => getIndexFromId(a.target.id) > getIndexFromId(b.target.id)
 				);
 				setActiveId(sortedVisibleHeadings[0].target.id);
 			}
@@ -126,7 +126,7 @@ const useIntersectionObserver = (setActiveId) => {
 			rootMargin: '0px 0px -40% 0px',
 		});
 
-		headingElements.forEach((element) => observer.observe(element));
+		headingElements.forEach(element => observer.observe(element));
 
 		return () => observer.disconnect();
 	}, [setActiveId]);

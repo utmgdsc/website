@@ -3,7 +3,7 @@ import HeroImageDark from '@/assets/backgrounds/background_dark.jpg';
 import wordmark from '@/assets/graphics/gdscwordmark.svg';
 import { SkeletonLoadedImage, THEME } from '@/components';
 import { alpha, Box, Container, Typography, useTheme } from '@mui/material';
-import "./HomepageHero.scss";
+import './HomepageHero.scss';
 
 /**
  * @returns {JSX.Element} Hero header for the homepage.

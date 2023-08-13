@@ -6,7 +6,7 @@ import { ResourceLayout } from '@/layouts/ResourceLayout';
 
 export const metadata = {
 	title: 'Logo Download',
-}
+};
 
 /**
  * @return {JSX.Element} Brand resources page component
@@ -23,15 +23,30 @@ const BrandResources = () => {
 				<ul>
 					<li aria-level={1}>
 						Google colors (in the following order):{' '}
-						<Box component="span" sx={{ color: '#4285F4', fontWeight: 700 }}> #4285F4 </Box>
-						<Box component="span" sx={{ color: '#EA4335', fontWeight: 700 }}> #EA4335 </Box>
-						<Box component="span" sx={{ color: '#FBBC04', fontWeight: 700 }}> #FBBC04 </Box>
-						<Box component="span" sx={{ color: '#34A853', fontWeight: 700 }}> #34A853 </Box>
+						<Box component="span" sx={{ color: '#4285F4', fontWeight: 700 }}>
+							{' '}
+							#4285F4{' '}
+						</Box>
+						<Box component="span" sx={{ color: '#EA4335', fontWeight: 700 }}>
+							{' '}
+							#EA4335{' '}
+						</Box>
+						<Box component="span" sx={{ color: '#FBBC04', fontWeight: 700 }}>
+							{' '}
+							#FBBC04{' '}
+						</Box>
+						<Box component="span" sx={{ color: '#34A853', fontWeight: 700 }}>
+							{' '}
+							#34A853{' '}
+						</Box>
 					</li>
 					<ul>
 						<li aria-level={2}>
 							Google Logo Grey
-							<Box component="span" sx={{ color: '#656c73', fontWeight: 700 }}> #656c73 </Box>
+							<Box component="span" sx={{ color: '#656c73', fontWeight: 700 }}>
+								{' '}
+								#656c73{' '}
+							</Box>
 						</li>
 					</ul>
 					<li aria-level={1}>

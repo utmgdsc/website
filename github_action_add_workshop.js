@@ -19,8 +19,8 @@ async function run() {
 		if (process.env['workshop_code']) {
 			workshop.code = process.env['workshop_code'];
 		}
-		workshop.host = workshop.host.map((s) => s.trim());
-		workshop.host = workshop.host.filter((s) => s.trim()); // removes empty strings
+		workshop.host = workshop.host.map(s => s.trim());
+		workshop.host = workshop.host.filter(s => s.trim()); // removes empty strings
 
 		const temp = JSON.parse(fs.readFileSync('./frontend/src/data/workshops.json'));
 		temp[process.env['category']].push(workshop);

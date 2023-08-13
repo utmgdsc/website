@@ -3,7 +3,6 @@ import React from 'react';
 import { Slide, useScrollTrigger } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
-
 /**
  * Hides children on scroll down, shows on scroll up
  * @param {React.ReactNode} children The children to hide/show

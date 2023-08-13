@@ -1,7 +1,4 @@
-import {
-	LinearProgress,
-	Skeleton
-} from '@mui/material';
+import { LinearProgress, Skeleton } from '@mui/material';
 
 /**
  * Loading page

@@ -7,7 +7,7 @@ import { Link } from '@/components';
  * @param {TabProps} props - props to pass to the Tab component
  * @returns {JSX.Element} a styled version of the Tab component
  */
-export const LinkTab = styled((props) => <Tab component={Link} {...props} />)(({ theme }) => ({
+export const LinkTab = styled(props => <Tab component={Link} {...props} />)(({ theme }) => ({
 	color: theme.palette.text.secondary,
 	fontFamily: 'inherit',
 	fontSize: '1em',

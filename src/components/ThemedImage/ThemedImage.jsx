@@ -9,8 +9,8 @@ import { useTheme } from '@mui/material/styles';
  * @param {import('next/image').ImageProps} props The props to pass to the Image component
  */
 export const ThemedImage = ({ srcLight, srcDark, alt, ...props }) => {
-    const theme = useTheme();
-    const systemTheme = theme.palette.mode === 'dark';
+	const theme = useTheme();
+	const systemTheme = theme.palette.mode === 'dark';
 
-    return <Image src={systemTheme ? srcDark : srcLight} alt={alt} {...props} />;
-}
+	return <Image src={systemTheme ? srcDark : srcLight} alt={alt} {...props} />;
+};

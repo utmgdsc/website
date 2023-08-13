@@ -16,7 +16,7 @@ export default function sitemap() {
 	 * @type {Array<{url: string, lastModified: Date}}>
 	 */
 	let acc = [];
-	pages.forEach((item) => {
+	pages.forEach(item => {
 		acc.push({
 			url: `${BASE_URL}${item.path}`,
 			lastModified: new Date(),

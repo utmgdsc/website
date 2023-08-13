@@ -83,13 +83,7 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 				}}
 			>
 				<Container maxWidth={maxWidth}>
-					<Typography
-						component="h1"
-						fontWeight="bold"
-						variant="h2"
-						pb={4}
-						style={{ alignSelf: 'center' }}
-					>
+					<Typography component="h1" fontWeight="bold" variant="h2" pb={4} style={{ alignSelf: 'center' }}>
 						{text}
 					</Typography>
 				</Container>
