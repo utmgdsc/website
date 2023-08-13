@@ -108,7 +108,7 @@ export const ProjectList = () => {
 					setPage(index);
 				}}
 				sx={{
-					marginBottom: '1rem',
+					my: '1rem',
 				}}
 			>
 				{yearList.map(year => (
