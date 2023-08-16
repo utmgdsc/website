@@ -1,4 +1,4 @@
-name: Create Workshop Pull Request
+name: Create Workshop
 on:
   workflow_dispatch:
     inputs:
@@ -63,7 +63,7 @@ jobs:
           export workshop_recording="${{ inputs.workshop_recording }}"
           export workshop_code="${{ inputs.workshop_code }}"
           node github_action_add_workshop
-          cat ./frontend/src/data/workshops.json
+          cat ./src/data/workshops.json
       - name: Commit
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
