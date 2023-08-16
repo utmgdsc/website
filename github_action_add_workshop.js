@@ -22,9 +22,9 @@ async function run() {
 		workshop.host = workshop.host.map(s => s.trim());
 		workshop.host = workshop.host.filter(s => s.trim()); // removes empty strings
 
-		const temp = JSON.parse(fs.readFileSync('./frontend/src/data/workshops.json'));
+		const temp = JSON.parse(fs.readFileSync('./src/data/workshops.json'));
 		temp[process.env['category']].push(workshop);
-		fs.writeFileSync('./frontend/src/data/workshops.json', JSON.stringify(temp, null, 2));
+		fs.writeFileSync('./src/data/workshops.json', JSON.stringify(temp, null, 2));
 	} catch (error) {
 		core.setFailed(error.message);
 	}
