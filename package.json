@@ -1,0 +1,63 @@
+{
+	"name": "gdscutm-website",
+	"description": "GDSC UofT Mississauga Website",
+	"version": "2023.06",
+	"private": true,
+	"license": "LGPL-2.0-or-later",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/utmgdsc/website.git"
+	},
+	"bugs": {
+		"url": "https://github.com/utmgdsc/website/issues"
+	},
+	"dependencies": {
+		"@emotion/react": "^11.11.1",
+		"@emotion/styled": "^11.10.5",
+		"@mui/icons-material": "^5.14.3",
+		"@mui/material": "^5.14.4",
+		"next": "^13.4.13",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-gtm-module": "^2.0.11",
+		"sharp": "^0.32.4"
+	},
+	"devDependencies": {
+		"@svgr/webpack": "^8.0.1",
+		"eslint-config-next": "13.4.13",
+		"eslint-plugin-promise": "^6.1.1",
+		"eslint-plugin-react": "^7.33.1",
+		"eslint": "^8.47.0",
+		"husky": "^8.0.3",
+		"lint-staged": "^14.0.0",
+		"prettier": "^3.0.1",
+		"sass": "^1.65.1",
+		"url-loader": "^4.1.1"
+	},
+	"scripts": {
+		"start": "next start",
+		"build": "next build",
+		"dev": "next dev",
+		"lint": "next lint",
+		"pretty": "prettier --write \"./**/*.{js,jsx,ts,tsx,json}\""
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"prettier": {
+		"arrowParens": "avoid",
+		"bracketSameLine": false,
+		"bracketSpacing": true,
+		"endOfLine": "auto",
+		"jsxSingleQuote": false,
+		"printWidth": 120,
+		"quoteProps": "as-needed",
+		"semi": true,
+		"singleQuote": true,
+		"tabWidth": 4,
+		"trailingComma": "es5",
+		"useTabs": true
+	}
+}
