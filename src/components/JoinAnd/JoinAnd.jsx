@@ -1,6 +1,6 @@
 /**
  * Simple function to join strings with commas and an "and" at the end
- * @param {string[]} items The items to join
+ * @property {string[]} items The items to join
  * @returns {string} The JoinAnd(joined items)
  */
 export const JoinAnd = ({ items }) => {

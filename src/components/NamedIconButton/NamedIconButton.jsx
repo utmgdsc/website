@@ -2,10 +2,10 @@ import { IconButton, Tooltip } from '@mui/material';
 
 /**
  * A icon button with a named label and tooltip.
- * @param {string} href link to the social media profile
- * @param {JSX.Element} icon icon of the social media platform
- * @param {string} tooltip tooltip text
- * @param {string} title title of the social media platform
+ * @property {string} href link to the social media profile
+ * @property {JSX.Element} icon icon of the social media platform
+ * @property {string} tooltip tooltip text
+ * @property {string} title title of the social media platform
  * @returns {JSX.Element} social media button
  */
 export const NamedIconButton = ({ href, icon, tooltip, title }) => {

@@ -5,12 +5,12 @@ import Image from 'next/image';
 
 /**
  * Given a link, this component will render an image and a title in a card format
- * @param {string} href href of the link
- * @param {string} title title of the card
- * @param {string} image image of the card
- * @param {string} description description of the card if applicable
- * @param {string} alt alt text for the image
- * @param {number} height height of the image
+ * @property {string} href href of the link
+ * @property {string} title title of the card
+ * @property {string} image image of the card
+ * @property {string} description description of the card if applicable
+ * @property {string} alt alt text for the image
+ * @property {number} height height of the image
  */
 export const ImageLinkCard = ({ href, title, image, description, alt, height = 140 }) => {
 	// todo for UX add an arrow

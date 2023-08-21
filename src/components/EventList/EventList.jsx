@@ -27,10 +27,10 @@ const MAX_DATE = new Date(8640000000000000);
  * Gets the events from the GDSC (bevy) API.
  * If limit is specified, it will only show that many events.
  * If upcoming is specified, it will only show upcoming events. Otherwise, it will show all events.
- * @param {integer} limit the number of events to show
- * @param {Date} from the date to start showing events from (inclusive), based on end_date
- * @param {Date} to the date to stop showing events at (non-inclusive), based on end_date
- * @param {number} skeleton number of skeleton cards to show when loading
+ * @property {integer} limit the number of events to show
+ * @property {Date} from the date to start showing events from (inclusive), based on end_date
+ * @property {Date} to the date to stop showing events at (non-inclusive), based on end_date
+ * @property {number} skeleton number of skeleton cards to show when loading
  * @returns {JSX.Element} EventList component
  */
 export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE, skeleton = 0 }) => {
@@ -164,7 +164,7 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE, skeleton = 0 
 
 /**
  * Gets the description given an event ID from the GDSC (bevy) API.
- * @param {string} id id of the event
+ * @property {string} id id of the event
  * @returns {string} description of the event as a raw string
  */
 const Description = ({ id }) => {

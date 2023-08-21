@@ -6,7 +6,7 @@ import { useTheme } from '@mui/material/styles';
 
 /**
  * Hides children on scroll down, shows on scroll up
- * @param {React.ReactNode} children The children to hide/show
+ * @property {React.ReactNode} children The children to hide/show
  * @see https://mui.com/material-ui/react-app-bar/#HideAppBar.js
  */
 export const HideOnScroll = ({ children }) => {
@@ -34,7 +34,7 @@ export const HideOnScroll = ({ children }) => {
 
 /**
  * Adds elevation to children on scroll up
- * @param {React.ReactNode} children The children to add elevation to
+ * @property {React.ReactNode} children The children to add elevation to
  * @see https://mui.com/material-ui/react-app-bar/#HideAppBar.js
  */
 export const ElevationScroll = ({ children }) => {

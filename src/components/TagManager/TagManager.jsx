@@ -4,7 +4,7 @@ import TagManagerModule from 'react-gtm-module';
 /**
  * Component to initialize Google Tag Manager
  *
- * @param {React.ReactNode} children The children to render
+ * @property {React.ReactNode} children The children to render
  */
 export const TagManager = ({ children }) => {
 	useEffect(() => {

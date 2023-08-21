@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 
 /**
  * Returns the term given a date object
- * @param {Date} date to convert
+ * @property {Date} date to convert
  * @returns {string} the term as a string
  */
 const getTerm = date => {

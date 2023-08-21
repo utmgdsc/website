@@ -3,18 +3,18 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Container, Typography } from '@mui/material';
 
 import Image from 'next/image';
+
 /**
  * A banner with header text and a background image. It is a hero image style header
  * component, spanning the full width of the page/container.
  * It is recommended to use this component in a container with a max width of 100%.
- * @param {string} text text to display on the header
- * @param {string} picture image to display on the header
- * @param {string} maxWidth max width of the header to pass to the container
- * @param {string} position position of the image, either "top" or "bottom"
- * @param {string} height height of the header
+ * @property {string} text text to display on the header
+ * @property {string} picture image to display on the header
+ * @property {string} maxWidth max width of the header to pass to the container
+ * @property {string} position position of the image, either "top" or "bottom"
+ * @property {string} height height of the header
  * @returns {JSX.Element} hero image style header component
  */
-
 export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem' }) => {
 	const [imgOffset, setImgOffset] = useState(0);
 

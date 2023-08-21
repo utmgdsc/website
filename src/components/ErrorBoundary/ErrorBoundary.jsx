@@ -9,8 +9,8 @@ import AlertTitle from '@mui/material/AlertTitle';
  *
  * AO from https://reactjs.org/docs/error-boundaries.html
  *
- * @param {string} my margin-top and margin-bottom
- * @param {React.ReactNode} children The children to render
+ * @property {string} my margin-top and margin-bottom
+ * @property {React.ReactNode} children The children to render
  */
 export class ErrorBoundary extends React.Component {
 	constructor(props) {

@@ -7,7 +7,7 @@ import { GoogleTheme, THEME } from './theme';
 
 /**
  * From MUI Starter Code
- * @param {React.ReactNode} children
+ * @property {React.ReactNode} children
  *
  * @see https://github.com/mui/material-ui/blob/master/examples/material-next-app-router-ts/src/components/ThemeRegistry/ThemeRegistry.tsx
  */

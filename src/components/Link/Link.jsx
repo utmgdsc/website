@@ -5,12 +5,12 @@ import { Link as MaterialLink } from '@mui/material';
 
 /**
  * A link
- * @param {React.ReactNode} children The link's children
- * @param {string} href The link's href
- * @param {React.Ref} forwardedRef A ref to pass to the link
- * @param {boolean} external If true, the link will open in a new tab
- * @param {boolean} openInNewTab If true, the link will open in a new tab
- * @param {Object} props Any other props
+ * @property {React.ReactNode} children The link's children
+ * @property {string} href The link's href
+ * @property {React.Ref} forwardedRef A ref to pass to the link
+ * @property {boolean} external If true, the link will open in a new tab
+ * @property {boolean} openInNewTab If true, the link will open in a new tab
+ * @property {Object} props Any other props
  * @returns {JSX.Element} A link
  */
 const NonForwardLink = ({ children, href, forwardedRef, external, openInNewTab = external, ...props }) => {
@@ -46,10 +46,10 @@ const NonForwardLink = ({ children, href, forwardedRef, external, openInNewTab =
 
 /**
  * A link that supports MUI styling
- * @param {string} href The link's href
- * @param {React.Ref} forwardedRef A ref to pass to the link
- * @param {boolean} external If true, the link will open in a new tab
- * @param {boolean} openInNewTab If true, the link will open in a new tab
- * @param {Object} props Any other props
+ * @property {string} href The link's href
+ * @property {React.Ref} forwardedRef A ref to pass to the link
+ * @property {boolean} external If true, the link will open in a new tab
+ * @property {boolean} openInNewTab If true, the link will open in a new tab
+ * @property {Object} props Any other props
  */
 export const Link = React.forwardRef((props, ref) => <NonForwardLink {...props} forwardedRef={ref} />);

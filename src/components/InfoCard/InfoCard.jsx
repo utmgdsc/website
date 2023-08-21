@@ -9,12 +9,12 @@ const CardColors = ['success', 'error', 'warning', 'info'];
 /**
  * Gets the events from the GDSC (bevy) API and displays them in a card format.
  * The card has a clickable button that redirects to the event's page.
- * @param {string} subtitle the subtitle of the event appearing above the title
- * @param {string} title the title of the event
- * @param {string} href the url of the event
- * @param {string} description the description of the event
- * @param {number} lines the number of lines to show in the description
- * @param {string} linkText the text to show on the button
+ * @property {string} subtitle the subtitle of the event appearing above the title
+ * @property {string} title the title of the event
+ * @property {string} href the url of the event
+ * @property {string} description the description of the event
+ * @property {number} lines the number of lines to show in the description
+ * @property {string} linkText the text to show on the button
  */
 export const InfoCard = ({ subtitle, title, href, description, lines = 4, linkText = 'View Details' }) => {
 	return (

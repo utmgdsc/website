@@ -5,9 +5,9 @@ import * as React from 'react';
 
 /**
  * From MUI Starter Code
- * @param {Omit<OptionsOfCreateCache, 'insertionPoint'>} options This is the options passed to createCache() from 'import createCache from "@emotion/cache"'
- * @param {(props: { value: EmotionCache; children: React.ReactNode; }) => React.JSX.Element | null} CacheProvider By default <CacheProvider /> from 'import { CacheProvider } from "@emotion/react"'
- * @param {React.ReactNode} children
+ * @property {Omit<OptionsOfCreateCache, 'insertionPoint'>} options This is the options passed to createCache() from 'import createCache from "@emotion/cache"'
+ * @property {(props: { value: EmotionCache; children: React.ReactNode; }) => React.JSX.Element | null} CacheProvider By default <CacheProvider /> from 'import { CacheProvider } from "@emotion/react"'
+ * @property {React.ReactNode} children
  *
  * @see https://github.com/garronej/tss-react/blob/main/src/next/appDir.tsx
  * @see https://github.com/mui/material-ui/blob/master/examples/material-next-app-router-ts/src/components/ThemeRegistry/EmotionCache.tsx

@@ -20,7 +20,7 @@ export const THEME = {
 
 /**
  * Generates a GoogleTheme
- * @param {string} mode the theme mode
+ * @property {string} mode the theme mode
  */
 export const GoogleTheme = ({ mode }) => {
 	return {

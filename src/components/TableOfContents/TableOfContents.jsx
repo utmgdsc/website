@@ -7,8 +7,8 @@ import { Typography, useTheme } from '@mui/material';
 
 /**
  * TOCHeading component in table of content
- * @param {string} heading to be shown
- * @param {string} activeId current heading id is displayed now
+ * @property {string} heading to be shown
+ * @property {string} activeId current heading id is displayed now
  * @returns {JSX.Element} JSX elements of heading component
  */
 const TOCHeading = ({ heading, activeId }) => {

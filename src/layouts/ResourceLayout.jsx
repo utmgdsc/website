@@ -4,12 +4,12 @@ import { HeroLayout } from '@/layouts/HeroLayout';
 
 /**
  * Layout for resources pages (workshops, projects, etc.)
- * @param {Object} children - Children components
- * @param {string} title - Title of the page
- * @param {string} picture - Picture to be used as the hero header
- * @param {string} id - Container id
- * @param {string} position - Position of the hero header
- * @param {number} height - Height of the hero header
+ * @property {Object} children - Children components
+ * @property {string} title - Title of the page
+ * @property {string} picture - Picture to be used as the hero header
+ * @property {string} id - Container id
+ * @property {string} position - Position of the hero header
+ * @property {number} height - Height of the hero header
  * @return {JSX.Element} Resource layout component
  */
 export const ResourceLayout = ({ children, title, picture, id, position, height }) => {

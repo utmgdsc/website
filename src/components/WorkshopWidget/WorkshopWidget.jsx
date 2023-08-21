@@ -3,7 +3,7 @@ import { Code, ExpandMore, RadioButtonChecked, Slideshow } from '@mui/icons-mate
 import { Accordion, AccordionDetails, AccordionSummary, CardContent, List, Typography } from '@mui/material';
 
 /**
- * @param {{"key": {name: string; date: Date; host: string[]; description: string; code?: string; slides?: string; recording?: string;}[]}[]} item The workshop item from the workshops.json JSON file
+ * @property {{"key": {name: string; date: Date; host: string[]; description: string; code?: string; slides?: string; recording?: string;}[]}[]} item The workshop item from the workshops.json JSON file
  * @returns {JSX.Element} The workshop widget
  */
 export const WorkshopWidget = ({ item }) => {

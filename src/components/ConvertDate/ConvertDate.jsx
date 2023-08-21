@@ -1,6 +1,6 @@
 /**
  * Converts ISP 8601 date string to more unambiguous format
- * @param {string} date The date string in DD-MM-YYYY or ISP 8601 format
+ * @property {string} date The date string in DD-MM-YYYY or ISP 8601 format
  *
  * @returns {string} The localized date string
  */
