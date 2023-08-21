@@ -31,7 +31,7 @@
 		"husky": "^8.0.3",
 		"lint-staged": "^14.0.0",
 		"prettier": "^3.0.2",
-		"sass": "^1.65.1",
+		"sass": "^1.66.1",
 		"url-loader": "^4.1.1"
 	},
 	"scripts": {
