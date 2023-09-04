@@ -23,7 +23,7 @@
 		"sharp": "^0.32.5"
 	},
 	"devDependencies": {
-		"@svgr/webpack": "^8.0.1",
+		"@svgr/webpack": "^8.1.0",
 		"eslint-config-next": "13.4.19",
 		"eslint-plugin-promise": "^6.1.1",
 		"eslint-plugin-react": "^7.33.2",
