@@ -1,4 +1,4 @@
-import { FAQ, Link, ProjectList } from '@/components';
+import { ExpiryContainer, FAQ, Link, ProjectList } from '@/components';
 import { Alert, Box, Typography } from '@mui/material'
 import BannerImg from '../../assets/website_proprietary/heroes/IMG_4712.jpg';
 import { HeroLayout } from '../../layouts/HeroLayout';
@@ -11,9 +11,11 @@ export const metadata = {
 const ProjectPage = () => {
 	return (
 		<HeroLayout title={metadata.title} picture={BannerImg} position="bottom" id="projects">
-			<Alert variant="info">
-				Community projects are back for Fall 2023! If you are a UTM CS Major/Spec, <Link external href="https://forms.gle/wgXtZQ9U36dn7BAZ9">reach out and apply</Link>
-			</Alert>
+			<ExpiryContainer date={'2023-08-20'}>
+				<Alert variant="info">
+					Community projects are back for Fall 2023! If you are a UTM CS Major/Spec, <Link external href="https://forms.gle/wgXtZQ9U36dn7BAZ9">reach out and apply</Link>
+				</Alert>
+			</ExpiryContainer>
 
 			<h2 className="resources" id="faq">
 				Frequently Asked Questions
