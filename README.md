@@ -5,6 +5,8 @@
 	GDSC Website
 </h1>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/30870ebd-b4fa-4c6b-888e-da18cfb2f0b1/deploy-status)](https://app.netlify.com/sites/gdscutm/deploys)
+
 Google Developer Student Clubs (GDSC) is a student-led community backed by Google Developers aimed at empowering undergraduate students from all disciplines to grow their knowledge in technology, build solutions for their local communities, and connect with other members from the Google community.
 
 ## About The Project
