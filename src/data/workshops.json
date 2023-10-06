@@ -194,6 +194,17 @@
       ],
       "description": "This workshop will include learning about convolutional neural networks and taking a look at neuron activations to understand the feature extraction process during a simple image classification task. We will build our own convnets on Kaggle to continue our machine learning certification!",
       "code": "https://www.kaggle.com/learn/computer-vision"
+    },
+    {
+      "name": "CSSC × GDSC: Intro to Machine Learning!",
+      "date": "2023-10-06",
+      "host": [
+        "Aaron Shah",
+        "Manav Bhojak"
+      ],
+      "description": "🤖 Join us for an exciting ML Workshop! 🚀 Dive into the world of Machine Learning, where we'll unravel the mysteries of CNNs, RNNs, Transformers, and more. 🤯\\n\\nGet ready to embark on a journey of discovery! We'll begin with an easy-to-follow introduction to the fascinating realm of ML. 📚\\n\\n🛠️ In our hands-on session, we'll walk you through setting up your environment. No tech hurdles here! 🌐\\n\\n🔍 Then, we'll get down to the nitty-gritty, guiding you through our starter code for a thrilling hands-on example. Together, we'll explore the power of ML in action! 💡",
+      "slides": "https://www.slideshare.net/GDSCUofTMississauga/cssc-ml-workshop",
+      "code": "https://github.com/0dm/digit-recognition"
     }
   ],
   "Cybersecurity": [
