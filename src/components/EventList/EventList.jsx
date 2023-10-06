@@ -136,16 +136,21 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE, skeleton = 0 
 
 	return (
 		<>
+			{ yearList.length > 1 &&
 			<Tabs
 				value={page}
 				onChange={(e, index) => {
 					setPage(index);
+				}}
+				sx={{
+					my: '1rem',
 				}}
 			>
 				{yearList.map((year, id) => (
 					<Tab key={id} label={year} />
 				))}
 			</Tabs>
+			}
 			<Grid container spacing={2}>
 				{filteredEvents.map(event => (
 					<Grid key={event['id']} item xs={12} sm={6} md={4}>
