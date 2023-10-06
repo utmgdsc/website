@@ -16,7 +16,6 @@
 		"@emotion/styled": "^11.10.5",
 		"@mui/icons-material": "^5.14.11",
 		"@mui/material": "^5.14.10",
-		"@netlify/plugin-nextjs": "^4.29.5-appdir.0",
 		"next": "^13.4.19",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
