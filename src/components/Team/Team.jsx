@@ -65,8 +65,8 @@ const Person = ({ name, role, picture }) => {
 			<figcaption>
 				<span className="introduction">
 					<strong>{name}</strong>
-					<hr />
-					<em>{yearProgram}</em>
+					{/* <hr /> */}
+					{/* <em>{yearProgram}</em> */}
 				</span>
 				<span className="role"> {role}</span>
 			</figcaption>

@@ -31,7 +31,7 @@ export const Team = ({ teamInfo, title }) => {
 					<Person
 						key={index}
 						name={teamMember.name}
-						yearProgram={teamMember.yearProgram}
+						// yearProgram={teamMember.yearProgram}
 						role={teamMember.role}
 						picture={
 							teamMember.picture
@@ -53,7 +53,7 @@ export const Team = ({ teamInfo, title }) => {
  * @property {string} pronouns pronouns of the team member
  * @returns {JSX.Element} a single team member
  */
-const Person = ({ name, role, picture, yearProgram }) => {
+const Person = ({ name, role, picture, yearProgram = ""}) => {
 	return (
 		<figure className="member">
 			<Image
@@ -68,7 +68,7 @@ const Person = ({ name, role, picture, yearProgram }) => {
 
 			<figcaption>
 				<span className="introduction">
-					<strong>{name}</strong> <em>{yearProgram}</em>
+					<strong>{name}</strong> { yearProgram !== '' && <em>{yearProgram}</em> }
 				</span>
 				<span className="role"> {role}</span>
 			</figcaption>
