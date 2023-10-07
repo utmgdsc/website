@@ -61,8 +61,8 @@ const Person = ({ name, role, picture }) => {
 						// so there is no need to repeat the information
 						alt=""
 						draggable="false"
-						width={200}
-						height={200}
+						width={110}
+						height={110}
 					/> :
 					<ProprietaryImage
 						src={picture}
@@ -70,8 +70,8 @@ const Person = ({ name, role, picture }) => {
 						// so there is no need to repeat the information
 						alt=""
 						draggable="false"
-						width={200}
-						height={200}
+						width={110}
+						height={110}
 					/>
 			}
 
