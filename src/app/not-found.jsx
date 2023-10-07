@@ -1,5 +1,5 @@
 import { Container, Typography } from '@mui/material';
-import { ThemedImage } from '@/components';
+import { ThemedImage } from '@/components/client';
 
 import estelle from '@/assets/graphics/sad_mascot.png';
 import estelle_dark from '@/assets/graphics/sad_mascot_dark.png';

@@ -1,3 +1,4 @@
+'use client';
 /**
  * @fileoverview self-explanatory social media button components
  * Update as needed when adding new social media or removing old ones
@@ -6,7 +7,7 @@
 import { Email, Facebook, GitHub, Google, Instagram, LinkedIn, Twitter, YouTube } from '@mui/icons-material';
 import { createSvgIcon } from '@mui/material';
 
-import { NamedIconButton } from '@/components/NamedIconButton/NamedIconButton';
+import { NamedIconButton } from '@/components/server';
 
 /**
  * Discord icon

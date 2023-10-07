@@ -1,8 +1,9 @@
 import { Container, Typography } from '@mui/material';
-import HeroInfoSesh from '@/assets/website_proprietary/heroes/infosession.jpg';
-import HeroTeam from '@/assets/website_proprietary/heroes/team.png';
-import { ErrorBoundary, EventList, ExpiryContainer, HeroHeader, HomepageHero, Team } from '@/components';
+import { ErrorBoundary, EventList, HeroHeader, HomepageHero, Team } from '@/components/client';
+import { ExpiryContainer } from '@/components/server';
 import teamMembers from '@/data/team.json';
+import whoAreWeBanner from '@/assets/notgpl/info-session.jpg';
+import meetTheTeamBanner from '@/assets/notgpl/team.jpg';
 
 export const metadata = {
 	title: "Home - GDSC UTM",
@@ -34,7 +35,10 @@ const Homepage = () => {
 
 			{/* about / who are we */}
 			<section id="who-are-we">
-				<HeroHeader text="Who are we?" picture={HeroInfoSesh} maxWidth="md" position="top" />
+				<HeroHeader
+					text="Who are we?" picture={whoAreWeBanner}
+					maxWidth="md" position="top"
+				/>
 				<Container sx={{ py: 8, lineHeight: '2em' }} maxWidth="md">
 					<p>
 						<dfn id="gsdc-defn">Google Developer Student Clubs</dfn> (<abbr>GDSC</abbr>) is a
@@ -55,8 +59,8 @@ const Homepage = () => {
 			</section>
 			{/* team list */}
 			<section id="meet-the-team">
-				<ExpiryContainer date={'2023-06-30'}>
-					<HeroHeader text="Meet the team" picture={HeroTeam} maxWidth="md" />
+				<ExpiryContainer date={'2024-06-30'}>
+					<HeroHeader text="Meet the team" picture={meetTheTeamBanner} maxWidth="md" />
 					<Container sx={{ py: 8, px: 0 }} maxWidth="md">
 						<ErrorBoundary>
 							{Object.keys(teamMembers).map((subteam, index) => {

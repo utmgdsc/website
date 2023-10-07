@@ -1,9 +1,11 @@
+'use client';
 import './Team.scss';
 
 import { Typography } from '@mui/material';
 
 import DefaultUser from '@/assets/graphics/default_user.svg';
-import { SkeletonLoadedImage } from '@/components';
+import { SkeletonLoadedImage } from '@/client_components';
+import { getProprietaryURL } from '@/server_components';
 
 /**
  * Team component. Displays a team with a title and a list of team members
@@ -29,12 +31,11 @@ export const Team = ({ teamInfo, title }) => {
 					<Person
 						key={index}
 						name={teamMember.name}
-						pronouns={teamMember.pronouns}
 						role={teamMember.role}
 						picture={
-							teamMember.picture === undefined
-								? DefaultUser
-								: require(`@/assets/website_proprietary/team/${teamMember.picture}`)
+							teamMember.picture
+								? getProprietaryURL(`team/${teamMember.picture}`)
+								: DefaultUser
 						}
 					/>
 				))}
@@ -48,10 +49,9 @@ export const Team = ({ teamInfo, title }) => {
  * @property {string} name name of the team member
  * @property {string} role role of the team member
  * @property {string} picture picture of the team member
- * @property {string} pronouns pronouns of the team member
  * @returns {JSX.Element} a single team member
  */
-const Person = ({ name, role, picture, pronouns }) => {
+const Person = ({ name, role, picture }) => {
 	return (
 		<figure className="member">
 			<SkeletonLoadedImage
@@ -64,7 +64,9 @@ const Person = ({ name, role, picture, pronouns }) => {
 
 			<figcaption>
 				<span className="introduction">
-					<strong>{name}</strong> <em>{pronouns}</em>
+					<strong>{name}</strong>
+					<hr />
+					<em>{yearProgram}</em>
 				</span>
 				<span className="role"> {role}</span>
 			</figcaption>

@@ -1,8 +1,9 @@
-import { ExpiryContainer, FAQ, Link, ProjectList } from '@/components';
+import { FAQ, ProjectList } from '@/components/client';
 import { Alert, Box, Typography } from '@mui/material'
-import BannerImg from '../../assets/website_proprietary/heroes/IMG_4712.jpg';
-import { HeroLayout } from '../../layouts/HeroLayout';
+import { HeroLayout } from "@/layouts/HeroLayout";
 import FAQData from './faq.json';
+import { ExpiryContainer, Link } from '@/components/server';
+import bannerImage from '@/assets/notgpl/IMG_4712.jpg';
 
 export const metadata = {
 	title: 'Community Projects',
@@ -10,7 +11,7 @@ export const metadata = {
 
 const ProjectPage = () => {
 	return (
-		<HeroLayout title={metadata.title} picture={BannerImg} position="bottom" id="projects">
+		<HeroLayout title={metadata.title} picture={bannerImage} position="bottom" id="projects">
 			<ExpiryContainer date={'2023-08-20'}>
 				<Alert variant="info">
 					Community projects are back for Fall 2023! If you are a UTM CS Major/Spec, <Link external href="https://forms.gle/wgXtZQ9U36dn7BAZ9">reach out and apply</Link>

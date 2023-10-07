@@ -14,6 +14,14 @@ const nextConfig = {
 			transform: '@mui/icons-material/{{member}}',
 		},
 	},
+	images: {
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: process.env.proprietary_images_hostname,
+			},
+		],
+	},
 };
 
 module.exports = nextConfig;

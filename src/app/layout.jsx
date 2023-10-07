@@ -1,6 +1,6 @@
 import './App.scss';
 
-import { ErrorBoundary, Footer, Navbar, TagManager, ThemeRegistry } from '@/components';
+import { ErrorBoundary, Footer, Navbar, TagManager, ThemeRegistry } from '@/components/client';
 
 import { GoogleSans, GoogleSansDisplay } from '@/assets/fonts/fonts';
 

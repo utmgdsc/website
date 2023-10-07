@@ -1,9 +1,11 @@
 import { Alert, Typography } from '@mui/material';
 
-import BannerImg from '@/assets/website_proprietary/heroes/IMG_1045.png';
-import { ErrorBoundary, EventList, Link } from '@/components';
+import { ErrorBoundary, EventList } from '@/components/client';
+import { Link } from '@/components/server';
 
 import { HeroLayout } from '@/layouts/HeroLayout';
+
+import bannerImage from '@/assets/notgpl/IMG_1045.jpg';
 
 export const metadata = {
 	title: 'Events',
@@ -14,7 +16,7 @@ export const metadata = {
  */
 const Events = () => {
 	return (
-		<HeroLayout title={metadata.title} picture={BannerImg} position="bottom" id="events">
+		<HeroLayout title={metadata.title} picture={bannerImage} position="bottom" id="events">
 			<noscript>
 				<Alert severity="warning">
 					You need JavaScript to view events. You may view previous events at the <Link external href="https://gdsc.community.dev/university-of-toronto-mississauga/">

@@ -1,6 +1,6 @@
 import { Container } from '@mui/material';
 
-import { HeroHeader } from '@/components';
+import { HeroHeader } from '@/components/client';
 
 /**
  * Layout for pages with a hero header (home, about, etc.)

@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 
 import BannerImg from '@/assets/graphics/sky.png';
-import { Link } from '@/components';
+import { Link } from '@/components/server';
 import { ResourceLayout } from '@/layouts/ResourceLayout';
 
 export const metadata = {

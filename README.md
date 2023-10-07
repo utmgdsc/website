@@ -36,19 +36,6 @@ Except where otherwise noted, the is project is licensed under the [LGPL 2.0 or 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
-## Access proprietary files
-We use a submodule to access files not licensed under an open source license. To access these files, run the following commands:
-```sh
-git submodule sync
-git submodule update --init
-```
-
-To update the submodule, run the following commands:
-```sh
-git submodule -q foreach git pull -q origin main
-git submodule update --remote --merge
-```
-
 ## Maintenance
 ### Adding Google Tag Manager (GTM) ID
 To add the GTM ID, create a `.env.local` file or set the `NEXT_PUBLIC_GTM_ID` environment variable to the GTM ID.

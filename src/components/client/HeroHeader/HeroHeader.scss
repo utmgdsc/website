@@ -1,0 +1,30 @@
+.hero-header-parallax {
+	&:after {
+		content: "";
+		background-image: linear-gradient(rgba(255, 255, 255, .6) 0%, rgba(255, 255, 255, 0.8) 100%);
+		background-size: 18px;
+		bottom: 0;
+		display: block;
+		height: 100%;
+		position: absolute;
+		right: 0;
+		width: 100%;
+		z-index: 1;
+	}
+
+	.react-parallax-content {
+		z-index: 2;
+	}
+
+	img {
+		object-fit: cover;
+	}
+}
+
+.dark {
+	.hero-header-parallax {
+		&:after {
+			background-image: linear-gradient(rgba(0, 0, 0, .6) 0%, rgba(0, 0, 0, 0.8) 100%);
+		}
+	}
+}
