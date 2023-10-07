@@ -61,14 +61,17 @@ As of commit [a414b04](https://github.com/utmgdsc/website/commit/a414b0440bb1144
 7. Merge, and you're done!
 
 ### Updating the Team List
-> **Note**: You must have push access to [our private submodule](https://github.com/utmgdsc/website_proprietary) to update the team list.
+> **Note**: You must have push access to [the private images repo](https://github.com/utmgdsc/website_proprietary) to update the team list on production. Otherwise, you may use your own by setting the `proprietary_images_hostname` environment variable to your own server.
 
 1. Navigate to the private team list image repository and remove all images from the `team` folder.
 2. Add the new team member images to the `team` folder.
 3. Open your favourite text editor and navigate to the [`src/data/team.json`](https://github.com/utmgdsc/website/blob/main/src/data/team.json) file.
 4. Follow the schema to replace the file with the new team members to the JSON file.
-	- Note that the `image` field is the name of the image file in the private team list image repository.
-5. Commit and push the changes to the `develop` branch, then PR and merge! ^-^
+	- Note that the `image` field is the name of the image file in the private team list image repository, under the `team` folder.
+	- Each key in the JSON object is the name of the team, which can be changed. The value is an array of team members.
+5. Don't forget to update the component expiration date on the `ExpiryContainer` component in [`src/app/page.jsx`](https://github.com/utmgdsc/website/blob/main/src/app/page.jsx) to reflect the new team. Otherwise, the team list might not appear on the website.
+   - After the expiration date has passed, the team list will be removed from the website. This ensures the team list never shows outdated information.
+6. Commit and push the changes to the `develop` branch, then [PR](https://github.com/utmgdsc/website/compare/main...develop) and merge! ^-^
 
 ### Updating the FAQ
 1. Open your favourite text editor and navigate to the [`src/data/faq.json`](https://github.com/utmgdsc/website/blob/main/src/data/faq.json) file.
