@@ -46,7 +46,7 @@ NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
 ```
 
 ### Updating the Navbar
-As of commit [a414b04](https://github.com/utmgdsc/website/commit/a414b0440bb11440ceb96d05d8d7da0d856da6cd), the navbar is generated from a JS object. To update the navbar, edit [NavbarTabData.js](https://github.com/utmgdsc/website/blob/main/src/data/NavbarTabData.js).
+When creating new pages, the navbar must be updated to include the new page if desired. As of commit [a414b04](https://github.com/utmgdsc/website/commit/a414b0440bb11440ceb96d05d8d7da0d856da6cd), the navbar is generated from a JS object and contains an array of paths and their corresponding labels. To update the navbar, edit [NavbarTabData.js](https://github.com/utmgdsc/website/blob/main/src/data/NavbarTabData.js) and read the comments for instructions.
 
 
 ### Adding a new Workshop
@@ -71,12 +71,12 @@ As of commit [a414b04](https://github.com/utmgdsc/website/commit/a414b0440bb1144
 	- Each key in the JSON object is the name of the team, which can be changed. The value is an array of team members.
 5. Don't forget to update the component expiration date on the `ExpiryContainer` component in [`src/app/page.jsx`](https://github.com/utmgdsc/website/blob/main/src/app/page.jsx) to reflect the new team. Otherwise, the team list might not appear on the website.
    - After the expiration date has passed, the team list will be removed from the website. This ensures the team list never shows outdated information.
-6. Commit and push the changes to the `develop` branch, then [PR](https://github.com/utmgdsc/website/compare/main...develop) and merge! ^-^
+6. Commit and push the changes to the `develop` branch, then [open a PR](https://github.com/utmgdsc/website/compare/main...develop) and merge! ^-^
 
-### Updating the FAQ
+### Updating the FAQ on the Resources page
 1. Open your favourite text editor and navigate to the [`src/data/faq.json`](https://github.com/utmgdsc/website/blob/main/src/data/faq.json) file.
 2. Follow the schema to update the categories and/or the questions and answers within them.
-3. Commit and push the changes to the `develop` branch, then open a PR and merge! :yum:
+3. Commit and push the changes to the `develop` branch, then [open a PR](https://github.com/utmgdsc/website/compare/main...develop) and merge! :yum:
 
 ## Learn More
 To learn more about Next.js, take a look at the following resources:
