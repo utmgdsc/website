@@ -56,6 +56,7 @@ When creating new pages, the navbar must be updated to include the new page if d
 2. Click the `Run workflow` button.
 3. Select the `develop` branch. (Make sure the `develop` branch is up to date with the `main` branch first.)
 4. Fill in the prompts as needed.
+	* To add newlines in the description, use the `\n` escape sequence.
 5. Click the `Run workflow` button.
 6. [Create a pull request from the `develop` branch to the `main` branch](https://github.com/utmgdsc/website/compare/main...develop).
 7. Merge, and you're done!
