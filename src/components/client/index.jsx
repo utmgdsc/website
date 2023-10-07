@@ -12,7 +12,6 @@ export { ErrorBoundary } from './ErrorBoundary/ErrorBoundary';
 export { EventList } from './EventList/EventList';
 export { FAQ } from './FAQ/FAQ';
 export { Footer } from './Footer/Footer';
-export { ProprietaryImage } from './ProprietaryImage/ProprietaryImage';
 export { HeroHeader } from './HeroHeader/HeroHeader';
 export { HomepageHero } from './HomepageHero/HomepageHero';
 export { ImageLinkCard } from './ImageLinkCard/ImageLinkCard';

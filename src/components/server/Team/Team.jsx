@@ -5,8 +5,7 @@ import { Typography } from '@mui/material';
 import DefaultUser from '@/assets/graphics/default_user.svg';
 // import { ProprietaryImage, SkeletonLoadedImage } from '@/components/client';
 import Image from 'next/image';
-import { getProprietaryURL } from '@/components/server';
-import { ProprietaryImage } from '@/components/client';
+import { ProprietaryImage } from '@/components/server';
 
 /**
  * Team component. Displays a team with a title and a list of team members

@@ -1,6 +1,8 @@
 import { Box, Grid } from '@mui/material';
 
-import { TableOfContents, WorkshopWidget } from '@/components/client';
+import { InfoCard, TableOfContents, WorkshopWidget } from '@/components/client';
+import { JoinAnd } from '@/components/server';
+
 import workshops from '@/data/workshops.json';
 
 import { ResourceLayout } from '@/layouts/ResourceLayout';
@@ -18,6 +20,28 @@ const WorkshopArchive = () => {
 	return (
 		// todo a search bar would be cool
 		<ResourceLayout title={metadata.title} picture={bannerImage} id="workshop-archive">
+			<Grid container spacing={2}>
+				{/* get latest 3 workshops and give them an infocard */}
+				{
+					Object.keys(workshops).reduce(function (acc, key) {
+						return [...acc, ...workshops[key]];
+					}, []).sort(function (a, b) {
+						return new Date(b.date) - new Date(a.date);
+					}).slice(0, 3).map((item, index) => {
+						return (
+							<Grid item md={4} key={index}>
+								<InfoCard
+									title={item.name}
+									href={item.slides}
+									description={item.description}
+									lines={2}
+								/>
+							</Grid>
+						);
+					})
+				}
+			</Grid>
+
 			<Grid container spacing={2}>
 				<Grid item md={3}>
 					<TableOfContents />
