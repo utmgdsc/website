@@ -18,7 +18,11 @@ const nextConfig = {
 		remotePatterns: [
 			{
 				protocol: 'https',
-				hostname: process.env.proprietary_images_hostname,
+				hostname: 'picsum.photos',
+			},
+			{
+				protocol: 'https',
+				hostname: process.env.proprietary_images_hostname ? process.env.proprietary_images_hostname : 'localhost',
 			},
 		],
 	},

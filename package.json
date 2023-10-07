@@ -17,13 +17,13 @@
 		"@mui/icons-material": "^5.14.11",
 		"@mui/material": "^5.14.10",
 		"next": "13.4.12",
-		"@netlify/plugin-nextjs": "^4.29.5-appdir.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-gtm-module": "^2.0.11",
 		"sharp": "^0.32.6"
 	},
 	"devDependencies": {
+		"@netlify/plugin-nextjs": "^4.29.5-appdir.0",
 		"@svgr/webpack": "^8.1.0",
 		"eslint": "^8.50.0",
 		"eslint-config-next": "13.5.3",

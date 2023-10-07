@@ -7,5 +7,6 @@ export { ConvertDate } from './ConvertDate/ConvertDate';
 export { ExpiryContainer } from './ExpiryContainer/ExpiryContainer';
 export { getProprietaryURL } from './getProprietaryURL/getProprietaryURL';
 export { JoinAnd } from './JoinAnd/JoinAnd';
-export { NamedIconButton } from './NamedIconButton/NamedIconButton';
 export { Link } from './Link/Link';
+export { NamedIconButton } from './NamedIconButton/NamedIconButton';
+export { Team } from './Team/Team';

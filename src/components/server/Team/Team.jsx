@@ -1,11 +1,12 @@
-'use client';
 import './Team.scss';
 
 import { Typography } from '@mui/material';
 
 import DefaultUser from '@/assets/graphics/default_user.svg';
-import { SkeletonLoadedImage } from '@/client_components';
-import { getProprietaryURL } from '@/server_components';
+// import { ProprietaryImage, SkeletonLoadedImage } from '@/components/client';
+import Image from 'next/image';
+import { getProprietaryURL } from '@/components/server';
+import { ProprietaryImage } from '@/components/client';
 
 /**
  * Team component. Displays a team with a title and a list of team members
@@ -33,9 +34,7 @@ export const Team = ({ teamInfo, title }) => {
 						name={teamMember.name}
 						role={teamMember.role}
 						picture={
-							teamMember.picture
-								? getProprietaryURL(`team/${teamMember.picture}`)
-								: DefaultUser
+							teamMember.picture ? `team/${teamMember.picture}` : null
 						}
 					/>
 				))}
@@ -49,24 +48,37 @@ export const Team = ({ teamInfo, title }) => {
  * @property {string} name name of the team member
  * @property {string} role role of the team member
  * @property {string} picture picture of the team member
+ * @property {string} pronouns pronouns of the team member
  * @returns {JSX.Element} a single team member
  */
 const Person = ({ name, role, picture }) => {
 	return (
 		<figure className="member">
-			<SkeletonLoadedImage
-				src={picture}
-				// no alt text needed - picture already sufficiently described by the paragraph,
-				// so there is no need to repeat the information
-				alt=""
-				draggable="false"
-			/>
+			{
+				(picture === null) ?
+					<Image
+						src={DefaultUser}
+						// no alt text needed - picture already sufficiently described by the paragraph,
+						// so there is no need to repeat the information
+						alt=""
+						draggable="false"
+						width={200}
+						height={200}
+					/> :
+					<ProprietaryImage
+						src={picture}
+						// no alt text needed - picture already sufficiently described by the paragraph,
+						// so there is no need to repeat the information
+						alt=""
+						draggable="false"
+						width={200}
+						height={200}
+					/>
+			}
 
 			<figcaption>
 				<span className="introduction">
 					<strong>{name}</strong>
-					{/* <hr /> */}
-					{/* <em>{yearProgram}</em> */}
 				</span>
 				<span className="role"> {role}</span>
 			</figcaption>

@@ -24,7 +24,6 @@ export { SkeletonInfoCard } from './InfoCard/InfoCard';
 export { SkeletonLoadedImage } from './SkeletonLoadedImage/SkeletonLoadedImage';
 export { TableOfContents } from './TableOfContents/TableOfContents';
 export { TagManager } from './TagManager/TagManager';
-export { Team } from './Team/Team';
 export { THEME } from './ThemeRegistry/theme';
 export { ThemedImage } from './ThemedImage/ThemedImage';
 export { ThemeRegistry } from './ThemeRegistry/ThemeRegistry';

@@ -1,6 +1,6 @@
 import { Container, Typography } from '@mui/material';
-import { ErrorBoundary, EventList, HeroHeader, HomepageHero, Team } from '@/components/client';
-import { ExpiryContainer } from '@/components/server';
+import { ErrorBoundary, EventList, HeroHeader, HomepageHero } from '@/components/client';
+import { ExpiryContainer, Team } from '@/components/server';
 import teamMembers from '@/data/team.json';
 import whoAreWeBanner from '@/assets/notgpl/info-session.jpg';
 import meetTheTeamBanner from '@/assets/notgpl/team.jpg';

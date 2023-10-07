@@ -2,11 +2,13 @@
 	"President": [
 		{
 			"name": "Giang",
-			"role": "Co-president"
+			"role": "Co-president",
+			"picture": "giang.jpg"
 		},
 		{
 			"name": "Jackson",
-			"role": "Co-president"
+			"role": "Co-president",
+			"picture": "jackson.jpg"
 		}
 	],
 	"Team Lead": [
@@ -16,11 +18,13 @@
 		},
 		{
 			"name": "Estelle",
-			"role": "Marketing"
+			"role": "Marketing",
+			"picture": "estelle.jpg"
 		},
 		{
 			"name": "Hammad",
-			"role": "Outreach & Logistics"
+			"role": "Outreach & Logistics",
+			"picture": "hammad.jpg"
 		},
 		{
 			"name": "Luijain",
@@ -28,7 +32,8 @@
 		},
 		{
 			"name": "Leanne",
-			"role": "Outreach & Logistics"
+			"role": "Outreach & Logistics",
+			"picture": "leanne.jpg"
 		},
 		{
 			"name": "Abdullah",
@@ -36,15 +41,18 @@
 		},
 		{
 			"name": "Ido",
-			"role": "Technical"
+			"role": "Technical",
+			"picture": "The-g.png"
 		},
 		{
 			"name": "Michael",
-			"role": "Technical"
+			"role": "Technical",
+			"picture": "michael.jpg"
 		},
 		{
 			"name": "Sam",
-			"role": "Technical"
+			"role": "Technical",
+			"picture": "cartoonraccoon.gif"
 		},
 		{
 			"name": "Usha",
@@ -58,23 +66,28 @@
 		},
 		{
 			"name": "Shubh",
-			"role": "Advisor"
+			"role": "Advisor",
+			"picture": "Shubh.png"
 		},
 		{
 			"name": "Chris",
-			"role": "Advisor"
+			"role": "Advisor",
+			"picture": "Chris.png"
 		},
 		{
 			"name": "Hamza",
-			"role": "Advisor"
+			"role": "Advisor",
+			"picture": "hamza.jpg"
 		},
 		{
 			"name": "Roman",
-			"role": "Advisor"
+			"role": "Advisor",
+			"picture": "roman.jpg"
 		},
 		{
 			"name": "Daksh",
-			"role": "Advisor"
+			"role": "Advisor",
+			"picture": "daksh.png"
 		}
 	]
 }
