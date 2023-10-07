@@ -8,7 +8,7 @@ async function run() {
 			name: process.env['workshop_name'],
 			date: process.env['workshop_date'],
 			host: process.env['workshop_host'].split(','),
-			description: process.env['workshop_description'],
+			description: process.env['workshop_description'].replace(/\\n/g, '\n'),
 		};
 		if (process.env['workshop_slides']) {
 			workshop.slides = process.env['workshop_slides'];
