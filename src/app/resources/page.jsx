@@ -3,7 +3,7 @@ import { Box, Grid, Typography } from '@mui/material';
 import Brand from '@/assets/graphics/logo_clouds.png';
 import { FAQ, ImageLinkCard } from '@/components/client';
 import faq from '@/data/faq.json';
-import bannerImage from '@/assets/notgpl/IMG_3721.jpg';
+import bannerImage from '@/assets/notgpl/IMG_4712.jpg';
 import workshopImage from '@/assets/notgpl/051A6228.jpg';
 
 import { HeroLayout } from '@/layouts/HeroLayout';
@@ -17,7 +17,7 @@ export const metadata = {
  */
 const ResourcesPage = () => {
 	return (
-		<HeroLayout title={metadata.title} picture={bannerImage} height="15rem" position="bottom" id="resources">
+		<HeroLayout title={metadata.title} picture={bannerImage} height="20rem" position="bottom" id="resources">
 			<Grid container justifyContent="space-between" spacing={2} alignItems="flex-start">
 				<Grid item>
 					<ImageLinkCard

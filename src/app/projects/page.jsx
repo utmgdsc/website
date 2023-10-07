@@ -3,7 +3,7 @@ import { Alert, Box, Typography } from '@mui/material'
 import { HeroLayout } from "@/layouts/HeroLayout";
 import FAQData from './faq.json';
 import { ExpiryContainer, Link } from '@/components/server';
-import bannerImage from '@/assets/notgpl/IMG_4712.jpg';
+import bannerImage from '@/assets/notgpl/project_banner.jpg';
 
 export const metadata = {
 	title: 'Community Projects',

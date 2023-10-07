@@ -19,7 +19,7 @@ export const metadata = {
 const WorkshopArchive = () => {
 	return (
 		// todo a search bar would be cool
-		<ResourceLayout title={metadata.title} picture={bannerImage} id="workshop-archive">
+		<ResourceLayout title={metadata.title} position="bottom" picture={bannerImage} id="workshop-archive">
 			<Grid container spacing={2} sx={{ mb: 4 }}>
 				{/* get latest 3 workshops and give them an infocard */}
 				{
