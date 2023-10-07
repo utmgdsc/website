@@ -24,7 +24,7 @@ on:
         description: 'Workshop Hosts in comma-seperated format. No comma is needed for one host.'
         required: true
       workshop_description:
-        description: Workshop description. To add newlines in the description, use the `\n` escape sequence.
+        description: Workshop description. To add newlines use the \n escape sequence.
         required: true
       workshop_slides:
         description: Workshop slides URL
