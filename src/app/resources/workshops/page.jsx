@@ -20,7 +20,7 @@ const WorkshopArchive = () => {
 	return (
 		// todo a search bar would be cool
 		<ResourceLayout title={metadata.title} picture={bannerImage} id="workshop-archive">
-			<Grid container spacing={2}>
+			<Grid container spacing={2} sx={{ mb: 4 }}>
 				{/* get latest 3 workshops and give them an infocard */}
 				{
 					Object.keys(workshops).reduce(function (acc, key) {
