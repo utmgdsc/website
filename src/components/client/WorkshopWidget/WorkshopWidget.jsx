@@ -22,7 +22,9 @@ export const WorkshopWidget = ({ item }) => {
 				id="panel1a-header"
 				component={Link}
 				scroll={false}
-				href={`?workshop=${workshopHash(item.name, item.date)}#${workshopHash(item.name, item.date)}`}
+				href={
+					(workshopHash(item.name, item.date) === searchParams.get('workshop')) ? `?` : `?workshop=${workshopHash(item.name, item.date)}`
+				}
 			>
 				<CardContent
 					sx={{
