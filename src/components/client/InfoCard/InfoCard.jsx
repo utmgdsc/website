@@ -13,8 +13,9 @@ const CardColors = ['success', 'error', 'warning', 'info'];
  * @property {string} description the description of the event
  * @property {number} lines the number of lines to show in the description
  * @property {string} linkText the text to show on the button
+ * @property {boolean} external whether the link is external or not, i.e., whether to open in a new tab or not
  */
-export const InfoCard = ({ subtitle, title, href, description, lines = 4, linkText = 'View Details' }) => {
+export const InfoCard = ({ subtitle, title, href, description, lines = 4, linkText = 'View Details', external = true }) => {
 	return (
 		<Card
 			sx={{
@@ -54,7 +55,7 @@ export const InfoCard = ({ subtitle, title, href, description, lines = 4, linkTe
 					component={Link}
 					href={href}
 					size="small"
-					external
+					external={external}
 					sx={{ borderRadius: '2em', textTransform: 'none' }}
 					variant="contained"
 				>

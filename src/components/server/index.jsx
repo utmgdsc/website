@@ -11,3 +11,4 @@ export { Link } from './Link/Link';
 export { NamedIconButton } from './NamedIconButton/NamedIconButton';
 export { ProprietaryImage } from './ProprietaryImage/ProprietaryImage';
 export { Team } from './Team/Team';
+export { workshopHash } from './workshopHash/workshopHash';
