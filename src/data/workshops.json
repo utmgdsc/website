@@ -19,6 +19,18 @@
       "description": "Have you been struggling to start contributing to our Open Source Initiative projects? Do you just need a refresher for CSC207?\n\nNo matter if you're from UTM, UTSG, or even high school, git a head start by attending our workshop, entirely online! 🐙\n\nYou'll be even more ready to win prizes (maybe from even GitHub 👀) by contributing to our open source projects 👀👀👀👀\n\nWe've be covering the basics of how git works, so that you'll be set up for contribution in no time.",
       "slides": "https://www.slideshare.net/GDSCUofTMississauga/gitpptx-254336103",
       "recording": "https://www.youtube.com/watch?v=K1V_xtcGCl4&t=3s"
+    },
+    {
+      "name": "Example Workshop",
+      "date": "2023-10-10",
+      "host": [
+        "Jasleen",
+        "Estelle"
+      ],
+      "description": "description\n\nadfasf\n\n\ntestsetest\nasdfsadf",
+      "slides": "https://google.com",
+      "recording": "https://google.com",
+      "code": "https://google.com"
     }
   ],
   "Frontend": [
