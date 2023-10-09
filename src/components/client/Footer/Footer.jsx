@@ -12,7 +12,6 @@ import {
 	GitHubButton,
 	InstagramButton,
 	LinkedInButton,
-	TwitterButton,
 	YouTubeButton,
 } from '@/data/SocialButton';
 import { ErrorBoundary } from '@/components/client';
@@ -112,7 +111,6 @@ export const Footer = () => {
 						<CommunityDevButton />
 						<InstagramButton />
 						<GitHubButton />
-						<TwitterButton />
 						<FacebookButton />
 						<LinkedInButton />
 						<YouTubeButton />
