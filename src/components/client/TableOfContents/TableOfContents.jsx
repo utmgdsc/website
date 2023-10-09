@@ -5,43 +5,46 @@ import { Link } from '@/components/server';
 import { Typography, useTheme } from '@mui/material';
 
 /**
+ * A link that scrolls an id into view.. smoothly
+ * @property {string} id id of the element to scroll to
+ * @property {string} title title of the link
+ * @property {JSX.Element} children children of the link
+ * @returns {JSX.Element} JSX elements of the link
+ */
+const SmoothScrollingLink = ({ id, title }) => {
+	const theme = useTheme();
+
+	return (
+		<Link
+		sx={{ color: theme.palette.text.secondary }}
+		href={`#${id}`}
+		onClick={e => {
+			e.preventDefault();
+			document.querySelector(`#${title}`).scrollIntoView({
+				behavior: 'smooth',
+			});
+		}}
+		>
+			{title}
+		</Link>
+	)
+};
+
+/**
  * TOCHeading component in table of content
  * @property {string} heading to be shown
  * @property {string} activeId current heading id is displayed now
  * @returns {JSX.Element} JSX elements of heading component
  */
 const TOCHeading = ({ heading, activeId }) => {
-	const theme = useTheme();
 	return (
 		<li key={heading.id} className={heading.id === activeId ? 'active' : ''}>
-			<Link
-				sx={{ color: theme.palette.text.secondary }}
-				href={`#${heading.id}`}
-				onClick={e => {
-					e.preventDefault();
-					document.querySelector(`#${heading.id}`).scrollIntoView({
-						behavior: 'smooth',
-					});
-				}}
-			>
-				{heading.title}
-			</Link>
+			<SmoothScrollingLink id={heading.id} title={heading.title} />
 			{heading.items.length > 0 && (
 				<ul>
 					{heading.items.map(child => (
 						<li key={child.id} className={child.id === activeId ? 'active' : ''}>
-							<Link
-								sx={{ color: theme.palette.text.secondary }}
-								href={`#${child.id}`}
-								onClick={e => {
-									e.preventDefault();
-									document.querySelector(`#${child.id}`).scrollIntoView({
-										behavior: 'smooth',
-									});
-								}}
-							>
-								{child.title}
-							</Link>
+							<SmoothScrollingLink id={child.id} title={child.title} />
 						</li>
 					))}
 				</ul>
