@@ -62,7 +62,7 @@ When creating new pages, the navbar must be updated to include the new page if d
 7. Merge, and you're done!
 
 ### Updating the Team List
-> **Note**: You must have push access to [the private images repo](https://github.com/utmgdsc/website_proprietary) to update the team list on production. Otherwise, you may use your own by setting the `proprietary_images_hostname` environment variable to your own server.
+> **Note**: You must have push access to [the private images repo](https://github.com/utmgdsc/website_proprietary) to update the team list on production. Otherwise, you may use your own by setting the `PROPRIETARY_IMAGES_HOSTNAME` environment variable to your own server.
 
 1. Navigate to the private team list image repository and remove all images from the `team` folder.
 2. Add the new team member images to the `team` folder.

@@ -23,7 +23,7 @@ The `projects.js` file contains the projects. It is an array of objects, where e
 The `team.json` file contains the team members. It is an object, where each key represents a team role. Each key contains an array of objects, where each object represents a single team member. The object has the following properties:
 - `name`: The name of the team member.
 - `role`: The role of the team member.
-- `picture`: The image of the team member. Note that the images are stored on the `proprietary_images_hostname` specified in the environment variables. The image is assumed to be placed under the `team` folder on the server.
+- `picture`: The image of the team member. Note that the images are stored on the `PROPRIETARY_IMAGES_HOSTNAME` specified in the environment variables. The image is assumed to be placed under the `team` folder on the server.
 
 ## `workshops.json`
 The `workshops.json` file contains the workshops. It is an object, where each key represents a category of workshop. Each key contains an array of objects, where each object represents a single workshop. The object has the following properties:
