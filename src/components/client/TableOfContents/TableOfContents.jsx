@@ -16,18 +16,18 @@ const SmoothScrollingLink = ({ id, title }) => {
 
 	return (
 		<Link
-		sx={{ color: theme.palette.text.secondary }}
-		href={`#${id}`}
-		onClick={e => {
-			e.preventDefault();
-			document.querySelector(`#${title}`).scrollIntoView({
-				behavior: 'smooth',
-			});
-		}}
+			sx={{ color: theme.palette.text.secondary }}
+			href={`#${id}`}
+			onClick={e => {
+				e.preventDefault();
+				document.querySelector(`#${title}`).scrollIntoView({
+					behavior: 'smooth',
+				});
+			}}
 		>
 			{title}
 		</Link>
-	)
+	);
 };
 
 /**

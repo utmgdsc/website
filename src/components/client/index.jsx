@@ -21,6 +21,7 @@ export { ProjectList } from './ProjectList/ProjectList';
 export { RouterBreadcrumb } from './RouterBreadcrumb/RouterBreadcrumb';
 export { SkeletonInfoCard } from './InfoCard/InfoCard';
 export { SkeletonLoadedImage } from './SkeletonLoadedImage/SkeletonLoadedImage';
+export { TabChanger } from './TabChanger/TabChanger';
 export { TableOfContents } from './TableOfContents/TableOfContents';
 export { TagManager } from './TagManager/TagManager';
 export { THEME } from './ThemeRegistry/theme';

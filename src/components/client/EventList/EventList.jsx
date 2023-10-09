@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import { Grid, Skeleton, Typography, Tab, Tabs } from '@mui/material';
+import { Grid, Skeleton, Typography } from '@mui/material';
 
-import { InfoCard, SkeletonInfoCard } from '@/components/client';
+import { InfoCard, SkeletonInfoCard, TabChanger } from '@/components/client';
 import { Link, ConvertDate } from '@/components/server';
 
 import { getDescriptionFromStorage, useLocalStorage } from './useLocalStorage';
@@ -23,6 +23,62 @@ const MIN_DATE = new Date(-8640000000000000);
  * @see https://262.ecma-international.org/5.1/#sec-15.9.1.1
  */
 const MAX_DATE = new Date(8640000000000000);
+
+/**
+ * load external json file from api
+ * @param {integer} limit the number of events to show
+ * @param {Date} from the date to start showing events from (inclusive), based on end_date
+ * @param {Date} to the date to stop showing events at (non-inclusive), based on end_date
+ * @param {function} setEvents function to set the events
+ * @param {function} setYearList function to set the yearList
+ * @param {function} setError function to set the error
+ * @returns {object} bevy chapter object
+ */
+
+const getEvents = async (limit, from, to, setEvents, setYearList, setError) => {
+	const abortController = new AbortController();
+
+	await fetch(CHAPTER_API_URL, {
+		signal: abortController.signal,
+	})
+		.then(response => response.json())
+		.then(data => {
+			if (data['detail'] && (data['detail'].includes('throttled') || data['detail'].includes('error'))) {
+				throw new Error(data['detail']);
+			}
+			// filter only published events
+			let eventData = data['results'].filter(event => event['status'] === 'Published');
+
+			// slice to limit if specified
+			if (limit) {
+				eventData = eventData.slice(0, limit);
+			}
+
+			// filter only upcoming events if specified
+			eventData = eventData.filter(event => {
+				const endDate = new Date(event['end_date']);
+				return endDate >= from && endDate < to;
+			});
+
+			// finally set events to eventData, and set yearList to the sorted list of unique years in eventData
+			setEvents(eventData);
+			setYearList(
+				eventData
+					.map(event => new Date(event['start_date']).getFullYear())
+					.filter((value, index, self) => self.indexOf(value) === index)
+			);
+
+			return;
+		})
+		.catch(error => {
+			// if the query has been aborted, do nothing
+			if (error.name === 'AbortError') return;
+			setError(error);
+		});
+	return () => {
+		abortController.abort();
+	};
+};
 
 /**
  * Gets the events from the GDSC (bevy) API.
@@ -50,59 +106,10 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE, skeleton = 0 
 		}
 		return true;
 	});
-	/**
-	 * load external json file from api
-	 * @returns {object} bevy chapter object
-	 */
-
-	const getEvents = async () => {
-		const abortController = new AbortController();
-
-		await fetch(CHAPTER_API_URL, {
-			signal: abortController.signal,
-		})
-			.then(response => response.json())
-			.then(data => {
-				if (data['detail'] && (data['detail'].includes('throttled') || data['detail'].includes('error'))) {
-					throw new Error(data['detail']);
-				}
-				// filter only published events
-				let eventData = data['results'].filter(event => event['status'] === 'Published');
-
-				// slice to limit if specified
-				if (limit) {
-					eventData = eventData.slice(0, limit);
-				}
-
-				// filter only upcoming events if specified
-				eventData = eventData.filter(event => {
-					const endDate = new Date(event['end_date']);
-					return endDate >= from && endDate < to;
-				});
-
-				// finally set events to eventData, and set yearList to the sorted list of unique years in eventData
-				setEvents(eventData);
-				setYearList(
-					eventData
-						.map(event => new Date(event['start_date']).getFullYear())
-						.filter((value, index, self) => self.indexOf(value) === index)
-				);
-
-				return;
-			})
-			.catch(error => {
-				// if the query has been aborted, do nothing
-				if (error.name === 'AbortError') return;
-				setError(error);
-			});
-		return () => {
-			abortController.abort();
-		};
-	};
 
 	// empty array means only run once to avoid rate limit
 	useEffect(() => {
-		getEvents();
+		getEvents(limit, from, to, setEvents, setYearList, setError);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
@@ -137,21 +144,8 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE, skeleton = 0 
 
 	return (
 		<>
-			{yearList.length > 1 && (
-				<Tabs
-					value={page}
-					onChange={(e, index) => {
-						setPage(index);
-					}}
-					sx={{
-						my: '1rem',
-					}}
-				>
-					{yearList.map((year, id) => (
-						<Tab key={id} label={year} />
-					))}
-				</Tabs>
-			)}
+			<TabChanger tabList={yearList} page={page} setPage={setPage} />
+
 			<Grid container spacing={2}>
 				{filteredEvents.map(event => (
 					<Grid key={event['id']} item xs={12} sm={6} md={4}>
@@ -169,6 +163,39 @@ export const EventList = ({ limit, from = MIN_DATE, to = MAX_DATE, skeleton = 0 
 };
 
 /**
+ * load external json file from api
+ * @param {id} id id of the event
+ * @param {function} setDescription function to set the description
+ * @param {function} setError function to set the error
+ * @returns {object} bevy event object
+ */
+const getDescription = async (id, setDescription, setError) => {
+	// check if the event is in local storage
+	if (!getDescriptionFromStorage(id)) {
+		// if not, fetch from api
+		const abortController = new AbortController();
+
+		await fetch(EVENT_API_URL + id, {
+			signal: abortController.signal,
+		})
+			.then(response => response.json())
+			.then(data => {
+				setDescription(data['description_short']);
+				return;
+			})
+			.catch(error => {
+				if (error.name === 'AbortError') return;
+				// if the query has been aborted, do nothing
+				setError(error);
+			});
+
+		return () => {
+			abortController.abort();
+		};
+	}
+};
+
+/**
  * Gets the description given an event ID from the GDSC (bevy) API.
  * @property {string} id id of the event
  * @returns {string} description of the event as a raw string
@@ -177,40 +204,10 @@ const Description = ({ id }) => {
 	const [error, setError] = useState(false);
 	const [description, setDescription] = useLocalStorage(id);
 
-	/**
-	 * load external json file from api
-	 * @returns {object} bevy event object
-	 */
-	const getDescription = async () => {
-		// check if the event is in local storage
-		if (!getDescriptionFromStorage(id)) {
-			// if not, fetch from api
-			const abortController = new AbortController();
-
-			await fetch(EVENT_API_URL + id, {
-				signal: abortController.signal,
-			})
-				.then(response => response.json())
-				.then(data => {
-					setDescription(data['description_short']);
-					return;
-				})
-				.catch(error => {
-					if (error.name === 'AbortError') return;
-					// if the query has been aborted, do nothing
-					setError(error);
-				});
-
-			return () => {
-				abortController.abort();
-			};
-		}
-	};
-
 	// empty array means only run once to avoid rate limit
 	useEffect(() => {
 		try {
-			getDescription();
+			getDescription(id, setDescription, setError);
 		} catch (error) {
 			setError(error);
 		}

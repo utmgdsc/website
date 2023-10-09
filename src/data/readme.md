@@ -17,7 +17,8 @@ The `projects.js` file contains the projects. It is an array of objects, where e
 - `title` (string): The name of the project.
 - `url` (string): The URL of the project.
 - `description` (string): The description of the project.
-- `date` (optional): The date of the project.
+- `year` (number): The year the project was completed.
+- `session` (string): The session the project was completed.
 
 ## `team.json`
 The `team.json` file contains the team members. It is an object, where each key represents a team role. Each key contains an array of objects, where each object represents a single team member. The object has the following properties:
