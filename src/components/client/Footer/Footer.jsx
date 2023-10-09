@@ -99,11 +99,9 @@ export const Footer = () => {
 						</FooterLink>
 					</ul>
 					<ButtonGroup className={'flex-item'} id="social">
-						{
-							Object.values(allSocialButtons).map((SocialButton, index) => {
-								return <SocialButton key={index} />;
-							})
-						}
+						{Object.values(allSocialButtons).map((SocialButton, index) => {
+							return <SocialButton key={index} />;
+						})}
 					</ButtonGroup>
 				</div>
 			</Container>

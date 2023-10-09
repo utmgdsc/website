@@ -1,24 +1,24 @@
 {
-    "Applying to community projects": [
-        {
-            "question": "Do I have to be in UTM Computer Science Major / Specialist to apply?",
-            "answer": "You need to be in UTM Computer Science Major/Specialist in order to gain CSC392/492 credits to count towards your degree requirements. If you are in CS Minor, you are still eligible to apply, however you might be working on a non-credit project. Every students admitted to our program will have the same access to resources and mentors."
-        },
-        {
-            "question": "Can students at UTSG/UTSC campus apply?",
-            "answer": "We recommend that students at UTSG/UTSC campus to check with their academic advisor to ensure that they can have CSC392/492H5 from UTM to count towards their degree requirements before applying. If you are not able to have credits, we will admit those students based on (1) whether they are in a group, and (2) whether we have capacity to admit them."
-        },
-        {
-            "question": "How many students will be admitted?",
-            "answer": "Usually in the past years, we have 5 teams (so 20 students) admitted to the program. However, we don't have a hard-cut number to admit students, instead we assess students based on their commitment, skills and experience, and teamwork skills."
-        },
-        {
-            "question": "If I don't want to take CSC392/492H5 (have a course credit), can I still apply?",
-            "answer": "Yes! Please put a note on your application (additional information) so we are aware. Still, we will prioritize students who are taking CSC392/492H5."
-        },
-        {
-            "question": "I'm not in Computer Science, is there anything for me?",
-            "answer": "Yes! Stay tuned for our open source initiative, where you'll gain similar experience working on established community projects!"
-        }
-    ]
+	"Applying to community projects": [
+		{
+			"question": "Do I have to be in UTM Computer Science Major / Specialist to apply?",
+			"answer": "You need to be in UTM Computer Science Major/Specialist in order to gain CSC392/492 credits to count towards your degree requirements. If you are in CS Minor, you are still eligible to apply, however you might be working on a non-credit project. Every students admitted to our program will have the same access to resources and mentors."
+		},
+		{
+			"question": "Can students at UTSG/UTSC campus apply?",
+			"answer": "We recommend that students at UTSG/UTSC campus to check with their academic advisor to ensure that they can have CSC392/492H5 from UTM to count towards their degree requirements before applying. If you are not able to have credits, we will admit those students based on (1) whether they are in a group, and (2) whether we have capacity to admit them."
+		},
+		{
+			"question": "How many students will be admitted?",
+			"answer": "Usually in the past years, we have 5 teams (so 20 students) admitted to the program. However, we don't have a hard-cut number to admit students, instead we assess students based on their commitment, skills and experience, and teamwork skills."
+		},
+		{
+			"question": "If I don't want to take CSC392/492H5 (have a course credit), can I still apply?",
+			"answer": "Yes! Please put a note on your application (additional information) so we are aware. Still, we will prioritize students who are taking CSC392/492H5."
+		},
+		{
+			"question": "I'm not in Computer Science, is there anything for me?",
+			"answer": "Yes! Stay tuned for our open source initiative, where you'll gain similar experience working on established community projects!"
+		}
+	]
 }

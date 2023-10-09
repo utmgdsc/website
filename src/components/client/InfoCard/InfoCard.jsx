@@ -15,7 +15,15 @@ const CardColors = ['success', 'error', 'warning', 'info'];
  * @property {string} linkText the text to show on the button
  * @property {boolean} external whether the link is external or not, i.e., whether to open in a new tab or not
  */
-export const InfoCard = ({ subtitle, title, href, description, lines = 4, linkText = 'View Details', external = true }) => {
+export const InfoCard = ({
+	subtitle,
+	title,
+	href,
+	description,
+	lines = 4,
+	linkText = 'View Details',
+	external = true,
+}) => {
 	return (
 		<Card
 			sx={{

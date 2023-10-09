@@ -14,9 +14,10 @@ import Image from 'next/image';
  * @property {string} position position of the image, either "top" or "bottom"
  * @property {string} height height of the header
  * @property {string} width width of the header
+ * @property {string} headerLevel level of the header, i.e., h1, h2, h3, etc.
  * @returns {JSX.Element} hero image style header component
  */
-export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem' }) => {
+export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem', headerLevel = 'h1' }) => {
 	const [imgOffset, setImgOffset] = useState(0);
 
 	const [imgHeight, setImgHeight] = useState(0);
@@ -84,7 +85,13 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 				}}
 			>
 				<Container maxWidth={maxWidth}>
-					<Typography component="h1" fontWeight="bold" variant="h2" pb={4} style={{ alignSelf: 'center' }}>
+					<Typography
+						component={headerLevel}
+						fontWeight="bold"
+						variant="h2"
+						pb={4}
+						style={{ alignSelf: 'center' }}
+					>
 						{text}
 					</Typography>
 				</Container>

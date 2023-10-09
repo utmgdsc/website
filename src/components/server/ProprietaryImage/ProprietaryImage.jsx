@@ -8,11 +8,5 @@ import { getProprietaryURL } from '@/components/server';
  * @property {string} alt - Image alt text
  */
 export const ProprietaryImage = ({ src, alt, width, height, ...props }) => {
-    return <Image
-        src={getProprietaryURL(src)}
-        alt={alt}
-        width={width}
-        height={height}
-        {...props}
-    />;
-}
+	return <Image src={getProprietaryURL(src)} alt={alt} width={width} height={height} {...props} />;
+};

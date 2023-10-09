@@ -32,9 +32,7 @@ export const Team = ({ teamInfo, title }) => {
 						key={index}
 						name={teamMember.name}
 						role={teamMember.role}
-						picture={
-							teamMember.picture ? `team/${teamMember.picture}` : null
-						}
+						picture={teamMember.picture ? `team/${teamMember.picture}` : null}
 					/>
 				))}
 			</div>
@@ -53,27 +51,27 @@ export const Team = ({ teamInfo, title }) => {
 const Person = ({ name, role, picture }) => {
 	return (
 		<figure className="member">
-			{
-				(picture === null) ?
-					<Image
-						src={DefaultUser}
-						// no alt text needed - picture already sufficiently described by the paragraph,
-						// so there is no need to repeat the information
-						alt=""
-						draggable="false"
-						width={110}
-						height={110}
-					/> :
-					<ProprietaryImage
-						src={picture}
-						// no alt text needed - picture already sufficiently described by the paragraph,
-						// so there is no need to repeat the information
-						alt=""
-						draggable="false"
-						width={110}
-						height={110}
-					/>
-			}
+			{picture === null ? (
+				<Image
+					src={DefaultUser}
+					// no alt text needed - picture already sufficiently described by the paragraph,
+					// so there is no need to repeat the information
+					alt=""
+					draggable="false"
+					width={110}
+					height={110}
+				/>
+			) : (
+				<ProprietaryImage
+					src={picture}
+					// no alt text needed - picture already sufficiently described by the paragraph,
+					// so there is no need to repeat the information
+					alt=""
+					draggable="false"
+					width={110}
+					height={110}
+				/>
+			)}
 
 			<figcaption>
 				<span className="introduction">

@@ -5,10 +5,10 @@
  *
  * @return {string} The URL of the proprietary image
  */
-export const getProprietaryURL = (src) => {
-    if (!process.env.PROPRIETARY_IMAGES_HOSTNAME) {
-        return "https://picsum.photos/200"
-    }
+export const getProprietaryURL = src => {
+	if (!process.env.PROPRIETARY_IMAGES_HOSTNAME) {
+		return 'https://picsum.photos/200';
+	}
 
-    return `https://${process.env.PROPRIETARY_IMAGES_HOSTNAME}/${src}`
-}
+	return `https://${process.env.PROPRIETARY_IMAGES_HOSTNAME}/${src}`;
+};

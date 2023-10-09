@@ -2,7 +2,7 @@ import { WorkshopButton } from '@/components/client';
 import { ConvertDate, JoinAnd, Link, workshopHash } from '@/components/server';
 import { Code, ExpandMore, RadioButtonChecked, Slideshow } from '@mui/icons-material';
 import { Accordion, AccordionDetails, AccordionSummary, CardContent, List, Typography } from '@mui/material';
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation';
 
 /**
  * @property {{"key": {name: string; date: Date; host: string[]; description: string; code?: string; slides?: string; recording?: string;}[]}[]} item The workshop item from the workshops.json JSON file
@@ -14,7 +14,7 @@ export const WorkshopWidget = ({ item }) => {
 	return (
 		<Accordion
 			id={workshopHash(item.name, item.date)}
-			expanded={ searchParams.get('workshop') === workshopHash(item.name, item.date) }
+			expanded={searchParams.get('workshop') === workshopHash(item.name, item.date)}
 		>
 			<AccordionSummary
 				expandIcon={<ExpandMore />}
@@ -23,7 +23,9 @@ export const WorkshopWidget = ({ item }) => {
 				component={Link}
 				scroll={false}
 				href={
-					(workshopHash(item.name, item.date) === searchParams.get('workshop')) ? `?` : `?workshop=${workshopHash(item.name, item.date)}`
+					workshopHash(item.name, item.date) === searchParams.get('workshop')
+						? `?`
+						: `?workshop=${workshopHash(item.name, item.date)}`
 				}
 			>
 				<CardContent

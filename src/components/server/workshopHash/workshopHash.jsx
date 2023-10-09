@@ -7,4 +7,4 @@
  */
 export const workshopHash = (name, date) => {
 	return `${date.replace(/\W/g, '')}-${name.replace(/\W/g, '')}`;
-}
+};
