@@ -4,16 +4,7 @@ import { Box, ButtonGroup, Container, Typography, styled } from '@mui/material';
 
 import bracket_colourless from '@/assets/graphics/bracket_colourless.svg';
 import footerLinks from '@/data/footer.json';
-import {
-	CommunityDevButton,
-	DiscordButton,
-	EmailButton,
-	FacebookButton,
-	GitHubButton,
-	InstagramButton,
-	LinkedInButton,
-	YouTubeButton,
-} from '@/data/SocialButton';
+import * as allSocialButtons from '@/data/SocialButton';
 import { ErrorBoundary } from '@/components/client';
 import { Link } from '@/components/server';
 import Image from 'next/image';
@@ -108,14 +99,11 @@ export const Footer = () => {
 						</FooterLink>
 					</ul>
 					<ButtonGroup className={'flex-item'} id="social">
-						<CommunityDevButton />
-						<InstagramButton />
-						<GitHubButton />
-						<FacebookButton />
-						<LinkedInButton />
-						<YouTubeButton />
-						<EmailButton />
-						<DiscordButton />
+						{
+							Object.values(allSocialButtons).map((SocialButton, index) => {
+								return <SocialButton key={index} />;
+							})
+						}
 					</ButtonGroup>
 				</div>
 			</Container>

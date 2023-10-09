@@ -6,14 +6,13 @@
  */
 import { Email, Facebook, GitHub, Google, Instagram, LinkedIn, YouTube } from '@mui/icons-material';
 import { createSvgIcon } from '@mui/material';
-
 import { NamedIconButton } from '@/components/server';
 
 /**
  * Discord icon
  * @see https://discord.com/branding
  */
-export const DiscordIcon = createSvgIcon(
+const DiscordIcon = createSvgIcon(
 	<path
 		d="M19.7,4.9c-1.4-0.7-3-1.1-4.6-1.4c-0.2,0.4-0.4,0.8-0.6,1.2c-1.6-0.2-3.4-0.2-5.2,0C9.2,4.3,9.1,3.9,8.8,3.5
 	C7.2,3.8,5.7,4.2,4.1,4.9c-2.9,4.3-3.7,8.6-3.3,12.7l0,0c1.8,1.2,3.6,2.3,5.7,2.9c0.4-0.6,0.8-1.2,1.2-2c-0.6-0.2-1.3-0.5-1.9-0.9
