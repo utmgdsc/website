@@ -23,7 +23,7 @@
 		"sharp": "^0.32.6"
 	},
 	"devDependencies": {
-		"@netlify/plugin-nextjs": "^4.29.5-appdir.0",
+		"@netlify/plugin-nextjs": "^4.40.2",
 		"@svgr/webpack": "^8.1.0",
 		"eslint": "^8.50.0",
 		"eslint-config-next": "13.5.3",
