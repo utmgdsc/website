@@ -50,7 +50,7 @@ const Homepage = () => {
 			</section>
 			{/* team list */}
 			<section id="meet-the-team">
-				<ExpiryContainer date={'2024-06-30'}>
+				<ExpiryContainer date={'2020-06-30'}>
 					<HeroHeader text="Meet the team" picture={meetTheTeamBanner} maxWidth="md" headerLevel="h2" />
 					<Container sx={{ py: 8, px: 0 }} maxWidth="md">
 						<ErrorBoundary>
