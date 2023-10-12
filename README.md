@@ -23,7 +23,7 @@ Except where otherwise noted, the is project is licensed under the [LGPL 2.0 or 
 	```
 
 * initialize the pre-commit hook:
-	> [!NOTE]
+	> [!WARNING]
 	> Husky will error if you are using GitHub Desktop on Windows. If this is the case, skip this step or uninstall the hook by running `npx husky uninstall` in the root project directory.
 	```sh
 	> npx husky install
@@ -51,8 +51,8 @@ When creating new pages, the navbar must be updated to include the new page if d
 
 
 ### Adding a new Workshop
-> [!NOTE]
-> You must have GitHub action permissions to add a new workshop.
+> [!IMPORTANT]
+> You must have GitHub action permissions to add a new workshop to production in this way. Otherwise, you may fork the repository, manually edit the `workshops.json` file, and create a pull request to `develop`.
 
 1. Navigate to the [Create Workshop](https://github.com/utmgdsc/website/actions/workflows/create-workshop-pull-request.yml) GitHub action.
 2. Click the `Run workflow` button.
