@@ -23,7 +23,8 @@ Except where otherwise noted, the is project is licensed under the [LGPL 2.0 or 
 	```
 
 * initialize the pre-commit hook:
-	> **Note**: Husky will error if you are using GitHub Desktop on Windows. If this is the case, skip this step or uninstall the hook by running `npx husky uninstall` in the root project directory.
+	> [!NOTE]
+	> Husky will error if you are using GitHub Desktop on Windows. If this is the case, skip this step or uninstall the hook by running `npx husky uninstall` in the root project directory.
 	```sh
 	> npx husky install
 	```
@@ -50,7 +51,8 @@ When creating new pages, the navbar must be updated to include the new page if d
 
 
 ### Adding a new Workshop
-> **Note**: You must have GitHub action permissions to add a new workshop.
+> [!NOTE]
+> You must have GitHub action permissions to add a new workshop.
 
 1. Navigate to the [Create Workshop](https://github.com/utmgdsc/website/actions/workflows/create-workshop-pull-request.yml) GitHub action.
 2. Click the `Run workflow` button.
@@ -62,7 +64,8 @@ When creating new pages, the navbar must be updated to include the new page if d
 7. Merge, and you're done!
 
 ### Updating the Team List
-> **Note**: You must have push access to [the private images repo](https://github.com/utmgdsc/website_proprietary) to update the team list on production. Otherwise, you may use your own by setting the `PROPRIETARY_IMAGES_HOSTNAME` environment variable to your own server.
+> [!NOTE]
+> You must have push access to [the private images repo](https://github.com/utmgdsc/website_proprietary) to update the team list on production. Otherwise, you may use your own by setting the `PROPRIETARY_IMAGES_HOSTNAME` environment variable to your own server.
 
 1. Navigate to the private team list image repository and remove all images from the `team` folder.
 2. Add the new team member images to the `team` folder.
