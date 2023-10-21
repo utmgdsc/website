@@ -14,7 +14,8 @@
 	"Team Lead": [
 		{
 			"name": "Jasleen",
-			"role": "Marketing"
+			"role": "Marketing",
+			"picture": "jasleen.jpg"
 		},
 		{
 			"name": "Estelle",
@@ -27,8 +28,9 @@
 			"picture": "hammad.jpg"
 		},
 		{
-			"name": "Luijain",
-			"role": "Outreach & Logistics"
+			"name": "Lujain",
+			"role": "Outreach & Logistics",
+			"picture": "lujain.jpg"
 		},
 		{
 			"name": "Leanne",
@@ -37,12 +39,13 @@
 		},
 		{
 			"name": "Abdullah",
-			"role": "Technical"
+			"role": "Technical",
+			"picture": "abdullah.jpg"
 		},
 		{
 			"name": "Ido",
 			"role": "Technical",
-			"picture": "The-g.png"
+			"picture": "ido.jpg"
 		},
 		{
 			"name": "Michael",
@@ -52,17 +55,19 @@
 		{
 			"name": "Sam",
 			"role": "Technical",
-			"picture": "cartoonraccoon.gif"
+			"picture": "sam.jpg"
 		},
 		{
 			"name": "Usha",
-			"role": "Finance"
+			"role": "Finance",
+			"picture": "usha.jpg"
 		}
 	],
 	"Advisor": [
 		{
 			"name": "Ahmed Ashraf",
-			"role": "Faculty Advisor"
+			"role": "Faculty Advisor",
+			"picture": "ahmed.jpg"
 		},
 		{
 			"name": "Shubh",

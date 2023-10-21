@@ -5,7 +5,7 @@
 	GDSC Website
 </h1>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/30870ebd-b4fa-4c6b-888e-da18cfb2f0b1/deploy-status)](https://app.netlify.com/sites/gdscutm/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/30870ebd-b4fa-4c6b-888e-da18cfb2f0b1/deploy-status)](https://app.netlify.com/sites/gdscutm/deploys) [![Maintainability](https://api.codeclimate.com/v1/badges/90a63eebb216f087e575/maintainability)](https://codeclimate.com/github/utmgdsc/website/maintainability)
 
 Google Developer Student Clubs (GDSC) is a student-led community backed by Google Developers aimed at empowering undergraduate students from all disciplines to grow their knowledge in technology, build solutions for their local communities, and connect with other members from the Google community.
 
@@ -23,7 +23,8 @@ Except where otherwise noted, the is project is licensed under the [LGPL 2.0 or 
 	```
 
 * initialize the pre-commit hook:
-	> **Note**: Husky will error if you are using GitHub Desktop on Windows. If this is the case, skip this step or uninstall the hook by running `npx husky uninstall` in the root project directory.
+	> [!WARNING]
+	> Husky will error if you are using GitHub Desktop on Windows. If this is the case, skip this step or uninstall the hook by running `npx husky uninstall` in the root project directory.
 	```sh
 	> npx husky install
 	```
@@ -50,7 +51,8 @@ When creating new pages, the navbar must be updated to include the new page if d
 
 
 ### Adding a new Workshop
-> **Note**: You must have GitHub action permissions to add a new workshop.
+> [!IMPORTANT]
+> You must have GitHub action permissions to add a new workshop to production in this way. Otherwise, you may fork the repository, manually edit the `workshops.json` file, and create a pull request to `develop`.
 
 1. Navigate to the [Create Workshop](https://github.com/utmgdsc/website/actions/workflows/create-workshop-pull-request.yml) GitHub action.
 2. Click the `Run workflow` button.
@@ -62,7 +64,8 @@ When creating new pages, the navbar must be updated to include the new page if d
 7. Merge, and you're done!
 
 ### Updating the Team List
-> **Note**: You must have push access to [the private images repo](https://github.com/utmgdsc/website_proprietary) to update the team list on production. Otherwise, you may use your own by setting the `PROPRIETARY_IMAGES_HOSTNAME` environment variable to your own server.
+> [!NOTE]
+> You must have push access to [the private images repo](https://github.com/utmgdsc/website_proprietary) to update the team list on production. Otherwise, you may use your own by setting the `PROPRIETARY_IMAGES_HOSTNAME` environment variable to your own server.
 
 1. Navigate to the private team list image repository and remove all images from the `team` folder.
 2. Add the new team member images to the `team` folder.
