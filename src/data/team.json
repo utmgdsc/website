@@ -66,7 +66,8 @@
 	"Advisor": [
 		{
 			"name": "Ahmed Ashraf",
-			"role": "Faculty Advisor"
+			"role": "Faculty Advisor",
+			"picture": "ahmed.jpg"
 		},
 		{
 			"name": "Shubh",
