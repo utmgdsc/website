@@ -14,7 +14,8 @@
 	"Team Lead": [
 		{
 			"name": "Jasleen",
-			"role": "Marketing"
+			"role": "Marketing",
+			"picture": "jasleen.jpg"
 		},
 		{
 			"name": "Estelle",
@@ -28,7 +29,8 @@
 		},
 		{
 			"name": "Luijain",
-			"role": "Outreach & Logistics"
+			"role": "Outreach & Logistics",
+			"picture": "luijain.jpg"
 		},
 		{
 			"name": "Leanne",
@@ -37,7 +39,8 @@
 		},
 		{
 			"name": "Abdullah",
-			"role": "Technical"
+			"role": "Technical",
+			"picture": "abdullah.jpg"
 		},
 		{
 			"name": "Ido",
@@ -52,11 +55,12 @@
 		{
 			"name": "Sam",
 			"role": "Technical",
-			"picture": "cartoonraccoon.gif"
+			"picture": "sam.jpg"
 		},
 		{
 			"name": "Usha",
-			"role": "Finance"
+			"role": "Finance",
+			"picture": "usha.jpg"
 		}
 	],
 	"Advisor": [
