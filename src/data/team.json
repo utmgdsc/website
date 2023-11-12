@@ -94,5 +94,12 @@
 			"role": "Advisor",
 			"picture": "daksh.png"
 		}
+	],
+	"Associate": [
+		{
+			"name": "Jesse",
+			"role": "Tecg",
+			"picture": "jesse.jpg"
+		}
 	]
 }
