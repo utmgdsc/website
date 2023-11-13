@@ -63,6 +63,13 @@
 			"picture": "usha.jpg"
 		}
 	],
+	"Associates": [
+		{
+			"name": "Daniyal",
+			"role": "Technical",
+			"picture": "daniyal.jpg"
+		}
+	],
 	"Advisor": [
 		{
 			"name": "Ahmed Ashraf",
