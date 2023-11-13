@@ -63,6 +63,13 @@
 			"picture": "usha.jpg"
 		}
 	],
+	"Associate": [
+		{
+			"name": "Jesse",
+			"role": "Tech",
+			"picture": "jesse.png"
+		}
+	],
 	"Advisor": [
 		{
 			"name": "Ahmed Ashraf",
