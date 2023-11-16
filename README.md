@@ -17,22 +17,22 @@ Except where otherwise noted, the is project is licensed under the [LGPL 3.0 or 
 
 ## Getting Started
 
-* install dependencies:
-	```sh
-	> npm install
-	```
+### Install dependencies:
+```sh
+> npm install
+```
 
-* initialize the pre-commit hook:
-	> [!WARNING]
-	> Husky will error if you are using GitHub Desktop on Windows. If this is the case, skip this step or uninstall the hook by running `npx husky uninstall` in the root project directory.
-	```sh
-	> npx husky install
-	```
+### Initialize the pre-commit hook:
+> [!WARNING]
+> Husky will error if you are using GitHub Desktop on Windows. If this is the case, skip this step or uninstall the hook by running `npx husky uninstall` in the root project directory.
+```sh
+> npx husky install
+```
 
-* start the app:
-	```sh
-	> npm run dev
-	```
+### Start the app!
+```sh
+> npm run dev
+```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
