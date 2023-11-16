@@ -3,7 +3,7 @@
 	"description": "GDSC UofT Mississauga Website",
 	"version": "2023.10",
 	"private": true,
-	"license": "LGPL-2.0-or-later",
+	"license": "LGPL-3.0-or-later",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/utmgdsc/website.git"
@@ -14,8 +14,8 @@
 	"dependencies": {
 		"@emotion/react": "^11.11.1",
 		"@emotion/styled": "^11.10.5",
-		"@mui/icons-material": "^5.14.14",
-		"@mui/material": "^5.14.14",
+		"@mui/icons-material": "^5.14.16",
+		"@mui/material": "^5.14.17",
 		"next": "13.4.12",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
@@ -25,14 +25,14 @@
 	"devDependencies": {
 		"@netlify/plugin-nextjs": "^4.29.5-appdir.0",
 		"@svgr/webpack": "^8.1.0",
-		"eslint": "^8.50.0",
+		"eslint": "^8.52.0",
 		"eslint-config-next": "13.5.4",
 		"eslint-plugin-promise": "^6.1.1",
 		"eslint-plugin-react": "^7.33.2",
 		"husky": "^8.0.3",
-		"lint-staged": "^15.0.2",
-		"prettier": "^3.0.3",
-		"sass": "^1.69.4",
+		"lint-staged": "^15.1.0",
+		"prettier": "^3.1.0",
+		"sass": "^1.69.5",
 		"url-loader": "^4.1.1"
 	},
 	"scripts": {

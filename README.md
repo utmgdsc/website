@@ -11,9 +11,9 @@ Google Developer Student Clubs (GDSC) is a student-led community backed by Googl
 
 ## About The Project
 
-This is the official website for the University of Toronto Mississauga Google Developer Student Club (UTM GDSC). The frontend is built with [Next.js](https://nextjs.org) with Material UI installed.
+This is the official website for the University of Toronto Mississauga Google Developer Student Club (UTM GDSC). The frontend is built with [Next.js App Router](https://nextjs.org/docs/app) with Material UI installed.
 
-Except where otherwise noted, the is project is licensed under the [LGPL 2.0 or later](https://www.gnu.org/licenses/gpl-2.0.html) license.
+Except where otherwise noted, the is project is licensed under the [LGPL 3.0 or later](https://www.gnu.org/licenses/lgpl-3.0.html) license. See the [License and Attribution](#license-and-attribution) section for more information.
 
 ## Getting Started
 
@@ -90,6 +90,10 @@ To learn more about Next.js, take a look at the following resources:
 - [Customizing Material UI](https://mui.com/material-ui/customization/how-to-customize/) - approaches to customizing Material UI.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## License and Attribution
+
+Except where otherwise noted, the is project is licensed under the [LGPL 3.0 or later](https://www.gnu.org/licenses/lgpl-3.0.html) license. In addition, if you decide to use this project for your own GDSC chapter, please attribute us by linking to our website (https://gdscutm.com) in your footer! It would also be nice if you could let us know by [contacting us](#contact) so we can see what you've done with it! :smile:
 
 ## Contact
 You can contact us via [Discord](https://discord.gg/FMJNvhXJAa) or by [GitHub Issues](https://github.com/utmgdsc/website/issues/new/choose)
