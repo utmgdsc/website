@@ -3,7 +3,7 @@
 	"description": "GDSC UofT Mississauga Website",
 	"version": "2023.10",
 	"private": true,
-	"license": "LGPL-2.0-or-later",
+	"license": "LGPL-3.0-or-later",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/utmgdsc/website.git"
