@@ -37,6 +37,19 @@ Except where otherwise noted, the is project is licensed under the [LGPL 3.0 or 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
+## Project Core Philosophy
+The project core philosophy is a set of guidelines that should be followed when making changes to the project. These guidelines are not strict rules, but rather a set of principles that should be followed when making changes to the project. The project core philosophy is as follows:
+
+### 1. Make it future-proof
+This website should be easy to understand and maintain. Furthermore, it should not require maintenance beyond adding new workshops. When such changes are required, such as adding workshops or updating the team list, they should be as simple as possible, and well documented. Furthermore, new content that has an expiration date (for example, the team list) should be automatically removed from the website when the expiration date has passed. This ensures that the website never shows outdated information.
+
+### 2. Keep it accessible
+The project should be accessible to everyone. This means that [WCAG 2.0 AA](https://www.w3.org/WAI/WCAG22/quickref/?versions=2.1) standards should be followed as closely as possible.
+
+### 3. Keep sensitive information private
+For the privacy of our members, any information not licensed under the LGPL 3.0 or later license should be kept private. This includes the face and likenesses of our members and team.
+
+
 ## Maintenance
 ### Adding Google Tag Manager (GTM) ID
 To add the GTM ID, create a `.env.local` file or set the `NEXT_PUBLIC_GTM_ID` environment variable to the GTM ID.
