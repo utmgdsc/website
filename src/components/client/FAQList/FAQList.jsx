@@ -8,7 +8,7 @@ import { FAQ } from '@/components/client';
  * - keys are the category names
  * - values are arrays of FAQs
  *
- * @param {Object} faq The JSON object containing the FAQs
+ * @property {Object} faq The JSON object containing the FAQs
  */
 export const FAQList = ({faq}) => {
     return (
