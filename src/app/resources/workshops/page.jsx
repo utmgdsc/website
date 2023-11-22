@@ -55,6 +55,11 @@ const parseWorkshops = (workshops) => {
 				// Update the date string
 				const newDate = `${year}-${workshop.date}`;
 
+				// update the slides link to be absolute
+				if (workshop.slides && !workshop.slides.startsWith('http')) {
+					workshop.slides = `https://${process.env.WORKSHOPS_HOSTNAME}/${year}/${workshop.slides}`;
+				}
+
 				// Add the workshop data to the category array
 				parsedData[categoryName].push({ ...workshop, date: newDate });
 			});
