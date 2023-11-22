@@ -65,9 +65,44 @@
 	],
 	"Associates": [
 		{
+			"name": "Elif",
+			"role": "Marketing",
+			"picture": "elif.jpg"
+		},
+		{
+			"name": "Liz",
+			"role": "Marketing",
+			"picture": "liz.jpg"
+		},
+		{
+			"name": "Deepasri",
+			"role": "Outreach & Logistics",
+			"picture": "deepasri.jpg"
+		},
+		{
+			"name": "Iris",
+			"role": "Outreach & Logistics",
+			"picture": "iris.jpg"
+		}
+		{
+			"name": "Liz",
+			"role": "Marketing",
+			"picture": "liz.jpg"
+		},
+		{
 			"name": "Daniyal",
 			"role": "Technical",
 			"picture": "daniyal.jpg"
+		},
+		{
+			"name": "Jesse",
+			"role": "Technical",
+			"picture": "jesse.png"
+		},
+		{
+			"name": "Taha",
+			"role": "Technical",
+			"picture": "taha.png"
 		}
 	],
 	"Advisor": [
