@@ -3,12 +3,12 @@
  *
  * @fileoverview This file exports all the components in the components folder
  */
-export { ConvertDate } from './ConvertDate/ConvertDate';
-export { ExpiryContainer } from './ExpiryContainer/ExpiryContainer';
-export { getProprietaryURL } from './getProprietaryURL/getProprietaryURL';
-export { JoinAnd } from './JoinAnd/JoinAnd';
-export { Link } from './Link/Link';
-export { NamedIconButton } from './NamedIconButton/NamedIconButton';
-export { ProprietaryImage } from './ProprietaryImage/ProprietaryImage';
-export { Team } from './Team/Team';
-export { workshopHash } from './workshopHash/workshopHash';
+export * from './ConvertDate/ConvertDate';
+export * from './ExpiryContainer/ExpiryContainer';
+export * from './getProprietaryURL/getProprietaryURL';
+export * from './JoinAnd/JoinAnd';
+export * from './Link/Link';
+export * from './NamedIconButton/NamedIconButton';
+export * from './ProprietaryImage/ProprietaryImage';
+export * from './Team/Team';
+export * from './workshopHash/workshopHash';
