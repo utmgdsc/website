@@ -41,40 +41,28 @@ async function getData() {
  * @param {Object} workshops workshop data
  */
 const parseWorkshops = (workshops) => {
-	// create empty object to hold parsed data
-	let ret = {};
+	// Iterate through each year
+	return Object.entries(workshops).reduce((parsedData, [year, categories]) => {
+		// Iterate through each category
+		Object.entries(categories).forEach(([category, workshopsList]) => {
+			// Get the category name
+			const categoryName = Object.keys(workshopsList)[0];
+			// Initialise category array
+			parsedData[categoryName] = parsedData[categoryName] || [];
 
-	// loop through all the years
-	for (const year in workshops) {
-		// loop through all the categories
-		for (const category in workshops[year]) {
-			let currentCategory = workshops[year][category];
+			// Iterate through each workshop
+			workshopsList[categoryName].forEach((workshop) => {
+				// Update the date string
+				const newDate = `${year}-${workshop.date}`;
 
-			// get the category name
-			let categoryName = Object.keys(currentCategory)[0];
+				// Add the workshop data to the category array
+				parsedData[categoryName].push({ ...workshop, date: newDate });
+			});
+		});
 
-			// create an array for the category if it doesn't exist
-			if (!ret[categoryName]) {
-				ret[categoryName] = [];
-			}
-
-			// loop through all the workshops
-			for (const workshop in currentCategory[categoryName]) {
-				let currentWorkshop = currentCategory[categoryName][workshop];
-
-				// get the date
-				let newDate = `${year}-${currentWorkshop.date}`
-				// add it to the workshop object
-				currentWorkshop.date = newDate;
-
-				// push the workshop to the array
-				ret[categoryName].push(currentWorkshop);
-			}
-		}
-	}
-
-	// return the parsed data
-	return ret;
+		// Return the parsed data
+		return parsedData;
+	}, {});
 }
 
 /**
