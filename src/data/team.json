@@ -83,7 +83,7 @@
 			"name": "Iris",
 			"role": "Outreach & Logistics",
 			"picture": "iris.jpg"
-		}
+		},
 		{
 			"name": "Liz",
 			"role": "Marketing",
@@ -102,7 +102,7 @@
 		{
 			"name": "Taha",
 			"role": "Technical",
-			"picture": "taha.png"
+			"picture": "taha.jpg"
 		}
 	],
 	"Advisor": [
