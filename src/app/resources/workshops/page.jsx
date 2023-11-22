@@ -44,7 +44,7 @@ const parseWorkshops = (workshops) => {
 	// Iterate through each year
 	return Object.entries(workshops).reduce((parsedData, [year, categories]) => {
 		// Iterate through each category
-		Object.entries(categories).forEach(([category, workshopsList]) => {
+		Object.entries(categories).forEach(([_category, workshopsList]) => {
 			// Get the category name
 			const categoryName = Object.keys(workshopsList)[0];
 			// Initialise category array

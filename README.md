@@ -64,6 +64,9 @@ When creating new pages, the navbar must be updated to include the new page if d
 
 
 ### Adding a new Workshop
+> [!NOTE]
+> This information is currently out of date.
+
 > [!IMPORTANT]
 > You must have GitHub action permissions to add a new workshop to production in this way. Otherwise, you may fork the repository, manually edit the `workshops.json` file, and create a pull request to `develop`.
 
