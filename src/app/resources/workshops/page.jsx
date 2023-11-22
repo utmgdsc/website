@@ -17,7 +17,7 @@ export const metadata = {
  * Get data from the workshops repo, and parse it into a JSON object
  */
 async function getData() {
-	return fetch(`https://${process.env.workshops_hostname}/all.yml`)
+	return fetch(`https://${process.env.WORKSHOPS_HOSTNAME}/all.yml`)
 		.then((response) => {
 			if (!response.ok) {
 				throw new Error(response.statusText);
