@@ -3,20 +3,86 @@ import { Box, Grid } from '@mui/material';
 import { InfoCard, TableOfContents, WorkshopWidget } from '@/components/client';
 import { workshopHash } from '@/components/server';
 
-import workshops from '@/data/workshops.json';
-
 import { ResourceLayout } from '@/layouts/ResourceLayout';
 
 import bannerImage from '@/assets/notgpl/051A6228.jpg';
+
+const yaml = require('js-yaml');
 
 export const metadata = {
 	title: 'Workshop Archive',
 };
 
 /**
+ * Get data from the workshops repo, and parse it into a JSON object
+ */
+async function getData() {
+	return fetch(`https://${process.env.workshops_hostname}/all.yml`)
+		.then((response) => {
+			if (!response.ok) {
+				throw new Error(response.statusText);
+			}
+
+			return response.text();
+		})
+		.then((text) => {
+			const json = yaml.load(text);
+
+			return json;
+		})
+		.catch((error) => {
+			throw new Error(error);
+		});
+}
+
+/**
+ * parse workshop data into a nested list of headings
+ *
+ * @param {Object} workshops workshop data
+ */
+const parseWorkshops = (workshops) => {
+	// create empty object to hold parsed data
+	let ret = {};
+
+	// loop through all the years
+	for (const year in workshops) {
+		// loop through all the categories
+		for (const category in workshops[year]) {
+			let currentCategory = workshops[year][category];
+
+			// get the category name
+			let categoryName = Object.keys(currentCategory)[0];
+
+			// create an array for the category if it doesn't exist
+			if (!ret[categoryName]) {
+				ret[categoryName] = [];
+			}
+
+			// loop through all the workshops
+			for (const workshop in currentCategory[categoryName]) {
+				let currentWorkshop = currentCategory[categoryName][workshop];
+
+				// get the date
+				let newDate = `${year}-${currentWorkshop.date}`
+				// add it to the workshop object
+				currentWorkshop.date = newDate;
+
+				// push the workshop to the array
+				ret[categoryName].push(currentWorkshop);
+			}
+		}
+	}
+
+	// return the parsed data
+	return ret;
+}
+
+/**
  * @return {JSX.Element} Workshop page component
  */
-const WorkshopArchive = () => {
+const WorkshopArchive = async () => {
+	const workshops = parseWorkshops(await getData());
+
 	return (
 		// todo a search bar would be cool
 		<ResourceLayout title={metadata.title} position="bottom" picture={bannerImage} id="workshop-archive">
