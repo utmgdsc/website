@@ -14,19 +14,19 @@ export const metadata = {
  */
 async function getData() {
 	return fetch(`https://${process.env.WORKSHOPS_HOSTNAME}/all.yml`, {
-		next: { revalidate: 86400 } // revalidate daily
+		next: { revalidate: 86400 }, // revalidate daily
 	})
-		.then((response) => {
+		.then(response => {
 			if (!response.ok) {
 				throw new Error(response.statusText);
 			}
 
 			return response.text();
 		})
-		.then((text) => {
+		.then(text => {
 			return yaml.load(text);
 		})
-		.catch((error) => {
+		.catch(error => {
 			throw new Error(error);
 		});
 }
@@ -36,7 +36,7 @@ async function getData() {
  *
  * @param {Object} workshops workshop data
  */
-const parseWorkshops = (workshops) => {
+const parseWorkshops = workshops => {
 	// Iterate through each year
 	return Object.entries(workshops).reduce((parsedData, [year, categories]) => {
 		// Iterate through each category
@@ -49,7 +49,7 @@ const parseWorkshops = (workshops) => {
 			parsedData[categoryName] = parsedData[categoryName] || [];
 
 			// Iterate through each workshop
-			workshopsList[categoryName].forEach((workshop) => {
+			workshopsList[categoryName].forEach(workshop => {
 				// Update the date string
 				const newDate = `${year}-${workshop.date}`;
 
@@ -66,7 +66,7 @@ const parseWorkshops = (workshops) => {
 		// Return the parsed data
 		return parsedData;
 	}, {});
-}
+};
 
 /**
  * @return {JSX.Element} Workshop page component

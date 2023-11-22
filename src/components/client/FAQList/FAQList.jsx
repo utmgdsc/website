@@ -10,25 +10,23 @@ import { FAQ } from '@/components/client';
  *
  * @property {Object} faq The JSON object containing the FAQs
  */
-export const FAQList = ({faq}) => {
-    return (
-        Object.keys(faq).map((category, index) => {
-            return (
-                <Box
-                    sx={{
-                        mt: 2,
-                    }}
-                    key={index}
-                >
-                    <Typography sx={{ marginBottom: 2 }} id={category}>
-                        {category}
-                    </Typography>
+export const FAQList = ({ faq }) => {
+	return Object.keys(faq).map((category, index) => {
+		return (
+			<Box
+				sx={{
+					mt: 2,
+				}}
+				key={index}
+			>
+				<Typography sx={{ marginBottom: 2 }} id={category}>
+					{category}
+				</Typography>
 
-                    {faq[category].map((faq, index) => {
-                        return <FAQ key={index} faq={faq} />;
-                    })}
-                </Box>
-            );
-        })
-    )
-}
+				{faq[category].map((faq, index) => {
+					return <FAQ key={index} faq={faq} />;
+				})}
+			</Box>
+		);
+	});
+};
