@@ -1,71 +1,12 @@
 import { Box, Grid } from '@mui/material';
+import { getData, parseWorkshops } from '@/app/api/workshops/route';
 import { InfoCard, TableOfContents, WorkshopWidget } from '@/components/client';
 import { ResourceLayout } from '@/layouts/ResourceLayout';
 import { workshopHash } from '@/components/server';
 import bannerImage from '@/assets/notgpl/051A6228.jpg';
-import yaml from 'js-yaml';
 
 export const metadata = {
 	title: 'Workshop Archive',
-};
-
-/**
- * Get data from the workshops repo, and parse it into a JSON object
- */
-async function getData() {
-	return fetch(`https://${process.env.WORKSHOPS_HOSTNAME}/all.yml`, {
-		next: { revalidate: 86400 }, // revalidate daily
-	})
-		.then(response => {
-			if (!response.ok) {
-				throw new Error(response.statusText);
-			}
-
-			return response.text();
-		})
-		.then(text => {
-			return yaml.load(text);
-		})
-		.catch(error => {
-			throw new Error(error);
-		});
-}
-
-/**
- * parse workshop data into a nested list of headings
- *
- * @param {Object} workshops workshop data
- */
-const parseWorkshops = workshops => {
-	// Iterate through each year
-	return Object.entries(workshops).reduce((parsedData, [year, categories]) => {
-		// Iterate through each category
-		// eslint-disable-next-line no-unused-vars
-		Object.entries(categories).forEach(([_categoryNum, workshopsList]) => {
-			// Get the category name
-			const categoryName = Object.keys(workshopsList)[0];
-
-			// Initialise category array
-			parsedData[categoryName] = parsedData[categoryName] || [];
-
-			// Iterate through each workshop
-			workshopsList[categoryName].forEach(workshop => {
-				// Update the date string
-				const newDate = `${year}-${workshop.date}`;
-
-				// update the slides link to be absolute
-				if (workshop.slides && !workshop.slides.startsWith('http')) {
-					workshop.slides = `https://${process.env.WORKSHOPS_HOSTNAME}/${year}/${workshop.slides}`;
-				}
-
-				// Add the workshop data to the category array
-				parsedData[categoryName].push({ ...workshop, date: newDate });
-			});
-		});
-
-		// Return the parsed data
-		return parsedData;
-	}, {});
 };
 
 /**

@@ -8,9 +8,9 @@ import { FAQ } from '@/components/client';
  * - keys are the category names
  * - values are arrays of FAQs
  *
- * @property {Object} faq The JSON object containing the FAQs
+ * @param {{[category: string]: {question: string, answer: string}[]}} faq The FAQs
  */
-export const FAQList = ({ faq }) => {
+export const FAQList = (faq) => {
 	return Object.keys(faq).map((category, index) => {
 		return (
 			<Box
@@ -19,7 +19,7 @@ export const FAQList = ({ faq }) => {
 				}}
 				key={index}
 			>
-				<Typography sx={{ marginBottom: 2 }} id={category}>
+				<Typography sx={{ marginBottom: 2 }} id={category} component="h3" variant="h6">
 					{category}
 				</Typography>
 

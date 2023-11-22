@@ -24,7 +24,7 @@ const ProjectPage = () => {
 			<h2 className="resources" id="faq">
 				Frequently Asked Questions
 			</h2>
-			<FAQList faq={FAQData} />
+			<FAQList {...FAQData} />
 
 			<ProjectList />
 		</HeroLayout>
