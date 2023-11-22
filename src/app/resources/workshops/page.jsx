@@ -1,13 +1,9 @@
 import { Box, Grid } from '@mui/material';
-
 import { InfoCard, TableOfContents, WorkshopWidget } from '@/components/client';
-import { workshopHash } from '@/components/server';
-
 import { ResourceLayout } from '@/layouts/ResourceLayout';
-
+import { workshopHash } from '@/components/server';
 import bannerImage from '@/assets/notgpl/051A6228.jpg';
-
-const yaml = require('js-yaml');
+import yaml from 'js-yaml';
 
 export const metadata = {
 	title: 'Workshop Archive',
@@ -17,7 +13,9 @@ export const metadata = {
  * Get data from the workshops repo, and parse it into a JSON object
  */
 async function getData() {
-	return fetch(`https://${process.env.WORKSHOPS_HOSTNAME}/all.yml`)
+	return fetch(`https://${process.env.WORKSHOPS_HOSTNAME}/all.yml`, {
+		next: { revalidate: 86400 } // revalidate daily
+	})
 		.then((response) => {
 			if (!response.ok) {
 				throw new Error(response.statusText);
@@ -26,9 +24,7 @@ async function getData() {
 			return response.text();
 		})
 		.then((text) => {
-			const json = yaml.load(text);
-
-			return json;
+			return yaml.load(text);
 		})
 		.catch((error) => {
 			throw new Error(error);
@@ -44,9 +40,11 @@ const parseWorkshops = (workshops) => {
 	// Iterate through each year
 	return Object.entries(workshops).reduce((parsedData, [year, categories]) => {
 		// Iterate through each category
-		Object.entries(categories).forEach(([_category, workshopsList]) => {
+		// eslint-disable-next-line no-unused-vars
+		Object.entries(categories).forEach(([_categoryNum, workshopsList]) => {
 			// Get the category name
 			const categoryName = Object.keys(workshopsList)[0];
+
 			// Initialise category array
 			parsedData[categoryName] = parsedData[categoryName] || [];
 
