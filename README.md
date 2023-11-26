@@ -17,22 +17,22 @@ Except where otherwise noted, the is project is licensed under the [LGPL 3.0 or 
 
 ## Getting Started
 
-* install dependencies:
-	```sh
-	> npm install
-	```
+### Install dependencies:
+```sh
+> npm install
+```
 
-* initialize the pre-commit hook:
-	> [!WARNING]
-	> Husky will error if you are using GitHub Desktop on Windows. If this is the case, skip this step or uninstall the hook by running `npx husky uninstall` in the root project directory.
-	```sh
-	> npx husky install
-	```
+### Initialize the pre-commit hook:
+> [!WARNING]
+> Husky will error if you are using GitHub Desktop on Windows. If this is the case, skip this step or uninstall the hook by running `npx husky uninstall` in the root project directory.
+```sh
+> npx husky install
+```
 
-* start the app:
-	```sh
-	> npm run dev
-	```
+### Start the app!
+```sh
+> npm run dev
+```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
@@ -64,6 +64,9 @@ When creating new pages, the navbar must be updated to include the new page if d
 
 
 ### Adding a new Workshop
+> [!NOTE]
+> This information is currently out of date.
+
 > [!IMPORTANT]
 > You must have GitHub action permissions to add a new workshop to production in this way. Otherwise, you may fork the repository, manually edit the `workshops.json` file, and create a pull request to `develop`.
 

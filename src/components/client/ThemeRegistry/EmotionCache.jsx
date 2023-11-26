@@ -10,7 +10,7 @@ import * as React from 'react';
  * @property {React.ReactNode} children
  *
  * @see https://github.com/garronej/tss-react/blob/main/src/next/appDir.tsx
- * @see https://github.com/mui/material-ui/blob/master/examples/material-next-app-router-ts/src/components/ThemeRegistry/EmotionCache.tsx
+ * @see https://github.com/mui/material-ui/blob/master/examples/material-ui-nextjs/src/components/ThemeRegistry/EmotionCache.js
  */
 export const NextAppDirEmotionCacheProvider = ({ options, CacheProvider = DefaultCacheProvider, children }) => {
 	const [registry] = React.useState(() => {

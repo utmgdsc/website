@@ -1,9 +1,9 @@
-import { FAQ, ProjectList } from '@/components/client';
-import { Alert, Box, Typography } from '@mui/material';
-import { HeroLayout } from '@/layouts/HeroLayout';
-import FAQData from './faq.json';
-import { ExpiryContainer, Link } from '@/components/server';
 import bannerImage from '@/assets/notgpl/project_banner.jpg';
+import { FAQList, ProjectList } from '@/components/client';
+import { ExpiryContainer, Link } from '@/components/server';
+import { HeroLayout } from '@/layouts/HeroLayout';
+import { Alert } from '@mui/material';
+import FAQData from './faq.json';
 
 export const metadata = {
 	title: 'Community Projects',
@@ -24,24 +24,7 @@ const ProjectPage = () => {
 			<h2 className="resources" id="faq">
 				Frequently Asked Questions
 			</h2>
-			{Object.keys(FAQData).map((category, index) => {
-				return (
-					<Box
-						sx={{
-							mt: 2,
-						}}
-						key={index}
-					>
-						<Typography sx={{ marginBottom: 2 }} id={category}>
-							{category}
-						</Typography>
-
-						{FAQData[category].map((faq, index) => {
-							return <FAQ key={index} faq={faq} />;
-						})}
-					</Box>
-				);
-			})}
+			<FAQList {...FAQData} />
 
 			<ProjectList />
 		</HeroLayout>
