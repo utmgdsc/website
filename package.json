@@ -26,7 +26,7 @@
 	"devDependencies": {
 		"@netlify/plugin-nextjs": "^4.29.5-appdir.0",
 		"@svgr/webpack": "^8.1.0",
-		"eslint": "^8.52.0",
+		"eslint": "^8.55.0",
 		"eslint-config-next": "13.5.4",
 		"eslint-plugin-promise": "^6.1.1",
 		"eslint-plugin-react": "^7.33.2",
