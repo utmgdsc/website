@@ -19,7 +19,7 @@ export const TabChanger = ({ tabList, page, setPage }) => {
 	return (
 		<Tabs
 			value={page}
-			onChange={(e, index) => {
+			onChange={(_, index) => {
 				setPage(index);
 			}}
 			sx={{

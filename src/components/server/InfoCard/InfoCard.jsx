@@ -1,6 +1,5 @@
-import { Button, Card, CardActions, CardContent, Skeleton, Typography } from '@mui/material';
+import { Button, Card, CardActions, CardContent, Typography } from '@mui/material';
 import { OpenInNew } from '@mui/icons-material';
-
 
 const CardColors = ['success', 'error', 'warning', 'info'];
 
@@ -35,8 +34,11 @@ export const InfoCard = ({
 				display: 'flex',
 				flexDirection: 'column',
 				height: '100%',
+				transition: 'all .3s',
+				'&:hover': {
+					transform: 'translateY(-5px)'
+				}
 			}}
-			className="shadow card-front"
 		>
 			<CardContent sx={{ flexGrow: 1, paddingBottom: '0' }}>
 				<Typography gutterBottom variant="h6" component="p">
@@ -63,13 +65,13 @@ export const InfoCard = ({
 
 			<CardActions sx={{ padding: '16px' }}>
 				<Button
-					color={CardColors[Math.floor(Math.random() * CardColors.length)]}
+					color={CardColors[(subtitle?.length + title?.length + description?.length) % CardColors.length]}
 					component={'a'}
 					href={href}
-					rel={external ? 'noopener noreferrer' : ''}
+					rel={external ? 'noopener noreferrer' : undefined}
 					size="small"
 					sx={{ borderRadius: '2em', textTransform: 'none' }}
-					target={external ? '_blank' : ''}
+					target={external ? '_blank' : undefined}
 					variant="contained"
 				>
 					{linkText}
@@ -88,43 +90,6 @@ export const InfoCard = ({
 						}}
 					/>
 				</Button>
-			</CardActions>
-		</Card>
-	);
-};
-
-/**
- * A skeleton loading variant of the InfoCard component.
- */
-export const SkeletonInfoCard = () => {
-	return (
-		<Card
-			sx={{
-				borderRadius: '2em',
-				display: 'flex',
-				flexDirection: 'column',
-				height: '100%',
-			}}
-			className="shadow card-front"
-		>
-			<CardContent sx={{ flexGrow: 1, paddingBottom: '0' }}>
-				<Skeleton variant="text" sx={{ fontSize: '1.25rem' }} />
-
-				<Skeleton variant="text" sx={{ fontSize: '3rem' }} />
-
-				<Skeleton variant="text" sx={{ fontSize: '1rem' }} />
-				<Skeleton variant="text" sx={{ fontSize: '1rem' }} />
-				<Skeleton variant="text" sx={{ fontSize: '1rem' }} />
-			</CardContent>
-
-			<CardActions sx={{ padding: '16px' }}>
-				<Skeleton
-					sx={{
-						height: '4em',
-						width: '9em',
-						maxWidth: '100%',
-					}}
-				/>
 			</CardActions>
 		</Card>
 	);

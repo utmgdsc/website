@@ -21,7 +21,7 @@ const ProjectPage = () => {
 				</Alert>
 			</ExpiryContainer>
 
-			<h2 className="resources" id="faq">
+			<h2 id="faq">
 				Frequently Asked Questions
 			</h2>
 			<FAQList {...FAQData} />

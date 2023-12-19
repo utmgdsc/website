@@ -1,7 +1,5 @@
-import { Typography } from '@mui/material';
-
-import { EventList, getYears } from '@/components/server';
-import { LinkBasedTabChanger } from '@/components/client';
+import { EventList, Link } from "@/components/server";
+import { Alert, Typography } from '@mui/material';
 
 import { HeroLayout } from '@/layouts/HeroLayout';
 
@@ -14,14 +12,20 @@ export const metadata = {
 /**
  * @return {JSX.Element} Events page component using EventList
  */
-const Events = async ({ params }) => {
+const Events = async () => {
 	const today = new Date();
-
-	const year = params?.year?.[0] ?? today.getFullYear();
-	const years = await getYears();
 
 	return (
 		<HeroLayout title={metadata.title} picture={bannerImage} position="bottom" id="events">
+			<noscript>
+				<Alert severity="warning">
+					You need JavaScript to view events. You may view previous events at the{' '}
+					<Link external href="https://gdsc.community.dev/university-of-toronto-mississauga/">
+						GDSC UTM Community page
+					</Link>
+				</Alert>
+			</noscript>
+
 			<section>
 				<Typography
 					color="text.primary"
@@ -48,9 +52,7 @@ const Events = async ({ params }) => {
 					Past Events
 				</Typography>
 
-				<LinkBasedTabChanger tabList={years} page={years.indexOf(Number(year))} prefix="/events/" />
-
-				<EventList from={new Date(`${year}-01-01`)} to={new Date(`${year}-12-31`)} />
+				<EventList to={today} />
 			</section>
 		</HeroLayout>
 	);

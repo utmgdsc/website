@@ -1,8 +1,8 @@
 /**
  * @fileoverview MUI accordion but it works without JS
  */
-import { useState, useEffect } from 'react';
 import { Accordion as MUIAccordion, AccordionDetails as MUIAccordionDetails, AccordionSummary as MUIAccordionSummary } from '@mui/material';
+import { useEffect, useState } from 'react';
 
 /**
  * @returns {any} undefined if JS is enabled, otherwise, returns the default value

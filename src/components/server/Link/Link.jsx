@@ -13,14 +13,14 @@ import { Link as MaterialLink } from '@mui/material';
  * @property {Object} props Any other props
  * @returns {JSX.Element} A link
  */
-export const NonForwardLink = ({ children, href, forwardedRef, external, openInNewTab = external, ...props }) => {
+const NonForwardLink = ({ children, href, forwardedRef, external, openInNewTab = external, ...props }) => {
 	return (
 		<MaterialLink
 			component={NextLink}
 			href={href}
 			ref={forwardedRef}
-			rel={openInNewTab ? 'noopener noreferrer' : ''}
-			target={openInNewTab ? '_blank' : ''}
+			rel={openInNewTab ? 'noopener noreferrer' : undefined}
+			target={openInNewTab ? '_blank' : undefined}
 			{...props}
 		>
 			{children}

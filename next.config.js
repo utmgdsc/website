@@ -15,6 +15,10 @@ const nextConfig = {
 		},
 	},
 
+	compiler: {
+		styledComponents: true,
+	},
+
 	images: {
 		remotePatterns: [
 			{

@@ -1,5 +1,5 @@
 import { ConvertDate, InfoCard } from '@/components/server';
-import { Grid } from '@mui/material';
+import { Alert, Grid } from '@mui/material';
 
 const CHAPTER_API_URL = 'https://gdsc.community.dev/api/chapter/615/event';
 const EVENT_API_URL = 'https://gdsc.community.dev/api/event/';
@@ -25,7 +25,6 @@ const MAX_DATE = new Date(8640000000000000);
  * @param {Date} to the date to stop showing events at (non-inclusive), based on end_date
  * @returns {object} bevy chapter object
  */
-
 const getEvents = async (limit, from, to) => {
 	return await fetch(CHAPTER_API_URL, {
 		next: { revalidate: 3600 }, // revalidate once an hour
@@ -49,7 +48,6 @@ const getEvents = async (limit, from, to) => {
 				return endDate >= from && endDate < to;
 			});
 
-			// finally set events to eventData, and set yearList to the sorted list of unique years in eventData
 			return eventData;
 		})
 		.catch(error => {
@@ -77,6 +75,27 @@ const getDescription = async (id) => {
 		});
 };
 
+const EventInfoCard = ({ event }) => {
+	const description = getDescription(event['id']);
+
+	if (!description) {
+		return (
+			<Alert severity="error">
+				{description?.message}
+			</Alert>
+		)
+	}
+
+	return (
+		<InfoCard
+			subtitle={<ConvertDate date={event['start_date']} />}
+			title={event['title']}
+			description={description}
+			href={event['url']}
+		/>
+	);
+};
+
 /**
  * Gets the events from the GDSC (bevy) API.
  * If limit is specified, it will only show that many events.
@@ -89,17 +108,21 @@ const getDescription = async (id) => {
  */
 export const EventList = async ({ limit, from = MIN_DATE, to = MAX_DATE }) => {
 	const events = await getEvents(limit, from, to);
+	// const years = await getYears();
+
+	if (!Array.isArray(events)) {
+		return (
+			<Alert severity="error">
+				{events?.message}
+			</Alert>
+		)
+	}
 
 	return (
 		<Grid container spacing={2}>
-			{events.map(event => (
-				<Grid key={event['id']} item xs={12} sm={6} md={4}>
-					<InfoCard
-						subtitle={<ConvertDate date={event['start_date']} />}
-						title={event['title']}
-						description={getDescription(event['id'])}
-						href={event['url']}
-					/>
+			{events.map((event, id) => (
+				<Grid key={id} item xs={12} sm={6} md={4}>
+					<EventInfoCard event={event} />
 				</Grid>
 			))}
 		</Grid>
