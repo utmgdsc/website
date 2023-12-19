@@ -38,7 +38,6 @@
 	},
 	"scripts": {
 		"start": "next start",
-		"prebuild": "node prebuild.js",
 		"build": "next build",
 		"dev": "next dev",
 		"lint": "next lint",

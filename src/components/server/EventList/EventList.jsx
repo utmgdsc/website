@@ -27,7 +27,9 @@ const MAX_DATE = new Date(8640000000000000);
  */
 
 const getEvents = async (limit, from, to) => {
-	return await fetch(CHAPTER_API_URL)
+	return await fetch(CHAPTER_API_URL, {
+		next: { revalidate: 3600 }, // revalidate once an hour
+	})
 		.then(response => response.json())
 		.then(data => {
 			if (data['detail'] && (data['detail'].includes('throttled') || data['detail'].includes('error'))) {
@@ -61,7 +63,9 @@ const getEvents = async (limit, from, to) => {
  * @returns {object} bevy event object
  */
 const getDescription = async (id) => {
-	return await fetch(EVENT_API_URL + id)
+	return await fetch(EVENT_API_URL + id, {
+		next: { revalidate: 604800 }, // revalidate once a week
+	})
 		.then(response => response.json())
 		.then(data => {
 			return data['description_short'];
