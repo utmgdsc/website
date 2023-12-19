@@ -1,12 +1,16 @@
-import { Button, Card, CardActions, CardContent, Typography, Skeleton } from '@mui/material';
+import { Button, Card, CardActions, CardContent, Skeleton, Typography } from '@mui/material';
+import { OpenInNew } from '@mui/icons-material';
 
-import { Link } from '@/components/server';
 
 const CardColors = ['success', 'error', 'warning', 'info'];
 
 /**
  * Gets the events from the GDSC (bevy) API and displays them in a card format.
  * The card has a clickable button that redirects to the event's page.
+ *
+ * NOTE: because this component is a Server Component, we pass the <a> tag, which means that
+ * we cannot use Next.js' Link component. This means that we cannot use the Next.js router
+ *
  * @property {string} subtitle the subtitle of the event appearing above the title
  * @property {string} title the title of the event
  * @property {string} href the url of the event
@@ -60,14 +64,29 @@ export const InfoCard = ({
 			<CardActions sx={{ padding: '16px' }}>
 				<Button
 					color={CardColors[Math.floor(Math.random() * CardColors.length)]}
-					component={Link}
+					component={'a'}
 					href={href}
+					rel={external ? 'noopener noreferrer' : ''}
 					size="small"
-					external={external}
 					sx={{ borderRadius: '2em', textTransform: 'none' }}
+					target={external ? '_blank' : ''}
 					variant="contained"
 				>
 					{linkText}
+					<OpenInNew
+						fontSize="inherit"
+						color="inherit"
+						titleAccess="Opens in new tab"
+						sx={{
+							height: '0.8em',
+							marginLeft: '0.3em',
+							opacity: 0.8,
+							width: '0.8em',
+							'&:hover': {
+								opacity: 1,
+							},
+						}}
+					/>
 				</Button>
 			</CardActions>
 		</Card>

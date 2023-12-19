@@ -1,5 +1,6 @@
 import { Grid, Typography } from '@mui/material';
-import { InfoCard, TabChanger } from '@/components/client';
+import { TabChanger } from '@/components/client';
+import { InfoCard } from '@/components/server';
 import { projects } from '@/data/projects.js';
 import { useMemo, useState } from 'react';
 

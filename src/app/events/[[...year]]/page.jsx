@@ -1,11 +1,11 @@
 import { Alert, Typography } from '@mui/material';
 
-import { ErrorBoundary, EventList } from '@/components/client';
-import { Link } from '@/components/server';
+import { EventList, Link, getYears } from '@/components/server';
 
 import { HeroLayout } from '@/layouts/HeroLayout';
 
 import bannerImage from '@/assets/notgpl/IMG_1045.jpg';
+import { Tabs, Tab } from '@mui/material';
 
 export const metadata = {
 	title: 'Events',
@@ -14,7 +14,12 @@ export const metadata = {
 /**
  * @return {JSX.Element} Events page component using EventList
  */
-const Events = () => {
+const Events = async ({ params }) => {
+	const today = new Date();
+
+	const year = params?.year?.[0] ?? today.getFullYear();
+	const years = await getYears();
+
 	return (
 		<HeroLayout title={metadata.title} picture={bannerImage} position="bottom" id="events">
 			<noscript>
@@ -25,6 +30,7 @@ const Events = () => {
 					</Link>
 				</Alert>
 			</noscript>
+
 			<section>
 				<Typography
 					color="text.primary"
@@ -36,9 +42,8 @@ const Events = () => {
 				>
 					Upcoming Events
 				</Typography>
-				<ErrorBoundary>
-					<EventList from={new Date()} />
-				</ErrorBoundary>
+
+				<EventList from={today} />
 			</section>
 			<section>
 				<Typography
@@ -51,9 +56,22 @@ const Events = () => {
 				>
 					Past Events
 				</Typography>
-				<ErrorBoundary>
-					<EventList to={new Date()} skeleton={9} />
-				</ErrorBoundary>
+
+				<Tabs
+					value={years.indexOf(Number(year))}
+					sx={{ mb: '1rem' }}
+				>
+					{years.map((year, id) => (
+						<Tab
+							key={id}
+							label={year}
+							component="a"
+							href={`/events/${year}`}
+						/>
+					))}
+				</Tabs>
+
+				<EventList from={new Date(`${year}-01-01`)} to={new Date(`${year}-12-31`)} />
 			</section>
 		</HeroLayout>
 	);

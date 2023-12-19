@@ -9,14 +9,12 @@
  * @fileoverview This file exports all the components in the components folder
  */
 export * from './ErrorBoundary/ErrorBoundary';
-export * from './EventList/EventList';
 export * from './FAQ/FAQ';
 export * from './FAQList/FAQList';
 export * from './Footer/Footer';
 export * from './HeroHeader/HeroHeader';
 export * from './HomepageHero/HomepageHero';
 export * from './ImageLinkCard/ImageLinkCard';
-export * from './InfoCard/InfoCard';
 export * from './Navbar/Navbar';
 export * from './ProjectList/ProjectList';
 export * from './RouterBreadcrumb/RouterBreadcrumb';

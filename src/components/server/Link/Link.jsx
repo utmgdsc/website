@@ -13,7 +13,7 @@ import { Link as MaterialLink } from '@mui/material';
  * @property {Object} props Any other props
  * @returns {JSX.Element} A link
  */
-const NonForwardLink = ({ children, href, forwardedRef, external, openInNewTab = external, ...props }) => {
+export const NonForwardLink = ({ children, href, forwardedRef, external, openInNewTab = external, ...props }) => {
 	return (
 		<MaterialLink
 			component={NextLink}
