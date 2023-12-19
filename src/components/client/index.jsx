@@ -8,6 +8,7 @@
  * @see https://nextjs.org/docs/getting-started/react-essentials#client-components
  * @fileoverview This file exports all the components in the components folder
  */
+export * from './Accordion2/Accordion2';
 export * from './ErrorBoundary/ErrorBoundary';
 export * from './FAQ/FAQ';
 export * from './FAQList/FAQList';

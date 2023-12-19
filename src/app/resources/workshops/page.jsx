@@ -12,7 +12,8 @@ export const metadata = {
 /**
  * @return {JSX.Element} Workshop page component
  */
-const WorkshopArchive = async () => {
+const WorkshopArchive = async ({ params }) => {
+	const current_workshop = params?.workshop?.[0] ?? null;
 	const workshops = parseWorkshops(await getData());
 
 	return (
@@ -33,10 +34,7 @@ const WorkshopArchive = async () => {
 							<Grid item md={4} key={index}>
 								<InfoCard
 									title={item.name}
-									href={`?workshop=${workshopHash(item.name, item.date)}#${workshopHash(
-										item.name,
-										item.date
-									)}`}
+									href={`#${workshopHash(item.name, item.date)}`}
 									description={item.description}
 									lines={2}
 									external={false}
@@ -65,7 +63,7 @@ const WorkshopArchive = async () => {
 										return new Date(b.date) - new Date(a.date);
 									})
 									.map((item, index) => {
-										return <WorkshopWidget key={index} item={item} />;
+										return <WorkshopWidget key={index} item={item}/>;
 									})}
 							</Box>
 						);

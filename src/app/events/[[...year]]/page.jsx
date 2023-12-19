@@ -1,11 +1,11 @@
-import { Alert, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 
-import { EventList, Link, getYears } from '@/components/server';
+import { EventList, getYears } from '@/components/server';
+import { LinkBasedTabChanger } from '@/components/client';
 
 import { HeroLayout } from '@/layouts/HeroLayout';
 
 import bannerImage from '@/assets/notgpl/IMG_1045.jpg';
-import { Tabs, Tab } from '@mui/material';
 
 export const metadata = {
 	title: 'Events',
@@ -22,15 +22,6 @@ const Events = async ({ params }) => {
 
 	return (
 		<HeroLayout title={metadata.title} picture={bannerImage} position="bottom" id="events">
-			<noscript>
-				<Alert severity="warning">
-					You need JavaScript to view events. You may view previous events at the{' '}
-					<Link external href="https://gdsc.community.dev/university-of-toronto-mississauga/">
-						GDSC UTM Community page
-					</Link>
-				</Alert>
-			</noscript>
-
 			<section>
 				<Typography
 					color="text.primary"
@@ -57,19 +48,7 @@ const Events = async ({ params }) => {
 					Past Events
 				</Typography>
 
-				<Tabs
-					value={years.indexOf(Number(year))}
-					sx={{ mb: '1rem' }}
-				>
-					{years.map((year, id) => (
-						<Tab
-							key={id}
-							label={year}
-							component="a"
-							href={`/events/${year}`}
-						/>
-					))}
-				</Tabs>
+				<LinkBasedTabChanger tabList={years} page={years.indexOf(Number(year))} prefix="/events/" />
 
 				<EventList from={new Date(`${year}-01-01`)} to={new Date(`${year}-12-31`)} />
 			</section>
