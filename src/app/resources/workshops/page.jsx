@@ -12,8 +12,7 @@ export const metadata = {
 /**
  * @return {JSX.Element} Workshop page component
  */
-const WorkshopArchive = async ({ params }) => {
-	const current_workshop = params?.workshop?.[0] ?? null;
+const WorkshopArchive = async () => {
 	const workshops = parseWorkshops(await getData());
 
 	return (

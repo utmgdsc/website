@@ -6,7 +6,6 @@
 export * from './ConvertDate/ConvertDate';
 export * from './ExpiryContainer/ExpiryContainer';
 export * from './getProprietaryURL/getProprietaryURL';
-export * from './InfoCard/InfoCard';
 export * from './JoinAnd/JoinAnd';
 export * from './Link/Link';
 export * from './NamedIconButton/NamedIconButton';

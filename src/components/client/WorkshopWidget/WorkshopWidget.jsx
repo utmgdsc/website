@@ -2,15 +2,27 @@ import { Accordion, AccordionDetails, AccordionSummary, WorkshopButton } from '@
 import { ConvertDate, JoinAnd, workshopHash } from '@/components/server';
 import { Code, ExpandMore, RadioButtonChecked, Slideshow } from '@mui/icons-material';
 import { CardContent, List, Typography } from '@mui/material';
+import { useEffect, useState } from 'react';
+import { useParams } from 'next/navigation';
 
 /**
  * @property {{"key": {name: string; date: Date; host: string[]; description: string; code?: string; slides?: string; recording?: string;}[]}[]} item The workshop item from the workshops.json JSON file
  * @returns {JSX.Element} The workshop widget
  */
 export const WorkshopWidget = ({ item }) => {
+	const [open, setOpen] = useState(false);
+	const params = useParams();
+
+	useEffect(() => {
+		console.log(window.location.hash);
+
+		setOpen(window.location.hash === `#${workshopHash(item.name, item.date)}`);
+	}, [params]);
+
 	return (
 		<Accordion
 			id={workshopHash(item.name, item.date)}
+			open={open}
 		>
 			<AccordionSummary
 				expandIcon={<ExpandMore />}

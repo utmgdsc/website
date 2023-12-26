@@ -1,4 +1,5 @@
-import { ConvertDate, InfoCard } from '@/components/server';
+import { ConvertDate } from '@/components/server';
+import { InfoCard } from '@/components/client';
 import { Alert, Grid } from '@mui/material';
 
 const CHAPTER_API_URL = 'https://gdsc.community.dev/api/chapter/615/event';
