@@ -10,7 +10,7 @@ import { FAQ } from '@/components/client';
  *
  * @param {{[category: string]: {question: string, answer: string}[]}} faq The FAQs
  */
-export const FAQList = (faq) => {
+export const FAQList = faq => {
 	return Object.keys(faq).map((category, index) => {
 		return (
 			<Box

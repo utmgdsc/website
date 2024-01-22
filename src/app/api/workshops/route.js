@@ -20,7 +20,7 @@ export const getData = async () => {
 		.catch(error => {
 			throw new Error(error);
 		});
-}
+};
 
 /**
  * parse workshop data into a nested list of headings
@@ -59,30 +59,28 @@ export const parseWorkshops = workshops => {
 	}, {});
 };
 
-
 export async function GET() {
-    let parsedWorkshops;
+	let parsedWorkshops;
 
-    try {
-        parsedWorkshops = parseWorkshops(await getData());
-    }
-    catch (error) {
-        return new Response(error.toString(), {
-            status: 500,
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'GET',
-                'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-            },
-        });
-    }
+	try {
+		parsedWorkshops = parseWorkshops(await getData());
+	} catch (error) {
+		return new Response(error.toString(), {
+			status: 500,
+			headers: {
+				'Access-Control-Allow-Origin': '*',
+				'Access-Control-Allow-Methods': 'GET',
+				'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+			},
+		});
+	}
 
-    return new Response(JSON.stringify(parsedWorkshops, null, 2), {
-        status: 200,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-        },
-    });
+	return new Response(JSON.stringify(parsedWorkshops, null, 2), {
+		status: 200,
+		headers: {
+			'Access-Control-Allow-Origin': '*',
+			'Access-Control-Allow-Methods': 'GET',
+			'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+		},
+	});
 }
