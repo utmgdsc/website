@@ -17,8 +17,8 @@ export const getData = async () => {
 		.then(text => {
 			return yaml.load(text);
 		})
-		.catch(error => {
-			throw new Error(error);
+		.catch(() =>{
+			return {}
 		});
 };
 

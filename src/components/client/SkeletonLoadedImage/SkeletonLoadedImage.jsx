@@ -27,7 +27,7 @@ export const SkeletonLoadedImage = props => {
 				loading="lazy"
 				alt={props?.alt}
 				src={props?.src}
-				onLoadingComplete={() => setLoaded(true)}
+				onLoad={() => setLoaded(true)}
 				style={{
 					...props?.style,
 				}}
