@@ -15,10 +15,7 @@ const SmoothScrollingLink = ({ id, title }) => {
 	const theme = useTheme();
 
 	return (
-		<Link
-			sx={{ color: theme.palette.text.secondary }}
-			href={`#${id}`}
-		>
+		<Link sx={{ color: theme.palette.text.secondary }} href={`#${id}`}>
 			{title}
 		</Link>
 	);

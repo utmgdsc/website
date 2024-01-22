@@ -9,9 +9,7 @@ import { CardContent, List, Typography } from '@mui/material';
  */
 export const WorkshopWidget = ({ item }) => {
 	return (
-		<Accordion
-			id={workshopHash(item.name, item.date)}
-		>
+		<Accordion id={workshopHash(item.name, item.date)}>
 			<AccordionSummary
 				expandIcon={<ExpandMore />}
 				sx={{

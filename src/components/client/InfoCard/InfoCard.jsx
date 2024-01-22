@@ -37,8 +37,8 @@ export const InfoCard = ({
 				height: '100%',
 				transition: 'all .3s',
 				'&:hover': {
-					transform: 'translateY(-5px)'
-				}
+					transform: 'translateY(-5px)',
+				},
 			}}
 		>
 			<CardContent sx={{ flexGrow: 1, paddingBottom: '0' }}>
@@ -96,7 +96,6 @@ export const InfoCard = ({
 		</Card>
 	);
 };
-
 
 /**
  * A skeleton loading variant of the InfoCard component.

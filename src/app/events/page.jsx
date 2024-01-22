@@ -1,4 +1,4 @@
-import { EventList, YearedEventList } from "@/components/server";
+import { EventList, YearedEventList } from '@/components/server';
 import { Typography } from '@mui/material';
 import { HeroLayout } from '@/layouts/HeroLayout';
 
@@ -15,7 +15,7 @@ const Events = () => {
 	const today = new Date();
 
 	return (
-		<HeroLayout title={"Events"} picture={bannerImage} position="bottom" id="events">
+		<HeroLayout title={'Events'} picture={bannerImage} position="bottom" id="events">
 			<section>
 				<Typography
 					color="text.primary"

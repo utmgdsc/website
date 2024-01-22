@@ -62,7 +62,7 @@ const WorkshopArchive = async () => {
 										return new Date(b.date) - new Date(a.date);
 									})
 									.map((item, index) => {
-										return <WorkshopWidget key={index} item={item}/>;
+										return <WorkshopWidget key={index} item={item} />;
 									})}
 							</Box>
 						);

@@ -54,13 +54,7 @@ export const LinkBasedTabChanger = ({ tabList, page, prefix }) => {
 			}}
 		>
 			{tabList.map((year, id) => (
-				<Tab
-					key={id}
-					label={year}
-					component={Link}
-					href={`${prefix}/${year}`}
-					scroll={false}
-				/>
+				<Tab key={id} label={year} component={Link} href={`${prefix}/${year}`} scroll={false} />
 			))}
 		</Tabs>
 	);

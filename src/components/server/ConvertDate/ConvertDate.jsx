@@ -17,7 +17,5 @@ export const ConvertDate = ({ date }) => {
 	});
 
 	// return the date string
-	return (
-		<time dateTime={date}>{dateStr}</time>
-	);
+	return <time dateTime={date}>{dateStr}</time>;
 };

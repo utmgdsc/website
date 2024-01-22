@@ -53,13 +53,12 @@ const getEvents = async (limit, from, to) => {
 		});
 };
 
-
 /**
  * load external json file from api
  * @param {id} id id of the event
  * @returns {object} bevy event object
  */
-const getDescription = async (id) => {
+const getDescription = async id => {
 	return await fetch(process.env.EVENT_API_URL + id, {
 		next: { revalidate: 604800 }, // revalidate once a week
 	})
@@ -119,16 +118,14 @@ export const getYears = async () => {
 export const EventList = async ({ limit, from = MIN_DATE, to = MAX_DATE }) => {
 	const events = await getEvents(limit, from, to);
 
-	const descriptions = await Promise.all(events.map(async (event) => {
-		return await getDescription(event['id']);
-	}));
+	const descriptions = await Promise.all(
+		events.map(async event => {
+			return await getDescription(event['id']);
+		})
+	);
 
 	if (!Array.isArray(events)) {
-		return (
-			<Alert severity="error">
-				{events?.message}
-			</Alert>
-		)
+		return <Alert severity="error">{events?.message}</Alert>;
 	}
 
 	return (
@@ -160,11 +157,20 @@ export const YearedEventList = async ({ from = MIN_DATE, to = MAX_DATE }) => {
 		<>
 			{years.map(year => (
 				<section key={year}>
-					<Typography color="text.primary" component="h3" fontWeight="bold" lineHeight="2.5em" variant="h5" id={year}> {year} </Typography>
+					<Typography
+						color="text.primary"
+						component="h3"
+						fontWeight="bold"
+						lineHeight="2.5em"
+						variant="h5"
+						id={year}
+					>
+						{' '}
+						{year}{' '}
+					</Typography>
 					<EventList from={dateMax(from, new Date(year, 0, 1))} to={dateMin(to, new Date(year + 1, 0, 1))} />
 				</section>
-			))
-			}
+			))}
 		</>
 	);
-}
+};
