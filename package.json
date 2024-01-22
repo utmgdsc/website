@@ -13,18 +13,17 @@
 	},
 	"dependencies": {
 		"@emotion/react": "^11.11.3",
-		"@emotion/styled": "^11.10.5",
-		"@mui/icons-material": "^5.15.3",
-		"@mui/material": "^5.15.3",
+		"@emotion/styled": "^11.11.0",
+		"@mui/icons-material": "^5.15.5",
+		"@mui/material": "^5.15.5",
 		"js-yaml": "^4.1.0",
-		"next": "13.4.12",
+		"next": "^14.1.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-gtm-module": "^2.0.11",
-		"sharp": "^0.33.1"
+		"sharp": "^0.33.2"
 	},
 	"devDependencies": {
-		"@netlify/plugin-nextjs": "^4.29.5-appdir.0",
 		"@svgr/webpack": "^8.1.0",
 		"eslint": "^8.56.0",
 		"eslint-config-next": "13.5.4",
@@ -32,8 +31,8 @@
 		"eslint-plugin-react": "^7.33.2",
 		"husky": "^8.0.3",
 		"lint-staged": "^15.2.0",
-		"prettier": "^3.1.1",
-		"sass": "^1.69.7",
+		"prettier": "^3.2.4",
+		"sass": "^1.70.0",
 		"url-loader": "^4.1.1"
 	},
 	"scripts": {
