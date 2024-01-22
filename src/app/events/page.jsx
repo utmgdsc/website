@@ -1,6 +1,5 @@
-import { EventList, Link } from "@/components/server";
-import { Alert, Typography } from '@mui/material';
-
+import { EventList, YearedEventList } from "@/components/server";
+import { Typography } from '@mui/material';
 import { HeroLayout } from '@/layouts/HeroLayout';
 
 import bannerImage from '@/assets/notgpl/IMG_1045.jpg';
@@ -12,20 +11,11 @@ export const metadata = {
 /**
  * @return {JSX.Element} Events page component using EventList
  */
-const Events = async () => {
+const Events = () => {
 	const today = new Date();
 
 	return (
-		<HeroLayout title={metadata.title} picture={bannerImage} position="bottom" id="events">
-			<noscript>
-				<Alert severity="warning">
-					You need JavaScript to view events. You may view previous events at the{' '}
-					<Link external href="https://gdsc.community.dev/university-of-toronto-mississauga/">
-						GDSC UTM Community page
-					</Link>
-				</Alert>
-			</noscript>
-
+		<HeroLayout title={"Events"} picture={bannerImage} position="bottom" id="events">
 			<section>
 				<Typography
 					color="text.primary"
@@ -52,7 +42,7 @@ const Events = async () => {
 					Past Events
 				</Typography>
 
-				<EventList to={today} />
+				<YearedEventList to={today} />
 			</section>
 		</HeroLayout>
 	);

@@ -1,5 +1,6 @@
 import { Button, Card, CardActions, CardContent, Typography, Skeleton } from '@mui/material';
 import { OpenInNew } from '@mui/icons-material';
+import { Link } from '@/components/server';
 
 const CardColors = ['success', 'error', 'warning', 'info'];
 
@@ -65,8 +66,9 @@ export const InfoCard = ({
 
 			<CardActions sx={{ padding: '16px' }}>
 				<Button
-					color={CardColors[(subtitle?.length + title?.length + description?.length) % CardColors.length]}
-					component={'a'}
+					color={CardColors[Math.floor(Math.random() * CardColors.length)]}
+					suppressHydrationWarning
+					component={Link}
 					href={href}
 					rel={external ? 'noopener noreferrer' : undefined}
 					size="small"
