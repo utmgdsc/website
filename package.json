@@ -40,6 +40,7 @@
 		"build": "next build",
 		"dev": "next dev",
 		"lint": "next lint",
+		"prepare": "husky",
 		"pretty": "prettier --write \"./**/*.{js,jsx,ts,tsx,json}\""
 	},
 	"husky": {
