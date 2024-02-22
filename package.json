@@ -14,8 +14,8 @@
 	"dependencies": {
 		"@emotion/react": "^11.11.3",
 		"@emotion/styled": "^11.11.0",
-		"@mui/icons-material": "^5.15.6",
-		"@mui/material": "^5.15.6",
+		"@mui/icons-material": "^5.15.10",
+		"@mui/material": "^5.15.10",
 		"js-yaml": "^4.1.0",
 		"next": "^14.1.0",
 		"react": "^18.2.0",
@@ -29,10 +29,10 @@
 		"eslint-config-next": "13.5.4",
 		"eslint-plugin-promise": "^6.1.1",
 		"eslint-plugin-react": "^7.33.2",
-		"husky": "^9.0.6",
-		"lint-staged": "^15.2.0",
-		"prettier": "^3.2.4",
-		"sass": "^1.70.0",
+		"husky": "^9.0.11",
+		"lint-staged": "^15.2.2",
+		"prettier": "^3.2.5",
+		"sass": "^1.71.0",
 		"url-loader": "^4.1.1"
 	},
 	"scripts": {
