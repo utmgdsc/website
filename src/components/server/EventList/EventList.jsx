@@ -165,8 +165,7 @@ export const YearedEventList = async ({ from = MIN_DATE, to = MAX_DATE }) => {
 						variant="h5"
 						id={year}
 					>
-						{' '}
-						{year}{' '}
+						{year}
 					</Typography>
 					<EventList from={dateMax(from, new Date(year, 0, 1))} to={dateMin(to, new Date(year + 1, 0, 1))} />
 				</section>
