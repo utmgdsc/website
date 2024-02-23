@@ -1,6 +1,5 @@
 import { Button, Card, CardActions, CardContent, Typography, Skeleton } from '@mui/material';
-import { OpenInNew } from '@mui/icons-material';
-import { Link } from '@/components/server';
+import { Link, OpenInNewTabIcon } from '@/components/server';
 
 const CardColors = ['success', 'error', 'warning', 'info'];
 
@@ -77,20 +76,7 @@ export const InfoCard = ({
 					variant="contained"
 				>
 					{linkText}
-					<OpenInNew
-						fontSize="inherit"
-						color="inherit"
-						titleAccess="Opens in new tab"
-						sx={{
-							height: '0.8em',
-							marginLeft: '0.3em',
-							opacity: 0.8,
-							width: '0.8em',
-							'&:hover': {
-								opacity: 1,
-							},
-						}}
-					/>
+					<OpenInNewTabIcon />
 				</Button>
 			</CardActions>
 		</Card>
