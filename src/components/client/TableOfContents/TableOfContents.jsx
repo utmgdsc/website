@@ -15,16 +15,7 @@ const SmoothScrollingLink = ({ id, title }) => {
 	const theme = useTheme();
 
 	return (
-		<Link
-			sx={{ color: theme.palette.text.secondary }}
-			href={`#${id}`}
-			onClick={e => {
-				e.preventDefault();
-				document.querySelector(`#${title}`).scrollIntoView({
-					behavior: 'smooth',
-				});
-			}}
-		>
+		<Link sx={{ color: theme.palette.text.secondary }} href={`#${id}`}>
 			{title}
 		</Link>
 	);

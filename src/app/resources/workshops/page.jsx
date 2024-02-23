@@ -21,10 +21,10 @@ const WorkshopArchive = async () => {
 			<Grid container spacing={2} sx={{ mb: 4 }}>
 				{/* get latest 3 workshops and give them an infocard */}
 				{Object.keys(workshops)
-					.reduce(function (acc, key) {
+					.reduce((acc, key) => {
 						return [...acc, ...workshops[key]];
 					}, [])
-					.sort(function (a, b) {
+					.sort((a, b) => {
 						return new Date(b.date) - new Date(a.date);
 					})
 					.slice(0, 3)
@@ -33,10 +33,7 @@ const WorkshopArchive = async () => {
 							<Grid item md={4} key={index}>
 								<InfoCard
 									title={item.name}
-									href={`?workshop=${workshopHash(item.name, item.date)}#${workshopHash(
-										item.name,
-										item.date
-									)}`}
+									href={`#${workshopHash(item.name, item.date)}`}
 									description={item.description}
 									lines={2}
 									external={false}
@@ -61,7 +58,7 @@ const WorkshopArchive = async () => {
 									{category}
 								</h3>
 								{workshops[category]
-									.sort(function (a, b) {
+									.sort((a, b) => {
 										return new Date(b.date) - new Date(a.date);
 									})
 									.map((item, index) => {

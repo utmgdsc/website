@@ -3,10 +3,11 @@ img {
 	height: auto;
 }
 
-body {
+body, html {
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	scroll-behavior: smooth;
 }
 
 code {

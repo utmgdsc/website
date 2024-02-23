@@ -14,6 +14,11 @@ const nextConfig = {
 			transform: '@mui/icons-material/{{member}}',
 		},
 	},
+
+	compiler: {
+		styledComponents: true,
+	},
+
 	images: {
 		remotePatterns: [
 			{

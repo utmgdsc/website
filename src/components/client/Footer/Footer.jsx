@@ -61,14 +61,14 @@ export const Footer = () => {
 								 * must only iterate through keys as forEach does not return anything
 								 * and thus cannot be used for react purposes
 								 * key name is used as the header text */
-								Object.keys(footerLinks).map(function (header) {
+								Object.keys(footerLinks).map(header => {
 									return (
 										<div className="flex-item links-flex" key={header}>
 											<Typography variant="h6" component="h2">
 												{header}
 											</Typography>
 											<ul>
-												{Object.keys(footerLinks[header]).map(function (link) {
+												{Object.keys(footerLinks[header]).map(link => {
 													return (
 														<FooterLink
 															key={link}
