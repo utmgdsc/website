@@ -3,6 +3,23 @@ import NextLink from 'next/link';
 import { OpenInNew } from '@mui/icons-material';
 import { Link as MaterialLink } from '@mui/material';
 
+export const OpenInNewTabIcon = () => (
+	<OpenInNew
+		fontSize="inherit"
+		color="inherit"
+		titleAccess="Opens in new tab"
+		sx={{
+			height: '0.8em',
+			marginLeft: '0.3em',
+			opacity: 0.8,
+			width: '0.8em',
+			'&:hover': {
+				opacity: 1,
+			},
+		}}
+	/>
+);
+
 /**
  * A link
  * @property {React.ReactNode} children The link's children
@@ -24,22 +41,7 @@ const NonForwardLink = ({ children, href, forwardedRef, external, openInNewTab =
 			{...props}
 		>
 			{children}
-			{openInNewTab && (
-				<OpenInNew
-					fontSize="inherit"
-					color="inherit"
-					titleAccess="Opens in new tab"
-					sx={{
-						height: '0.8em',
-						marginLeft: '0.3em',
-						opacity: 0.8,
-						width: '0.8em',
-						'&:hover': {
-							opacity: 1,
-						},
-					}}
-				/>
-			)}
+			{openInNewTab && <OpenInNewTabIcon />}
 		</MaterialLink>
 	);
 };
