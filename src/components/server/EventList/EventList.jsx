@@ -140,18 +140,24 @@ export const EventList = async ({ limit, from = MIN_DATE, to = MAX_DATE }) => {
 };
 
 /**
+ * return the min of two dates
+ * @param {Date} a the first date
+ * @param {Date} b the next date
+ */
+const dateMin = (a, b) => (a < b ? a : b);
+
+/**
+ * return the max of two dates
+ * @param {Date} a the first date
+ * @param {Date} b the next date
+ */
+const dateMax = (a, b) => (a > b ? a : b);
+
+/**
  * All events with years as headers.
  */
 export const YearedEventList = async ({ from = MIN_DATE, to = MAX_DATE }) => {
 	const years = await getYears();
-
-	function dateMin(a, b) {
-		return a < b ? a : b;
-	}
-
-	function dateMax(a, b) {
-		return a > b ? a : b;
-	}
 
 	return (
 		<>
