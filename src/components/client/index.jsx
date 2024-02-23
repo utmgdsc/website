@@ -17,6 +17,7 @@ export * from './HeroHeader/HeroHeader';
 export * from './HomepageHero/HomepageHero';
 export * from './ImageLinkCard/ImageLinkCard';
 export * from './InfoCard/InfoCard';
+export * from './MyTab/MyTab';
 export * from './Navbar/Navbar';
 export * from './ProjectList/ProjectList';
 export * from './RouterBreadcrumb/RouterBreadcrumb';

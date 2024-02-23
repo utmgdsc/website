@@ -155,21 +155,39 @@ export const YearedEventList = async ({ from = MIN_DATE, to = MAX_DATE }) => {
 
 	return (
 		<>
-			{years.map(year => (
-				<section key={year}>
-					<Typography
-						color="text.primary"
-						component="h3"
-						fontWeight="bold"
-						lineHeight="2.5em"
-						variant="h5"
-						id={year}
-					>
-						{year}
-					</Typography>
-					<EventList from={dateMax(from, new Date(year, 0, 1))} to={dateMin(to, new Date(year + 1, 0, 1))} />
-				</section>
-			))}
+			{years
+				.filter(year => year >= from.getFullYear() && year <= to.getFullYear())
+				.map(year => (
+					<section key={year}>
+						{ from.getFullYear() - to.getFullYear() !== 0 &&
+							<Typography
+								color="text.primary"
+								component="h3"
+								fontWeight="bold"
+								lineHeight="2.5em"
+								variant="h5"
+								id={year}
+							>
+								{year}
+							</Typography>
+						}
+						<EventList
+							from={dateMax(from, new Date(year, 0, 1))}
+							to={dateMin(to, new Date(year + 1, 0, 1))}
+						/>
+					</section>
+				))}
 		</>
 	);
+};
+
+/**
+ * Get the years for the event tabs.
+ */
+export const getYearTabs = async () => {
+	const years = await getYears();
+
+	return years.map(year => {
+		return year;
+	});
 };
