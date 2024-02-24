@@ -21,11 +21,13 @@ import { ThemedImage } from '@/components/client';
  */
 export const Navbar = () => {
 	/* update navbar tabs on path change */
+	const pathname = usePathname();
 
-	// eslint-disable-next-line no-unused-vars
-	const [currentTab, setCurrentTab] = useState(usePathname());
+	// use only the first part of the path to determine the tab
+	// so that sub pages are also highlighted in the navbar
+	const [currentTab, setCurrentTab] = useState(pathname.toLowerCase().split('/')[1]);
 
-	const handleChange = (event, newValue) => {
+	const handleChange = (_, newValue) => {
 		setCurrentTab(newValue);
 	};
 
@@ -82,11 +84,7 @@ export const Navbar = () => {
 							indicatorColor={theme.palette.primary.main}
 							onChange={handleChange}
 							TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
-							value={
-								// use only the first part of the path to determine the tab
-								// so that sub pages are also highlighted in the navbar
-								usePathname().toLowerCase().split('/')[1]
-							}
+							value={currentTab}
 							variant="scrollable"
 							sx={{
 								'& .MuiTabs-flexContainer': {

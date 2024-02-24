@@ -1,37 +1,26 @@
-import { WorkshopButton } from '@/components/client';
-import { ConvertDate, JoinAnd, Link, workshopHash } from '@/components/server';
+import { Accordion, AccordionDetails, AccordionSummary, WorkshopButton } from '@/components/client';
+import { ConvertDate, JoinAnd, workshopHash } from '@/components/server';
 import { Code, ExpandMore, RadioButtonChecked, Slideshow } from '@mui/icons-material';
-import { Accordion, AccordionDetails, AccordionSummary, CardContent, List, Typography } from '@mui/material';
-import { useSearchParams } from 'next/navigation';
+import { CardContent, List, Typography } from '@mui/material';
 
 /**
  * @property {{"key": {name: string; date: Date; host: string[]; description: string; code?: string; slides?: string; recording?: string;}[]}[]} item The workshop item from the workshops.json JSON file
  * @returns {JSX.Element} The workshop widget
  */
 export const WorkshopWidget = ({ item }) => {
-	const searchParams = useSearchParams();
-
 	return (
-		<Accordion
-			id={workshopHash(item.name, item.date)}
-			expanded={searchParams.get('workshop') === workshopHash(item.name, item.date)}
-		>
+		<Accordion id={workshopHash(item.name, item.date)}>
 			<AccordionSummary
 				expandIcon={<ExpandMore />}
-				aria-controls="panel1a-content"
-				id="panel1a-header"
-				component={Link}
-				scroll={false}
-				href={
-					workshopHash(item.name, item.date) === searchParams.get('workshop')
-						? `?`
-						: `?workshop=${workshopHash(item.name, item.date)}`
-				}
+				sx={{
+					width: '100%',
+				}}
 			>
 				<CardContent
 					sx={{
 						flex: '1 0 auto',
 						padding: '0 !important',
+						textAlign: 'left',
 					}}
 				>
 					<Typography component="div" variant="h6" sx={{ maxWidth: '60vw' }}>

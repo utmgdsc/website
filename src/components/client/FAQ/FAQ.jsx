@@ -1,5 +1,6 @@
 import { ExpandMore } from '@mui/icons-material';
-import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary } from '@/components/client';
 
 /**
  * A frequently asked question. Used in the Resources page.
@@ -11,7 +12,12 @@ import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/
 export const FAQ = ({ faq }) => {
 	return (
 		<Accordion>
-			<AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel1a-content" id="panel1a-header">
+			<AccordionSummary
+				expandIcon={<ExpandMore />}
+				aria-controls="panel1a-content"
+				id="panel1a-header"
+				component="summary"
+			>
 				<Typography>Q: {faq.question}</Typography>
 			</AccordionSummary>
 			<AccordionDetails>
