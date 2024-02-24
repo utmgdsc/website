@@ -1,12 +1,10 @@
-import './Footer.scss';
-
-import { Box, ButtonGroup, Container, Typography, styled } from '@mui/material';
+import { Box, ButtonGroup, Container, Paper, Typography, styled } from '@mui/material';
 
 import bracket_colourless from '@/assets/graphics/bracket_colourless.svg';
-import footerLinks from '@/data/footer.json';
-import * as allSocialButtons from '@/data/SocialButton';
 import { ErrorBoundary } from '@/components/client';
 import { Link } from '@/components/server';
+import * as allSocialButtons from '@/data/SocialButton';
+import footerLinks from '@/data/footer.json';
 import Image from 'next/image';
 
 /**
@@ -15,34 +13,96 @@ import Image from 'next/image';
  *
  * @return {JSX.Element} Footer link
  */
-const FooterLink = styled(props => (
-	<li>
-		<Link className={'link'} sx={{ color: 'inherit' }} {...props} />
-	</li>
-))(({ theme }) => ({
-	color: theme.palette.text.secondary,
-	opacity: 0.7,
-	'&:hover': {
-		opacity: 1,
-	},
-}));
+const FooterLink = props => (
+	<Box
+		component="li"
+		sx={{
+			color: theme => theme.palette.text.secondary,
+			padding: {
+				xs: '0.5em 0',
+				sm: '0',
+			},
+		}}
+		{...props}
+	>
+		<Link
+			sx={{
+				color: 'inherit',
+				minWidth: '8rem',
+				opacity: 0.9,
+				display: 'block',
+				transition: 'background .3s ease, box-shadow .3s ease, opacity .3s ease',
+
+				'&:focus-visible': {
+					opacity: 1,
+					padding: '0 2px',
+				},
+
+				'&:hover': {
+					opacity: 1,
+				},
+
+				'&:active': {
+					opacity: 0.3,
+				},
+			}}
+			{...props}
+		/>
+	</Box>
+);
+const FooterUnorderedList = styled('ul')({
+	listStyleType: 'none',
+	padding: '0 !important',
+	margin: '0 !important',
+});
 
 /**
  * @returns {JSX.Element} Footer component
  */
 export const Footer = () => {
 	return (
-		<Box
+		<Paper
+			elevation={3}
 			component="footer"
 			sx={{
-				backgroundColor: theme => theme.palette.action.hover,
-				borderColor: theme => theme.palette.divider,
+				margin: '1rem 0 0 0',
+				padding: '1rem 0',
+				width: '100%',
 			}}
 		>
 			<Container maxWidth="xl">
-				<div id="footer">
-					<h2 className="logo-group flex-item">
-						<Link href="/">
+				<Box
+					id="footer"
+					sx={{
+						display: {
+							xs: 'block',
+							sm: 'flex',
+						},
+					}}
+				>
+					<Typography
+						component="h2"
+						sx={{
+							width: {
+								sm: '12.5rem',
+								xs: '100%',
+							},
+							margin: '0 !important',
+							paddingBottom: {
+								sm: '0',
+								xs: '1em',
+							},
+						}}
+					>
+						<Link
+							href="/"
+							sx={{
+								img: {
+									filter: 'invert(48%) sepia(5%) saturate(88%) hue-rotate(202deg) brightness(90%) contrast(88%)',
+									paddingTop: '0.5rem',
+								},
+							}}
+						>
 							<Image
 								src={bracket_colourless}
 								className="logo"
@@ -52,9 +112,24 @@ export const Footer = () => {
 								alt="Footer"
 							/>
 						</Link>
-					</h2>
+					</Typography>
 
-					<div className="footer-flex">
+					<Box
+						sx={{
+							flexGrow: 1,
+							alignContent: {
+								sm: 'center',
+								xs: 'flex-start',
+							},
+							display: 'flex',
+							flexDirection: {
+								xs: 'column',
+								sm: 'row',
+							},
+							flexWrap: 'wrap',
+							justifyContent: 'flex-start',
+						}}
+					>
 						<ErrorBoundary>
 							{
 								/* iterate through top level keys in footerLinks
@@ -63,11 +138,11 @@ export const Footer = () => {
 								 * key name is used as the header text */
 								Object.keys(footerLinks).map(header => {
 									return (
-										<div className="flex-item links-flex" key={header}>
+										<Box sx={{ width: '12.5rem' }} key={header}>
 											<Typography variant="h6" component="h2">
 												{header}
 											</Typography>
-											<ul>
+											<FooterUnorderedList>
 												{Object.keys(footerLinks[header]).map(link => {
 													return (
 														<FooterLink
@@ -79,32 +154,53 @@ export const Footer = () => {
 														</FooterLink>
 													);
 												})}
-											</ul>
-										</div>
+											</FooterUnorderedList>
+										</Box>
 									);
 								})
 							}
 						</ErrorBoundary>
-					</div>
-				</div>
+					</Box>
+				</Box>
 
-				<div className="footer-text">
-					<ul className="links-flex" style={{ paddingTop: '1em', flexGrow: 1 }}>
-						<FooterLink
-							className="link"
-							href="https://github.com/utmgdsc/website/issues/new/choose"
-							external
-						>
+				<Box
+					sx={{
+						alignItems: {
+							sm: 'center',
+							xs: 'flex-start',
+						},
+						display: 'flex',
+						flexWrap: 'wrap',
+						padding: {
+							sx: '0 1em',
+							sm: '0',
+						},
+						flexDirection: {
+							sm: 'row',
+							xs: 'column',
+						},
+						width: '100%',
+					}}
+				>
+					<FooterUnorderedList style={{ paddingTop: '1em' }}>
+						<FooterLink href="https://github.com/utmgdsc/website/issues/new/choose" external>
 							Improve this page on GitHub
 						</FooterLink>
-					</ul>
-					<ButtonGroup className={'flex-item'} id="social">
+					</FooterUnorderedList>
+					<ButtonGroup
+						id="social"
+						sx={{
+							flexGrow: 1,
+							flexFlow: 'row-reverse wrap',
+							textAlign: 'right',
+						}}
+					>
 						{Object.values(allSocialButtons).map((SocialButton, index) => {
 							return <SocialButton key={index} />;
 						})}
 					</ButtonGroup>
-				</div>
+				</Box>
 			</Container>
-		</Box>
+		</Paper>
 	);
 };

@@ -1,8 +1,6 @@
-import './Navbar.scss';
-
 import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AppBar, Box, ButtonGroup, Container, Fab, Tabs, Toolbar, useTheme } from '@mui/material';
 
 import bracket from '@/assets/graphics/bracket.svg';
@@ -27,11 +25,12 @@ export const Navbar = () => {
 	// so that sub pages are also highlighted in the navbar
 	const [currentTab, setCurrentTab] = useState(pathname.toLowerCase().split('/')[1]);
 
-	const handleChange = (_, newValue) => {
-		setCurrentTab(newValue);
-	};
+	useEffect(() => {
+		setCurrentTab(pathname.toLowerCase().split('/')[1]);
+	}, [pathname]);
 
 	const theme = useTheme();
+
 	return (
 		<HideOnScroll>
 			<AppBar sx={{ bgcolor: 'transparent !important' }}>
@@ -56,10 +55,11 @@ export const Navbar = () => {
 								aria-label="Home"
 								style={{
 									background: theme.palette.background.paper,
+									minHeight: '30px',
+									minWidth: '94px',
 								}}
 								href="/"
 								component={NextLink}
-								onClick={handleChange}
 								id="gdsc-home-btn"
 							>
 								<ThemedImage
@@ -68,7 +68,10 @@ export const Navbar = () => {
 									height={48}
 									width={48}
 									draggable="false"
-									style={{ userSelect: 'none' }}
+									style={{
+										userSelect: 'none',
+										filter: theme.palette.mode === 'dark' ? 'invert(1)' : 'unset',
+									}}
 									srcDark={bracketDark}
 									id="gdsc-home-btn-bracket-logo"
 								/>
@@ -81,8 +84,6 @@ export const Navbar = () => {
 							aria-label="Main navigation"
 							component="nav"
 							id="main-nav"
-							indicatorColor={theme.palette.primary.main}
-							onChange={handleChange}
 							TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
 							value={currentTab}
 							variant="scrollable"

@@ -1,6 +1,5 @@
-import './HeroHeader.scss';
-import React, { useState, useEffect, useRef } from 'react';
-import { Container, Typography } from '@mui/material';
+import { useState, useEffect, useRef } from 'react';
+import { Box, Container, Typography } from '@mui/material';
 
 import Image from 'next/image';
 
@@ -44,15 +43,30 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 	};
 
 	return (
-		<div
+		<Box
 			ref={containerRef}
-			style={{
+			sx={{
 				height: height,
 				maxWidth: 'unset !important',
 				position: 'relative',
 				width: '100%',
 				overflowY: 'hidden',
 				overflowX: 'hidden',
+				'&:after': {
+					content: '""',
+					backgroundImage: theme =>
+						theme.palette.mode === 'dark'
+							? 'linear-gradient(rgba(0, 0, 0, .6) 0%, rgba(0, 0, 0, 0.8) 100%)'
+							: 'linear-gradient(rgba(255, 255, 255, .6) 0%, rgba(255, 255, 255, 0.8) 100%)',
+					backgroundSize: '18px',
+					bottom: 0,
+					display: 'block',
+					height: '100%',
+					position: 'absolute',
+					right: 0,
+					width: '100%',
+					zIndex: 1,
+				},
 			}}
 			className="hero-header-parallax"
 		>
@@ -68,6 +82,7 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 					position: 'absolute',
 					bottom: position === 'bottom' ? 0 : undefined,
 					top: position === 'top' ? 0 : undefined,
+					objectFit: 'cover',
 				}}
 				loading="lazy"
 				alt=""
@@ -96,6 +111,6 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 					</Typography>
 				</Container>
 			</Container>
-		</div>
+		</Box>
 	);
 };

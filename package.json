@@ -32,7 +32,6 @@
 		"husky": "^9.0.11",
 		"lint-staged": "^15.2.2",
 		"prettier": "^3.2.5",
-		"sass": "^1.71.0",
 		"url-loader": "^4.1.1"
 	},
 	"scripts": {
@@ -41,7 +40,7 @@
 		"dev": "next dev",
 		"lint": "next lint",
 		"prepare": "husky",
-		"pretty": "prettier --write \"./**/*.{js,jsx,ts,tsx,json}\""
+		"pretty": "prettier --write \"./**/*.{js,jsx,ts,tsx,json,css}\""
 	},
 	"husky": {
 		"hooks": {

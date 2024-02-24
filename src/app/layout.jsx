@@ -1,4 +1,4 @@
-import './App.scss';
+import './App.css';
 
 import { ErrorBoundary, Footer, Navbar, TagManager, ThemeRegistry } from '@/components/client';
 
