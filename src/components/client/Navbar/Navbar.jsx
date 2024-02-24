@@ -54,7 +54,7 @@ export const Navbar = () => {
 								variant="extended"
 								aria-label="Home"
 								style={{
-									background: theme => theme.palette.background.paper,
+									background: theme.palette.background.paper,
 									minHeight: '30px',
 									minWidth: '94px',
 								}}
@@ -84,7 +84,6 @@ export const Navbar = () => {
 							aria-label="Main navigation"
 							component="nav"
 							id="main-nav"
-							indicatorColor={theme.palette.primary.main}
 							TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
 							value={currentTab}
 							variant="scrollable"

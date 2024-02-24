@@ -45,17 +45,16 @@ export const HomepageHero = () => {
 						}}
 						variant="h2"
 					>
-						<SkeletonLoadedImage
+						<Box
+							component={SkeletonLoadedImage}
 							alt="Google Developer Student Clubs University of Toronto Mississauga"
 							fill="100%"
 							id="gdsc-wordmark"
 							src={wordmark}
-							style={{
+							sx={{
 								objectFit: 'contain',
 								filter: theme =>
-									theme.palette.mode === THEME.DARK
-										? 'grayscale(1)invert(1)brightness(1.5)'
-										: 'unset',
+									theme.palette.mode == THEME.DARK ? 'grayscale(1)invert(1)brightness(1.5)' : 'unset',
 							}}
 						/>
 					</Typography>

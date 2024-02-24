@@ -1,4 +1,4 @@
-import './TableOfContents.scss';
+import './TableOfContents.css';
 
 import { useEffect, useRef, useState } from 'react';
 import { Link } from '@/components/server';

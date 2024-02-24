@@ -1,0 +1,25 @@
+#table-of-contents h2,
+#table-of-contents h3 {
+	scroll-margin-top: 16px;
+	/* Safari-only */
+}
+
+@supports (-webkit-hyphens: none) {
+	#table-of-contents h2,
+	#table-of-contents h3 {
+		padding-top: 16px;
+		margin-top: -16px;
+	}
+}
+
+#table-of-contents a {
+	text-decoration: none;
+}
+
+#table-of-contents li.active > a {
+	color: #4285f4 !important;
+}
+
+#table-of-contents li > a:hover {
+	color: #4285f4 !important;
+}
