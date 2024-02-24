@@ -37,10 +37,15 @@ export const Footer = () => {
 			sx={{
 				backgroundColor: theme => theme.palette.action.hover,
 				borderColor: theme => theme.palette.divider,
+				borderTop: '1px solid',
+				boxShadow: '0 0 10px 0 rgba(0, 0, 0, .1)',
+				margin: '1rem 0 0 0',
+				padding: '1rem 0',
+				width: '100%',
 			}}
 		>
 			<Container maxWidth="xl">
-				<div id="footer">
+				<Box id="footer" sx={{ display: 'flex' }}>
 					<h2 className="logo-group flex-item">
 						<Link href="/">
 							<Image
@@ -54,7 +59,7 @@ export const Footer = () => {
 						</Link>
 					</h2>
 
-					<div className="footer-flex">
+					<Box className="footer-flex">
 						<ErrorBoundary>
 							{
 								/* iterate through top level keys in footerLinks
@@ -63,7 +68,7 @@ export const Footer = () => {
 								 * key name is used as the header text */
 								Object.keys(footerLinks).map(header => {
 									return (
-										<div className="flex-item links-flex" key={header}>
+										<Box className="flex-item links-flex" key={header}>
 											<Typography variant="h6" component="h2">
 												{header}
 											</Typography>
@@ -80,15 +85,15 @@ export const Footer = () => {
 													);
 												})}
 											</ul>
-										</div>
+										</Box>
 									);
 								})
 							}
 						</ErrorBoundary>
-					</div>
-				</div>
+					</Box>
+				</Box>
 
-				<div className="footer-text">
+				<Box className="footer-text">
 					<ul className="links-flex" style={{ paddingTop: '1em', flexGrow: 1 }}>
 						<FooterLink
 							className="link"
@@ -98,12 +103,12 @@ export const Footer = () => {
 							Improve this page on GitHub
 						</FooterLink>
 					</ul>
-					<ButtonGroup className={'flex-item'} id="social">
+					<ButtonGroup className="flex-item" id="social">
 						{Object.values(allSocialButtons).map((SocialButton, index) => {
 							return <SocialButton key={index} />;
 						})}
 					</ButtonGroup>
-				</div>
+				</Box>
 			</Container>
 		</Box>
 	);

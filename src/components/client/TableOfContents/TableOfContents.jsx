@@ -2,7 +2,7 @@ import './TableOfContents.scss';
 
 import { useEffect, useRef, useState } from 'react';
 import { Link } from '@/components/server';
-import { Typography, useTheme } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 /**
  * A link that scrolls an id into view.. smoothly
@@ -12,10 +12,8 @@ import { Typography, useTheme } from '@mui/material';
  * @returns {JSX.Element} JSX elements of the link
  */
 const SmoothScrollingLink = ({ id, title }) => {
-	const theme = useTheme();
-
 	return (
-		<Link sx={{ color: theme.palette.text.secondary }} href={`#${id}`}>
+		<Link sx={{ color: theme => theme.palette.text.secondary }} href={`#${id}`}>
 			{title}
 		</Link>
 	);
@@ -135,7 +133,15 @@ export const TableOfContents = () => {
 	const { nestedHeadings } = useHeadingsData();
 	useIntersectionObserver(setActiveId);
 	return (
-		<div id="table-of-contents">
+		<Box
+			id="table-of-contents"
+			sx={{
+				position: 'sticky',
+				top: '4rem',
+				maxHeight: 'calc(100vh - 40px)',
+				overflow: 'auto',
+			}}
+		>
 			<Typography fontWeight="bold" color="text.primary" variant="h5" margin="0.83em 0">
 				On this page
 			</Typography>
@@ -146,6 +152,6 @@ export const TableOfContents = () => {
 					})}
 				</ul>
 			</nav>
-		</div>
+		</Box>
 	);
 };

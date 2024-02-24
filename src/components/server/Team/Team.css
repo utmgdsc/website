@@ -1,0 +1,13 @@
+.MuiSkeleton-root, .img {
+	border-radius: 100%;
+	display: block;
+	height: 6.9rem;
+	margin: auto;
+	object-fit: cover;
+	pointer-events: none;
+	width: 6.9rem;
+	-webkit-user-drag: none;
+	/* non-prefixed version doesn't exist, replaced by draggable in html */
+	-webkit-user-select: none;
+	user-select: none;
+}

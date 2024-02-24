@@ -2,20 +2,17 @@ import HeroImage from '@/assets/backgrounds/background.jpg';
 import HeroImageDark from '@/assets/backgrounds/background_dark.jpg';
 import wordmark from '@/assets/graphics/gdscwordmark.svg';
 import { SkeletonLoadedImage, THEME } from '@/components/client';
-import { alpha, Box, Container, Typography, useTheme } from '@mui/material';
-import './HomepageHero.scss';
+import { alpha, Box, Container, Typography } from '@mui/material';
 
 /**
  * @returns {JSX.Element} Hero header for the homepage.
  */
 export const HomepageHero = () => {
-	const theme = useTheme();
-
 	return (
 		<section>
 			<Box
 				sx={{
-					background:
+					background: theme =>
 						'linear-gradient(' +
 						theme.palette.background.default +
 						' 0%,' +
@@ -53,7 +50,13 @@ export const HomepageHero = () => {
 							fill="100%"
 							id="gdsc-wordmark"
 							src={wordmark}
-							style={{ objectFit: 'contain' }}
+							style={{
+								objectFit: 'contain',
+								filter: theme =>
+									theme.palette.mode === THEME.DARK
+										? 'grayscale(1)invert(1)brightness(1.5)'
+										: 'unset',
+							}}
 						/>
 					</Typography>
 				</Container>

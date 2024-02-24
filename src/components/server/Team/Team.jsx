@@ -1,9 +1,6 @@
-import './Team.scss';
-
-import { Typography } from '@mui/material';
-
+import './Team.css';
+import { Box, Typography } from '@mui/material';
 import DefaultUser from '@/assets/graphics/default_user.svg';
-// import { ProprietaryImage, SkeletonLoadedImage } from '@/components/client';
 import Image from 'next/image';
 import { ProprietaryImage } from '@/components/server';
 
@@ -26,7 +23,17 @@ export const Team = ({ teamInfo, title }) => {
 				{title + (teamInfo.length > 1 ? 's' : '')}
 			</Typography>
 
-			<div className="team">
+			<Box
+				sx={{
+					display: 'flex',
+					flexWrap: 'wrap',
+					justifyContent: 'center',
+					left: 0,
+					margin: 'auto',
+					right: 0,
+					textAlign: 'center',
+				}}
+			>
 				{teamInfo.map((teamMember, index) => (
 					<Person
 						key={index}
@@ -35,7 +42,7 @@ export const Team = ({ teamInfo, title }) => {
 						picture={teamMember.picture ? `team/${teamMember.picture}` : null}
 					/>
 				))}
-			</div>
+			</Box>
 		</>
 	);
 };
@@ -50,7 +57,7 @@ export const Team = ({ teamInfo, title }) => {
  */
 const Person = ({ name, role, picture }) => {
 	return (
-		<figure className="member">
+		<Box component="figure" sx={{ margin: 0, display: 'inline-block', padding: '1em' }}>
 			{picture === null ? (
 				<Image
 					src={DefaultUser}
@@ -60,6 +67,7 @@ const Person = ({ name, role, picture }) => {
 					draggable="false"
 					width={110}
 					height={110}
+					className="img"
 				/>
 			) : (
 				<ProprietaryImage
@@ -70,16 +78,40 @@ const Person = ({ name, role, picture }) => {
 					draggable="false"
 					width={110}
 					height={110}
+					className="img"
 				/>
 			)}
 
 			<figcaption>
-				<span className="introduction">
-					<strong>{name}</strong>
-				</span>
-				<span className="role"> {role}</span>
+				<Box
+					component="span"
+					sx={{
+						display: 'block',
+						fontSize: '1.25rem',
+						padding: '0.25em 0',
+					}}
+					className="introduction"
+				>
+					<Typography
+						component="strong"
+						sx={{
+							fontSize: '1.5rem',
+							fontWeight: 'bold',
+						}}
+					>
+						{name}
+					</Typography>
+				</Box>
+				<Typography
+					sx={{
+						opacity: 0.9,
+						display: 'block',
+					}}
+				>
+					{role}
+				</Typography>
 			</figcaption>
-		</figure>
+		</Box>
 	);
 };
 
