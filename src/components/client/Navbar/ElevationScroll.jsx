@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Slide, useScrollTrigger } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
 
 /**
  * Hides children on scroll down, shows on scroll up
@@ -16,15 +15,13 @@ export const HideOnScroll = ({ children }) => {
 
 	const slideTrigger = useScrollTrigger({});
 
-	const theme = useTheme();
-
 	return (
 		<Slide
 			appear={false}
 			direction="down"
 			in={!slideTrigger}
 			elevation={elevationTrigger ? 4 : 0}
-			sx={{ background: elevationTrigger ? theme.palette.background.default : 'transparent' }}
+			sx={{ background: theme => (elevationTrigger ? theme.palette.background.default : 'transparent') }}
 		>
 			{children}
 		</Slide>

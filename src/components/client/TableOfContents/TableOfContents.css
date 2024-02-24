@@ -11,15 +11,3 @@
 		margin-top: -16px;
 	}
 }
-
-#table-of-contents a {
-	text-decoration: none;
-}
-
-#table-of-contents li.active > a {
-	color: #4285f4 !important;
-}
-
-#table-of-contents li > a:hover {
-	color: #4285f4 !important;
-}

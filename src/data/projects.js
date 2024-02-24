@@ -157,4 +157,34 @@ export const projects = [
 		year: 2023,
 		session: 'Fall',
 	},
+	{
+		title: 'UML Mentor',
+		url: 'https://github.com/utmgdsc/UML_Mentor',
+		description: 'Gain practice with UML',
+		year: 2024,
+		session: 'Winter',
+	},
+	{
+		title: 'JobConnect',
+		url: 'https://github.com/utmgdsc/JobConnect',
+		description:
+			'A platform for local businesses to provide marginalized communities with resources to combat poverty.',
+		year: 2024,
+		session: 'Winter',
+	},
+	{
+		title: 'Forestify',
+		url: 'https://github.com/utmgdsc/Forestify',
+		description:
+			'Motivating arid communities to combat desertification through proactive environmental restoration and protection.',
+		year: 2024,
+		session: 'Winter',
+	},
+	{
+		title: 'Green Grub',
+		url: 'https://github.com/utmgdsc/Green-Grub',
+		description: 'Promoting healthy and sustainable grocery choices through gamification .',
+		year: 2024,
+		session: 'Winter',
+	},
 ];
