@@ -140,6 +140,17 @@ export const TableOfContents = () => {
 				top: '4rem',
 				maxHeight: 'calc(100vh - 40px)',
 				overflow: 'auto',
+				"a": {
+					textDecoration: 'none',
+				},
+				"li": {
+					"&.active > a": {
+						color: theme => theme.palette.primary.main,
+					},
+					"> a:hover": {
+						color: theme => theme.palette.primary.main,
+					},
+				}
 			}}
 		>
 			<Typography fontWeight="bold" color="text.primary" variant="h5" margin="0.83em 0">

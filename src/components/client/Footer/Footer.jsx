@@ -23,7 +23,6 @@ const FooterLink = props => (
 				sm: '0',
 			},
 		}}
-		{...props}
 	>
 		<Link
 			sx={{
@@ -50,6 +49,7 @@ const FooterLink = props => (
 		/>
 	</Box>
 );
+
 const FooterUnorderedList = styled('ul')({
 	listStyleType: 'none',
 	padding: '0 !important',
