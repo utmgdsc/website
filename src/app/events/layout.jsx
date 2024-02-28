@@ -1,5 +1,5 @@
 import bannerImage from '@/assets/notgpl/IMG_1045.jpg';
-import { MyTabs } from '@/components/client';
+import { PathnameTabs } from '@/components/client';
 import { EventList, getYearTabs } from '@/components/server';
 import { HeroLayout } from '@/layouts/HeroLayout';
 import { Typography } from '@mui/material';
@@ -8,8 +8,11 @@ export const metadata = {
 	title: 'Events',
 };
 
-// TODO add skip to content button
-export default async function Layout({ children }) {
+/**
+ * This is a layout so that the current tab state is shared which makes it
+ * smoother
+ */
+export default async function EventsLayout({ children }) {
 	/** the current date */
 	const today = new Date();
 
@@ -45,11 +48,13 @@ export default async function Layout({ children }) {
 					Past Events
 				</Typography>
 
-				<MyTabs
-					values={years}
+				<PathnameTabs
+					values={years.map(year => year.toString())}
 					sx={{ marginBottom: '1rem' }}
+					slice={2}
 					variant="scrollable"
 					scrollButtons="auto"
+					defaultValue={today.getFullYear().toString()}
 					urlPrepend="/events"
 				/>
 				{children}
