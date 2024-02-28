@@ -9,7 +9,7 @@ export const metadata = {
 };
 
 // TODO add skip to content button
-export default async function Layout({ children, params }) {
+export default async function Layout({ children }) {
 	/** the current date */
 	const today = new Date();
 
