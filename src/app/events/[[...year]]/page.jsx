@@ -12,9 +12,7 @@ const Events = async ({ params }) => {
 	/** the year to display events for */
 	const year = params.year ? Number(params.year[0]) : today.getFullYear();
 
-	return (
-		<YearedEventList from={new Date(year, 0, 1)} to={new Date(year, 11, 31)} />
-	);
+	return <YearedEventList from={new Date(year, 0, 1)} to={new Date(year, 11, 31)} />;
 };
 
 export default Events;

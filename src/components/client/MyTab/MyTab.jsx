@@ -10,6 +10,13 @@ const MyTab = ({ ...props }) => {
 	return <Tab component={Link} {...props} />;
 };
 
+/**
+ * Pathname aware tabs that use next/link
+ *
+ * What's nice about this is that the current tab state is saved
+ * when copying the url, in comparison to the default mui tabs
+ * where this behavior is not present
+ */
 export const MyTabs = ({ values, urlPrepend, ...props }) => {
 	/* update navbar tabs on path change */
 	const pathname = usePathname();
@@ -24,11 +31,9 @@ export const MyTabs = ({ values, urlPrepend, ...props }) => {
 
 	return (
 		<Tabs value={currentTab} {...props}>
-			{
-				values.map(tab => {
-					return <MyTab key={tab} href={`${urlPrepend}/${tab}`} value={tab} label={tab} />;
-				})
-			}
+			{values.map(tab => {
+				return <MyTab key={tab} href={`${urlPrepend}/${tab}`} value={tab} label={tab} />;
+			})}
 		</Tabs>
-	)
+	);
 };
