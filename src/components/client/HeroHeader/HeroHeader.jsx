@@ -4,6 +4,36 @@ import { Box, Container, Typography } from '@mui/material';
 import Image from 'next/image';
 
 /**
+ * A hook to calculate the parallax effect on the hero header image.
+ */
+const useParallax = (position, containerRef) => {
+	const [imgOffset, setImgOffset] = useState(0);
+
+	const [imgHeight, setImgHeight] = useState(0);
+
+	const handleScroll = () => setImgOffset(window.scrollY);
+
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll);
+		const containerHeight = containerRef.current.clientHeight;
+
+		setImgHeight(containerHeight * 1.4);
+
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, [containerRef]);
+
+	const accelSpeedCalc = () => {
+		if (position === 'bottom') {
+			return 0.1;
+		} else {
+			return -0.1;
+		}
+	};
+
+	return { imgOffset, imgHeight, accelSpeedCalc };
+};
+
+/**
  * A banner with header text and a background image. It is a hero image style header
  * component, spanning the full width of the page/container.
  * It is recommended to use this component in a container with a max width of 100%.
@@ -17,30 +47,9 @@ import Image from 'next/image';
  * @returns {JSX.Element} hero image style header component
  */
 export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem', headerLevel = 'h1' }) => {
-	const [imgOffset, setImgOffset] = useState(0);
-
-	const [imgHeight, setImgHeight] = useState(0);
-
-	const handleScroll = () => setImgOffset(window.scrollY);
-
 	const containerRef = useRef(null);
 
-	useEffect(() => {
-		window.addEventListener('scroll', handleScroll);
-		const containerHeight = containerRef.current.clientHeight;
-
-		setImgHeight(containerHeight * 1.4);
-
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
-
-	const accelSpeedCalc = () => {
-		if (position === 'bottom') {
-			return 0.1;
-		} else {
-			return -0.1;
-		}
-	};
+	const { imgOffset, imgHeight, accelSpeedCalc } = useParallax(position, containerRef);
 
 	return (
 		<Box
