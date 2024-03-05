@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 
-import BannerImg from '@/assets/graphics/sky.png';
+import BannerImg from '@/assets/backgrounds/gradient.webp';
 import { Link } from '@/components/server';
 import { ResourceLayout } from '@/layouts/ResourceLayout';
 

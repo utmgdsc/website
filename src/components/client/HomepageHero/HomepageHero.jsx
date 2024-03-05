@@ -1,5 +1,5 @@
-import HeroImage from '@/assets/backgrounds/background.jpg';
-import HeroImageDark from '@/assets/backgrounds/background_dark.jpg';
+import HeroImage from '@/assets/backgrounds/background_light.svg';
+import HeroImageDark from '@/assets/backgrounds/background_dark.svg';
 import wordmark from '@/assets/graphics/gdscwordmark.svg';
 import { SkeletonLoadedImage, THEME } from '@/components/client';
 import { alpha, Box, Container, Typography } from '@mui/material';
@@ -20,7 +20,7 @@ export const HomepageHero = () => {
 						'69%,' +
 						theme.palette.background.default +
 						' 100%), url(' +
-						(theme.palette.mode === THEME.DARK ? HeroImageDark.src : HeroImage.src) +
+						(theme.palette.mode === THEME.DARK ? HeroImageDark : HeroImage) +
 						') no-repeat',
 					backgroundSize: 'cover',
 					marginBottom: '-15vh',
