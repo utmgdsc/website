@@ -10,7 +10,7 @@ export const metadata = {
 	title: 'Home - GDSC UTM',
 };
 
-const Homepage = () => {
+const Homepage = async () => {
 	return (
 		<main id="home">
 			{/* hero */}
