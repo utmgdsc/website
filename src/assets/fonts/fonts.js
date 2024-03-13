@@ -38,6 +38,7 @@ export const GoogleSansDisplay = localFont({
 		},
 	],
 	variable: '--google-sans-display',
+	adjustFontFallback: 'Arial',
 });
 
 /**
@@ -77,4 +78,5 @@ export const GoogleSans = localFont({
 		},
 	],
 	variable: '--google-sans',
+	adjustFontFallback: 'Arial',
 });
