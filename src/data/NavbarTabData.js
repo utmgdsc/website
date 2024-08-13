@@ -13,20 +13,14 @@ export const pages = [
 		path: '/',
 	},
 	{
-		name: 'Resources',
-		path: '/resources',
-	},
-	{
 		name: 'Logo Download',
-		path: '/resources/logo-download',
+		path: '/brand',
+		includeInNavbar: false,
 	},
 	{
 		name: 'Workshop Archive',
-		path: '/resources/workshops',
-	},
-	{
-		name: 'Tech Tips',
-		path: '/resources/tips',
+		path: '/past-workshops',
+		includeInNavbar: false,
 	},
 	{
 		name: 'Projects',

@@ -1,7 +1,7 @@
 import { FAQList, ProjectList } from '~/components/client';
 import { ExpiryContainer, getProprietaryURL, Link } from '~/components/server';
 import { HeroLayout } from '~/layouts/HeroLayout';
-import { Alert } from '@mui/material';
+import { Alert, Box, Typography } from '@mui/material';
 import FAQData from './faq.json';
 
 export const metadata = {
@@ -15,24 +15,62 @@ const ProjectPage = () => {
 			picture={getProprietaryURL('heroes/project-banner.jpg')}
 			position="bottom"
 			id="projects"
-			imgProps={{
-				width: 2813,
-				height: 1875,
+			headerProps={{
+				imgProps: {
+					width: 2813,
+					height: 1875,
+				},
+			}}
+			containerProps={{
+				sx: {
+					display: 'flex',
+					flexDirection: 'column',
+					gap: 6,
+					py: 8,
+				},
 			}}
 		>
-			<ExpiryContainer date={'2023-08-20'}>
-				<Alert variant="info">
-					Community projects are back for Fall 2023! If you are a UTM CS Major/Spec,{' '}
-					<Link external href="https://forms.gle/wgXtZQ9U36dn7BAZ9">
-						reach out and apply
-					</Link>
-				</Alert>
-			</ExpiryContainer>
+			<Box>
+				<ExpiryContainer date={'2023-08-20'}>
+					<Alert variant="info">
+						Community projects are back for Fall 2023! If you are a UTM CS Major/Spec,{' '}
+						<Link external href="https://forms.gle/wgXtZQ9U36dn7BAZ9">
+							reach out and apply
+						</Link>
+					</Alert>
+				</ExpiryContainer>
 
-			<h2 id="faq">Frequently Asked Questions</h2>
-			<FAQList {...FAQData} />
+				<Typography variant="p" component="p" gutterBottom>
+					Community Projects is a semester-long program where students create software-based solutions for a
+					problem in their community. By being a part of a community project, you’ll gain industry-standard
+					knowledge and experience of must-have skills such as Python, Java, web development, backend/frontend
+					development, databases, and much more!
+				</Typography>
 
-			<ProjectList />
+				<Typography variant="p" component="p" gutterBottom>
+					You could potentially earn a credit for CSC392/CSC492 while working on your project under faculty
+					guidance! Additionally, you may be able to submit your project as a part of the global{' '}
+					<Link external href="https://developers.google.com/community/gdsc-solution-challenge">
+						GDSC Solution challenge
+					</Link>{' '}
+					and win prizes!
+				</Typography>
+
+				<Typography variant="p" component="p">
+					Don't worry you don't need to come with a project idea or a team to apply. You will have tons of
+					opportunities to form teams and brainstorm ideas!
+				</Typography>
+			</Box>
+
+			<section>
+				<h2 id="projects">Past Projects</h2>
+				<ProjectList />
+			</section>
+
+			<section>
+				<h2 id="faq">Frequently Asked Questions</h2>
+				<FAQList {...FAQData} />
+			</section>
 		</HeroLayout>
 	);
 };

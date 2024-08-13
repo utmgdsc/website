@@ -2,6 +2,8 @@ import { Accordion, AccordionSummary, WorkshopButton } from '~/components/client
 import { ConvertDate, JoinAnd, workshopHash } from '~/components/server';
 import { Code, ExpandMore, RadioButtonChecked, Slideshow } from '@mui/icons-material';
 import { AccordionDetails, Box, List, Typography } from '@mui/material';
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
 /**
  * A workshop item
@@ -16,6 +18,21 @@ import { AccordionDetails, Box, List, Typography } from '@mui/material';
  */
 
 /**
+ * Filters the workshops based on the search term
+ * @param {WorkshopItem} workshop The workshop item
+ * @param {string} search The search term
+ */
+const filterWorkshop = (workshop, search) => {
+	return (
+		workshop.name.toLowerCase().includes(search.toLowerCase()) ||
+		workshop.host.some(host => host.toLowerCase().includes(search.toLowerCase())) ||
+		workshop.description.toLowerCase().includes(search.toLowerCase())
+	);
+};
+
+/**
+ * A workshop widget
+ *
  * @param {object} props
  * @param {WorkshopItem} props.item The workshop item from the workshops.json JSON file
  * @returns {JSX.Element} The workshop widget
@@ -64,3 +81,26 @@ export const WorkshopWidget = ({ item }) => {
 		</Accordion>
 	);
 };
+
+const _FilteredWorkshopWidget = ({ item }) => {
+	const searchParams = useSearchParams();
+
+	if (searchParams.get('search') && filterWorkshop(item, searchParams.get('search')) === false) {
+		return null;
+	}
+
+	return <WorkshopWidget item={item} />;
+};
+
+/**
+ * A workshop widget
+ * @param {object} props
+ * @param {WorkshopItem} props.item The workshop item from the workshops.json JSON file
+ * @param {boolean} [respondToSearchParam=false] Whether to respond to the search parameter
+ * @returns {JSX.Element} The workshop widget
+ */
+export const FilteredWorkshopWidget = ({ item }) => (
+	<Suspense fallback={<WorkshopWidget item={item} />}>
+		<_FilteredWorkshopWidget item={item} />
+	</Suspense>
+);

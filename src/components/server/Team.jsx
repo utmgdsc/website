@@ -1,5 +1,4 @@
 import { Avatar, Box, Typography } from '@mui/material';
-import DefaultUser from '~/assets/graphics/default_user.svg';
 import { ImageFilterProps } from '~/components/client';
 import { getProprietaryURL } from '~/components/server';
 
@@ -20,16 +19,18 @@ const Person = ({ name, role, picture }) => {
 	return (
 		<Box component="figure" sx={{ margin: 0, display: 'inline-block', padding: '1em' }}>
 			<Avatar
-				src={picture ? (getProprietaryURL(picture, false) ?? DefaultUser) : DefaultUser}
+				src={picture ? getProprietaryURL(picture) : null}
 				slots={{
 					img: ImageFilterProps,
 				}}
-				imgProps={{
-					// no alt text needed - picture already sufficiently described by the paragraph,
-					// so there is no need to repeat the information
-					alt: '',
-					width: 110,
-					height: 110,
+				slotProps={{
+					img: {
+						// no alt text needed - picture already sufficiently described by the paragraph,
+						// so there is no need to repeat the information
+						alt: '',
+						width: 110,
+						height: 110,
+					},
 				}}
 				draggable="false"
 				sx={{
@@ -101,7 +102,6 @@ export const Team = ({ teamInfo, title }) => {
 				variant="h4"
 				sx={{
 					fontWeight: 'bold',
-					marginTop: 8,
 				}}
 			>
 				{/* auto pluralize the title */}

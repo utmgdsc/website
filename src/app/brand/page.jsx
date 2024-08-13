@@ -5,7 +5,7 @@ import { Link } from '~/components/server';
 import { ResourceLayout } from '~/layouts/ResourceLayout';
 
 export const metadata = {
-	title: 'Logo Download',
+	title: 'Brand Resources',
 };
 
 /**
@@ -38,16 +38,16 @@ const BrandResources = () => {
 							{' '}
 							#34A853{' '}
 						</Box>
+						<ul>
+							<li aria-level={2}>
+								Google Logo Grey
+								<Box component="span" sx={{ color: '#656c73', fontWeight: 700 }}>
+									{' '}
+									#656c73{' '}
+								</Box>
+							</li>
+						</ul>
 					</li>
-					<ul>
-						<li aria-level={2}>
-							Google Logo Grey
-							<Box component="span" sx={{ color: '#656c73', fontWeight: 700 }}>
-								{' '}
-								#656c73{' '}
-							</Box>
-						</li>
-					</ul>
 					<li aria-level={1}>
 						Logo guidelines:{' '}
 						<Link external href="https://goo.gle/gdsc-brand-guide" sx={{ textDecorationLine: 'none' }}>

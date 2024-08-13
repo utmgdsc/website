@@ -30,20 +30,3 @@ export const HideOnScroll = ({ children }) => {
 		</Slide>
 	);
 };
-
-/**
- * Adds elevation to children on scroll up
- * @param {Object} props
- * @param {React.ReactNode} props.children The children to add elevation to
- * @see https://mui.com/material-ui/react-app-bar/#HideAppBar.js
- */
-export const ElevationScroll = ({ children }) => {
-	const trigger = useScrollTrigger({
-		disableHysteresis: true,
-		threshold: 0,
-	});
-
-	return React.cloneElement(children, {
-		sx: { boxShadow: trigger ? 0 : 4 },
-	});
-};
