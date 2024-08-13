@@ -11,13 +11,14 @@ import { HeroHeader } from '~/components/client';
  * @param {string} props.id - Container id
  * @param {string} props.position - Position of the hero header
  * @param {number} props.height - Height of the hero header
- * @param {Object} props.props - other props passed to HeroHeader
+ * @param {Object} props.headerProps - Props to pass to the Hero
+ * @param {Object} props.containerProps - Props to pass to the Container
  * @return {JSX.Element} Resource layout component
  */
-export const HeroLayout = ({ children, title, picture, id, position, height, ...props }) => {
+export const HeroLayout = ({ children, title, picture, id, position, height, headerProps, containerProps }) => {
 	return (
 		<>
-			<HeroHeader text={title} picture={picture} position={position} height={height} {...props} />
+			<HeroHeader text={title} picture={picture} position={position} height={height} {...headerProps} />
 			<Container
 				sx={{
 					py: 4,
@@ -25,6 +26,7 @@ export const HeroLayout = ({ children, title, picture, id, position, height, ...
 				}}
 				component="main"
 				id={id}
+				{...containerProps}
 			>
 				{children}
 			</Container>

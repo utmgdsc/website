@@ -9,6 +9,10 @@ import TagManagerModule from 'react-gtm-module';
  */
 export const TagManager = ({ children }) => {
 	useEffect(() => {
+		if (!process.env.NEXT_PUBLIC_GTM_ID || process.env.NODE_ENV === 'development') {
+			return;
+		}
+
 		const tagManagerArgs = {
 			gtmId: process.env.NEXT_PUBLIC_GTM_ID,
 		};

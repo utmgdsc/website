@@ -1,6 +1,6 @@
 import { ConvertDate } from '~/components/server';
 import { InfoCard } from '~/components/client';
-import { Alert, Grid, Typography } from '@mui/material';
+import { Alert, Grid2 as Grid, Typography } from '@mui/material';
 import { MIN_DATE, MAX_DATE, getEnrichedEvents, getYears } from '~/app/api/events/route';
 
 const EventInfoCard = ({ event, description }) => {
@@ -26,7 +26,7 @@ const EventInfoCard = ({ event, description }) => {
  * @param {JSX.Element} props.EmptyComponent component to show when there are no events
  * @returns {JSX.Element} EventList component
  */
-export const EventList = async ({ limit, from = MIN_DATE, to = MAX_DATE, EmptyComponent = null }) => {
+export const EventList = async ({ limit, from = MIN_DATE, to = MAX_DATE, EmptyComponent = null, children }) => {
 	const { events, descriptions } = await getEnrichedEvents(limit, from, to);
 
 	if (!Array.isArray(events)) {
@@ -36,13 +36,16 @@ export const EventList = async ({ limit, from = MIN_DATE, to = MAX_DATE, EmptyCo
 	return (
 		<>
 			{events.length > 0 && (
-				<Grid container spacing={2}>
-					{events.map((event, id) => (
-						<Grid key={id} item xs={12} sm={6} md={4}>
-							<EventInfoCard event={event} description={descriptions[id]} />
-						</Grid>
-					))}
-				</Grid>
+				<>
+					{children}
+					<Grid container spacing={2}>
+						{events.map((event, id) => (
+							<Grid key={id} size={{ xs: 12, sm: 6, md: 4 }}>
+								<EventInfoCard event={event} description={descriptions[id]} />
+							</Grid>
+						))}
+					</Grid>
+				</>
 			)}
 			{events.length === 0 && EmptyComponent && <EmptyComponent />}
 		</>

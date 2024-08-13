@@ -182,7 +182,7 @@ export const Footer = () => {
 						width: '100%',
 					}}
 				>
-					<FooterUnorderedList style={{ paddingTop: '1em' }}>
+					<FooterUnorderedList sx={{ paddingTop: '1em' }}>
 						<FooterLink href="https://github.com/utmgdsc/website/issues/new/choose" external>
 							Improve this page on GitHub
 						</FooterLink>

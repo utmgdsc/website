@@ -49,7 +49,7 @@ const useParallax = (position, containerRef) => {
  * @param {object} props.imgProps props to pass to the image component
  * @returns {JSX.Element} hero image style header component
  */
-export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem', headerLevel = 'h1', imgProps }) => {
+export const HeroHeader = ({ text, picture, maxWidth, position, height = '20rem', headerLevel = 'h1', imgProps }) => {
 	const containerRef = useRef(null);
 
 	const { imgOffset, imgHeight, accelSpeedCalc } = useParallax(position, containerRef);

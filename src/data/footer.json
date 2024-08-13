@@ -4,8 +4,12 @@
 			"URL": "https://discord.gg/AZyYSGbU68",
 			"external": true
 		},
-		"Logo download": {
-			"URL": "/resources/logo-download",
+		"Brand resources": {
+			"URL": "/brand",
+			"external": false
+		},
+		"Past workshops": {
+			"URL": "/past-workshops",
 			"external": false
 		}
 	},

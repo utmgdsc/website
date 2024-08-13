@@ -49,5 +49,6 @@ export const googleTheme = createTheme({
 		h6: { fontFamily: `var(${GoogleSansDisplayVariable})` },
 		subtitle1: { fontFamily: `var(${GoogleSansDisplayVariable})` },
 		subtitle2: { fontFamily: `var(${GoogleSansDisplayVariable})` },
+		p: { lineHeight: 2 },
 	},
 });

@@ -21,9 +21,11 @@ export default async function EventsLayout({ children }) {
 			picture={getProprietaryURL('heroes/pizza-workshop.jpg')}
 			position="bottom"
 			id="events"
-			imgProps={{
-				width: 4032,
-				height: 3024,
+			headerProps={{
+				imgProps: {
+					width: 4032,
+					height: 3024,
+				},
 			}}
 		>
 			<section>

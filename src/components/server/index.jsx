@@ -3,12 +3,13 @@
  *
  * @fileoverview Barrel file for server components.
  */
-export * from './ConvertDate/ConvertDate';
-export * from './ExpiryContainer/ExpiryContainer';
-export * from './getProprietaryURL/getProprietaryURL';
-export * from './JoinAnd/JoinAnd';
-export * from './Link/Link';
-export * from './NamedIconButton/NamedIconButton';
-export * from './EventList/EventList';
-export * from './Team/Team';
-export * from './workshopHash/workshopHash';
+export * from './ConvertDate';
+export * from './EventList';
+export * from './ExpiryContainer';
+export * from './getProprietaryURL';
+export * from './HeaderSection';
+export * from './JoinAnd';
+export * from './Link';
+export * from './NamedIconButton';
+export * from './Team';
+export * from './workshopHash';
