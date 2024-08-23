@@ -1,4 +1,5 @@
 import { getImageProps } from 'next/image';
+import { Box } from '@mui/material';
 
 /**
  * An image that changes based on the system theme
@@ -21,10 +22,10 @@ export const ThemedImage = ({ srcLight, srcDark, alt, isSVG, pictureProps = {}, 
 	} = getImageProps({ ...props, alt, src: srcLight });
 
 	return (
-		<picture {...pictureProps}>
+		<Box component="picture" {...pictureProps}>
 			<source media="(prefers-color-scheme: dark)" srcSet={isSVG ? srcDark : dark} />
 			<source media="(prefers-color-scheme: light)" srcSet={isSVG ? srcLight : light} />
 			<img alt={alt} {...rest} />
-		</picture>
+		</Box>
 	);
 };

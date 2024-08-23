@@ -117,7 +117,6 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 					<Typography
 						component={headerLevel}
 						variant="h2"
-						style={{ alignSelf: 'center' }}
 						sx={{
 							fontWeight: 'bold',
 							pb: 4,

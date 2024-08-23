@@ -37,6 +37,10 @@ export const ImageLinkCard = ({ href, title, image, description, alt, height = 1
 							src={image}
 							alt={alt}
 							className="MuiCardMedia-img MuiCardMedia-media"
+							style={{
+								maxWidth: '100%',
+								height: 'auto',
+							}}
 							{...imgProps}
 						/>
 					)}

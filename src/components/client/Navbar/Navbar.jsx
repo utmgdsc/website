@@ -68,8 +68,11 @@ export const Navbar = () => {
 									isSVG={true}
 									alt="Google Developers Bracket Logo"
 									pictureProps={{
-										style: {
+										sx: {
 											display: 'flex',
+											'@media (prefers-color-scheme: dark)': {
+												filter: 'invert(1)',
+											},
 										},
 									}}
 									height={48}
