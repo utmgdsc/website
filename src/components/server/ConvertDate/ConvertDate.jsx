@@ -1,5 +1,6 @@
 /**
- * Converts ISP 8601 date string to more unambiguous format
+ * Converts ISP 8601 date string to more unambiguous format, in Toronto time
+ *
  * @param {object} props
  * @param {string} props.date The date string in DD-MM-YYYY or ISP 8601 format
  *

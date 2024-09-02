@@ -122,6 +122,7 @@ export const getYears = async () => {
 	return years.sort((a, b) => b - a);
 };
 
+/** the translator to convert html to markdown */
 const translator = new NodeHtmlMarkdown();
 
 /**
@@ -168,7 +169,7 @@ export async function GET(req, res) {
 			description: isDiscord ? generateChronicleFrontMatter(info) : info['description'],
 			url: event['url'],
 			location: concatStrings(info['venue_name'], info['meetup_url'], info['eventbrite_url']) || undefined,
-			id: `${info['id']}@gdscutm.com`,
+			id: `${info['id']}${isDiscord ? '+frontmatter' : ''}@gdscutm.com`,
 		});
 	});
 
