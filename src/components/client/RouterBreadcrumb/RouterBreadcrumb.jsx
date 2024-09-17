@@ -31,7 +31,12 @@ export const RouterBreadcrumb = () => {
 				const pageIndex = pages.findIndex(page => page.path === to);
 
 				return last ? (
-					<Typography color="text.primary" key={to}>
+					<Typography
+						key={to}
+						sx={{
+							color: 'text.primary',
+						}}
+					>
 						{pages[pageIndex]['name']}
 					</Typography>
 				) : (

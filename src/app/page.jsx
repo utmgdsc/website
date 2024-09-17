@@ -2,7 +2,7 @@ import { Container, Typography } from '@mui/material';
 import HeroInfoSesh from '@/assets/notgpl/info-session.jpg';
 import HeroTeam from '@/assets/notgpl/team.jpg';
 import { ErrorBoundary, HeroHeader, HomepageHero } from '@/components/client';
-import { EventList, ExpiryContainer, Team } from '@/components/server';
+import { EventList, ExpiryContainer, Team, Link } from '@/components/server';
 
 import teamMembers from '@/data/team.json';
 
@@ -15,19 +15,28 @@ const Homepage = async () => {
 		<main id="home">
 			{/* hero */}
 			<HomepageHero />
-
 			{/* upcoming events */}
 			<section id="upcoming-events">
 				<Container sx={{ py: 8 }} maxWidth="md">
-					<Typography color="text.primary" component="h2" fontWeight="bold" lineHeight="2.5em" variant="h4">
+					<Typography
+						component="h2"
+						variant="h4"
+					>
 						Upcoming Events
 					</Typography>
 					<ErrorBoundary>
-						<EventList from={new Date()} />
+						<EventList
+							from={new Date()}
+							EmptyComponent={() => (
+								<Typography variant="h5" component="p" gutterBottom>
+									None yet! Check back soon, or check out our{' '}
+									<Link href="/events#past-events">past events</Link>! 🤗
+								</Typography>
+							)}
+						/>
 					</ErrorBoundary>
 				</Container>
 			</section>
-
 			{/* about / who are we */}
 			<section id="who-are-we">
 				<HeroHeader text="Who are we?" picture={HeroInfoSesh} maxWidth="md" position="top" />

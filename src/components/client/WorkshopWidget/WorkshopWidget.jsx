@@ -26,12 +26,18 @@ export const WorkshopWidget = ({ item }) => {
 					<Typography component="div" variant="h6" sx={{ maxWidth: '60vw' }}>
 						{item.name ? item.name : 'Workshop'}
 					</Typography>
-					<Typography variant="subtitle1" color="text.secondary" component="div" sx={{ maxWidth: '60vw' }}>
+					<Typography
+						variant="subtitle1"
+						component="div"
+						sx={{
+							color: 'text.secondary',
+							maxWidth: '60vw',
+						}}
+					>
 						<JoinAnd items={item.host} /> on <ConvertDate date={item.date} />
 					</Typography>
 				</CardContent>
 			</AccordionSummary>
-
 			<AccordionDetails>
 				<Typography sx={{ whiteSpace: 'pre-wrap' }}>{item.description}</Typography>
 				<List>

@@ -29,3 +29,9 @@ main {
 	/* footer is ~200px tall */
 	min-height: calc(100vh - 200px);
 }
+
+@media (prefers-color-scheme: dark) {
+	.invert-on-dark {
+		filter: invert(1) hue-rotate(180deg) !important;
+	}
+}

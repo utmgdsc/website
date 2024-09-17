@@ -54,7 +54,7 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 	return (
 		<Box
 			ref={containerRef}
-			sx={{
+			sx={theme => ({
 				height: height,
 				maxWidth: 'unset !important',
 				position: 'relative',
@@ -63,10 +63,7 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 				overflowX: 'hidden',
 				'&:after': {
 					content: '""',
-					backgroundImage: theme =>
-						theme.palette.mode === 'dark'
-							? 'linear-gradient(rgba(0, 0, 0, .6) 0%, rgba(0, 0, 0, 0.8) 100%)'
-							: 'linear-gradient(rgba(255, 255, 255, .6) 0%, rgba(255, 255, 255, 0.8) 100%)',
+					backgroundImage: 'linear-gradient(rgba(255, 255, 255, .6) 0%, rgba(255, 255, 255, 0.8) 100%)',
 					backgroundSize: '18px',
 					bottom: 0,
 					display: 'block',
@@ -76,7 +73,12 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 					width: '100%',
 					zIndex: 1,
 				},
-			}}
+				...theme.applyStyles('dark', {
+					'&:after': {
+						backgroundImage: 'linear-gradient(rgba(0, 0, 0, .6) 0%, rgba(0, 0, 0, 0.8) 100%)',
+					},
+				}),
+			})}
 			className="hero-header-parallax"
 		>
 			<Image
@@ -111,10 +113,12 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 				<Container maxWidth={maxWidth}>
 					<Typography
 						component={headerLevel}
-						fontWeight="bold"
 						variant="h2"
-						pb={4}
 						style={{ alignSelf: 'center' }}
+						sx={{
+							fontWeight: 'bold',
+							pb: 4,
+						}}
 					>
 						{text}
 					</Typography>

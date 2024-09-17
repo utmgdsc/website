@@ -45,7 +45,12 @@ export const ImageLinkCard = ({ href, title, image, description, alt, height = 1
 					<Typography gutterBottom variant="h5" component="div">
 						{title}
 					</Typography>
-					<Typography variant="body2" color="text.secondary">
+					<Typography
+						variant="body2"
+						sx={{
+							color: 'text.secondary',
+						}}
+					>
 						{description}
 					</Typography>
 				</CardContent>

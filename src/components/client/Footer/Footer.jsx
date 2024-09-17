@@ -17,7 +17,7 @@ const FooterLink = props => (
 	<Box
 		component="li"
 		sx={{
-			color: theme => theme.palette.text.secondary,
+			color: theme => theme.vars.palette.text.secondary,
 			padding: {
 				xs: '0.5em 0',
 				sm: '0',

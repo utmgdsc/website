@@ -18,11 +18,19 @@ export const Team = ({ teamInfo, title }) => {
 
 	return (
 		<>
-			<Typography align="center" component="h3" fontWeight="bold" key={title} marginTop={8} variant="h4">
+			<Typography
+				align="center"
+				component="h3"
+				key={title}
+				variant="h4"
+				sx={{
+					fontWeight: 'bold',
+					marginTop: 8,
+				}}
+			>
 				{/* auto pluralize the title */}
 				{title + (teamInfo.length > 1 ? 's' : '')}
 			</Typography>
-
 			<Box
 				sx={{
 					display: 'flex',

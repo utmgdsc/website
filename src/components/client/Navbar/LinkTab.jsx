@@ -8,7 +8,7 @@ import { Link } from '@/components/server';
  * @returns {JSX.Element} a styled version of the Tab component
  */
 export const LinkTab = styled(props => <Tab component={Link} {...props} />)(({ theme }) => ({
-	color: theme.palette.text.secondary,
+	color: theme.vars.palette.text.secondary,
 	fontFamily: 'inherit',
 	fontSize: '1em',
 	fontWeight: 'normal',
@@ -17,7 +17,7 @@ export const LinkTab = styled(props => <Tab component={Link} {...props} />)(({ t
 	textTransform: 'none',
 	whiteSpace: 'nowrap',
 	'&.Mui-selected': {
-		color: theme.palette.text.primary,
+		color: theme.vars.palette.text.primary,
 		fontWeight: 'bold',
 	},
 }));

@@ -13,7 +13,7 @@ import { Box, Typography } from '@mui/material';
  */
 const SmoothScrollingLink = ({ id, title }) => {
 	return (
-		<Link sx={{ color: theme => theme.palette.text.secondary }} href={`#${id}`}>
+		<Link sx={{ color: theme => theme.vars.palette.text.secondary }} href={`#${id}`}>
 			{title}
 		</Link>
 	);
@@ -145,15 +145,22 @@ export const TableOfContents = () => {
 				},
 				li: {
 					'&.active > a': {
-						color: theme => theme.palette.primary.main,
+						color: theme => theme.vars.palette.primary.main,
 					},
 					'> a:hover': {
-						color: theme => theme.palette.primary.main,
+						color: theme => theme.vars.palette.primary.main,
 					},
 				},
 			}}
 		>
-			<Typography fontWeight="bold" color="text.primary" variant="h5" margin="0.83em 0">
+			<Typography
+				variant="h5"
+				sx={{
+					fontWeight: 'bold',
+					color: 'text.primary',
+					margin: '0.83em 0',
+				}}
+			>
 				On this page
 			</Typography>
 			<nav aria-label="Table of contents">

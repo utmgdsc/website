@@ -54,7 +54,7 @@ export const Navbar = () => {
 								variant="extended"
 								aria-label="Home"
 								style={{
-									background: theme.palette.background.paper,
+									background: theme.vars.palette.background.paper,
 									minHeight: '30px',
 									minWidth: '94px',
 								}}
@@ -64,16 +64,22 @@ export const Navbar = () => {
 							>
 								<ThemedImage
 									srcLight={bracket}
+									srcDark={bracketDark}
+									isSVG={true}
 									alt="Google Developers Bracket Logo"
+									pictureProps={{
+										style: {
+											display: 'flex',
+										},
+									}}
 									height={48}
 									width={48}
 									draggable="false"
 									style={{
 										userSelect: 'none',
-										filter: theme.palette.mode === 'dark' ? 'invert(1)' : 'unset',
 									}}
-									srcDark={bracketDark}
 									id="gdsc-home-btn-bracket-logo"
+									className="invert-on-dark"
 								/>
 							</Fab>
 						</ElevationScroll>
@@ -99,7 +105,7 @@ export const Navbar = () => {
 								'& .MuiTabs-indicatorSpan': {
 									maxWidth: 50,
 									width: '100%',
-									backgroundColor: theme.palette.primary.main,
+									backgroundColor: theme.vars.palette.primary.main,
 								},
 								'& .MuiTabs-scrollButtons.Mui-disabled': {
 									opacity: 0.3,

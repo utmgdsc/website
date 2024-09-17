@@ -1,42 +1,22 @@
-import createTheme from '@mui/material/styles/createTheme';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import CssBaseline from '@mui/material/CssBaseline';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import * as React from 'react';
-import { NextAppDirEmotionCacheProvider } from './EmotionCache';
-import { GoogleTheme, THEME } from './theme';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+import { googleTheme } from './theme';
 
 /**
  * From MUI Starter Code
  * @property {React.ReactNode} children
  *
- * @see https://github.com/mui/material-ui/blob/master/examples/material-ui-nextjs/src/components/ThemeRegistry/ThemeRegistry.js
+ * @see https://github.com/mui/material-ui/blob/master/examples/material-ui-nextjs/src/app/layout.js
  */
 export const ThemeRegistry = ({ children }) => {
-	const systemTheme = useMediaQuery('(prefers-color-scheme: dark)');
-
-	const theme = React.useMemo(
-		() =>
-			createTheme(
-				GoogleTheme({
-					mode: systemTheme ? THEME.DARK : THEME.LIGHT,
-				})
-			),
-		[systemTheme]
-	);
-
-	React.useEffect(() => {
-		document.body.classList.remove('dark');
-		document.body.classList.remove('light');
-		document.body.classList.add(theme.palette.mode);
-	}, [theme.palette.mode]);
-
 	return (
-		<NextAppDirEmotionCacheProvider options={{ key: 'mui' }}>
-			<ThemeProvider theme={theme}>
+		<AppRouterCacheProvider options={{ enableCssLayer: true }}>
+			<ThemeProvider theme={googleTheme}>
 				<CssBaseline enableColorScheme />
 				{children}
 			</ThemeProvider>
-		</NextAppDirEmotionCacheProvider>
+		</AppRouterCacheProvider>
 	);
 };

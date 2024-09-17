@@ -45,7 +45,14 @@ export const InfoCard = ({
 					{subtitle}
 				</Typography>
 
-				<Typography gutterBottom variant="h5" component="h2" fontWeight="bold">
+				<Typography
+					gutterBottom
+					variant="h5"
+					component="h2"
+					sx={{
+						fontWeight: 'bold',
+					}}
+				>
 					{title}
 				</Typography>
 
@@ -62,7 +69,6 @@ export const InfoCard = ({
 					{description}
 				</Typography>
 			</CardContent>
-
 			<CardActions sx={{ padding: '16px' }}>
 				<Button
 					color={CardColors[Math.floor(Math.random() * CardColors.length)]}

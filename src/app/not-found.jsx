@@ -34,10 +34,10 @@ export default function NotFound() {
 				height={600}
 				width={600}
 			/>
-			<Typography variant="h1" component="h1" gutterBottom>
+			<Typography variant="h2" component="h1" gutterBottom>
 				404
 			</Typography>
-			<Typography variant="h4" component="p" gutterBottom>
+			<Typography variant="subtitle1" component="p" gutterBottom>
 				We couldn&apos;t find the page you were looking for.
 			</Typography>
 		</Container>

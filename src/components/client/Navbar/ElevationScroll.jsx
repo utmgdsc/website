@@ -21,7 +21,9 @@ export const HideOnScroll = ({ children }) => {
 			direction="down"
 			in={!slideTrigger}
 			elevation={elevationTrigger ? 4 : 0}
-			sx={{ background: theme => (elevationTrigger ? theme.palette.background.default : 'transparent') }}
+			sx={theme => ({
+				background: elevationTrigger ? theme.vars.palette.background.default : 'transparent !important',
+			})}
 		>
 			{children}
 		</Slide>
