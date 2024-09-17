@@ -2,7 +2,7 @@ import { Container, Typography } from '@mui/material';
 import HeroInfoSesh from '@/assets/notgpl/info-session.jpg';
 import HeroTeam from '@/assets/notgpl/team.jpg';
 import { ErrorBoundary, HeroHeader, HomepageHero } from '@/components/client';
-import { EventList, ExpiryContainer, Team } from '@/components/server';
+import { EventList, ExpiryContainer, Team, Link } from '@/components/server';
 
 import teamMembers from '@/data/team.json';
 
@@ -23,7 +23,15 @@ const Homepage = async () => {
 						Upcoming Events
 					</Typography>
 					<ErrorBoundary>
-						<EventList from={new Date()} />
+						<EventList
+							from={new Date()}
+							EmptyComponent={() => (
+								<Typography variant="h5" component="p" gutterBottom>
+									None yet! Check back soon, or check out our{' '}
+									<Link href="/events#past-events">past events</Link>! 🤗
+								</Typography>
+							)}
+						/>
 					</ErrorBoundary>
 				</Container>
 			</section>

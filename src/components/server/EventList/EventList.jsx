@@ -113,9 +113,10 @@ export const getYears = async () => {
  * @property {Date} from the date to start showing events from (inclusive), based on end_date
  * @property {Date} to the date to stop showing events at (non-inclusive), based on end_date
  * @property {number} skeleton number of skeleton cards to show when loading
+ * @property {JSX.Element} EmptyComponent component to show when there are no events
  * @returns {JSX.Element} EventList component
  */
-export const EventList = async ({ limit, from = MIN_DATE, to = MAX_DATE }) => {
+export const EventList = async ({ limit, from = MIN_DATE, to = MAX_DATE, EmptyComponent = null }) => {
 	const events = await getEvents(limit, from, to);
 
 	const descriptions = await Promise.all(
@@ -129,13 +130,18 @@ export const EventList = async ({ limit, from = MIN_DATE, to = MAX_DATE }) => {
 	}
 
 	return (
-		<Grid container spacing={2}>
-			{events.map((event, id) => (
-				<Grid key={id} item xs={12} sm={6} md={4}>
-					<EventInfoCard event={event} description={descriptions[id]} />
+		<>
+			{events.length > 0 && (
+				<Grid container spacing={2}>
+					{events.map((event, id) => (
+						<Grid key={id} item xs={12} sm={6} md={4}>
+							<EventInfoCard event={event} description={descriptions[id]} />
+						</Grid>
+					))}
 				</Grid>
-			))}
-		</Grid>
+			)}
+			{events.length === 0 && EmptyComponent && <EmptyComponent />}
+		</>
 	);
 };
 

@@ -33,7 +33,11 @@ export default async function EventsLayout({ children }) {
 					Upcoming Events
 				</Typography>
 
-				<EventList from={today} />
+				<EventList from={today} EmptyComponent={() => (
+					<Typography variant="h5" component="p" gutterBottom>
+						None yet! Check back soon or follow us on social media to stay updated! 🤗
+					</Typography>
+				)} />
 			</section>
 
 			<section>
