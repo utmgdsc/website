@@ -42,7 +42,6 @@ const WorkshopArchive = async () => {
 						);
 					})}
 			</Grid>
-
 			<Grid container spacing={2}>
 				<Grid item md={3}>
 					<TableOfContents />

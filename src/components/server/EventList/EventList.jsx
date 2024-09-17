@@ -173,12 +173,14 @@ export const YearedEventList = async ({ from = MIN_DATE, to = MAX_DATE }) => {
 					<section key={year}>
 						{from.getFullYear() - to.getFullYear() !== 0 && (
 							<Typography
-								color="text.primary"
 								component="h3"
-								fontWeight="bold"
-								lineHeight="2.5em"
 								variant="h5"
 								id={year}
+								sx={{
+									color: 'text.primary',
+									fontWeight: 'bold',
+									lineHeight: '2.5em',
+								}}
 							>
 								{year}
 							</Typography>

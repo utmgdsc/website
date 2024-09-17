@@ -1,8 +1,8 @@
 import HeroImage from '@/assets/backgrounds/background_light.svg';
 import HeroImageDark from '@/assets/backgrounds/background_dark.svg';
 import wordmark from '@/assets/graphics/gdscwordmark.svg';
-import { SkeletonLoadedImage, THEME } from '@/components/client';
-import { alpha, Box, Container, Typography } from '@mui/material';
+import { SkeletonLoadedImage } from '@/components/client';
+import {  Box, Container, Typography } from '@mui/material';
 
 /**
  * @returns {JSX.Element} Hero header for the homepage.
@@ -11,30 +11,44 @@ export const HomepageHero = () => {
 	return (
 		<section>
 			<Box
-				sx={{
-					background: theme =>
-						'linear-gradient(' +
-						theme.palette.background.default +
-						' 0%,' +
-						alpha(theme.palette.background.default, 0.8) +
-						'69%,' +
-						theme.palette.background.default +
-						' 100%), url(' +
-						(theme.palette.mode === THEME.DARK ? HeroImageDark : HeroImage) +
-						') no-repeat',
-					backgroundSize: 'cover',
-					marginBottom: '-15vh',
+				sx={theme => ({
 					pb: 6,
 					pt: 8,
-				}}
+					marginBottom: '-15vh',
+					backgroundRepeat: 'no-repeat',
+					backgroundSize: 'cover',
+					backgroundImage: theme =>
+						'linear-gradient(' +
+						theme.vars.palette.background.default +
+						' 0%,' +
+						`color-mix(in srgb, ${theme.vars.palette.background.default}, transparent 20%)` +
+						'69%,' +
+						theme.vars.palette.background.default +
+						' 100%), url(' +
+						HeroImage +
+						')',
+					...theme.applyStyles('dark', {
+						backgroundImage:
+							'linear-gradient(' +
+							theme.vars.palette.background.default +
+							' 0%,' +
+							`color-mix(in srgb, ${theme.vars.palette.background.default}, transparent 20%)` +
+							'69%,' +
+							theme.vars.palette.background.default +
+							' 100%), url(' +
+							HeroImageDark +
+							')',
+					}),
+				})}
 			>
 				<Container maxWidth="sm" sx={{ height: '50vh', position: 'relative' }}>
 					<Typography
 						align="center"
-						color="text.primary"
 						component="h1"
 						gutterBottom
+						variant="h2"
 						sx={{
+							color: 'text.primary',
 							alignItems: 'center',
 							display: 'flex',
 							flexDirection: 'column',
@@ -43,7 +57,6 @@ export const HomepageHero = () => {
 							margin: 'auto',
 							userSelect: 'none',
 						}}
-						variant="h2"
 					>
 						<Box
 							component={SkeletonLoadedImage}
@@ -51,11 +64,12 @@ export const HomepageHero = () => {
 							fill="100%"
 							id="gdsc-wordmark"
 							src={wordmark}
-							sx={{
+							sx={theme => ({
 								objectFit: 'contain',
-								filter: theme =>
-									theme.palette.mode == THEME.DARK ? 'grayscale(1)invert(1)brightness(1.5)' : 'unset',
-							}}
+								...theme.applyStyles('dark', {
+									filter: 'grayscale(1)invert(1)brightness(1.5)',
+								}),
+							})}
 						/>
 					</Typography>
 				</Container>

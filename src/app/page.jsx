@@ -15,11 +15,18 @@ const Homepage = async () => {
 		<main id="home">
 			{/* hero */}
 			<HomepageHero />
-
 			{/* upcoming events */}
 			<section id="upcoming-events">
 				<Container sx={{ py: 8 }} maxWidth="md">
-					<Typography color="text.primary" component="h2" fontWeight="bold" lineHeight="2.5em" variant="h4">
+					<Typography
+						component="h2"
+						variant="h4"
+						sx={{
+							color: 'text.primary',
+							fontWeight: 'bold',
+							lineHeight: '2.5em',
+						}}
+					>
 						Upcoming Events
 					</Typography>
 					<ErrorBoundary>
@@ -35,7 +42,6 @@ const Homepage = async () => {
 					</ErrorBoundary>
 				</Container>
 			</section>
-
 			{/* about / who are we */}
 			<section id="who-are-we">
 				<HeroHeader text="Who are we?" picture={HeroInfoSesh} maxWidth="md" position="top" />

@@ -23,31 +23,37 @@ export default async function EventsLayout({ children }) {
 		<HeroLayout title={'Events'} picture={bannerImage} position="bottom" id="events">
 			<section>
 				<Typography
-					color="text.primary"
 					component="h2"
-					fontWeight="bold"
-					lineHeight="2.5em"
 					variant="h4"
 					id="upcoming-events"
+					sx={{
+						color: 'text.primary',
+						fontWeight: 'bold',
+						lineHeight: '2.5em',
+					}}
 				>
 					Upcoming Events
 				</Typography>
 
-				<EventList from={today} EmptyComponent={() => (
-					<Typography variant="h5" component="p" gutterBottom>
-						None yet! Check back soon or follow us on social media to stay updated! 🤗
-					</Typography>
-				)} />
+				<EventList
+					from={today}
+					EmptyComponent={() => (
+						<Typography variant="h5" component="p" gutterBottom>
+							None yet! Check back soon or follow us on social media to stay updated! 🤗
+						</Typography>
+					)}
+				/>
 			</section>
-
 			<section>
 				<Typography
-					color="text.primary"
 					component="h2"
-					fontWeight="bold"
-					lineHeight="2.5em"
 					variant="h4"
 					id="past-events"
+					sx={{
+						color: 'text.primary',
+						fontWeight: 'bold',
+						lineHeight: '2.5em',
+					}}
 				>
 					Past Events
 				</Typography>

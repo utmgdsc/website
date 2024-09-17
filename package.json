@@ -1,7 +1,7 @@
 {
 	"name": "gdscutm-website",
 	"description": "GDSC UofT Mississauga Website",
-	"version": "2023.10",
+	"version": "2024.08",
 	"private": true,
 	"license": "LGPL-3.0-or-later",
 	"repository": {
@@ -12,10 +12,12 @@
 		"url": "https://github.com/utmgdsc/website/issues"
 	},
 	"dependencies": {
+		"@emotion/cache": "^11.13.1",
 		"@emotion/react": "^11.11.4",
 		"@emotion/styled": "^11.11.5",
 		"@mui/icons-material": "^6.1.0",
 		"@mui/material": "^6.1.0",
+		"@mui/material-nextjs": "^6.1.0",
 		"js-yaml": "^4.1.0",
 		"next": "^14.1.1",
 		"react": "^18.2.0",

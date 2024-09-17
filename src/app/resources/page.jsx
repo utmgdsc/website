@@ -16,7 +16,14 @@ export const metadata = {
 const ResourcesPage = () => {
 	return (
 		<HeroLayout title={metadata.title} picture={bannerImage} height="20rem" position="bottom" id="resources">
-			<Grid container justifyContent="space-between" spacing={2} alignItems="flex-start">
+			<Grid
+				container
+				spacing={2}
+				sx={{
+					justifyContent: 'space-between',
+					alignItems: 'flex-start',
+				}}
+			>
 				<Grid item>
 					<ImageLinkCard
 						title="Workshop Archive"
@@ -38,7 +45,6 @@ const ResourcesPage = () => {
 					/>
 				</Grid>
 			</Grid>
-
 			{/* opting to keep FAQ in this page to keep it more visible */}
 			<h2 className="resources" id="faq">
 				Frequently Asked Questions

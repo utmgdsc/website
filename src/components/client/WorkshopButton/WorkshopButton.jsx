@@ -13,7 +13,13 @@ export const WorkshopButton = ({ href, icon, text }) => {
 			<ListItemButton component="a" target="_blank" rel="noreferrer" href={href}>
 				<ListItemIcon>{icon}</ListItemIcon>
 				<ListItemText>
-					<Typography color="text.primary">{text}</Typography>
+					<Typography
+						sx={{
+							color: 'text.primary',
+						}}
+					>
+						{text}
+					</Typography>
 				</ListItemText>
 			</ListItemButton>
 		</ListItem>
