@@ -26,11 +26,6 @@ export default async function EventsLayout({ children }) {
 					component="h2"
 					variant="h4"
 					id="upcoming-events"
-					sx={{
-						color: 'text.primary',
-						fontWeight: 'bold',
-						lineHeight: '2.5em',
-					}}
 				>
 					Upcoming Events
 				</Typography>
@@ -49,11 +44,6 @@ export default async function EventsLayout({ children }) {
 					component="h2"
 					variant="h4"
 					id="past-events"
-					sx={{
-						color: 'text.primary',
-						fontWeight: 'bold',
-						lineHeight: '2.5em',
-					}}
 				>
 					Past Events
 				</Typography>

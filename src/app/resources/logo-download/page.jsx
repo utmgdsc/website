@@ -19,11 +19,6 @@ const BrandResources = () => {
 				<Typography
 					component="h2"
 					variant="h4"
-					sx={{
-						color: 'text.primary',
-						fontWeight: 'bold',
-						lineHeight: '2.5em',
-					}}
 				>
 					Guidelines (tl;dr)
 				</Typography>
@@ -81,11 +76,6 @@ const BrandResources = () => {
 				<Typography
 					component="h2"
 					variant="h4"
-					sx={{
-						color: 'text.primary',
-						fontWeight: 'bold',
-						lineHeight: '2.5em',
-					}}
 				>
 					The goods
 				</Typography>

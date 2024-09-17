@@ -2,7 +2,18 @@ import HeroImage from '@/assets/backgrounds/background_light.svg';
 import HeroImageDark from '@/assets/backgrounds/background_dark.svg';
 import wordmark from '@/assets/graphics/gdscwordmark.svg';
 import { SkeletonLoadedImage } from '@/components/client';
-import {  Box, Container, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
+
+const getBackgroundImage = (theme, image) =>
+	'linear-gradient(' +
+	theme.vars.palette.background.default +
+	' 0%,' +
+	`color-mix(in srgb, ${theme.vars.palette.background.default}, transparent 20%)` +
+	'69%,' +
+	theme.vars.palette.background.default +
+	' 100%), url(' +
+	image +
+	')';
 
 /**
  * @returns {JSX.Element} Hero header for the homepage.
@@ -17,27 +28,9 @@ export const HomepageHero = () => {
 					marginBottom: '-15vh',
 					backgroundRepeat: 'no-repeat',
 					backgroundSize: 'cover',
-					backgroundImage: theme =>
-						'linear-gradient(' +
-						theme.vars.palette.background.default +
-						' 0%,' +
-						`color-mix(in srgb, ${theme.vars.palette.background.default}, transparent 20%)` +
-						'69%,' +
-						theme.vars.palette.background.default +
-						' 100%), url(' +
-						HeroImage +
-						')',
+					backgroundImage: getBackgroundImage(theme, HeroImage),
 					...theme.applyStyles('dark', {
-						backgroundImage:
-							'linear-gradient(' +
-							theme.vars.palette.background.default +
-							' 0%,' +
-							`color-mix(in srgb, ${theme.vars.palette.background.default}, transparent 20%)` +
-							'69%,' +
-							theme.vars.palette.background.default +
-							' 100%), url(' +
-							HeroImageDark +
-							')',
+						backgroundImage: getBackgroundImage(theme, HeroImageDark),
 					}),
 				})}
 			>

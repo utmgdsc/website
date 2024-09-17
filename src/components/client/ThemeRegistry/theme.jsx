@@ -45,7 +45,11 @@ export const googleTheme = createTheme({
 		h1: { fontFamily: `var(--google-sans-display)` },
 		h2: { fontFamily: `var(--google-sans-display)` },
 		h3: { fontFamily: `var(--google-sans-display)` },
-		h4: { fontFamily: `var(--google-sans-display)` },
+		h4: {
+			fontFamily: `var(--google-sans-display)`, color: 'text.primary',
+			fontWeight: 'bold',
+			lineHeight: '2.5em',
+		},
 		h5: { fontFamily: `var(--google-sans-display)` },
 		h6: { fontFamily: `var(--google-sans-display)` },
 		subtitle1: { fontFamily: `var(--google-sans-display)` },

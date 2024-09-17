@@ -21,11 +21,6 @@ const Homepage = async () => {
 					<Typography
 						component="h2"
 						variant="h4"
-						sx={{
-							color: 'text.primary',
-							fontWeight: 'bold',
-							lineHeight: '2.5em',
-						}}
 					>
 						Upcoming Events
 					</Typography>
