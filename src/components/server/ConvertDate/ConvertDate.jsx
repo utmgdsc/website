@@ -15,6 +15,7 @@ export const ConvertDate = ({ date }) => {
 		year: 'numeric',
 		month: 'long',
 		day: 'numeric',
+		timeZone: 'America/Toronto',
 	});
 
 	// return the date string
