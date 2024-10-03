@@ -28,7 +28,7 @@ export const CommunityDevButton = props => (
 		title="Google Developers Student Club page"
 		tooltip="Visit our official Google Developers Student Club page"
 		icon={<Google />}
-		href="https://gdsc.community.dev/university-of-toronto-mississauga/"
+		href="https://gdg.community.dev/gdg-on-campus-university-of-toronto-mississauga-canada//"
 		{...props}
 	/>
 );
