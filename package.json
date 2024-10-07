@@ -15,7 +15,7 @@
 		"@emotion/cache": "^11.13.1",
 		"@emotion/react": "^11.11.4",
 		"@emotion/styled": "^11.11.5",
-		"@mui/icons-material": "^6.1.1",
+		"@mui/icons-material": "^6.1.2",
 		"@mui/material": "^6.1.0",
 		"@mui/material-nextjs": "^6.1.1",
 		"js-yaml": "^4.1.0",
