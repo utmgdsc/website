@@ -3,7 +3,8 @@ import { YearedEventList } from '~/components/server';
 
 /**
  * @param {object} props
- * @param {string} props.year - The year to display events for
+ * @param {object} props.params - page slugs
+ * @param {string} props.params.year - The year to display events for
  *
  * @return {JSX.Element} Events page component using EventList
  */

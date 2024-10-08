@@ -124,7 +124,14 @@ export const getYears = async () => {
 
 const translator = new NodeHtmlMarkdown();
 
-/** @see https://chroniclebot.com/docs/notifier/front-matter */
+/**
+ * Generate Chronicle front matter for an event.
+ * @see https://chroniclebot.com/docs/notifier/front-matter
+ *
+ * @param {object} info - Event information.
+ *
+ * @returns {string} Chronicle front matter.
+ */
 const generateChronicleFrontMatter = info =>
 	`+++${info['cropped_banner_url'] ? `\ncover="${info['cropped_banner_url']}"` : ''}${info['url'] ? `\nsummary_link="${info['url']}"` : ''}${info['picture']['url'] ? `\nthumbnail="${info['picture']['url']}"` : ''}\n+++${info['static_url'] ? `\n\nRSVP: ${info['static_url']}` : ''}${info['description'] ? `\n\n${translator.translate(info['description'])}` : ''}`;
 
@@ -150,8 +157,6 @@ export async function GET(req, res) {
 	const { events, eventInfo } = await getEnrichedEvents(undefined, MIN_DATE, MAX_DATE);
 
 	const isDiscord = req.nextUrl.searchParams.get('useFrontMatter') ?? false;
-
-	console.log(isDiscord);
 
 	events.forEach((event, id) => {
 		const info = eventInfo[id];
