@@ -1,5 +1,5 @@
 import ical from 'ical-generator';
-import { parse } from 'node-html-parser';
+import { NodeHtmlMarkdown } from 'node-html-markdown';
 
 /**
  * Minimum date allowed by JavaScript Date object.
@@ -122,14 +122,11 @@ export const getYears = async () => {
 	return years.sort((a, b) => b - a);
 };
 
-const parseHTMLtoPlainText = html => {
-	const root = parse(html);
-	return root.text;
-};
+const translator = new NodeHtmlMarkdown();
 
 /** @see https://chroniclebot.com/docs/notifier/front-matter */
 const generateChronicleFrontMatter = info =>
-	`+++${info['cropped_banner_url'] ? `\ncover="${info['cropped_banner_url']}"` : ''}${info['url'] ? `\nsummary_link="${info['url']}"` : ''}${info['picture']['url'] ? `\nthumbnail="${info['picture']['url']}"` : ''}\n+++${info['static_url'] ? `\n\nRSVP: ${info['static_url']}` : ''}${info['description'] ? `\n\n${parseHTMLtoPlainText(info['description'])}` : ''}`;
+	`+++${info['cropped_banner_url'] ? `\ncover="${info['cropped_banner_url']}"` : ''}${info['url'] ? `\nsummary_link="${info['url']}"` : ''}${info['picture']['url'] ? `\nthumbnail="${info['picture']['url']}"` : ''}\n+++${info['static_url'] ? `\n\nRSVP: ${info['static_url']}` : ''}${info['description'] ? `\n\n${translator.translate(info['description'])}` : ''}`;
 
 /**
  * return an ical for the events
