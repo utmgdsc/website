@@ -1,4 +1,5 @@
 import ical from 'ical-generator';
+import { parse } from 'node-html-parser';
 
 /**
  * Minimum date allowed by JavaScript Date object.
@@ -121,9 +122,14 @@ export const getYears = async () => {
 	return years.sort((a, b) => b - a);
 };
 
+const parseHTMLtoPlainText = html => {
+	const root = parse(html);
+	return root.text;
+};
+
 /** @see https://chroniclebot.com/docs/notifier/front-matter */
 const generateChronicleFrontMatter = info =>
-	`+++${info['cropped_banner_url'] ? `\ncover="${info['cropped_banner_url']}"` : ''}${info['url'] ? `\nsummary_link="${info['url']}"` : ''}${info['picture']['url'] ? `\nthumbnail="${info['picture']['url']}"` : ''}\n+++\n\nRSVP: ${info['url']}${info['description'] ? `\n\n${info['description']}` : ''}`;
+	`+++${info['cropped_banner_url'] ? `\ncover="${info['cropped_banner_url']}"` : ''}${info['url'] ? `\nsummary_link="${info['url']}"` : ''}${info['picture']['url'] ? `\nthumbnail="${info['picture']['url']}"` : ''}\n+++${info['static_url'] ? `\n\nRSVP: ${info['static_url']}` : ''}${info['description'] ? `\n\n${parseHTMLtoPlainText(info['description'])}` : ''}`;
 
 /**
  * return an ical for the events
