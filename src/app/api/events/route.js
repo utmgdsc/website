@@ -168,7 +168,7 @@ export async function GET(req, res) {
 			description: isDiscord ? generateChronicleFrontMatter(info) : info['description'],
 			url: event['url'],
 			location: concatStrings(info['venue_name'], info['meetup_url'], info['eventbrite_url']) || undefined,
-			id: info['id'],
+			id: `${info['id']}@gdscutm.com`,
 		});
 	});
 
