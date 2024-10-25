@@ -1,7 +1,7 @@
-import { Accordion, AccordionDetails, AccordionSummary, WorkshopButton } from '@/components/client';
+import { Accordion, WorkshopButton } from '@/components/client';
 import { ConvertDate, JoinAnd, workshopHash } from '@/components/server';
 import { Code, ExpandMore, RadioButtonChecked, Slideshow } from '@mui/icons-material';
-import { CardContent, List, Typography } from '@mui/material';
+import { AccordionDetails, AccordionSummary, CardContent, List, Typography } from '@mui/material';
 
 /**
  * @property {{"key": {name: string; date: Date; host: string[]; description: string; code?: string; slides?: string; recording?: string;}[]}[]} item The workshop item from the workshops.json JSON file

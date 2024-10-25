@@ -1,6 +1,6 @@
 import { ExpandMore } from '@mui/icons-material';
-import { Typography } from '@mui/material';
-import { Accordion, AccordionDetails, AccordionSummary } from '@/components/client';
+import { AccordionDetails, AccordionSummary, Typography } from '@mui/material';
+import { Accordion } from '@/components/client';
 
 /**
  * A frequently asked question. Used in the Resources page.

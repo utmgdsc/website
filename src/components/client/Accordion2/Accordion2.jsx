@@ -1,12 +1,8 @@
 /**
  * @fileoverview MUI accordion but it works without JS
  */
-import {
-	Accordion as MUIAccordion,
-	AccordionDetails as MUIAccordionDetails,
-	AccordionSummary as MUIAccordionSummary,
-} from '@mui/material';
-import { useEffect, useState } from 'react';
+import { Accordion as MUIAccordion } from '@mui/material';
+import { Fragment, useEffect, useState } from 'react';
 
 /**
  * @returns {any} undefined if JS is enabled, otherwise, returns the default value
@@ -21,8 +17,11 @@ const useOnload = def => {
 	return loaded;
 };
 
+/** a react component that filters all props */
+const FragmentFilter = ({ children } = {}) => <Fragment>{children}</Fragment>;
+
 /**
- * load "details" when theres no JS
+ * load a proper "details" fallback when theres no JS
  */
 export const Accordion = props => {
 	const unset = useOnload('unset !important');
@@ -37,28 +36,14 @@ export const Accordion = props => {
 				},
 				...props.sx,
 			}}
+			slots={{
+				// borrow loaded state from unset
+				heading: unset ? FragmentFilter : undefined,
+			}}
 			component={useOnload('details')}
 			{...props}
 		>
 			{props.children}
 		</MUIAccordion>
 	);
-};
-
-/**
- * load "summary" when theres no JS
- */
-export const AccordionSummary = props => {
-	return (
-		<MUIAccordionSummary component={useOnload('summary')} {...props}>
-			{props.children}
-		</MUIAccordionSummary>
-	);
-};
-
-/**
- * this is just for completeness, feel free to use the MUI one
- */
-export const AccordionDetails = props => {
-	return <MUIAccordionDetails {...props}>{props.children}</MUIAccordionDetails>;
 };

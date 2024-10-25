@@ -31,7 +31,6 @@
 		"eslint-plugin-promise": "^7.1.0",
 		"eslint-plugin-react": "^7.37.1",
 		"husky": "^9.1.6",
-		"lint-staged": "^15.2.2",
 		"prettier": "^3.2.5"
 	},
 	"scripts": {
@@ -40,21 +39,12 @@
 		"dev": "next dev",
 		"lint": "next lint",
 		"prepare": "husky",
-		"pretty": "next lint --fix && prettier --write \"./**/*.{js,jsx,ts,tsx,json,css}\""
+		"pretty": "next lint --fix && prettier --write --list-different \"./**/*.{js,jsx,ts,tsx,json,css}\""
 	},
 	"husky": {
 		"hooks": {
 			"pre-commit": "lint-staged"
 		}
-	},
-	"lint-staged": {
-		"**/*.{js,jsx,ts,tsx}": [
-			"next lint --fix",
-			"prettier --write"
-		],
-		"**/*.{json,css}": [
-			"prettier --write"
-		]
 	},
 	"prettier": {
 		"arrowParens": "avoid",
