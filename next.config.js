@@ -3,7 +3,7 @@ const nextConfig = {
 	webpack(config) {
 		config.module.rules.push({
 			test: /\.svg$/i,
-			exclude: /.*\\icon\.svg$/i, // for nextjs to properly parse svg favicons
+			exclude: /.*(\/|\\)icon\.svg$/i, // for nextjs to properly parse svg favicons
 			type: 'asset',
 		});
 		return config;
