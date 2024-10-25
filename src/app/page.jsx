@@ -18,10 +18,7 @@ const Homepage = async () => {
 			{/* upcoming events */}
 			<section id="upcoming-events">
 				<Container sx={{ py: 8 }} maxWidth="md">
-					<Typography
-						component="h2"
-						variant="h4"
-					>
+					<Typography component="h2" variant="h4">
 						Upcoming Events
 					</Typography>
 					<ErrorBoundary>

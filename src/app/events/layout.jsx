@@ -22,11 +22,7 @@ export default async function EventsLayout({ children }) {
 	return (
 		<HeroLayout title={'Events'} picture={bannerImage} position="bottom" id="events">
 			<section>
-				<Typography
-					component="h2"
-					variant="h4"
-					id="upcoming-events"
-				>
+				<Typography component="h2" variant="h4" id="upcoming-events">
 					Upcoming Events
 				</Typography>
 
@@ -40,11 +36,7 @@ export default async function EventsLayout({ children }) {
 				/>
 			</section>
 			<section>
-				<Typography
-					component="h2"
-					variant="h4"
-					id="past-events"
-				>
+				<Typography component="h2" variant="h4" id="past-events">
 					Past Events
 				</Typography>
 

@@ -1,10 +1,12 @@
 import { pages } from '@/data/NavbarTabData';
 
+/**
+ * HACK: the baseurl is hardcoded to prod url
+ */
 const BASE_URL = 'https://gdscutm.com';
 
 /**
- * Generates the sitemap for the website. Note that a
- * HACK: the baseurl is hardcoded to prod url
+ * Generates the sitemap for the website. URL is hardcoded.
  *
  * Uses the NavbarTabData to generate the sitemap.
  *

@@ -3,20 +3,14 @@ const nextConfig = {
 	webpack(config) {
 		config.module.rules.push({
 			test: /\.svg$/i,
+			exclude: /.*icon\.svg$/i,
 			type: 'asset',
 		});
 		return config;
 	},
 	reactStrictMode: true,
-	swcMinify: true,
-	modularizeImports: {
-		'@mui/icons-material': {
-			transform: '@mui/icons-material/{{member}}',
-		},
-	},
-
 	compiler: {
-		styledComponents: true,
+		emotion: true,
 	},
 
 	images: {
@@ -27,9 +21,7 @@ const nextConfig = {
 			},
 			{
 				protocol: 'https',
-				hostname: process.env.PROPRIETARY_IMAGES_HOSTNAME
-					? process.env.PROPRIETARY_IMAGES_HOSTNAME
-					: 'localhost',
+				hostname: process.env.PROPRIETARY_IMAGES_HOSTNAME || 'localhost',
 			},
 		],
 	},

@@ -40,12 +40,21 @@
 		"dev": "next dev",
 		"lint": "next lint",
 		"prepare": "husky",
-		"pretty": "prettier --write \"./**/*.{js,jsx,ts,tsx,json,css}\""
+		"pretty": "next lint --fix && prettier --write \"./**/*.{js,jsx,ts,tsx,json,css}\""
 	},
 	"husky": {
 		"hooks": {
 			"pre-commit": "lint-staged"
 		}
+	},
+	"lint-staged": {
+		"**/*.{js,jsx,ts,tsx}": [
+			"next lint --fix",
+			"prettier --write"
+		],
+		"**/*.{json,css}": [
+			"prettier --write"
+		]
 	},
 	"prettier": {
 		"arrowParens": "avoid",

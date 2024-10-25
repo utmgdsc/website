@@ -24,7 +24,8 @@ Except where otherwise noted, the is project is licensed under the [LGPL 3.0 or 
 
 ### Initialize the pre-commit hook:
 > [!WARNING]
-> Husky will error if you are using GitHub Desktop on Windows. If this is the case, skip this step or uninstall the hook by running `npx husky uninstall` in the root project directory.
+> Husky will error if you are using GitHub Desktop on Windows. You will need to add `cygpath.exe` to the bundled version of Git that GitHub Desktop uses.
+> You can obtain it by downloading `cygwin-[...].tar.xz` from [a Cygwin releases mirror](https://mirror.csclub.uwaterloo.ca/cygwin/x86_64/release/cygwin/), extracting it, and copying `usr/bin/cygpath.exe` to the `resources/app/git/usr/bin` folder in GitHub desktop.
 ```sh
 > npx husky install
 ```
@@ -64,20 +65,7 @@ When creating new pages, the navbar must be updated to include the new page if d
 
 
 ### Adding a new Workshop
-> [!NOTE]
-> This information is currently out of date.
-
-> [!IMPORTANT]
-> You must have GitHub action permissions to add a new workshop to production in this way. Otherwise, you may fork the repository, manually edit the `workshops.json` file, and create a pull request to `develop`.
-
-1. Navigate to the [Create Workshop](https://github.com/utmgdsc/website/actions/workflows/create-workshop-pull-request.yml) GitHub action.
-2. Click the `Run workflow` button.
-3. Select the `develop` branch. (Make sure the `develop` branch is up to date with the `main` branch first.)
-4. Fill in the prompts as needed.
-	* To add newlines in the description, use the `\n` escape sequence.
-5. Click the `Run workflow` button.
-6. [Create a pull request from the `develop` branch to the `main` branch](https://github.com/utmgdsc/website/compare/main...develop).
-7. Merge, and you're done!
+Workshop information and slides are stored in the [workshop repository](https://github.com/utmgdsc/workshops), and are automatically fetched by the website. Please refer to the documentation linked there for adding a new workshop.
 
 ### Updating the Team List
 > [!NOTE]

@@ -1,4 +1,5 @@
 import createTheme from '@mui/material/styles/createTheme';
+import { GoogleSansVariable, GoogleSansDisplayVariable } from '@/assets/fonts/fonts';
 
 const sharedPalette = {
 	primary: {
@@ -41,18 +42,19 @@ export const googleTheme = createTheme({
 	light: sharedPalette,
 	dark: sharedPalette,
 	typography: {
-		fontFamily: `var(--google-sans)`,
-		h1: { fontFamily: `var(--google-sans-display)` },
-		h2: { fontFamily: `var(--google-sans-display)` },
-		h3: { fontFamily: `var(--google-sans-display)` },
+		fontFamily: `var(${GoogleSansVariable})`,
+		h1: { fontFamily: `var(${GoogleSansDisplayVariable})` },
+		h2: { fontFamily: `var(${GoogleSansDisplayVariable})` },
+		h3: { fontFamily: `var(${GoogleSansDisplayVariable})` },
 		h4: {
-			fontFamily: `var(--google-sans-display)`, color: 'text.primary',
+			fontFamily: `var(${GoogleSansDisplayVariable})`,
+			color: 'text.primary',
 			fontWeight: 'bold',
 			lineHeight: '2.5em',
 		},
-		h5: { fontFamily: `var(--google-sans-display)` },
-		h6: { fontFamily: `var(--google-sans-display)` },
-		subtitle1: { fontFamily: `var(--google-sans-display)` },
-		subtitle2: { fontFamily: `var(--google-sans-display)` },
+		h5: { fontFamily: `var(${GoogleSansDisplayVariable})` },
+		h6: { fontFamily: `var(${GoogleSansDisplayVariable})` },
+		subtitle1: { fontFamily: `var(${GoogleSansDisplayVariable})` },
+		subtitle2: { fontFamily: `var(${GoogleSansDisplayVariable})` },
 	},
 });

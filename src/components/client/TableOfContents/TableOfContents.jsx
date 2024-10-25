@@ -1,5 +1,3 @@
-import './TableOfContents.css';
-
 import { useEffect, useRef, useState } from 'react';
 import { Link } from '@/components/server';
 import { Box, Typography } from '@mui/material';

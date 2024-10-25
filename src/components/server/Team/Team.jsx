@@ -1,59 +1,7 @@
-import './Team.css';
-import { Box, Typography } from '@mui/material';
+import { Avatar, Box, Typography } from '@mui/material';
 import DefaultUser from '@/assets/graphics/default_user.svg';
-import Image from 'next/image';
-import { ProprietaryImage } from '@/components/server';
-
-/**
- * Team component. Displays a team with a title and a list of team members
- * @property {{"key": {"name": string; "role": string; "pronouns": string; "picture": string;}}[]} teamInfo members data from the json file
- * @property {string} title title of the team
- * @returns {JSX.Element} A collection of Person components representing a team
- */
-export const Team = ({ teamInfo, title }) => {
-	// do not return anything if there are no team members in the team
-	if (teamInfo.length === 0) {
-		return null;
-	}
-
-	return (
-		<>
-			<Typography
-				align="center"
-				component="h3"
-				key={title}
-				variant="h4"
-				sx={{
-					fontWeight: 'bold',
-					marginTop: 8,
-				}}
-			>
-				{/* auto pluralize the title */}
-				{title + (teamInfo.length > 1 ? 's' : '')}
-			</Typography>
-			<Box
-				sx={{
-					display: 'flex',
-					flexWrap: 'wrap',
-					justifyContent: 'center',
-					left: 0,
-					margin: 'auto',
-					right: 0,
-					textAlign: 'center',
-				}}
-			>
-				{teamInfo.map((teamMember, index) => (
-					<Person
-						key={index}
-						name={teamMember.name}
-						role={teamMember.role}
-						picture={teamMember.picture ? `team/${teamMember.picture}` : null}
-					/>
-				))}
-			</Box>
-		</>
-	);
-};
+import { ImageFilterProps } from '@/components/client';
+import { getProprietaryURL } from '@/components/server';
 
 /**
  * A single team member
@@ -66,29 +14,32 @@ export const Team = ({ teamInfo, title }) => {
 const Person = ({ name, role, picture }) => {
 	return (
 		<Box component="figure" sx={{ margin: 0, display: 'inline-block', padding: '1em' }}>
-			{picture === null ? (
-				<Image
-					src={DefaultUser}
+			<Avatar
+				src={picture ? (getProprietaryURL(picture, false) ?? DefaultUser) : DefaultUser}
+				slots={{
+					img: ImageFilterProps,
+				}}
+				imgProps={{
 					// no alt text needed - picture already sufficiently described by the paragraph,
 					// so there is no need to repeat the information
-					alt=""
-					draggable="false"
-					width={110}
-					height={110}
-					className="img"
-				/>
-			) : (
-				<ProprietaryImage
-					src={picture}
-					// no alt text needed - picture already sufficiently described by the paragraph,
-					// so there is no need to repeat the information
-					alt=""
-					draggable="false"
-					width={110}
-					height={110}
-					className="img"
-				/>
-			)}
+					alt: '',
+					width: 110,
+					height: 110,
+				}}
+				draggable="false"
+				sx={{
+					img: {
+						height: 'inherit !important',
+						objectFit: 'cover',
+						pointerEvents: 'none',
+						userSelect: 'none',
+						width: 'inherit !important',
+					},
+					height: '6.9rem',
+					width: '6.9rem',
+					margin: '0 auto',
+				}}
+			/>
 
 			<figcaption>
 				<Box
@@ -123,4 +74,53 @@ const Person = ({ name, role, picture }) => {
 	);
 };
 
-export default Team;
+/**
+ * Team component. Displays a team with a title and a list of team members
+ * @property {{"key": {"name": string; "role": string; "pronouns": string; "picture": string;}}[]} teamInfo members data from the json file
+ * @property {string} title title of the team
+ * @returns {JSX.Element} A collection of Person components representing a team
+ */
+export const Team = ({ teamInfo, title }) => {
+	// do not return anything if there are no team members in the team
+	if (teamInfo.length === 0) {
+		return null;
+	}
+
+	return (
+		<section>
+			<Typography
+				align="center"
+				component="h3"
+				key={title}
+				variant="h4"
+				sx={{
+					fontWeight: 'bold',
+					marginTop: 8,
+				}}
+			>
+				{/* auto pluralize the title */}
+				{title + (teamInfo.length > 1 ? 's' : '')}
+			</Typography>
+			<Box
+				sx={{
+					display: 'flex',
+					flexWrap: 'wrap',
+					justifyContent: 'center',
+					left: 0,
+					margin: 'auto',
+					right: 0,
+					textAlign: 'center',
+				}}
+			>
+				{teamInfo.map((teamMember, index) => (
+					<Person
+						key={index}
+						name={teamMember.name}
+						role={teamMember.role}
+						picture={teamMember.picture ? `team/${teamMember.picture}` : null}
+					/>
+				))}
+			</Box>
+		</section>
+	);
+};

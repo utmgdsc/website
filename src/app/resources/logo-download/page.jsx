@@ -16,10 +16,7 @@ const BrandResources = () => {
 		<ResourceLayout id="logo-download" title={metadata.title} picture={BannerImg}>
 			<em>Last updated 2023-01-01</em>
 			<section>
-				<Typography
-					component="h2"
-					variant="h4"
-				>
+				<Typography component="h2" variant="h4">
 					Guidelines (tl;dr)
 				</Typography>
 				<ul>
@@ -73,10 +70,7 @@ const BrandResources = () => {
 				</ul>
 			</section>
 			<section>
-				<Typography
-					component="h2"
-					variant="h4"
-				>
+				<Typography component="h2" variant="h4">
 					The goods
 				</Typography>
 				<Link external href="https://drive.google.com/drive/u/0/folders/1EWVUqcPmW71SMhxuO4HpwtGL01-oxLvk">

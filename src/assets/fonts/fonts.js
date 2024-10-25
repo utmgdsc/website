@@ -1,6 +1,18 @@
 import localFont from 'next/font/local';
 
 /**
+ * The variable name for the Google Sans font.
+ */
+// ! Keep this in sync the `variable` property in the `GoogleSans` object.
+export const GoogleSansVariable = '--google-sans';
+
+/**
+ * The variable name for the Google Sans Display font.
+ */
+// ! Keep this in sync the `variable` property in the `GoogleSansDisplay` object.
+export const GoogleSansDisplayVariable = '--google-sans-display';
+
+/**
  * Display fonts are for headings and titles and is generally
  * for 14 point or larger.
  */
