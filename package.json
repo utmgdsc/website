@@ -19,7 +19,7 @@
 		"@mui/material": "^6.1.4",
 		"@mui/material-nextjs": "^6.1.5",
 		"js-yaml": "^4.1.0",
-		"next": "^14.1.1",
+		"next": "^15.0.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.3.1",
 		"react-gtm-module": "^2.0.11",
