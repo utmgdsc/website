@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
 
-import { ResourceLayout } from '@/layouts/ResourceLayout';
+import { ResourceLayout } from '~/layouts/ResourceLayout';
 
 export const metadata = {
 	title: 'Tech Tips',

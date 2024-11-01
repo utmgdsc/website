@@ -1,5 +1,5 @@
 import createTheme from '@mui/material/styles/createTheme';
-import { GoogleSansVariable, GoogleSansDisplayVariable } from '@/assets/fonts/fonts';
+import { GoogleSansVariable, GoogleSansDisplayVariable } from '~/assets/fonts/fonts';
 
 const sharedPalette = {
 	primary: {
@@ -17,19 +17,13 @@ const sharedPalette = {
 	success: {
 		main: '#0f9d58',
 	},
-	action: {
-		light: {
-			active: '#000',
-			disabled: '#5f6368',
-		},
-	},
 	// Used by `getContrastText()` to maximize the contrast between
 	// the background and the text.
-	contrastThreshold: 3,
+	// contrastThreshold: 3,
 	// Used by the functions below to shift a color's luminance by approximately
 	// two indexes within its tonal palette.
 	// E.g., shift from Red 500 to Red 300 or Red 700.
-	tonalOffset: 0.2,
+	// tonalOffset: 0.2,
 };
 
 /**

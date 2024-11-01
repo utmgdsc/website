@@ -1,4 +1,4 @@
-import { pages } from '@/data/NavbarTabData';
+import { pages } from '~/data/NavbarTabData';
 
 /**
  * HACK: the baseurl is hardcoded to prod url

@@ -1,5 +1,5 @@
 import { Button, Card, CardActions, CardContent, Typography, Skeleton } from '@mui/material';
-import { Link, OpenInNewTabIcon } from '@/components/server';
+import { Link, OpenInNewTabIcon } from '~/components/server';
 
 const CardColors = ['success', 'error', 'warning', 'info'];
 

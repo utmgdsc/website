@@ -1,7 +1,7 @@
-import bannerImage from '@/assets/notgpl/project_banner.jpg';
-import { FAQList, ProjectList } from '@/components/client';
-import { ExpiryContainer, Link } from '@/components/server';
-import { HeroLayout } from '@/layouts/HeroLayout';
+import bannerImage from '~/assets/notgpl/project_banner.jpg';
+import { FAQList, ProjectList } from '~/components/client';
+import { ExpiryContainer, Link } from '~/components/server';
+import { HeroLayout } from '~/layouts/HeroLayout';
 import { Alert } from '@mui/material';
 import FAQData from './faq.json';
 

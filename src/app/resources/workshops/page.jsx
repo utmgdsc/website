@@ -1,9 +1,9 @@
 import { Box, Grid } from '@mui/material';
-import { getData, parseWorkshops } from '@/app/api/workshops/route';
-import { InfoCard, TableOfContents, WorkshopWidget } from '@/components/client';
-import { ResourceLayout } from '@/layouts/ResourceLayout';
-import { workshopHash } from '@/components/server';
-import bannerImage from '@/assets/notgpl/051A6228.jpg';
+import { getData, parseWorkshops } from '~/app/api/workshops/route';
+import { InfoCard, TableOfContents, WorkshopWidget } from '~/components/client';
+import { ResourceLayout } from '~/layouts/ResourceLayout';
+import { workshopHash } from '~/components/server';
+import bannerImage from '~/assets/notgpl/051A6228.jpg';
 
 export const metadata = {
 	title: 'Workshop Archive',

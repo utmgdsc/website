@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from '@/components/server';
+import { Link } from '~/components/server';
 import { Box, Typography } from '@mui/material';
 
 /**

@@ -1,4 +1,4 @@
-import { YearedEventList } from '@/components/server';
+import { YearedEventList } from '~/components/server';
 
 /**
  * @property {string} year - The year to display events for

@@ -1,7 +1,7 @@
-import HeroImage from '@/assets/backgrounds/background_light.svg';
-import HeroImageDark from '@/assets/backgrounds/background_dark.svg';
-import wordmark from '@/assets/graphics/gdscwordmark.svg';
-import { SkeletonLoadedImage } from '@/components/client';
+import HeroImage from '~/assets/backgrounds/background_light.svg';
+import HeroImageDark from '~/assets/backgrounds/background_dark.svg';
+import wordmark from '~/assets/graphics/gdscwordmark.svg';
+import { SkeletonLoadedImage } from '~/components/client';
 import { Box, Container, Typography } from '@mui/material';
 
 const getBackgroundImage = (theme, image) =>

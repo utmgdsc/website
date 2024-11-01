@@ -1,6 +1,6 @@
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
 
-import { Link } from '@/components/server';
+import { Link } from '~/components/server';
 import Image from 'next/image';
 
 /**

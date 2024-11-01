@@ -1,9 +1,9 @@
-import Brand from '@/assets/graphics/logo_clouds.png';
-import workshopImage from '@/assets/notgpl/051A6228.jpg';
-import bannerImage from '@/assets/notgpl/IMG_4712.jpg';
-import { FAQList, ImageLinkCard } from '@/components/client';
-import faq from '@/data/faq.json';
-import { HeroLayout } from '@/layouts/HeroLayout';
+import Brand from '~/assets/graphics/logo_clouds.png';
+import workshopImage from '~/assets/notgpl/051A6228.jpg';
+import bannerImage from '~/assets/notgpl/IMG_4712.jpg';
+import { FAQList, ImageLinkCard } from '~/components/client';
+import faq from '~/data/faq.json';
+import { HeroLayout } from '~/layouts/HeroLayout';
 import { Grid } from '@mui/material';
 
 export const metadata = {

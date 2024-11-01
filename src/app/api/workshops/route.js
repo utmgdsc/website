@@ -31,7 +31,7 @@ export const parseWorkshops = workshops => {
 	// Iterate through each year
 	return Object.entries(workshops).reduce((parsedData, [year, categories]) => {
 		// Iterate through each category
-		// eslint-disable-next-line no-unused-vars
+		// eslint-disable-next-line
 		Object.entries(categories).forEach(([_categoryNum, workshopsList]) => {
 			// Get the category name
 			const categoryName = Object.keys(workshopsList)[0];

@@ -1,7 +1,7 @@
-import bannerImage from '@/assets/notgpl/IMG_1045.jpg';
-import { PathnameTabs } from '@/components/client';
-import { EventList, getYearTabs } from '@/components/server';
-import { HeroLayout } from '@/layouts/HeroLayout';
+import bannerImage from '~/assets/notgpl/IMG_1045.jpg';
+import { PathnameTabs } from '~/components/client';
+import { EventList, getYearTabs } from '~/components/server';
+import { HeroLayout } from '~/layouts/HeroLayout';
 import { Typography } from '@mui/material';
 
 export const metadata = {

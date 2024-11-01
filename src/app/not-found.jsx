@@ -1,8 +1,8 @@
 import { Container, Typography } from '@mui/material';
-import { ThemedImage } from '@/components/client';
+import { ThemedImage } from '~/components/client';
 
-import estelle from '@/assets/graphics/sad_mascot.png';
-import estelle_dark from '@/assets/graphics/sad_mascot_dark.png';
+import estelle from '~/assets/graphics/sad_mascot.png';
+import estelle_dark from '~/assets/graphics/sad_mascot_dark.png';
 
 export const metadata = {
 	title: '404 - GDSC UTM',

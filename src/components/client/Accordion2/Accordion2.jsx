@@ -1,7 +1,7 @@
 /**
  * @fileoverview MUI accordion but it works without JS
  */
-import { Accordion as MUIAccordion } from '@mui/material';
+import { Accordion as MUIAccordion, AccordionSummary as MUIAccordionSummary } from '@mui/material';
 import { Fragment, useEffect, useState } from 'react';
 
 /**
@@ -45,5 +45,13 @@ export const Accordion = props => {
 		>
 			{props.children}
 		</MUIAccordion>
+	);
+};
+
+export const AccordionSummary = props => {
+	return (
+		<MUIAccordionSummary component={useOnload('summary')} {...props}>
+			{props.children}
+		</MUIAccordionSummary>
 	);
 };

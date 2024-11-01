@@ -1,7 +1,7 @@
-import { Accordion, WorkshopButton } from '@/components/client';
-import { ConvertDate, JoinAnd, workshopHash } from '@/components/server';
+import { Accordion, AccordionSummary, WorkshopButton } from '~/components/client';
+import { ConvertDate, JoinAnd, workshopHash } from '~/components/server';
 import { Code, ExpandMore, RadioButtonChecked, Slideshow } from '@mui/icons-material';
-import { AccordionDetails, AccordionSummary, CardContent, List, Typography } from '@mui/material';
+import { AccordionDetails, Box, List, Typography } from '@mui/material';
 
 /**
  * @property {{"key": {name: string; date: Date; host: string[]; description: string; code?: string; slides?: string; recording?: string;}[]}[]} item The workshop item from the workshops.json JSON file
@@ -16,7 +16,7 @@ export const WorkshopWidget = ({ item }) => {
 					width: '100%',
 				}}
 			>
-				<CardContent
+				<Box
 					sx={{
 						flex: '1 0 auto',
 						padding: '0 !important',
@@ -36,7 +36,7 @@ export const WorkshopWidget = ({ item }) => {
 					>
 						<JoinAnd items={item.host} /> on <ConvertDate date={item.date} />
 					</Typography>
-				</CardContent>
+				</Box>
 			</AccordionSummary>
 			<AccordionDetails>
 				<Typography sx={{ whiteSpace: 'pre-wrap' }}>{item.description}</Typography>

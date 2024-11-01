@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import { FAQ } from '@/components/client';
+import { FAQ } from '~/components/client';
 
 /**
  * Shows a list of FAQs given a JSON object

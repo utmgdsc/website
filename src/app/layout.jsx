@@ -1,8 +1,8 @@
 import './App.css';
 
-import { ErrorBoundary, Footer, Navbar, TagManager, ThemeRegistry } from '@/components/client';
+import { ErrorBoundary, Footer, Navbar, TagManager, ThemeRegistry } from '~/components/client';
 
-import { GoogleSans, GoogleSansDisplay } from '@/assets/fonts/fonts';
+import { GoogleSans, GoogleSansDisplay } from '~/assets/fonts/fonts';
 
 export const metadata = {
 	title: {

@@ -1,7 +1,7 @@
 import { Avatar, Box, Typography } from '@mui/material';
-import DefaultUser from '@/assets/graphics/default_user.svg';
-import { ImageFilterProps } from '@/components/client';
-import { getProprietaryURL } from '@/components/server';
+import DefaultUser from '~/assets/graphics/default_user.svg';
+import { ImageFilterProps } from '~/components/client';
+import { getProprietaryURL } from '~/components/server';
 
 /**
  * A single team member

@@ -1,10 +1,10 @@
 import { Box, ButtonGroup, Container, Paper, Typography, styled } from '@mui/material';
 
-import bracket_colourless from '@/assets/graphics/bracket_colourless.svg';
-import { ErrorBoundary } from '@/components/client';
-import { Link } from '@/components/server';
-import * as allSocialButtons from '@/data/SocialButton';
-import footerLinks from '@/data/footer.json';
+import bracket_colourless from '~/assets/graphics/bracket_colourless.svg';
+import { ErrorBoundary } from '~/components/client';
+import { Link } from '~/components/server';
+import * as allSocialButtons from '~/data/SocialButton';
+import footerLinks from '~/data/footer.json';
 import Image from 'next/image';
 
 /**

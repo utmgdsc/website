@@ -1,5 +1,5 @@
-import { ConvertDate } from '@/components/server';
-import { InfoCard } from '@/components/client';
+import { ConvertDate } from '~/components/server';
+import { InfoCard } from '~/components/client';
 import { Alert, Grid, Typography } from '@mui/material';
 
 /**

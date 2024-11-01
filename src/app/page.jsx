@@ -1,10 +1,10 @@
 import { Container, Typography } from '@mui/material';
-import HeroInfoSesh from '@/assets/notgpl/info-session.jpg';
-import HeroTeam from '@/assets/notgpl/team.jpg';
-import { ErrorBoundary, HeroHeader, HomepageHero } from '@/components/client';
-import { EventList, ExpiryContainer, Team, Link } from '@/components/server';
+import HeroInfoSesh from '~/assets/notgpl/info-session.jpg';
+import HeroTeam from '~/assets/notgpl/team.jpg';
+import { ErrorBoundary, HeroHeader, HomepageHero } from '~/components/client';
+import { EventList, ExpiryContainer, Team, Link } from '~/components/server';
 
-import teamMembers from '@/data/team.json';
+import teamMembers from '~/data/team.json';
 
 export const metadata = {
 	title: 'Home - GDSC UTM',
