@@ -56,7 +56,7 @@ const getEvents = async (limit, from, to) => {
  * @param {id} id id of the event
  * @returns {object} bevy event object
  */
-const getDescription = async id => {
+const fetchEventInfo = async id => {
 	return await fetch(process.env.EVENT_API_URL + id, {
 		next: { revalidate: 604800 }, // revalidate once a week
 	})
@@ -66,26 +66,51 @@ const getDescription = async id => {
 				return data['message'];
 			}
 
-			return data['description_short'];
+			return data;
 		})
 		.catch(error => {
 			return error?.message;
 		});
 };
 
+const concatStrings = (...strings) => strings.filter(Boolean).join(' ');
+
 /**
- * get descriptions for events from api
+ * get descriptions and locations for events from api
  */
-export const getDescriptions = async (limit, from, to) => {
+export const getEnrichedEvents = async (limit, from, to) => {
 	const events = await getEvents(limit, from, to);
 
-	const descriptions = await Promise.all(
+	const eventInfo = await Promise.all(
 		events.map(async event => {
-			return await getDescription(event['id']);
+			return await fetchEventInfo(event['id']);
 		})
 	);
 
-	return { events, descriptions };
+	const descriptions = eventInfo.map(event => {
+		if (event['message']) {
+			return event['message'];
+		}
+
+		return event['description_short'];
+	});
+
+	const locations = eventInfo.map(event => {
+		if (event['message']) {
+			return '';
+		}
+
+		return concatStrings(
+			event['venue_name'],
+			event['venue_address'],
+			event['venue_city'],
+			event['venue_zip_code'],
+			event['meetup_url'],
+			event['eventbrite_url']
+		);
+	});
+
+	return { events, descriptions, locations };
 };
 
 /**
@@ -107,6 +132,9 @@ export const getYears = async () => {
 	return years.sort((a, b) => b - a);
 };
 
+/**
+ * return an ical for the events
+ */
 export async function GET(req, res) {
 	if (req.method !== 'GET') {
 		res.status(405).end();
@@ -117,7 +145,13 @@ export async function GET(req, res) {
 		name: 'GDSC UTM Events',
 	});
 
-	const { events, descriptions } = await getDescriptions(undefined, MIN_DATE, MAX_DATE);
+	calendar.prodId({
+		company: 'Google Developer Student Clubs - University of Toronto Mississauga',
+		product: 'GDSC UTM Events',
+		language: 'EN',
+	});
+
+	const { events, descriptions, locations } = await getEnrichedEvents(undefined, MIN_DATE, MAX_DATE);
 
 	events.forEach((event, id) => {
 		calendar.createEvent({
@@ -126,6 +160,7 @@ export async function GET(req, res) {
 			summary: event['title'],
 			description: descriptions[id],
 			url: event['url'],
+			location: locations[id] || undefined,
 		});
 	});
 

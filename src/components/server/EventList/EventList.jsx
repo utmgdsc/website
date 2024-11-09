@@ -1,7 +1,7 @@
 import { ConvertDate } from '~/components/server';
 import { InfoCard } from '~/components/client';
 import { Alert, Grid, Typography } from '@mui/material';
-import { MIN_DATE, MAX_DATE, getDescriptions, getYears } from '~/app/api/events/route';
+import { MIN_DATE, MAX_DATE, getEnrichedEvents, getYears } from '~/app/api/events/route';
 
 const EventInfoCard = ({ event, description }) => {
 	return (
@@ -26,7 +26,7 @@ const EventInfoCard = ({ event, description }) => {
  * @returns {JSX.Element} EventList component
  */
 export const EventList = async ({ limit, from = MIN_DATE, to = MAX_DATE, EmptyComponent = null }) => {
-	const { events, descriptions } = await getDescriptions(limit, from, to);
+	const { events, descriptions } = await getEnrichedEvents(limit, from, to);
 
 	if (!Array.isArray(events)) {
 		return <Alert severity="error">{events?.message}</Alert>;
