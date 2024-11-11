@@ -44,9 +44,10 @@ const useParallax = (position, containerRef) => {
  * @property {string} height height of the header
  * @property {string} width width of the header
  * @property {string} headerLevel level of the header, i.e., h1, h2, h3, etc.
+ * @property {object} imgProps props to pass to the image component
  * @returns {JSX.Element} hero image style header component
  */
-export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem', headerLevel = 'h1' }) => {
+export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem', headerLevel = 'h1', imgProps }) => {
 	const containerRef = useRef(null);
 
 	const { imgOffset, imgHeight, accelSpeedCalc } = useParallax(position, containerRef);
@@ -82,7 +83,6 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 			className="hero-header-parallax"
 		>
 			<Image
-				placeholder="blur"
 				src={picture}
 				sizes="100vw"
 				style={{
@@ -97,6 +97,7 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem'
 				}}
 				loading="lazy"
 				alt=""
+				{...imgProps}
 			/>
 			<Container
 				maxWidth="unset !important"

@@ -11,8 +11,9 @@ import Image from 'next/image';
  * @property {string} description description of the card if applicable
  * @property {string} alt alt text for the image
  * @property {number} height height of the image
+ * @property {Object} imgProps props for the image
  */
-export const ImageLinkCard = ({ href, title, image, description, alt, height = 140 }) => {
+export const ImageLinkCard = ({ href, title, image, description, alt, height = 140, imgProps }) => {
 	// todo for UX add an arrow
 
 	return (
@@ -32,10 +33,10 @@ export const ImageLinkCard = ({ href, title, image, description, alt, height = 1
 					component={() => (
 						<Image
 							height={height}
-							placeholder="blur"
 							src={image}
 							alt={alt}
 							className="MuiCardMedia-img MuiCardMedia-media"
+							{...imgProps}
 						/>
 					)}
 					height={height}

@@ -1,6 +1,5 @@
-import bannerImage from '~/assets/notgpl/project_banner.jpg';
 import { FAQList, ProjectList } from '~/components/client';
-import { ExpiryContainer, Link } from '~/components/server';
+import { ExpiryContainer, getProprietaryURL, Link } from '~/components/server';
 import { HeroLayout } from '~/layouts/HeroLayout';
 import { Alert } from '@mui/material';
 import FAQData from './faq.json';
@@ -11,7 +10,16 @@ export const metadata = {
 
 const ProjectPage = () => {
 	return (
-		<HeroLayout title={metadata.title} picture={bannerImage} position="bottom" id="projects">
+		<HeroLayout
+			title={metadata.title}
+			picture={getProprietaryURL('heroes/project-banner.jpg')}
+			position="bottom"
+			id="projects"
+			imgProps={{
+				width: 2813,
+				height: 1875,
+			}}
+		>
 			<ExpiryContainer date={'2023-08-20'}>
 				<Alert variant="info">
 					Community projects are back for Fall 2023! If you are a UTM CS Major/Spec,{' '}
