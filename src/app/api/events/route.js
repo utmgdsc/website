@@ -121,6 +121,10 @@ export const getYears = async () => {
 	return years.sort((a, b) => b - a);
 };
 
+/** @see https://chroniclebot.com/docs/notifier/front-matter */
+const generateChronicleFrontMatter = info =>
+	`+++${info['cropped_banner_url'] ? `\ncover="${info['cropped_banner_url']}"` : ''}${info['url'] ? `\nsummary_link="${info['url']}"` : ''}${info['picture']['url'] ? `\nthumbnail="${info['picture']['url']}"` : ''}\n+++\n\nRSVP: ${info['url']}${info['description'] ? `\n\n${info['description']}` : ''}`;
+
 /**
  * return an ical for the events
  */
@@ -153,9 +157,7 @@ export async function GET(req, res) {
 			start: new Date(info['start_date']),
 			end: new Date(info['end_date']),
 			summary: info['title'],
-			description: isDiscord
-				? `+++${info['cropped_banner_url'] ? `\ncover="${info['cropped_banner_url']}"` : ''}${info['url'] ? `\nsummary_link="${info['url']}"` : ''}${info['picture']['url'] ? `\nthumbnail="${info['picture']['url']}"` : ''}\n+++\n\n${info['description_short']}\n\nRSVP: ${info['url']}`
-				: info['description_short'],
+			description: isDiscord ? generateChronicleFrontMatter(info) : info['description'],
 			url: event['url'],
 			location: concatStrings(info['venue_name'], info['meetup_url'], info['eventbrite_url']) || undefined,
 			id: info['id'],
