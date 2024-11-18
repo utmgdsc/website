@@ -16,7 +16,7 @@
 		"@emotion/react": "^11.13.3",
 		"@emotion/styled": "^11.13.0",
 		"@mui/icons-material": "^6.1.6",
-		"@mui/material": "^6.1.6",
+		"@mui/material": "^6.1.7",
 		"@mui/material-nextjs": "^6.1.6",
 		"ical-generator": "^8.0.1",
 		"js-yaml": "^4.1.0",
