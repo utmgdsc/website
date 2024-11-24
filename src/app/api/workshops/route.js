@@ -4,6 +4,10 @@ import yaml from 'js-yaml';
  * Get data from the workshops repo, and parse it into a JSON object
  */
 export const getData = async () => {
+	if (!process.env.WORKSHOPS_HOSTNAME) {
+		throw new Error('WORKSHOPS_HOSTNAME environment variable not set');
+	}
+
 	return fetch(`https://${process.env.WORKSHOPS_HOSTNAME}/all.yml`, {
 		next: { revalidate: 86400 }, // revalidate daily
 	})

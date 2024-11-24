@@ -1,4 +1,4 @@
-import { PathnameTabs } from '~/components/client';
+import { ErrorBoundary, PathnameTabs } from '~/components/client';
 import { EventList, getProprietaryURL, getYearTabs } from '~/components/server';
 import { HeroLayout } from '~/layouts/HeroLayout';
 import { Typography } from '@mui/material';
@@ -14,9 +14,6 @@ export const metadata = {
 export default async function EventsLayout({ children }) {
 	/** the current date */
 	const today = new Date();
-
-	/** all of the years gdsc has had events */
-	const years = await getYearTabs();
 
 	return (
 		<HeroLayout
@@ -34,29 +31,33 @@ export default async function EventsLayout({ children }) {
 					Upcoming Events
 				</Typography>
 
-				<EventList
-					from={today}
-					EmptyComponent={() => (
-						<Typography variant="h5" component="p" gutterBottom>
-							None yet! Check back soon or follow us on social media to stay updated! 🤗
-						</Typography>
-					)}
-				/>
+				<ErrorBoundary>
+					<EventList
+						from={today}
+						EmptyComponent={() => (
+							<Typography variant="h5" component="p" gutterBottom>
+								None yet! Check back soon or follow us on social media to stay updated! 🤗
+							</Typography>
+						)}
+					/>
+				</ErrorBoundary>
 			</section>
 			<section>
 				<Typography component="h2" variant="h4" id="past-events">
 					Past Events
 				</Typography>
 
-				<PathnameTabs
-					values={years.map(year => year.toString())}
-					sx={{ marginBottom: '1rem' }}
-					slice={2}
-					variant="scrollable"
-					scrollButtons="auto"
-					defaultValue={today.getFullYear().toString()}
-					urlPrepend="/events"
-				/>
+				<ErrorBoundary>
+					<PathnameTabs
+						values={(await getYearTabs()).map(year => year.toString())}
+						sx={{ marginBottom: '1rem' }}
+						slice={2}
+						variant="scrollable"
+						scrollButtons="auto"
+						defaultValue={today.getFullYear().toString()}
+						urlPrepend="/events"
+					/>
+				</ErrorBoundary>
 				{children}
 			</section>
 		</HeroLayout>

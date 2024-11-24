@@ -22,6 +22,10 @@ export const MAX_DATE = new Date(8640000000000000);
  * @returns {object} bevy chapter object
  */
 const getEvents = async (limit, from, to) => {
+	if (!process.env.CHAPTER_API_URL) {
+		throw new Error('CHAPTER_API_URL is not defined in the environment variables.');
+	}
+
 	return await fetch(process.env.CHAPTER_API_URL, {
 		next: { revalidate: 3600 }, // revalidate once an hour
 	})
