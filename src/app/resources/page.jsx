@@ -1,10 +1,9 @@
 import Brand from '~/assets/graphics/logo_clouds.png';
-import workshopImage from '~/assets/notgpl/051A6228.jpg';
-import bannerImage from '~/assets/notgpl/IMG_4712.jpg';
 import { FAQList, ImageLinkCard } from '~/components/client';
 import faq from '~/data/faq.json';
 import { HeroLayout } from '~/layouts/HeroLayout';
 import { Grid } from '@mui/material';
+import { getProprietaryURL } from '~/components/server';
 
 export const metadata = {
 	title: 'Resources',
@@ -15,7 +14,17 @@ export const metadata = {
  */
 const ResourcesPage = () => {
 	return (
-		<HeroLayout title={metadata.title} picture={bannerImage} height="20rem" position="bottom" id="resources">
+		<HeroLayout
+			title={metadata.title}
+			picture={getProprietaryURL('heroes/general-meeting.jpg')}
+			height="20rem"
+			position="bottom"
+			id="resources"
+			imgProps={{
+				width: 4032,
+				height: 3024,
+			}}
+		>
 			<Grid
 				container
 				spacing={2}
@@ -31,7 +40,11 @@ const ResourcesPage = () => {
 						alt=""
 						href="/resources/workshops"
 						height="auto"
-						image={workshopImage}
+						image={getProprietaryURL('heroes/wit-workshop.jpg')}
+						imgProps={{
+							width: 4608,
+							height: 3072,
+						}}
 					/>
 				</Grid>
 				<Grid item>

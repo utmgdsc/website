@@ -10,7 +10,7 @@ const Events = async ({ params }) => {
 	const today = new Date();
 
 	/** the year to display events for */
-	const year = params.year ? Number(params.year[0]) : today.getFullYear();
+	const year = (await params.year) ? Number(await params.year[0]) : today.getFullYear();
 
 	return (
 		<YearedEventList

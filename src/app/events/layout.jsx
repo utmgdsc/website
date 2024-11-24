@@ -1,6 +1,5 @@
-import bannerImage from '~/assets/notgpl/IMG_1045.jpg';
 import { PathnameTabs } from '~/components/client';
-import { EventList, getYearTabs } from '~/components/server';
+import { EventList, getProprietaryURL, getYearTabs } from '~/components/server';
 import { HeroLayout } from '~/layouts/HeroLayout';
 import { Typography } from '@mui/material';
 
@@ -20,7 +19,16 @@ export default async function EventsLayout({ children }) {
 	const years = await getYearTabs();
 
 	return (
-		<HeroLayout title={'Events'} picture={bannerImage} position="bottom" id="events">
+		<HeroLayout
+			title={'Events'}
+			picture={getProprietaryURL('heroes/pizza-workshop.jpg')}
+			position="bottom"
+			id="events"
+			imgProps={{
+				width: 4032,
+				height: 3024,
+			}}
+		>
 			<section>
 				<Typography component="h2" variant="h4" id="upcoming-events">
 					Upcoming Events

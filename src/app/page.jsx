@@ -1,8 +1,6 @@
 import { Container, Typography } from '@mui/material';
-import HeroInfoSesh from '~/assets/notgpl/info-session.jpg';
-import HeroTeam from '~/assets/notgpl/team.jpg';
 import { ErrorBoundary, HeroHeader, HomepageHero } from '~/components/client';
-import { EventList, ExpiryContainer, Team, Link } from '~/components/server';
+import { EventList, ExpiryContainer, Team, Link, getProprietaryURL } from '~/components/server';
 
 import teamMembers from '~/data/team.json';
 
@@ -36,7 +34,16 @@ const Homepage = async () => {
 			</section>
 			{/* about / who are we */}
 			<section id="who-are-we">
-				<HeroHeader text="Who are we?" picture={HeroInfoSesh} maxWidth="md" position="top" />
+				<HeroHeader
+					text="Who are we?"
+					picture={getProprietaryURL('heroes/info-session.jpg')}
+					maxWidth="md"
+					position="top"
+					imgProps={{
+						width: 800,
+						height: 449,
+					}}
+				/>
 				<Container sx={{ py: 8, lineHeight: '2em' }} maxWidth="md">
 					<p>
 						<dfn id="gsdc-defn">Google Developer Student Clubs</dfn> (<abbr>GDSC</abbr>) is a student-led
@@ -58,7 +65,15 @@ const Homepage = async () => {
 			{/* team list */}
 			<section id="meet-the-team">
 				<ExpiryContainer date={'2025-06-30'}>
-					<HeroHeader text="Meet the team" picture={HeroTeam} maxWidth="md" />
+					<HeroHeader
+						text="Meet the team"
+						picture={getProprietaryURL('heroes/team.jpg')}
+						maxWidth="md"
+						imgProps={{
+							width: 2730,
+							height: 2048,
+						}}
+					/>
 					<Container sx={{ py: 8, px: 0 }} maxWidth="md">
 						<ErrorBoundary>
 							{Object.keys(teamMembers).map((subteam, index) => {

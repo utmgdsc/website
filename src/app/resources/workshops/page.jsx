@@ -2,8 +2,7 @@ import { Box, Grid } from '@mui/material';
 import { getData, parseWorkshops } from '~/app/api/workshops/route';
 import { InfoCard, TableOfContents, WorkshopWidget } from '~/components/client';
 import { ResourceLayout } from '~/layouts/ResourceLayout';
-import { workshopHash } from '~/components/server';
-import bannerImage from '~/assets/notgpl/051A6228.jpg';
+import { getProprietaryURL, workshopHash } from '~/components/server';
 
 export const metadata = {
 	title: 'Workshop Archive',
@@ -17,7 +16,16 @@ const WorkshopArchive = async () => {
 
 	return (
 		// todo a search bar would be cool
-		<ResourceLayout title={metadata.title} position="bottom" picture={bannerImage} id="workshop-archive">
+		<ResourceLayout
+			title={metadata.title}
+			position="bottom"
+			picture={getProprietaryURL('heroes/wit-workshop.jpg')}
+			imgProps={{
+				width: 4608,
+				height: 3072,
+			}}
+			id="workshop-archive"
+		>
 			<Grid container spacing={2} sx={{ mb: 4 }}>
 				{/* get latest 3 workshops and give them an infocard */}
 				{Object.keys(workshops)

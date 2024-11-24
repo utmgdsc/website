@@ -10,11 +10,12 @@ import { HeroLayout } from '~/layouts/HeroLayout';
  * @property {string} id - Container id
  * @property {string} position - Position of the hero header
  * @property {number} height - Height of the hero header
+ * @param {Object} props - other props passed to HeroLayout
  * @return {JSX.Element} Resource layout component
  */
-export const ResourceLayout = ({ children, title, picture, id, position, height }) => {
+export const ResourceLayout = ({ children, title, picture, id, position, height, ...props }) => {
 	return (
-		<HeroLayout title={title} picture={picture} id={id} position={position} height={height}>
+		<HeroLayout title={title} picture={picture} id={id} position={position} height={height} {...props}>
 			<RouterBreadcrumb />
 			<br />
 			{children}
