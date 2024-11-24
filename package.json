@@ -1,7 +1,7 @@
 {
 	"name": "gdscutm-website",
 	"description": "GDSC UofT Mississauga Website",
-	"version": "2024.08",
+	"version": "2024.11",
 	"private": true,
 	"license": "LGPL-3.0-or-later",
 	"repository": {
