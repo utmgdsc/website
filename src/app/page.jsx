@@ -64,7 +64,7 @@ const Homepage = async () => {
 			</section>
 			{/* team list */}
 			<section id="meet-the-team">
-				<ExpiryContainer date={'2024-06-30'}>
+				<ExpiryContainer date={'2025-06-30'}>
 					<HeroHeader
 						text="Meet the team"
 						picture={getProprietaryURL('heroes/team.jpg')}

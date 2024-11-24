@@ -1,115 +1,150 @@
 {
 	"President": [
 		{
-			"name": "Giang",
+			"name": "Lujain",
 			"role": "Co-president",
-			"picture": "giang.jpg"
+			"picture": "Lujain.jpg"
 		},
 		{
-			"name": "Jackson",
+			"name": "Leanne",
 			"role": "Co-president",
-			"picture": "jackson.jpg"
+			"picture": "leanne.jpg"
+		},
+		{
+			"name": "Usha",
+			"role": "Co-president",
+			"picture": "usha.jpg"
 		}
 	],
 	"Team Lead": [
 		{
-			"name": "Jasleen",
+			"name": "Emma",
 			"role": "Marketing",
+			"picture": "Emma.PNG"
+		},
+		{
+			"name": "Liz",
+			"role": "Marketing",
+			"picture": "Elizabeth.png"
+		},
+		{
+			"name": "Jasleen",
+			"role": "Outreach & Logistics",
 			"picture": "jasleen.jpg"
 		},
 		{
-			"name": "Estelle",
-			"role": "Marketing",
-			"picture": "estelle.jpg"
+			"name": "Niti",
+			"role": "Outreach & Logistics",
+			"picture": "Niti.JPG"
 		},
 		{
-			"name": "Hammad",
+			"name": "Patrick",
 			"role": "Outreach & Logistics",
-			"picture": "hammad.jpg"
-		},
-		{
-			"name": "Lujain",
-			"role": "Outreach & Logistics",
-			"picture": "lujain.jpg"
-		},
-		{
-			"name": "Leanne",
-			"role": "Outreach & Logistics",
-			"picture": "leanne.jpg"
+			"picture": "Patrick.jpeg"
 		},
 		{
 			"name": "Abdullah",
 			"role": "Technical",
-			"picture": "abdullah.jpg"
+			"picture": "Abdullah.jpeg"
 		},
 		{
 			"name": "Ido",
 			"role": "Technical",
-			"picture": "ido.jpg"
+			"picture": "Ido.png"
 		},
 		{
-			"name": "Michael",
+			"name": "Ben",
 			"role": "Technical",
-			"picture": "michael.jpg"
+			"picture": "Benjamin.jpeg"
 		},
 		{
-			"name": "Sam",
+			"name": "Taha",
 			"role": "Technical",
-			"picture": "sam.jpg"
+			"picture": "Taha.jpg"
 		},
 		{
 			"name": "Usha",
 			"role": "Finance",
 			"picture": "usha.jpg"
+		},
+		{
+			"name": "Vera",
+			"role": "Finance",
+			"picture": "Vera.jpg"
+		},
+		{
+			"name": "Nathannya Satyaviana",
+			"role": "Professional Development",
+			"picture": "Nathannya.JPG"
 		}
 	],
 	"Associate": [
 		{
-			"name": "Elif",
+			"name": "Mark",
 			"role": "Marketing",
-			"picture": "elif.jpg"
+			"picture": "Mark.JPG"
 		},
 		{
-			"name": "Liz",
+			"name": "Carolina",
 			"role": "Marketing",
-			"picture": "liz.jpg"
+			"picture": "Caronlina.jpg"
 		},
 		{
-			"name": "Deepasri",
+			"name": "Iffah",
 			"role": "Outreach & Logistics",
-			"picture": "deepasri.jpg"
+			"picture": "Iffah.jpg"
 		},
 		{
-			"name": "Iris",
+			"name": "Navya",
 			"role": "Outreach & Logistics",
-			"picture": "iris.jpg"
+			"picture": "Navya.jpg"
 		},
 		{
-			"name": "Daniyal",
+			"name": "David",
 			"role": "Technical",
-			"picture": "daniyal.jpg"
+			"picture": "David.jpg"
 		},
 		{
-			"name": "Jesse",
+			"name": "Jasika",
 			"role": "Technical",
-			"picture": "jesse.png"
+			"picture": "Jasika.jpg"
 		},
 		{
-			"name": "Taha",
+			"name": "Adrien",
 			"role": "Technical",
-			"picture": "taha.jpg"
+			"picture": "Adrien.jpg"
+		},
+		{
+			"name": "Sajeevan",
+			"role": "Professional Development",
+			"picture": "Sajeevan.jpg"
+		},
+		{
+			"name": "Varun",
+			"role": "Professional Development",
+			"picture": "Varun.jpg"
 		}
 	],
 	"Advisor": [
 		{
-			"name": "Ahmed Ashraf",
-			"role": "Faculty Advisor",
-			"picture": "ahmed.jpg"
+			"name": "Hamza",
+			"role": "Finance Advisor",
+			"picture": "hamza.jpg"
 		},
 		{
-			"name": "Shubh",
+			"name": "Giang",
+			"role": "Retirement Advisor",
+			"picture": "giang.jpg"
+		},
+		{
+			"name": "Estelle",
 			"role": "Advisor",
-			"picture": "Shubh.png"
+			"picture": "estelle.png"
+		},
+		{
+			"name": "Deepasri",
+			"role": "Advisor",
+			"picture": "deepasri.png"
 		},
 		{
 			"name": "Chris",
@@ -117,19 +152,29 @@
 			"picture": "Chris.png"
 		},
 		{
-			"name": "Hamza",
+			"name": "Sam",
 			"role": "Advisor",
-			"picture": "hamza.jpg"
+			"picture": "sam.jpg"
 		},
 		{
-			"name": "Roman",
+			"name": "Hammad",
 			"role": "Advisor",
-			"picture": "roman.jpg"
+			"picture": "hammad.jpg"
 		},
 		{
-			"name": "Daksh",
+			"name": "Jackson",
 			"role": "Advisor",
-			"picture": "daksh.png"
+			"picture": "jackson.jpg"
+		},
+		{
+			"name": "Shubh",
+			"role": "Advisor",
+			"picture": "Shubh.png"
+		},
+		{
+			"name": "Micheal",
+			"role": "Advisor",
+			"picture": "michael.jpg"
 		}
 	]
 }
