@@ -4,13 +4,19 @@ import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 
 /**
+ * Props for the ErrorBoundary component
+ * @typedef {Object} ErrorBoundaryProps
+ * @prop {string} my margin-top and margin-bottom
+ * @prop {React.ReactNode} children The children to render
+ */
+
+/**
  * Default error boundary component for catching errors in children components
  * using MUI Alert component
  *
  * AO from https://reactjs.org/docs/error-boundaries.html
  *
- * @property {string} my margin-top and margin-bottom
- * @property {React.ReactNode} children The children to render
+ * @augments React.Component<ErrorBoundaryProps>
  */
 export class ErrorBoundary extends React.Component {
 	constructor(props) {

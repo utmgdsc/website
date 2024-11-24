@@ -28,7 +28,6 @@ const sharedPalette = {
 
 /**
  * Generates a GoogleTheme
- * @property {string} mode the theme mode
  */
 export const googleTheme = createTheme({
 	cssVariables: true,

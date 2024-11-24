@@ -2,12 +2,13 @@ import { getImageProps } from 'next/image';
 
 /**
  * An image that changes based on the system theme
- * @property {string} srcLight The light mode image
- * @property {string} srcDark The dark mode image
- * @property {string} alt The alt text for the image
- * @property {boolean} isSVG Bypasses `getImageProps` if true since it breaks SVG
- * @property {import('next/image').ImageProps} props The props to pass to the Image component
- * @property {import('react').HTMLProps<HTMLPictureElement>} pictureProps The props to pass to the picture element
+ * @param {Object} props
+ * @param {string} props.srcLight The light mode image
+ * @param {string} props.srcDark The dark mode image
+ * @param {string} props.alt The alt text for the image
+ * @param {boolean} props.isSVG Bypasses `getImageProps` if true since it breaks SVG
+ * @param {import('next/image').ImageProps} props.props The props to pass to the Image component
+ * @param {import('react').HTMLProps<HTMLPictureElement>} props.pictureProps The props to pass to the picture element
  *
  * @see https://stackoverflow.com/a/78375615
  */

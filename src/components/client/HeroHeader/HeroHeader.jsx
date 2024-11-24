@@ -37,14 +37,16 @@ const useParallax = (position, containerRef) => {
  * A banner with header text and a background image. It is a hero image style header
  * component, spanning the full width of the page/container.
  * It is recommended to use this component in a container with a max width of 100%.
- * @property {string} text text to display on the header
- * @property {string} picture image to display on the header
- * @property {string} maxWidth max width of the header to pass to the container
- * @property {string} position position of the image, either "top" or "bottom"
- * @property {string} height height of the header
- * @property {string} width width of the header
- * @property {string} headerLevel level of the header, i.e., h1, h2, h3, etc.
- * @property {object} imgProps props to pass to the image component
+ *
+ * @param {Object} props
+ * @param {string} props.text text to display on the header
+ * @param {string} props.picture image to display on the header
+ * @param {string} props.maxWidth max width of the header to pass to the container
+ * @param {string} props.position position of the image, either "top" or "bottom"
+ * @param {string} props.height height of the header
+ * @param {string} props.width width of the header
+ * @param {string} props.headerLevel level of the header, i.e., h1, h2, h3, etc.
+ * @param {object} props.imgProps props to pass to the image component
  * @returns {JSX.Element} hero image style header component
  */
 export const HeroHeader = ({ text, picture, maxWidth, position, height = '30rem', headerLevel = 'h1', imgProps }) => {

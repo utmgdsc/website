@@ -6,7 +6,8 @@ import { googleTheme } from './theme';
 
 /**
  * From MUI Starter Code
- * @property {React.ReactNode} children
+ * @param {object} props
+ * @param {React.ReactNode} props.children
  *
  * @see https://github.com/mui/material-ui/blob/master/examples/material-ui-nextjs/src/app/layout.js
  */

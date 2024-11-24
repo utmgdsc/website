@@ -2,9 +2,10 @@ import { ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from
 
 /**
  * A button that is used in the FAQ section
- * @property {string} href The link to the resource
- * @property {mui.material.Icon} icon The icon to be displayed
- * @property {string} text The text to be displayed
+ * @param {Object} props
+ * @param {string} props.href The link to the resource
+ * @param {React.ReactNode} props.icon The icon to be displayed
+ * @param {string} props.text The text to be displayed
  * @return {JSX.Element} The button
  */
 export const WorkshopButton = ({ href, icon, text }) => {

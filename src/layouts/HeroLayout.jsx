@@ -4,13 +4,14 @@ import { HeroHeader } from '~/components/client';
 
 /**
  * Layout for pages with a hero header (home, about, etc.)
- * @property {Object} children - Children components
- * @property {string} title - Title of the page
- * @property {string} picture - Picture to be used as the hero header
- * @property {string} id - Container id
- * @property {string} position - Position of the hero header
- * @property {number} height - Height of the hero header
- * @param {Object} props - other props passed to HeroHeader
+ * @param {Object} props
+ * @param {JSX.Element} props.children - Children components
+ * @param {string} props.title - Title of the page
+ * @param {string} props.picture - Picture to be used as the hero header
+ * @param {string} props.id - Container id
+ * @param {string} props.position - Position of the hero header
+ * @param {number} props.height - Height of the hero header
+ * @param {Object} props.props - other props passed to HeroHeader
  * @return {JSX.Element} Resource layout component
  */
 export const HeroLayout = ({ children, title, picture, id, position, height, ...props }) => {

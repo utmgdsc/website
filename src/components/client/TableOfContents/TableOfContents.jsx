@@ -4,9 +4,10 @@ import { Box, Typography } from '@mui/material';
 
 /**
  * A link that scrolls an id into view.. smoothly
- * @property {string} id id of the element to scroll to
- * @property {string} title title of the link
- * @property {JSX.Element} children children of the link
+ * @param {Object} props
+ * @param {string} param.id id of the element to scroll to
+ * @param {string} param.title title of the link
+ * @param {JSX.Element} param.children children of the link
  * @returns {JSX.Element} JSX elements of the link
  */
 const SmoothScrollingLink = ({ id, title }) => {
@@ -19,8 +20,9 @@ const SmoothScrollingLink = ({ id, title }) => {
 
 /**
  * TOCHeading component in table of content
- * @property {string} heading to be shown
- * @property {string} activeId current heading id is displayed now
+ * @param {Object} props
+ * @param {string} props.heading to be shown
+ * @param {string} props.activeId current heading id is displayed now
  * @returns {JSX.Element} JSX elements of heading component
  */
 const TOCHeading = ({ heading, activeId }) => {

@@ -22,12 +22,13 @@ export const OpenInNewTabIcon = () => (
 
 /**
  * A link
- * @property {React.ReactNode} children The link's children
- * @property {string} href The link's href
- * @property {React.Ref} forwardedRef A ref to pass to the link
- * @property {boolean} external If true, the link will open in a new tab
- * @property {boolean} openInNewTab If true, the link will open in a new tab
- * @property {Object} props Any other props
+ * @param {Object} props
+ * @param {React.ReactNode} props.children The link's children
+ * @param {string} props.href The link's href
+ * @param {React.Ref} props.forwardedRef A ref to pass to the link
+ * @param {boolean} props.external If true, the link will open in a new tab
+ * @param {boolean} props.openInNewTab If true, the link will open in a new tab
+ * @param {Object} props.props Any other props
  * @returns {JSX.Element} A link
  */
 const NonForwardLink = ({ children, href, forwardedRef, external, openInNewTab = external, ...props }) => {
@@ -48,11 +49,12 @@ const NonForwardLink = ({ children, href, forwardedRef, external, openInNewTab =
 
 /**
  * A link that supports MUI styling
- * @property {string} href The link's href
- * @property {React.Ref} forwardedRef A ref to pass to the link
- * @property {boolean} external If true, the link will open in a new tab
- * @property {boolean} openInNewTab If true, the link will open in a new tab
- * @property {Object} props Any other props
+ * @param {Object} props
+ * @param {string} props.href The link's href
+ * @param {React.Ref} props.forwardedRef A ref to pass to the link
+ * @param {boolean} props.external If true, the link will open in a new tab
+ * @param {boolean} props.openInNewTab If true, the link will open in a new tab
+ * @param {Object} props.props Any other props
  */
 export const Link = forwardRef((props, ref) => <NonForwardLink {...props} forwardedRef={ref} />);
 

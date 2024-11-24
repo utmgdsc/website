@@ -1,6 +1,7 @@
 /**
  * Simple function to join strings with commas and an "and" at the end
- * @property {string[]} items The items to join
+ * @param {object} props
+ * @param {string[]} props.items The items to join
  * @returns {string} The JoinAnd(joined items)
  */
 export const JoinAnd = ({ items }) => {

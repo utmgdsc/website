@@ -7,16 +7,17 @@ const CardColors = ['success', 'error', 'warning', 'info'];
  * Gets the events from the GDSC (bevy) API and displays them in a card format.
  * The card has a clickable button that redirects to the event's page.
  *
- * NOTE: because this component is a Server Component, we pass the <a> tag, which means that
- * we cannot use Next.js' Link component. This means that we cannot use the Next.js router
+ * NOTE: because this component is a Server Component, we pass the <a> tag, so
+ * we cannot use Next.js' Link component. Thus we can't use the Next.js router
  *
- * @property {string} subtitle the subtitle of the event appearing above the title
- * @property {string} title the title of the event
- * @property {string} href the url of the event
- * @property {string} description the description of the event
- * @property {number} lines the number of lines to show in the description
- * @property {string} linkText the text to show on the button
- * @property {boolean} external whether the link is external or not, i.e., whether to open in a new tab or not
+ * @param {Object} props
+ * @param {string} props.subtitle the subtitle of the event appearing above the title
+ * @param {string} props.title the title of the event
+ * @param {string} props.href the url of the event
+ * @param {string} props.description the description of the event
+ * @param {number} props.lines the number of lines to show in the description
+ * @param {string} props.linkText the text to show on the button
+ * @param {boolean} props.external whether the link is external or not, i.e., whether to open in a new tab or not
  */
 export const InfoCard = ({
 	subtitle,

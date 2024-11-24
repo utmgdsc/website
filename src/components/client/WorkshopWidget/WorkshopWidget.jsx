@@ -4,7 +4,20 @@ import { Code, ExpandMore, RadioButtonChecked, Slideshow } from '@mui/icons-mate
 import { AccordionDetails, Box, List, Typography } from '@mui/material';
 
 /**
- * @property {{"key": {name: string; date: Date; host: string[]; description: string; code?: string; slides?: string; recording?: string;}[]}[]} item The workshop item from the workshops.json JSON file
+ * A workshop item
+ * @typedef {Object} WorkshopItem
+ * @property {string} name The name of the workshop
+ * @property {Date} date The date of the workshop
+ * @property {string[]} host The host of the workshop
+ * @property {string} description The description of the workshop
+ * @property {string} [code] The link to the starter code
+ * @property {string} [slides] The link to the slides
+ * @property {string} [recording] The link to the recording
+ */
+
+/**
+ * @param {object} props
+ * @param {WorkshopItem} props.item The workshop item from the workshops.json JSON file
  * @returns {JSX.Element} The workshop widget
  */
 export const WorkshopWidget = ({ item }) => {

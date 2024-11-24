@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 /**
  * A link for footer-flex. Takes the same props as "a".
- * @property {Object} props - props to pass to the link, same as "a" element
+ * @param {Object} props - props to pass to the link, same as "a" element
  *
  * @return {JSX.Element} Footer link
  */

@@ -3,9 +3,17 @@ import { AccordionDetails, AccordionSummary, Typography } from '@mui/material';
 import { Accordion } from '~/components/client';
 
 /**
+ * A single FAQ item.
+ * @typedef {object} FAQItem
+ * @property {string} question The question
+ * @property {string} answer The answer
+ */
+
+/**
  * A frequently asked question. Used in the Resources page.
  *
- * @property {{question: string, answer: string}[]} faq The frequently asked question
+ * @param {object} props
+ * @param {FAQItem} props.faq The frequently asked question
  *
  * @returns {JSX.Element} The faq widget
  */

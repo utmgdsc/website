@@ -4,7 +4,8 @@ import { Slide, useScrollTrigger } from '@mui/material';
 
 /**
  * Hides children on scroll down, shows on scroll up
- * @property {React.ReactNode} children The children to hide/show
+ * @param {Object} props
+ * @param {React.ReactNode} props.children The children to hide/show
  * @see https://mui.com/material-ui/react-app-bar/#HideAppBar.js
  */
 export const HideOnScroll = ({ children }) => {
@@ -32,7 +33,8 @@ export const HideOnScroll = ({ children }) => {
 
 /**
  * Adds elevation to children on scroll up
- * @property {React.ReactNode} children The children to add elevation to
+ * @param {Object} props
+ * @param {React.ReactNode} props.children The children to add elevation to
  * @see https://mui.com/material-ui/react-app-bar/#HideAppBar.js
  */
 export const ElevationScroll = ({ children }) => {

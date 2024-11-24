@@ -18,11 +18,12 @@ const EventInfoCard = ({ event, description }) => {
  * Gets the events from the GDSC (bevy) API.
  * If limit is specified, it will only show that many events.
  * If upcoming is specified, it will only show upcoming events. Otherwise, it will show all events.
- * @property {integer} limit the number of events to show
- * @property {Date} from the date to start showing events from (inclusive), based on end_date
- * @property {Date} to the date to stop showing events at (non-inclusive), based on end_date
- * @property {number} skeleton number of skeleton cards to show when loading
- * @property {JSX.Element} EmptyComponent component to show when there are no events
+ * @param {object} props
+ * @param {integer} props.limit the number of events to show
+ * @param {Date} props.from the date to start showing events from (inclusive), based on end_date
+ * @param {Date} props.to the date to stop showing events at (non-inclusive), based on end_date
+ * @param {number} props.skeleton number of skeleton cards to show when loading
+ * @param {JSX.Element} props.EmptyComponent component to show when there are no events
  * @returns {JSX.Element} EventList component
  */
 export const EventList = async ({ limit, from = MIN_DATE, to = MAX_DATE, EmptyComponent = null }) => {

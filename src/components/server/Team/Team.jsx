@@ -4,11 +4,16 @@ import { ImageFilterProps } from '~/components/client';
 import { getProprietaryURL } from '~/components/server';
 
 /**
- * A single team member
+ * A team member
+ * @typedef {Object} TeamMember
  * @property {string} name name of the team member
  * @property {string} role role of the team member
- * @property {string} picture picture of the team member
- * @property {string} pronouns pronouns of the team member
+ * @property {string} [picture] picture of the team member
+ */
+
+/**
+ * A single team member
+ * @param {TeamMember} props
  * @returns {JSX.Element} a single team member
  */
 const Person = ({ name, role, picture }) => {
@@ -76,8 +81,9 @@ const Person = ({ name, role, picture }) => {
 
 /**
  * Team component. Displays a team with a title and a list of team members
- * @property {{"key": {"name": string; "role": string; "pronouns": string; "picture": string;}}[]} teamInfo members data from the json file
- * @property {string} title title of the team
+ * @param {Object} props
+ * @param {TeamMember[]} props.teamInfo members data from the json file
+ * @param {string} props.title title of the team
  * @returns {JSX.Element} A collection of Person components representing a team
  */
 export const Team = ({ teamInfo, title }) => {
