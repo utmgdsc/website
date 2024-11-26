@@ -104,14 +104,7 @@ export const getEnrichedEvents = async (limit, from, to) => {
 			return '';
 		}
 
-		return concatStrings(
-			event['venue_name'],
-			event['venue_address'],
-			event['venue_city'],
-			event['venue_zip_code'],
-			event['meetup_url'],
-			event['eventbrite_url']
-		);
+		return concatStrings(event['venue_name'], event['meetup_url'], event['eventbrite_url']);
 	});
 
 	return { events, descriptions, locations };
@@ -165,6 +158,7 @@ export async function GET(req, res) {
 			description: descriptions[id],
 			url: event['url'],
 			location: locations[id] || undefined,
+			id: event['id'],
 		});
 	});
 
