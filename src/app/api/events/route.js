@@ -154,7 +154,7 @@ export async function GET(req, res) {
 			end: new Date(info['end_date']),
 			summary: info['title'],
 			description: isDiscord
-				? `+++${info['cropped_banner_url'] ? `\ncover="${info['cropped_banner_url']}"` : ''}${info['url'] ? `\nsummary_link="${info['url']}"` : ''}${info['picture']['url'] ? `\nthumbnail="${info['picture']['url']}"` : ''}\n+++\n\n${info['description_short']}`
+				? `+++${info['cropped_banner_url'] ? `\ncover="${info['cropped_banner_url']}"` : ''}${info['url'] ? `\nsummary_link="${info['url']}"` : ''}${info['picture']['url'] ? `\nthumbnail="${info['picture']['url']}"` : ''}\n+++\n\n${info['description_short']}\n\nRSVP: ${info['url']}`
 				: info['description_short'],
 			url: event['url'],
 			location: concatStrings(info['venue_name'], info['meetup_url'], info['eventbrite_url']) || undefined,
