@@ -99,15 +99,7 @@ export const getEnrichedEvents = async (limit, from, to) => {
 		return event['description_short'];
 	});
 
-	const locations = eventInfo.map(event => {
-		if (event['message']) {
-			return '';
-		}
-
-		return concatStrings(event['venue_name'], event['meetup_url'], event['eventbrite_url']);
-	});
-
-	return { events, descriptions, locations };
+	return { events, descriptions, eventInfo };
 };
 
 /**
@@ -148,17 +140,32 @@ export async function GET(req, res) {
 		language: 'EN',
 	});
 
-	const { events, descriptions, locations } = await getEnrichedEvents(undefined, MIN_DATE, MAX_DATE);
+	const { events, eventInfo } = await getEnrichedEvents(undefined, MIN_DATE, MAX_DATE);
+
+	const isDiscord = req.nextUrl.searchParams.get('useFrontMatter') ?? false;
+
+	console.log(isDiscord);
 
 	events.forEach((event, id) => {
+		const info = eventInfo[id];
+
 		calendar.createEvent({
-			start: new Date(event['start_date']),
-			end: new Date(event['end_date']),
-			summary: event['title'],
-			description: descriptions[id],
+			start: new Date(info['start_date']),
+			end: new Date(info['end_date']),
+			summary: info['title'],
+			description: isDiscord
+				? `+++
+${info['cropped_banner_url'] ? `cover="${info['cropped_banner_url']}` : ''}
+${info['url'] ? `summary_link="${info['url']}"` : ''}
+${info['picture']['url'] ? `thumbnail="${info['picture']['url']}"` : ''}
++++
+
+${info['description_short']}
+`
+				: info['description_short'],
 			url: event['url'],
-			location: locations[id] || undefined,
-			id: event['id'],
+			location: concatStrings(info['venue_name'], info['meetup_url'], info['eventbrite_url']) || undefined,
+			id: info['id'],
 		});
 	});
 
