@@ -1,4 +1,3 @@
-import { forwardRef } from 'react';
 import NextLink from 'next/link';
 import { OpenInNew } from '@mui/icons-material';
 import { Link as MaterialLink } from '@mui/material';
@@ -25,37 +24,21 @@ export const OpenInNewTabIcon = () => (
  * @param {Object} props
  * @param {React.ReactNode} props.children The link's children
  * @param {string} props.href The link's href
- * @param {React.Ref} props.forwardedRef A ref to pass to the link
+ * @param {React.Ref} props.ref A ref to pass to the link
  * @param {boolean} props.external If true, the link will open in a new tab
- * @param {boolean} props.openInNewTab If true, the link will open in a new tab
  * @param {Object} props.props Any other props
  * @returns {JSX.Element} A link
  */
-const NonForwardLink = ({ children, href, forwardedRef, external, openInNewTab = external, ...props }) => {
-	return (
-		<MaterialLink
-			component={NextLink}
-			href={href}
-			ref={forwardedRef}
-			rel={openInNewTab ? 'noopener noreferrer' : undefined}
-			target={openInNewTab ? '_blank' : undefined}
-			{...props}
-		>
-			{children}
-			{openInNewTab && <OpenInNewTabIcon />}
-		</MaterialLink>
-	);
-};
-
-/**
- * A link that supports MUI styling
- * @param {Object} props
- * @param {string} props.href The link's href
- * @param {React.Ref} props.forwardedRef A ref to pass to the link
- * @param {boolean} props.external If true, the link will open in a new tab
- * @param {boolean} props.openInNewTab If true, the link will open in a new tab
- * @param {Object} props.props Any other props
- */
-export const Link = forwardRef((props, ref) => <NonForwardLink {...props} forwardedRef={ref} />);
-
-Link.displayName = 'Link';
+export const Link = ({ children, href, ref, external, ...props }) => (
+	<MaterialLink
+		component={NextLink}
+		href={href}
+		ref={ref}
+		rel={external ? 'noopener noreferrer' : undefined}
+		target={external ? '_blank' : undefined}
+		{...props}
+	>
+		{children}
+		{external && <OpenInNewTabIcon />}
+	</MaterialLink>
+);
