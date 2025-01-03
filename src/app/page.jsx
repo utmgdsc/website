@@ -1,9 +1,16 @@
 import { ArrowForward } from '@mui/icons-material';
 import { Button, Container, Typography } from '@mui/material';
 import { ErrorBoundary, FAQList, HomepageHero } from '~/components/client';
-import { EventList, ExpiryContainer, HomepageSection, Link, Team, getProprietaryURL } from '~/components/server';
+import {
+	EventList,
+	ExpiryContainer,
+	HomepageSection,
+	Link,
+	Team,
+	getProprietaryURL,
+	LatestWorkshops,
+} from '~/components/server';
 import faq from '~/data/faq.json';
-import { LatestWorkshops } from './past-workshops/page';
 
 export const metadata = {
 	title: 'Home - GDSC UTM',

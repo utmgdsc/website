@@ -12,4 +12,5 @@ export * from './JoinAnd';
 export * from './Link';
 export * from './NamedIconButton';
 export * from './Team';
+export * from './WorkshopArchiveInfo';
 export * from './workshopHash';

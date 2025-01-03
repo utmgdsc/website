@@ -1,7 +1,7 @@
 import { ConvertDate } from '~/components/server';
 import { InfoCard } from '~/components/client';
 import { Alert, Grid2 as Grid, Typography } from '@mui/material';
-import { MIN_DATE, MAX_DATE, getEnrichedEvents, getYears } from '~/app/api/events/route';
+import { MIN_DATE, MAX_DATE, getEnrichedEvents, getYears } from '~/app/api/events/getEventData';
 
 const EventInfoCard = ({ event, description }) => {
 	return (
@@ -109,6 +109,6 @@ export const getYearTabs = async () => {
 	const years = await getYears();
 
 	return years.map(year => {
-		return year;
+		return year.toString();
 	});
 };

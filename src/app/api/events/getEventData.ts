@@ -1,28 +1,25 @@
-import ical from 'ical-generator';
 import { NodeHtmlMarkdown } from 'node-html-markdown';
 
 /**
  * Minimum date allowed by JavaScript Date object.
- * @type {Date}
  * @see https://262.ecma-international.org/5.1/#sec-15.9.1.1
  */
-export const MIN_DATE = new Date(-8640000000000000);
+export const MIN_DATE: Date = new Date(-8640000000000000);
 
 /**
  * Maximum date allowed by JavaScript Date object.
- * @type {Date}
  * @see https://262.ecma-international.org/5.1/#sec-15.9.1.1
  */
-export const MAX_DATE = new Date(8640000000000000);
+export const MAX_DATE: Date = new Date(8640000000000000);
 
 /**
  * load external json file from api
- * @param {integer} limit the number of events to show
- * @param {Date} from the date to start showing events from (inclusive), based on end_date
- * @param {Date} to the date to stop showing events at (non-inclusive), based on end_date
- * @returns {object} bevy chapter object
+ * @param limit the number of events to show
+ * @param from the date to start showing events from (inclusive), based on end_date
+ * @param to the date to stop showing events at (non-inclusive), based on end_date
+ * @returns bevy chapter object
  */
-const getEvents = async (limit, from, to) => {
+const getEvents = async (limit: number, from: Date, to: Date): Promise<any> => {
 	if (!process.env.CHAPTER_API_URL) {
 		throw new Error('CHAPTER_API_URL is not defined in the environment variables.');
 	}
@@ -58,10 +55,10 @@ const getEvents = async (limit, from, to) => {
 
 /**
  * load external json file from api
- * @param {id} id id of the event
- * @returns {object} bevy event object
+ * @param id of the event
+ * @returns bevy event object
  */
-const fetchEventInfo = async id => {
+const fetchEventInfo = async (id: number): Promise<any> => {
 	return await fetch(process.env.EVENT_API_URL + id, {
 		next: { revalidate: 604800 }, // revalidate once a week
 	})
@@ -78,12 +75,12 @@ const fetchEventInfo = async id => {
 		});
 };
 
-const concatStrings = (...strings) => strings.filter(Boolean).join(' ');
+export const concatStrings = (...strings: string[]) => strings.filter(Boolean).join(' ');
 
 /**
  * get descriptions and locations for events from api
  */
-export const getEnrichedEvents = async (limit, from, to) => {
+export const getEnrichedEvents = async (limit: number, from: Date, to: Date) => {
 	const events = await getEvents(limit, from, to);
 
 	const eventInfo = await Promise.all(
@@ -108,10 +105,10 @@ export const getEnrichedEvents = async (limit, from, to) => {
  *
  * @returns {Array} array of years
  */
-export const getYears = async () => {
+export const getYears = async (): Promise<number[]> => {
 	const events = await getEvents(undefined, MIN_DATE, new Date());
 
-	const years = events.reduce((acc, event) => {
+	const years = events.reduce((acc: number[], event: any) => {
 		const year = new Date(event['end_date']).getFullYear();
 		if (!acc.includes(year)) {
 			acc.push(year);
@@ -119,7 +116,7 @@ export const getYears = async () => {
 		return acc;
 	}, []);
 
-	return years.sort((a, b) => b - a);
+	return years.sort((a: number, b: number) => b - a);
 };
 
 /** the translator to convert html to markdown */
@@ -129,55 +126,7 @@ const translator = new NodeHtmlMarkdown();
  * Generate Chronicle front matter for an event.
  * @see https://chroniclebot.com/docs/notifier/front-matter
  *
- * @param {object} info - Event information.
- *
- * @returns {string} Chronicle front matter.
+ * @returns Chronicle front matter.
  */
-const generateChronicleFrontMatter = info =>
+export const generateChronicleFrontMatter = (info: any): string =>
 	`+++${info['cropped_banner_url'] ? `\ncover="${info['cropped_banner_url']}"` : ''}${info['url'] ? `\nsummary_link="${info['url']}"` : ''}${info['picture']['url'] ? `\nthumbnail="${info['picture']['url']}"` : ''}\n+++${info['static_url'] ? `\n\nRSVP: ${info['static_url']}` : ''}${info['description'] ? `\n\n${translator.translate(info['description'])}` : ''}`;
-
-/**
- * return an ical for the events
- */
-export async function GET(req, res) {
-	if (req.method !== 'GET') {
-		res.status(405).end();
-		return;
-	}
-
-	const calendar = ical({
-		name: 'GDSC UTM Events',
-	});
-
-	calendar.prodId({
-		company: 'Google Developer Student Clubs - University of Toronto Mississauga',
-		product: 'GDSC UTM Events',
-		language: 'EN',
-	});
-
-	const { events, eventInfo } = await getEnrichedEvents(undefined, MIN_DATE, MAX_DATE);
-
-	const isDiscord = req.nextUrl.searchParams.get('useFrontMatter') ?? false;
-
-	events.forEach((event, id) => {
-		const info = eventInfo[id];
-
-		calendar.createEvent({
-			start: new Date(info['start_date']),
-			end: new Date(info['end_date']),
-			summary: info['title'],
-			description: isDiscord ? generateChronicleFrontMatter(info) : info['description'],
-			url: event['url'],
-			location: concatStrings(info['venue_name'], info['meetup_url'], info['eventbrite_url']) || undefined,
-			id: `${info['id']}${isDiscord ? '+frontmatter' : ''}@gdscutm.com`,
-		});
-	});
-
-	return new Response(calendar.toString(), {
-		status: 200,
-		headers: {
-			'Content-Type': 'text/calendar',
-			'Content-Disposition': 'attachment; filename="gdsc-utm-events.ics"',
-		},
-	});
-}

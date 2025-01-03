@@ -15,6 +15,9 @@ export default async function EventsLayout({ children }) {
 	/** the current date */
 	const today = new Date();
 
+	/** all years gdsc has had events */
+	const years = await getYearTabs();
+
 	return (
 		<HeroLayout
 			title={'Events'}
@@ -51,12 +54,12 @@ export default async function EventsLayout({ children }) {
 
 				<ErrorBoundary>
 					<PathnameTabs
-						values={(await getYearTabs()).map(year => year.toString())}
+						values={years}
 						sx={{ marginBottom: '1rem' }}
 						slice={2}
 						variant="scrollable"
 						scrollButtons="auto"
-						defaultValue={today.getFullYear().toString()}
+						defaultValue={years[0]}
 						urlPrepend="/events"
 					/>
 				</ErrorBoundary>
