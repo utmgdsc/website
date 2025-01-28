@@ -9,7 +9,7 @@
  */
 export const pages = [
 	{
-		name: 'About',
+		name: 'Home',
 		path: '/',
 	},
 	{
@@ -18,9 +18,8 @@ export const pages = [
 		includeInNavbar: false,
 	},
 	{
-		name: 'Workshop Archive',
+		name: 'Workshops',
 		path: '/past-workshops',
-		includeInNavbar: false,
 	},
 	{
 		name: 'Projects',
