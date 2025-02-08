@@ -168,6 +168,41 @@
 			"description": "Promoting healthy and sustainable grocery choices through gamification .",
 			"year": 2024,
 			"session": "Winter"
+		},
+		{
+			"title": "EduWiz",
+			"url": "https://github.com/utmgdsc/EduWiz",
+			"description": "EduWiz is an AI teacher that generates whiteboard style videos teaching math and physics type problems.",
+			"year": 2025,
+			"session": "Winter"
+		},
+		{
+			"title": "UTMarketplace",
+            "url": "https://github.com/utmgdsc/UTMMarketPlace",
+            "description": "Campus Deals at Your Fingertips",
+			"year": 2025,
+			"session": "Winter"
+		},
+		{
+			"title": "Stock Charity",
+			"url": "https://github.com/utmgdsc/StockCharity",
+			"description": "Providing consistent finances for charities through dividends and stocks.",
+			"year": 2025,
+			"session": "Winter"
+		},
+		{
+			"title": "PlogGo - Mobile Plogging Companion",
+			"url": "https://github.com/utmgdsc/PlogGo",
+			"description": "Gamifies litter cleanup through fitness tracking, reward systems, and social engagement to combat Canada's litter pollution crisis.",
+			"year": 2025,
+			"session": "Winter"
+		},
+		{
+			"title": "TinyProof",
+            "url": "https://github.com/utmgdsc/TinyProof",
+            "description": "TinyProof aims to replicate Google DeepMind's AlphaProof paper, where Llama was fine-tuned using reinforcement learning (where trajectories are generated using Monte-Carlo tree search) to prove theorems in the proof assistant Lean4. The overarching goal is to advance the capabilities of AI reasoning, enabling it to tackle problems in undergraduate math courses such as MAT102, MAT137, and MAT157.",
+			"year": 2025,
+			"session": "Winter"
 		}
 	]
 }
