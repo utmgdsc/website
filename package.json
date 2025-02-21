@@ -28,7 +28,7 @@
 		"sharp": "^0.33.5"
 	},
 	"devDependencies": {
-		"@types/node": "22.10.7",
+		"@types/node": "22.13.4",
 		"eslint": "^9.18.0",
 		"eslint-config-next": "^15.1.6",
 		"eslint-plugin-promise": "^7.2.1",
