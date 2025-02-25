@@ -79,7 +79,7 @@ const Homepage = async () => {
 				<LatestWorkshops limit={6} showDate={true} />
 			</HomepageSection>
 
-			<HomepageSection title="Frequency asked questions">
+			<HomepageSection title="Frequently asked questions">
 				<ErrorBoundary>
 					<FAQList {...faq} />
 				</ErrorBoundary>
