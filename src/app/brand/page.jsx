@@ -30,9 +30,9 @@ const BrandResources = () => {
 							{' '}
 							#EA4335{' '}
 						</Box>
-						<Box component="span" sx={{ color: '#FBBC04', fontWeight: 700 }}>
+						<Box component="span" sx={{ color: '#F9AB00', fontWeight: 700 }}>
 							{' '}
-							#FBBC04{' '}
+							#F9AB00{' '}
 						</Box>
 						<Box component="span" sx={{ color: '#34A853', fontWeight: 700 }}>
 							{' '}
@@ -41,9 +41,9 @@ const BrandResources = () => {
 						<ul>
 							<li aria-level={2}>
 								Google Logo Grey
-								<Box component="span" sx={{ color: '#656c73', fontWeight: 700 }}>
+								<Box component="span" sx={{ color: '#5F6368', fontWeight: 700 }}>
 									{' '}
-									#656c73{' '}
+									#5F6368{' '}
 								</Box>
 							</li>
 						</ul>
