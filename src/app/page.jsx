@@ -8,6 +8,7 @@ import {
 	Link,
 	Team,
 	getProprietaryURL,
+	proprietaryURLIsAvailable,
 	LatestWorkshops,
 } from '~/components/server';
 import faq from '~/data/faq.json';
@@ -17,6 +18,9 @@ export const metadata = {
 };
 
 const getTeamMembers = async () => {
+	if (!proprietaryURLIsAvailable()) {
+		return {};
+	}
 	const teamMembers = fetch(getProprietaryURL('/team/team.json')).then(res => res.json());
 	return teamMembers;
 };
