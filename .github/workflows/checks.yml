@@ -1,0 +1,21 @@
+name: Checks
+
+on: [push, pull_request]
+
+jobs:
+    website:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Set up env
+              run: cp .env.example .env.local
+            - name: Install modules
+              run: npm clean-install
+            - name: Run ESLint
+              run: npm run lint
+            - name: Run Prettier
+              run: npm run pretty
+            - name: Check for changes after Prettier
+              run: if [[ `git status --porcelain` ]]; then git status --porcelain && exit 1; fi
+            - name: Build
+              run: npm run build

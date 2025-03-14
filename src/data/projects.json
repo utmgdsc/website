@@ -178,8 +178,8 @@
 		},
 		{
 			"title": "UTMarketplace",
-            "url": "https://github.com/utmgdsc/UTMMarketPlace",
-            "description": "Campus Deals at Your Fingertips",
+			"url": "https://github.com/utmgdsc/UTMMarketPlace",
+			"description": "Campus Deals at Your Fingertips",
 			"year": 2025,
 			"session": "Winter"
 		},
@@ -199,8 +199,8 @@
 		},
 		{
 			"title": "TinyProof",
-            "url": "https://github.com/utmgdsc/TinyProof",
-            "description": "TinyProof aims to replicate Google DeepMind's AlphaProof paper, where Llama was fine-tuned using reinforcement learning (where trajectories are generated using Monte-Carlo tree search) to prove theorems in the proof assistant Lean4. The overarching goal is to advance the capabilities of AI reasoning, enabling it to tackle problems in undergraduate math courses such as MAT102, MAT137, and MAT157.",
+			"url": "https://github.com/utmgdsc/TinyProof",
+			"description": "TinyProof aims to replicate Google DeepMind's AlphaProof paper, where Llama was fine-tuned using reinforcement learning (where trajectories are generated using Monte-Carlo tree search) to prove theorems in the proof assistant Lean4. The overarching goal is to advance the capabilities of AI reasoning, enabling it to tackle problems in undergraduate math courses such as MAT102, MAT137, and MAT157.",
 			"year": 2025,
 			"session": "Winter"
 		}
