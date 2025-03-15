@@ -29,7 +29,7 @@ jobs:
                 key: ${{ runner.os }}-node-${{ steps.node.outputs.ver }}-${{ hashFiles('**/package-lock.json') }}
                 restore-keys: |
                   ${{ runner.os }}-node-${{ steps.node.outputs.ver }}-
-  
+
             - name: Install modules
               run: npm clean-install
 
