@@ -7,15 +7,39 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - name: Set up env
-              run: cp .env.example .env.local
+
+            - name: Get npm cache directory
+              id: npm-cache-dir
+              shell: bash
+              run: echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
+
+            - name: Get node version
+              id: node
+              shell: bash
+              run: echo "ver=$(node -v)" >> ${GITHUB_OUTPUT}
+
+            - uses: actions/cache@v4
+              id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
+              with:
+                path: ${{ steps.npm-cache-dir.outputs.dir }}
+                key: ${{ runner.os }}-node-${{ steps.node.ver }}-${{ hashFiles('**/package-lock.json') }}
+                restore-keys: |
+                  ${{ runner.os }}-node-${{ steps.node.ver }}-
+  
             - name: Install modules
               run: npm clean-install
+
+            - name: Set up env
+              run: cp .env.example .env.local
+
             - name: Run ESLint
               run: npm run lint
+            
             - name: Run Prettier
               run: npm run pretty
+            
             - name: Check for changes after Prettier
               run: if [[ `git status --porcelain` ]]; then git status --porcelain && exit 1; fi
+            
             - name: Build
               run: npm run build
