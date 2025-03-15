@@ -1,6 +1,10 @@
 name: Build and formatting check
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
     website:
@@ -22,9 +26,9 @@ jobs:
               id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
               with:
                 path: ${{ steps.npm-cache-dir.outputs.dir }}
-                key: ${{ runner.os }}-node-${{ steps.node.ver }}-${{ hashFiles('**/package-lock.json') }}
+                key: ${{ runner.os }}-node-${{ steps.node.outputs.ver }}-${{ hashFiles('**/package-lock.json') }}
                 restore-keys: |
-                  ${{ runner.os }}-node-${{ steps.node.ver }}-
+                  ${{ runner.os }}-node-${{ steps.node.outputs.ver }}-
   
             - name: Install modules
               run: npm clean-install
