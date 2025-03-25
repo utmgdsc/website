@@ -1,29 +1,32 @@
+import { PaletteOptions } from '@mui/material';
 import createTheme from '@mui/material/styles/createTheme';
 import { GoogleSansVariable, GoogleSansDisplayVariable } from '~/assets/fonts/fonts';
 
-const sharedPalette = {
+export const GoogleBlue = '#4285F4';
+export const GoogleRed = '#EA4335';
+export const GoogleYellow = '#F9AB00';
+export const GoogleGreen = '#34A853';
+export const GoogleGrey = '#5F6368';
+
+const palette: PaletteOptions = {
 	primary: {
-		main: '#4285f4',
+		main: GoogleBlue,
 	},
 	error: {
-		main: '#ea4335',
+		main: GoogleRed,
 	},
 	warning: {
-		main: '#fbbc04',
+		main: GoogleYellow,
 	},
 	info: {
-		main: '#4285f4',
+		main: GoogleBlue,
 	},
 	success: {
-		main: '#0f9d58',
+		main: GoogleGreen,
 	},
-	// Used by `getContrastText()` to maximize the contrast between
-	// the background and the text.
-	// contrastThreshold: 3,
-	// Used by the functions below to shift a color's luminance by approximately
-	// two indexes within its tonal palette.
-	// E.g., shift from Red 500 to Red 300 or Red 700.
-	// tonalOffset: 0.2,
+	grey: {
+		500: GoogleGrey,
+	},
 };
 
 /**
@@ -31,9 +34,10 @@ const sharedPalette = {
  */
 export const googleTheme = createTheme({
 	cssVariables: true,
-	colorSchemes: { dark: true },
-	light: sharedPalette,
-	dark: sharedPalette,
+	colorSchemes: {
+		light: { palette },
+		dark: { palette },
+	},
 	typography: {
 		fontFamily: `var(${GoogleSansVariable})`,
 		h1: { fontFamily: `var(${GoogleSansDisplayVariable})` },

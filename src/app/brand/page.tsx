@@ -4,6 +4,8 @@ import BannerImg from '~/assets/backgrounds/gradient.webp';
 import { Link } from '~/components/server';
 import { ResourceLayout } from '~/layouts/ResourceLayout';
 
+import { GoogleBlue, GoogleRed, GoogleYellow, GoogleGreen, GoogleGrey } from '~/data/theme';
+
 export const metadata = {
 	title: 'Brand Resources',
 };
@@ -22,28 +24,23 @@ const BrandResources = () => {
 				<ul>
 					<li aria-level={1}>
 						Google colors (in the following order):{' '}
-						<Box component="span" sx={{ color: '#4285F4', fontWeight: 700 }}>
-							{' '}
-							#4285F4{' '}
+						<Box component="span" sx={{ color: GoogleBlue, fontWeight: 700 }}>
+							{` ${GoogleBlue} `}
 						</Box>
-						<Box component="span" sx={{ color: '#EA4335', fontWeight: 700 }}>
-							{' '}
-							#EA4335{' '}
+						<Box component="span" sx={{ color: GoogleRed, fontWeight: 700 }}>
+							{` ${GoogleRed} `}
 						</Box>
-						<Box component="span" sx={{ color: '#F9AB00', fontWeight: 700 }}>
-							{' '}
-							#F9AB00{' '}
+						<Box component="span" sx={{ color: GoogleYellow, fontWeight: 700 }}>
+							{` ${GoogleYellow} `}
 						</Box>
-						<Box component="span" sx={{ color: '#34A853', fontWeight: 700 }}>
-							{' '}
-							#34A853{' '}
+						<Box component="span" sx={{ color: GoogleGreen, fontWeight: 700 }}>
+							{` ${GoogleGreen} `}
 						</Box>
 						<ul>
 							<li aria-level={2}>
 								Google Logo Grey
-								<Box component="span" sx={{ color: '#5F6368', fontWeight: 700 }}>
-									{' '}
-									#5F6368{' '}
+								<Box component="span" sx={{ color: GoogleGrey, fontWeight: 700 }}>
+									{` ${GoogleGrey} `}
 								</Box>
 							</li>
 						</ul>
