@@ -1,7 +1,25 @@
 import { Button, Card, CardActions, CardContent, Typography, Skeleton } from '@mui/material';
+import { ReactNode } from 'react';
 import { Link, OpenInNewTabIcon } from '~/components/server';
 
-const CardColors = ['success', 'error', 'warning', 'info'];
+const CardColors: ('success' | 'error' | 'warning' | 'info')[] = ['success', 'error', 'warning', 'info'];
+
+interface InfoCardProps {
+	/** the subtitle of the event appearing above the title */
+	subtitle: string | ReactNode;
+	/** the title of the event */
+	title: string;
+	/** the url of the event */
+	href: string;
+	/** the description of the event */
+	description: string;
+	/** the number of lines to show in the description */
+	lines?: number;
+	/** the text to show on the button */
+	linkText?: string;
+	/** whether the link is external or not, i.e., whether to open in a new tab or not */
+	external?: boolean;
+}
 
 /**
  * Gets the events from the GDSC (bevy) API and displays them in a card format.
@@ -9,15 +27,6 @@ const CardColors = ['success', 'error', 'warning', 'info'];
  *
  * NOTE: because this component is a Server Component, we pass the <a> tag, so
  * we cannot use Next.js' Link component. Thus we can't use the Next.js router
- *
- * @param {Object} props
- * @param {string} props.subtitle the subtitle of the event appearing above the title
- * @param {string} props.title the title of the event
- * @param {string} props.href the url of the event
- * @param {string} props.description the description of the event
- * @param {number} props.lines the number of lines to show in the description
- * @param {string} props.linkText the text to show on the button
- * @param {boolean} props.external whether the link is external or not, i.e., whether to open in a new tab or not
  */
 export const InfoCard = ({
 	subtitle,
@@ -27,7 +36,7 @@ export const InfoCard = ({
 	lines = 4,
 	linkText = 'View Details',
 	external = true,
-}) => {
+}: InfoCardProps) => {
 	return (
 		<Card
 			sx={{

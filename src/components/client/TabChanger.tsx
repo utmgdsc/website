@@ -2,7 +2,7 @@ import { Tabs, Tab } from '@mui/material';
 
 interface TabChangerProps {
 	/** List of years to display in the tabs */
-	tabList: string[];
+	tabList: string[] | number[];
 	/** Current page index */
 	page: number;
 	/** Function to set the current page index */
@@ -28,8 +28,8 @@ export const TabChanger = ({ tabList, page, setPage }: TabChangerProps) => {
 				my: '1rem',
 			}}
 		>
-			{tabList.map((year, id) => (
-				<Tab key={id} label={year} />
+			{tabList.map((year: string | number) => (
+				<Tab key={year} label={year} />
 			))}
 		</Tabs>
 	);

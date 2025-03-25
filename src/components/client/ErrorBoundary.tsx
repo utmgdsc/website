@@ -3,28 +3,29 @@ import React from 'react';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 
-/**
- * Props for the ErrorBoundary component
- * @typedef {Object} ErrorBoundaryProps
- * @prop {string} my margin-top and margin-bottom
- * @prop {React.ReactNode} children The children to render
- */
+interface ErrorBoundaryProps {
+	my?: string | number;
+	children: React.ReactNode;
+}
+
+interface ErrorBoundaryState {
+	error: Error | null;
+	errorInfo: React.ErrorInfo | null;
+}
 
 /**
  * Default error boundary component for catching errors in children components
  * using MUI Alert component
  *
  * AO from https://reactjs.org/docs/error-boundaries.html
- *
- * @augments React.Component<ErrorBoundaryProps>
  */
-export class ErrorBoundary extends React.Component {
-	constructor(props) {
+export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+	constructor(props: ErrorBoundaryProps) {
 		super(props);
 		this.state = { error: null, errorInfo: null };
 	}
 
-	componentDidCatch(error, errorInfo) {
+	componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
 		// Catch errors in any components below and re-render with error message
 		this.setState({
 			error: error,

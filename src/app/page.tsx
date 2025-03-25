@@ -45,7 +45,7 @@ const Homepage = async () => {
 			</section>
 
 			<HomepageSection title="Who are we?">
-				<Typography variant="p" component="p">
+				<Typography variant="body2" component="p">
 					Google Developer Student Clubs (<abbr>GDSC</abbr>) is a student-led community backed by Google
 					Developers aimed at empowering undergraduate students from all disciplines to grow their knowledge
 					in technology, build solutions for their local communities, and connect with other members from the
@@ -54,7 +54,7 @@ const Homepage = async () => {
 
 				<h3>Creating impact and empowering students through technology</h3>
 
-				<Typography variant="p" component="p">
+				<Typography variant="body2" component="p">
 					Whether you are new to software development or you&rsquo;ve been developing for quite a while, GDSC
 					is a place where you can learn new technologies, make your ideas a reality, and collaborate to solve
 					real-world problems. In addition to solving problems, GDSC will allow you to connect with other

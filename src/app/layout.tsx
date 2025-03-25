@@ -19,9 +19,7 @@ export default function RootLayout({ children }) {
 				<TagManager>
 					<ThemeRegistry>
 						<Navbar />
-						<ErrorBoundary fallback={<div></div>} my="25vh">
-							{children}
-						</ErrorBoundary>
+						<ErrorBoundary my="25vh">{children}</ErrorBoundary>
 						<Footer />
 					</ThemeRegistry>
 				</TagManager>

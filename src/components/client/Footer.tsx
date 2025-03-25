@@ -1,19 +1,19 @@
 import { Box, ButtonGroup, Container, Paper, Typography, styled } from '@mui/material';
-
+import type {} from '@mui/material/themeCssVarsAugmentation';
 import bracket_colourless from '~/assets/graphics/bracket_colourless.svg';
 import { ErrorBoundary } from '~/components/client';
-import { Link } from '~/components/server';
+import { Link, LinkProps } from '~/components/server';
 import * as allSocialButtons from '~/data/SocialButton';
 import footerLinks from '~/data/footer.json';
 import Image from 'next/image';
 
 /**
  * A link for footer-flex. Takes the same props as "a".
- * @param {Object} props - props to pass to the link, same as "a" element
+ * @param props - props to pass to the link, same as "a" element
  *
- * @return {JSX.Element} Footer link
+ * @return Footer link
  */
-const FooterLink = props => (
+const FooterLink = (props: LinkProps) => (
 	<Box
 		component="li"
 		sx={{
@@ -57,7 +57,7 @@ const FooterUnorderedList = styled('ul')({
 });
 
 /**
- * @returns {JSX.Element} Footer component
+ * @returns Footer component
  */
 export const Footer = () => {
 	return (

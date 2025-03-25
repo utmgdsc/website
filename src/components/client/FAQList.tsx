@@ -1,5 +1,10 @@
 import { Box, Typography } from '@mui/material';
-import { FAQ } from '~/components/client';
+import { FAQ, FAQItem } from '~/components/client';
+
+interface FAQListProps {
+	/** The frequently asked questions */
+	[category: string]: FAQItem[];
+}
 
 /**
  * Shows a list of FAQs given a JSON object
@@ -7,10 +12,8 @@ import { FAQ } from '~/components/client';
  * The JSON object should be structured like this:
  * - keys are the category names
  * - values are arrays of FAQs
- *
- * @param {{[category: string]: {question: string, answer: string}[]}} faq The FAQs
  */
-export const FAQList = faq => {
+export const FAQList = (faq: FAQListProps) => {
 	return Object.keys(faq).map((category, index) => {
 		return (
 			<Box

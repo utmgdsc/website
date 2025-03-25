@@ -1,12 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import { Box, Container, Typography } from '@mui/material';
-
-import Image from 'next/image';
+import Image, { ImageProps } from 'next/image';
 
 /**
  * A hook to calculate the parallax effect on the hero header image.
  */
-const useParallax = (position, containerRef) => {
+const useParallax = (position: string, containerRef: React.RefObject<HTMLDivElement>) => {
 	const [imgOffset, setImgOffset] = useState(0);
 
 	const [imgHeight, setImgHeight] = useState(0);
@@ -15,9 +14,10 @@ const useParallax = (position, containerRef) => {
 
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll);
-		const containerHeight = containerRef.current.clientHeight;
 
-		setImgHeight(containerHeight * 1.4);
+		if (containerRef.current !== null) {
+			setImgHeight(containerRef.current.clientHeight * 1.4);
+		}
 
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, [containerRef]);
@@ -33,23 +33,39 @@ const useParallax = (position, containerRef) => {
 	return { imgOffset, imgHeight, accelSpeedCalc };
 };
 
+export interface HeroHeaderProps {
+	/** text to display on the header */
+	text: string;
+	/** image to display on the header */
+	picture: ImageProps['src'];
+	/** max width of the header to pass to the container */
+	maxWidth?: string;
+	/** position of the image, either "top" or "bottom" */
+	position: 'top' | 'bottom';
+	/** height of the header */
+	height?: string;
+	/** width of the header */
+	width?: string;
+	/** level of the header, i.e., h1, h2, h3, etc. */
+	headerLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+	/** props to pass to the image component */
+	imgProps?: Partial<ImageProps>;
+}
+
 /**
  * A banner with header text and a background image. It is a hero image style header
  * component, spanning the full width of the page/container.
  * It is recommended to use this component in a container with a max width of 100%.
- *
- * @param {Object} props
- * @param {string} props.text text to display on the header
- * @param {string} props.picture image to display on the header
- * @param {string} props.maxWidth max width of the header to pass to the container
- * @param {string} props.position position of the image, either "top" or "bottom"
- * @param {string} props.height height of the header
- * @param {string} props.width width of the header
- * @param {string} props.headerLevel level of the header, i.e., h1, h2, h3, etc.
- * @param {object} props.imgProps props to pass to the image component
- * @returns {JSX.Element} hero image style header component
  */
-export const HeroHeader = ({ text, picture, maxWidth, position, height = '20rem', headerLevel = 'h1', imgProps }) => {
+export const HeroHeader = ({
+	text,
+	picture,
+	maxWidth = '100%',
+	position,
+	height = '20rem',
+	headerLevel = 'h1',
+	imgProps,
+}: HeroHeaderProps) => {
 	const containerRef = useRef(null);
 
 	const { imgOffset, imgHeight, accelSpeedCalc } = useParallax(position, containerRef);
@@ -102,18 +118,18 @@ export const HeroHeader = ({ text, picture, maxWidth, position, height = '20rem'
 				{...imgProps}
 			/>
 			<Container
-				maxWidth="unset !important"
 				sx={{
+					alignItems: 'flex-end',
+					display: 'flex',
 					height: height,
+					maxWidth: 'unset !important',
 					position: 'absolute',
 					top: 0,
-					display: 'flex',
-					alignItems: 'flex-end',
-					zIndex: 2,
 					width: '100vw',
+					zIndex: 2,
 				}}
 			>
-				<Container maxWidth={maxWidth}>
+				<Container sx={{ maxWidth }}>
 					<Typography
 						component={headerLevel}
 						variant="h2"

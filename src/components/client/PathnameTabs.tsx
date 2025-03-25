@@ -3,6 +3,17 @@ import { Tab, Tabs } from '@mui/material';
 import { usePathname } from 'next/navigation';
 import { useMemo } from 'react';
 
+interface PathnameTabsProps extends React.ComponentProps<typeof Tabs> {
+	/** The list of values to display as tabs */
+	values: string[];
+	/** The url to prepend to the tab value */
+	urlPrepend: string;
+	/** The default value to use if no match is found */
+	defaultValue?: string;
+	/** The index of the tab to use for the pathname */
+	slice: number;
+}
+
 /**
  * Pathname aware tabs that use next/link
  *
@@ -10,7 +21,7 @@ import { useMemo } from 'react';
  * when copying the url, in comparison to the default mui tabs
  * where this behavior is not present
  */
-export const PathnameTabs = ({ values, urlPrepend, defaultValue, slice, ...props }) => {
+export const PathnameTabs = ({ values, urlPrepend, defaultValue, slice, ...props }: PathnameTabsProps) => {
 	/* update navbar tabs on path change */
 	const pathname = usePathname();
 

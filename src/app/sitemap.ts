@@ -5,19 +5,24 @@ import { pages } from '~/data/NavbarTabData';
  */
 const BASE_URL = 'https://gdscutm.com';
 
+type SitemapItem = {
+	url: string;
+	lastModified: Date;
+};
+
 /**
  * Generates the sitemap for the website. URL is hardcoded.
  *
  * Uses the NavbarTabData to generate the sitemap.
  *
- * @returns {Array<{url: string, lastModified: Date}} The sitemap
+ * @returns The sitemap
  */
-export default function sitemap() {
+export default function sitemap(): SitemapItem[] {
 	/**
 	 * accumulator for the sites defined in NavbarTabData.pages
-	 * @type {Array<{url: string, lastModified: Date}}>
 	 */
-	let acc = [];
+	let acc: SitemapItem[] = [];
+
 	pages.forEach(item => {
 		acc.push({
 			url: `${BASE_URL}${item.path}`,

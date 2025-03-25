@@ -6,12 +6,10 @@ import { googleTheme } from '../../data/theme';
 
 /**
  * From MUI Starter Code
- * @param {object} props
- * @param {React.ReactNode} props.children
  *
- * @see https://github.com/mui/material-ui/blob/master/examples/material-ui-nextjs/src/app/layout.js
+ * @see https://github.com/mui/material-ui/blob/master/examples/material-ui-nextjs-ts/src/app/layout.tsx
  */
-export const ThemeRegistry = ({ children }) => {
+export const ThemeRegistry = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<AppRouterCacheProvider options={{ enableCssLayer: true }}>
 			<ThemeProvider theme={googleTheme}>

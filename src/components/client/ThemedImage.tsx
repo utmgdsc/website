@@ -1,5 +1,5 @@
 import { getImageProps, ImageProps } from 'next/image';
-import { Box } from '@mui/material';
+import { Box, BoxProps } from '@mui/material';
 import { HTMLProps } from 'react';
 
 interface ThemedImageProps extends Partial<ImageProps> {
@@ -12,7 +12,7 @@ interface ThemedImageProps extends Partial<ImageProps> {
 	/** Bypasses `getImageProps` if true since it breaks SVG */
 	isSVG?: boolean;
 	/** The props to pass to the picture element */
-	pictureProps?: HTMLProps<HTMLPictureElement>;
+	pictureProps?: HTMLProps<HTMLPictureElement> & BoxProps;
 }
 
 /**
@@ -31,7 +31,7 @@ export const ThemedImage = ({ srcLight, srcDark, alt, isSVG, pictureProps = {}, 
 		<Box component="picture" {...(pictureProps as any)}>
 			<source media="(prefers-color-scheme: dark)" srcSet={isSVG ? srcDark : dark} />
 			<source media="(prefers-color-scheme: light)" srcSet={isSVG ? srcLight : light} />
-			<img alt={alt} {...rest} />
+			<img {...rest} alt={alt} />
 		</Box>
 	);
 };

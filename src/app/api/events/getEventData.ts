@@ -19,7 +19,7 @@ export const MAX_DATE: Date = new Date(8640000000000000);
  * @param to the date to stop showing events at (non-inclusive), based on end_date
  * @returns bevy chapter object
  */
-const getEvents = async (limit: number, from: Date, to: Date): Promise<any> => {
+const getEvents = async (limit: number | undefined, from: Date, to: Date): Promise<any> => {
 	if (!process.env.CHAPTER_API_URL) {
 		throw new Error('CHAPTER_API_URL is not defined in the environment variables.');
 	}
@@ -59,6 +59,10 @@ const getEvents = async (limit: number, from: Date, to: Date): Promise<any> => {
  * @returns bevy event object
  */
 const fetchEventInfo = async (id: number): Promise<any> => {
+	if (!process.env.EVENT_API_URL) {
+		throw new Error('EVENT_API_URL is not defined in the environment variables.');
+	}
+
 	return await fetch(process.env.EVENT_API_URL + id, {
 		next: { revalidate: 604800 }, // revalidate once a week
 	})
@@ -80,7 +84,7 @@ export const concatStrings = (...strings: string[]) => strings.filter(Boolean).j
 /**
  * get descriptions and locations for events from api
  */
-export const getEnrichedEvents = async (limit: number, from: Date, to: Date) => {
+export const getEnrichedEvents = async (limit: number | undefined, from: Date, to: Date) => {
 	const events = await getEvents(limit, from, to);
 
 	const eventInfo = await Promise.all(

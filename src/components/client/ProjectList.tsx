@@ -7,14 +7,14 @@ import proj from '~/data/projects.json';
  * A list of all the community projects filtered by year with tabs
  */
 export const ProjectList = () => {
-	/** @type {number} current tab */
-	const [page, setPage] = useState(0);
+	/** current tab */
+	const [page, setPage] = useState<number>(0);
 
 	const projects = proj.projects;
 
 	// set yearList
 	const yearList = useMemo(() => {
-		const years = projects.reduce((acc, project) => {
+		const years = projects.reduce((acc: number[], project) => {
 			if (!acc.includes(project.year)) {
 				acc.push(project.year);
 			}

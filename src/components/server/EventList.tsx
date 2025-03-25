@@ -2,6 +2,7 @@ import { ConvertDate } from '~/components/server';
 import { InfoCard } from '~/components/client';
 import { Alert, Grid2 as Grid, Typography } from '@mui/material';
 import { MIN_DATE, MAX_DATE, getEnrichedEvents, getYears } from '~/app/api/events/getEventData';
+import { ReactNode } from 'react';
 
 const EventInfoCard = ({ event, description }) => {
 	return (
@@ -14,19 +15,33 @@ const EventInfoCard = ({ event, description }) => {
 	);
 };
 
+interface EventListProps {
+	/** The number of events to show */
+	limit?: number;
+	/** The date to start showing events from (inclusive), based on end_date */
+	from?: Date;
+	/** The date to stop showing events at (non-inclusive), based on end_date */
+	to?: Date;
+	/** Number of skeleton cards to show when loading */
+	skeleton?: number;
+	/** Component to show when there are no events */
+	EmptyComponent?: React.ElementType | null;
+	/** Children to show when there are events */
+	children?: ReactNode;
+}
+
 /**
  * Gets the events from the GDSC (bevy) API.
  * If limit is specified, it will only show that many events.
  * If upcoming is specified, it will only show upcoming events. Otherwise, it will show all events.
- * @param {object} props
- * @param {integer} props.limit the number of events to show
- * @param {Date} props.from the date to start showing events from (inclusive), based on end_date
- * @param {Date} props.to the date to stop showing events at (non-inclusive), based on end_date
- * @param {number} props.skeleton number of skeleton cards to show when loading
- * @param {JSX.Element} props.EmptyComponent component to show when there are no events
- * @returns {JSX.Element} EventList component
  */
-export const EventList = async ({ limit, from = MIN_DATE, to = MAX_DATE, EmptyComponent = null, children }) => {
+export const EventList = async ({
+	limit,
+	from = MIN_DATE,
+	to = MAX_DATE,
+	EmptyComponent = null,
+	children,
+}: EventListProps) => {
 	const { events, descriptions } = await getEnrichedEvents(limit, from, to);
 
 	if (!Array.isArray(events)) {
@@ -54,22 +69,29 @@ export const EventList = async ({ limit, from = MIN_DATE, to = MAX_DATE, EmptyCo
 
 /**
  * return the min of two dates
- * @param {Date} a the first date
- * @param {Date} b the next date
+ * @param a the first date
+ * @param b the next date
  */
-const dateMin = (a, b) => (a < b ? a : b);
+const dateMin = (a: Date, b: Date) => (a < b ? a : b);
 
 /**
  * return the max of two dates
- * @param {Date} a the first date
- * @param {Date} b the next date
+ * @param a the first date
+ * @param b the next date
  */
-const dateMax = (a, b) => (a > b ? a : b);
+const dateMax = (a: Date, b: Date) => (a > b ? a : b);
+
+interface YearedEventListProps {
+	/** The date to start showing events from (inclusive), based on end_date */
+	from?: Date;
+	/** The date to stop showing events at (non-inclusive), based on end_date */
+	to?: Date;
+}
 
 /**
  * All events with years as headers.
  */
-export const YearedEventList = async ({ from = MIN_DATE, to = MAX_DATE }) => {
+export const YearedEventList = async ({ from = MIN_DATE, to = MAX_DATE }: YearedEventListProps) => {
 	const years = await getYears();
 
 	return (
@@ -82,7 +104,7 @@ export const YearedEventList = async ({ from = MIN_DATE, to = MAX_DATE }) => {
 							<Typography
 								component="h3"
 								variant="h5"
-								id={year}
+								id={`${year}`}
 								sx={{
 									color: 'text.primary',
 									fontWeight: 'bold',

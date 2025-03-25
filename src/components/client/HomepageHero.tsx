@@ -16,7 +16,7 @@ const getBackgroundImage = (theme, image) =>
 	')';
 
 /**
- * @returns {JSX.Element} Hero header for the homepage.
+ * @returns Hero header for the homepage.
  */
 export const HomepageHero = () => {
 	return (
@@ -54,7 +54,7 @@ export const HomepageHero = () => {
 						<Box
 							component={Image}
 							alt="Google Developer Student Clubs University of Toronto Mississauga"
-							fill="100%"
+							fill={true}
 							id="gdsc-wordmark"
 							src={wordmark}
 							sx={theme => ({

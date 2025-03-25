@@ -19,7 +19,7 @@ export const OpenInNewTabIcon = () => (
 	/>
 );
 
-interface LinkProps extends MaterialLinkProps {
+export interface LinkProps extends MaterialLinkProps {
 	/** If true, the link will open in a new tab */
 	external?: boolean;
 }

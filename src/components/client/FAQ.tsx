@@ -4,20 +4,24 @@ import { Accordion } from '~/components/client';
 
 /**
  * A single FAQ item.
- * @typedef {object} FAQItem
- * @property {string} question The question
- * @property {string} answer The answer
  */
+export interface FAQItem {
+	/** The question */
+	question: string;
+	/** The answer */
+	answer: string;
+}
+
+interface FAQProps {
+	/** The frequently asked question */
+	faq: FAQItem;
+}
 
 /**
- * A frequently asked question. Used in the Resources page.
- *
- * @param {object} props
- * @param {FAQItem} props.faq The frequently asked question
- *
- * @returns {JSX.Element} The faq widget
+ * A single frequently asked question. Used in the Resources page.
+ * @returns The faq widget
  */
-export const FAQ = ({ faq }) => {
+export const FAQ = ({ faq }: FAQProps) => {
 	return (
 		<Accordion>
 			<AccordionSummary

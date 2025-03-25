@@ -18,7 +18,7 @@ const useOnload = def => {
 };
 
 /** a react component that filters all props */
-const FragmentFilter = ({ children } = {}) => <Fragment>{children}</Fragment>;
+const FragmentFilter = ({ children }: { children: React.ReactNode }) => <Fragment>{children}</Fragment>;
 
 /**
  * load a proper "details" fallback when theres no JS

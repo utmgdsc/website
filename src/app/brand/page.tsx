@@ -9,7 +9,7 @@ export const metadata = {
 };
 
 /**
- * @return {JSX.Element} Brand resources page component
+ * @return Brand resources page component
  */
 const BrandResources = () => {
 	return (

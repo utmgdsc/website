@@ -18,7 +18,7 @@ const Person = ({ name, role, picture }: TeamMember) => {
 	return (
 		<Box component="figure" sx={{ margin: 0, display: 'inline-block', padding: '1em' }}>
 			<Avatar
-				src={picture ? getProprietaryURL(picture) : null}
+				src={picture ? getProprietaryURL(picture) : undefined}
 				slots={{
 					img: ImageFilterProps,
 				}}
@@ -125,7 +125,7 @@ export const Team = ({ teamInfo, title }: TeamProps) => {
 						key={index}
 						name={teamMember.name}
 						role={teamMember.role}
-						picture={teamMember.picture ? `team/${teamMember.picture}` : null}
+						picture={teamMember.picture ? `team/${teamMember.picture}` : undefined}
 					/>
 				))}
 			</Box>

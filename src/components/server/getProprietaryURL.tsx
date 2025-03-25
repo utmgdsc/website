@@ -8,16 +8,12 @@ export const proprietaryURLIsAvailable = (): boolean =>
  * Gets the full url of a proprietary image with fallback to placeholder image
  *
  * @param src - The path of the proprietary image
- * @param returnFallback - Whether to return a fallback image if the proprietary image is not available
  *
  * @return The URL of the proprietary image
  */
-export const getProprietaryURL = (src: string, returnFallback: boolean = true): string | null => {
-	if (!proprietaryURLIsAvailable() && returnFallback) {
-		return 'https://picsum.photos/200';
-	}
+export const getProprietaryURL = (src: string): string => {
 	if (!proprietaryURLIsAvailable()) {
-		return null;
+		return 'https://picsum.photos/200';
 	}
 
 	return `https://${process.env.PROPRIETARY_IMAGES_HOSTNAME}/${src}`;
