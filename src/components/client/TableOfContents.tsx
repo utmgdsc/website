@@ -2,30 +2,56 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from '~/components/server';
 import { Box, Typography } from '@mui/material';
 
+interface SmoothScrollingLinkProps {
+	/** id of the element to scroll to */
+	id: string;
+	/** title of the link */
+	title: string;
+	/** children of the link */
+	children?: React.ReactNode;
+}
+
 /**
  * A link that scrolls an id into view.. smoothly
- * @param {Object} props
- * @param {string} param.id id of the element to scroll to
- * @param {string} param.title title of the link
- * @param {JSX.Element} param.children children of the link
- * @returns {JSX.Element} JSX elements of the link
  */
-const SmoothScrollingLink = ({ id, title }) => {
+const SmoothScrollingLink = ({ id, title }: SmoothScrollingLinkProps) => {
 	return (
-		<Link sx={{ color: theme => theme.vars.palette.text.secondary }} href={`#${id}`}>
+		<Link
+			sx={{ color: theme => theme.vars.palette.text.secondary }}
+			href={`#${id}`}
+			onClick={e => {
+				e.preventDefault();
+				const element = document.getElementById(id);
+				if (element) {
+					element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+				}
+			}}
+		>
 			{title}
 		</Link>
 	);
 };
 
+interface TOCHeading {
+	/** id of the heading */
+	id: string;
+	/** title of the heading */
+	title: string;
+	/** list of child headings */
+	items: Array<{ id: string; title: string }>;
+}
+
+interface TOCHeadingProps {
+	/** heading to be shown */
+	heading: TOCHeading;
+	/** current heading id is displayed now */
+	activeId: string;
+}
+
 /**
  * TOCHeading component in table of content
- * @param {Object} props
- * @param {string} props.heading to be shown
- * @param {string} props.activeId current heading id is displayed now
- * @returns {JSX.Element} JSX elements of heading component
  */
-const TOCHeading = ({ heading, activeId }) => {
+const TOCHeading = ({ heading, activeId }: TOCHeadingProps) => {
 	return (
 		<li key={heading.id} className={heading.id === activeId ? 'active' : ''}>
 			<SmoothScrollingLink id={heading.id} title={heading.title} />
@@ -44,10 +70,10 @@ const TOCHeading = ({ heading, activeId }) => {
 
 /**
  * Get list of nested headings (h2 elements followed by h3 elements)
- * @param {HTMLHeadingElement[]} headingElements - list of h2 and h3 elements
+ * @param headingElements list of h2 and h3 elements
  */
-const getNestedHeadings = headingElements => {
-	const nestedHeadings = [];
+const getNestedHeadings = (headingElements: HTMLElement[]) => {
+	const nestedHeadings: TOCHeading[] = [];
 
 	headingElements.forEach(heading => {
 		const { innerText: title, id } = heading;
@@ -69,12 +95,12 @@ const getNestedHeadings = headingElements => {
  * Get all the h2 and h3 headings in resources page, and turn them into list of nested headings
  */
 const useHeadingsData = () => {
-	const [nestedHeadings, setNestedHeadings] = useState([]);
+	const [nestedHeadings, setNestedHeadings] = useState<TOCHeading[]>([]);
 
 	useEffect(() => {
 		const headingElements = Array.from(document.querySelectorAll('h2.resources, h3.resources'));
 
-		const newNestedHeadings = getNestedHeadings(headingElements);
+		const newNestedHeadings = getNestedHeadings(headingElements as HTMLElement[]);
 		setNestedHeadings(newNestedHeadings);
 	}, []);
 
@@ -96,7 +122,7 @@ const useIntersectionObserver = setActiveId => {
 				return map;
 			}, headingElementsRef.current);
 
-			const visibleHeadings = [];
+			const visibleHeadings: IntersectionObserverEntry[] = [];
 			Object.keys(headingElementsRef.current).forEach(key => {
 				const headingElement = headingElementsRef.current[key];
 				if (headingElement.isIntersecting) visibleHeadings.push(headingElement);
@@ -108,7 +134,7 @@ const useIntersectionObserver = setActiveId => {
 				setActiveId(visibleHeadings[0].target.id);
 			} else if (visibleHeadings.length > 1) {
 				const sortedVisibleHeadings = visibleHeadings.sort(
-					(a, b) => getIndexFromId(a.target.id) > getIndexFromId(b.target.id)
+					(a, b) => getIndexFromId(a.target.id) - getIndexFromId(b.target.id)
 				);
 				setActiveId(sortedVisibleHeadings[0].target.id);
 			}
@@ -120,16 +146,17 @@ const useIntersectionObserver = setActiveId => {
 
 		headingElements.forEach(element => observer.observe(element));
 
-		return () => observer.disconnect();
+		return () => {
+			observer.disconnect();
+		};
 	}, [setActiveId]);
 };
 
 /**
  * Generates a table of contents based on the headings in the page
- * @returns {JSX.Element} Table of content component
  */
 export const TableOfContents = () => {
-	const [activeId, setActiveId] = useState();
+	const [activeId, setActiveId] = useState<string>('');
 	const { nestedHeadings } = useHeadingsData();
 	useIntersectionObserver(setActiveId);
 	return (
@@ -153,16 +180,7 @@ export const TableOfContents = () => {
 				},
 			}}
 		>
-			<Typography
-				variant="h5"
-				sx={{
-					fontWeight: 'bold',
-					color: 'text.primary',
-					margin: '0.83em 0',
-				}}
-			>
-				On this page
-			</Typography>
+			<Typography variant="h5">On this page</Typography>
 			<nav aria-label="Table of contents">
 				<ul>
 					{nestedHeadings.map((heading, index) => {

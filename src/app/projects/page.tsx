@@ -63,12 +63,16 @@ const ProjectPage = () => {
 			</Box>
 
 			<section>
-				<h2 id="projects">Past Projects</h2>
+				<Typography component="h2" variant="h4" id="projects">
+					Past Projects
+				</Typography>
 				<ProjectList />
 			</section>
 
 			<section>
-				<h2 id="faq">Frequently Asked Questions</h2>
+				<Typography component="h2" variant="h4" id="faq">
+					Frequently Asked Questions
+				</Typography>
 				<FAQList {...FAQData} />
 			</section>
 		</HeroLayout>

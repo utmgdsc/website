@@ -1,28 +1,15 @@
 import { Accordion, AccordionSummary, WorkshopButton } from '~/components/client';
-import { ConvertDate, JoinAnd, workshopHash } from '~/components/server';
-import { Code, ExpandMore, RadioButtonChecked, Slideshow } from '@mui/icons-material';
 import { AccordionDetails, Box, List, Typography } from '@mui/material';
-import { useSearchParams } from 'next/navigation';
+import { Code, ExpandMore, RadioButtonChecked, Slideshow } from '@mui/icons-material';
+import { ConvertDate, JoinAnd, workshopHash } from '~/components/server';
 import { Suspense } from 'react';
-
-/**
- * A workshop item
- * @typedef {Object} WorkshopItem
- * @property {string} name The name of the workshop
- * @property {Date} date The date of the workshop
- * @property {string[]} host The host of the workshop
- * @property {string} description The description of the workshop
- * @property {string} [code] The link to the starter code
- * @property {string} [slides] The link to the slides
- * @property {string} [recording] The link to the recording
- */
+import { useSearchParams } from 'next/navigation';
+import { WorkshopItem } from '~/app/api/workshops/getWorkshopData';
 
 /**
  * Filters the workshops based on the search term
- * @param {WorkshopItem} workshop The workshop item
- * @param {string} search The search term
  */
-const filterWorkshop = (workshop, search) => {
+const filterWorkshop = (workshop: WorkshopItem, search: string): boolean => {
 	return (
 		workshop.name.toLowerCase().includes(search.toLowerCase()) ||
 		workshop.host.some(host => host.toLowerCase().includes(search.toLowerCase())) ||
@@ -32,12 +19,8 @@ const filterWorkshop = (workshop, search) => {
 
 /**
  * A workshop widget
- *
- * @param {object} props
- * @param {WorkshopItem} props.item The workshop item from the workshops.json JSON file
- * @returns {JSX.Element} The workshop widget
  */
-export const WorkshopWidget = ({ item }) => {
+export const WorkshopWidget = ({ item }: { item: WorkshopItem }) => {
 	return (
 		<Accordion id={workshopHash(item.name, item.date)}>
 			<AccordionSummary
@@ -64,7 +47,7 @@ export const WorkshopWidget = ({ item }) => {
 							maxWidth: '60vw',
 						}}
 					>
-						<JoinAnd items={item.host} /> on <ConvertDate date={item.date} />
+						<JoinAnd items={item.host} /> on <ConvertDate date={item.date} />.
 					</Typography>
 				</Box>
 			</AccordionSummary>
@@ -85,7 +68,8 @@ export const WorkshopWidget = ({ item }) => {
 const _FilteredWorkshopWidget = ({ item }) => {
 	const searchParams = useSearchParams();
 
-	if (searchParams.get('search') && filterWorkshop(item, searchParams.get('search')) === false) {
+	const search = searchParams.get('search') || '';
+	if (search && filterWorkshop(item, search) === false) {
 		return null;
 	}
 
@@ -94,12 +78,8 @@ const _FilteredWorkshopWidget = ({ item }) => {
 
 /**
  * A workshop widget
- * @param {object} props
- * @param {WorkshopItem} props.item The workshop item from the workshops.json JSON file
- * @param {boolean} [respondToSearchParam=false] Whether to respond to the search parameter
- * @returns {JSX.Element} The workshop widget
  */
-export const FilteredWorkshopWidget = ({ item }) => (
+export const FilteredWorkshopWidget = ({ item }: { item: WorkshopItem }) => (
 	<Suspense fallback={<WorkshopWidget item={item} />}>
 		<_FilteredWorkshopWidget item={item} />
 	</Suspense>

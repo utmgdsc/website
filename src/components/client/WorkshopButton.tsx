@@ -1,14 +1,18 @@
 import { ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material';
 
+interface WorkshopButtonProps {
+	/** The link to the resource */
+	href: string;
+	/** The icon to be displayed */
+	icon: React.ReactNode;
+	/** The text to be displayed */
+	text: string;
+}
+
 /**
  * A button that is used in the FAQ section
- * @param {Object} props
- * @param {string} props.href The link to the resource
- * @param {React.ReactNode} props.icon The icon to be displayed
- * @param {string} props.text The text to be displayed
- * @return {JSX.Element} The button
  */
-export const WorkshopButton = ({ href, icon, text }) => {
+export const WorkshopButton = ({ href, icon, text }: WorkshopButtonProps) => {
 	return (
 		<ListItem>
 			<ListItemButton component="a" target="_blank" rel="noreferrer" href={href}>

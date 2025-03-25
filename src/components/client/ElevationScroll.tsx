@@ -21,6 +21,7 @@ export const HideOnScroll = ({ children }) => {
 			appear={false}
 			direction="down"
 			in={!slideTrigger}
+			// @ts-expect-error undocumented prop
 			elevation={elevationTrigger ? 4 : 0}
 			sx={theme => ({
 				background: elevationTrigger ? theme.vars.palette.background.default : 'transparent !important',

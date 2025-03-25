@@ -1,16 +1,28 @@
 import { Box, Grid2 as Grid } from '@mui/material';
-import { getData, parseWorkshops } from '~/app/api/workshops/getWorkshopData';
+import { getData, parseWorkshops, WorkshopItem } from '~/app/api/workshops/getWorkshopData';
 import { InfoCard, TableOfContents, WorkshopSearch, FilteredWorkshopWidget } from '~/components/client';
 import { ConvertDate, workshopHash } from '~/components/server';
 
-const _LatestWorkshops = async ({ workshops, limit, showDate = false }) => (
+interface LatestWorkshopsProps {
+	/** The number of workshops to display */
+	limit: number;
+	/** Whether to show the date of the workshop */
+	showDate?: boolean;
+}
+
+interface _LatestWorkshopsProps extends LatestWorkshopsProps {
+	/** The workshops to display */
+	workshops: { [key: string]: WorkshopItem[] };
+}
+
+const _LatestWorkshops = async ({ workshops, limit, showDate = false }: _LatestWorkshopsProps) => (
 	<Grid container spacing={2} sx={{ mb: 4 }}>
 		{Object.keys(workshops)
 			.reduce((acc, key) => {
 				return [...acc, ...workshops[key]];
 			}, [])
 			.sort((a, b) => {
-				return new Date(b.date) - new Date(a.date);
+				return new Date(b.date).getTime() - new Date(a.date).getTime();
 			})
 			.slice(0, limit)
 			.map((item, index) => {
@@ -30,12 +42,18 @@ const _LatestWorkshops = async ({ workshops, limit, showDate = false }) => (
 	</Grid>
 );
 
-const WorkshopList = async ({ workshops }) => {
+interface WorkshopListProps {
+	/** The workshops to display */
+	workshops: { [key: string]: WorkshopItem[] };
+}
+
+const WorkshopList = async ({ workshops }: WorkshopListProps) => {
 	return (
 		<Grid container spacing={2}>
 			<Grid size={{ md: 3 }}>
 				<TableOfContents />
 			</Grid>
+
 			<Grid size={{ md: 9 }}>
 				<WorkshopSearch />
 
@@ -47,7 +65,7 @@ const WorkshopList = async ({ workshops }) => {
 							</h2>
 							{workshops[category]
 								.sort((a, b) => {
-									return new Date(b.date) - new Date(a.date);
+									return new Date(b.date).getTime() - new Date(a.date).getTime();
 								})
 								.map((item, index) => {
 									return <FilteredWorkshopWidget key={index} item={item} />;
@@ -60,10 +78,10 @@ const WorkshopList = async ({ workshops }) => {
 	);
 };
 
-export const LatestWorkshops = async ({ limit, ...props }) => {
+export const LatestWorkshops = async ({ limit }: LatestWorkshopsProps) => {
 	const workshops = parseWorkshops(await getData());
 
-	return <_LatestWorkshops workshops={workshops} limit={limit} {...props} />;
+	return <_LatestWorkshops limit={limit} workshops={workshops} />;
 };
 
 export const WorkshopArchiveInfo = async () => {

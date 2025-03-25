@@ -4,7 +4,7 @@ import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Suspense } from 'react';
 
-const useDebouncedValue = (value, delay) => {
+const useDebouncedValue = (value: string, delay: number) => {
 	const [debouncedValue, setDebouncedValue] = useState(value);
 
 	useEffect(() => {
@@ -23,13 +23,13 @@ const useDebouncedValue = (value, delay) => {
 /**
  * Modify a search parameter in the URL
  *
- * @param {URLSearchParams} searchParams - The current search parameters
- * @param {string} key - The key of the search parameter to modify
- * @param {string} value - The new value of the search parameter
+ * @param searchParams - The current search parameters
+ * @param key - The key of the search parameter to modify
+ * @param value - The new value of the search parameter
  *
- * @returns {string} The new search string without the question mark
+ * @returns The new search string without the question mark
  */
-const modifySearchParam = (searchParams, key, value) => {
+const modifySearchParam = (searchParams: URLSearchParams, key: string, value: string): string => {
 	if (value === '') {
 		searchParams.delete(key);
 	} else {

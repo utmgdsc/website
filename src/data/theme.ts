@@ -49,7 +49,10 @@ export const googleTheme = createTheme({
 			fontWeight: 'bold',
 			lineHeight: '2.5em',
 		},
-		h5: { fontFamily: `var(${GoogleSansDisplayVariable})` },
+		h5: {
+			fontFamily: `var(${GoogleSansDisplayVariable})`,
+			fontWeight: 'bold',
+		},
 		h6: { fontFamily: `var(${GoogleSansDisplayVariable})` },
 		subtitle1: { fontFamily: `var(${GoogleSansDisplayVariable})` },
 		subtitle2: { fontFamily: `var(${GoogleSansDisplayVariable})` },
