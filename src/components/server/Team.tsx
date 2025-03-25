@@ -2,20 +2,19 @@ import { Avatar, Box, Typography } from '@mui/material';
 import { ImageFilterProps } from '~/components/client';
 import { getProprietaryURL } from '~/components/server';
 
-/**
- * A team member
- * @typedef {Object} TeamMember
- * @property {string} name name of the team member
- * @property {string} role role of the team member
- * @property {string} [picture] picture of the team member
- */
+interface TeamMember {
+	/** name of the team member */
+	name: string;
+	/** role of the team member */
+	role: string;
+	/** picture of the team member */
+	picture?: string;
+}
 
 /**
  * A single team member
- * @param {TeamMember} props
- * @returns {JSX.Element} a single team member
  */
-const Person = ({ name, role, picture }) => {
+const Person = ({ name, role, picture }: TeamMember) => {
 	return (
 		<Box component="figure" sx={{ margin: 0, display: 'inline-block', padding: '1em' }}>
 			<Avatar
@@ -80,14 +79,17 @@ const Person = ({ name, role, picture }) => {
 	);
 };
 
+interface TeamProps {
+	/** members data from the json file */
+	teamInfo: TeamMember[];
+	/** title of the team */
+	title: string;
+}
+
 /**
  * Team component. Displays a team with a title and a list of team members
- * @param {Object} props
- * @param {TeamMember[]} props.teamInfo members data from the json file
- * @param {string} props.title title of the team
- * @returns {JSX.Element} A collection of Person components representing a team
  */
-export const Team = ({ teamInfo, title }) => {
+export const Team = ({ teamInfo, title }: TeamProps) => {
 	// do not return anything if there are no team members in the team
 	if (teamInfo.length === 0) {
 		return null;

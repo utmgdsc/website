@@ -1,8 +1,8 @@
 import HeroImage from '~/assets/backgrounds/background_light.svg';
 import HeroImageDark from '~/assets/backgrounds/background_dark.svg';
 import wordmark from '~/assets/graphics/gdscwordmark.svg';
-import { SkeletonLoadedImage } from '~/components/client';
 import { Box, Container, Typography } from '@mui/material';
+import Image from 'next/image';
 
 const getBackgroundImage = (theme, image) =>
 	'linear-gradient(' +
@@ -52,7 +52,7 @@ export const HomepageHero = () => {
 						}}
 					>
 						<Box
-							component={SkeletonLoadedImage}
+							component={Image}
 							alt="Google Developer Student Clubs University of Toronto Mississauga"
 							fill="100%"
 							id="gdsc-wordmark"

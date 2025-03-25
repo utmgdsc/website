@@ -1,6 +1,6 @@
 import NextLink from 'next/link';
 import { OpenInNew } from '@mui/icons-material';
-import { Link as MaterialLink } from '@mui/material';
+import { Link as MaterialLink, LinkProps as MaterialLinkProps } from '@mui/material';
 
 export const OpenInNewTabIcon = () => (
 	<OpenInNew
@@ -19,17 +19,15 @@ export const OpenInNewTabIcon = () => (
 	/>
 );
 
+interface LinkProps extends MaterialLinkProps {
+	/** If true, the link will open in a new tab */
+	external?: boolean;
+}
+
 /**
- * A link
- * @param {Object} props
- * @param {React.ReactNode} props.children The link's children
- * @param {string} props.href The link's href
- * @param {React.Ref} props.ref A ref to pass to the link
- * @param {boolean} props.external If true, the link will open in a new tab
- * @param {Object} props.props Any other props
- * @returns {JSX.Element} A link
+ * @returns A link
  */
-export const Link = ({ children, href, ref, external, ...props }) => (
+export const Link = ({ children, href, ref, external, ...props }: LinkProps) => (
 	<MaterialLink
 		component={NextLink}
 		href={href}

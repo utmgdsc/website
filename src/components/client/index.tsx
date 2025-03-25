@@ -24,7 +24,6 @@ export * from './Navbar';
 export * from './PathnameTabs';
 export * from './ProjectList';
 export * from './RouterBreadcrumb';
-export * from './SkeletonLoadedImage';
 export * from './TabChanger';
 export * from './TableOfContents';
 export * from './TagManager';

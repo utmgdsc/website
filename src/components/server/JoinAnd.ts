@@ -1,10 +1,13 @@
+interface JoinAndProps {
+	/** The items to join */
+	items: string[];
+}
+
 /**
  * Simple function to join strings with commas and an "and" at the end
- * @param {object} props
- * @param {string[]} props.items The items to join
- * @returns {string} The JoinAnd(joined items)
+ * @returns The JoinAnd(joined items)
  */
-export const JoinAnd = ({ items }) => {
+export const JoinAnd = ({ items }: JoinAndProps) => {
 	// the length of the list of items is stored in the length variable
 	const length = items.length;
 

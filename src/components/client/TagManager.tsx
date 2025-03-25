@@ -1,13 +1,15 @@
 import { useEffect } from 'react';
 import TagManagerModule from 'react-gtm-module';
 
+interface TagManagerProps {
+	/** The children to render */
+	children: React.ReactNode;
+}
+
 /**
  * Component to initialize Google Tag Manager
- *
- * @param {Object} props
- * @param {React.ReactNode} props.children The children to render
  */
-export const TagManager = ({ children }) => {
+export const TagManager = ({ children }: TagManagerProps) => {
 	useEffect(() => {
 		if (!process.env.NEXT_PUBLIC_GTM_ID || process.env.NODE_ENV === 'development') {
 			return;

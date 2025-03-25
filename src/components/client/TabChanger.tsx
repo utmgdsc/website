@@ -1,14 +1,18 @@
 import { Tabs, Tab } from '@mui/material';
 
+interface TabChangerProps {
+	/** List of years to display in the tabs */
+	tabList: string[];
+	/** Current page index */
+	page: number;
+	/** Function to set the current page index */
+	setPage: (page: number) => void;
+}
+
 /**
  * TabChanger component for MUI tabs
- * @param {object} props
- * @param {string[]} props.tabList list of years
- * @param {integer} props.page current page
- * @param {function} props.setPage function to set the page
- * @returns {JSX.Element} TabChanger component
  */
-export const TabChanger = ({ tabList, page, setPage }) => {
+export const TabChanger = ({ tabList, page, setPage }: TabChangerProps) => {
 	// if there is only one tab, don't show tabs
 	if (tabList.length <= 1) {
 		return <></>;

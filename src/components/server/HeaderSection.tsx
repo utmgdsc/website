@@ -1,11 +1,18 @@
-import { Box, Grid2 as Grid, Typography } from '@mui/material';
+import { Box, Grid2 as Grid, Grid2Props as GridProps, Typography } from '@mui/material';
 import React from 'react';
+
+interface HeaderSectionProps extends GridProps {
+	/** The header to display */
+	header: React.ReactNode;
+	/** The children to display */
+	children: React.ReactNode;
+}
 
 /**
  * A section with a header that goes side by side with the children,
  * until the screen is too small, then it stacks.
  */
-export const HeaderSection = ({ header, children, ...props }) => {
+export const HeaderSection = ({ header, children, ...props }: HeaderSectionProps) => {
 	return (
 		<Grid container spacing={2} component="section" {...props}>
 			<Grid size={{ xs: 12, md: 4 }}>{header}</Grid>
@@ -14,15 +21,19 @@ export const HeaderSection = ({ header, children, ...props }) => {
 	);
 };
 
+interface HomepageSectionProps {
+	/** The title of the section */
+	title?: string;
+	/** The title to display after the main title */
+	titleAfter?: React.ReactNode;
+	/** The children to display */
+	children: React.ReactNode;
+}
+
 /**
  * A section for the homepage. Takes a title and children.
- *
- * @param {Object} props - props to pass to the component
- * @param {string} props.title - title of the section
- * @param {React.ReactNode} props.titleAfter - JSX element to render after the title
- * @param {React.ReactNode} props.children - children of the component
  */
-export const HomepageSection = ({ title, titleAfter, children }) => (
+export const HomepageSection = ({ title, titleAfter, children }: HomepageSectionProps) => (
 	<HeaderSection
 		sx={{
 			margin: '0 auto',
