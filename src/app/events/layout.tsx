@@ -11,7 +11,7 @@ export const metadata = {
  * This is a layout so that the current tab state is shared which makes it
  * smoother
  */
-export default async function EventsLayout({ children }) {
+export default async function EventsLayout({ children }: { children: React.ReactNode }) {
 	/** the current date */
 	const today = new Date();
 

@@ -1,4 +1,5 @@
 import { NodeHtmlMarkdown } from 'node-html-markdown';
+import type { components } from './bevy';
 
 /**
  * Minimum date allowed by JavaScript Date object.
@@ -19,7 +20,11 @@ export const MAX_DATE: Date = new Date(8640000000000000);
  * @param to the date to stop showing events at (non-inclusive), based on end_date
  * @returns bevy chapter object
  */
-const getEvents = async (limit: number | undefined, from: Date, to: Date): Promise<any> => {
+const getEvents = async (
+	limit: number | undefined,
+	from: Date,
+	to: Date
+): Promise<components['schemas']['EventSummary'][]> => {
 	if (!process.env.CHAPTER_API_URL) {
 		throw new Error('CHAPTER_API_URL is not defined in the environment variables.');
 	}
@@ -32,8 +37,11 @@ const getEvents = async (limit: number | undefined, from: Date, to: Date): Promi
 			if (data['detail'] && (data['detail'].includes('throttled') || data['detail'].includes('error'))) {
 				throw new Error(data['detail']);
 			}
+
+			const results = data['results'] as components['schemas']['EventSummary'][];
+
 			// filter only published events
-			let eventData = data['results'].filter(event => event['status'] === 'Published');
+			let eventData = results!.filter(event => event['status'] === 'Published');
 
 			// slice to limit if specified
 			if (limit) {
@@ -42,7 +50,7 @@ const getEvents = async (limit: number | undefined, from: Date, to: Date): Promi
 
 			// filter only upcoming events if specified
 			eventData = eventData.filter(event => {
-				const endDate = new Date(event['end_date']);
+				const endDate = new Date(event['end_date'] || event['start_date'] || 0);
 				return endDate >= from && endDate < to;
 			});
 
@@ -58,7 +66,7 @@ const getEvents = async (limit: number | undefined, from: Date, to: Date): Promi
  * @param id of the event
  * @returns bevy event object
  */
-const fetchEventInfo = async (id: number): Promise<any> => {
+const fetchEventInfo = async (id: number): Promise<components['schemas']['EventFull']> => {
 	if (!process.env.EVENT_API_URL) {
 		throw new Error('EVENT_API_URL is not defined in the environment variables.');
 	}
@@ -79,7 +87,7 @@ const fetchEventInfo = async (id: number): Promise<any> => {
 		});
 };
 
-export const concatStrings = (...strings: string[]) => strings.filter(Boolean).join(' ');
+export const concatStrings = (...strings: (string | undefined | null)[]) => strings.filter(Boolean).join(' ');
 
 /**
  * get descriptions and locations for events from api
@@ -89,17 +97,11 @@ export const getEnrichedEvents = async (limit: number | undefined, from: Date, t
 
 	const eventInfo = await Promise.all(
 		events.map(async event => {
-			return await fetchEventInfo(event['id']);
+			return await fetchEventInfo(event['id'] as number);
 		})
 	);
 
-	const descriptions = eventInfo.map(event => {
-		if (event['message']) {
-			return event['message'];
-		}
-
-		return event['description_short'];
-	});
+	const descriptions = eventInfo.map(event => event['description_short'] || '');
 
 	return { events, descriptions, eventInfo };
 };

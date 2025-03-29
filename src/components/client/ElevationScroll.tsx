@@ -1,14 +1,13 @@
 import React from 'react';
-
+import type {} from '@mui/material/themeCssVarsAugmentation';
+import type { SlideProps, Theme } from '@mui/material';
 import { Slide, useScrollTrigger } from '@mui/material';
 
 /**
  * Hides children on scroll down, shows on scroll up
- * @param {Object} props
- * @param {React.ReactNode} props.children The children to hide/show
  * @see https://mui.com/material-ui/react-app-bar/#HideAppBar.js
  */
-export const HideOnScroll = ({ children }) => {
+export const HideOnScroll = ({ children }: { children: SlideProps['children'] }) => {
 	const elevationTrigger = useScrollTrigger({
 		disableHysteresis: true,
 		threshold: 0,
@@ -23,7 +22,7 @@ export const HideOnScroll = ({ children }) => {
 			in={!slideTrigger}
 			// @ts-expect-error undocumented prop
 			elevation={elevationTrigger ? 4 : 0}
-			sx={theme => ({
+			sx={(theme: Theme) => ({
 				background: elevationTrigger ? theme.vars.palette.background.default : 'transparent !important',
 			})}
 		>

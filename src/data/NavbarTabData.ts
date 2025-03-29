@@ -1,3 +1,4 @@
+/** A single navbar page. */
 type NavbarPage = {
 	/** The name of the page to be displayed in the navbar */
 	name: string;
