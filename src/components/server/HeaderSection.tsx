@@ -1,4 +1,4 @@
-import { Box, Grid2 as Grid, Grid2Props as GridProps, Typography } from '@mui/material';
+import { Box, Grid, GridProps, Typography } from '@mui/material';
 import React from 'react';
 
 interface HeaderSectionProps extends GridProps {

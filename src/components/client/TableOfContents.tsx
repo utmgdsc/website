@@ -17,7 +17,7 @@ interface SmoothScrollingLinkProps {
 const SmoothScrollingLink = ({ id, title }: SmoothScrollingLinkProps) => {
 	return (
 		<Link
-			sx={{ color: theme => theme.vars.palette.text.secondary }}
+			sx={{ color: ({ vars }) => vars.palette.text.secondary }}
 			href={`#${id}`}
 			onClick={e => {
 				e.preventDefault();
@@ -172,10 +172,10 @@ export const TableOfContents = () => {
 				},
 				li: {
 					'&.active > a': {
-						color: theme => theme.vars.palette.primary.main,
+						color: ({ vars }) => vars.palette.primary.main,
 					},
 					'> a:hover': {
-						color: theme => theme.vars.palette.primary.main,
+						color: ({ vars }) => vars.palette.primary.main,
 					},
 				},
 			}}

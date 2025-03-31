@@ -1,14 +1,24 @@
-import { AppBar, Box, ButtonGroup, Container, Fab, Tabs, Toolbar, useScrollTrigger, useTheme } from '@mui/material';
-import Link from 'next/link';
+import {
+	AppBar,
+	Box,
+	ButtonGroup,
+	Container,
+	Fab,
+	Tab,
+	Tabs,
+	Toolbar,
+	useScrollTrigger,
+	useTheme,
+} from '@mui/material';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import bracket from '~/assets/graphics/bracket.svg';
 import bracketDark from '~/assets/graphics/bracket_colourless.svg';
 import { ThemedImage } from '~/components/client';
+import { Link } from '~/components/server';
 import { pages } from '~/data/NavbarTabData';
 import { CommunityDevButton, DiscordButton, GitHubButton, InstagramButton } from '~/data/SocialButton';
 import { HideOnScroll } from './ElevationScroll';
-import { LinkTab } from './LinkTab';
 
 /** gdsc button logo */
 const ButtonLogo = () => {
@@ -27,7 +37,7 @@ const ButtonLogo = () => {
 			}}
 			component={Link}
 			sx={{
-				background: theme => theme.vars.palette.background.paper + ' !important',
+				background: ({ vars }) => vars.palette.background.paper + ' !important',
 				boxShadow: trigger ? 0 : 4,
 			}}
 			href="/"
@@ -108,7 +118,7 @@ const NavbarTabs = () => {
 				'& .MuiTabs-indicatorSpan': {
 					maxWidth: 50,
 					width: '100%',
-					backgroundColor: theme => theme.vars.palette.primary.main,
+					backgroundColor: ({ vars }) => vars.palette.primary.main,
 				},
 				'& .MuiTabs-scrollButtons.Mui-disabled': {
 					opacity: 0.3,
@@ -133,11 +143,26 @@ const NavbarTabs = () => {
 				)
 				.map((page, index) => {
 					return (
-						<LinkTab
+						<Tab
+							component={Link}
 							href={page.path}
 							value={page.path.toLowerCase().split('/')[1]}
 							label={page.name}
 							key={index}
+							sx={({ vars }) => ({
+								color: vars.palette.text.secondary,
+								fontFamily: 'inherit',
+								fontSize: '1em',
+								fontWeight: 'normal',
+								letterSpacing: '0 !important',
+								padding: '1.5em',
+								textTransform: 'none',
+								whiteSpace: 'nowrap',
+								'&.Mui-selected': {
+									color: vars.palette.text.primary,
+									fontWeight: 'bold',
+								},
+							})}
 						/>
 					);
 				})}

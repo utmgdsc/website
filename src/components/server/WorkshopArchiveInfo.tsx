@@ -1,4 +1,4 @@
-import { Box, Grid2 as Grid } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import { getData, parseWorkshops, WorkshopItem } from '~/app/api/workshops/getWorkshopData';
 import { InfoCard, TableOfContents, WorkshopSearch, FilteredWorkshopWidget } from '~/components/client';
 import { ConvertDate, workshopHash } from '~/components/server';

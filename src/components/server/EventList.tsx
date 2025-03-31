@@ -1,6 +1,6 @@
 import { ConvertDate } from '~/components/server';
 import { InfoCard } from '~/components/client';
-import { Alert, Grid2 as Grid, Typography } from '@mui/material';
+import { Alert, Grid, Typography } from '@mui/material';
 import { MIN_DATE, MAX_DATE, getEnrichedEvents, getYears } from '~/app/api/events/getEventData';
 import { ReactNode } from 'react';
 

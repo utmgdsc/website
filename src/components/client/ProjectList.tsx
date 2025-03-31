@@ -1,5 +1,5 @@
 import { InfoCard, TabChanger } from '~/components/client';
-import { Grid2 as Grid, Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import { useMemo, useState } from 'react';
 import proj from '~/data/projects.json';
 
