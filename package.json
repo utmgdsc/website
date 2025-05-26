@@ -24,7 +24,7 @@
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
 		"react-gtm-module": "^2.0.11",
-		"sharp": "^0.34.1",
+		"sharp": "^0.34.2",
 		"yaml": "^2.8.0"
 	},
 	"devDependencies": {
