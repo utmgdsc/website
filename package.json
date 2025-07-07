@@ -28,7 +28,7 @@
 		"yaml": "^2.8.0"
 	},
 	"devDependencies": {
-		"@types/node": "24.0.3",
+		"@types/node": "24.0.10",
 		"eslint": "^9.29.0",
 		"eslint-config-next": "^15.3.3",
 		"eslint-plugin-promise": "^7.2.1",
