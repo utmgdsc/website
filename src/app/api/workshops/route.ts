@@ -6,7 +6,7 @@ export async function GET() {
 	try {
 		parsedWorkshops = parseWorkshops(await getData());
 	} catch (error) {
-		return new Response(error.toString(), {
+		return new Response(String(error), {
 			status: 500,
 			headers: {
 				'Access-Control-Allow-Origin': '*',

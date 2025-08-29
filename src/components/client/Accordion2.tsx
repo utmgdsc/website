@@ -2,12 +2,13 @@
  * @fileoverview MUI accordion but it works without JS
  */
 import { Accordion as MUIAccordion, AccordionSummary as MUIAccordionSummary } from '@mui/material';
+import type { AccordionProps, AccordionSummaryProps } from '@mui/material';
 import { Fragment, useEffect, useState } from 'react';
 
 /**
- * @returns {any} undefined if JS is enabled, otherwise, returns the default value
+ * @returns undefined if JS is enabled, otherwise, returns the default value
  */
-const useOnload = def => {
+const useOnload = <T,>(def: T | undefined) => {
 	const [loaded, setLoaded] = useState(def);
 
 	useEffect(() => {
@@ -23,17 +24,20 @@ const FragmentFilter = ({ children }: { children: React.ReactNode }) => <Fragmen
 /**
  * load a proper "details" fallback when theres no JS
  */
-export const Accordion = props => {
-	const unset = useOnload('unset !important');
+export const Accordion = (props: AccordionProps) => {
+	const unset = useOnload<boolean>(true);
 
 	return (
 		<MUIAccordion
 			sx={{
-				'.MuiCollapse-root' /* the accordion content */: {
-					height: unset,
-					minHeight: unset,
-					visibility: unset,
-				},
+				/* the accordion content */
+				'.MuiCollapse-root': unset
+					? {
+							height: 'unset !important',
+							minHeight: 'unset !important',
+							visibility: 'unset !important',
+						}
+					: undefined,
 				...props.sx,
 			}}
 			slots={{
@@ -48,7 +52,7 @@ export const Accordion = props => {
 	);
 };
 
-export const AccordionSummary = props => {
+export const AccordionSummary = (props: AccordionSummaryProps) => {
 	return (
 		<MUIAccordionSummary component={useOnload('summary')} {...props}>
 			{props.children}

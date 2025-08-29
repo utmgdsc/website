@@ -109,9 +109,9 @@ const useHeadingsData = () => {
 
 /**
  * Check what heading/section the user is browsing and set its id
- * @param {(activeId: string) => void} setActiveId - function to set the active id
+ * @param setActiveId - function to set the active id
  */
-const useIntersectionObserver = setActiveId => {
+const useIntersectionObserver = (setActiveId: (activeId: string) => void) => {
 	const headingElementsRef = useRef({});
 	useEffect(() => {
 		const headingElements = Array.from(document.querySelectorAll('h2.resources, h3.resources'));
