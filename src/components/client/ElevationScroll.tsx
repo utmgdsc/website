@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Slide, useScrollTrigger } from '@mui/material';
+import { Slide, Theme, useScrollTrigger } from '@mui/material';
 
 /**
  * Hides children on scroll down, shows on scroll up
@@ -23,7 +23,7 @@ export const HideOnScroll = ({ children }) => {
 			in={!slideTrigger}
 			// @ts-expect-error undocumented prop
 			elevation={elevationTrigger ? 4 : 0}
-			sx={({ vars }) => ({
+			sx={({ vars }: Theme) => ({
 				background: elevationTrigger ? vars.palette.background.default : 'transparent !important',
 			})}
 		>
