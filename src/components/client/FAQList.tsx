@@ -1,5 +1,6 @@
 import { Box, Typography } from '@mui/material';
-import { FAQ, FAQItem } from '~/components/client';
+import { FAQ } from '~/components/client';
+import type { FAQItem } from '~/data/faq';
 
 interface FAQListProps {
 	/** The frequently asked questions */

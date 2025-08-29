@@ -6,7 +6,7 @@
  */
 import { Email, Facebook, GitHub, Google, Instagram, LinkedIn, YouTube } from '@mui/icons-material';
 import { createSvgIcon } from '@mui/material';
-import { NamedIconButton } from '~/components/server';
+import { NamedIconButton, NamedIconButtonProps } from '~/components/server';
 
 /**
  * Discord icon
@@ -23,7 +23,7 @@ const DiscordIcon = createSvgIcon(
 	'Discord'
 );
 
-export const CommunityDevButton = props => (
+export const CommunityDevButton = (props: Partial<NamedIconButtonProps>) => (
 	<NamedIconButton
 		title="Google Developers Student Club page"
 		tooltip="Visit our official Google Developers Student Club page"
@@ -33,7 +33,7 @@ export const CommunityDevButton = props => (
 	/>
 );
 
-export const InstagramButton = props => (
+export const InstagramButton = (props: Partial<NamedIconButtonProps>) => (
 	<NamedIconButton
 		title="Instagram"
 		tooltip="Visit our Instagram"
@@ -43,7 +43,7 @@ export const InstagramButton = props => (
 	/>
 );
 
-export const GitHubButton = props => (
+export const GitHubButton = (props: Partial<NamedIconButtonProps>) => (
 	<NamedIconButton
 		title="GitHub"
 		tooltip="Visit our GitHub organization"
@@ -53,7 +53,7 @@ export const GitHubButton = props => (
 	/>
 );
 
-export const FacebookButton = props => (
+export const FacebookButton = (props: Partial<NamedIconButtonProps>) => (
 	<NamedIconButton
 		title="Facebook"
 		tooltip="Visit our Facebook"
@@ -63,7 +63,7 @@ export const FacebookButton = props => (
 	/>
 );
 
-export const LinkedInButton = props => (
+export const LinkedInButton = (props: Partial<NamedIconButtonProps>) => (
 	<NamedIconButton
 		title="LinkedIn"
 		tooltip="Visit our LinkedIn"
@@ -73,7 +73,7 @@ export const LinkedInButton = props => (
 	/>
 );
 
-export const YouTubeButton = props => (
+export const YouTubeButton = (props: Partial<NamedIconButtonProps>) => (
 	<NamedIconButton
 		title="YouTube"
 		tooltip="Visit our YouTube"
@@ -83,11 +83,11 @@ export const YouTubeButton = props => (
 	/>
 );
 
-export const EmailButton = props => (
+export const EmailButton = (props: Partial<NamedIconButtonProps>) => (
 	<NamedIconButton title="Email" tooltip="Email us" icon={<Email />} href="mailto:utmdsc@gmail.com" {...props} />
 );
 
-export const DiscordButton = props => (
+export const DiscordButton = (props: Partial<NamedIconButtonProps>) => (
 	<NamedIconButton
 		title="Discord Server"
 		tooltip="Join our Discord Server"

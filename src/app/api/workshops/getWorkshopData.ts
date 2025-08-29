@@ -1,26 +1,10 @@
 import yaml from 'js-yaml';
-
-export interface WorkshopItem {
-	/** The name of the workshop */
-	name: string;
-	/** The date of the workshop in YYYY-MM-DD format */
-	date: string;
-	/** The host of the workshop */
-	host: string[];
-	/** The description of the workshop */
-	description: string;
-	/** The link to the starter code */
-	code?: string;
-	/** The link to the slides */
-	slides?: string;
-	/** The link to the recording */
-	recording?: string;
-}
+import { AllWorkshops, WorkshopCategory, WorkshopItem } from './workshops';
 
 /**
  * Get data from the workshops repo, and parse it into a JSON object
  */
-export const getData = async () => {
+export const getData = async (): Promise<AllWorkshops> => {
 	if (!process.env.WORKSHOPS_HOSTNAME) {
 		throw new Error('WORKSHOPS_HOSTNAME environment variable not set');
 	}
@@ -36,7 +20,7 @@ export const getData = async () => {
 			return response.text();
 		})
 		.then(text => {
-			return yaml.load(text);
+			return yaml.load(text) as AllWorkshops;
 		})
 		.catch(() => {
 			return {};
@@ -46,19 +30,20 @@ export const getData = async () => {
 /**
  * parse workshop data into a nested list of headings
  */
-export const parseWorkshops = (workshops): { [key: string]: WorkshopItem[] } => {
+export const parseWorkshops = (workshops: AllWorkshops): { [key: string]: WorkshopItem[] } => {
 	// Iterate through each year
-	return Object.entries(workshops).reduce((parsedData, [year, categories]: [string, WorkshopItem[]]) => {
+	return Object.entries(workshops).reduce((parsedData: { [key: string]: WorkshopItem[] }, [year, categories]) => {
 		// Iterate through each category
-		Object.entries(categories).forEach(([, workshopsList]) => {
+		// @ts-expect-error for some reason typescript thinks categories is of type WorkshopItem[]
+		Object.entries(categories).forEach(([, workshopObj]: [string, WorkshopCategory]) => {
 			// Get the category name
-			const categoryName = Object.keys(workshopsList)[0];
+			const categoryName = Object.keys(workshopObj)[0];
 
-			// Initialise category array
+			// Initialize category array
 			parsedData[categoryName] = parsedData[categoryName] ?? [];
 
 			// Iterate through each workshop
-			workshopsList[categoryName].forEach(workshop => {
+			workshopObj[categoryName].forEach(workshop => {
 				// Update the date string
 				const newDate = `${year}-${workshop.date}`;
 

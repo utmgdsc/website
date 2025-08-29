@@ -4,7 +4,7 @@ import { Code, ExpandMore, RadioButtonChecked, Slideshow } from '@mui/icons-mate
 import { ConvertDate, JoinAnd, workshopHash } from '~/components/server';
 import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { WorkshopItem } from '~/app/api/workshops/getWorkshopData';
+import { WorkshopItem } from '~/app/api/workshops/workshops';
 
 /**
  * Filters the workshops based on the search term

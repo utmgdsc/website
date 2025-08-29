@@ -112,11 +112,11 @@ const useHeadingsData = () => {
  * @param setActiveId - function to set the active id
  */
 const useIntersectionObserver = (setActiveId: (activeId: string) => void) => {
-	const headingElementsRef = useRef({});
+	const headingElementsRef = useRef<{ [key: string]: IntersectionObserverEntry }>({});
 	useEffect(() => {
 		const headingElements = Array.from(document.querySelectorAll('h2.resources, h3.resources'));
 
-		const callback = headings => {
+		const callback = (headings: IntersectionObserverEntry[]) => {
 			headingElementsRef.current = headings.reduce((map, headingElement) => {
 				map[headingElement.target.id] = headingElement;
 				return map;
@@ -128,7 +128,7 @@ const useIntersectionObserver = (setActiveId: (activeId: string) => void) => {
 				if (headingElement.isIntersecting) visibleHeadings.push(headingElement);
 			});
 
-			const getIndexFromId = id => headingElements.findIndex(heading => heading.id === id);
+			const getIndexFromId = (id: string) => headingElements.findIndex(heading => heading.id === id);
 
 			if (visibleHeadings.length === 1) {
 				setActiveId(visibleHeadings[0].target.id);

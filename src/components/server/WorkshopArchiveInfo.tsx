@@ -1,5 +1,6 @@
 import { Box, Grid } from '@mui/material';
-import { getData, parseWorkshops, WorkshopItem } from '~/app/api/workshops/getWorkshopData';
+import { getData, parseWorkshops } from '~/app/api/workshops/getWorkshopData';
+import { WorkshopItem } from '~/app/api/workshops/workshops';
 import { InfoCard, TableOfContents, WorkshopSearch, FilteredWorkshopWidget } from '~/components/client';
 import { ConvertDate, workshopHash } from '~/components/server';
 
@@ -18,7 +19,7 @@ interface _LatestWorkshopsProps extends LatestWorkshopsProps {
 const _LatestWorkshops = async ({ workshops, limit, showDate = false }: _LatestWorkshopsProps) => (
 	<Grid container spacing={2} sx={{ mb: 4 }}>
 		{Object.keys(workshops)
-			.reduce((acc, key) => {
+			.reduce<WorkshopItem[]>((acc, key) => {
 				return [...acc, ...workshops[key]];
 			}, [])
 			.sort((a, b) => {

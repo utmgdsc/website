@@ -3,16 +3,13 @@ import { InfoCard } from '~/components/client';
 import { Alert, Grid, Typography } from '@mui/material';
 import { MIN_DATE, MAX_DATE, getEnrichedEvents, getYears } from '~/app/api/events/getEventData';
 import { ComponentType, ReactNode } from 'react';
+import { components } from '~/app/api/events/bevy';
 
-const EventInfoCard = ({
-	event,
-	description,
-}: {
-	// TODO
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	event: Record<string, any>;
-	description: string;
-}) => {
+const EventInfoCard = ({ event, description }: { event: components['schemas']['EventFull']; description: string }) => {
+	if (!event || !event['title'] || !event['start_date'] || !event['url']) {
+		return null;
+	}
+
 	return (
 		<InfoCard
 			subtitle={<ConvertDate date={event['start_date']} />}
@@ -53,7 +50,7 @@ export const EventList = async ({
 	const { events, descriptions } = await getEnrichedEvents(limit, from, to);
 
 	if (!Array.isArray(events)) {
-		return <Alert severity="error">{events?.message}</Alert>;
+		return <Alert severity="error">Something went wrong! Check out our events on our GDG page!</Alert>;
 	}
 
 	return (

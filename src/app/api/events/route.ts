@@ -27,10 +27,15 @@ export async function GET(req: NextRequest): Promise<Response> {
 	events.forEach((event, id) => {
 		const info = eventInfo[id];
 
+		// Assert that required properties exist
+		if (!info['start_date'] || !info['end_date'] || !info['title']) {
+			throw new Error(`Missing required event information for event ID: ${id}`);
+		}
+
 		calendar.createEvent({
-			start: new Date(info['start_date']),
-			end: new Date(info['end_date']),
-			summary: info['title'],
+			start: new Date(info['start_date'] || 0),
+			end: new Date(info['end_date'] || 0),
+			summary: info['title'] || 'GDSC UTM Event',
 			description: isDiscord ? generateChronicleFrontMatter(info) : info['description'],
 			url: event['url'],
 			location: concatStrings(info['venue_name'], info['meetup_url'], info['eventbrite_url']) ?? undefined,

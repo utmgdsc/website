@@ -4,8 +4,11 @@ import bracket_colourless from '~/assets/graphics/bracket_colourless.svg';
 import { ErrorBoundary } from '~/components/client';
 import { Link, LinkProps } from '~/components/server';
 import * as allSocialButtons from '~/data/SocialButton';
-import footerLinks from '~/data/footer.json';
+import type { FooterLinksData } from '~/data/footer.d.ts';
+import _footerLinks from '~/data/footer.json';
 import Image from 'next/image';
+
+const footerLinks: FooterLinksData = _footerLinks;
 
 /**
  * A link for footer-flex. Takes the same props as "a".

@@ -1,16 +1,7 @@
 import { ExpandMore } from '@mui/icons-material';
 import { AccordionDetails, AccordionSummary, Typography } from '@mui/material';
 import { Accordion } from '~/components/client';
-
-/**
- * A single FAQ item.
- */
-export interface FAQItem {
-	/** The question */
-	question: string;
-	/** The answer */
-	answer: string;
-}
+import type { FAQItem } from '~/data/faq';
 
 interface FAQProps {
 	/** The frequently asked question */
