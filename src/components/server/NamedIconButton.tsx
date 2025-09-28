@@ -1,10 +1,11 @@
 import { IconButton, Tooltip } from '@mui/material';
+import type { ReactNode } from 'react';
 
 interface NamedIconButtonProps {
 	/** link to where the icon button should redirect to */
 	href: string;
 	/** icon to display */
-	icon: JSX.Element;
+	icon: ReactNode;
 	/** tooltip text */
 	tooltip: string;
 	/** title of the icon button */

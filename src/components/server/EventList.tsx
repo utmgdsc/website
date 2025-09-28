@@ -2,9 +2,17 @@ import { ConvertDate } from '~/components/server';
 import { InfoCard } from '~/components/client';
 import { Alert, Grid, Typography } from '@mui/material';
 import { MIN_DATE, MAX_DATE, getEnrichedEvents, getYears } from '~/app/api/events/getEventData';
-import { ReactNode } from 'react';
+import { ComponentType, ReactNode } from 'react';
 
-const EventInfoCard = ({ event, description }) => {
+const EventInfoCard = ({
+	event,
+	description,
+}: {
+	// TODO
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	event: Record<string, any>;
+	description: string;
+}) => {
 	return (
 		<InfoCard
 			subtitle={<ConvertDate date={event['start_date']} />}
@@ -25,7 +33,7 @@ interface EventListProps {
 	/** Number of skeleton cards to show when loading */
 	skeleton?: number;
 	/** Component to show when there are no events */
-	EmptyComponent?: React.ElementType | null;
+	EmptyComponent?: ComponentType | null;
 	/** Children to show when there are events */
 	children?: ReactNode;
 }

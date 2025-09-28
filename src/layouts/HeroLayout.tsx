@@ -1,10 +1,11 @@
 import { Container } from '@mui/material';
+import type { ComponentProps, ReactNode } from 'react';
 
 import { HeroHeader, HeroHeaderProps } from '~/components/client';
 
 export interface HeroLayoutProps {
 	/** Children components */
-	children: React.ReactNode;
+	children: ReactNode;
 	/** Title of the page */
 	title: HeroHeaderProps['text'];
 	/** Picture to be used as the hero header */
@@ -18,7 +19,7 @@ export interface HeroLayoutProps {
 	/** Props to pass to the Hero */
 	headerProps?: Partial<HeroHeaderProps>;
 	/** Props to pass to the Container */
-	containerProps?: Partial<React.ComponentProps<typeof Container>>;
+	containerProps?: Partial<ComponentProps<typeof Container>>;
 }
 
 /**

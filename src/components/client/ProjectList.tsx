@@ -22,7 +22,7 @@ export const ProjectList = () => {
 		}, []);
 
 		return years.sort((a, b) => b - a);
-	}, []);
+	}, [projects]);
 
 	return (
 		// todo, make these tabs change the url

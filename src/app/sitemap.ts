@@ -21,7 +21,7 @@ export default function sitemap(): SitemapItem[] {
 	/**
 	 * accumulator for the sites defined in NavbarTabData.pages
 	 */
-	let acc: SitemapItem[] = [];
+	const acc: SitemapItem[] = [];
 
 	pages.forEach(item => {
 		acc.push({

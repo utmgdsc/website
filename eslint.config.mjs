@@ -1,17 +1,35 @@
-import globals from 'globals';
+import { defineConfig, globalIgnores } from 'eslint/config';
+import { FlatCompat } from '@eslint/eslintrc';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 import eslint from '@eslint/js';
+import globals from 'globals';
+import pluginNext from '@next/eslint-plugin-next';
 import pluginPromise from 'eslint-plugin-promise';
 import reactPlugin from 'eslint-plugin-react';
-import pluginNext from '@next/eslint-plugin-next';
+import tseslint from 'typescript-eslint';
 
-const eslintConfig = [
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const compat = new FlatCompat({
+	baseDirectory: __dirname,
+});
+
+const eslintConfig = defineConfig([
+	globalIgnores(['node_modules/**', '.next/**', 'out/**', 'build/**', 'next-env.d.ts']),
 	eslint.configs.recommended,
+	tseslint.configs.recommended,
 	pluginPromise.configs['flat/recommended'],
 	reactPlugin.configs.flat.recommended,
 	reactPlugin.configs.flat['jsx-runtime'],
+	...compat.extends('next/core-web-vitals', 'next/typescript'),
 	{
 		plugins: {
 			'@next/next': pluginNext,
+		},
+		settings: {
+			react: { version: 'detect' },
 		},
 		rules: {
 			...pluginNext.configs.recommended.rules,
@@ -20,18 +38,14 @@ const eslintConfig = [
 		languageOptions: {
 			ecmaVersion: 'latest',
 			sourceType: 'module',
-			globals: {
-				...globals.browser,
-				...globals.node,
-			},
+			globals: globals.browser,
 			parserOptions: {
 				ecmaFeatures: {
 					jsx: true,
 				},
-				project: ['./jsconfig.json'],
 			},
 		},
 	},
-];
+]);
 
 export default eslintConfig;

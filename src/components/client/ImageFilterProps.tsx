@@ -1,9 +1,10 @@
 import NextImage from 'next/image';
+import type { ComponentProps } from 'react';
 
 /**
  * Reexports NextImage with all the props and filters out props that are not defined by NextImage
  */
-export const ImageFilterProps = props => {
+export const ImageFilterProps = (props: ComponentProps<typeof NextImage>) => {
 	const imageProps = {
 		src: props.src,
 		alt: props.alt,

@@ -1,10 +1,11 @@
 import { ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material';
+import type { ReactNode } from 'react';
 
 interface WorkshopButtonProps {
 	/** The link to the resource */
 	href: string;
 	/** The icon to be displayed */
-	icon: React.ReactNode;
+	icon: ReactNode;
 	/** The text to be displayed */
 	text: string;
 }

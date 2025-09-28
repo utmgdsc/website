@@ -11,7 +11,7 @@ import {
 	useTheme,
 } from '@mui/material';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import bracket from '~/assets/graphics/bracket.svg';
 import bracketDark from '~/assets/graphics/bracket_colourless.svg';
 import { ThemedImage } from '~/components/client';
@@ -75,15 +75,15 @@ const useNavbarTabs = () => {
 	const pathname = usePathname();
 
 	/** get current tab or default to empty string */
-	const getTab = () => `${pathname.toLowerCase().split('/')[1]}`;
+	const tab = useMemo(() => `${pathname.toLowerCase().split('/')[1]}`, [pathname]);
 
 	// use only the first part of the path to determine the tab
 	// so that sub pages are also highlighted in the navbar
-	const [currentTab, setCurrentTab] = useState(getTab());
+	const [currentTab, setCurrentTab] = useState(tab);
 
 	useEffect(() => {
-		setCurrentTab(getTab());
-	}, [pathname]);
+		setCurrentTab(tab);
+	}, [tab]);
 
 	/** all pages that should be included in the navbar */
 	const processedPages = pages.filter(page => page.includeInNavbar !== false).map(page => page.path.replace('/', ''));

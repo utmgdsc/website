@@ -1,5 +1,5 @@
 import { Search } from '@mui/icons-material';
-import { InputAdornment, TextField, Typography } from '@mui/material';
+import { InputAdornment, TextField } from '@mui/material';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Suspense } from 'react';
@@ -38,7 +38,7 @@ const modifySearchParam = (searchParams: URLSearchParams, key: string, value: st
 	return searchParams.toString();
 };
 
-const _WorkshopSearch = () => {
+const InternalWorkshopSearch = () => {
 	const searchParams = useSearchParams();
 	const [search, setSearch] = useState(searchParams.get('search') || '');
 	const debouncedSearch = useDebouncedValue(search, 300);
@@ -92,6 +92,6 @@ export const WorkshopSearch = () => (
 			/>
 		}
 	>
-		<_WorkshopSearch />
+		<InternalWorkshopSearch />
 	</Suspense>
 );

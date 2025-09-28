@@ -1,4 +1,4 @@
-import { getImageProps, ImageProps } from 'next/image';
+import Image, { getImageProps, ImageProps } from 'next/image';
 import { Box, BoxProps } from '@mui/material';
 import { HTMLProps } from 'react';
 
@@ -28,10 +28,10 @@ export const ThemedImage = ({ srcLight, srcDark, alt, isSVG, pictureProps = {}, 
 	} = getImageProps({ ...props, alt, src: srcLight });
 
 	return (
-		<Box component="picture" {...(pictureProps as any)}>
+		<Box component="picture" {...pictureProps}>
 			<source media="(prefers-color-scheme: dark)" srcSet={isSVG ? srcDark : dark} />
 			<source media="(prefers-color-scheme: light)" srcSet={isSVG ? srcLight : light} />
-			<img {...rest} alt={alt} />
+			<Image {...rest} alt={alt} />
 		</Box>
 	);
 };

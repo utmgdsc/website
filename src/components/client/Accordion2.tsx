@@ -1,9 +1,6 @@
-/**
- * @fileoverview MUI accordion but it works without JS
- */
 import { Accordion as MUIAccordion, AccordionSummary as MUIAccordionSummary } from '@mui/material';
 import type { AccordionProps, AccordionSummaryProps } from '@mui/material';
-import { Fragment, useEffect, useState } from 'react';
+import { ReactNode, Fragment, useEffect, useState } from 'react';
 
 /**
  * @returns undefined if JS is enabled, otherwise, returns the default value
@@ -18,11 +15,13 @@ const useOnload = <T,>(def: T | undefined) => {
 	return loaded;
 };
 
-/** a react component that filters all props */
-const FragmentFilter = ({ children }: { children: React.ReactNode }) => <Fragment>{children}</Fragment>;
+/** removes all passed props and just returns children */
+const FragmentFilter = ({ children }: { children: ReactNode }) => <Fragment>{children}</Fragment>;
 
 /**
- * load a proper "details" fallback when theres no JS
+ * MUI Accordion but it works without JS
+ *
+ * loads a proper "details" fallback when theres no JS
  */
 export const Accordion = (props: AccordionProps) => {
 	const unset = useOnload<boolean>(true);
@@ -52,6 +51,9 @@ export const Accordion = (props: AccordionProps) => {
 	);
 };
 
+/**
+ * MUI AccordionSummary but it works without JS
+ */
 export const AccordionSummary = (props: AccordionSummaryProps) => {
 	return (
 		<MUIAccordionSummary component={useOnload('summary')} {...props}>

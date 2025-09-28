@@ -1,9 +1,9 @@
 import { Link } from '~/components/server';
 import { Tab, Tabs } from '@mui/material';
 import { usePathname } from 'next/navigation';
-import { useMemo } from 'react';
+import { ComponentProps, useMemo } from 'react';
 
-interface PathnameTabsProps extends React.ComponentProps<typeof Tabs> {
+interface PathnameTabsProps extends ComponentProps<typeof Tabs> {
 	/** The list of values to display as tabs */
 	values: string[];
 	/** The url to prepend to the tab value */

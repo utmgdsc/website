@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 import { Link } from '~/components/server';
 import { Box, Typography } from '@mui/material';
 
@@ -8,7 +8,7 @@ interface SmoothScrollingLinkProps {
 	/** title of the link */
 	title: string;
 	/** children of the link */
-	children?: React.ReactNode;
+	children?: ReactNode;
 }
 
 /**

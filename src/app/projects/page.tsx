@@ -42,9 +42,9 @@ const ProjectPage = () => {
 
 				<Typography variant="body2" component="p" gutterBottom>
 					Community Projects is a semester-long program where students create software-based solutions for a
-					problem in their community. By being a part of a community project, you’ll gain industry-standard
-					knowledge and experience of must-have skills such as Python, Java, web development, backend/frontend
-					development, databases, and much more!
+					problem in their community. By being a part of a community project, you&apos;ll gain
+					industry-standard knowledge and experience of must-have skills such as Python, Java, web
+					development, backend/frontend development, databases, and much more!
 				</Typography>
 
 				<Typography variant="body2" component="p" gutterBottom>
@@ -57,8 +57,8 @@ const ProjectPage = () => {
 				</Typography>
 
 				<Typography variant="body2" component="p">
-					Don't worry you don't need to come with a project idea or a team to apply. You will have tons of
-					opportunities to form teams and brainstorm ideas!
+					Don&apos;t worry you don&apos;t need to come with a project idea or a team to apply. You will have
+					tons of opportunities to form teams and brainstorm ideas!
 				</Typography>
 			</Box>
 

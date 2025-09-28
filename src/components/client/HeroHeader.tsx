@@ -1,11 +1,11 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, RefObject } from 'react';
 import { Box, Container, Typography } from '@mui/material';
 import Image, { ImageProps } from 'next/image';
 
 /**
  * A hook to calculate the parallax effect on the hero header image.
  */
-const useParallax = (position: string, containerRef: React.RefObject<HTMLDivElement>) => {
+const useParallax = (position: string, containerRef: RefObject<HTMLDivElement>) => {
 	const [imgOffset, setImgOffset] = useState(0);
 
 	const [imgHeight, setImgHeight] = useState(0);

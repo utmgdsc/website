@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { ErrorBoundary, PathnameTabs } from '~/components/client';
 import { EventList, getProprietaryURL, getYearTabs } from '~/components/server';
 import { HeroLayout } from '~/layouts/HeroLayout';
@@ -11,7 +12,7 @@ export const metadata = {
  * This is a layout so that the current tab state is shared which makes it
  * smoother
  */
-export default async function EventsLayout({ children }: { children: React.ReactNode }) {
+export default async function EventsLayout({ children }: { children: ReactNode }) {
 	/** the current date */
 	const today = new Date();
 

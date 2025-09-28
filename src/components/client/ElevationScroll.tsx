@@ -1,6 +1,5 @@
-import React from 'react';
-
 import { Slide, Theme, useScrollTrigger } from '@mui/material';
+import type { ReactElement } from 'react';
 
 /**
  * Hides children on scroll down, shows on scroll up
@@ -8,7 +7,7 @@ import { Slide, Theme, useScrollTrigger } from '@mui/material';
  * @param {React.ReactNode} props.children The children to hide/show
  * @see https://mui.com/material-ui/react-app-bar/#HideAppBar.js
  */
-export const HideOnScroll = ({ children }) => {
+export const HideOnScroll = ({ children }: { children: ReactElement }) => {
 	const elevationTrigger = useScrollTrigger({
 		disableHysteresis: true,
 		threshold: 0,

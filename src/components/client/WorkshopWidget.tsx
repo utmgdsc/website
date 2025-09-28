@@ -65,7 +65,7 @@ export const WorkshopWidget = ({ item }: { item: WorkshopItem }) => {
 	);
 };
 
-const _FilteredWorkshopWidget = ({ item }) => {
+const InternalFilteredWorkshopWidget = ({ item }: { item: WorkshopItem }) => {
 	const searchParams = useSearchParams();
 
 	const search = searchParams.get('search') || '';
@@ -81,6 +81,6 @@ const _FilteredWorkshopWidget = ({ item }) => {
  */
 export const FilteredWorkshopWidget = ({ item }: { item: WorkshopItem }) => (
 	<Suspense fallback={<WorkshopWidget item={item} />}>
-		<_FilteredWorkshopWidget item={item} />
+		<InternalFilteredWorkshopWidget item={item} />
 	</Suspense>
 );

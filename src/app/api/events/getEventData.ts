@@ -19,6 +19,8 @@ export const MAX_DATE: Date = new Date(8640000000000000);
  * @param to the date to stop showing events at (non-inclusive), based on end_date
  * @returns bevy chapter object
  */
+// TODO
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const getEvents = async (limit: number | undefined, from: Date, to: Date): Promise<any> => {
 	if (!process.env.CHAPTER_API_URL) {
 		throw new Error('CHAPTER_API_URL is not defined in the environment variables.');
@@ -58,6 +60,8 @@ const getEvents = async (limit: number | undefined, from: Date, to: Date): Promi
  * @param id of the event
  * @returns bevy event object
  */
+// TODO
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const fetchEventInfo = async (id: number): Promise<any> => {
 	if (!process.env.EVENT_API_URL) {
 		throw new Error('EVENT_API_URL is not defined in the environment variables.');
@@ -112,6 +116,8 @@ export const getEnrichedEvents = async (limit: number | undefined, from: Date, t
 export const getYears = async (): Promise<number[]> => {
 	const events = await getEvents(undefined, MIN_DATE, new Date());
 
+	// TODO
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const years = events.reduce((acc: number[], event: any) => {
 		const year = new Date(event['end_date']).getFullYear();
 		if (!acc.includes(year)) {
@@ -132,5 +138,7 @@ const translator = new NodeHtmlMarkdown();
  *
  * @returns Chronicle front matter.
  */
+// TODO
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const generateChronicleFrontMatter = (info: any): string =>
 	`+++${info['cropped_banner_url'] ? `\ncover="${info['cropped_banner_url']}"` : ''}${info['url'] ? `\nsummary_link="${info['url']}"` : ''}${info['picture']['url'] ? `\nthumbnail="${info['picture']['url']}"` : ''}\n+++${info['static_url'] ? `\n\nRSVP: ${info['static_url']}` : ''}${info['description'] ? `\n\n${translator.translate(info['description'])}` : ''}`;

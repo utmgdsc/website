@@ -8,7 +8,7 @@
 				"name": "next"
 			}
 		],
-		"allowJs": true,
+		"allowJs": false,
 		"esModuleInterop": true,
 		"incremental": true,
 		"isolatedModules": true,

@@ -1,5 +1,4 @@
 'use client';
-/* eslint-disable import/export */
 
 /**
  * Clients components are placed in a separate folder for easier organization.
