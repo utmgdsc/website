@@ -11,12 +11,12 @@ interface LatestWorkshopsProps {
 	showDate?: boolean;
 }
 
-interface _LatestWorkshopsProps extends LatestWorkshopsProps {
+interface InternalLatestWorkshopsProps extends LatestWorkshopsProps {
 	/** The workshops to display */
 	workshops: { [key: string]: WorkshopItem[] };
 }
 
-const _LatestWorkshops = async ({ workshops, limit, showDate = false }: _LatestWorkshopsProps) => (
+const InternalLatestWorkshops = async ({ workshops, limit, showDate = false }: InternalLatestWorkshopsProps) => (
 	<Grid container spacing={2} sx={{ mb: 4 }}>
 		{Object.keys(workshops)
 			.reduce<WorkshopItem[]>((acc, key) => {
@@ -79,10 +79,9 @@ const WorkshopList = async ({ workshops }: WorkshopListProps) => {
 	);
 };
 
-export const LatestWorkshops = async ({ limit }: LatestWorkshopsProps) => {
+export const LatestWorkshops = async ({ limit, showDate }: LatestWorkshopsProps) => {
 	const workshops = parseWorkshops(await getData());
-
-	return <_LatestWorkshops limit={limit} workshops={workshops} />;
+	return <InternalLatestWorkshops limit={limit} workshops={workshops} showDate={showDate} />;
 };
 
 export const WorkshopArchiveInfo = async () => {
@@ -90,7 +89,7 @@ export const WorkshopArchiveInfo = async () => {
 
 	return (
 		<>
-			<_LatestWorkshops workshops={workshops} limit={3} />
+			<InternalLatestWorkshops workshops={workshops} limit={3} />
 			<WorkshopList workshops={workshops} />
 		</>
 	);

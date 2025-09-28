@@ -8,6 +8,12 @@ export const metadata = {
 	title: 'Events',
 };
 
+const EventsEmptyState = () => (
+	<Typography variant="h5" component="p" gutterBottom>
+		None yet! Check back soon or follow us on social media to stay updated! 🤗
+	</Typography>
+);
+
 /**
  * This is a layout so that the current tab state is shared which makes it
  * smoother
@@ -38,14 +44,7 @@ export default async function EventsLayout({ children }: { children: ReactNode }
 				</Typography>
 
 				<ErrorBoundary>
-					<EventList
-						from={today}
-						EmptyComponent={() => (
-							<Typography variant="h5" component="p" gutterBottom>
-								None yet! Check back soon or follow us on social media to stay updated! 🤗
-							</Typography>
-						)}
-					/>
+					<EventList from={today} EmptyComponent={EventsEmptyState} />
 				</ErrorBoundary>
 			</section>
 			<section>

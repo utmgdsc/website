@@ -23,11 +23,12 @@ export default function sitemap(): SitemapItem[] {
 	 */
 	const acc: SitemapItem[] = [];
 
-	pages.forEach(item => {
+	for (const item of pages) {
 		acc.push({
 			url: `${BASE_URL}${item.path}`,
 			lastModified: new Date(),
 		});
-	});
+	}
+
 	return acc;
 }

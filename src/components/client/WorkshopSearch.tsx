@@ -1,8 +1,7 @@
 import { Search } from '@mui/icons-material';
 import { InputAdornment, TextField } from '@mui/material';
 import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 
 const useDebouncedValue = (value: string, delay: number) => {
 	const [debouncedValue, setDebouncedValue] = useState(value);

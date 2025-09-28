@@ -150,5 +150,27 @@ const translator = new NodeHtmlMarkdown();
  *
  * @returns Chronicle front matter.
  */
-export const generateChronicleFrontMatter = (info: components['schemas']['EventFull']): string =>
-	`+++${info['cropped_banner_url'] ? `\ncover="${info['cropped_banner_url']}"` : ''}${info['url'] ? `\nsummary_link="${info['url']}"` : ''}${info['picture'] ? `\nthumbnail="${info['picture']['url']}"` : ''}\n+++${info['static_url'] ? `\n\nRSVP: ${info['static_url']}` : ''}${info['description'] ? `\n\n${translator.translate(info['description'])}` : ''}`;
+// ...existing code...
+export const generateChronicleFrontMatter = (info: components['schemas']['EventFull']): string => {
+	const lines: string[] = ['+++'];
+
+	if (info['cropped_banner_url']) {
+		lines.push(`cover="${info['cropped_banner_url']}"`);
+	}
+	if (info['url']) {
+		lines.push(`summary_link="${info['url']}"`);
+	}
+	if (info['picture']) {
+		lines.push(`thumbnail="${info['picture']['url']}"`);
+	}
+	lines.push('+++');
+
+	if (info['static_url']) {
+		lines.push('', `RSVP: ${info['static_url']}`);
+	}
+	if (info['description']) {
+		lines.push('', translator.translate(info['description']));
+	}
+
+	return lines.join('\n');
+};

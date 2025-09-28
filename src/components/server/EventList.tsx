@@ -27,8 +27,6 @@ interface EventListProps {
 	from?: Date;
 	/** The date to stop showing events at (non-inclusive), based on end_date */
 	to?: Date;
-	/** Number of skeleton cards to show when loading */
-	skeleton?: number;
 	/** Component to show when there are no events */
 	EmptyComponent?: ComponentType | null;
 	/** Children to show when there are events */
