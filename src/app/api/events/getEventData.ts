@@ -68,7 +68,7 @@ const fetchEventInfo = async (id: number): Promise<any> => {
 	}
 
 	return await fetch(process.env.EVENT_API_URL + id, {
-		next: { revalidate: 604800 }, // revalidate once a week
+		next: { revalidate: 2592000 }, // revalidate once a month
 	})
 		.then(response => response.json())
 		.then(data => {
