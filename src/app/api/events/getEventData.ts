@@ -31,7 +31,7 @@ const getEvents = async (limit: number | undefined, from: Date, to: Date): Promi
 	})
 		.then(response => response.json())
 		.then(data => {
-			if (data['detail'] && (data['detail'].includes('throttled') || data['detail'].includes('error'))) {
+			if (data['detail'] && (data['detail'].includes('throttled') ?? data['detail'].includes('error'))) {
 				throw new Error(data['detail']);
 			}
 			// filter only published events

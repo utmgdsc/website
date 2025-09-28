@@ -68,7 +68,7 @@ export const WorkshopWidget = ({ item }: { item: WorkshopItem }) => {
 const InternalFilteredWorkshopWidget = ({ item }: { item: WorkshopItem }) => {
 	const searchParams = useSearchParams();
 
-	const search = searchParams.get('search') || '';
+	const search = searchParams.get('search') ?? '';
 	if (search && filterWorkshop(item, search) === false) {
 		return null;
 	}

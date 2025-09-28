@@ -22,7 +22,7 @@ const nextConfig: NextConfig = {
 			},
 			{
 				protocol: 'https',
-				hostname: process.env.PROPRIETARY_IMAGES_HOSTNAME || 'localhost',
+				hostname: process.env.PROPRIETARY_IMAGES_HOSTNAME ?? 'localhost',
 			},
 		],
 	},

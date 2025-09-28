@@ -55,7 +55,7 @@ export const parseWorkshops = (workshops): { [key: string]: WorkshopItem[] } => 
 			const categoryName = Object.keys(workshopsList)[0];
 
 			// Initialise category array
-			parsedData[categoryName] = parsedData[categoryName] || [];
+			parsedData[categoryName] = parsedData[categoryName] ?? [];
 
 			// Iterate through each workshop
 			workshopsList[categoryName].forEach(workshop => {

@@ -40,7 +40,7 @@ const modifySearchParam = (searchParams: URLSearchParams, key: string, value: st
 
 const InternalWorkshopSearch = () => {
 	const searchParams = useSearchParams();
-	const [search, setSearch] = useState(searchParams.get('search') || '');
+	const [search, setSearch] = useState(searchParams.get('search') ?? '');
 	const debouncedSearch = useDebouncedValue(search, 300);
 
 	useEffect(() => {
