@@ -58,7 +58,7 @@ export const EventList = async ({
 					{children}
 					<Grid container spacing={2}>
 						{events.map((event, id) => (
-							<Grid key={id} size={{ xs: 12, sm: 6, md: 4 }}>
+							<Grid key={event.id} size={{ xs: 12, sm: 6, md: 4 }}>
 								<EventInfoCard event={event} description={descriptions[id]} />
 							</Grid>
 						))}

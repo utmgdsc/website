@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from '~/components/server';
 import { Box, Typography } from '@mui/material';
 
@@ -7,8 +7,6 @@ interface SmoothScrollingLinkProps {
 	id: string;
 	/** title of the link */
 	title: string;
-	/** children of the link */
-	children?: ReactNode;
 }
 
 /**
@@ -75,7 +73,7 @@ const TOCHeading = ({ heading, activeId }: TOCHeadingProps) => {
 const getNestedHeadings = (headingElements: HTMLElement[]) => {
 	const nestedHeadings: TOCHeading[] = [];
 
-	headingElements.forEach(heading => {
+	for (const heading of headingElements) {
 		const { innerText: title, id } = heading;
 
 		if (heading.nodeName === 'H2') {
@@ -86,7 +84,7 @@ const getNestedHeadings = (headingElements: HTMLElement[]) => {
 				title,
 			});
 		}
-	});
+	}
 
 	return nestedHeadings;
 };
@@ -98,9 +96,9 @@ const useHeadingsData = () => {
 	const [nestedHeadings, setNestedHeadings] = useState<TOCHeading[]>([]);
 
 	useEffect(() => {
-		const headingElements = Array.from(document.querySelectorAll('h2.resources, h3.resources'));
+		const headingElements = Array.from(document.querySelectorAll<HTMLElement>('h2.resources, h3.resources'));
 
-		const newNestedHeadings = getNestedHeadings(headingElements as HTMLElement[]);
+		const newNestedHeadings = getNestedHeadings(headingElements);
 		setNestedHeadings(newNestedHeadings);
 	}, []);
 
@@ -123,10 +121,11 @@ const useIntersectionObserver = (setActiveId: (activeId: string) => void) => {
 			}, headingElementsRef.current);
 
 			const visibleHeadings: IntersectionObserverEntry[] = [];
-			Object.keys(headingElementsRef.current).forEach(key => {
+
+			for (const key of Object.keys(headingElementsRef.current)) {
 				const headingElement = headingElementsRef.current[key];
 				if (headingElement.isIntersecting) visibleHeadings.push(headingElement);
-			});
+			}
 
 			const getIndexFromId = (id: string) => headingElements.findIndex(heading => heading.id === id);
 
@@ -144,7 +143,9 @@ const useIntersectionObserver = (setActiveId: (activeId: string) => void) => {
 			rootMargin: '0px 0px -40% 0px',
 		});
 
-		headingElements.forEach(element => observer.observe(element));
+		for (const element of headingElements) {
+			observer.observe(element);
+		}
 
 		return () => {
 			observer.disconnect();
@@ -172,10 +173,10 @@ export const TableOfContents = () => {
 				},
 				li: {
 					'&.active > a': {
-						color: ({ vars }) => vars.palette.primary.main,
+						color: ({ vars }) => vars?.palette.primary.main,
 					},
 					'> a:hover': {
-						color: ({ vars }) => vars.palette.primary.main,
+						color: ({ vars }) => vars?.palette.primary.main,
 					},
 				},
 			}}
@@ -183,8 +184,8 @@ export const TableOfContents = () => {
 			<Typography variant="h5">On this page</Typography>
 			<nav aria-label="Table of contents">
 				<ul>
-					{nestedHeadings.map((heading, index) => {
-						return <TOCHeading heading={heading} activeId={activeId} key={index} />;
+					{nestedHeadings.map(heading => {
+						return <TOCHeading heading={heading} activeId={activeId} key={JSON.stringify(heading)} />;
 					})}
 				</ul>
 			</nav>

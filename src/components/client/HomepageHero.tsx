@@ -1,18 +1,17 @@
 import HeroImage from '~/assets/backgrounds/background_light.svg';
 import HeroImageDark from '~/assets/backgrounds/background_dark.svg';
 import wordmark from '~/assets/graphics/gdscwordmark.svg';
-import type {} from '@mui/material/themeCssVarsAugmentation';
 import type { Theme } from '@mui/material';
 import { Box, Container, Typography } from '@mui/material';
 import Image from 'next/image';
 
-const getBackgroundImage = (theme: Theme, image: string) =>
+const getBackgroundImage = ({ vars }: Theme, image: string) =>
 	'linear-gradient(' +
-	theme.vars.palette.background.default +
+	vars?.palette.background.default +
 	' 0%,' +
-	`color-mix(in srgb, ${theme.vars.palette.background.default}, transparent 20%)` +
+	`color-mix(in srgb, ${vars?.palette.background.default}, transparent 20%)` +
 	'69%,' +
-	theme.vars.palette.background.default +
+	vars?.palette.background.default +
 	' 100%), url(' +
 	image +
 	')';

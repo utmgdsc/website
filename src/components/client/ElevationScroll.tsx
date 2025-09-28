@@ -3,11 +3,14 @@ import type { ReactElement } from 'react';
 
 /**
  * Hides children on scroll down, shows on scroll up
- * @param {Object} props
- * @param {React.ReactNode} props.children The children to hide/show
  * @see https://mui.com/material-ui/react-app-bar/#HideAppBar.js
  */
-export const HideOnScroll = ({ children }: { children: ReactElement }) => {
+export const HideOnScroll = ({
+	children,
+}: {
+	/** the children will be hidden/shown based on scroll */
+	children: ReactElement;
+}) => {
 	const elevationTrigger = useScrollTrigger({
 		disableHysteresis: true,
 		threshold: 0,

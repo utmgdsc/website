@@ -1,5 +1,4 @@
-import { Box, ButtonGroup, Container, Paper, Typography, styled } from '@mui/material';
-import type {} from '@mui/material/themeCssVarsAugmentation';
+import { Box, ButtonGroup, Container, Paper, Theme, Typography, styled } from '@mui/material';
 import bracket_colourless from '~/assets/graphics/bracket_colourless.svg';
 import { ErrorBoundary } from '~/components/client';
 import { Link, LinkProps } from '~/components/server';
@@ -20,7 +19,7 @@ const FooterLink = (props: LinkProps) => (
 	<Box
 		component="li"
 		sx={{
-			color: ({ vars }) => vars.palette.text.secondary,
+			color: ({ vars }: Theme) => vars?.palette.text.secondary,
 			padding: {
 				xs: '0.5em 0',
 				sm: '0',

@@ -86,10 +86,12 @@ const useNavbarTabs = () => {
 	}, [tab]);
 
 	/** all pages that should be included in the navbar */
-	const processedPages = pages.filter(page => page.includeInNavbar !== false).map(page => page.path.replace('/', ''));
+	const processedPages = new Set(
+		pages.filter(page => page.includeInNavbar !== false).map(page => page.path.replace('/', ''))
+	);
 
 	/** check if current tab is in the list of pages */
-	const isValidTab = () => processedPages.includes(currentTab);
+	const isValidTab = () => processedPages.has(currentTab);
 
 	return isValidTab() ? currentTab : '';
 };
@@ -141,16 +143,16 @@ const NavbarTabs = () => {
 						(page['path'].split('/').length === 2 && page['includeInNavbar'] !== false) ||
 						page['includeInNavbar'] === true
 				)
-				.map((page, index) => {
+				.map(page => {
 					return (
 						<Tab
 							component={Link}
 							href={page.path}
 							value={page.path.toLowerCase().split('/')[1]}
 							label={page.name}
-							key={index}
+							key={page.path}
 							sx={({ vars }) => ({
-								color: vars.palette.text.secondary,
+								color: vars?.palette.text.secondary,
 								fontFamily: 'inherit',
 								fontSize: '1em',
 								fontWeight: 'normal',
@@ -159,7 +161,7 @@ const NavbarTabs = () => {
 								textTransform: 'none',
 								whiteSpace: 'nowrap',
 								'&.Mui-selected': {
-									color: vars.palette.text.primary,
+									color: vars?.palette.text.primary,
 									fontWeight: 'bold',
 								},
 							})}

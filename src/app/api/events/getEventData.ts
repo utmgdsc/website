@@ -111,7 +111,10 @@ export const getEnrichedEvents = async (limit: number | undefined, from: Date, t
 
 	const eventInfo = await Promise.all(
 		events.map(async event => {
-			return await fetchEventInfo(event['id'] as number);
+			if (!event['id']) {
+				throw new Error(`Event is missing ID: ${JSON.stringify(event)}`);
+			}
+			return await fetchEventInfo(event['id']);
 		})
 	);
 
@@ -150,10 +153,11 @@ const translator = new NodeHtmlMarkdown();
  *
  * @returns Chronicle front matter.
  */
-// ...existing code...
 export const generateChronicleFrontMatter = (info: components['schemas']['EventFull']): string => {
-	const lines: string[] = ['+++'];
+	const lines: string[] = [];
 
+	// front matter
+	lines.push('+++');
 	if (info['cropped_banner_url']) {
 		lines.push(`cover="${info['cropped_banner_url']}"`);
 	}
@@ -165,6 +169,7 @@ export const generateChronicleFrontMatter = (info: components['schemas']['EventF
 	}
 	lines.push('+++');
 
+	// additional information to add to the event
 	if (info['static_url']) {
 		lines.push('', `RSVP: ${info['static_url']}`);
 	}

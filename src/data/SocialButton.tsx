@@ -1,4 +1,3 @@
-'use client';
 /**
  * @fileoverview self-explanatory social media button components
  * Update as needed when adding new social media or removing old ones

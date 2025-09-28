@@ -17,7 +17,7 @@ export const metadata = {
 	title: 'Home - GDSC UTM',
 };
 
-const getTeamMembers = async () => {
+const getTeamMembers = async (): Promise<Team> => {
 	if (!proprietaryURLIsAvailable()) {
 		return {};
 	}
@@ -92,8 +92,8 @@ const Homepage = async () => {
 			<ExpiryContainer date={'2025-06-30'}>
 				<HomepageSection title="Meet the team">
 					<ErrorBoundary>
-						{Object.keys(teamMembers).map((subteam, index) => {
-							return <Team key={index} teamInfo={teamMembers[subteam]} title={subteam} />;
+						{Object.keys(teamMembers).map(teamName => {
+							return <Team key={teamName} teamInfo={teamMembers[teamName]} title={teamName} />;
 						})}
 					</ErrorBoundary>
 				</HomepageSection>

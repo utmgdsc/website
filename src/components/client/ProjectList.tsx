@@ -38,8 +38,8 @@ export const ProjectList = () => {
 				)}
 				{projects
 					.filter(project => project.year === yearList[page])
-					.map((project, id) => (
-						<Grid key={id} size={{ xs: 12, sm: 6, md: 4 }}>
+					.map(project => (
+						<Grid key={project.url} size={{ xs: 12, sm: 6, md: 4 }}>
 							<InfoCard
 								subtitle={`${project.session} ${project.year}`}
 								title={project.title}

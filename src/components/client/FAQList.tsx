@@ -15,20 +15,20 @@ interface FAQListProps {
  * - values are arrays of FAQs
  */
 export const FAQList = (faq: FAQListProps) => {
-	return Object.keys(faq).map((category, index) => {
+	return Object.keys(faq).map(category => {
 		return (
 			<Box
 				sx={{
 					mt: 2,
 				}}
-				key={index}
+				key={category}
 			>
 				<Typography sx={{ marginBottom: 2 }} id={category} component="h3" variant="h6">
 					{category}
 				</Typography>
 
-				{faq[category].map((faq, index) => {
-					return <FAQ key={index} faq={faq} />;
+				{faq[category].map(faq => {
+					return <FAQ key={faq.question} faq={faq} />;
 				})}
 			</Box>
 		);

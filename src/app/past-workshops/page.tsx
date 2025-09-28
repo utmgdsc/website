@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 /**
- * @return {JSX.Element} Workshop page component
+ * @return Workshop page component
  */
 const WorkshopArchive = async () => (
 	<ResourceLayout

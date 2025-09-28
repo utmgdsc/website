@@ -2,13 +2,31 @@ import { Avatar, Box, Typography } from '@mui/material';
 import { ImageFilterProps } from '~/components/client';
 import { getProprietaryURL } from '~/components/server';
 
-interface TeamMember {
-	/** name of the team member */
+/**
+ * Information for a single team member.
+ */
+export interface TeamMember {
+	/** The name of the team member */
 	name: string;
-	/** role of the team member */
+
+	/** The role of the team member */
 	role: string;
-	/** picture of the team member */
+
+	/**
+	 * The image of the team member.
+	 *
+	 * @note The images are stored on the `PROPRIETARY_IMAGES_HOSTNAME` specified in the environment variables. The image is assumed to be placed under the `team` folder on the server.
+	 */
 	picture?: string;
+}
+
+/**
+ * Type for `team.json`
+ *
+ * Each key represents a team role.
+ */
+export interface Team {
+	[dept: string]: TeamMember[];
 }
 
 /**
@@ -120,9 +138,9 @@ export const Team = ({ teamInfo, title }: TeamProps) => {
 					textAlign: 'center',
 				}}
 			>
-				{teamInfo.map((teamMember, index) => (
+				{teamInfo.map(teamMember => (
 					<Person
-						key={index}
+						key={JSON.stringify(teamMember)}
 						name={teamMember.name}
 						role={teamMember.role}
 						picture={teamMember.picture ? `team/${teamMember.picture}` : undefined}

@@ -26,9 +26,9 @@ const InternalLatestWorkshops = async ({ workshops, limit, showDate = false }: I
 				return new Date(b.date).getTime() - new Date(a.date).getTime();
 			})
 			.slice(0, limit)
-			.map((item, index) => {
+			.map(item => {
 				return (
-					<Grid size={{ md: 4 }} key={index}>
+					<Grid size={{ md: 4 }} key={JSON.stringify(item)}>
 						<InfoCard
 							subtitle={showDate ? ConvertDate({ date: item.date }) : undefined}
 							title={item.name}
@@ -58,9 +58,9 @@ const WorkshopList = async ({ workshops }: WorkshopListProps) => {
 			<Grid size={{ md: 9 }}>
 				<WorkshopSearch />
 
-				{Object.keys(workshops).map((category, index) => {
+				{Object.keys(workshops).map(category => {
 					return (
-						<Box key={index}>
+						<Box key={category}>
 							<h2 className="resources" id={category.replace(/\s/g, '')}>
 								{category}
 							</h2>
@@ -68,8 +68,8 @@ const WorkshopList = async ({ workshops }: WorkshopListProps) => {
 								.sort((a, b) => {
 									return new Date(b.date).getTime() - new Date(a.date).getTime();
 								})
-								.map((item, index) => {
-									return <FilteredWorkshopWidget key={index} item={item} />;
+								.map(item => {
+									return <FilteredWorkshopWidget key={`${item.name}${item.date}`} item={item} />;
 								})}
 						</Box>
 					);

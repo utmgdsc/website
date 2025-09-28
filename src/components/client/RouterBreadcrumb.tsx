@@ -12,9 +12,7 @@ import { Link } from '~/components/server';
  */
 export const RouterBreadcrumb = () => {
 	/** Split the pathname into an array of strings */
-	const pathnames = usePathname()
-		.split('/')
-		.filter(x => x);
+	const pathnames = usePathname().split('/').filter(Boolean);
 
 	return (
 		<Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
