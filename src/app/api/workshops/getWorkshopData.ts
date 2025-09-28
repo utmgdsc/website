@@ -35,7 +35,7 @@ export const parseWorkshops = (workshops: AllWorkshops): { [key: string]: Worksh
 	return Object.entries(workshops).reduce((parsedData: { [key: string]: WorkshopItem[] }, [year, categories]) => {
 		// Iterate through each category
 		// @ts-expect-error for some reason typescript thinks categories is of type WorkshopItem[]
-		Object.entries(categories).forEach(([, workshopObj]: [string, WorkshopCategory]) => {
+		for (const [, workshopObj] of Object.entries(categories) as [string, WorkshopCategory][]) {
 			// Get the category name
 			const categoryName = Object.keys(workshopObj)[0];
 
@@ -43,7 +43,7 @@ export const parseWorkshops = (workshops: AllWorkshops): { [key: string]: Worksh
 			parsedData[categoryName] = parsedData[categoryName] ?? [];
 
 			// Iterate through each workshop
-			workshopObj[categoryName].forEach(workshop => {
+			for (const workshop of workshopObj[categoryName]) {
 				// Update the date string
 				const newDate = `${year}-${workshop.date}`;
 
@@ -54,8 +54,8 @@ export const parseWorkshops = (workshops: AllWorkshops): { [key: string]: Worksh
 
 				// Add the workshop data to the category array
 				parsedData[categoryName].push({ ...workshop, date: newDate });
-			});
-		});
+			}
+		}
 
 		// Return the parsed data
 		return parsedData;

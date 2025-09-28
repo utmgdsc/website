@@ -22,9 +22,9 @@ const useDebouncedValue = (value: string, delay: number) => {
 /**
  * Modify a search parameter in the URL
  *
- * @param searchParams - The current search parameters
- * @param key - The key of the search parameter to modify
- * @param value - The new value of the search parameter
+ * @param searchParams The current search parameters
+ * @param key The key of the search parameter to modify
+ * @param value The new value of the search parameter
  *
  * @returns The new search string without the question mark
  */

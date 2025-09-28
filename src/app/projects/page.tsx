@@ -1,4 +1,4 @@
-import { FAQList, ProjectList } from '~/components/client';
+import { FaqList, ProjectList } from '~/components/client';
 import { ExpiryContainer, getProprietaryURL, Link } from '~/components/server';
 import { HeroLayout } from '~/layouts/HeroLayout';
 import { Alert, Box, Typography } from '@mui/material';
@@ -73,7 +73,7 @@ const ProjectPage = () => {
 				<Typography component="h2" variant="h4" id="faq">
 					Frequently Asked Questions
 				</Typography>
-				<FAQList {...FAQData} />
+				<FaqList {...FAQData} />
 			</section>
 		</HeroLayout>
 	);

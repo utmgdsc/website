@@ -1,8 +1,8 @@
 import { Box, Typography } from '@mui/material';
-import { FAQ } from '~/components/client';
+import { Faq } from '~/components/client';
 import type { FAQItem } from '~/data/faq';
 
-interface FAQListProps {
+interface FaqListProps {
 	/** The frequently asked questions */
 	[category: string]: FAQItem[];
 }
@@ -14,7 +14,7 @@ interface FAQListProps {
  * - keys are the category names
  * - values are arrays of FAQs
  */
-export const FAQList = (faq: FAQListProps) => {
+export const FaqList = (faq: FaqListProps) => {
 	return Object.keys(faq).map(category => {
 		return (
 			<Box
@@ -27,8 +27,8 @@ export const FAQList = (faq: FAQListProps) => {
 					{category}
 				</Typography>
 
-				{faq[category].map(faq => {
-					return <FAQ key={faq.question} faq={faq} />;
+				{faq[category].map(q => {
+					return <Faq key={q.question} faq={q} />;
 				})}
 			</Box>
 		);

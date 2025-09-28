@@ -24,12 +24,12 @@ export async function GET(req: NextRequest): Promise<Response> {
 
 	const isDiscord = req.nextUrl.searchParams.get('useFrontMatter') ?? false;
 
-	events.forEach((event, id) => {
-		const info = eventInfo[id];
+	for (const [index, event] of events.entries()) {
+		const info = eventInfo[index];
 
 		// Assert that required properties exist
 		if (!info['start_date'] || !info['end_date'] || !info['title']) {
-			throw new Error(`Missing required event information for event ID: ${id}`);
+			throw new Error(`Missing required event information for event ID: ${event.id} at index ${index}`);
 		}
 
 		calendar.createEvent({
@@ -41,7 +41,7 @@ export async function GET(req: NextRequest): Promise<Response> {
 			location: concatStrings(info['venue_name'], info['meetup_url'], info['eventbrite_url']) ?? undefined,
 			id: `${info['id']}${isDiscord ? '+frontmatter' : ''}@gdscutm.com`,
 		});
-	});
+	}
 
 	return new Response(calendar.toString(), {
 		status: 200,

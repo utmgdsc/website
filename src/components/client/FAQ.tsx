@@ -3,7 +3,7 @@ import { AccordionDetails, AccordionSummary, Typography } from '@mui/material';
 import { Accordion } from '~/components/client';
 import type { FAQItem } from '~/data/faq';
 
-interface FAQProps {
+interface FaqProps {
 	/** The frequently asked question */
 	faq: FAQItem;
 }
@@ -12,7 +12,7 @@ interface FAQProps {
  * A single frequently asked question. Used in the Resources page.
  * @returns The faq widget
  */
-export const FAQ = ({ faq }: FAQProps) => {
+export const Faq = ({ faq }: FaqProps) => {
 	return (
 		<Accordion>
 			<AccordionSummary

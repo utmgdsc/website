@@ -1,6 +1,6 @@
 import { ArrowForward } from '@mui/icons-material';
 import { Button, Container, Typography } from '@mui/material';
-import { ErrorBoundary, FAQList, HomepageHero } from '~/components/client';
+import { ErrorBoundary, FaqList, HomepageHero } from '~/components/client';
 import {
 	EventList,
 	ExpiryContainer,
@@ -85,7 +85,7 @@ const Homepage = async () => {
 
 			<HomepageSection title="Frequently asked questions">
 				<ErrorBoundary>
-					<FAQList {...faq} />
+					<FaqList {...faq} />
 				</ErrorBoundary>
 			</HomepageSection>
 

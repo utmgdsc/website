@@ -7,7 +7,7 @@ export const proprietaryURLIsAvailable = (): boolean =>
 /**
  * Gets the full url of a proprietary image with fallback to placeholder image
  *
- * @param src - The path of the proprietary image
+ * @param src The path of the proprietary image
  *
  * @return The URL of the proprietary image
  */

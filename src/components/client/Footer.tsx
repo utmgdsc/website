@@ -11,7 +11,7 @@ const footerLinks: FooterLinksData = _footerLinks;
 
 /**
  * A link for footer-flex. Takes the same props as "a".
- * @param props - props to pass to the link, same as "a" element
+ * @param props props to pass to the link, same as "a" element
  *
  * @return Footer link
  */

@@ -26,7 +26,7 @@ export const HideOnScroll = ({
 			// @ts-expect-error undocumented prop
 			elevation={elevationTrigger ? 4 : 0}
 			sx={({ vars }: Theme) => ({
-				background: elevationTrigger ? vars.palette.background.default : 'transparent !important',
+				background: elevationTrigger ? vars?.palette.background.default : 'transparent !important',
 			})}
 		>
 			{children}

@@ -15,7 +15,7 @@ interface SmoothScrollingLinkProps {
 const SmoothScrollingLink = ({ id, title }: SmoothScrollingLinkProps) => {
 	return (
 		<Link
-			sx={{ color: ({ vars }) => vars.palette.text.secondary }}
+			sx={{ color: ({ vars }) => vars?.palette.text.secondary }}
 			href={`#${id}`}
 			onClick={e => {
 				e.preventDefault();
@@ -79,7 +79,7 @@ const getNestedHeadings = (headingElements: HTMLElement[]) => {
 		if (heading.nodeName === 'H2') {
 			nestedHeadings.push({ id, title, items: [] });
 		} else if (heading.nodeName === 'H3' && nestedHeadings.length > 0) {
-			nestedHeadings[nestedHeadings.length - 1].items.push({
+			nestedHeadings.at(-1)?.items.push({
 				id,
 				title,
 			});
@@ -107,12 +107,14 @@ const useHeadingsData = () => {
 
 /**
  * Check what heading/section the user is browsing and set its id
- * @param setActiveId - function to set the active id
+ * @param setActiveId function to set the active id
  */
 const useIntersectionObserver = (setActiveId: (activeId: string) => void) => {
 	const headingElementsRef = useRef<{ [key: string]: IntersectionObserverEntry }>({});
 	useEffect(() => {
 		const headingElements = Array.from(document.querySelectorAll('h2.resources, h3.resources'));
+
+		const getIndexFromId = (id: string) => headingElements.findIndex(heading => heading.id === id);
 
 		const callback = (headings: IntersectionObserverEntry[]) => {
 			headingElementsRef.current = headings.reduce((map, headingElement) => {
@@ -126,8 +128,6 @@ const useIntersectionObserver = (setActiveId: (activeId: string) => void) => {
 				const headingElement = headingElementsRef.current[key];
 				if (headingElement.isIntersecting) visibleHeadings.push(headingElement);
 			}
-
-			const getIndexFromId = (id: string) => headingElements.findIndex(heading => heading.id === id);
 
 			if (visibleHeadings.length === 1) {
 				setActiveId(visibleHeadings[0].target.id);

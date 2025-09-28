@@ -37,7 +37,7 @@ const ButtonLogo = () => {
 			}}
 			component={Link}
 			sx={{
-				background: ({ vars }) => vars.palette.background.paper + ' !important',
+				background: ({ vars }) => vars?.palette.background.paper + ' !important',
 				boxShadow: trigger ? 0 : 4,
 			}}
 			href="/"
@@ -120,7 +120,7 @@ const NavbarTabs = () => {
 				'& .MuiTabs-indicatorSpan': {
 					maxWidth: 50,
 					width: '100%',
-					backgroundColor: ({ vars }) => vars.palette.primary.main,
+					backgroundColor: ({ vars }) => vars?.palette.primary.main,
 				},
 				'& .MuiTabs-scrollButtons.Mui-disabled': {
 					opacity: 0.3,
