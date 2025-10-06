@@ -17,7 +17,7 @@ updates:
       react:
         patterns:
           - "react"
-          - "react-dom
+          - "react-dom"
       emotion:
         patterns:
           - "@emotion/*"
