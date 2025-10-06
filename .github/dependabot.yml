@@ -10,3 +10,15 @@ updates:
     schedule:
       interval: "weekly"
     target-branch: "main"
+    groups:
+      mui:
+        patterns:
+          - "@mui/*"
+      react:
+        patterns:
+          - "react"
+          - "react-dom
+      emotion:
+        patterns:
+          - "@emotion/*"
+          
