@@ -41,7 +41,7 @@ jobs:
                       ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
             - name: Install modules
-              run: npm clean-install
+              run: npm clean-install --ignore-scripts
 
             - name: Set up env
               run: cp .env.example .env.local
