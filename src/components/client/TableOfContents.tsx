@@ -91,18 +91,28 @@ const getNestedHeadings = (headingElements: HTMLElement[]) => {
 
 const emptySubscribe = () => () => {};
 
+// Cache for getSnapshot to maintain referential stability
+let cachedHeadings: TOCHeading[] = [];
+
+const getSnapshot = () => {
+	const headingElements = Array.from(document.querySelectorAll<HTMLElement>('h2.resources, h3.resources'));
+	const newHeadings = getNestedHeadings(headingElements);
+
+	// Only return new reference if content actually changed
+	if (JSON.stringify(newHeadings) !== JSON.stringify(cachedHeadings)) {
+		cachedHeadings = newHeadings;
+	}
+	return cachedHeadings;
+};
+
+const emptyHeadings: TOCHeading[] = [];
+const getServerSnapshot = () => emptyHeadings;
+
 /**
  * Get all the h2 and h3 headings in resources page, and turn them into list of nested headings
  */
 const useHeadingsData = () => {
-	const nestedHeadings = useSyncExternalStore(
-		emptySubscribe,
-		() => {
-			const headingElements = Array.from(document.querySelectorAll<HTMLElement>('h2.resources, h3.resources'));
-			return getNestedHeadings(headingElements);
-		},
-		() => [] // server: return empty array
-	);
+	const nestedHeadings = useSyncExternalStore(emptySubscribe, getSnapshot, getServerSnapshot);
 
 	return { nestedHeadings };
 };
