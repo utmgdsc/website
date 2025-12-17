@@ -21,8 +21,15 @@ interface InfoCardProps {
 	external?: boolean;
 }
 
-const cardColorHash = (title: string) => (title.length ^ (3 >> 1)) % CardColors.length;
+const cardColorHash = (title: string) => {
+	let hash = 0;
 
+	for (let i = 0; i < title.length; i++) {
+		hash += title.charCodeAt(i);
+	}
+
+	return hash % CardColors.length;
+};
 /**
  * Gets the events from the GDSC (bevy) API and displays them in a card format.
  * The card has a clickable button that redirects to the event's page.
