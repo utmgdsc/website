@@ -1,18 +1,21 @@
 import { Accordion as MUIAccordion, AccordionSummary as MUIAccordionSummary } from '@mui/material';
 import type { AccordionProps, AccordionSummaryProps } from '@mui/material';
-import { ReactNode, Fragment, useEffect, useState } from 'react';
+import { ReactNode, Fragment, useSyncExternalStore } from 'react';
+
+const emptySubscribe = () => () => {};
 
 /**
+ * Uses useSyncExternalStore to safely handle SSR vs client hydration.
+ * Server returns the default value, client returns undefined.
+ *
  * @returns undefined if JS is enabled, otherwise, returns the default value
  */
-const useOnload = <T,>(def: T | undefined) => {
-	const [loaded, setLoaded] = useState(def);
-
-	useEffect(() => {
-		setLoaded(undefined);
-	}, []);
-
-	return loaded;
+const useOnload = <T,>(def: T | undefined): T | undefined => {
+	return useSyncExternalStore(
+		emptySubscribe,
+		() => undefined, // client: JS is enabled
+		() => def // server: return the fallback
+	);
 };
 
 /** removes all passed props and just returns children */

@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 
 import BannerImg from '~/assets/backgrounds/gradient.webp';
-import { Link } from '~/components/server';
+import { Link } from '~/components/client';
 import { ResourceLayout } from '~/layouts/ResourceLayout';
 
 import { GoogleBlue, GoogleRed, GoogleYellow, GoogleGreen, GoogleGrey } from '~/data/theme';

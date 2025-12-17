@@ -29,9 +29,9 @@ export const HomepageHero = () => {
 					marginBottom: '-15vh',
 					backgroundRepeat: 'no-repeat',
 					backgroundSize: 'cover',
-					backgroundImage: getBackgroundImage(theme, HeroImage),
+					backgroundImage: getBackgroundImage(theme, HeroImage.src),
 					...theme.applyStyles('dark', {
-						backgroundImage: getBackgroundImage(theme, HeroImageDark),
+						backgroundImage: getBackgroundImage(theme, HeroImageDark.src),
 					}),
 				})}
 			>
@@ -57,7 +57,7 @@ export const HomepageHero = () => {
 							alt="Google Developer Student Clubs University of Toronto Mississauga"
 							fill={true}
 							id="gdsc-wordmark"
-							src={wordmark}
+							src={wordmark.src}
 							sx={theme => ({
 								objectFit: 'contain',
 								...theme.applyStyles('dark', {

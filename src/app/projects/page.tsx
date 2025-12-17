@@ -1,5 +1,5 @@
-import { FaqList, ProjectList } from '~/components/client';
-import { ExpiryContainer, getProprietaryURL, Link } from '~/components/server';
+import { FaqList, ProjectList, Link } from '~/components/client';
+import { ExpiryContainer, getProprietaryURL } from '~/components/server';
 import { HeroLayout } from '~/layouts/HeroLayout';
 import { Alert, Box, Typography } from '@mui/material';
 import FAQData from './faq.json';
