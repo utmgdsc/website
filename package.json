@@ -21,8 +21,8 @@
 		"ical-generator": "^10.0.0",
 		"next": "^15.5.9",
 		"node-html-markdown": "^2.0.0",
-		"react": "^19.2.0",
-		"react-dom": "^19.2.0",
+		"react": "^19.2.3",
+		"react-dom": "^19.2.3",
 		"react-gtm-module": "^2.0.11",
 		"sharp": "^0.34.5",
 		"yaml": "^2.8.2"
