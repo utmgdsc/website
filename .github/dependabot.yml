@@ -18,6 +18,10 @@ updates:
         patterns:
           - "react"
           - "react-dom"
+      next:
+        patterns:
+          - "next"
+          - "eslint-config-next"
       emotion:
         patterns:
           - "@emotion/*"
