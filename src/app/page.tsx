@@ -1,11 +1,10 @@
 import { ArrowForward } from '@mui/icons-material';
 import { Button, Container, Typography } from '@mui/material';
-import { ErrorBoundary, FaqList, HomepageHero } from '~/components/client';
+import { ErrorBoundary, FaqList, HomepageHero, Link } from '~/components/client';
 import {
 	EventList,
 	ExpiryContainer,
 	HomepageSection,
-	Link,
 	Team,
 	getProprietaryURL,
 	proprietaryURLIsAvailable,

@@ -1,7 +1,6 @@
 import { Box, ButtonGroup, Container, Paper, Theme, Typography, styled } from '@mui/material';
-import bracket_colourless from '~/assets/graphics/bracket_colourless.svg';
-import { ErrorBoundary } from '~/components/client';
-import { Link, LinkProps } from '~/components/server';
+import bracket from '~/assets/graphics/bracket_colourless.svg';
+import { ErrorBoundary, Link, LinkProps } from '~/components/client';
 import * as allSocialButtons from '~/data/SocialButton';
 import type { FooterLinksData } from '~/data/footer.d.ts';
 import _footerLinks from '~/data/footer.json';
@@ -106,7 +105,7 @@ export const Footer = () => {
 							}}
 						>
 							<Image
-								src={bracket_colourless}
+								src={bracket.src}
 								className="logo"
 								height="64"
 								width="64"

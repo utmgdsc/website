@@ -4,7 +4,7 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Typography from '@mui/material/Typography';
 
 import { pages } from '~/data/NavbarTabData';
-import { Link } from '~/components/server';
+import { Link } from '~/components/client';
 
 /**
  * @see https://mui.com/material-ui/react-breadcrumbs/#RouterBreadcrumbs.js

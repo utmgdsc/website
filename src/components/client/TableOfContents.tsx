@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import { Link } from '~/components/server';
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
+import { Link } from '~/components/client';
 import { Box, Typography } from '@mui/material';
 
 interface SmoothScrollingLinkProps {
@@ -89,18 +89,20 @@ const getNestedHeadings = (headingElements: HTMLElement[]) => {
 	return nestedHeadings;
 };
 
+const emptySubscribe = () => () => {};
+
 /**
  * Get all the h2 and h3 headings in resources page, and turn them into list of nested headings
  */
 const useHeadingsData = () => {
-	const [nestedHeadings, setNestedHeadings] = useState<TOCHeading[]>([]);
-
-	useEffect(() => {
-		const headingElements = Array.from(document.querySelectorAll<HTMLElement>('h2.resources, h3.resources'));
-
-		const newNestedHeadings = getNestedHeadings(headingElements);
-		setNestedHeadings(newNestedHeadings);
-	}, []);
+	const nestedHeadings = useSyncExternalStore(
+		emptySubscribe,
+		() => {
+			const headingElements = Array.from(document.querySelectorAll<HTMLElement>('h2.resources, h3.resources'));
+			return getNestedHeadings(headingElements);
+		},
+		() => [] // server: return empty array
+	);
 
 	return { nestedHeadings };
 };

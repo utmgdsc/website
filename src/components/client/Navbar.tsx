@@ -14,8 +14,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
 import bracket from '~/assets/graphics/bracket.svg';
 import bracketDark from '~/assets/graphics/bracket_colourless.svg';
-import { ThemedImage } from '~/components/client';
-import { Link } from '~/components/server';
+import { ThemedImage, Link } from '~/components/client';
 import { pages } from '~/data/NavbarTabData';
 import { CommunityDevButton, DiscordButton, GitHubButton, InstagramButton } from '~/data/SocialButton';
 import { HideOnScroll } from './ElevationScroll';
@@ -44,8 +43,8 @@ const ButtonLogo = () => {
 			id="gdsc-home-btn"
 		>
 			<ThemedImage
-				srcLight={bracket}
-				srcDark={bracketDark}
+				srcLight={bracket.src}
+				srcDark={bracketDark.src}
 				isSVG={true}
 				alt="Google Developers Bracket Logo"
 				pictureProps={{

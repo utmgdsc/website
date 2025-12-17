@@ -1,4 +1,4 @@
-import { Link } from '~/components/server';
+import { Link } from '~/components/client';
 import { Tab, Tabs } from '@mui/material';
 import { usePathname } from 'next/navigation';
 import { ComponentProps, useMemo } from 'react';

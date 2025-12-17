@@ -1,6 +1,6 @@
 import { Button, Card, CardActions, CardContent, Typography, Skeleton } from '@mui/material';
 import { ReactNode } from 'react';
-import { Link, OpenInNewTabIcon } from '~/components/server';
+import { Link, OpenInNewTabIcon } from '~/components/client';
 
 const CardColors: ('success' | 'error' | 'warning' | 'info')[] = ['success', 'error', 'warning', 'info'];
 
@@ -20,6 +20,8 @@ interface InfoCardProps {
 	/** whether the link is external or not, i.e., whether to open in a new tab or not */
 	external?: boolean;
 }
+
+const cardColorHash = (title: string) => (title.length ^ (3 >> 1)) % CardColors.length;
 
 /**
  * Gets the events from the GDSC (bevy) API and displays them in a card format.
@@ -81,7 +83,7 @@ export const InfoCard = ({
 			</CardContent>
 			<CardActions sx={{ padding: '16px' }}>
 				<Button
-					color={CardColors[Math.floor(Math.random() * CardColors.length)]}
+					color={CardColors[cardColorHash(title)]}
 					suppressHydrationWarning
 					component={Link}
 					href={href}
