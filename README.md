@@ -2,7 +2,7 @@
 	<picture>
 		<img alt="Google Developers Bracket" src="./src/assets/graphics/bracket.svg" height="34">
 	</picture>
-	GDSC Website
+	GDG Website
 </h1>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/30870ebd-b4fa-4c6b-888e-da18cfb2f0b1/deploy-status)](https://app.netlify.com/sites/gdscutm/deploys) [![Maintainability](https://api.codeclimate.com/v1/badges/90a63eebb216f087e575/maintainability)](https://codeclimate.com/github/utmgdsc/website/maintainability)
@@ -110,7 +110,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## License and Attribution
 
-Except where otherwise noted, the is project is licensed under the [LGPL 3.0 or later](https://www.gnu.org/licenses/lgpl-3.0.html) license. In addition, if you decide to use this project for your own GDSC chapter, please attribute us by linking to our website (https://gdscutm.com) in your footer! It would also be nice if you could let us know by [contacting us](#contact) so we can see what you've done with it! :smile:
+Except where otherwise noted, the is project is licensed under the [LGPL 3.0 or later](https://www.gnu.org/licenses/lgpl-3.0.html) license. In addition, if you decide to use this project for your own GDG chapter, please attribute us by linking to our website (https://gdscutm.com) in your footer! It would also be nice if you could let us know by [contacting us](#contact) so we can see what you've done with it! :smile:
 
 ## Contact
 
