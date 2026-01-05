@@ -11,12 +11,12 @@ export async function GET(req: NextRequest): Promise<Response> {
 	}
 
 	const calendar = ical({
-		name: 'GDSC UTM Events',
+		name: 'GDG UTM Events',
 	});
 
 	calendar.prodId({
 		company: 'Google Developer Student Clubs - University of Toronto Mississauga',
-		product: 'GDSC UTM Events',
+		product: 'GDG UTM Events',
 		language: 'EN',
 	});
 

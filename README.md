@@ -2,16 +2,16 @@
 	<picture>
 		<img alt="Google Developers Bracket" src="./src/assets/graphics/bracket.svg" height="34">
 	</picture>
-	GDSC Website
+	GDG Website
 </h1>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/30870ebd-b4fa-4c6b-888e-da18cfb2f0b1/deploy-status)](https://app.netlify.com/sites/gdscutm/deploys) [![Maintainability](https://api.codeclimate.com/v1/badges/90a63eebb216f087e575/maintainability)](https://codeclimate.com/github/utmgdsc/website/maintainability)
 
-Google Developer Student Clubs (GDSC) is a student-led community backed by Google Developers aimed at empowering undergraduate students from all disciplines to grow their knowledge in technology, build solutions for their local communities, and connect with other members from the Google community.
+Google Developer Groups (GDG) is a student-led community backed by Google Developers aimed at empowering undergraduate students from all disciplines to grow their knowledge in technology, build solutions for their local communities, and connect with other members from the Google community.
 
 ## About The Project
 
-This is the official website for the University of Toronto Mississauga Google Developer Student Club (UTM GDSC). The frontend is built with [Next.js App Router](https://nextjs.org/docs/app) with Material UI installed.
+This is the official website for the University of Toronto Mississauga Google Developer GROUPS - UTM Chapter (GDG UTM). The frontend is built with [Next.js App Router](https://nextjs.org/docs/app) with Material UI installed.
 
 Except where otherwise noted, the is project is licensed under the [LGPL 3.0 or later](https://www.gnu.org/licenses/lgpl-3.0.html) license. See the [License and Attribution](#license-and-attribution) section for more information.
 

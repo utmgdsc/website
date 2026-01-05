@@ -5,11 +5,11 @@ import type { ReactNode } from 'react';
 
 export const metadata = {
 	title: {
-		default: 'GDSC UTM',
-		template: '%s - GDSC UTM',
+		default: 'GDG UTM',
+		template: '%s - GDG UTM',
 	},
 	description:
-		'GDSC is a student-led community backed by Google Developers aimed at empowering undergraduate students from all disciplines to grow their knowledge in technology, build solutions for their local communities, and connect with other members from the Google community.',
+		'GDG is a student-led community backed by Google Developers aimed at empowering undergraduate students from all disciplines to grow their knowledge in technology, build solutions for their local communities, and connect with other members from the Google community.',
 };
 
 // TODO add skip to content button

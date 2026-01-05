@@ -1,6 +1,6 @@
 {
 	"name": "gdscutm-website",
-	"description": "GDSC UofT Mississauga Website",
+	"description": "GDG UofT Mississauga Website",
 	"version": "2024.11",
 	"private": true,
 	"license": "LGPL-3.0-or-later",
@@ -47,7 +47,8 @@
 		"dev": "next dev",
 		"lint": "eslint .",
 		"prepare": "husky",
-		"pretty": "prettier --write --list-different \"./**/*.{mjs,js,ts,tsx,json,css}\""
+		"pretty": "prettier --write --list-different \"./**/*.{mjs,js,ts,tsx,json,css}\"",
+		"test": "echo \"No tests configured\""
 	},
 	"husky": {
 		"hooks": {
