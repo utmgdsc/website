@@ -11,7 +11,7 @@ Google Developer Groups (GDG) is a student-led community backed by Google Develo
 
 ## About The Project
 
-This is the official website for the University of Toronto Mississauga Google Developer GROUPS - UTM Chapter (GDG UTM). The frontend is built with [Next.js App Router](https://nextjs.org/docs/app) with Material UI installed.
+This is the official website for the University of Toronto Mississauga Chapter of Google Developer Groups (GDG UTM). The frontend is built with [Next.js App Router](https://nextjs.org/docs/app) with Material UI installed.
 
 Except where otherwise noted, the is project is licensed under the [LGPL 3.0 or later](https://www.gnu.org/licenses/lgpl-3.0.html) license. See the [License and Attribution](#license-and-attribution) section for more information.
 
