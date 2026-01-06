@@ -19,7 +19,7 @@ import { pages } from '~/data/NavbarTabData';
 import { CommunityDevButton, DiscordButton, GitHubButton, InstagramButton } from '~/data/SocialButton';
 import { HideOnScroll } from './ElevationScroll';
 
-/** gdsc/gdg button logo */
+/** gdg button logo */
 const ButtonLogo = () => {
 	const trigger = useScrollTrigger({
 		disableHysteresis: true,
