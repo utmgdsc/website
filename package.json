@@ -47,8 +47,7 @@
 		"dev": "next dev",
 		"lint": "eslint .",
 		"prepare": "husky",
-		"pretty": "prettier --write --list-different \"./**/*.{mjs,js,ts,tsx,json,css}\"",
-		"test": "echo \"No tests configured\""
+		"pretty": "prettier --write --list-different \"./**/*.{mjs,js,ts,tsx,json,css}\""
 	},
 	"husky": {
 		"hooks": {
