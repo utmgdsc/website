@@ -51,7 +51,7 @@ const ProjectPage = () => {
 					You could potentially earn a credit for CSC392/CSC492 while working on your project under faculty
 					guidance! Additionally, you may be able to submit your project as a part of the global{' '}
 					<Link external href="https://developers.google.com/community/gdsc-solution-challenge">
-						GDG UTM Solution challenge
+						GDG Solution challenge
 					</Link>{' '}
 					and win prizes!
 				</Typography>
