@@ -32,7 +32,6 @@ const cardColorHash = (title: string) => {
 };
 /**
  * Gets the events from GDG (bevy) API and displays them in a card format.
-
  * The card has a clickable button that redirects to the event's page.
  *
  * NOTE: because this component is a Server Component, we pass the <a> tag, so
