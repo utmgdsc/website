@@ -13,7 +13,7 @@ import {
 import faq from '~/data/faq.json';
 
 export const metadata = {
-	title: 'Home - GDSC UTM',
+	title: 'Home - GDG UTM',
 };
 
 const getTeamMembers = async (): Promise<Team> => {
@@ -45,19 +45,19 @@ const Homepage = async () => {
 
 			<HomepageSection title="Who are we?">
 				<Typography variant="body2" component="p">
-					Google Developer Student Clubs (<abbr>GDSC</abbr>) is a student-led community backed by Google
-					Developers aimed at empowering undergraduate students from all disciplines to grow their knowledge
-					in technology, build solutions for their local communities, and connect with other members from the
+					Google Developer Groups (<abbr>GDG</abbr>) is a student-led community backed by Google Developers
+					aimed at empowering undergraduate students from all disciplines to grow their knowledge in
+					technology, build solutions for their local communities, and connect with other members from the
 					Google community.
 				</Typography>
 
 				<h3>Creating impact and empowering students through technology</h3>
 
 				<Typography variant="body2" component="p">
-					Whether you are new to software development or you&rsquo;ve been developing for quite a while, GDSC
+					Whether you are new to software development or you&rsquo;ve been developing for quite a while, GDG
 					is a place where you can learn new technologies, make your ideas a reality, and collaborate to solve
-					real-world problems. In addition to solving problems, GDSC will allow you to connect with other
-					technology enthusiasts from other GDSC chapters and the Google Developer Community. We will be
+					real-world problems. In addition to solving problems, GDG will allow you to connect with other
+					technology enthusiasts from other GDG chapters and the Google Developer Community. We will be
 					hosting events and activities for all students throughout the academic year. We hope to see you
 					there!
 				</Typography>
@@ -88,7 +88,7 @@ const Homepage = async () => {
 				</ErrorBoundary>
 			</HomepageSection>
 
-			<ExpiryContainer date={'2025-06-30'}>
+			<ExpiryContainer date={'2026-08-30'}>
 				<HomepageSection title="Meet the team">
 					<ErrorBoundary>
 						{Object.keys(teamMembers).map(teamName => {

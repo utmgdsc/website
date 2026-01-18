@@ -95,12 +95,12 @@
 		{
 			"title": "Dino Game",
 			"url": "https://github.com/utmgdsc/dino-game",
-			"description": "This project is a replicated dino-game from Chrome, running on Python. This is a work in progress game made by the UTM GDSC.",
+			"description": "This project is a replicated dino-game from Chrome, running on Python. This is a work in progress game made by the UTM GDG.",
 			"year": 2022,
 			"session": "Fall"
 		},
 		{
-			"title": "GDSC Website",
+			"title": "GDG UTM Website",
 			"url": "https://github.com/utmgdsc/website",
 			"description": "Yes. This website.",
 			"year": 2022,

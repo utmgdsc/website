@@ -37,7 +37,7 @@ export const InstagramButton = (props: Partial<NamedIconButtonProps>) => (
 		title="Instagram"
 		tooltip="Visit our Instagram"
 		icon={<Instagram />}
-		href="https://instagram.com/gdscutm"
+		href="https://instagram.com/gdgutm"
 		{...props}
 	/>
 );

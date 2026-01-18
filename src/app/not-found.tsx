@@ -5,7 +5,7 @@ import estelle from '~/assets/graphics/sad_mascot.png';
 import estelle_dark from '~/assets/graphics/sad_mascot_dark.png';
 
 export const metadata = {
-	title: '404 - GDSC UTM',
+	title: '404 - GDG UTM',
 };
 
 /**
@@ -28,7 +28,7 @@ export default function NotFound() {
 			}}
 		>
 			<ThemedImage
-				alt="Sad GDSC Mascot"
+				alt="Sad GDG Mascot"
 				srcLight={estelle.src}
 				srcDark={estelle_dark.src}
 				height={600}
