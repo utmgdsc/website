@@ -23,7 +23,6 @@ export default async function EventsLayout({ children }: { children: ReactNode }
 	const today = new Date();
 
 	/** all years our gdg has had events */
-
 	const years = await getYearTabs();
 
 	return (
