@@ -60,7 +60,7 @@ export const HomepageSection = ({ title, titleAfter, children }: HomepageSection
 							fontWeight: 'bold',
 							mr: 1,
 						}}
-						id={title.toLowerCase().replace(/ /g, '-')}
+						id={title.toLowerCase().replaceAll(' ', '-')}
 					>
 						{title}
 					</Typography>

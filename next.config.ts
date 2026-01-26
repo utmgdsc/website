@@ -21,6 +21,9 @@ const nextConfig: NextConfig = {
 			{
 				pathname: '/assets/**',
 			},
+			{
+				pathname: '/_next/image/**',
+			},
 		],
 	},
 };

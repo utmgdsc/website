@@ -61,7 +61,7 @@ const WorkshopList = async ({ workshops }: WorkshopListProps) => {
 				{Object.keys(workshops).map(category => {
 					return (
 						<Box key={category}>
-							<h2 className="resources" id={category.replace(/\s/g, '')}>
+							<h2 className="resources" id={category.replaceAll(/\s/g, '')}>
 								{category}
 							</h2>
 							{workshops[category]

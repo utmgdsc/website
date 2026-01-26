@@ -1,6 +1,6 @@
 import { Search } from '@mui/icons-material';
 import { InputAdornment, TextField } from '@mui/material';
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Suspense, useEffect, useState } from 'react';
 
 const useDebouncedValue = (value: string, delay: number) => {
@@ -39,13 +39,18 @@ const modifySearchParam = (searchParams: URLSearchParams, key: string, value: st
 
 const InternalWorkshopSearch = () => {
 	const searchParams = useSearchParams();
+	const router = useRouter();
 	const [search, setSearch] = useState(searchParams.get('search') ?? '');
 	const debouncedSearch = useDebouncedValue(search, 300);
 
 	useEffect(() => {
-		const newSearch = modifySearchParam(new URLSearchParams(), 'search', debouncedSearch);
-		window.history.replaceState(null, '', `?${newSearch}`);
-	}, [debouncedSearch]);
+		const currentSearch = searchParams.get('search') ?? '';
+		if (debouncedSearch === currentSearch) return;
+
+		const newParams = new URLSearchParams(searchParams);
+		const newSearch = modifySearchParam(newParams, 'search', debouncedSearch);
+		router.replace(`/past-workshops?${newSearch}`);
+	}, [debouncedSearch, router, searchParams]);
 
 	return (
 		<TextField

@@ -196,8 +196,8 @@ export const Footer = () => {
 							textAlign: 'right',
 						}}
 					>
-						{Object.values(allSocialButtons).map((SocialButton, index) => {
-							return <SocialButton key={index} />;
+						{Object.entries(allSocialButtons).map(([name, SocialButton]) => {
+							return <SocialButton key={name} />;
 						})}
 					</ButtonGroup>
 				</Box>
