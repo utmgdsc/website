@@ -1,7 +1,15 @@
 import { ErrorBoundary, Footer, Navbar, TagManager, ThemeRegistry } from '~/components/client';
 
-import { GoogleSans, GoogleSansDisplay } from '~/assets/fonts/fonts';
+import { Google_Sans_Flex } from 'next/font/google';
 import type { ReactNode } from 'react';
+
+const googleSans = Google_Sans_Flex({
+	variable: '--font-google-sans',
+	subsets: ['latin'],
+	axes: ['wdth'],
+	display: 'swap',
+	fallback: ['sans-serif'],
+});
 
 export const metadata = {
 	title: {
@@ -15,7 +23,7 @@ export const metadata = {
 // TODO add skip to content button
 export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
-		<html lang="en" className={`${GoogleSans.variable} ${GoogleSansDisplay.variable}`}>
+		<html lang="en" className={googleSans.variable}>
 			<body>
 				<TagManager>
 					<ThemeRegistry>

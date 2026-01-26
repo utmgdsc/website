@@ -16,7 +16,7 @@ export const metadata = {
 const BrandResources = () => {
 	return (
 		<ResourceLayout id="logo-download" title={metadata.title} picture={BannerImg}>
-			<em>Last updated 2023-01-01</em>
+			<em>Last updated 2026-01-01</em>
 			<section>
 				<Typography component="h2" variant="h4">
 					Guidelines (tl;dr)
@@ -47,8 +47,8 @@ const BrandResources = () => {
 					</li>
 					<li aria-level={1}>
 						Logo guidelines:{' '}
-						<Link external href="https://goo.gle/gdsc-brand-guide" sx={{ textDecorationLine: 'none' }}>
-							https://goo.gle/gdsc-brand-guide
+						<Link external href="https://goo.gle/on-campus-brand-guide" sx={{ textDecorationLine: 'none' }}>
+							https://goo.gle/on-campus-brand-guide
 						</Link>
 						, tl;dr:
 						<ul>
