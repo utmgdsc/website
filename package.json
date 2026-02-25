@@ -39,7 +39,7 @@
 		"typescript-eslint": "^8.51.0",
 		"globals": "^17.3.0",
 		"husky": "^9.1.7",
-		"prettier": "^3.7.4"
+		"prettier": "^3.8.1"
 	},
 	"scripts": {
 		"start": "next start",
