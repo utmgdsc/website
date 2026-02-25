@@ -36,7 +36,7 @@
 		"eslint-config-next": "16.1.6",
 		"eslint-plugin-promise": "^7.2.1",
 		"eslint-plugin-react": "^7.37.5",
-		"typescript-eslint": "^8.51.0",
+		"typescript-eslint": "^8.56.1",
 		"globals": "^17.3.0",
 		"husky": "^9.1.7",
 		"prettier": "^3.8.1"
