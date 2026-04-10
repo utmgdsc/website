@@ -28,7 +28,7 @@
 		"yaml": "^2.8.3"
 	},
 	"devDependencies": {
-		"@eslint/eslintrc": "^3.3.4",
+		"@eslint/eslintrc": "^3.3.5",
 		"@types/js-yaml": "4.0.9",
 		"@types/node": "25.3.3",
 		"@types/react-gtm-module": "2.0.4",
