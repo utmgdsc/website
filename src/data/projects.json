@@ -203,6 +203,34 @@
 			"description": "TinyProof aims to replicate Google DeepMind's AlphaProof paper, where Llama was fine-tuned using reinforcement learning (where trajectories are generated using Monte-Carlo tree search) to prove theorems in the proof assistant Lean4. The overarching goal is to advance the capabilities of AI reasoning, enabling it to tackle problems in undergraduate math courses such as MAT102, MAT137, and MAT157.",
 			"year": 2025,
 			"session": "Winter"
+		},
+		{
+			"title": "AskEasy",
+			"url": "https://github.com/utmgdsc/ask_easy",
+			"description": "A real-time classroom Q&A platform built for live lectures at the University of Toronto.",
+			"year": 2026,
+			"session": "Winter"
+		},
+		{
+			"title": "AI Video Detection",
+			"url": "https://github.com/utmgdsc/AI-Video-Detection",
+			"description": "A multimodal deepfake detection system that analyzes both video and audio to classify media as real or fake using an ensemble of deep learning models.",
+			"year": 2026,
+			"session": "Winter"
+		},
+		{
+			"title": "Transformer Visualizer",
+			"url": "https://github.com/utmgdsc/Transformer-Visualizer",
+			"description": "An interactive tool for exploring transformer model internals, including attention patterns, token activations, and layer representations.",
+			"year": 2026,
+			"session": "Winter"
+		},
+		{
+			"title": "Study One",
+			"url": "https://github.com/utmgdsc/Study-One",
+			"description": "AI that makes you think, not think for you.",
+			"year": 2026,
+			"session": "Winter"
 		}
 	]
 }
