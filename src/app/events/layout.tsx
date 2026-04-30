@@ -9,7 +9,7 @@ export const metadata = {
 };
 
 const EventsEmptyState = () => (
-	<Typography variant="h5" component="p" gutterBottom>
+	<Typography component="p" gutterBottom>
 		None yet! Check back soon or follow us on social media to stay updated! 🤗
 	</Typography>
 );

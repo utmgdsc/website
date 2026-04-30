@@ -104,7 +104,11 @@ const NavbarTabs = () => {
 			aria-label="Main navigation"
 			component="nav"
 			id="main-nav"
-			TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
+			slotProps={{
+				indicator: {
+					children: <span className="MuiTabs-indicatorSpan" />,
+				},
+			}}
 			value={currentTab}
 			variant="scrollable"
 			sx={{
