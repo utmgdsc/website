@@ -6,7 +6,7 @@ import { ComponentType, ReactNode } from 'react';
 import { components } from '~/app/api/events/bevy';
 
 const EventInfoCard = ({ event, description }: { event: components['schemas']['EventFull']; description: string }) => {
-	if (!event || !event['title'] || !event['start_date'] || !event['url']) {
+	if (!event?.['title'] || !event['start_date'] || !event['url']) {
 		return null;
 	}
 

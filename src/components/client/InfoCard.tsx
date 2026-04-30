@@ -25,7 +25,8 @@ const cardColorHash = (title: string) => {
 	let hash = 0;
 
 	for (let i = 0; i < title.length; i++) {
-		hash += title.charCodeAt(i);
+		// i is within bounds of the string so we're sure it's not null
+		hash += title.codePointAt(i)!;
 	}
 
 	return hash % CardColors.length;
