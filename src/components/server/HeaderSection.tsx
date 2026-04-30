@@ -42,8 +42,8 @@ export const HomepageSection = ({ title, titleAfter, children }: HomepageSection
 				xs: 2,
 				md: 8,
 			},
+			maxWidth: 'xl',
 		}}
-		maxWidth="xl"
 		header={
 			<Box
 				sx={{

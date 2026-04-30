@@ -1,8 +1,9 @@
 import { FaqList, ProjectList, Link } from '~/components/client';
 import { ExpiryContainer, getProprietaryURL } from '~/components/server';
 import { HeroLayout } from '~/layouts/HeroLayout';
-import { Alert, Box, Typography } from '@mui/material';
+import { Alert, Box, Skeleton, Typography } from '@mui/material';
 import FAQData from './faq.json';
+import { Suspense } from 'react';
 
 export const metadata = {
 	title: 'Community Projects',
@@ -66,7 +67,13 @@ const ProjectPage = () => {
 				<Typography component="h2" variant="h4" id="projects">
 					Past Projects
 				</Typography>
-				<ProjectList />
+				<Suspense
+					fallback={
+						<Skeleton sx={{ bgcolor: 'transparent' }} variant="rectangular" width="100%" height={400} />
+					}
+				>
+					<ProjectList />
+				</Suspense>
 			</section>
 
 			<section>
