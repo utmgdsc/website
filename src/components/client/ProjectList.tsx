@@ -38,7 +38,7 @@ export const ProjectList = () => {
 			return acc;
 		}, []);
 
-		return years.sort((a, b) => b - a);
+		return years.toSorted((a, b) => b - a);
 	}, [projects]);
 
 	const setPage = useCallback(

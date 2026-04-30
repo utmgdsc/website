@@ -131,17 +131,19 @@ export const getEnrichedEvents = async (limit: number | undefined, from: Date, t
 export const getYears = async (): Promise<number[]> => {
 	const events = await getEvents(undefined, MIN_DATE, new Date());
 
-	const years = events.reduce((acc: number[], event: components['schemas']['EventSummary']) => {
-		if (!event['end_date']) return acc;
+	const years = events
+		.reduce((acc: number[], event: components['schemas']['EventSummary']) => {
+			if (!event['end_date']) return acc;
 
-		const year = new Date(event['end_date']).getFullYear();
-		if (!acc.includes(year)) {
-			acc.push(year);
-		}
-		return acc;
-	}, []);
+			const year = new Date(event['end_date']).getFullYear();
+			if (!acc.includes(year)) {
+				acc.push(year);
+			}
+			return acc;
+		}, [])
+		.sort((a: number, b: number) => b - a);
 
-	return years.sort((a: number, b: number) => b - a);
+	return years;
 };
 
 /** the translator to convert html to markdown */

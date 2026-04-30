@@ -22,7 +22,7 @@ const InternalLatestWorkshops = async ({ workshops, limit, showDate = false }: I
 			.reduce<WorkshopItem[]>((acc, key) => {
 				return [...acc, ...workshops[key]];
 			}, [])
-			.sort((a, b) => {
+			.toSorted((a, b) => {
 				return new Date(b.date).getTime() - new Date(a.date).getTime();
 			})
 			.slice(0, limit)
@@ -65,7 +65,7 @@ const WorkshopList = async ({ workshops }: WorkshopListProps) => {
 								{category}
 							</h2>
 							{workshops[category]
-								.sort((a, b) => {
+								.toSorted((a, b) => {
 									return new Date(b.date).getTime() - new Date(a.date).getTime();
 								})
 								.map(item => {

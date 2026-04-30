@@ -1,7 +1,7 @@
 import { ErrorBoundary, Footer, Navbar, TagManager, ThemeRegistry } from '~/components/client';
 
 import { Google_Sans_Flex } from 'next/font/google';
-import type { ReactNode } from 'react';
+import type { PropsWithChildren } from 'react';
 
 const googleSans = Google_Sans_Flex({
 	variable: '--font-google-sans',
@@ -21,7 +21,7 @@ export const metadata = {
 };
 
 // TODO add skip to content button
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
 	return (
 		<html lang="en" className={googleSans.variable}>
 			<body>

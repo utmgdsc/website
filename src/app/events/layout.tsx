@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { PropsWithChildren } from 'react';
 import { ErrorBoundary, PathnameTabs } from '~/components/client';
 import { EventList, getProprietaryURL, getYearTabs } from '~/components/server';
 import { HeroLayout } from '~/layouts/HeroLayout';
@@ -18,7 +18,7 @@ const EventsEmptyState = () => (
  * This is a layout so that the current tab state is shared which makes it
  * smoother
  */
-export default async function EventsLayout({ children }: { children: ReactNode }) {
+export default async function EventsLayout({ children }: Readonly<PropsWithChildren>) {
 	/** the current date */
 	const today = new Date();
 
