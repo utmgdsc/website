@@ -24,8 +24,8 @@ const DiscordIcon = createSvgIcon(
 
 export const CommunityDevButton = (props: Partial<NamedIconButtonProps>) => (
 	<NamedIconButton
-		title="Google Developers Student Club page"
-		tooltip="Visit our official Google Developers Student Club page"
+		title="Google Developer Groups page"
+		tooltip="Visit our official Google Developer Groups page"
 		icon={<Google />}
 		href="https://gdg.community.dev/gdg-on-campus-university-of-toronto-mississauga-canada/"
 		{...props}
@@ -47,7 +47,7 @@ export const GitHubButton = (props: Partial<NamedIconButtonProps>) => (
 		title="GitHub"
 		tooltip="Visit our GitHub organization"
 		icon={<GitHub />}
-		href="https://github.com/utmgdsc"
+		href="https://github.com/gdgutm"
 		{...props}
 	/>
 );
@@ -67,7 +67,7 @@ export const LinkedInButton = (props: Partial<NamedIconButtonProps>) => (
 		title="LinkedIn"
 		tooltip="Visit our LinkedIn"
 		icon={<LinkedIn />}
-		href="https://www.linkedin.com/company/google-developer-student-clubs-uoft-mississauga/"
+		href="https://www.linkedin.com/company/utmgdg"
 		{...props}
 	/>
 );
